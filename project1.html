@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 1</title>
+  <meta name="description" content="Project 1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <h1 class="giant-name">Avva Sai Pranav</h1>
+  <nav class="pill-nav">
+    <div class="pill-links">
+      <a href="index.html" class="pill">Home</a>
+      <a href="index.html#info" class="pill">Projects</a>
+      <a href="index.html#resume" class="pill">Resume</a>
+      <a href="index.html#contact" class="pill">Contact</a>
+    </div>
+    <div class="pill-right">
+      <span class="label">Theme:</span>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light theme">
+        <span id="themeKnob">☀</span>
+      </button>
+      <span class="clock" id="clock"></span>
+    </div>
+  </nav>
+</header>
+
+<section class="section">
+  <p class="section-eyebrow">Project</p>
+  <h2>Project 1</h2>
+  <p style="color:var(--text-dim); max-width:70ch; margin-bottom: var(--space-6); font-size: var(--text-sm);">
+    Graphic Design
+  </p>
+
+  <div class="resume-card">
+    <h3 style="margin-bottom: var(--space-4); color: var(--headline);">Project Overview</h3>
+    <p style="color:var(--text); margin-bottom: var(--space-6);">
+      Far far away, behind the word mountains, far from the countries Vokalia and Consonantia...
+    </p>
+
+    <h3 style="margin-bottom: var(--space-4); color: var(--headline);">My Contributions</h3>
+    <p style="color:var(--text);">
+      Describe your contribution here.
+    </p>
+  </div>
+</section>
+
+<footer class="footer">
+  <span>© <span id="year"></span> Avva Sai Pranav</span>
+</footer>
+
+<script>
+  const root = document.documentElement;
+  const toggle = document.getElementById('themeToggle');
+  const knob = document.getElementById('themeKnob');
+  const clockEl = document.getElementById('clock');
+  const yearEl = document.getElementById('year');
+
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  function applyTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    knob.textContent = theme === 'dark' ? '☀' : '☾';
+    try { localStorage.setItem('site-theme', theme); } catch (e) {}
+  }
+
+  let saved = null;
+  try { saved = localStorage.getItem('site-theme'); } catch (e) {}
+  const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+  applyTheme(saved || (prefersLight ? 'light' : 'dark'));
+
+  toggle.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+  });
+
+  function tickClock() {
+    if (clockEl) clockEl.textContent = new Date().toLocaleTimeString('en-GB');
+  }
+  tickClock();
+  setInterval(tickClock, 1000);
+</script>
+
+</body>
+</html>

@@ -1,139 +1,239 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Avva Sai Pranav - Portfolio</title>
-  <meta name="description" content="Portfolio of Avva Sai Pranav - Engineer, DIY & Robotics Enthusiast">
-  <meta property="og:title" content="Avva Sai Pranav - Portfolio">
-  <meta property="og:description" content="Engineer, DIY & Robotics Enthusiast based in Bangalore, India">
-  <meta property="twitter:title" content="Avva Sai Pranav - Portfolio">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link href="css/normalize.css" rel="stylesheet" type="text/css">
-  <link href="css/modern.css" rel="stylesheet" type="text/css">
-  <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
-  <link href="images/webclip.png" rel="apple-touch-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avva Sai Pranav - Portfolio</title>
+<meta name="description" content="Portfolio of Avva Sai Pranav - Engineer, DIY & Robotics Enthusiast">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="navigation" role="banner">
-    <div class="navigation-items">
-      <a href="index.html" aria-current="page" class="logo-link">
-        <img src="images/portfolio-logo2x.png" alt="Portfolio Logo" class="logo-image">
-      </a>
-      <div class="navigation-wrap">
-        <nav class="navigation-menu" role="navigation" aria-label="Main navigation">
-          <a href="index.html" class="navigation-item w--current">Home</a>
-          <a href="work.html" class="navigation-item">Work</a>
-          <a href="blog.html" class="navigation-item">Blog</a>
-          <a href="styleguide.html" class="navigation-item">Styleguide</a>
-        </nav>
-        <button class="menu-button" aria-label="Toggle menu" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </div>
-  </header>
-  <main>
-    <section class="section" aria-label="About">
-      <div class="container">
-        <div class="about-intro-grid fade-in-up">
-          <div class="about-head-text-wrap">
-            <div class="label">Hey there!</div>
-            <h1 class="hi-there-heading">I'm Avva Sai Pranav</h1>
-            <p class="paragraph-light">I'm an Engineer by profession and a DIY & robotics enthusiast. I'm based out of Bangalore, India. A follower of the quote:<br><br><em>"A jack of all trades is a master of none, but oftentimes better than a master of one"</em><br><br>-William Shakespeare</p>
-          </div>
-          <img src="images/about-pic.svg" alt="Avva Sai Pranav" class="about-image">
-        </div>
-      </div>
-    </section>
-    <section class="section section-alt" aria-label="Skills">
-      <div class="container2">
-        <div class="skills-grid fade-in-up">
-          <div class="skillset-wrap">
-            <h2>My Career so far</h2>
-            <p class="paragraph-light">Over the years I have worked as a Mechanical and Embedded Engineer with adequate exposure to hands-on work and the industry.</p>
-          </div>
-          <div class="services-items-grid">
-            <div>
-              <div class="service-name-text">3D Modelling</div>
-              <div class="service-name-text">COMSOL</div>
-              <div class="service-name-text">Prototyping</div>
-              <div class="service-name-text">3D Printing</div>
-            </div>
-            <div>
-              <div class="service-name-text">Embedded Systems</div>
-              <div class="service-name-text">Coding</div>
-              <div class="service-name-text">PCB Design</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section resume-section" aria-label="Resume">
-      <div class="container2">
-        <h1>Wanna know more?</h1>
-        <h3>Here is my resume with all the details!</h3>
-        <div class="resume-embed">
-          <iframe src="https://uploads-ssl.webflow.com/654080a119f0b4f39b5ba034/6541b70c4f5187b4bfe73ea7_Avva_Sai_Pranav_s_Academic_CV_For_Print_V3.pdf" title="Avva Sai Pranav Resume" loading="lazy">
-            <p>Your browser does not support PDFs. <a href="https://uploads-ssl.webflow.com/654080a119f0b4f39b5ba034/6541b70c4f5187b4bfe73ea7_Avva_Sai_Pranav_s_Academic_CV_For_Print_V3.pdf" target="_blank">Download the PDF</a> instead.</p>
-          </iframe>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer class="footer-wrap" role="contentinfo">
-    <div class="footer-content">
-      <h2>Want to get in touch?</h2>
-      <h3>Drop me a line!</h3>
-      <div class="footer-emails paragraph-light">
-        <a href="mailto:avva.saipranav@gmail.com">avva.saipranav@gmail.com</a>
-        <a href="mailto:savva1@jh.edu">savva1@jh.edu</a>
-      </div>
-      <div class="footer-links">
-        <a href="https://github.com/avvasai" target="_blank" rel="noopener noreferrer" class="footer-item">Github</a>
-        <a href="https://www.linkedin.com/in/avva-saipranav" target="_blank" rel="noopener noreferrer" class="footer-item">LinkedIn</a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-item">Instagram</a>
-      </div>
-    </div>
-  </footer>
-  <script>
-    // Mobile menu toggle
-    document.addEventListener('DOMContentLoaded', function() {
-      const menuButton = document.querySelector('.menu-button');
-      const navigationMenu = document.querySelector('.navigation-menu');
-      
-      if (menuButton && navigationMenu) {
-        menuButton.addEventListener('click', function() {
-          const isOpen = navigationMenu.classList.toggle('w--open');
-          menuButton.classList.toggle('w--open');
-          menuButton.setAttribute('aria-expanded', isOpen);
-        });
 
-        // Close menu when clicking on a link
-        const navLinks = navigationMenu.querySelectorAll('.navigation-item');
-        navLinks.forEach(link => {
-          link.addEventListener('click', function() {
-            navigationMenu.classList.remove('w--open');
-            menuButton.classList.remove('w--open');
-            menuButton.setAttribute('aria-expanded', 'false');
-          });
-        });
+<header class="masthead">
+  <h1 class="giant-name">Avva Sai Pranav</h1>
+  <nav class="pill-nav">
+    <div class="pill-links">
+      <a href="index.html" class="pill active">Home</a>
+      <a href="#info" class="pill">Projects</a>
+      <a href="#resume" class="pill">Resume</a>
+      <a href="#contact" class="pill">Contact</a>
+    </div>
+    <div class="pill-right">
+      <span class="label">Theme:</span>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light theme">
+        <span id="themeKnob">☀</span>
+      </button>
+      <span class="clock" id="clock"></span>
+    </div>
+  </nav>
+</header>
 
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-          const isClickInside = navigationMenu.contains(event.target) || menuButton.contains(event.target);
-          if (!isClickInside && navigationMenu.classList.contains('w--open')) {
-            navigationMenu.classList.remove('w--open');
-            menuButton.classList.remove('w--open');
-            menuButton.setAttribute('aria-expanded', 'false');
-          }
-        });
+<section class="hero-banner">
+  <svg class="blueprint-svg" viewBox="0 0 1600 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="bp-grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" class="bp-grid" stroke-width="1"/>
+      </pattern>
+      <marker id="bp-arrow-l" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+        <path d="M9,0 L0,3 L9,6 Z" class="bp-dim" fill="currentColor"/>
+      </marker>
+      <marker id="bp-arrow-r" markerWidth="10" markerHeight="10" refX="2" refY="3" orient="auto">
+        <path d="M0,0 L9,3 L0,6 Z" class="bp-dim" fill="currentColor"/>
+      </marker>
+    </defs>
+
+    <rect width="1600" height="700" fill="url(#bp-grid-pattern)"/>
+
+    <g transform="translate(90,90)">
+      <rect x="0" y="0" width="120" height="80" fill="none" class="bp-part-fine" stroke-width="1.2"/>
+      <path d="M0,80 L120,-10 M-10,60 L40,-10 M40,80 L100,-10 M70,80 L130,10" class="bp-hatch" stroke-width="1"/>
+      <text x="0" y="-12" class="bp-text" font-size="12" letter-spacing="1">SECTION A–A</text>
+    </g>
+
+    <g class="bp-center" stroke-width="1" fill="none">
+      <line x1="950" y1="330" x2="1400" y2="330"/>
+      <line x1="1175" y1="105" x2="1175" y2="555"/>
+    </g>
+
+    <g transform="translate(1175,330)">
+      <circle r="195" class="bp-part" fill="none" stroke-width="1.6"/>
+      <circle r="120" class="bp-part-fine" fill="none" stroke-width="1"/>
+      <circle r="46" class="bp-part" fill="none" stroke-width="1.6"/>
+      <g class="bp-part" fill="none" stroke-width="1.4">
+        <circle cx="120" cy="0" r="11"/>
+        <circle cx="84.9" cy="84.9" r="11"/>
+        <circle cx="0" cy="120" r="11"/>
+        <circle cx="-84.9" cy="84.9" r="11"/>
+        <circle cx="-120" cy="0" r="11"/>
+        <circle cx="-84.9" cy="-84.9" r="11"/>
+        <circle cx="0" cy="-120" r="11"/>
+        <circle cx="84.9" cy="-84.9" r="11"/>
+      </g>
+    </g>
+
+    <g class="bp-dim" stroke-width="1" fill="none">
+      <line x1="980" y1="555" x2="1370" y2="555" marker-start="url(#bp-arrow-l)" marker-end="url(#bp-arrow-r)"/>
+      <line x1="980" y1="535" x2="980" y2="565"/>
+      <line x1="1370" y1="535" x2="1370" y2="565"/>
+    </g>
+    <text x="1175" y="580" text-anchor="middle" class="bp-text" font-size="13">⌀390 mm</text>
+
+    <g class="bp-dim" stroke-width="1" fill="none">
+      <line x1="1430" y1="284" x2="1430" y2="376" marker-start="url(#bp-arrow-l)" marker-end="url(#bp-arrow-r)"/>
+      <line x1="1410" y1="284" x2="1450" y2="284"/>
+      <line x1="1410" y1="376" x2="1450" y2="376"/>
+    </g>
+    <text x="1440" y="335" class="bp-text" font-size="13" transform="rotate(90,1440,335)" text-anchor="middle">⌀92 mm</text>
+
+    <text x="950" y="80" class="bp-text" font-size="13" letter-spacing="1">FLANGE — DETAIL 04</text>
+    <text x="950" y="98" class="bp-text" font-size="11" letter-spacing="1" opacity="0.7">TOL. ±0.05 mm · M8 × 1.25 (×8)</text>
+  </svg>
+  <div class="hero-banner-text">
+    <p>I am <strong>Avva Sai Pranav</strong>,<br>
+    A Mechanical Engineer and DIY &amp; Robotics enthusiast. I build hands-on solutions through
+    <span class="hl">CAD &amp; prototyping</span>, mechanism design, and fabrication, guided by
+    <span class="hl">precision</span> (accuracy) and <span class="hl">jugaad</span> (resourceful ingenuity).</p>
+  </div>
+</section>
+
+<section class="section" id="info">
+  <p class="section-eyebrow">About</p>
+  <h2>Projects &amp; Domains</h2>
+  <p style="color:var(--text-dim); max-width:62ch; margin-bottom: var(--space-6); font-size: var(--text-sm);">
+    Hover or tap a domain on the right to see related project cards highlight on the left.
+  </p>
+
+  <div class="projects-skills">
+    <div class="bubble-field">
+      <button id="proj_one" type="button" class="bubble rectangle" data-domains="domain-1 domain-3">MEMS Engineer : Navigational Sensors</button>
+      <button id="proj_two" type="button" class="bubble rectangle" data-domains="domain-2 domain-5">Data Acquisition System</button>
+      <button type="button" class="bubble rectangle" data-domains="domain-3 domain-4">Laboratory Automation</button>
+      <button type="button" class="bubble rectangle" data-domains="domain-1 domain-3 domain-4">Micro-Mobility Vehicle Electronics</button>
+
+      <button type="button" class="bubble rectangle" data-domains="domain-2 domain-4">Robotic Assistant for MRI-Guided Low Back Pain Injections</button>
+      <button type="button" class="bubble rectangle" data-domains="domain-1 domain-5">Haptic-Guided Magnetic Microrobot Navigation</button>
+      <button type="button" class="bubble rectangle" data-domains="domain-3 domain-5">MRI-Guided Lumbar Spine Needle Insertion Robot</button>
+      <button type="button" class="bubble rectangle" data-domains="domain-2 domain-3">MRI-Guided Soft Robotic Catheter for Lung Biopsy Navigation</button>
+
+      <button type="button" class="bubble rectangle" data-domains="domain-1 domain-4">Semi-Autonomous Robotic Ultrasound Scanning with UR5e and RealSense</button>
+      <button type="button" class="bubble rectangle" data-domains="domain-2 domain-3 domain-5">Biomimetic Hummingbird: Wing Kinematics & Mechanism Design</button>
+      <button type="button" class="bubble rectangle" data-domains="domain-4 domain-5">Project Eleven</button>
+      <button type="button" class="bubble rectangle" data-domains="domain-1 domain-2">Project Twelve</button>
+    </div>
+
+    <div class="skills-list">
+      <span class="chip" data-domain="domain-1">Medical Robotics</span>
+      <span class="chip" data-domain="domain-2">Medical Imaging</span>
+      <span class="chip" data-domain="domain-3">Mechanical and Automotive</span>
+      <span class="chip" data-domain="domain-4">Embedded Systems</span>
+      <span class="chip" data-domain="domain-5">Computer Science</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="resume">
+  <p class="section-eyebrow">Resume</p>
+  <h2>Resume</h2>
+  <p style="color:var(--text-dim); max-width:62ch; margin-bottom: var(--space-6); font-size: var(--text-sm);">
+    My full resume with education, experience, and skills.
+  </p>
+  <div class="resume-card">
+    <div class="pdf-wrapper">
+      <iframe
+        src="documents/Avva_Mechatronics_SurgicalRobotics_Resume.pdf"
+        title="Avva Sai Pranav Resume"
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <p class="section-eyebrow" style="text-align:center;">Contact</p>
+  <h2>Want to get in touch?</h2>
+  <p class="lead">Drop me a line!</p>
+  <div class="contact-emails">
+    <a href="mailto:savva1@jh.edu">savva1@jh.edu</a>
+  </div>
+  <div class="social-links">
+    <a href="https://github.com/avvasai" target="_blank" rel="noopener">Github</a>
+    <a href="https://www.linkedin.com/in/avva-saipranav" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <span>© <span id="year"></span> Avva Sai Pranav</span>
+</footer>
+
+<script>
+  const root = document.documentElement;
+  const toggle = document.getElementById('themeToggle');
+  const knob = document.getElementById('themeKnob');
+  const clockEl = document.getElementById('clock');
+  const yearEl = document.getElementById('year');
+
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  function applyTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    knob.textContent = theme === 'dark' ? '☀' : '☾';
+    try { localStorage.setItem('site-theme', theme); } catch (e) {}
+  }
+
+  let saved = null;
+  try { saved = localStorage.getItem('site-theme'); } catch (e) {}
+  const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+  applyTheme(saved || (prefersLight ? 'light' : 'dark'));
+
+  toggle.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+  });
+
+  function tickClock() {
+    if (clockEl) clockEl.textContent = new Date().toLocaleTimeString('en-GB');
+  }
+  tickClock();
+  setInterval(tickClock, 1000);
+
+  const projOne = document.getElementById("proj_one");
+  const projTwo = document.getElementById("proj_two");
+
+  if (projOne) {
+    projOne.addEventListener("click", () => { window.location.href = "project1.html"; });
+  }
+  if (projTwo) {
+    projTwo.addEventListener("click", () => { window.location.href = "project2.html"; });
+  }
+
+  const domainChips = document.querySelectorAll('.skills-list .chip');
+  const bubbles = document.querySelectorAll('.bubble[data-domains]');
+
+  function highlightDomain(domain) {
+    bubbles.forEach(b => {
+      const matches = b.dataset.domains.split(' ').includes(domain);
+      b.classList.toggle('highlight', matches);
+      b.classList.toggle('dim', !matches);
+    });
+  }
+  function clearHighlight() {
+    bubbles.forEach(b => b.classList.remove('highlight', 'dim'));
+    domainChips.forEach(c => c.classList.remove('active'));
+  }
+
+  domainChips.forEach(chip => {
+    chip.addEventListener('mouseenter', () => highlightDomain(chip.dataset.domain));
+    chip.addEventListener('mouseleave', clearHighlight);
+    chip.addEventListener('click', () => {
+      const isActive = chip.classList.contains('active');
+      clearHighlight();
+      if (!isActive) {
+        chip.classList.add('active');
+        highlightDomain(chip.dataset.domain);
       }
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>

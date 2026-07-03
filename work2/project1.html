@@ -28,228 +28,201 @@
   </nav>
 </header>
 
-<!-- Project Hero -->
-<section class="project-hero">
-  <p class="section-eyebrow">Project</p>
-  <h1 class="project-title">A Novel Accordion-Like Disk Resonator Gyroscope</h1>
-  <p class="project-subtitle">MEMS Gyroscope Design · Simulation · Fabrication · Testing</p>
-  <div class="project-meta">
-    <span class="meta-item">🏛️ M2D2 Laboratory, Indian Institute of Science</span>
-    <span class="meta-item">👤 Prof. G. K. Ananthasuresh</span>
-    <span class="meta-item">🎤 ICMNSS Conference</span>
-  </div>
-</section>
-
-<!-- Key Results Stats -->
 <section class="section">
-  <div class="stats-row">
-    <div class="stat-card">
-      <span class="stat-value">3–4×</span>
-      <span class="stat-label">Higher Sensitivity</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">6771 Hz</span>
-      <span class="stat-label">Drive Frequency</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">&lt;1.4%</span>
-      <span class="stat-label">Sim-to-Fab Error</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">46.4%</span>
-      <span class="stat-label">Capacitance Change</span>
-    </div>
-  </div>
-</section>
+  <a href="../index.html#info" class="back-link">← Back to projects</a>
 
-<!-- Overview -->
-<section class="section">
-  <h2 class="section-title">Project Overview</h2>
-  <div class="two-col">
-    <div class="col-text">
-      <p>Disk Resonator Gyroscopes (DRGs) sense rotation using Coriolis forces acting on a vibrating ring — the same physics behind a Foucault pendulum, just shrunk down to millimeters.</p>
-      <p>Over the years, designs like the Boeing DRG, Honeycomb DRG, Cobweb DRG, and Gear DRG each pushed sensitivity a little further, from 0.04 deg/sec down to 0.015 deg/sec, but each traded off electrode placement against mechanical performance.</p>
-      <p>This project asked a simple question: <strong>could an entirely different ring geometry — an "accordion-like" pattern — beat the existing field on mechanical sensitivity and noise?</strong></p>
-    </div>
-    <div class="col-visual">
-      <img src="../documents/MEMS Engineer/2.jpeg" alt="ADRG die close-up showing ring pattern" class="project-img">
-      <p class="img-caption">ADRG die showing accordion-style ring pattern</p>
-    </div>
-  </div>
-</section>
-
-<!-- Design & Simulation -->
-<section class="section-alt">
-  <div class="section-inner">
-    <h2 class="section-title">Design & Simulation</h2>
-    <p>I ran finite-element eigenfrequency analysis across five ring topologies — DRG, HDRG, CDRG, GDRG, and my proposed ADRG — each built with 9 rings, an 8mm outer diameter, 10μm in-plane ring width, and 60μm thickness.</p>
+  <div class="project-layout">
     
-    <div class="table-wrapper">
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>DRG Type</th>
-            <th>Eigenfrequency (Hz)</th>
-            <th>Quality Factor (k)</th>
-            <th>Mech. Sensitivity (μm/rad/s)</th>
-            <th>Brownian Noise (rad/s/√Hz)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>DRG</td>
-            <td>12720</td>
-            <td>103.62</td>
-            <td>3.83e-6</td>
-            <td>1.01e-6</td>
-          </tr>
-          <tr>
-            <td>HDRG</td>
-            <td>11306</td>
-            <td>105.42</td>
-            <td>4.27e-6</td>
-            <td>1.29e-6</td>
-          </tr>
-          <tr>
-            <td>CDRG</td>
-            <td>12611</td>
-            <td>99.99</td>
-            <td>3.61e-6</td>
-            <td>1.12e-6</td>
-          </tr>
-          <tr>
-            <td>GDRG</td>
-            <td>14761</td>
-            <td>91.58</td>
-            <td>2.76e-6</td>
-            <td>1.17e-6</td>
-          </tr>
-          <tr class="highlight-row">
-            <td>ADRG (Ours)</td>
-            <td>6771</td>
-            <td>181.55</td>
-            <td>12.1e-6</td>
-            <td>1.07e-6</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="table-note">The ADRG's mechanical sensitivity is roughly 3–4× higher than every other topology tested, while holding competitive noise performance.</p>
-    
-    <p>Capacitance modeling (accounting for fringing fields, not just the textbook parallel-plate formula) backed this up — the ADRG's relative sense capacitance change was the largest of the five designs at <strong>46.4%</strong>, versus 14–29% for the others.</p>
-  </div>
-</section>
+    <!-- STICKY SIDEBAR - Always visible -->
+    <aside class="project-sidebar" id="projectSidebar">
+    <div class="sidebar-header">On This Page</div>
+    <a href="#summary" class="sidebar-link active">Summary</a>
+    <a href="#problem" class="sidebar-link">Problem Statement</a>
+    <a href="#methodology" class="sidebar-link">Methodology</a>
+    <a href="#design-sim" class="sidebar-link sidebar-sublink">Design & Simulation</a>
+    <a href="#fabrication" class="sidebar-link sidebar-sublink">Fabrication</a>
+    <a href="#test-setup" class="sidebar-link">Test Setup</a>
+    <a href="#results" class="sidebar-link">Results</a>
+    <a href="#gallery" class="sidebar-link">Gallery</a>
+  </aside>
 
-<!-- Fabrication -->
-<section class="section">
-  <h2 class="section-title">Fabrication</h2>
-  <p>The design moved from simulation to silicon at CeNSE (Centre for Nano Science and Engineering).</p>
-  
-  <div class="gallery">
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/2.jpeg" alt="ADRG die close-up showing ring pattern">
-      <figcaption>ADRG die with accordion ring pattern</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/3.jpeg" alt="ADRG chip wire-bonded into ceramic package">
-      <figcaption>Wire-bonded into 68-pin ceramic package</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/4.jpeg" alt="Fabricated ADRG dies on glass slides">
-      <figcaption>Fabricated dies on glass slides</figcaption>
-    </figure>
-  </div>
-  
-  <p>Individual ADRG chips on glass slides, each with the resonator's accordion-style ring pattern visible under its protective coating — and the completed chip wire-bonded into a 68-pin ceramic package with color-coded leads carrying drive, sense, and common signals to the test board.</p>
-</section>
+    <!-- MAIN CONTENT -->
+    <div class="project-content">
 
-<!-- Test Setup -->
-<section class="section-alt">
-  <div class="section-inner">
-    <h2 class="section-title">Pinout & Test Setup</h2>
-    <div class="two-col">
-      <div class="col-text">
-        <h3 class="section-subtitle">Electrode Configuration</h3>
-        <ul class="check-list">
-          <li>4 common pins</li>
-          <li>16 individually addressable outer electrodes for drive and sense</li>
-          <li>Companion accelerometer die with separate X/Y sense and feedback electrode pairs</li>
-        </ul>
-        
-        <h3 class="section-subtitle">LDV Testing</h3>
-        <ul class="check-list">
-          <li>Drive signal combining AC and DC bias excited the resonator</li>
-          <li>LDV measured out-of-plane velocity at 0° and 180° points on the ring</li>
-          <li>Characterized frequency response under controlled conditions</li>
-        </ul>
-      </div>
-      <div class="col-visual">
-        <img src="../documents/MEMS Engineer/3.jpeg" alt="Wire-bonded package for testing" class="project-img">
-        <p class="img-caption">68-pin ceramic package ready for LDV testing</p>
-      </div>
-    </div>
-  </div>
-</section>
+      <!-- SUMMARY -->
+      <div id="summary" class="project-block">
+        <p class="section-eyebrow">Project · MEMS</p>
+        <h2>A Novel Accordion-Like Disk Resonator Gyroscope</h2>
+        <p style="color:var(--text-dim); max-width:70ch; margin-bottom: var(--space-6); font-size: var(--text-sm);">
+          MEMS Gyroscope Design · Simulation · Fabrication · Testing — M2D2 Laboratory, Indian Institute of Science
+        </p>
+        <p style="color:var(--text); max-width:70ch; margin-bottom: var(--space-8);">
+          Disk Resonator Gyroscopes sense rotation through Coriolis forces on a vibrating ring. This project
+          tested whether an "accordion-like" ring geometry could beat four established DRG topologies on
+          mechanical sensitivity, and carried the winning design from simulation through fabrication and
+          physical testing.
+        </p>
 
-<!-- Results -->
-<section class="section">
-  <h2 class="section-title">Results</h2>
-  <div class="resume-card">
-    <p>Under controlled atmospheric conditions (1 atm, 25°C), the fabricated ADRG resonated at approximately <strong>6.8 kHz</strong> — within <strong>1.2–1.4%</strong> of the FEM-predicted eigenfrequency, confirming the simulation model held up in the real device.</p>
-  </div>
-</section>
+        <div class="stat-strip">
+          <div class="stat-card">
+            <span class="stat-value">12.1</span>
+            <span class="stat-unit">µm/rad/s</span>
+            <span class="stat-label">Mechanical sensitivity — 3–4× prior designs</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">6.77</span>
+            <span class="stat-unit">kHz</span>
+            <span class="stat-label">Drive-mode eigenfrequency — matched within 1.2–1.4% in test</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">181.6</span>
+            <span class="stat-unit">Q factor</span>
+            <span class="stat-label">Highest of the five topologies tested</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">46.4%</span>
+            <span class="stat-unit">ΔC</span>
+            <span class="stat-label">Largest relative sense-capacitance change</span>
+          </div>
+        </div>
+      </div>
 
-<!-- My Contributions -->
-<section class="section">
-  <h2 class="section-title">My Contributions</h2>
-  <div class="role-grid">
-    <div class="role-item">
-      <span class="role-icon">📐</span>
-      <div class="role-text">
-        <strong>ADRG Geometry Design</strong>
-        <p>Designed the novel accordion-like ring topology</p>
+      <!-- PROBLEM STATEMENT -->
+      <div id="problem" class="project-block">
+        <h3>Problem Statement</h3>
+        <p style="color:var(--text);">
+          Existing DRG topologies — Boeing, Honeycomb, Cobweb, and Gear DRG — each pushed sensitivity a little
+          further (0.04 down to 0.015 deg/sec) but always traded electrode placement against mechanical
+          performance. The open question: could a different ring geometry raise mechanical sensitivity without
+          giving up noise performance?
+        </p>
       </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">💻</span>
-      <div class="role-text">
-        <strong>FEM Modeling</strong>
-        <p>Led eigenfrequency and capacitance modeling across all five DRG topologies</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">🔬</span>
-      <div class="role-text">
-        <strong>Experimental Characterization</strong>
-        <p>Ran LDV-based testing of the fabricated device</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">📊</span>
-      <div class="role-text">
-        <strong>Comparative Analysis</strong>
-        <p>Benchmarked ADRG against DRG, HDRG, CDRG, and GDRG</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Credits -->
-<section class="section">
-  <div class="credits-box">
-    <h3>Team & Acknowledgments</h3>
-    <p><strong>Advisor:</strong> Prof. G. K. Ananthasuresh</p>
-    <p><strong>Co-Advisor:</strong> Karthik (ISRO)</p>
-    <p><strong>Design & Simulation Support:</strong> Sai Kumar, Suman Acharya</p>
-    <p><strong>Fabrication:</strong> Sudhanshu Shekhar</p>
-    <p><strong>Funding:</strong> ISRO</p>
-    <p><strong>Facilities:</strong> CeNSE (Centre for Nano Science and Engineering)</p>
-  </div>
-</section>
+      <!-- METHODOLOGY -->
+      <div id="methodology" class="project-block">
+        <h3>Methodology</h3>
+        <p style="color:var(--text-dim); font-size: var(--text-sm);">
+          Finite-element simulation to select the best geometry, then fabrication and physical testing of the result.
+        </p>
+      </div>
 
-<!-- Back Link -->
-<section class="section" style="text-align: center;">
-  <a href="../index.html#info" class="btn btn-ghost">← Back to Projects</a>
+      <!-- DESIGN & SIMULATION -->
+      <div id="design-sim" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Design &amp; Simulation</h4>
+        <p style="color:var(--text); margin-bottom: var(--space-6);">
+          Eigenfrequency analysis across five ring topologies (DRG, HDRG, CDRG, GDRG, and the proposed ADRG),
+          each built with 9 rings, 8 mm outer diameter, 10 µm ring width, 60 µm thickness. Capacitance modeling
+          accounted for fringing fields rather than the textbook parallel-plate formula.
+        </p>
+        <div class="bar-chart">
+          <div class="bar-row"><span class="bar-name">DRG</span><div class="bar-track"><div class="bar-fill" style="width:31.7%"></div></div><span class="bar-val">3.83</span></div>
+          <div class="bar-row"><span class="bar-name">HDRG</span><div class="bar-track"><div class="bar-fill" style="width:35.3%"></div></div><span class="bar-val">4.27</span></div>
+          <div class="bar-row"><span class="bar-name">CDRG</span><div class="bar-track"><div class="bar-fill" style="width:29.8%"></div></div><span class="bar-val">3.61</span></div>
+          <div class="bar-row"><span class="bar-name">GDRG</span><div class="bar-track"><div class="bar-fill" style="width:22.8%"></div></div><span class="bar-val">2.76</span></div>
+          <div class="bar-row bar-row-highlight"><span class="bar-name">ADRG</span><div class="bar-track"><div class="bar-fill bar-fill-highlight" style="width:100%"></div></div><span class="bar-val">12.1</span></div>
+        </div>
+        <p class="bar-chart-caption">Mechanical sensitivity, µm per rad/s — higher is better</p>
+      </div>
+
+      <!-- FABRICATION -->
+      <div id="fabrication" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Fabrication</h4>
+        <p style="color:var(--text);">
+          Fabricated at CeNSE (Centre for Nano Science and Engineering) and wire-bonded into a 68-pin ceramic
+          package, with color-coded leads carrying drive, sense, and common signals to the test board.
+          Photos and video are in the <a href="#gallery" style="color:var(--accent-bright);">gallery below</a>.
+        </p>
+      </div>
+
+      <!-- TEST SETUP -->
+      <div id="test-setup" class="project-block">
+        <h3>Test Setup</h3>
+        <p style="color:var(--text); margin-bottom: var(--space-4);">
+          16 individually addressable outer electrodes handle drive and sense, sharing 4 common pins; a
+          companion accelerometer die on the same package carries separate X/Y sense and feedback pairs.
+          Testing used a Laser Doppler Vibrometer — an AC+DC drive signal excited the resonator while the LDV
+          measured out-of-plane velocity at 0° and 180° to trace the frequency response.
+        </p>
+        <div class="schematic-wrap">
+          <svg viewBox="-190 -190 380 380" class="blueprint-svg-inline" xmlns="http://www.w3.org/2000/svg">
+            <circle r="95" class="bp-part-fine" fill="none" stroke-width="1"/>
+            <circle r="75" class="bp-part-fine" fill="none" stroke-width="1"/>
+            <circle r="55" class="bp-part" fill="none" stroke-width="1.3"/>
+            <circle r="20" class="bp-part" fill="var(--bp-line-strong, var(--accent-bright))" opacity="0.5"/>
+            <rect x="142.1" y="24.3" width="10" height="10" class="bp-part-fine" fill="none" stroke-width="1"/>
+            <rect x="119.7" y="78.3" width="10" height="10" class="bp-part-fine" fill="none" stroke-width="1"/>
+            <rect x="78.3" y="119.7" width="10" height="10" class="bp-part-fine" fill="none" stroke-width="1"/>
+            <rect x="24.3" y="142.1" width="10" height="10" class="bp-part-fine" fill="none" stroke-width="1"/>
+            <rect x="-34.3" y="142.1" width="10" height="10" class="bp-part-fine" fill="none" stroke-width="1"/>
+            <rect x="-88.3" y="119.7" width="10" height="10" class="bp-part-fine" fill="none" stroke-width="1"/>
+            <rect x="-129.7" y="78.3" width="10" height="10" class="bp-part-fine" fill="none" stroke-width="1"/>
+            <rect x="-152.1" y="24.3" width="10" height="10" class="bp-part-fine" fill="none" stroke-width="1"/>
+            <rect x="-152.1" y="-34.3" width="10" height="10" class="bp-part-fine" fill="none" stroke-width="1"/>
+            <rect x="-129.7" y="-88.3" width="10" height="10" class="bp-part-fine" fill="none" stroke-width="1"/>
+            <rect x="-88.3" y="-129.7" width="10" height="10" class="bp-part-fine" fill="none" stroke-width="1"/>
+            <rect x="-34.3" y="-152.1" width="10" height="10" class="bp-part-fine" fill="none" stroke-width="1"/>
+            <rect x="24.3" y="-152.1" width="10" height="10" class="bp-part-fine" fill="none" stroke-width="1"/>
+            <rect x="78.3" y="-129.7" width="10" height="10" class="bp-part-fine" fill="none" stroke-width="1"/>
+            <rect x="119.7" y="-88.3" width="10" height="10" class="bp-part-fine" fill="none" stroke-width="1"/>
+            <rect x="142.1" y="-34.3" width="10" height="10" class="bp-part-fine" fill="none" stroke-width="1"/>
+            <circle cx="150.0" cy="0.0" r="7" class="bp-part" fill="var(--bp-line-strong, var(--accent-bright))" stroke-width="1.2"/>
+            <circle cx="0.0" cy="150.0" r="7" class="bp-part" fill="var(--bp-line-strong, var(--accent-bright))" stroke-width="1.2"/>
+            <circle cx="-150.0" cy="0.0" r="7" class="bp-part" fill="var(--bp-line-strong, var(--accent-bright))" stroke-width="1.2"/>
+            <circle cx="-0.0" cy="-150.0" r="7" class="bp-part" fill="var(--bp-line-strong, var(--accent-bright))" stroke-width="1.2"/>
+            <text x="0" y="-172" text-anchor="middle" class="bp-text" font-size="9" letter-spacing="0.5">16 SENSE/DRIVE ELECTRODES · 4 COMMON PINS</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- RESULTS -->
+      <div id="results" class="project-block">
+        <h3>Results</h3>
+        <p style="color:var(--text); margin-bottom: var(--space-6);">
+          Under controlled conditions (1 atm, 25°C) the fabricated ADRG resonated at ≈6.8 kHz — within
+          1.2–1.4% of the FEM-predicted eigenfrequency, confirming the simulation held up in silicon.
+        </p>
+        <p style="color:var(--text-dim); font-size: var(--text-sm);">
+          <strong style="color:var(--headline);">Contributions &amp; credits:</strong> I led eigenfrequency and
+          capacitance modeling across all five topologies, designed the ADRG geometry, and ran the LDV-based
+          experimental characterization. Guided by Prof. Ananthasuresh and Karthik (ISRO), with simulation
+          support from Sai Kumar and Suman Acharya, and fabrication by Sudhanshu Shekhar. Funded by ISRO;
+          fabricated and characterized at CeNSE.
+        </p>
+      </div>
+
+      <!-- GALLERY - Now inside project-content so sidebar stays visible -->
+      <div id="gallery" class="project-block gallery-section">
+        <p class="section-eyebrow">Fabrication</p>
+        <h3>Gallery</h3>
+        <p style="color:var(--text-dim); max-width:70ch; margin-bottom: var(--space-6); font-size: var(--text-sm);">
+          Photos from fabrication and testing. Use the arrows or dots to browse.
+        </p>
+
+        <div class="carousel" id="fabCarousel" tabindex="0">
+          <div class="carousel-viewport">
+            <div class="carousel-track" id="fabTrack">
+              <figure class="carousel-slide">
+                <img src="../documents/MEMS Engineer/2.jpeg" alt="ADRG die close-up showing ring pattern">
+                <figcaption>Die close-up — accordion ring pattern</figcaption>
+              </figure>
+              <figure class="carousel-slide">
+                <img src="../documents/MEMS Engineer/3.jpeg" alt="ADRG chip wire-bonded into ceramic package">
+                <figcaption>Wire-bonded into 68-pin package</figcaption>
+              </figure>
+              <figure class="carousel-slide">
+                <img src="../documents/MEMS Engineer/4.jpeg" alt="Fabricated ADRG dies on glass slides">
+                <figcaption>Fabricated dies, glass slides</figcaption>
+              </figure>
+            </div>
+          </div>
+          <button type="button" class="carousel-arrow carousel-prev" aria-label="Previous slide">‹</button>
+          <button type="button" class="carousel-arrow carousel-next" aria-label="Next slide">›</button>
+          <div class="carousel-dots" id="fabDots"></div>
+        </div>
+      </div>
+
+    </div><!-- end project-content -->
+  </div><!-- end project-layout -->
 </section>
 
 <footer class="footer">
@@ -257,6 +230,7 @@
 </footer>
 
 <script>
+  // ── Theme & Clock ──
   const root = document.documentElement;
   const toggle = document.getElementById('themeToggle');
   const knob = document.getElementById('themeKnob');
@@ -286,6 +260,137 @@
   }
   tickClock();
   setInterval(tickClock, 1000);
+
+  // ── Sidebar Scrollspy ──
+  const sidebar = document.getElementById('projectSidebar');
+  const sidebarLinks = document.querySelectorAll('.sidebar-link');
+  const sections = [];
+
+  // Build sections array
+  sidebarLinks.forEach(link => {
+    const targetId = link.getAttribute('href').substring(1);
+    const target = document.getElementById(targetId);
+    if (target) {
+      sections.push({ id: targetId, el: target, link: link });
+    }
+  });
+
+  function updateActiveLink() {
+    const scrollPos = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+    
+    // Check if at bottom of page
+    const atBottom = scrollPos + windowHeight >= docHeight - 50;
+    
+    if (atBottom && sections.length > 0) {
+      // At bottom - highlight last section (Gallery)
+      sidebarLinks.forEach(link => link.classList.remove('active'));
+      sections[sections.length - 1].link.classList.add('active');
+      return;
+    }
+    
+    // Find current section based on scroll position
+    let currentSection = sections[0];
+    const offset = 200; // Trigger point from top
+    
+    for (const section of sections) {
+      const rect = section.el.getBoundingClientRect();
+      if (rect.top <= offset) {
+        currentSection = section;
+      }
+    }
+    
+    // Update active states
+    sidebarLinks.forEach(link => link.classList.remove('active'));
+    if (currentSection) {
+      currentSection.link.classList.add('active');
+    }
+  }
+
+  // Smooth scroll on click
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      
+      if (target) {
+        const headerOffset = 160;
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+        
+        // Update active state immediately
+        sidebarLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  });
+
+  // Throttled scroll listener
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateActiveLink();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  // Initial state
+  updateActiveLink();
+
+  // ── Media Carousel ──
+  function initCarousel(carouselEl) {
+    const track = carouselEl.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const prevBtn = carouselEl.querySelector('.carousel-prev');
+    const nextBtn = carouselEl.querySelector('.carousel-next');
+    const dotsWrap = carouselEl.querySelector('.carousel-dots');
+    let index = 0;
+
+    // Create dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
+    const dots = Array.from(dotsWrap.children);
+
+    function goTo(i) {
+      index = (i + slides.length) % slides.length;
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((d, di) => d.classList.toggle('active', di === index));
+      
+      // Pause videos not in view
+      slides.forEach((slide, si) => {
+        const vid = slide.querySelector('video');
+        if (vid && si !== index) vid.pause();
+      });
+    }
+
+    prevBtn.addEventListener('click', () => goTo(index - 1));
+    nextBtn.addEventListener('click', () => goTo(index + 1));
+    
+    // Keyboard navigation
+    carouselEl.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') goTo(index - 1);
+      if (e.key === 'ArrowRight') goTo(index + 1);
+    });
+  }
+
+  // Initialize all carousels
+  document.querySelectorAll('.carousel').forEach(initCarousel);
 </script>
 
 </body>

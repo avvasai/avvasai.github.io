@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-
 <header class="masthead">
   <h1 class="giant-name">Avva Sai Pranav</h1>
   <nav class="pill-nav">
@@ -44,8 +43,11 @@
     <a href="#test-setup" class="sidebar-link">Test Setup</a>
     <a href="#results" class="sidebar-link">Results</a>
     <a href="#gallery" class="sidebar-link">Gallery</a>
+    <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">
+  ↑ Top
+    </button>
   </aside>
-
+  
     <!-- MAIN CONTENT -->
     <div class="project-content">
 
@@ -262,90 +264,115 @@
   setInterval(tickClock, 1000);
 
   // ── Sidebar Scrollspy ──
-  const sidebar = document.getElementById('projectSidebar');
-  const sidebarLinks = document.querySelectorAll('.sidebar-link');
-  const sections = [];
+const sidebar = document.querySelector('.project-sidebar');
+const sidebarHeader = document.querySelector('.sidebar-header');
+const sidebarLinks = document.querySelectorAll('.sidebar-link');
+const sections = [];
 
-  // Build sections array
-  sidebarLinks.forEach(link => {
-    const targetId = link.getAttribute('href').substring(1);
-    const target = document.getElementById(targetId);
-    if (target) {
-      sections.push({ id: targetId, el: target, link: link });
-    }
-  });
+// Build sections array
+sidebarLinks.forEach(link => {
+  const targetId = link.getAttribute('href').substring(1);
+  const target = document.getElementById(targetId);
+  if (target) {
+    sections.push({ id: targetId, el: target, link: link });
+  }
+});
 
-  function updateActiveLink() {
-    const scrollPos = window.scrollY;
-    const windowHeight = window.innerHeight;
-    const docHeight = document.documentElement.scrollHeight;
-    
-    // Check if at bottom of page
-    const atBottom = scrollPos + windowHeight >= docHeight - 50;
-    
-    if (atBottom && sections.length > 0) {
-      // At bottom - highlight last section (Gallery)
-      sidebarLinks.forEach(link => link.classList.remove('active'));
-      sections[sections.length - 1].link.classList.add('active');
-      return;
-    }
-    
-    // Find current section based on scroll position
-    let currentSection = sections[0];
-    const offset = 200; // Trigger point from top
-    
+// Smart auto-scroll sidebar to keep header + active link visible
+function scrollSidebarToActive(activeLink) {
+  if (!sidebar || !activeLink) return;
+  
+  const allLinks = Array.from(sidebarLinks);
+  const activeIndex = allLinks.indexOf(activeLink);
+  const totalLinks = allLinks.length;
+  
+  // Only scroll sidebar down for the last 2 items (Results, Gallery)
+  // Otherwise, keep at top so Summary is always visible
+  if (activeIndex >= totalLinks - 2) {
+    // For bottom items, scroll to show them
+    const headerHeight = sidebarHeader ? sidebarHeader.offsetHeight + 10 : 50;
+    const scrollTarget = activeLink.offsetTop - headerHeight;
+    sidebar.scrollTo({
+      top: scrollTarget,
+      behavior: 'smooth'
+    });
+  } else {
+    // For top/middle items, keep sidebar at top
+    sidebar.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+}
+function updateActiveLink() {
+  const scrollPos = window.scrollY;
+  const windowHeight = window.innerHeight;
+  const docHeight = document.documentElement.scrollHeight;
+  
+  // Check if at bottom of page
+  const atBottom = scrollPos + windowHeight >= docHeight - 50;
+  
+  let activeSection = sections[0];
+  
+  if (atBottom && sections.length > 0) {
+    activeSection = sections[sections.length - 1];
+  } else {
+    const offset = 200;
     for (const section of sections) {
       const rect = section.el.getBoundingClientRect();
       if (rect.top <= offset) {
-        currentSection = section;
+        activeSection = section;
       }
-    }
-    
-    // Update active states
-    sidebarLinks.forEach(link => link.classList.remove('active'));
-    if (currentSection) {
-      currentSection.link.classList.add('active');
     }
   }
+  
+  // Update active states
+  sidebarLinks.forEach(link => link.classList.remove('active'));
+  if (activeSection) {
+    activeSection.link.classList.add('active');
+    scrollSidebarToActive(activeSection.link);
+  }
+}
 
-  // Smooth scroll on click
-  sidebarLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute('href').substring(1);
-      const target = document.getElementById(targetId);
+// Smooth scroll on click
+sidebarLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href').substring(1);
+    const target = document.getElementById(targetId);
+    
+    if (target) {
+      const headerOffset = 160;
+      const elementPosition = target.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
       
-      if (target) {
-        const headerOffset = 160;
-        const elementPosition = target.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.scrollY - headerOffset;
-        
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-        
-        // Update active state immediately
-        sidebarLinks.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-      }
-    });
-  });
-
-  // Throttled scroll listener
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        updateActiveLink();
-        ticking = false;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
       });
-      ticking = true;
+      
+      // Update active state immediately
+      sidebarLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+      scrollSidebarToActive(link);
     }
   });
+});
 
-  // Initial state
-  updateActiveLink();
+// Throttled scroll listener
+let ticking = false;
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      updateActiveLink();
+      ticking = false;
+    });
+    ticking = true;
+  }
+});
+
+// Initial state
+updateActiveLink();
 
   // ── Media Carousel ──
   function initCarousel(carouselEl) {
@@ -391,6 +418,32 @@
 
   // Initialize all carousels
   document.querySelectorAll('.carousel').forEach(initCarousel);
+  // ── Back to Top Button ──
+const topBtn = document.getElementById('sidebarTopBtn');
+
+if (topBtn) {
+  topBtn.addEventListener('click', () => {
+    // Scroll page to top
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    
+    // Scroll sidebar to top
+    if (sidebar) {
+      sidebar.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+    
+    // Update active state to Summary
+    sidebarLinks.forEach(link => link.classList.remove('active'));
+    if (sidebarLinks[0]) {
+      sidebarLinks[0].classList.add('active');
+    }
+  });
+}
 </script>
 
 </body>

@@ -340,3 +340,560 @@ a { color: inherit; text-decoration: none; }
   display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-3);
   color: var(--text-faint); font-size: var(--text-xs); position: relative; z-index: 1;
 }
+/* Project Hero */
+.project-hero {
+  padding: var(--space-8) var(--space-4);
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-hero h2 {
+  margin-bottom: var(--space-3);
+}
+
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+  color: var(--text-dim);
+  font-size: var(--text-sm);
+}
+
+/* Stats Row */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.stat-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: var(--space-4);
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--headline);
+}
+
+.stat-label {
+  font-size: var(--text-xs);
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Two Column Layout */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.two-col.reverse {
+  direction: rtl;
+}
+
+.two-col.reverse > * {
+  direction: ltr;
+}
+
+.col-text h3 {
+  margin-bottom: var(--space-3);
+}
+
+.col-text p {
+  color: var(--text-dim);
+  margin-bottom: var(--space-3);
+  line-height: 1.6;
+}
+
+.project-img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.img-caption {
+  display: block;
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--text-dim);
+  margin-top: var(--space-2);
+}
+
+/* Alternating Section Background */
+.section-alt {
+  background: var(--card-bg);
+  margin-left: calc(-1 * var(--space-4));
+  margin-right: calc(-1 * var(--space-4));
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+/* Check List */
+.check-list {
+  list-style: none;
+  padding: 0;
+}
+
+.check-list li {
+  padding-left: var(--space-4);
+  position: relative;
+  margin-bottom: var(--space-2);
+  color: var(--text);
+}
+
+.check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* Data Table */
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: var(--space-3);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.data-table th,
+.data-table td {
+  padding: var(--space-2) var(--space-3);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.data-table th {
+  color: var(--text-dim);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: var(--text-xs);
+}
+
+.data-table td {
+  color: var(--text);
+}
+
+.highlight-row {
+  background: var(--accent-dim);
+}
+
+.highlight-row td {
+  color: var(--headline);
+}
+
+.table-note {
+  font-size: var(--text-xs);
+  color: var(--text-dim);
+}
+
+.section-subtitle {
+  color: var(--text-dim);
+  margin-bottom: var(--space-4);
+  font-size: var(--text-sm);
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+
+.gallery-item {
+  margin: 0;
+}
+
+.gallery-item img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.gallery-item figcaption {
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--text-dim);
+  margin-top: var(--space-2);
+}
+
+/* Role Grid */
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-3);
+}
+
+.role-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.role-icon {
+  font-size: var(--text-lg);
+}
+
+.role-text {
+  color: var(--text);
+  font-size: var(--text-sm);
+}
+
+/* Credits */
+.credits-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--text-dim);
+}
+
+.credits-box p {
+  margin-bottom: var(--space-2);
+}
+
+.credits-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+  
+  .two-col.reverse {
+    direction: ltr;
+  }
+  
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* ========================================
+   PROJECT PAGE RESPONSIVE
+   ======================================== */
+
+@media (max-width: 900px) {
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .two-col.reverse .col-visual {
+    order: 0;
+  }
+
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .role-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-hero {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .project-meta {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .stats-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item img {
+    height: auto;
+    aspect-ratio: 4/3;
+  }
+
+  .section-alt {
+    margin-left: calc(-1 * var(--space-4));
+    margin-right: calc(-1 * var(--space-4));
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+}
+/* ========================================
+   PROJECT PAGE - ADDITIONS & FIXES
+   ======================================== */
+
+/* Add missing CSS variables to both themes */
+[data-theme="dark"] {
+  /* ... existing variables ... */
+  --card-bg: var(--bg-elevated);
+  --accent-dim: rgba(104, 172, 229, 0.15);
+}
+
+[data-theme="light"] {
+  /* ... existing variables ... */
+  --card-bg: var(--bg-elevated);
+  --accent-dim: rgba(0, 45, 114, 0.1);
+}
+
+/* ── NAV BAR (for project pages) ── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-4) var(--space-6);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--text-lg);
+  color: var(--headline);
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.nav-links a {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-dim);
+  transition: color 180ms ease;
+}
+
+.nav-links a:hover {
+  color: var(--headline);
+}
+
+/* ── PROJECT HERO FIXES ── */
+.project-hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-8) var(--space-8);
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-title {
+  font-family: var(--headline-font);
+  font-weight: var(--headline-weight);
+  font-size: var(--text-xl);
+  color: var(--headline);
+  margin-bottom: var(--space-3);
+}
+
+.project-subtitle {
+  font-size: var(--text-lg);
+  color: var(--text-dim);
+  margin-bottom: var(--space-6);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* ── SECTION TITLE (for project pages) ── */
+.section-title {
+  font-family: var(--headline-font);
+  font-weight: var(--headline-weight);
+  font-size: var(--text-lg);
+  color: var(--headline);
+  margin-bottom: var(--space-6);
+}
+
+.section-subtitle {
+  font-family: var(--headline-font);
+  font-weight: 600;
+  font-size: var(--text-base);
+  color: var(--headline);
+  margin-bottom: var(--space-4);
+}
+
+/* ── SECTION-ALT FIX (full-width background) ── */
+.section-alt {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: var(--card-bg);
+  padding: var(--space-10) 0;
+}
+
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-8);
+}
+
+/* ── STATS ROW FIX ── */
+.stat-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--space-5);
+  text-align: center;
+}
+
+/* ── TWO-COL REVERSE FIX ── */
+.two-col.reverse {
+  direction: ltr;
+}
+
+.two-col.reverse .col-visual {
+  order: -1;
+}
+
+/* ── GALLERY HEIGHT FIX ── */
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+}
+
+/* ── ROLE GRID STYLING ── */
+.role-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--space-4);
+}
+
+.role-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.role-text strong {
+  display: block;
+  color: var(--headline);
+  margin-bottom: var(--space-2);
+}
+
+.role-text p {
+  font-size: var(--text-sm);
+  color: var(--text-dim);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── CREDITS BOX ── */
+.credits-box {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--space-6);
+}
+
+.credits-box h3 {
+  font-family: var(--headline-font);
+  font-weight: 700;
+  font-size: var(--text-base);
+  color: var(--headline);
+  margin-bottom: var(--space-4);
+}
+
+.credits-box p {
+  font-size: var(--text-sm);
+  color: var(--text-dim);
+  margin-bottom: var(--space-2);
+  line-height: 1.6;
+}
+
+.credits-box p:last-child {
+  margin-bottom: 0;
+}
+
+.credits-box strong {
+  color: var(--text);
+}
+
+/* ── DATA TABLE HIGHLIGHT FIX ── */
+.highlight-row {
+  background: var(--accent-dim);
+}
+
+.highlight-row td {
+  color: var(--headline);
+  font-weight: 600;
+}
+
+/* ── MAIN WRAPPER (for project pages) ── */
+.main {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── RESPONSIVE FIXES ── */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: var(--space-4);
+  }
+  
+  .project-hero {
+    padding: var(--space-8) var(--space-4);
+  }
+  
+  .section {
+    padding: var(--space-8) var(--space-4);
+  }
+  
+  .section-inner {
+    padding: 0 var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links a {
+    font-size: var(--text-xs);
+  }
+  
+  .gallery-item img {
+    height: 160px;
+  }
+}

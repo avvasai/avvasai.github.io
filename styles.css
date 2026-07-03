@@ -318,8 +318,7 @@ a { color: inherit; text-decoration: none; }
   .gallery-grid { grid-template-columns: 1fr; }
 }
 
-/* ── PROJECT SIDEBAR LAYOUT (UPDATED) ── */
-/* ── PROJECT SIDEBAR LAYOUT (FIXED) ── */
+/* ── PROJECT SIDEBAR LAYOUT ── */
 .project-layout {
   display: grid;
   grid-template-columns: 1fr 220px;
@@ -340,10 +339,31 @@ a { color: inherit; text-decoration: none; }
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
+  /* Scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.project-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.project-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.project-sidebar::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+.project-sidebar::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
 }
 
 /* "On This Page" header */
 .sidebar-header {
+  display: block;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: .12em;
@@ -355,6 +375,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .sidebar-link {
+  display: block;
   font-size: var(--text-sm);
   font-weight: 600;
   color: var(--text-dim);
@@ -455,6 +476,17 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
+/* ── GALLERY SECTION (inside project layout) ── */
+.gallery-section {
+  scroll-margin-top: 160px;
+}
+
+@media (max-width: 900px) {
+  .gallery-section {
+    scroll-margin-top: 80px;
+  }
+}
+
 /* ── MEDIA CAROUSEL (FULL IMAGE, NO CROP) ── */
 .carousel {
   position: relative;
@@ -487,7 +519,7 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
   height: auto;
   max-height: 500px;
-  object-fit: contain; /* Changed from cover to contain */
+  object-fit: contain;
   display: block;
   background: var(--bg);
 }
@@ -503,7 +535,7 @@ a { color: inherit; text-decoration: none; }
 .carousel-arrow {
   position: absolute;
   top: 50%;
-  transform: translateY(calc(-50% - 20px)); /* Offset for caption */
+  transform: translateY(calc(-50% - 30px));
   width: 48px;
   height: 48px;
   background: var(--bg-elevated);
@@ -586,61 +618,6 @@ a { color: inherit; text-decoration: none; }
   .carousel-next {
     right: var(--space-2);
   }
-}
-
-/* ── GALLERY SECTION (inside project layout) ── */
-.gallery-section {
-  scroll-margin-top: 160px;
-}
-
-@media (max-width: 900px) {
-  .gallery-section {
-    scroll-margin-top: 80px;
-  }
-}
-
-/* ── MEDIA CAROUSEL ── */
-.carousel {
-  position: relative; border-radius: var(--r-lg); overflow: hidden;
-  border: 1px solid var(--border); background: var(--bg-elevated);
-}
-.carousel-viewport { overflow: hidden; }
-.carousel-track {
-  display: flex; transition: transform 320ms ease;
-}
-.carousel-slide {
-  flex: 0 0 100%; min-width: 0; margin: 0;
-}
-.carousel-slide img, .carousel-slide video {
-  width: 100%; height: 360px; object-fit: cover; display: block; background: #000;
-}
-.carousel-slide figcaption {
-  font-size: var(--text-sm); color: var(--text-dim); padding: var(--space-4);
-}
-.carousel-arrow {
-  position: absolute; top: 0; bottom: 44px; width: 52px;
-  background: linear-gradient(to var(--fade-dir, right), rgba(0,0,0,.35), transparent);
-  border: none; color: #fff; font-size: 1.8rem; cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  transition: background 160ms ease;
-}
-.carousel-prev { left: 0; --fade-dir: right; justify-content: flex-start; padding-left: var(--space-3); }
-.carousel-next { right: 0; --fade-dir: left; justify-content: flex-end; padding-right: var(--space-3); }
-.carousel-arrow:hover { background: rgba(0,0,0,.5); }
-.carousel-arrow:focus-visible { outline: 2px solid var(--accent-bright); outline-offset: -2px; }
-
-.carousel-dots {
-  position: absolute; bottom: 12px; left: 0; right: 0;
-  display: flex; justify-content: center; gap: var(--space-2);
-}
-.carousel-dot {
-  width: 8px; height: 8px; border-radius: 50%; border: none; padding: 0;
-  background: rgba(255,255,255,.4); cursor: pointer;
-}
-.carousel-dot.active { background: #fff; }
-
-@media (max-width: 600px) {
-  .carousel-slide img, .carousel-slide video { height: 240px; }
 }
 
 /* ── RESUME CARD ── */

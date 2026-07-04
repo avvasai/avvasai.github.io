@@ -1,0 +1,259 @@
+{
+  "project_id": "diy-benchtop-power-supply",
+  "title": "DIY Benchtop Power Supply with CC/CV Control",
+  "subtitle": "ATX PSU conversion with variable voltage/current limiting, fine/coarse tuning, and multi-rail outputs — built for under $10",
+  "institution": "Personal Project",
+  "collaborating_organizations": [],
+  "guide": null,
+  "venue": null,
+  "date_range": "2023",
+  
+  "acknowledgements": {
+    "guidance": ["DroneBot Workshop tutorial (base ATX conversion concept)"],
+    "technical_collaboration": [],
+    "fabrication_testing": [],
+    "funding_facilities": []
+  },
+  
+  "user_contribution": {
+    "summary": "Designed and built a fully-featured benchtop power supply from a recycled 400W ATX PSU, adding constant current/constant voltage control via XL4015 module, dual fine/coarse adjustment knobs for precision voltage and current tuning, a boost converter for 24V output, and USB charging ports. Hand-fabricated the front panel using angle grinder and Dremel tools.",
+    "tasks": [
+      "Designed front panel layout with 5 voltage outputs + USB ports + V/A display",
+      "Integrated XL4015 5A CC/CV buck converter for variable output with current limiting",
+      "Implemented dual-knob (fine/coarse) control for both voltage and current adjustment",
+      "Added boost converter to generate 24V rail from 12V ATX output",
+      "Hand-fabricated front panel from ATX case using angle grinder and Dremel",
+      "Wired fixed 3.3V, 5V, 12V rails with banana jack outputs for embedded development",
+      "Integrated dual USB-A ports for 5V device charging",
+      "Installed voltage/current digital display for real-time monitoring",
+      "Complete assembly, wiring, and functional testing"
+    ],
+    "tools_used": [
+      "Angle Grinder",
+      "Dremel",
+      "Soldering Iron",
+      "Multimeter",
+      "Hand Tools"
+    ],
+    "not_contributed": "Base ATX-to-bench-supply conversion concept referenced from DroneBot Workshop tutorial. All enhancements (CC/CV control, fine/coarse tuning, 24V boost, panel fabrication) are original additions."
+  },
+  
+  "project_summary": "Commercial benchtop power supplies with variable voltage and current limiting can cost hundreds of dollars. This project repurposes a salvaged 400W ATX computer power supply into a fully-featured lab bench supply for under $10 in additional components.\n\nWhile the basic ATX conversion concept was inspired by the DroneBot Workshop tutorial, this build significantly extends the functionality by adding an XL4015-based constant current/constant voltage (CC/CV) module for a true variable output with current limiting — essential for safely powering sensitive circuits and charging batteries. A dual fine/coarse knob system enables precision voltage and current adjustment, while a boost converter provides a 24V rail not available from standard ATX supplies.\n\nThe front panel was hand-fabricated using an angle grinder and Dremel, featuring banana jack outputs for 3.3V, 5V, 12V, 24V, and variable voltage rails, plus dual USB ports for device charging and a digital V/A display for real-time monitoring. The result is a versatile, low-cost test bench supply that I use daily for Arduino projects, circuit prototyping, and embedded systems development.",
+  
+  "gallery_media": [
+    {
+      "file": "benchtop-psu-complete.jpg",
+      "description": "Completed DIY benchtop power supply showing front panel with digital voltage/current display, dual USB ports, four adjustment knobs (fine/coarse for voltage and current), and five pairs of banana jack outputs for 3.3V, 5V, 12V, 24V, and variable voltage rails",
+      "priority": "hero_image",
+      "source": "Uploaded image (Image 5)",
+      "placement": "Hero section - main project image"
+    },
+    {
+      "file": "benchtop-psu-demo.mp4",
+      "description": "Demonstration video showing variable voltage output ranges and fine/coarse tuning knob functionality",
+      "priority": "demo_video_lead",
+      "source": "User-provided video (to be uploaded)",
+      "placement": "Immediately after hero image or embedded in methodology section"
+    },
+    {
+      "file": "benchtop-psu-components.jpg",
+      "description": "Bill of materials laid out before assembly: 400W ATX power supply unit, potentiometers for fine/coarse adjustment, red banana jacks, XL4015 CC/CV buck converter module, boost converter module, digital voltage/current display, USB ports, and binding posts",
+      "priority": "methodology_image",
+      "source": "Uploaded image (Image 1)",
+      "placement": "Methodology section - Components/BOM"
+    },
+    {
+      "file": "benchtop-psu-atx-wiring.jpg",
+      "description": "ATX power supply internals showing sorted wire harness with color-coded rails: Green (PS_ON), Purple (-5V), Orange (3.3V), Yellow (12V), Red (5V), Black (GND) - prepared for connection to front panel outputs",
+      "priority": "technical_diagram",
+      "source": "Uploaded image (Image 4)",
+      "placement": "Methodology section - ATX Wiring"
+    },
+    {
+      "file": "benchtop-psu-internal-wiring.jpg",
+      "description": "Internal view showing XL4015 CC/CV buck converter module with aluminum heatsink mounted inside ATX case, toroidal inductor visible on PSU board, banana jacks mounted on front panel with wiring in progress",
+      "priority": "body_image",
+      "source": "Uploaded image (Image 2)",
+      "placement": "Methodology section - Internal Assembly"
+    },
+    {
+      "file": "benchtop-psu-panel-progress.jpg",
+      "description": "Front panel during assembly showing dual digital display (voltage and current readout), two USB-A ports, six banana jack pairs, and adjustment knobs - panel cutouts visible from hand fabrication",
+      "priority": "body_image",
+      "source": "Uploaded image (Image 3)",
+      "placement": "Methodology section - Panel Assembly"
+    }
+  ],
+  
+  "methodology": {
+    "sections": [
+      {
+        "name": "Component Selection & Planning",
+        "content": "Selected a salvaged 400W ATX power supply as the base unit, providing native 3.3V, 5V, and 12V rails with sufficient current capacity for bench use. Sourced an XL4015-based 5A CC/CV buck converter module for variable output with current limiting, a boost converter for 24V generation, potentiometers for fine/coarse adjustment, banana jacks for outputs, a dual digital V/A display, and USB-A ports for device charging. Total additional component cost: approximately $10.",
+        "associated_media": ["benchtop-psu-components.jpg"]
+      },
+      {
+        "name": "ATX Power Supply Preparation",
+        "content": "Opened the ATX PSU and identified all output rails by wire color: Yellow (12V), Red (5V), Orange (3.3V), Black (GND), Green (PS_ON), and Purple (-5V standby). Bundled and sorted wires by voltage rail for organized connection to front panel outputs. Shorted PS_ON (green) to GND (black) to enable the supply to turn on without a motherboard connection.",
+        "associated_media": ["benchtop-psu-atx-wiring.jpg"]
+      },
+      {
+        "name": "Front Panel Fabrication",
+        "content": "Hand-fabricated the front panel from the original ATX case material using an angle grinder for major cuts and a Dremel for precision cutouts. Created mounting holes for the digital display, USB ports, four potentiometer knobs, and ten banana jack pairs. The panel was designed to provide easy access to all voltage rails while maintaining a compact form factor.",
+        "associated_media": ["benchtop-psu-panel-progress.jpg"]
+      },
+      {
+        "name": "CC/CV Module Integration",
+        "content": "Integrated the XL4015 5A CC/CV buck converter module, fed from the 12V ATX rail, to provide a variable voltage output with adjustable current limiting. Replaced the onboard trim pots with panel-mounted potentiometers arranged in a fine/coarse configuration for precise voltage adjustment (coarse for range, fine for mV-level tuning) and separate fine/coarse current limit adjustment. This enables safe powering of sensitive loads and battery charging applications.",
+        "associated_media": ["benchtop-psu-internal-wiring.jpg"]
+      },
+      {
+        "name": "24V Boost Converter Addition",
+        "content": "Added a boost converter module fed from the 12V rail to generate a 24V output, extending the supply's capability beyond standard ATX voltages. This rail is useful for powering 24V motors, solenoids, and industrial sensors commonly used in robotics and automation projects.",
+        "associated_media": []
+      },
+      {
+        "name": "Final Assembly & Testing",
+        "content": "Completed all internal wiring, ensuring proper gauge wire for current-carrying connections and secure solder joints. Mounted the XL4015 module with its heatsink for thermal management. Tested all output rails with a multimeter to verify correct voltages, tested variable output range and current limiting functionality, and verified USB port operation. The completed supply provides 3.3V, 5V, 12V, 24V fixed rails plus a variable CC/CV output, all monitored by the front panel V/A display.",
+        "associated_media": ["benchtop-psu-complete.jpg", "benchtop-psu-demo.mp4"]
+      }
+    ]
+  },
+  
+  "results": {
+    "key_findings": [
+      "Successfully built a multi-output benchtop power supply for under $10 in components",
+      "Variable output provides adjustable voltage with 5A current limiting capability",
+      "Fine/coarse dual-knob system enables precision adjustment for both voltage and current",
+      "24V rail extends capability beyond standard ATX outputs using boost conversion",
+      "Fixed 3.3V, 5V, 12V rails + USB ports ideal for Arduino and embedded development",
+      "Real-time voltage and current monitoring via integrated digital display",
+      "400W capacity provides ample power for most bench applications"
+    ],
+    "comparison_table": {
+      "title": "DIY Supply vs Commercial Bench Supply",
+      "columns": ["Feature", "This DIY Build", "Typical Commercial (~$50-150)"],
+      "rows": [
+        ["Cost", "~$10 + salvaged ATX PSU", "$50 - $150+"],
+        ["Variable Output", "Yes (CC/CV)", "Yes"],
+        ["Current Limiting", "Yes (0-5A adjustable)", "Yes"],
+        ["Fine/Coarse Adjust", "Yes (V and I)", "Sometimes"],
+        ["Fixed Rails (3.3V, 5V, 12V)", "Yes", "Rarely"],
+        ["24V Output", "Yes (boost converter)", "Sometimes"],
+        ["USB Charging Ports", "Yes (2x)", "Rarely"],
+        ["V/A Display", "Yes", "Yes"],
+        ["Power Capacity", "400W", "Typically 150-300W"]
+      ],
+      "highlight": "Achieved commercial-grade functionality at <10% of the cost by repurposing salvaged components and adding targeted enhancements"
+    },
+    "validation": "All output rails verified with digital multimeter. Variable output tested across full voltage range with resistive loads. Current limiting verified by setting limit and shorting output - supply correctly enters constant current mode. USB ports tested with phone charging. Supply has been in regular use for embedded systems development since 2023.",
+    "future_scope": [
+      "Add negative voltage rail (-12V) for op-amp circuits",
+      "Integrate overcurrent protection with auto-shutdown",
+      "Add banana jack covers/caps for unused ports",
+      "Design and 3D print a cleaner front panel overlay",
+      "Add output enable switches for each rail"
+    ]
+  },
+  
+  "additional_information_section": {
+    "primary_document": {
+      "file": null,
+      "reason": "No formal documentation - personal DIY project"
+    },
+    "supplementary_documents": [
+      {
+        "file": "dronebotworkshop-atx-tutorial-reference.url",
+        "reason": "Reference tutorial for base ATX conversion concept: https://dronebotworkshop.com/atx-bench-supply/"
+      }
+    ],
+    "optional_documents": []
+  },
+  
+  "website_text_replacements": {
+    "page_title": "DIY Benchtop Power Supply | Sai Pranav Avva",
+    "meta_description": "Custom benchtop power supply built from ATX PSU with CC/CV control, fine/coarse tuning, 24V boost, and multi-rail outputs for under $10.",
+    "hero_section": {
+      "title": "DIY Benchtop Power Supply",
+      "subtitle_tagline": "ATX PSU conversion with CC/CV control, fine/coarse tuning & multi-rail outputs — under $10",
+      "institution_credit_line": "Personal Project",
+      "date_line": "2023",
+      "role_contribution_line": "Designed and built complete benchtop supply with XL4015 CC/CV module, dual fine/coarse V/I adjustment, 24V boost converter, hand-fabricated front panel"
+    },
+    "hero_image": {
+      "file": "benchtop-psu-complete.jpg",
+      "alt_text": "Completed DIY benchtop power supply with digital display, USB ports, adjustment knobs, and banana jack outputs for multiple voltage rails"
+    },
+    "body_images": [
+      {
+        "file": "benchtop-psu-components.jpg",
+        "caption": "Bill of materials: ATX PSU, XL4015 CC/CV module, potentiometers, banana jacks, V/A display, and USB ports — total cost ~$10"
+      },
+      {
+        "file": "benchtop-psu-atx-wiring.jpg",
+        "caption": "ATX wire harness sorted by voltage rail: Yellow (12V), Red (5V), Orange (3.3V), Black (GND)"
+      },
+      {
+        "file": "benchtop-psu-internal-wiring.jpg",
+        "caption": "Internal assembly showing XL4015 CC/CV module with heatsink and wiring to front panel banana jacks"
+      },
+      {
+        "file": "benchtop-psu-panel-progress.jpg",
+        "caption": "Front panel assembly with V/A display, USB ports, and hand-cut mounting holes"
+      }
+    ],
+    "skills_tags": [
+      "Power Electronics",
+      "Circuit Design",
+      "Soldering",
+      "Sheet Metal Fabrication",
+      "Angle Grinder",
+      "Dremel",
+      "ATX Power Supplies",
+      "Buck Converter",
+      "Boost Converter",
+      "CC/CV Control",
+      "Embedded Systems",
+      "DIY/Maker"
+    ],
+    "key_achievements": [
+      "Built full-featured bench supply for <$10 in components",
+      "Added CC/CV control with 5A current limiting via XL4015 module",
+      "Implemented fine/coarse dual-knob adjustment for voltage and current",
+      "Generated 24V rail using boost converter (beyond standard ATX)",
+      "Hand-fabricated front panel using angle grinder and Dremel",
+      "Integrated 5 voltage outputs + USB ports + V/A display"
+    ]
+  },
+  
+  "source_files": {
+    "images": [
+      "benchtop-psu-complete.jpg",
+      "benchtop-psu-components.jpg",
+      "benchtop-psu-atx-wiring.jpg",
+      "benchtop-psu-internal-wiring.jpg",
+      "benchtop-psu-panel-progress.jpg"
+    ],
+    "presentations": [],
+    "documents": [],
+    "videos": [
+      "benchtop-psu-demo.mp4"
+    ]
+  },
+  
+  "file_placement": {
+    "images_folder": "images/diy-benchtop-power-supply/",
+    "documents_folder": "documents/DIY Benchtop Power Supply/",
+    "page_file": "work2/diy-benchtop-power-supply.html"
+  },
+  
+  "reference_template_url": "https://avvasai.github.io/work2/project1.html",
+  
+  "notes": [
+    "Demo video (benchtop-psu-demo.mp4) to be uploaded - shows variable voltage ranges and fine/coarse tuning demonstration",
+    "6th banana jack pair on physical unit can be ignored per user instruction",
+    "Base ATX conversion concept from DroneBot Workshop tutorial - all enhancements (CC/CV, fine/coarse, 24V boost, panel fab) are user's original work",
+    "Project demonstrates practical electronics skills and resourcefulness - good 'maker' project for portfolio",
+    "Supply is actively used for ongoing embedded systems work"
+  ]
+}

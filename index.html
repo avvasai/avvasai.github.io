@@ -100,81 +100,35 @@
   </p>
 </div>
 </section>
-<section class="section" id="technical-skills">
-  <p class="section-eyebrow">Skills</p>
-  <h2>Technical Skills</h2>
-  <div class="skills-grid">
-    <div class="skill-category">
-      <h3>Mechanical</h3>
-      <div class="skill-tags">
-        <span class="skill-tag">SolidWorks</span>
-        <span class="skill-tag">Fusion 360</span>
-        <span class="skill-tag">AutoCAD</span>
-        <span class="skill-tag">COMSOL</span>
-        <span class="skill-tag">ANSYS</span>
-        <span class="skill-tag">MATLAB</span>
-        <span class="skill-tag">Power Tools</span>
-        <span class="skill-tag">3D Printing</span>
-        <span class="skill-tag">Creo</span>
-        <span class="skill-tag">Resin Printing</span>
-        <span class="skill-tag">Photogrammetry</span>
-        <span class="skill-tag">Laser Cutting</span>
-        <span class="skill-tag">Bio Materials</span>
-        <span class="skill-tag">UV Printing</span>
-        <span class="skill-tag">Wood Working</span>
-        <span class="skill-tag">FEA Analysis</span>
-        <span class="skill-tag">Parametric Simulation & Analysis</span>
-         <span class="skill-tag">Test Rig Setups</span>
-
-      </div>
+<!-- SKILLS SECTION - Add to index.html -->
+<section id="skills" class="skills-section">
+  <h2 class="section-title">Skills</h2>
+  
+  <div class="skills-container">
+    <!-- Central display area -->
+    <div class="skills-center-display">
+      <div class="current-category-title"></div>
+      <div class="skills-cloud"></div>
     </div>
-    <div class="skill-category">
-      <h3>Electronics</h3>
-      <div class="skill-tags">
-        <span class="skill-tag">PCB (EasyEDA)</span>
-        <span class="skill-tag">SMD Soldering</span>
-        <span class="skill-tag">Semi Conductor Layout Softwares : Clewin, KLayout</span>
-        <span class="skill-tag">Embedded Systems</span>
-         <span class="skill-tag">High Voltage Systems</span>
-        <span class="skill-tag">Microcontrolllers (Arduino, ESP32-Family, Raspberry pi Pico, STM32)</span>
-        <span class="skill-tag">Microprocessors (Raspberry Pi  and  Jetson Nano)</span>
-        <span class="skill-tag">Wire Harnessing</span>
-        <span class="skill-tag">PCB Connectors</span>
-        <span class="skill-tag">Communication Protocols (UART, CAN, Bluetooth, Blynk, MQTT, Serial, SPi, I2C)</span>
-      </div>
+    
+    <!-- Four corner boxes -->
+    <div class="skill-box top-left" data-category="mechanical">
+      <span class="box-label">Mechanical</span>
     </div>
-    <div class="skill-category">
-      <h3>Robotics &amp; Controls</h3>
-      <div class="skill-tags">
-        <span class="skill-tag">Galil</span>
-        <span class="skill-tag">Atracsys</span>
-        <span class="skill-tag">Servos</span>
-        <span class="skill-tag">Steppers</span>
-        <span class="skill-tag">Encoders</span>
-        <span class="skill-tag">Kinematics</span>
-        <span class="skill-tag">Grippers</span>
-        <span class="skill-tag">Optical Tracking</span>
-        <span class="skill-tag">Actuators</span>
-        <span class="skill-tag">Inertial Measurement Units</span>
-        <span class="skill-tag">BLDC Motors</span>
-        <span class="skill-tag">UR5e Robot Arms</span>
-        <span class="skill-tag">Sensors</span>
-      </div>
+    
+    <div class="skill-box top-right" data-category="electronics">
+      <span class="box-label">Electronics</span>
     </div>
-    <div class="skill-category">
-      <h3>Computer Science</h3>
-      <div class="skill-tags">
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">Linux (Arch/Ubuntu)</span>
-        <span class="skill-tag">Bash Scripts</span>
-        <span class="skill-tag">C/C++</span>
-        <span class="skill-tag">Processing IDE</span>
-        <span class="skill-tag">OpenCV</span>
-      </div>
+    
+    <div class="skill-box bottom-left" data-category="robotics">
+      <span class="box-label">Robotics & Controls</span>
+    </div>
+    
+    <div class="skill-box bottom-right" data-category="cs">
+      <span class="box-label">Computer Science</span>
     </div>
   </div>
 </section>
- 
 <section class="section" id="info">
   <p class="section-eyebrow">About</p>
   <h2>Projects &amp; Domains</h2>
@@ -213,7 +167,6 @@
     </div>
   </div>
 </section>
-
 <section class="section" id="resume">
   <p class="section-eyebrow">Resume</p>
   <h2>Resume</h2>
@@ -316,6 +269,152 @@
       }
     });
   });
+  // Skills data by category
+// Skills data by category
+const skillsData = {
+  mechanical: [
+    'MEMS Design', 'COMSOL Multiphysics', 'Finite Element Analysis', 'ANSYS',
+    'SolidWorks', 'AutoCAD', 'Creo Parametric', 'Microfabrication',
+    'Cleanroom Processing', 'Photolithography', 'Thin-Film Deposition',
+    'Wet/Dry Etching', 'SEM Imaging', 'LDV Characterization',
+    'Vibration Analysis', 'Thermal Analysis', '3D Printing', 'GD&T'
+  ],
+  electronics: [
+    'Circuit Design', 'PCB Layout', 'Altium Designer', 'KiCad', 'LTspice',
+    'Oscilloscopes', 'Signal Generators', 'Lock-in Amplifiers',
+    'Capacitive Sensing', 'Analog Design', 'Op-Amp Circuits',
+    'Impedance Analysis', 'Wire Bonding', 'Soldering', 'EMC/EMI',
+    'Power Electronics', 'Arduino', 'Raspberry Pi', 'FPGA Basics'
+  ],
+  robotics: [
+    'ROS/ROS2', 'MATLAB/Simulink', 'Control Systems', 'PID Tuning',
+    'State Estimation', 'Kalman Filtering', 'Sensor Fusion',
+    'Motion Planning', 'Kinematics', 'Dynamics', 'LabVIEW',
+    'Data Acquisition', 'Real-Time Systems'
+  ],
+  cs: [
+    'Python', 'C/C++', 'MATLAB', 'Git/GitHub', 'Linux', 'LaTeX'
+  ]
+};
+
+const categoryNames = {
+  mechanical: 'Mechanical',
+  electronics: 'Electronics',
+  robotics: 'Robotics & Controls',
+  cs: 'Computer Science'
+};
+
+const categoryKeys = Object.keys(skillsData);
+let currentIndex = 0;
+let rotationInterval;
+let isHovering = false;
+
+const categoryTitle = document.querySelector('.current-category-title');
+const skillsCloud = document.querySelector('.skills-cloud');
+const skillBoxes = document.querySelectorAll('.skill-box');
+
+// Display skills for a category with animation
+function displayCategory(categoryKey, animate = true) {
+  const skills = skillsData[categoryKey];
+  const title = categoryNames[categoryKey];
+  
+  // Update title
+  categoryTitle.textContent = title;
+  
+  // Clear existing tags
+  skillsCloud.innerHTML = '';
+  
+  // Create new tags
+  skills.forEach((skill, i) => {
+    const tag = document.createElement('span');
+    tag.className = 'skill-tag';
+    tag.textContent = skill;
+    skillsCloud.appendChild(tag);
+  });
+  
+  // Animate in
+  if (animate) {
+    requestAnimationFrame(() => {
+      skillsCloud.querySelectorAll('.skill-tag').forEach(tag => {
+        tag.classList.add('visible');
+      });
+    });
+  } else {
+    skillsCloud.querySelectorAll('.skill-tag').forEach(tag => {
+      tag.classList.add('visible');
+      tag.style.transitionDelay = '0s';
+    });
+  }
+  
+  // Highlight corresponding box
+  skillBoxes.forEach(box => {
+    box.classList.toggle('active', box.dataset.category === categoryKey);
+  });
+}
+
+// Fade out current skills
+function fadeOutSkills() {
+  return new Promise(resolve => {
+    const tags = skillsCloud.querySelectorAll('.skill-tag');
+    tags.forEach(tag => {
+      tag.classList.remove('visible');
+      tag.classList.add('fading');
+    });
+    setTimeout(resolve, 400);
+  });
+}
+
+// Rotate to next category
+async function rotateToNext() {
+  if (isHovering) return;
+  
+  await fadeOutSkills();
+  
+  if (isHovering) return;
+  
+  currentIndex = (currentIndex + 1) % categoryKeys.length;
+  displayCategory(categoryKeys[currentIndex], true);
+}
+
+// Start auto-rotation
+function startRotation() {
+  displayCategory(categoryKeys[currentIndex], true);
+  rotationInterval = setInterval(rotateToNext, 3500);
+}
+
+// Stop auto-rotation
+function stopRotation() {
+  clearInterval(rotationInterval);
+}
+
+// Handle hover on corner boxes
+skillBoxes.forEach(box => {
+  box.addEventListener('mouseenter', () => {
+    isHovering = true;
+    stopRotation();
+    const category = box.dataset.category;
+    
+    // Quick transition to hovered category
+    fadeOutSkills().then(() => {
+      displayCategory(category, true);
+    });
+  });
+});
+
+// Handle mouse leave from entire container
+document.querySelector('.skills-container').addEventListener('mouseleave', () => {
+  isHovering = false;
+  // Resume from where we left off
+  currentIndex = categoryKeys.indexOf(
+    document.querySelector('.skill-box.active')?.dataset.category || categoryKeys[0]
+  );
+  startRotation();
+});
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+  startRotation();
+});
 </script>
 
 </body>

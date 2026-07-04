@@ -1,0 +1,253 @@
+{
+  "project_id": "biomimetic-hummingbird",
+  "title": "Biomimetic of a Hummingbird: Design and Analysis of Wing and Flapping Mechanism",
+  "subtitle": "Multi-domain kinematic design achieving ±60° flapping amplitude at 70Hz with image processing-based flight path analysis",
+  "institution": "PES University",
+  "collaborating_organizations": [],
+  "guide": "Mr. Sachhidananda M H",
+  "venue": "Senior Capstone Project, Department of Mechanical Engineering",
+  "date_range": "Aug 2021 – May 2022",
+
+  "acknowledgements": {
+    "guidance": ["Mr. Sachhidananda M H, Department of Mechanical Engineering, PES University"],
+    "technical_collaboration": [
+      "Rohit K Narang (CFD Simulation)",
+      "Sharan Manick (CFD Simulation)",
+      "Shaunak Anup Vaidya (CFD Simulation)"
+    ],
+    "fabrication_testing": [],
+    "funding_facilities": ["PES University, Department of Mechanical Engineering"]
+  },
+
+  "user_contribution": {
+    "summary": "Led the multi-domain design effort for a hummingbird-inspired flapping mechanism, personally developing the image processing pipeline for flight path extraction, designing the wing CAD geometry, and synthesizing a 4-bar mechanism achieving ±60° flapping amplitude. Integrated photogrammetry, kinematic analysis, and weight budgeting into a cohesive 52-gram testbed design.",
+    "tasks": [
+      "Developed image processing pipeline for kinematic flight path extraction from high-speed hummingbird footage",
+      "Designed wing CAD model with optimized dimensions (82.5mm length, 22mm tip chord)",
+      "Synthesized 4-bar flapping mechanism achieving ±60° amplitude with 360° input rotation",
+      "Performed transmission angle analysis ensuring feasible range (65°–114°)",
+      "Conducted position, velocity, and acceleration analysis for mechanism validation",
+      "Created electronics weight budget for 52-gram testbed specification",
+      "Determined optimal angle of attack range (10-15°) through multi-domain analysis"
+    ],
+    "tools_used": ["Python", "Image Processing Libraries", "SolidWorks/CAD", "MATLAB", "Mechanism Synthesis Tools"],
+    "not_contributed": "CFD simulations (steady-state analysis, mesh convergence, pressure contours, lift/drag plots) were performed by team members. Report compilation was a team effort."
+  },
+
+  "project_summary": "Hummingbirds are nature's most agile flyers, capable of sustained hover and rapid directional changes through their unique figure-of-eight wing stroke. This capstone project aimed to understand and replicate this remarkable flight mechanism through a biomimetic design approach.\n\nI led the multi-domain analysis effort, starting with photogrammetry-based flight path extraction using image processing techniques on high-speed footage. This provided the kinematic targets for mechanism design. I then designed the wing geometry through iterative CAD modeling, arriving at optimized dimensions of 82.5mm length and 22mm tip chord.\n\nThe core challenge was synthesizing a mechanism that could achieve the required flapping motion. I designed a 4-bar linkage that converts 360° rotary input into ±60° flapping amplitude at 70Hz, while maintaining transmission angles within the feasible range (65°–114°). The complete testbed was weight-budgeted to 52 grams, accounting for motor, battery, microcontroller, and structural components.\n\nThis project strengthened my skills in mechanism synthesis, image-based motion analysis, and integrating constraints across multiple engineering domains—capabilities I continue to apply in my robotics and medical device work.",
+
+  "gallery_media": [
+    {
+      "file": "conceptual-model.png",
+      "description": "Full conceptual assembly of the biomimetic hummingbird testbed showing wing, 4-bar mechanism, motor, and electronics integration",
+      "priority": "hero_image",
+      "placement": "Hero section, top of page"
+    },
+    {
+      "file": "wing-stroke-path.png",
+      "description": "Two wing strokes plotted side by side showing the characteristic figure-of-eight pattern extracted through image processing photogrammetry",
+      "priority": "results_key_image",
+      "placement": "Methodology section - Photogrammetry"
+    },
+    {
+      "file": "front-view-flapping.png",
+      "description": "Front view visualization of the flapping motion showing wing sweep amplitude",
+      "priority": "body_image",
+      "placement": "Methodology section - Flight Analysis"
+    },
+    {
+      "file": "wing-cad-model.png",
+      "description": "CAD model of the biomimetic wing showing geometry with 82.5mm length and 22mm tip chord",
+      "priority": "body_image",
+      "placement": "Methodology section - Wing Design"
+    },
+    {
+      "file": "four-bar-fbd-transmission.png",
+      "description": "Free body diagram of 4-bar mechanism with transmission angle analysis showing η_max ≈ 114° and η_min ≈ 65°",
+      "priority": "technical_diagram",
+      "placement": "Methodology section - Mechanism Design"
+    },
+    {
+      "file": "position-velocity-acceleration.png",
+      "description": "Position, velocity, and acceleration graphs from kinematic analysis of the flapping mechanism",
+      "priority": "results_key_image",
+      "placement": "Results section"
+    },
+    {
+      "file": "lift-vs-aoa.png",
+      "description": "Lift coefficient vs Angle of Attack plot showing optimal range of 10-15 degrees",
+      "priority": "results_key_image",
+      "placement": "Results section"
+    },
+    {
+      "file": "electronics-weight-table.png",
+      "description": "Weight approximation table for testbed electronics including motor, battery, microcontroller components totaling 52 grams",
+      "priority": "technical_diagram",
+      "placement": "Methodology section - Weight Budget"
+    }
+  ],
+
+  "methodology": {
+    "sections": [
+      {
+        "name": "Photogrammetry & Flight Path Analysis",
+        "content": "High-speed footage of hummingbird flight (capable of capturing ~3000 fps) was analyzed using image processing techniques. The procedure involved DPI calibration using physical ruler measurements, followed by pixel-to-millimeter conversion for accurate dimensional extraction. Wing boundary tracking revealed the characteristic figure-of-eight stroke pattern, providing kinematic targets for the mechanism design phase.",
+        "associated_media": ["wing-stroke-path.png", "front-view-flapping.png"]
+      },
+      {
+        "name": "Wing Design & CAD Modeling",
+        "content": "The wing geometry was designed through iterative CAD modeling, referencing hummingbird morphology data from literature. Final optimized dimensions achieved were: wing length of 82.5mm and tip chord of 22mm. The wing was modeled as a flat, rigid structure for initial analysis, with the lift formula Lift = ρ C_L S (Φ fR)² used for frequency-induced flapping calculations.",
+        "associated_media": ["wing-cad-model.png"]
+      },
+      {
+        "name": "Mechanism Synthesis & Kinematic Analysis",
+        "content": "A 4-bar linkage mechanism was synthesized to convert continuous rotary input (360°) into oscillatory flapping motion (±60° amplitude). Transmission angle analysis confirmed feasibility with η_max ≈ 114° and η_min ≈ 65°, both within acceptable ranges for efficient force transmission. Complete position, velocity, and acceleration profiles were generated to validate mechanism performance at the target 70Hz flapping frequency.",
+        "associated_media": ["four-bar-fbd-transmission.png", "position-velocity-acceleration.png"]
+      },
+      {
+        "name": "Weight Approximation & System Integration",
+        "content": "A comprehensive weight budget was developed for the testbed, accounting for motor, battery, microcontroller, and structural components. The total system weight was constrained to 52 grams to ensure sufficient lift generation. Component selection balanced weight against performance requirements for the 70Hz flapping frequency target.",
+        "associated_media": ["electronics-weight-table.png", "conceptual-model.png"]
+      }
+    ]
+  },
+
+  "results": {
+    "key_findings": [
+      "Achieved ±60° flapping amplitude with 360° continuous input rotation",
+      "Transmission angles maintained in feasible range: 65° to 114°",
+      "Optimal angle of attack determined to be 10-15 degrees",
+      "Total testbed weight budgeted to 52 grams",
+      "Wing dimensions optimized: 82.5mm length, 22mm tip chord",
+      "Target flapping frequency: 70Hz achievable with selected mechanism",
+      "Image processing pipeline successfully extracted figure-of-eight wing stroke pattern"
+    ],
+    "comparison_table": {
+      "title": "Testbed Design Specifications",
+      "columns": ["Parameter", "Value", "Unit"],
+      "rows": [
+        ["Wing Length", "82.5", "mm"],
+        ["Tip Chord", "22", "mm"],
+        ["Flapping Frequency", "70", "Hz"],
+        ["Flapping Amplitude", "±60", "degrees"],
+        ["Input Rotation", "360", "degrees"],
+        ["Optimal AoA Range", "10-15", "degrees"],
+        ["Total Testbed Weight", "52", "grams"],
+        ["Max Transmission Angle (η_max)", "114", "degrees"],
+        ["Min Transmission Angle (η_min)", "65", "degrees"]
+      ],
+      "highlight": "Mechanism successfully converts continuous rotation to oscillatory flapping within feasible transmission angle range"
+    },
+    "validation": "Kinematic path analysis validated through image processing comparison with literature data. Transmission angle analysis confirmed mechanism feasibility. CFD simulations (performed by team members) validated aerodynamic performance at specified angle of attack range.",
+    "future_scope": [
+      "Implement advanced image processing with contour detection for enhanced wing boundary tracking",
+      "Develop dynamic mesh CFD analysis with UDF for transient aerodynamic study",
+      "Improve mechanism to achieve true figure-of-eight wingtip trajectory",
+      "Progress toward spatial mechanism synthesis for 3D flapping motion",
+      "Build physical prototype for experimental validation"
+    ]
+  },
+
+  "additional_information_section": {
+    "primary_document": {
+      "file": "Avva Huming bird team 23 v2.pdf",
+      "reason": "Complete capstone project report with detailed methodology, analysis, and results"
+    },
+    "supplementary_documents": [
+      {
+        "file": "Copy of Poster.pdf",
+        "reason": "Visual summary poster with key figures and results for quick reference"
+      }
+    ],
+    "optional_documents": []
+  },
+
+  "website_text_replacements": {
+    "page_title": "Biomimetic Hummingbird Mechanism | Sai Pranav Avva",
+    "meta_description": "Multi-domain design of hummingbird-inspired flapping mechanism achieving ±60° amplitude at 70Hz. Image processing, CAD, and kinematic synthesis.",
+    "hero_section": {
+      "title": "Biomimetic of a Hummingbird",
+      "subtitle_tagline": "Design and Analysis of Wing and Flapping Mechanism",
+      "institution_credit_line": "PES University, Department of Mechanical Engineering",
+      "date_line": "Aug 2021 – May 2022",
+      "role_contribution_line": "Led multi-domain design: image processing for flight path extraction, wing CAD modeling, and 4-bar mechanism synthesis achieving ±60° flapping amplitude at 70Hz"
+    },
+    "hero_image": {
+      "file": "conceptual-model.png",
+      "alt_text": "Conceptual assembly of biomimetic hummingbird testbed showing wing, 4-bar flapping mechanism, and integrated electronics"
+    },
+    "body_images": [
+      {
+        "file": "wing-stroke-path.png",
+        "caption": "Figure-of-eight wing stroke pattern extracted through image processing photogrammetry"
+      },
+      {
+        "file": "four-bar-fbd-transmission.png",
+        "caption": "4-bar mechanism free body diagram with transmission angles (η_max ≈ 114°, η_min ≈ 65°)"
+      },
+      {
+        "file": "position-velocity-acceleration.png",
+        "caption": "Kinematic analysis: position, velocity, and acceleration profiles of flapping mechanism"
+      },
+      {
+        "file": "wing-cad-model.png",
+        "caption": "Wing CAD model with optimized dimensions (82.5mm × 22mm)"
+      },
+      {
+        "file": "lift-vs-aoa.png",
+        "caption": "Lift vs Angle of Attack showing optimal range of 10-15 degrees"
+      }
+    ],
+    "skills_tags": [
+      "Mechanism Synthesis",
+      "Kinematic Analysis",
+      "Image Processing",
+      "Photogrammetry",
+      "CAD Modeling",
+      "Python",
+      "MATLAB",
+      "Biomimetics",
+      "Multi-domain Design",
+      "4-Bar Linkage",
+      "Weight Optimization"
+    ],
+    "key_achievements": [
+      "Designed 4-bar mechanism achieving ±60° flapping amplitude from 360° rotary input",
+      "Developed image processing pipeline for flight path extraction from high-speed footage",
+      "Optimized testbed weight to 52 grams with 70Hz flapping frequency target",
+      "Maintained transmission angles within feasible range (65°–114°)"
+    ]
+  },
+
+  "source_files": {
+    "images": [
+      "conceptual-model.png",
+      "wing-stroke-path.png",
+      "front-view-flapping.png",
+      "wing-cad-model.png",
+      "four-bar-fbd-transmission.png",
+      "position-velocity-acceleration.png",
+      "lift-vs-aoa.png",
+      "electronics-weight-table.png"
+    ],
+    "documents": [
+      "Avva Huming bird team 23 v2.pdf",
+      "Copy of Poster.pdf"
+    ],
+    "videos": []
+  },
+
+  "file_placement": {
+    "assets_folder": "documents/Biomimetic Humming Bird/",
+    "page_file": "work2/biomimetic-hummingbird.html"
+  },
+
+  "reference_template_url": "https://avvasai.github.io/work2/project1.html",
+
+  "notes": [
+    "All files (images + documents) should be placed in: documents/Biomimetic Humming Bird/",
+    "No demo videos available",
+    "Project was analytical/simulation-based - no physical prototype built",
+    "Removed photogrammetry-source.png and dynamic-mesh-layout.png from main report due to uncertain page numbers"
+  ]
+}

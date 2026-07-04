@@ -1,0 +1,184 @@
+{
+  "project_id": "computational-design-machine-elements",
+  "title": "Computational Design of Machine Elements",
+  "subtitle": "MATLAB-based automation tool for designing 8 machine elements with interactive GUI and material database integration",
+  "institution": "PES University",
+  "collaborating_organizations": [],
+  "guide": "Dr. Chandrashekara C V",
+  "venue": null,
+  "date_range": "Jul 2018 – Aug 2022 (During B.Tech)",
+  "course_code": "UE18ME306A",
+  "student_srn": "PES1201800861",
+
+  "acknowledgements": {
+    "guidance": ["Dr. Chandrashekara C V - Course Instructor and Project Guide"],
+    "technical_collaboration": [],
+    "fabrication_testing": [],
+    "funding_facilities": ["PES University, Department of Mechanical Engineering"]
+  },
+
+  "user_contribution": {
+    "summary": "Independently developed a comprehensive MATLAB application that automates the design calculations for 8 common machine elements. Built the entire codebase from scratch, created custom lookup tables for material properties and standard sizes, and collaborated with the professor to help shape the course curriculum around this computational approach.",
+    "tasks": [
+      "Designed and coded the complete MATLAB application with menu-driven GUI from scratch",
+      "Implemented computational procedures for 8 machine elements: Shafts, Belt Drives, Chain Drives, Springs, Bevel Gears, Helical Gears, Spur Gears, and Worm Gears",
+      "Created Excel-based lookup tables for 22+ materials with BHN and design stress values",
+      "Built standard size selection logic referencing design handbook tables",
+      "Developed safety verification modules for wear analysis, dynamic loads, and thermal dissipation",
+      "Collaborated with Dr. Chandrashekara C V to help design the course structure and assignments"
+    ],
+    "tools_used": ["MATLAB", "Excel", "Design Handbooks"],
+    "not_contributed": "Design formulas and standard procedures were sourced from established mechanical engineering design handbooks. Course curriculum framework was set by the university."
+  },
+
+  "project_summary": "Manual calculations for machine element design are time-consuming and error-prone, especially when iterating through multiple material options or design constraints. This project addresses that challenge by translating standard design handbook procedures into an interactive MATLAB application.\n\nI built the entire application from scratch, implementing computational workflows for eight fundamental machine elements: shafts (solid and hollow), belt drives, chain drives, springs, and four types of gears (bevel, helical, spur, and worm). The tool features a menu-driven interface that guides users through material selection from a database of 22+ options, automatically retrieves standard sizes from lookup tables, and performs safety checks for wear, dynamic loading, and heat dissipation.\n\nBeyond the coding work, I collaborated with Dr. Chandrashekara C V to help shape how this computational approach could be integrated into the course curriculum. The project demonstrates that automating tedious design calculations doesn't just save time—it enables rapid exploration of design alternatives that would be impractical to evaluate manually.",
+
+  "gallery_media": [
+    {
+      "file": "cdme_gui_welcome.png",
+      "description": "MATLAB App GUI showing the welcome screen with menu options for 8 machine elements: Shaft, Belt Drive, Chain Drive, Springs, Bevel Gear, Helical Gear, Spur Gear, and Worm Gear design",
+      "priority": "hero_image",
+      "source": "User-provided screenshot",
+      "placement": "Hero section and methodology overview"
+    }
+  ],
+
+  "methodology": {
+    "sections": [
+      {
+        "name": "Menu-Driven Architecture",
+        "content": "The application uses a switch-case structure to route users through different design workflows. After selecting a machine element, the program prompts for relevant inputs (power, RPM, material, etc.) and branches based on known vs. unknown parameters (e.g., center distance known/unknown for gear design).",
+        "associated_media": ["cdme_gui_welcome.png"]
+      },
+      {
+        "name": "Material Database Integration",
+        "content": "I created lookup tables containing 22+ materials including various grades of Cast Iron, Cast Steel, Bronze alloys, Forged Steel, and specialty materials. Each entry stores design stress (S_d) and Brinell Hardness Number (BHN), enabling automatic material property retrieval based on user selection.",
+        "associated_media": []
+      },
+      {
+        "name": "Standard Size Selection",
+        "content": "The code interfaces with Excel tables (e.g., Table3_5_a.xlsx for shaft diameters) to select the nearest standard size that meets or exceeds calculated requirements. This eliminates manual table lookups and ensures designs use commercially available components.",
+        "associated_media": []
+      },
+      {
+        "name": "Safety Verification Logic",
+        "content": "Each machine element module includes verification checks: comparing calculated stresses against permissible values, checking wear safety (Fw vs Fd), and for worm gears, comparing heat generated (Qg) against heat dissipated (Qd) to determine if artificial cooling is needed.",
+        "associated_media": []
+      }
+    ]
+  },
+
+  "results": {
+    "key_findings": [
+      "Successfully automated design procedures for 8 machine elements with full parameter output",
+      "Integrated 22+ materials with automatic property lookup",
+      "Implemented multiple design paths (e.g., diameter known vs. unknown) for flexible use cases",
+      "Built-in safety checks provide immediate pass/fail feedback on design adequacy"
+    ],
+    "comparison_table": {
+      "title": "Machine Elements Implemented",
+      "columns": ["Element", "Key Outputs", "Special Features"],
+      "rows": [
+        ["Shaft", "Diameter (d), Torque (T), Moment of Inertia (M)", "P vs N, T vs N, D vs N trend graphs; hollow shaft support"],
+        ["Belt Drive", "Pulley diameters (D1, D2), Belt length (L), Width (b), Tensions (T1, T2)", "Standard size selection for pulleys and belt width"],
+        ["Chain Drive", "Sprocket teeth (z1, z2), Chain pitch, Center distance, Chain length", "Service factor tables; safety factor verification"],
+        ["Springs", "Wire diameter (d), Mean coil diameter (D), Active coils (N), Free length, Pitch", "Four end-type options; Wahl correction factor"],
+        ["Bevel Gear", "Module (m), Face width (b), Pitch diameters, Tooth counts", "Lewis form factor; wear and dynamic load checks"],
+        ["Helical Gear", "Module, Diameters, Helix angle calculations, Forces (Ft, Fa, Fr)", "Virtual teeth calculation; minimum face width check"],
+        ["Spur Gear", "Module, Pitch diameters, Tooth counts, Face width", "Three involute systems (14.5°, 20°, 20° stub)"],
+        ["Worm Gear", "Center distance, Pitch diameters, Module, Lead angle, Efficiency", "Heat generation vs. dissipation analysis; artificial cooling check"]
+      ],
+      "highlight": "Each element includes automatic safety verification against permissible design stresses"
+    },
+    "validation": "This was primarily a coding and automation project. The design formulas follow established textbook procedures, but formal validation comparing computational vs. manual results was not performed.",
+    "future_scope": [
+      "Add graphical output for all machine elements (currently only shaft has trend plots)",
+      "Implement a full GUI using MATLAB App Designer for improved user experience",
+      "Add export functionality to generate design reports in PDF format",
+      "Include additional machine elements (couplings, clutches, brakes, bearings)",
+      "Add optimization routines to find minimum-weight or minimum-cost designs"
+    ]
+  },
+
+  "additional_information_section": {
+    "primary_document": {
+      "file": "CDME_MATLAB_Code.m",
+      "reason": "Complete source code demonstrating all 8 machine element design implementations"
+    },
+    "supplementary_documents": [
+      {
+        "file": "Table3_5_a.xlsx",
+        "reason": "Standard shaft diameter lookup table"
+      }
+    ],
+    "optional_documents": []
+  },
+
+  "website_text_replacements": {
+    "page_title": "Computational Design of Machine Elements | Sai Pranav Avva",
+    "meta_description": "MATLAB application automating design calculations for 8 machine elements including shafts, gears, springs, and drives with material database integration.",
+    "hero_section": {
+      "title": "Computational Design of Machine Elements",
+      "subtitle_tagline": "Automating mechanical design with MATLAB",
+      "institution_credit_line": "PES University · Guide: Dr. Chandrashekara C V",
+      "date_line": "2018 – 2022",
+      "role_contribution_line": "Independently developed MATLAB application automating design procedures for 8 machine elements with 22+ material database and safety verification"
+    },
+    "hero_image": {
+      "file": "cdme_gui_welcome.png",
+      "alt_text": "MATLAB GUI welcome screen showing menu options for designing shafts, belt drives, chain drives, springs, bevel gears, helical gears, spur gears, and worm gears"
+    },
+    "body_images": [
+      {
+        "file": "cdme_gui_welcome.png",
+        "caption": "Interactive menu-driven interface for selecting machine element design workflows"
+      }
+    ],
+    "skills_tags": [
+      "MATLAB",
+      "Mechanical Design",
+      "Automation",
+      "Machine Elements",
+      "Gear Design",
+      "Shaft Design",
+      "Spring Design",
+      "GUI Development",
+      "Excel Integration",
+      "Design Handbooks"
+    ],
+    "key_achievements": [
+      "Automated design procedures for 8 machine elements from scratch",
+      "Built material database with 22+ options and automatic property lookup",
+      "Collaborated with professor to help design course curriculum",
+      "Implemented safety verification for wear, dynamic loads, and thermal analysis"
+    ]
+  },
+
+  "source_files": {
+    "images": ["cdme_gui_welcome.png"],
+    "presentations": [],
+    "documents": ["CDME_MATLAB_Code.m", "Table3_5_a.xlsx"],
+    "videos": []
+  },
+
+  "file_placement": {
+    "images_folder": "images/cdme/",
+    "documents_folder": "documents/Computational Design of Machine Elements/",
+    "page_file": "work2/computational-design-machine-elements.html"
+  },
+
+  "repository": {
+    "url": "https://github.com/avvasai/CDME",
+    "display_link": true,
+    "badge_text": "View on GitHub"
+  },
+
+  "reference_template_url": "https://avvasai.github.io/work2/project1.html",
+  
+  "notes": [
+    "Only one GUI screenshot available - consider creating additional screenshots showing: (1) material selection menu, (2) sample calculation output, (3) trend graphs for shaft design",
+    "GitHub repo link should be prominently displayed as this is a code-focused project",
+    "Consider embedding code snippets in the portfolio page to showcase the implementation",
+    "No demo video available - could create a screen recording walkthrough if desired"
+  ]
+}

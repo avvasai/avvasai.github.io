@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accordion-Like Disk Resonator Gyroscope</title>
-  <meta name="description" content="A Novel Accordion-Like Disk Resonator Gyroscope (ADRG) - MEMS gyroscope design, simulation, fabrication and testing">
+  <title>Computational Design of Machine Elements | Sai Pranav Avva</title>
+  <meta name="description" content="MATLAB application automating design calculations for 8 machine elements including shafts, gears, springs, and drives with material database integration.">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-
 <header class="masthead">
   <h1 class="giant-name">Avva Sai Pranav</h1>
   <nav class="pill-nav">
     <div class="pill-links">
-      <a href="index.html" class="pill">Home</a>
-      <a href="index.html#info" class="pill">Projects</a>
-      <a href="index.html#resume" class="pill">Resume</a>
-      <a href="index.html#contact" class="pill">Contact</a>
+      <a href="../index.html" class="pill">Home</a>
+      <a href="../index.html#info" class="pill">Projects</a>
+      <a href="../index.html#resume" class="pill">Resume</a>
+      <a href="../index.html#contact" class="pill">Contact</a>
     </div>
     <div class="pill-right">
       <span class="label">Theme:</span>
@@ -28,265 +27,189 @@
   </nav>
 </header>
 
-<!-- Project Hero -->
-<section class="project-hero">
-  <p class="section-eyebrow">Project</p>
-  <h1 class="project-title">A Novel Accordion-Like Disk Resonator Gyroscope</h1>
-  <p class="project-subtitle">MEMS Gyroscope Design · Simulation · Fabrication · Testing</p>
-  <div class="project-meta">
-    <span class="meta-item">🏛️ M2D2 Laboratory, Indian Institute of Science</span>
-    <span class="meta-item">👤 Prof. G. K. Ananthasuresh</span>
-    <span class="meta-item">🎤 ICMNSS Conference</span>
-  </div>
-</section>
-
-<!-- Key Results Stats -->
 <section class="section">
-  <div class="stats-row">
-    <div class="stat-card">
-      <span class="stat-value">3–4×</span>
-      <span class="stat-label">Higher Sensitivity</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">6771 Hz</span>
-      <span class="stat-label">Drive Frequency</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">&lt;1.4%</span>
-      <span class="stat-label">Sim-to-Fab Error</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">46.4%</span>
-      <span class="stat-label">Capacitance Change</span>
-    </div>
-  </div>
-</section>
+  <a href="../index.html#info" class="back-link">← Back to projects</a>
 
-<!-- Overview -->
-<section class="section">
-  <h2 class="section-title">Project Overview</h2>
-  <div class="two-col">
-    <div class="col-text">
-      <p>Disk Resonator Gyroscopes (DRGs) sense rotation using Coriolis forces acting on a vibrating ring — the same physics behind a Foucault pendulum, just shrunk down to millimeters.</p>
-      <p>Over the years, designs like the Boeing DRG, Honeycomb DRG, Cobweb DRG, and Gear DRG each pushed sensitivity a little further, from 0.04 deg/sec down to 0.015 deg/sec, but each traded off electrode placement against mechanical performance.</p>
-      <p>This project asked a simple question: <strong>could an entirely different ring geometry — an "accordion-like" pattern — beat the existing field on mechanical sensitivity and noise?</strong></p>
-    </div>
-    <div class="col-visual">
-      <img src="../documents/MEMS Engineer/2.jpeg" alt="ADRG die close-up showing ring pattern" class="project-img">
-      <p class="img-caption">ADRG die showing accordion-style ring pattern</p>
-    </div>
-  </div>
-</section>
-
-<!-- Design & Simulation -->
-<section class="section-alt">
-  <div class="section-inner">
-    <h2 class="section-title">Design & Simulation</h2>
-    <p>I ran finite-element eigenfrequency analysis across five ring topologies — DRG, HDRG, CDRG, GDRG, and my proposed ADRG — each built with 9 rings, an 8mm outer diameter, 10μm in-plane ring width, and 60μm thickness.</p>
+  <div class="project-layout">
     
-    <div class="table-wrapper">
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>DRG Type</th>
-            <th>Eigenfrequency (Hz)</th>
-            <th>Quality Factor (k)</th>
-            <th>Mech. Sensitivity (μm/rad/s)</th>
-            <th>Brownian Noise (rad/s/√Hz)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>DRG</td>
-            <td>12720</td>
-            <td>103.62</td>
-            <td>3.83e-6</td>
-            <td>1.01e-6</td>
-          </tr>
-          <tr>
-            <td>HDRG</td>
-            <td>11306</td>
-            <td>105.42</td>
-            <td>4.27e-6</td>
-            <td>1.29e-6</td>
-          </tr>
-          <tr>
-            <td>CDRG</td>
-            <td>12611</td>
-            <td>99.99</td>
-            <td>3.61e-6</td>
-            <td>1.12e-6</td>
-          </tr>
-          <tr>
-            <td>GDRG</td>
-            <td>14761</td>
-            <td>91.58</td>
-            <td>2.76e-6</td>
-            <td>1.17e-6</td>
-          </tr>
-          <tr class="highlight-row">
-            <td>ADRG (Ours)</td>
-            <td>6771</td>
-            <td>181.55</td>
-            <td>12.1e-6</td>
-            <td>1.07e-6</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="table-note">The ADRG's mechanical sensitivity is roughly 3–4× higher than every other topology tested, while holding competitive noise performance.</p>
-    
-    <p>Capacitance modeling (accounting for fringing fields, not just the textbook parallel-plate formula) backed this up — the ADRG's relative sense capacitance change was the largest of the five designs at <strong>46.4%</strong>, versus 14–29% for the others.</p>
-  </div>
-</section>
-
-<!-- Fabrication -->
-<section class="section">
-  <h2 class="section-title">Fabrication</h2>
-  <p>The design moved from simulation to silicon at CeNSE (Centre for Nano Science and Engineering).</p>
+    <!-- STICKY SIDEBAR -->
+    <aside class="project-sidebar" id="projectSidebar">
+      <div class="sidebar-header">On This Page</div>
+      <a href="#summary" class="sidebar-link active">Summary</a>
+      <a href="#problem" class="sidebar-link">Problem Statement</a>
+      <a href="#methodology" class="sidebar-link">Methodology</a>
+      <a href="#architecture" class="sidebar-link sidebar-sublink">Architecture</a>
+      <a href="#material-database" class="sidebar-link sidebar-sublink">Material Database</a>
+      <a href="#results" class="sidebar-link">Results</a>
+      <a href="#additional-info" class="sidebar-link">Additional Information</a>
+      <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">↑ Top</button>
+    </aside>
   
-  <div class="gallery">
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/2.jpeg" alt="ADRG die close-up showing ring pattern">
-      <figcaption>ADRG die with accordion ring pattern</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/3.jpeg" alt="ADRG chip wire-bonded into ceramic package">
-      <figcaption>Wire-bonded into 68-pin ceramic package</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/4.jpeg" alt="Fabricated ADRG dies on glass slides">
-      <figcaption>Fabricated dies on glass slides</figcaption>
-    </figure>
-  </div>
-  
-  <p>Individual ADRG chips on glass slides, each with the resonator's accordion-style ring pattern visible under its protective coating — and the completed chip wire-bonded into a 68-pin ceramic package with color-coded leads carrying drive, sense, and common signals to the test board.</p>
-</section>
+    <!-- MAIN CONTENT -->
+    <div class="project-content">
 
-<!-- Test Setup -->
-<section class="section-alt">
-  <div class="section-inner">
-    <h2 class="section-title">Pinout & Test Setup</h2>
-    <div class="two-col">
-      <div class="col-text">
-        <h3 class="section-subtitle">Electrode Configuration</h3>
-        <ul class="check-list">
-          <li>4 common pins</li>
-          <li>16 individually addressable outer electrodes for drive and sense</li>
-          <li>Companion accelerometer die with separate X/Y sense and feedback electrode pairs</li>
+      <!-- SUMMARY -->
+      <div id="summary" class="project-block">
+        <p class="section-eyebrow">PES University · Guide: Dr. Chandrashekara C V</p>
+        <h2>Computational Design of Machine Elements</h2>
+        <p class="project-tagline">Automating mechanical design with MATLAB</p>
+        <p class="project-date">2018 – 2022</p>
+        <p style="color:var(--text); max-width:62ch; margin-bottom: var(--space-4);">
+          Simplified the manual calculations of the design of machine elements using MATLAB. The design procedure and values were cross-verified using a Data Handbook. The implemented machine elements are shafts, springs, belt drive, chain drive, bevel gear, helical gear, spur gear, and worm gear.
+        </p>
+
+        <!-- Hero Image -->
+        <div class="hero-image-wrapper" style="margin-bottom: var(--space-4);">
+          <img src="../documents/Computational Design of Machine Elements/GUI.png" alt="MATLAB GUI welcome screen showing menu options for designing shafts, belt drives, chain drives, springs, bevel gears, helical gears, spur gears, and worm gears" style="width:100%; border-radius: 8px;">
+        </div>
+
+        <!-- GitHub Link -->
+        <a href="https://github.com/avvasai/CDME" target="_blank" rel="noopener noreferrer" class="github-badge" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; color: var(--text); text-decoration: none; font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          <svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+          View on GitHub
+        </a>
+
+        <!-- Skills Tags -->
+        <!-- <div class="tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: var(--space-4);">
+          <span class="tag">MATLAB</span>
+          <span class="tag">Mechanical Design</span>
+          <span class="tag">Automation</span>
+          <span class="tag">Machine Elements</span>
+          <span class="tag">Gear Design</span>
+          <span class="tag">Shaft Design</span>
+          <span class="tag">Spring Design</span>
+          <span class="tag">GUI Development</span>
+          <span class="tag">Excel Integration</span>
+          <span class="tag">Design Handbooks</span>
+        </div>
+      </div> -->
+
+      <!-- PROBLEM STATEMENT -->
+      <div id="problem" class="project-block">
+        <h3>Problem Statement</h3>
+        <p style="color:var(--text); max-width:62ch;">
+          Manual calculations for machine element design are time-consuming and error-prone, especially when iterating through multiple material options or design constraints. Engineers often spend excessive time on repetitive calculations that could be automated, limiting their ability to explore design alternatives and optimize solutions.
+        </p>
+      </div>
+
+      <!-- METHODOLOGY -->
+      <div id="methodology" class="project-block">
+        <h3>Methodology</h3>
+        <p style="color:var(--text); max-width:62ch; margin-bottom: var(--space-6);">
+          This project translates standard design handbook procedures into an interactive MATLAB application, implementing computational workflows for eight fundamental machine elements with automated material selection and safety verification.
+        </p>
+
+        <!-- ARCHITECTURE -->
+        <div id="architecture" class="project-subblock">
+          <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Menu-Driven Architecture</h4>
+          <p style="color:var(--text); margin-bottom: var(--space-4);">
+            The application features a menu-driven interface that guides users through the design process. Users select a machine element type, then provide input parameters through prompted dialogs. The system supports multiple design paths—for example, shaft design can proceed with diameter known or unknown, accommodating different engineering scenarios.
+          </p>
+        </div>
+
+        <!-- MATERIAL DATABASE -->
+        <div id="material-database" class="project-subblock">
+          <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Material Database Integration</h4>
+          <p style="color:var(--text); margin-bottom: var(--space-4);">
+            A database of 22+ materials is integrated via Excel lookup tables, automatically retrieving mechanical properties (yield strength, ultimate strength, allowable stresses) based on user selection. Standard sizes for pulleys, belt widths, chain pitches, and gear modules are also retrieved from reference tables, ensuring designs conform to manufacturing standards.
+          </p>
+          <p style="color:var(--text); margin-bottom: var(--space-4);">
+            <strong>Safety Verification Logic:</strong> Each design calculation includes automatic safety checks comparing computed stresses against permissible values. The system evaluates wear resistance, dynamic loading effects, and for worm gears, heat generation versus dissipation capacity with artificial cooling recommendations when needed.
+          </p>
+        </div>
+      </div>
+
+      <!-- RESULTS -->
+      <div id="results" class="project-block">
+        <h3>Results</h3>
+        <p style="color:var(--text); max-width:62ch; margin-bottom: var(--space-4);">
+          Successfully automated design procedures for 8 machine elements with full parameter output and built-in safety verification.
+        </p>
+
+        <div class="table-wrapper" style="overflow-x: auto; margin-bottom: var(--space-6);">
+          <table style="width: 100%; border-collapse: collapse; font-size: var(--text-sm);">
+            <thead>
+              <tr style="background: var(--surface); border-bottom: 2px solid var(--border);">
+                <th style="padding: 0.75rem; text-align: left; color: var(--headline);">Element</th>
+                <th style="padding: 0.75rem; text-align: left; color: var(--headline);">Key Outputs</th>
+                <th style="padding: 0.75rem; text-align: left; color: var(--headline);">Special Features</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 0.75rem; color: var(--text);">Shaft</td>
+                <td style="padding: 0.75rem; color: var(--text-dim);">Diameter (d), Torque (T), Moment of Inertia (M)</td>
+                <td style="padding: 0.75rem; color: var(--text-dim);">P vs N, T vs N, D vs N trend graphs; hollow shaft support</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 0.75rem; color: var(--text);">Belt Drive</td>
+                <td style="padding: 0.75rem; color: var(--text-dim);">Pulley diameters (D1, D2), Belt length (L), Width (b), Tensions (T1, T2)</td>
+                <td style="padding: 0.75rem; color: var(--text-dim);">Standard size selection for pulleys and belt width</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 0.75rem; color: var(--text);">Chain Drive</td>
+                <td style="padding: 0.75rem; color: var(--text-dim);">Sprocket teeth (z1, z2), Chain pitch, Center distance, Chain length</td>
+                <td style="padding: 0.75rem; color: var(--text-dim);">Service factor tables; safety factor verification</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 0.75rem; color: var(--text);">Springs</td>
+                <td style="padding: 0.75rem; color: var(--text-dim);">Wire diameter (d), Mean coil diameter (D), Active coils (N), Free length, Pitch</td>
+                <td style="padding: 0.75rem; color: var(--text-dim);">Four end-type options; Wahl correction factor</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 0.75rem; color: var(--text);">Bevel Gear</td>
+                <td style="padding: 0.75rem; color: var(--text-dim);">Module (m), Face width (b), Pitch diameters, Tooth counts</td>
+                <td style="padding: 0.75rem; color: var(--text-dim);">Lewis form factor; wear and dynamic load checks</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 0.75rem; color: var(--text);">Helical Gear</td>
+                <td style="padding: 0.75rem; color: var(--text-dim);">Module, Diameters, Helix angle calculations, Forces (Ft, Fa, Fr)</td>
+                <td style="padding: 0.75rem; color: var(--text-dim);">Virtual teeth calculation; minimum face width check</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 0.75rem; color: var(--text);">Spur Gear</td>
+                <td style="padding: 0.75rem; color: var(--text-dim);">Module, Pitch diameters, Tooth counts, Face width</td>
+                <td style="padding: 0.75rem; color: var(--text-dim);">Three involute systems (14.5°, 20°, 20° stub)</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 0.75rem; color: var(--text);">Worm Gear</td>
+                <td style="padding: 0.75rem; color: var(--text-dim);">Center distance, Pitch diameters, Module, Lead angle, Efficiency</td>
+                <td style="padding: 0.75rem; color: var(--text-dim);">Heat generation vs. dissipation analysis; artificial cooling check</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Future Scope</h4>
+        <ul style="color:var(--text-dim); max-width:62ch; padding-left: 1.5rem;">
+          <li>Add graphical output for all machine elements (currently only shaft has trend plots)</li>
+          <li>Implement a full GUI using MATLAB App Designer for improved user experience</li>
+          <li>Add export functionality to generate design reports in PDF format</li>
+          <li>Include additional machine elements (couplings, clutches, brakes, bearings)</li>
+          <li>Add optimization routines to find minimum-weight or minimum-cost designs</li>
         </ul>
-        
-        <h3 class="section-subtitle">LDV Testing</h3>
-        <ul class="check-list">
-          <li>Drive signal combining AC and DC bias excited the resonator</li>
-          <li>LDV measured out-of-plane velocity at 0° and 180° points on the ring</li>
-          <li>Characterized frequency response under controlled conditions</li>
-        </ul>
       </div>
-      <div class="col-visual">
-        <img src="../documents/MEMS Engineer/3.jpeg" alt="Wire-bonded package for testing" class="project-img">
-        <p class="img-caption">68-pin ceramic package ready for LDV testing</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Results -->
-<section class="section">
-  <h2 class="section-title">Results</h2>
-  <div class="resume-card">
-    <p>Under controlled atmospheric conditions (1 atm, 25°C), the fabricated ADRG resonated at approximately <strong>6.8 kHz</strong> — within <strong>1.2–1.4%</strong> of the FEM-predicted eigenfrequency, confirming the simulation model held up in the real device.</p>
-  </div>
-</section>
+      <!-- ADDITIONAL INFORMATION -->
+      <div id="additional-info" class="project-block">
+        <h3>Additional Information</h3>
+        <p style="color:var(--text-dim); max-width:62ch; margin-bottom: var(--space-4); font-size: var(--text-sm);">
+          The complete MATLAB source code and Excel lookup tables are available on GitHub.
+        </p>
+        <a href="https://github.com/avvasai/CDME" target="_blank" rel="noopener noreferrer" class="github-badge" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; color: var(--text); text-decoration: none; font-size: var(--text-sm);">
+          <svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+          View Source Code on GitHub
+        </a>
+      </div>
 
-<!-- My Contributions -->
-<section class="section">
-  <h2 class="section-title">My Contributions</h2>
-  <div class="role-grid">
-    <div class="role-item">
-      <span class="role-icon">📐</span>
-      <div class="role-text">
-        <strong>ADRG Geometry Design</strong>
-        <p>Designed the novel accordion-like ring topology</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">💻</span>
-      <div class="role-text">
-        <strong>FEM Modeling</strong>
-        <p>Led eigenfrequency and capacitance modeling across all five DRG topologies</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">🔬</span>
-      <div class="role-text">
-        <strong>Experimental Characterization</strong>
-        <p>Ran LDV-based testing of the fabricated device</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">📊</span>
-      <div class="role-text">
-        <strong>Comparative Analysis</strong>
-        <p>Benchmarked ADRG against DRG, HDRG, CDRG, and GDRG</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Credits -->
-<section class="section">
-  <div class="credits-box">
-    <h3>Team & Acknowledgments</h3>
-    <p><strong>Advisor:</strong> Prof. G. K. Ananthasuresh</p>
-    <p><strong>Co-Advisor:</strong> Karthik (ISRO)</p>
-    <p><strong>Design & Simulation Support:</strong> Sai Kumar, Suman Acharya</p>
-    <p><strong>Fabrication:</strong> Sudhanshu Shekhar</p>
-    <p><strong>Funding:</strong> ISRO</p>
-    <p><strong>Facilities:</strong> CeNSE (Centre for Nano Science and Engineering)</p>
-  </div>
-</section>
-
-<!-- Back Link -->
-<section class="section" style="text-align: center;">
-  <a href="../index.html#info" class="btn btn-ghost">← Back to Projects</a>
+    </div><!-- end project-content -->
+  </div><!-- end project-layout -->
 </section>
 
 <footer class="footer">
-  <span>© <span id="year"></span> Avva Sai Pranav</span>
+  <p>&copy; 2024 Sai Pranav Avva. All rights reserved.</p>
 </footer>
 
-<script>
-  const root = document.documentElement;
-  const toggle = document.getElementById('themeToggle');
-  const knob = document.getElementById('themeKnob');
-  const clockEl = document.getElementById('clock');
-  const yearEl = document.getElementById('year');
-
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-  function applyTheme(theme) {
-    root.setAttribute('data-theme', theme);
-    knob.textContent = theme === 'dark' ? '☀' : '☾';
-    try { localStorage.setItem('site-theme', theme); } catch (e) {}
-  }
-
-  let saved = null;
-  try { saved = localStorage.getItem('site-theme'); } catch (e) {}
-  const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-  applyTheme(saved || (prefersLight ? 'light' : 'dark'));
-
-  toggle.addEventListener('click', () => {
-    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    applyTheme(next);
-  });
-
-  function tickClock() {
-    if (clockEl) clockEl.textContent = new Date().toLocaleTimeString('en-GB');
-  }
-  tickClock();
-  setInterval(tickClock, 1000);
-</script>
-
+<script src="../script.js"></script>
 </body>
 </html>

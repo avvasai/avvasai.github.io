@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accordion-Like Disk Resonator Gyroscope</title>
-  <meta name="description" content="A Novel Accordion-Like Disk Resonator Gyroscope (ADRG) - MEMS gyroscope design, simulation, fabrication and testing">
+  <title>MoBI: Mobile Brain/Body Imaging Data Analysis | Sai Pranav Avva</title>
+  <meta name="description" content="Machine learning pipeline for analyzing Mobile Brain/Body Imaging data to predict behavioral errors, targeting simplified diagnostics for childhood developmental disorders.">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-
 <header class="masthead">
   <h1 class="giant-name">Avva Sai Pranav</h1>
   <nav class="pill-nav">
     <div class="pill-links">
-      <a href="index.html" class="pill">Home</a>
-      <a href="index.html#info" class="pill">Projects</a>
-      <a href="index.html#resume" class="pill">Resume</a>
-      <a href="index.html#contact" class="pill">Contact</a>
+      <a href="../index.html" class="pill">Home</a>
+      <a href="../index.html#info" class="pill">Projects</a>
+      <a href="../index.html#resume" class="pill">Resume</a>
+      <a href="../index.html#contact" class="pill">Contact</a>
     </div>
     <div class="pill-right">
       <span class="label">Theme:</span>
@@ -28,228 +27,328 @@
   </nav>
 </header>
 
-<!-- Project Hero -->
-<section class="project-hero">
-  <p class="section-eyebrow">Project</p>
-  <h1 class="project-title">A Novel Accordion-Like Disk Resonator Gyroscope</h1>
-  <p class="project-subtitle">MEMS Gyroscope Design · Simulation · Fabrication · Testing</p>
-  <div class="project-meta">
-    <span class="meta-item">🏛️ M2D2 Laboratory, Indian Institute of Science</span>
-    <span class="meta-item">👤 Prof. G. K. Ananthasuresh</span>
-    <span class="meta-item">🎤 ICMNSS Conference</span>
-  </div>
-</section>
-
-<!-- Key Results Stats -->
 <section class="section">
-  <div class="stats-row">
-    <div class="stat-card">
-      <span class="stat-value">3–4×</span>
-      <span class="stat-label">Higher Sensitivity</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">6771 Hz</span>
-      <span class="stat-label">Drive Frequency</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">&lt;1.4%</span>
-      <span class="stat-label">Sim-to-Fab Error</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">46.4%</span>
-      <span class="stat-label">Capacitance Change</span>
-    </div>
-  </div>
-</section>
+  <a href="../index.html#info" class="back-link">← Back to projects</a>
 
-<!-- Overview -->
-<section class="section">
-  <h2 class="section-title">Project Overview</h2>
-  <div class="two-col">
-    <div class="col-text">
-      <p>Disk Resonator Gyroscopes (DRGs) sense rotation using Coriolis forces acting on a vibrating ring — the same physics behind a Foucault pendulum, just shrunk down to millimeters.</p>
-      <p>Over the years, designs like the Boeing DRG, Honeycomb DRG, Cobweb DRG, and Gear DRG each pushed sensitivity a little further, from 0.04 deg/sec down to 0.015 deg/sec, but each traded off electrode placement against mechanical performance.</p>
-      <p>This project asked a simple question: <strong>could an entirely different ring geometry — an "accordion-like" pattern — beat the existing field on mechanical sensitivity and noise?</strong></p>
-    </div>
-    <div class="col-visual">
-      <img src="../documents/MEMS Engineer/2.jpeg" alt="ADRG die close-up showing ring pattern" class="project-img">
-      <p class="img-caption">ADRG die showing accordion-style ring pattern</p>
-    </div>
-  </div>
-</section>
-
-<!-- Design & Simulation -->
-<section class="section-alt">
-  <div class="section-inner">
-    <h2 class="section-title">Design & Simulation</h2>
-    <p>I ran finite-element eigenfrequency analysis across five ring topologies — DRG, HDRG, CDRG, GDRG, and my proposed ADRG — each built with 9 rings, an 8mm outer diameter, 10μm in-plane ring width, and 60μm thickness.</p>
+  <div class="project-layout">
     
-    <div class="table-wrapper">
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>DRG Type</th>
-            <th>Eigenfrequency (Hz)</th>
-            <th>Quality Factor (k)</th>
-            <th>Mech. Sensitivity (μm/rad/s)</th>
-            <th>Brownian Noise (rad/s/√Hz)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>DRG</td>
-            <td>12720</td>
-            <td>103.62</td>
-            <td>3.83e-6</td>
-            <td>1.01e-6</td>
-          </tr>
-          <tr>
-            <td>HDRG</td>
-            <td>11306</td>
-            <td>105.42</td>
-            <td>4.27e-6</td>
-            <td>1.29e-6</td>
-          </tr>
-          <tr>
-            <td>CDRG</td>
-            <td>12611</td>
-            <td>99.99</td>
-            <td>3.61e-6</td>
-            <td>1.12e-6</td>
-          </tr>
-          <tr>
-            <td>GDRG</td>
-            <td>14761</td>
-            <td>91.58</td>
-            <td>2.76e-6</td>
-            <td>1.17e-6</td>
-          </tr>
-          <tr class="highlight-row">
-            <td>ADRG (Ours)</td>
-            <td>6771</td>
-            <td>181.55</td>
-            <td>12.1e-6</td>
-            <td>1.07e-6</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="table-note">The ADRG's mechanical sensitivity is roughly 3–4× higher than every other topology tested, while holding competitive noise performance.</p>
-    
-    <p>Capacitance modeling (accounting for fringing fields, not just the textbook parallel-plate formula) backed this up — the ADRG's relative sense capacitance change was the largest of the five designs at <strong>46.4%</strong>, versus 14–29% for the others.</p>
-  </div>
-</section>
-
-<!-- Fabrication -->
-<section class="section">
-  <h2 class="section-title">Fabrication</h2>
-  <p>The design moved from simulation to silicon at CeNSE (Centre for Nano Science and Engineering).</p>
+    <!-- STICKY SIDEBAR - Always visible -->
+    <aside class="project-sidebar" id="projectSidebar">
+    <div class="sidebar-header">On This Page</div>
+    <a href="#summary" class="sidebar-link active">Summary</a>
+    <a href="#problem" class="sidebar-link">Problem Statement</a>
+    <a href="#methodology" class="sidebar-link">Methodology</a>
+    <a href="#preprocessing" class="sidebar-link sidebar-sublink">Data Preprocessing</a>
+    <a href="#models" class="sidebar-link sidebar-sublink">ML Models</a>
+    <a href="#validation" class="sidebar-link">Cross-Validation</a>
+    <a href="#results" class="sidebar-link">Results</a>
+    <a href="#additional-info" class="sidebar-link">Additional Information</a>
+    <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">
+  ↑ Top
+    </button>
+  </aside>
   
-  <div class="gallery">
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/2.jpeg" alt="ADRG die close-up showing ring pattern">
-      <figcaption>ADRG die with accordion ring pattern</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/3.jpeg" alt="ADRG chip wire-bonded into ceramic package">
-      <figcaption>Wire-bonded into 68-pin ceramic package</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/4.jpeg" alt="Fabricated ADRG dies on glass slides">
-      <figcaption>Fabricated dies on glass slides</figcaption>
-    </figure>
-  </div>
-  
-  <p>Individual ADRG chips on glass slides, each with the resonator's accordion-style ring pattern visible under its protective coating — and the completed chip wire-bonded into a 68-pin ceramic package with color-coded leads carrying drive, sense, and common signals to the test board.</p>
-</section>
+    <!-- MAIN CONTENT -->
+    <div class="project-content">
 
-<!-- Test Setup -->
-<section class="section-alt">
-  <div class="section-inner">
-    <h2 class="section-title">Pinout & Test Setup</h2>
-    <div class="two-col">
-      <div class="col-text">
-        <h3 class="section-subtitle">Electrode Configuration</h3>
-        <ul class="check-list">
-          <li>4 common pins</li>
-          <li>16 individually addressable outer electrodes for drive and sense</li>
-          <li>Companion accelerometer die with separate X/Y sense and feedback electrode pairs</li>
+      <!-- SUMMARY -->
+      <div id="summary" class="project-block">
+        <p class="section-eyebrow">Project · Data Science & Machine Learning</p>
+        <h2>MoBI: Mobile Brain/Body Imaging Data Analysis</h2>
+        <p>
+          Machine learning pipeline for analyzing Mobile Brain/Body Imaging data to predict behavioral errors — Johns Hopkins University, Biomedical Data Design | Team MoBI
+        </p>
+        <p>
+          <strong>Duration:</strong> September 2024 – November 2024
+        </p>
+        <p>
+          This research project at Johns Hopkins University focused on developing machine learning models to analyze Mobile Brain/Body Imaging (MoBI) data and predict behavioral errors. The goal was to reduce the number of required data streams for MoBI experiments while maintaining predictive accuracy—ultimately working toward simplified diagnostic tools for the 17.4% of children affected by mental, behavioral, and developmental disorders. I implemented and compared Ridge Regression and Random Forest models, applied multiple normalization techniques (Z-score, Min-Max, Robust Scaling), and conducted extensive cross-validation including 5-fold CV and Leave-One-Out CV across 61 subjects with ~17,000 data streams each. Key findings showed that Random Forest achieved R² values of 0.8-1.0 at sample fractions above 0.8, while cross-subject generalization remained challenging. The project established a foundation for feature importance analysis and transfer learning approaches planned for manuscript publication.
+        </p>
+        <p>
+          <strong>Team Members:</strong> Isha Dev, Sai Pranav Avva, Taiming Chen, Liora Dsilva, Deborah Roman, Riya Modi
+        </p>
+      </div>
+
+      <!-- PROBLEM STATEMENT -->
+      <div id="problem" class="project-block">
+        <h3>Problem Statement</h3>
+        <p style="color:var(--text);">
+          Running complete MoBI experiments is time-consuming and expensive. Existing model limitations include high prediction error and reliance on simple ridge regression approaches. The challenge: could we reduce the number of data streams required for MoBI experiments while maintaining predictive accuracy? Could we find a relationship between MoBI data and behavioral errors that enables simplified diagnostic tools for the 17.4% of children affected by mental, behavioral, and developmental disorders?
+        </p>
+        <p style="color:var(--text); margin-top: var(--space-4);">
+          <strong>Our Novel Approach:</strong>
+        </p>
+        <ul style="color:var(--text); margin-bottom: var(--space-4); padding-left: var(--space-4);">
+          <li>Comparing ridge regression with nonlinear regression models (Random Forest)</li>
+          <li>Characterize feature importance</li>
+          <li>Implement time as a feature in the ML model for this dataset</li>
         </ul>
+      </div>
+
+      <!-- METHODOLOGY -->
+      <div id="methodology" class="project-block">
+        <h3>Methodology</h3>
+        <p style="color:var(--text-dim); font-size: var(--text-sm);">
+          The project followed a comprehensive data preprocessing, model development, and validation workflow comparing linear and nonlinear regression approaches. We replicated results across all team members' systems to ensure reproducibility before applying advanced techniques.
+        </p>
+      </div>
+
+      <!-- DATA PREPROCESSING -->
+      <div id="preprocessing" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Data Preprocessing</h4>
         
-        <h3 class="section-subtitle">LDV Testing</h3>
-        <ul class="check-list">
-          <li>Drive signal combining AC and DC bias excited the resonator</li>
-          <li>LDV measured out-of-plane velocity at 0° and 180° points on the ring</li>
-          <li>Characterized frequency response under controlled conditions</li>
+        <p style="color:var(--text); margin-bottom: var(--space-4);">
+          <strong>Dataset Overview:</strong> Processed and analyzed data from 61 subjects with approximately 17,000 data streams per subject across 14 input features including:
+        </p>
+        <ul style="color:var(--text); margin-bottom: var(--space-4); padding-left: var(--space-4);">
+          <li>ECG metrics: ecg_rri, ecg_task_ts, ecg_heart_rate, ecg_rri_mean_5, ecg_rri_mean_10, ecg_rri_std_5, ecg_rri_std_10</li>
+          <li>EDA signals: eda_filtered, eda_peaks</li>
+          <li>Respiration data: resp_filtered, resp_resp_rate</li>
+          <li>Motion and EMG: abs_motion_filtered, emg1_filtered, emg2_filtered</li>
+        </ul>
+
+        <p style="color:var(--text); margin-bottom: var(--space-4);">
+          <strong>Normalization Techniques:</strong> To ensure fair contribution of all features to the regression models, three normalization preprocessing techniques were applied with comparative heatmap visualization:
+        </p>
+        <ul style="color:var(--text); margin-bottom: var(--space-4); padding-left: var(--space-4);">
+          <li><strong>Min-Max Scaling:</strong> Rescales features to [0, 1] range</li>
+          <li><strong>Z-Score Normalization:</strong> Standardizes to zero mean and unit variance</li>
+          <li><strong>Robust Scaling:</strong> Uses median and IQR, robust to outliers</li>
+        </ul>
+
+        <!-- Normalization Heatmaps Image -->
+        <figure style="margin-bottom: var(--space-6);">
+          <img src="../documents/Biomedical Data Design/mobi_normalization_heatmaps.jpg" alt="Comparison of normalization techniques: Before normalization, Min-Max, Z-Score, and Robust Scaling heatmaps showing Subject 1 data across all 14 features and 17000 time steps" style="width:100%; border-radius: 8px;">
+          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Heatmap visualization comparing raw data with three normalization preprocessing techniques applied to Subject 1 MoBI dataset across 14 features</figcaption>
+        </figure>
+      </div>
+
+      <!-- ML MODELS -->
+      <div id="models" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Machine Learning Models</h4>
+        
+        <p style="color:var(--text); margin-bottom: var(--space-4);">
+          <strong>Ridge Regression:</strong> Implemented Ridge Regression from scratch and validated against Scikit-learn implementation. Optimized the penalty parameter (alpha) to 0.01 through systematic tuning. Ridge regression served as the baseline linear model for comparison. Replication across all team members' systems ensured consistent results by using identical random states.
+        </p>
+
+        <p style="color:var(--text); margin-bottom: var(--space-4);">
+          <strong>Random Forest Regression:</strong> Implemented nonlinear Random Forest regression to capture complex relationships in the MoBI data. Initial replication encountered inconsistencies due to multithreading issues, which were resolved by explicitly calling the random seed (RS = 23) prior to every trial. Evaluated performance across varying sample fractions on a logarithmic scale from 1000 to the total number of data streams.
+        </p>
+
+        <p style="color:var(--text); margin-bottom: var(--space-4);">
+          <strong>Target Variables:</strong> Three target variables were predicted:
+        </p>
+        <ul style="color:var(--text); margin-bottom: var(--space-4); padding-left: var(--space-4);">
+          <li><strong>Position Difference (y_pos_dif):</strong> user_pos - stim_pos</li>
+          <li><strong>Stimulus Position (y_pos/stim_pos):</strong> Target position</li>
+          <li><strong>Stimulus Speed (y_speed/change_rate_x):</strong> Rate of change</li>
         </ul>
       </div>
-      <div class="col-visual">
-        <img src="../documents/MEMS Engineer/3.jpeg" alt="Wire-bonded package for testing" class="project-img">
-        <p class="img-caption">68-pin ceramic package ready for LDV testing</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Results -->
-<section class="section">
-  <h2 class="section-title">Results</h2>
-  <div class="resume-card">
-    <p>Under controlled atmospheric conditions (1 atm, 25°C), the fabricated ADRG resonated at approximately <strong>6.8 kHz</strong> — within <strong>1.2–1.4%</strong> of the FEM-predicted eigenfrequency, confirming the simulation model held up in the real device.</p>
-  </div>
-</section>
+      <!-- CROSS-VALIDATION -->
+      <div id="validation" class="project-block">
+        <h3>Cross-Validation</h3>
+        <p style="color:var(--text); margin-bottom: var(--space-4);">
+          Implemented comprehensive cross-validation strategies to evaluate model generalization:
+        </p>
+        <ul style="color:var(--text); margin-bottom: var(--space-4); padding-left: var(--space-4);">
+          <li><strong>5-Fold Cross-Validation:</strong> Within-subject validation to assess model performance on held-out data from the same subject</li>
+          <li><strong>Leave-One-Out Cross-Validation (LOOCV):</strong> Cross-subject validation where models trained on N-1 subjects predict on the held-out subject — critical for assessing generalizability</li>
+        </ul>
+        <p style="color:var(--text); margin-bottom: var(--space-4);">
+          Identified optimal training-to-test split ratio of 0.4:0.6 for computational efficiency. Resolved cross-system reproducibility issues through explicit random seed initialization (RS = 23).
+        </p>
+      </div>
 
-<!-- My Contributions -->
-<section class="section">
-  <h2 class="section-title">My Contributions</h2>
-  <div class="role-grid">
-    <div class="role-item">
-      <span class="role-icon">📐</span>
-      <div class="role-text">
-        <strong>ADRG Geometry Design</strong>
-        <p>Designed the novel accordion-like ring topology</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">💻</span>
-      <div class="role-text">
-        <strong>FEM Modeling</strong>
-        <p>Led eigenfrequency and capacitance modeling across all five DRG topologies</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">🔬</span>
-      <div class="role-text">
-        <strong>Experimental Characterization</strong>
-        <p>Ran LDV-based testing of the fabricated device</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">📊</span>
-      <div class="role-text">
-        <strong>Comparative Analysis</strong>
-        <p>Benchmarked ADRG against DRG, HDRG, CDRG, and GDRG</p>
-      </div>
-    </div>
-  </div>
-</section>
+      <!-- RESULTS -->
+      <div id="results" class="project-block">
+        <h3>Results</h3>
 
-<!-- Credits -->
-<section class="section">
-  <div class="credits-box">
-    <h3>Team & Acknowledgments</h3>
-    <p><strong>Advisor:</strong> Prof. G. K. Ananthasuresh</p>
-    <p><strong>Co-Advisor:</strong> Karthik (ISRO)</p>
-    <p><strong>Design & Simulation Support:</strong> Sai Kumar, Suman Acharya</p>
-    <p><strong>Fabrication:</strong> Sudhanshu Shekhar</p>
-    <p><strong>Funding:</strong> ISRO</p>
-    <p><strong>Facilities:</strong> CeNSE (Centre for Nano Science and Engineering)</p>
-  </div>
-</section>
+        <h4 style="color:var(--headline); margin-top: var(--space-4); margin-bottom: var(--space-3);">Random Forest Regression — 5-Fold Cross-Validation</h4>
+        
+        <p style="color:var(--text); margin-bottom: var(--space-4);">
+          Random Forest regression with 5-fold cross-validation across all 61 subjects (~17,000 raw data streams each). Sample fractions above approximately 0.8 consistently achieved R² values between 0.8 and 1.0, indicating excellent within-subject prediction performance.
+        </p>
 
-<!-- Back Link -->
-<section class="section" style="text-align: center;">
-  <a href="../index.html#info" class="btn btn-ghost">← Back to Projects</a>
+        <!-- RF Position Difference -->
+        <figure style="margin-bottom: var(--space-6);">
+          <img src="../documents/Biomedical Data Design/image5.jpg"alt="Random Forest Regression for Position Difference: R2 Score vs Sample Fraction showing all 61 subjects reaching 0.8-1.0 R² at high sample fractions" style="width:100%; border-radius: 8px;">
+          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Random Forest — Target: Position Difference | 5-fold CV | 61 subjects | Truncated at R² = 0</figcaption>
+        </figure>
+
+        <!-- RF Stimulus Position -->
+        <figure style="margin-bottom: var(--space-6);">
+          <img src="../documents/Biomedical Data Design/image9.jpg" alt="Random Forest Regression for Stimulus Position: R2 Score vs Sample Fraction showing convergence to R² near 1.0" style="width:100%; border-radius: 8px;">
+          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Random Forest — Target: Stimulus Position | 5-fold CV | 61 subjects</figcaption>
+        </figure>
+
+        <!-- RF Stimulus Speed -->
+        <figure style="margin-bottom: var(--space-6);">
+          <img src="../documents/Biomedical Data Design/image1.jpg" alt="Random Forest Regression for Stimulus Speed: R2 Score vs Sample Fraction" style="width:100%; border-radius: 8px;">
+          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Random Forest — Target: Stimulus Speed (change_rate_x) | 5-fold CV | 61 subjects</figcaption>
+        </figure>
+
+        <h4 style="color:var(--headline); margin-top: var(--space-6); margin-bottom: var(--space-3);">Normalization Impact — Random Forest</h4>
+        
+        <p style="color:var(--text); margin-bottom: var(--space-4);">
+          Comparison of Random Forest performance across raw data and three normalization techniques (5 subjects, ~17,000 normalized data streams). All normalization methods showed similar performance, with minimal impact on final R² scores.
+        </p>
+
+        <!-- RF Normalized Position Difference -->
+        <figure style="margin-bottom: var(--space-6);">
+          <img src="../documents/Biomedical Data Design/image15.jpg" alt="Random Forest Mean R² Scores for Position Difference comparing Raw Data, Min-Max, Z-Score, and Robust Scaling normalization" style="width:100%; border-radius: 8px;">
+          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Random Forest Mean R² — Position Difference | Comparing normalization techniques</figcaption>
+        </figure>
+
+        <!-- RF Normalized Stimulus Position -->
+        <figure style="margin-bottom: var(--space-6);">
+          <img src="../documents/Biomedical Data Design/image18.jpg" alt="Random Forest Mean R² Scores for Stimulus Position comparing normalization methods" style="width:100%; border-radius: 8px;">
+          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Random Forest Mean R² — Stimulus Position | Comparing normalization techniques</figcaption>
+        </figure>
+
+        <!-- RF Normalized Stimulus Speed -->
+        <figure style="margin-bottom: var(--space-6);">
+          <img src="../documents/Biomedical Data Design/image10.jpg" alt="Random Forest Mean R² Scores for Stimulus Speed comparing normalization methods" style="width:100%; border-radius: 8px;">
+          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Random Forest Mean R² — Stimulus Speed | Comparing normalization techniques</figcaption>
+        </figure>
+
+        <h4 style="color:var(--headline); margin-top: var(--space-6); margin-bottom: var(--space-3);">Ridge Regression — 5-Fold Cross-Validation</h4>
+        
+        <p style="color:var(--text); margin-bottom: var(--space-4);">
+          Ridge regression showed significantly lower R² values (max ~0.08) compared to Random Forest, confirming the nonlinear nature of the MoBI data relationships. Results shown for 1 subject with ~17,000 normalized data streams.
+        </p>
+
+        <!-- Ridge Position Difference -->
+        <figure style="margin-bottom: var(--space-6);">
+          <img src="../documents/Biomedical Data Design/image27.jpg" alt="Ridge Regression Mean R² Scores for Position Difference showing max R² around 0.07-0.08" style="width:100%; border-radius: 8px;">
+          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Ridge Regression Mean R² — Position Difference | 5-fold CV | Comparing normalization techniques</figcaption>
+        </figure>
+
+        <!-- Ridge Stimulus Position -->
+        <figure style="margin-bottom: var(--space-6);">
+          <img src="../documents/Biomedical Data Design/image12.jpg" alt="Ridge Regression Mean R² Scores for Stimulus Position" style="width:100%; border-radius: 8px;">
+          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Ridge Regression Mean R² — Stimulus Position | 5-fold CV | Comparing normalization techniques</figcaption>
+        </figure>
+
+        <!-- Ridge Stimulus Speed -->
+        <figure style="margin-bottom: var(--space-6);">
+          <img src="../documents/Biomedical Data Design/image2.jpg" alt="Ridge Regression Mean R² Scores for Stimulus Speed showing max R² around 0.014" style="width:100%; border-radius: 8px;">
+          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Ridge Regression Mean R² — Stimulus Speed | 5-fold CV | Comparing normalization techniques</figcaption>
+        </figure>
+
+        <h4 style="color:var(--headline); margin-top: var(--space-6); margin-bottom: var(--space-3);">Ridge vs Random Forest — Direct Comparison</h4>
+        
+        <p style="color:var(--text); margin-bottom: var(--space-4);">
+          Side-by-side comparison clearly demonstrates Random Forest superiority over Ridge Regression for within-subject MoBI prediction tasks.
+        </p>
+
+        <!-- Comparison Position Difference -->
+        <figure style="margin-bottom: var(--space-6);">
+          <img src="../documents/Biomedical Data Design/comparison_position_difference.png" alt="Side-by-side comparison of Ridge (max 0.07) vs Random Forest (max 1.0) for Position Difference" style="width:100%; border-radius: 8px;">
+          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Ridge vs Random Forest — Position Difference | Note the scale difference: Ridge maxes at ~0.07, RF reaches ~1.0</figcaption>
+        </figure>
+
+        <!-- Comparison Stimulus Position -->
+        <figure style="margin-bottom: var(--space-6);">
+          <img src="../documents/Biomedical Data Design/comparison_stimulus_position.png" alt="Side-by-side comparison of Ridge vs Random Forest for Stimulus Position" style="width:100%; border-radius: 8px;">
+          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Ridge vs Random Forest — Stimulus Position</figcaption>
+        </figure>
+
+        <!-- Comparison Stimulus Speed -->
+        <figure style="margin-bottom: var(--space-6);">
+          <img src="../documents/Biomedical Data Design/comparison_stimulus_speed.png" alt="Side-by-side comparison of Ridge vs Random Forest for Stimulus Speed" style="width:100%; border-radius: 8px;">
+          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Ridge vs Random Forest — Stimulus Speed</figcaption>
+        </figure>
+
+        <h4 style="color:var(--headline); margin-top: var(--space-6); margin-bottom: var(--space-3);">Leave-One-Out Cross-Validation (LOOCV)</h4>
+        
+        <p style="color:var(--text); margin-bottom: var(--space-4);">
+          <strong>Cross-Subject Generalization Challenge:</strong> LOOCV revealed significant challenges in cross-subject generalization. When training on N-1 subjects and predicting on the held-out subject, R² values dropped dramatically, ranging between -3.0 and 0.1 — indicating high inter-subject variability.
+        </p>
+
+        <!-- RF LOOCV Results -->
+        <figure style="margin-bottom: var(--space-6);">
+          <img src="../documents/Biomedical Data Design/mobi_rf_results.png" alt="Random Forest LOOCV results showing negative R² values for 3 subjects, indicating poor cross-subject generalization" style="width:100%; border-radius: 8px;">
+          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Random Forest LOOCV — 3 subjects | Before vs Min-Max Normalization | Negative R² indicates model performs worse than mean prediction</figcaption>
+        </figure>
+
+        <!-- Ridge LOOCV 61 subjects -->
+        <figure style="margin-bottom: var(--space-6);">
+          <img src="../documents/Biomedical Data Design/mobi_loocv_results.png" alt="Ridge Regression LOOCV results across all 61 subjects showing consistently negative R² values" style="width:100%; border-radius: 8px;">
+          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Ridge Regression LOOCV — 61 subjects | All three targets | Before Normalization, Min-Max, and Robust Scaling</figcaption>
+        </figure>
+
+        <!-- Ridge LOOCV 3 subjects -->
+        <!-- <figure style="margin-bottom: var(--space-6);">
+          <img src="../documents/Biomedical Data Design/mobi_rf_results.png" alt="Ridge Regression LOOCV detailed view for 3 subjects" style="width:100%; border-radius: 8px;">
+          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Ridge Regression LOOCV — 3 subjects detailed view | Comparing normalization methods</figcaption>
+        </figure> -->
+
+        <h4 style="color:var(--headline); margin-top: var(--space-6); margin-bottom: var(--space-3);">Key Metrics</h4>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); margin-bottom: var(--space-6);">
+          <div style="background: var(--surface); padding: var(--space-4); border-radius: 8px; border: 1px solid var(--border);">
+            <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-1);">Subjects Analyzed</p>
+            <p style="color:var(--headline); font-size: var(--text-xl); font-weight: 600;">61</p>
+          </div>
+          <div style="background: var(--surface); padding: var(--space-4); border-radius: 8px; border: 1px solid var(--border);">
+            <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-1);">Data Streams per Subject</p>
+            <p style="color:var(--headline); font-size: var(--text-xl); font-weight: 600;">~17,000</p>
+          </div>
+          <div style="background: var(--surface); padding: var(--space-4); border-radius: 8px; border: 1px solid var(--border);">
+            <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-1);">Input Features</p>
+            <p style="color:var(--headline); font-size: var(--text-xl); font-weight: 600;">14</p>
+          </div>
+          <div style="background: var(--surface); padding: var(--space-4); border-radius: 8px; border: 1px solid var(--border);">
+            <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-1);">Best R² (Random Forest)</p>
+            <p style="color:var(--headline); font-size: var(--text-xl); font-weight: 600;">0.8–1.0</p>
+          </div>
+          <div style="background: var(--surface); padding: var(--space-4); border-radius: 8px; border: 1px solid var(--border);">
+            <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-1);">Optimal Penalty (Ridge)</p>
+            <p style="color:var(--headline); font-size: var(--text-xl); font-weight: 600;">0.01</p>
+          </div>
+          <div style="background: var(--surface); padding: var(--space-4); border-radius: 8px; border: 1px solid var(--border);">
+            <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-1);">Cross-Validation Error</p>
+            <p style="color:var(--headline); font-size: var(--text-xl); font-weight: 600;">&lt;1%</p>
+          </div>
+        </div>
+
+        <h4 style="color:var(--headline); margin-top: var(--space-6); margin-bottom: var(--space-3);">Key Achievements</h4>
+        <ul style="color:var(--text); margin-bottom: var(--space-4); padding-left: var(--space-4);">
+          <li>Established reproducible ML pipeline across multiple development environments</li>
+          <li>Demonstrated Random Forest superiority over Ridge Regression for within-subject prediction</li>
+          <li>Identified challenges in cross-subject generalization (R² between -3.0 and 0.1 for LOOCV)</li>
+          <li>Created foundation for feature importance analysis and transfer learning implementation</li>
+        </ul>
+
+        <h4 style="color:var(--headline); margin-top: var(--space-6); margin-bottom: var(--space-3);">Next Steps</h4>
+        <ul style="color:var(--text); margin-bottom: var(--space-4); padding-left: var(--space-4);">
+          <li>Implement transfer learning Sillyf algorithm for improved cross-subject generalization</li>
+          <li>Apply feature importance algorithm to highlight key predictors</li>
+          <li>Apply the selected regression model with Sillyf and feature importance</li>
+          <li>Target R² values range between 0.5 and 1 for cross-subject prediction</li>
+          <li>Write submission draft for manuscript publication</li>
+        </ul>
+      </div>
+
+      <!-- ADDITIONAL INFORMATION -->
+      <div id="additional-info" class="project-block">
+        <h3>Additional Information</h3>
+        <p style="color:var(--text-dim); max-width:62ch; margin-bottom: var(--space-6); font-size: var(--text-sm);">
+          Heilmeier Catechism and final results presentation slides detailing the MoBI project goals, methodology, and experimental findings.
+        </p>
+        <div class="resume-card">
+          <div class="pdf-wrapper">
+            <iframe
+              src="../documents/Biomedical Data Design/MOBI Merged.pdf"
+              title="MoBI Project Presentation Slides"
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end project-content -->
+  </div><!-- end project-layout -->
 </section>
 
 <footer class="footer">
@@ -257,6 +356,7 @@
 </footer>
 
 <script>
+  // ── Theme & Clock ──
   const root = document.documentElement;
   const toggle = document.getElementById('themeToggle');
   const knob = document.getElementById('themeKnob');
@@ -286,6 +386,108 @@
   }
   tickClock();
   setInterval(tickClock, 1000);
+
+  // ── Sidebar Scrollspy ──
+  const sidebar = document.querySelector('.project-sidebar');
+  const sidebarHeader = document.querySelector('.sidebar-header');
+  const sidebarLinks = document.querySelectorAll('.sidebar-link');
+  const sections = [];
+
+  // Build sections array
+  sidebarLinks.forEach(link => {
+    const targetId = link.getAttribute('href').substring(1);
+    const target = document.getElementById(targetId);
+    if (target) {
+      sections.push({ id: targetId, el: target, link: link });
+    }
+  });
+
+  // Smart auto-scroll sidebar to keep header + active link visible
+  function scrollSidebarToActive(activeLink) {
+    if (!sidebar || !activeLink) return;
+    
+    const allLinks = Array.from(sidebarLinks);
+    const activeIndex = allLinks.indexOf(activeLink);
+    const totalLinks = allLinks.length;
+    
+    // Only scroll sidebar down for the last 2 items
+    // Otherwise, keep at top so Summary is always visible
+    if (activeIndex >= totalLinks - 2) {
+      // For bottom items, scroll to show them
+      const headerHeight = sidebarHeader ? sidebarHeader.offsetHeight + 10 : 50;
+      const scrollTarget = activeLink.offsetTop - headerHeight;
+      sidebar.scrollTo({
+        top: scrollTarget,
+        behavior: 'smooth'
+      });
+    } else {
+      // For top/middle items, keep sidebar at top
+      sidebar.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  function updateActiveLink() {
+    const scrollPos = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+    
+    // Check if at bottom of page
+    const atBottom = scrollPos + windowHeight >= docHeight - 50;
+    
+    let activeSection = sections[0];
+    
+    if (atBottom && sections.length > 0) {
+      activeSection = sections[sections.length - 1];
+    } else {
+      const offset = 200;
+      for (const section of sections) {
+        const rect = section.el.getBoundingClientRect();
+        if (rect.top <= offset) {
+          activeSection = section;
+        }
+      }
+    }
+    
+    // Update active states
+    sidebarLinks.forEach(link => link.classList.remove('active'));
+    if (activeSection) {
+      activeSection.link.classList.add('active');
+      scrollSidebarToActive(activeSection.link);
+    }
+  }
+
+  window.addEventListener('scroll', updateActiveLink, { passive: true });
+  updateActiveLink();
+
+  // ── Back to Top Button ──
+  const topBtn = document.getElementById('sidebarTopBtn');
+
+  if (topBtn) {
+    topBtn.addEventListener('click', () => {
+      // Scroll page to top
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      
+      // Scroll sidebar to top
+      if (sidebar) {
+        sidebar.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+      
+      // Update active state to Summary
+      sidebarLinks.forEach(link => link.classList.remove('active'));
+      if (sidebarLinks[0]) {
+        sidebarLinks[0].classList.add('active');
+      }
+    });
+  }
 </script>
 
 </body>

@@ -42,7 +42,6 @@
     <a href="#fabrication" class="sidebar-link sidebar-sublink">Fabrication</a>
     <a href="#test-setup" class="sidebar-link">Test Setup</a>
     <a href="#results" class="sidebar-link">Results</a>
-    <a href="#additional-info" class="sidebar-link">Additional Information</a>
     <!-- <a href="#gallery" class="sidebar-link">Gallery</a> -->
     <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">
   ↑ Top
@@ -65,6 +64,35 @@
         <p>
           Over a two-year collaboration between IISc and ISRO, this project aimed to develop a complete MEMS Inertial Measurement Unit for space navigation applications. The IMU comprised two core sensors: a dual-axis capacitive accelerometer and an Accordion-like Disk Resonator Gyroscope (ADRG). Starting from an existing ring-and-spoke gyroscope concept, extensive parametric optimization was performed on both devices using COMSOL multiphysics simulations. Both devices were successfully fabricated at CeNSE, with the gyroscope validated via laser Doppler vibrometry achieving 5% eigenfrequency error. The gyroscope work was published at ICMNS 2024.
         </p>
+
+        <!-- Hero Image -->
+        <figure style="margin-bottom: var(--space-8);">
+          <img src="../documents/MEMS Engineer/SEM.png" alt="SEM micrographs of fabricated ADRG showing accordion-like ring structure at multiple magnifications" style="width:100%; border-radius: 8px;">
+          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">SEM micrographs of fabricated ADRG showing accordion-like ring structure at multiple magnifications (28X, 200X, 450X)</figcaption>
+        </figure>
+
+        <div class="stat-strip">
+          <div class="stat-card">
+            <span class="stat-value">12.1</span>
+            <span class="stat-unit">µm/rad/s</span>
+            <span class="stat-label">Mechanical sensitivity — 3–4× prior designs</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">6.77</span>
+            <span class="stat-unit">kHz</span>
+            <span class="stat-label">Drive-mode eigenfrequency — matched within <5% in test</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">181.6k</span>
+            <span class="stat-unit">Q factor</span>
+            <span class="stat-label">Highest of the five topologies tested</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">46.4%</span>
+            <span class="stat-unit">ΔC₀/C₀</span>
+            <span class="stat-label">Largest relative sense-capacitance change</span>
+          </div>
+        </div>
       </div>
 
       <!-- PROBLEM STATEMENT -->
@@ -94,6 +122,73 @@
         <p style="color:var(--text); margin-bottom: var(--space-4);">
           <strong>Gyroscope Topology Comparison:</strong> Five DRG topologies were evaluated using COMSOL Multiphysics. The novel Accordion-like DRG (ADRG) introduces accordion-shaped spoke connections that increase mechanical compliance while maintaining structural integrity. All designs used standardized parameters for fair comparison: 9 rings, 8 mm outer diameter, 10 µm ring width, 60 µm thickness, and 0.5 anchor-to-outer-radius ratio.
         </p>
+
+        <!-- Mode Shape Image -->
+        <figure style="margin-bottom: var(--space-6);">
+          <img src="../documents/MEMS Engineer/Slide9.JPG" alt="COMSOL eigenfrequency mode shapes of ADRG analyzed by FEM" style="width:100%; border-radius: 8px;">
+          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Mode shapes of ADRG analyzed by FEM showing eigenfrequencies from 2344 Hz to 8068 Hz</figcaption>
+        </figure>
+
+        <p style="color:var(--text); margin-bottom: var(--space-6);">
+          Eigenfrequency studies identified drive and sense mode frequencies, with mode matching critical for gyroscope sensitivity. Capacitance simulations modeled multi-electrode configurations with fringing field corrections.
+        </p>
+
+        <!-- Mechanical Sensitivity Comparison Chart -->
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-3);">Mechanical Sensitivity (×10⁻⁶ µm/rad/s):</p>
+        <div class="bar-chart">
+          <div class="bar-row"><span class="bar-name">DRG</span><div class="bar-track"><div class="bar-fill" style="width:31.7%"></div></div><span class="bar-val">3.83</span></div>
+          <div class="bar-row"><span class="bar-name">HDRG</span><div class="bar-track"><div class="bar-fill" style="width:35.3%"></div></div><span class="bar-val">4.27</span></div>
+          <div class="bar-row"><span class="bar-name">CDRG</span><div class="bar-track"><div class="bar-fill" style="width:29.8%"></div></div><span class="bar-val">3.61</span></div>
+          <div class="bar-row"><span class="bar-name">GDRG</span><div class="bar-track"><div class="bar-fill" style="width:22.8%"></div></div><span class="bar-val">2.76</span></div>
+          <div class="bar-row"><span class="bar-name">ADRG</span><div class="bar-track"><div class="bar-fill" style="width:100%; background: var(--accent-bright);"></div></div><span class="bar-val" style="color: var(--accent-bright);">12.1</span></div>
+        </div>
+
+        <!-- Gyroscope Comparison Table -->
+        <div style="overflow-x: auto; margin-top: var(--space-6);">
+          <table style="width:100%; border-collapse: collapse; font-size: var(--text-sm);">
+            <caption style="color:var(--text-dim); margin-bottom: var(--space-3); text-align: left;">Disk Resonator Gyroscope Topology Comparison (9 rings, 8mm OD, 10µm ring width, 60µm thickness)</caption>
+            <thead>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <th style="padding: var(--space-2); text-align: left; color: var(--headline);">DRG Type</th>
+                <th style="padding: var(--space-2); text-align: right; color: var(--headline);">Freq (Hz)</th>
+                <th style="padding: var(--space-2); text-align: right; color: var(--headline);">Q (k)</th>
+                <th style="padding: var(--space-2); text-align: right; color: var(--headline);">ΔC₀/C₀ (%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border-dim);">
+                <td style="padding: var(--space-2); color: var(--text);">DRG</td>
+                <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">12,720</td>
+                <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">103.62</td>
+                <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">14.37</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-dim);">
+                <td style="padding: var(--space-2); color: var(--text);">HDRG</td>
+                <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">11,306</td>
+                <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">105.42</td>
+                <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">16.39</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-dim);">
+                <td style="padding: var(--space-2); color: var(--text);">CDRG</td>
+                <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">12,611</td>
+                <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">99.99</td>
+                <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">26.36</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-dim);">
+                <td style="padding: var(--space-2); color: var(--text);">GDRG</td>
+                <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">14,761</td>
+                <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">91.58</td>
+                <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">29.40</td>
+              </tr>
+              <tr style="background: var(--accent-bright); background-opacity: 0.1;">
+                <td style="padding: var(--space-2); color: var(--accent-bright); font-weight: bold;">ADRG</td>
+                <td style="padding: var(--space-2); text-align: right; color: var(--accent-bright); font-weight: bold;">6,771</td>
+                <td style="padding: var(--space-2); text-align: right; color: var(--accent-bright); font-weight: bold;">181.55</td>
+                <td style="padding: var(--space-2); text-align: right; color: var(--accent-bright); font-weight: bold;">46.44</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <!-- FABRICATION -->
@@ -129,7 +224,20 @@
         <p style="color:var(--text); margin-bottom: var(--space-4);">
           The fabricated ADRG was characterized using a Polytec MSA-500 Micro System Analyzer (Laser Doppler Vibrometer) at atmospheric pressure and room temperature (25°C). The device was electrostatically driven with AC+DC excitation applied to opposing drive electrodes (0° and 180° phase). Frequency sweeps measured the mechanical frequency response, with the resonance peak identifying the eigenfrequency.
         </p>
-      </div>
+
+        <!-- Pinout Diagrams -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-4); margin-bottom: var(--space-6);">
+          <figure>
+            <img src="../documents/MEMS Engineer/Slide3.JPG" alt="Gyroscope wire bonding pinout with 16 outer electrodes" style="width:100%; border-radius: 8px;">
+            <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Gyroscope pinout: 16 outer electrodes + 4 common</figcaption>
+          </figure>
+          <figure>
+            <img src="../documents/MEMS Engineer/Slide2.JPG" alt="Dual-axis accelerometer pinout with X/Y sense and feedback electrodes" style="width:100%; border-radius: 8px;">
+            <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Accelerometer pinout: X/Y sense and feedback electrodes</figcaption>
+          </figure>
+        </div>
+
+       
 
       <!-- RESULTS -->
       <div id="results" class="project-block">
@@ -145,26 +253,27 @@
           Under controlled conditions (1 atm, 25°C) the fabricated ADRG resonated at 6.8 kHz — within <5% of the FEM-predicted eigenfrequency of 6.771 kHz (approximately 0.4% error), confirming the simulation methodology held up in silicon.
         </p>
 
+        <p style="color:var(--text); margin-bottom: var(--space-4);">
+          <strong>Key Findings:</strong>
+        </p>
+        <ul style="color:var(--text); margin-bottom: var(--space-6); padding-left: var(--space-6);">
+          <li>ADRG achieved highest quality factor (181.55k) among five DRG topologies tested</li>
+          <li>ADRG demonstrated best relative sense capacitance (46.44% ΔC₀/C₀)</li>
+          <li>Mechanical sensitivity of 12.1×10⁻⁶ µm/rad/s — 3-4× higher than prior designs</li>
+          <li>LDV validation showed <5% eigenfrequency error between simulation and measurement</li>
+        </ul>
+
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          <strong>Future Work:</strong> Complete accelerometer characterization using shake table, implement closed-loop electronic readout circuits, vacuum packaging to achieve higher Q factors (targeting >500k), and integrate both sensors into single IMU package with ASIC readout.
+        </p>
+
+        <p style="color:var(--text-dim); font-size: var(--text-sm);">
+          <strong style="color:var(--headline);">Contributions &amp; credits:</strong> I led parametric design optimization for both sensors, performed COMSOL multiphysics simulations achieving <5% eigenfrequency error, generated CleWin/KLayout fabrication masks, designed wire bonding pinouts, and first-authored the ICMNS 2024 conference paper. Guided by Prof. G K Ananthasuresh and Karthik Raveendranath (ISRO), with simulation support from Sai Kumar and Suman Acharya, and fabrication by Sudhanshu Shekhar. Funded by ISRO; fabricated and characterized at CeNSE.
+        </p>
+
         <p style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-4);">
           <strong style="color:var(--headline);">Publication:</strong> Sai Pranav Avva, Suman Acharya, Kandula Eswara Sai Kumar, Sudhanshu Shekar, Karthik Raveendranath, and G K Ananthasuresh. "A Novel Accordion-like Disk Resonator Gyroscope." <em>International Conference on Micro, Nano, and Smart Systems (ICMNS)</em>, July 11, 2024.
         </p>
-      </div>
-
-      <!-- ADDITIONAL INFORMATION -->
-      <div id="additional-info" class="project-block">
-        <h3>Additional Information</h3>
-        <p style="color:var(--text-dim); max-width:62ch; margin-bottom: var(--space-6); font-size: var(--text-sm);">
-          Conference presentation slides detailing the novel Accordion-like Disk Resonator Gyroscope design, simulation results, and experimental validation.
-        </p>
-        <div class="resume-card">
-          <div class="pdf-wrapper">
-            <iframe
-              src="../documents/MEMS Engineer/A_Novel_Accordion-Like_Disk_Resonator_Gyroscope.pdf"
-              title="A Novel Accordion-Like Disk Resonator Gyroscope Presentation"
-              loading="lazy">
-            </iframe>
-          </div>
-        </div>
       </div>
 
       <!-- GALLERY - Now inside project-content so sidebar stays visible -->

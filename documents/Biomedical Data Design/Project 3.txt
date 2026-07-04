@@ -1,0 +1,85 @@
+{
+  "id": "mobi-brain-body-imaging",
+  "title": "MoBI: Mobile Brain/Body Imaging Data Analysis",
+  "shortDescription": "Machine learning pipeline for analyzing Mobile Brain/Body Imaging data to predict behavioral errors, targeting simplified diagnostics for childhood developmental disorders.",
+  "fullDescription": "This research project at Johns Hopkins University focused on developing machine learning models to analyze Mobile Brain/Body Imaging (MoBI) data and predict behavioral errors. The goal was to reduce the number of required data streams for MoBI experiments while maintaining predictive accuracy—ultimately working toward simplified diagnostic tools for the 17.4% of children affected by mental, behavioral, and developmental disorders. I implemented and compared Ridge Regression and Random Forest models, applied multiple normalization techniques (Z-score, Min-Max, Robust Scaling), and conducted extensive cross-validation including 5-fold CV and Leave-One-Out CV across 61 subjects with ~17,000 data streams each. Key findings showed that Random Forest achieved R² values of 0.8-1.0 at sample fractions above 0.8, while cross-subject generalization remained challenging. The project established a foundation for feature importance analysis and transfer learning approaches planned for manuscript publication.",
+  "categories": ["Data Science & Machine Learning", "Research"],
+  "tags": ["Machine Learning", "Python", "Scikit-learn", "Ridge Regression", "Random Forest", "Cross-Validation", "Data Normalization", "Neuroscience", "Biomedical Data", "EEG", "Research"],
+  "date": "2024-11-19",
+  "timeline": {
+    "start": "September 2024",
+    "end": "November 2024"
+  },
+  "role": "Biomedical Data Design Engineer",
+  "organization": {
+    "name": "Johns Hopkins University",
+    "department": "Biomedical Data Design",
+    "type": "academic"
+  },
+  "highlights": [
+    "Processed and analyzed data from 61 subjects with ~17,000 data streams per subject across 14 input features",
+    "Implemented Ridge Regression from scratch and validated against Scikit-learn, optimizing penalty parameter to 0.01",
+    "Achieved R² values of 0.8-1.0 with Random Forest regression at sample fractions above 0.8",
+    "Applied three normalization techniques (Z-score, Min-Max, Robust Scaling) with comparative heatmap visualization",
+    "Implemented both 5-fold cross-validation and Leave-One-Out cross-validation across all subjects",
+    "Identified optimal training-to-test split ratio of 0.4:0.6 for computational efficiency",
+    "Resolved cross-system reproducibility issues through explicit random seed initialization"
+  ],
+  "technologies": [
+    {"name": "Python", "category": "language"},
+    {"name": "Scikit-learn", "category": "library"},
+    {"name": "NumPy", "category": "library"},
+    {"name": "Pandas", "category": "library"},
+    {"name": "Matplotlib", "category": "library"},
+    {"name": "Ridge Regression", "category": "algorithm"},
+    {"name": "Random Forest", "category": "algorithm"},
+    {"name": "Leave-One-Out CV", "category": "technique"},
+    {"name": "Z-Score Normalization", "category": "technique"},
+    {"name": "Min-Max Scaling", "category": "technique"},
+    {"name": "Robust Scaling", "category": "technique"}
+  ],
+  "outcomes": {
+    "metrics": [
+      {"label": "Subjects Analyzed", "value": "61"},
+      {"label": "Data Streams per Subject", "value": "~17,000"},
+      {"label": "Input Features", "value": "14"},
+      {"label": "Best R² (Random Forest)", "value": "0.8-1.0"},
+      {"label": "Optimal Penalty (Ridge)", "value": "0.01"},
+      {"label": "Cross-Validation Error", "value": "<1%"}
+    ],
+    "achievements": [
+      "Established reproducible ML pipeline across multiple development environments",
+      "Demonstrated Random Forest superiority over Ridge Regression for within-subject prediction",
+      "Identified challenges in cross-subject generalization (R² between -3.0 and 0.1 for LOOCV)",
+      "Created foundation for feature importance analysis and transfer learning implementation"
+    ]
+  },
+  "links": [],
+  "media": [
+    {
+      "type": "image",
+      "url": "mobi_normalization_heatmaps.png",
+      "alt": "Comparison of normalization techniques: Min-Max, Z-Score, and Robust Scaling heatmaps",
+      "caption": "Heatmap visualization comparing three normalization preprocessing techniques applied to MoBI dataset"
+    },
+    {
+      "type": "image",
+      "url": "mobi_ridge_results.png",
+      "alt": "Ridge Regression results showing R² values for position difference, stimulus position, and stimulus speed targets",
+      "caption": "Ridge Regression performance across three target variables with LOOCV"
+    },
+    {
+      "type": "image",
+      "url": "mobi_rf_results.png",
+      "alt": "Random Forest Regression results showing improved R² values at higher sample fractions",
+      "caption": "Random Forest regression achieving R² of 0.8-1.0 at sample fractions above 0.8"
+    },
+    {
+      "type": "document",
+      "url": "MOBI Merged.pdf",
+      "alt": "MoBI Project Presentation Slides",
+      "caption": "Heilmeier Catechism and final results presentation slides"
+    }
+  ],
+  "featured": true
+}

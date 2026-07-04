@@ -1,0 +1,253 @@
+{
+  "project_id": "haptic-guided-magnetic-microbot-navigation",
+  "title": "Haptic-Guided Magnetic Microbot Navigation",
+  "subtitle": "Real-time wall collision detection with gradient haptic feedback for magnetically actuated surgical microrobots",
+  "institution": "Johns Hopkins University",
+  "collaborating_organizations": [],
+  "guide": "Prof. Axel Krieger",
+  "venue": "EN.530.666 – Magnetically Actuated and MRI Compatible Robots",
+  "date_range": "Spring 2025",
+
+  "acknowledgements": {
+    "guidance": ["Prof. Axel Krieger"],
+    "technical_collaboration": ["James Kaluna", "Diana Shaughnessy"],
+    "fabrication_testing": ["User study participants (4 users – 2 enrolled in course, 2 external)"],
+    "funding_facilities": ["Johns Hopkins University Wyman Park Building Room 157 Magnetic Surgery Lab"]
+  },
+
+  "user_contribution": {
+    "summary": "Developed the core collision detection algorithm using joystick-robot direction dot product and centroid displacement thresholding. Designed and fabricated the physical maze for testing, and facilitated user studies to validate haptic feedback responsiveness.",
+    "tasks": [
+      "Implemented wall collision detection algorithm using dot product comparison between joystick input direction and robot movement direction",
+      "Developed gradient haptic feedback system that scales force linearly with collision duration (0 to 1 over 5 seconds)",
+      "Added joystick input norm filtering to reduce false positive detections from robot drift",
+      "Designed and fabricated custom maze obstacle course for navigation testing",
+      "Facilitated 4-user study evaluating haptic feedback across enrolled and non-enrolled participants",
+      "Integrated joyVibrate() function with MATLAB vrjoystick force feedback library",
+      "Modified MagneticSystemBackbone.m with Lab 5 control additions for real-time wall status display"
+    ],
+    "tools_used": ["MATLAB", "MATLAB Image Acquisition Toolbox", "MATLAB VR Joystick Toolbox", "Arduino", "FLIR Camera SDK (Spinnaker)", "SolidWorks (maze design)"],
+    "not_contributed": "Diana Shaughnessy proposed the original wall detector concept. James Kaluna contributed to documentation and proposed an alternative magnetic drill concept. Base magnetic system backbone code was provided by the course and modified collaboratively by the team."
+  },
+
+  "project_summary": "This project developed a haptic feedback system for magnetically actuated surgical microrobots, enabling operators to 'feel' when the robot collides with obstacles without relying on complex image recognition. The system uses a 4-coil electromagnetic array to control a capsule-shaped robot in a water-filled petri dish, with overhead camera localization tracking red/blue color markers at ~5 Hz frame rate.\n\nMy primary contribution was implementing the collision detection algorithm, which compares the joystick input direction against the robot's actual movement using vector dot products. When the robot attempts to move but displacement remains below threshold (indicating a wall), the system triggers gradient haptic feedback that intensifies over time – allowing operators to distinguish between grazing contact and sustained collision.\n\nI also designed and fabricated the physical maze used for testing, and facilitated user studies with 4 participants. Results showed users could successfully navigate the maze using haptic cues alone, with potential clinical applications for navigating surgical robots through intestines or blood vessels where camera feedback may be delayed or unavailable.",
+
+  "gallery_media": [
+    {
+      "file": "Demo Video.mp4",
+      "description": "Live demonstration of haptic-guided magnetic microbot navigation through custom maze. Shows real-time wall detection triggering joystick vibration feedback, robot localization overlay, and successful maze traversal using haptic cues.",
+      "priority": "demo_video_lead",
+      "source": "Uploaded video",
+      "placement": "Hero section - embedded video player (autoplay muted, loop optional)"
+    },
+    {
+      "file": "system_setup_labeled.jpg",
+      "description": "Complete experimental setup showing 4-coil electromagnetic array, Arduino microcontroller, dual motor controllers, Xbox-style joystick for remote control, FLIR overhead camera, DC voltage supply (24V), and laptop running MATLAB control software",
+      "priority": "hero_image",
+      "source": "Uploaded image 1",
+      "placement": "Hero section - fallback/thumbnail for video, or secondary hero image"
+    },
+    {
+      "file": "maze_navigation_live.jpg",
+      "description": "Live camera feed showing magnetic robot (red/blue/yellow capsule) navigating through custom-designed maze in petri dish. On-screen overlay displays real-time wall detection status ('Wall: No Wall'), frame rate (~5.17 Hz), and robot X/Y coordinates (5.67mm, 23.14mm). Green regions are maze walls detected via color thresholding.",
+      "priority": "results_key_image",
+      "source": "Uploaded image 2",
+      "placement": "Results section - demonstrates live system operation"
+    },
+    {
+      "file": "signal_flow_diagram.png",
+      "description": "Signal flow diagram showing MATLAB → Arduino → Motor Drivers → Coil Array control pipeline with PWM mapping (-1 to 1 coil current commands mapped to 0-180 PWM)",
+      "priority": "technical_diagram",
+      "source": "Extract from Lab-1.pdf Figure 4/8",
+      "placement": "Methodology section - system architecture"
+    },
+    {
+      "file": "joystick_control_schematic.png",
+      "description": "Schematic of open-loop magnetic robot joystick control showing left stick for force control (X/Y translation) and right stick for orientation control",
+      "priority": "methodology_image",
+      "source": "Extract from Lab-1.pdf Figure 9",
+      "placement": "Methodology section - control scheme"
+    }
+  ],
+
+  "methodology": {
+    "sections": [
+      {
+        "name": "Magnetic Actuation System",
+        "content": "The system uses four electromagnetic coils arranged in a cross pattern (North, South, East, West) powered by a 24V DC supply through motor controllers. Coil currents are computed using either dipole model or FEA-based magnetic field interpolation to generate desired force and torque on the robot's internal permanent magnets (4mm length, 1mm diameter, 1000 kA/m magnetization).",
+        "associated_media": ["system_setup_labeled.jpg", "signal_flow_diagram.png"]
+      },
+      {
+        "name": "Robot Localization",
+        "content": "Overhead FLIR camera captures frames at ~5 Hz. The LocalizationTopView algorithm identifies the robot by detecting red and blue color markers using normalized RGB thresholding (threshold = 0.85). Robot position is computed as the centroid between markers, and orientation (theta) is calculated using atan2 of the marker positions. Position is converted from pixels to millimeters using petri dish radius calibration (85mm diameter).",
+        "associated_media": ["maze_navigation_live.jpg", "Demo Video.mp4"]
+      },
+      {
+        "name": "Collision Detection Algorithm",
+        "content": "Wall collision is detected by comparing joystick input direction against robot movement direction using vector dot product. Three conditions must be met: (1) centroid displacement < threshold × 1.5, (2) dot product > 0.2 (directions aligned), and (3) joystick input norm > 0.1 (active input). The joystick norm check prevents false positives from robot drift due to fluid flow or platform tilt.",
+        "associated_media": ["Demo Video.mp4"]
+      },
+      {
+        "name": "Gradient Haptic Feedback",
+        "content": "When collision is detected, haptic feedback force scales linearly with contact duration: f = min(t_contact/5, 1), capping at maximum force after 5 seconds. This allows operators to distinguish between momentary wall grazing and sustained collision. Feedback is delivered through the joystick's built-in vibration motors via MATLAB's vrjoystick force() function.",
+        "associated_media": ["joystick_control_schematic.png", "Demo Video.mp4"]
+      },
+      {
+        "name": "Maze Design & Fabrication",
+        "content": "Custom maze was designed with curved and angular passages to test navigation under various approach angles. Maze walls are colored bright green for detection by the findMaze() function, which uses green channel thresholding (threshold = 0.8) to identify obstacle boundaries.",
+        "associated_media": ["maze_navigation_live.jpg", "Demo Video.mp4"]
+      }
+    ]
+  },
+
+  "results": {
+    "key_findings": [
+      "Users successfully navigated maze using haptic feedback cues with minimal visual guidance",
+      "Gradient feedback (vs. fixed) allowed users to differentiate wall grazing from sustained contact",
+      "Feedback response is user-dependent – some prefer reaction on wall graze, others only on sustained pressure",
+      "Perpendicular (90°) collision angles occasionally fail to trigger feedback due to dot product geometry",
+      "All 4 user study participants reported satisfaction with feedback responsiveness after acclimatization period"
+    ],
+    "comparison_table": {
+      "title": "User Study Feedback Summary",
+      "columns": ["User", "Course Enrollment", "Key Feedback", "Suggested Improvements"],
+      "rows": [
+        ["User 1", "Enrolled", "Feedback scaling time too slow; false positives from localizer lag", "Start feedback at offset; add predictive direction"],
+        ["User 2", "Enrolled", "Preferred no feedback on graze, only sustained contact", "Add gradient variations for different conditions"],
+        ["User 3", "Not Enrolled", "Required acclimatization time; satisfied after tuning", "None"],
+        ["User 4", "Not Enrolled", "Feedback force optimal; wants feedback even on light touch", "Change robot acceleration rate for finer control"]
+      ],
+      "highlight": "Users generally satisfied with responsiveness; main limitation is perpendicular collision angle detection"
+    },
+    "validation": "Qualitative user study with 4 participants (2 enrolled in course, 2 external) including blindfolded navigation trial. System demonstrated successful wall detection and haptic feedback delivery in real-time maze navigation. Demo video captures full navigation sequence with haptic feedback activation.",
+    "future_scope": [
+      "Add predictive direction estimation to improve perpendicular collision detection",
+      "Implement audio prompts for fully blindfolded navigation",
+      "Add proximity sensors to robot for range-based wall detection",
+      "Develop proportional feedback based on distance to goal (decreasing as robot approaches target)",
+      "Integrate with MRI-compatible actuation system for in-vivo applications",
+      "Expand to variable stiffness feedback based on wall material properties"
+    ]
+  },
+
+  "additional_information_section": {
+    "primary_document": {
+      "file": "Lab-5-Sai-James-Diana-1.pdf",
+      "reason": "Complete project report with methodology, user study results, and observations"
+    },
+    "supplementary_documents": [
+      {
+        "file": "Lab-1.pdf",
+        "reason": "System overview, hardware setup, and base control architecture reference"
+      }
+    ],
+    "optional_documents": [
+      {
+        "file": "MagneticSystemBackbone.m",
+        "reason": "Main MATLAB control script with collision detection implementation"
+      },
+      {
+        "file": "LocalizationTopView.m",
+        "reason": "Robot localization algorithm using color thresholding"
+      },
+      {
+        "file": "joyVibrate.m",
+        "reason": "Haptic feedback function for joystick vibration control"
+      }
+    ]
+  },
+
+  "website_text_replacements": {
+    "page_title": "Haptic-Guided Magnetic Microbot Navigation | Sai Pranav Avva",
+    "meta_description": "Developed real-time wall collision detection with gradient haptic feedback for magnetically actuated surgical microrobots at Johns Hopkins University.",
+    "hero_section": {
+      "title": "Haptic-Guided Magnetic Microbot Navigation",
+      "subtitle_tagline": "Feel the walls you can't see – haptic feedback for surgical microrobot navigation",
+      "institution_credit_line": "Johns Hopkins University | EN.530.666 Magnetically Actuated Robots",
+      "date_line": "Spring 2025",
+      "role_contribution_line": "Developed collision detection algorithm using joystick-robot direction dot product; designed and fabricated test maze; facilitated 4-user haptic feedback study"
+    },
+    "hero_video": {
+      "file": "Demo Video.mp4",
+      "alt_text": "Demo video showing haptic-guided magnetic microbot navigating maze with real-time wall collision detection and joystick vibration feedback",
+      "thumbnail": "system_setup_labeled.jpg",
+      "autoplay": true,
+      "muted": true,
+      "loop": true
+    },
+    "hero_image": {
+      "file": "system_setup_labeled.jpg",
+      "alt_text": "Magnetic microrobot control system with 4-coil array, Arduino, motor controllers, joystick, and overhead camera at Johns Hopkins University"
+    },
+    "body_images": [
+      {
+        "file": "maze_navigation_live.jpg",
+        "caption": "Live camera feed showing robot navigating maze with real-time wall detection status and coordinate overlay"
+      }
+    ],
+    "skills_tags": [
+      "MATLAB",
+      "Arduino",
+      "Image Processing",
+      "Haptic Feedback",
+      "Control Systems",
+      "Magnetic Actuation",
+      "User Studies",
+      "Medical Robotics",
+      "Localization",
+      "Sensor Integration"
+    ],
+    "key_achievements": [
+      "Implemented collision detection algorithm achieving real-time wall detection at ~5 Hz frame rate",
+      "Developed gradient haptic feedback scaling from 0 to max force over 5-second collision duration",
+      "Validated system with 4-user study demonstrating successful haptic-guided maze navigation",
+      "Reduced false positive detections by adding joystick input norm filtering for robot drift compensation"
+    ]
+  },
+
+  "source_files": {
+    "images": [
+      "system_setup_labeled.jpg",
+      "maze_navigation_live.jpg"
+    ],
+    "presentations": [],
+    "documents": [
+      "Lab-5-Sai-James-Diana-1.pdf",
+      "Lab-1.pdf"
+    ],
+    "videos": [
+      "Demo Video.mp4"
+    ],
+    "code": [
+      "MagneticSystemBackbone.m",
+      "LocalizationTopView.m",
+      "joyVibrate.m",
+      "JoystickActuation.m",
+      "FEAJoystick.m",
+      "dipoleJoystick.m",
+      "findMaze.m",
+      "closestWallPoint.m",
+      "ArduinoCommunication.m",
+      "desiredpoints.m"
+    ]
+  },
+
+  "file_placement": {
+    "images_folder": "images/haptic-guided-magnetic-microbot/",
+    "documents_folder": "documents/Haptic Guided Magnetic Microbot Navigation/",
+    "videos_folder": "videos/haptic-guided-magnetic-microbot/",
+    "page_file": "work2/haptic-guided-magnetic-microbot.html"
+  },
+
+  "reference_template_url": "https://avvasai.github.io/work2/project1.html",
+
+  "github_repository": "https://github.com/avvasai/MRI-Robotics/tree/main/Lab5",
+
+  "notes": [
+    "✅ Demo video available – prioritize as lead media element in hero section",
+    "Consider hosting video on YouTube/Vimeo for faster loading and embedding, with local fallback",
+    "The 'closestWallPoint.m' and 'findMaze.m' functions appear to be alternative/supplementary approaches for wall detection using green pixel identification – these were not used in the final implementation which relies on displacement + dot product",
+    "User study included a blindfolded navigation trial that revealed limitations requiring audio prompts for fully camera-free operation",
+    "Clinical application: navigating and palpating walls of intestine or blood vessels where camera feedback may be delayed"
+  ]
+}

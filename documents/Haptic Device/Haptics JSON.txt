@@ -1,0 +1,261 @@
+{
+  "project_id": "knee-instability-correction-device",
+  "title": "Knee Instability Correction Device (KICD)",
+  "subtitle": "Wearable haptic knee brace providing directional vibrotactile feedback for ACL rehabilitation with 100% front-bend detection accuracy",
+  "institution": "Johns Hopkins University",
+  "collaborating_organizations": [],
+  "guide": "Prof. Jeremy Brown",
+  "venue": "535.691 Haptic Interface Design - Final Project",
+  "date_range": "Aug 2024 – Dec 2024",
+
+  "acknowledgements": {
+    "guidance": ["Prof. Jeremy Brown - Course Instructor, Johns Hopkins University"],
+    "technical_collaboration": ["Yub Heo - Software Implementation", "Kaitlyn Kumar - Software Implementation", "Tina Chen - Software Implementation"],
+    "fabrication_testing": ["Team collaboration on user studies with 30+ subjects"],
+    "funding_facilities": ["Johns Hopkins University Haptics Lab"]
+  },
+
+  "user_contribution": {
+    "summary": "Served as Hardware Lead, designing and fabricating the complete electronics architecture including Arduino-based control system, transistor motor drivers, and flex sensor integration. Designed and 3D printed all mechanical components (TPU sensor enclosures, PLA motor mounts) and defined the control logic for directional vibration feedback patterns.",
+    "tasks": [
+      "Designed electronics architecture with Arduino Mega + ELEGOO Nano communication system and connectorized perfboard harness",
+      "Developed motor driver circuits using 2N2221A NPN transistors with PWM control for 6 ERM motors",
+      "Integrated 3 flex sensors with calibration hardware achieving 5°/8° threshold detection",
+      "3D printed TPU flex sensor enclosures and PLA motor mounts with 40mm spacing",
+      "Defined control logic for directional vibration patterns (coded by teammates)",
+      "Co-conducted perception studies and haptic demo sessions with 30+ test subjects"
+    ],
+    "tools_used": ["Arduino Mega", "Arduino Nano (ELEGOO)", "SolidWorks/Fusion 360", "3D Printing (TPU, PLA)", "Soldering", "Perfboard Assembly", "PWM Motor Control", "Flex Sensors", "ERM Motors"],
+    "not_contributed": "Software implementation was coded by teammates (Yub Heo, Kaitlyn Kumar, Tina Chen) based on control logic I defined. Report writing and literature review were completed by teammates. User studies were conducted collaboratively as a team."
+  },
+
+  "project_summary": "Knee instability from ACL injuries affects 80,000-120,000 people annually in the US, with current rehabilitation methods risking muscle atrophy from over-bracing or re-injury from premature free movement. The Knee Instability Correction Device (KICD) bridges this gap using vibrotactile feedback to guide users toward stable knee positions without physically constraining movement.\n\nAs Hardware Lead, I designed and built the complete wearable system: three flex sensors in 3D-printed TPU enclosures detect knee angle across sagittal, abduction, and adduction planes, while six ERM motors arranged in a 40mm-spaced array deliver directional 'tracing' vibrations that intuitively guide the user back to stability. The electronics architecture uses an Arduino Mega controlling the motors through NPN transistor drivers, with ELEGOO Nanos handling sensor communication via connectorized perfboard harnesses for serviceability.\n\nTesting with 30+ subjects demonstrated 100% accuracy for front-bend detection and successful directional perception in the majority of users. Perception studies established optimal motor spacing (40mm for ≥75% discrimination) and characterized intensity perception following a 2nd-order polynomial curve (R²=0.999), informing future PWM modulation strategies.",
+
+  "gallery_media": [
+    {
+      "file": "demovideo2.mp4",
+      "description": "Demonstration of KICD device mounted on teddy bear mannequin, showing flex sensor detection of incorrect knee positions in multiple orientations and corresponding directional haptic feedback response from ERM motor array",
+      "priority": "demo_video_lead",
+      "source": "Uploaded video",
+      "placement": "Hero section - primary media, autoplay muted loop or click-to-play"
+    },
+    {
+      "file": "fig3_device_demonstration.png",
+      "description": "KICD device worn on leg showing demonstration configuration with flex sensor cage around knee joint and ERM motor band on upper thigh",
+      "priority": "hero_image",
+      "source": "Extracted from PDF - Figure 3",
+      "placement": "Hero section - primary static image"
+    },
+    {
+      "file": "fig4_erm_array.png",
+      "description": "Close-up view of internal ERM motor array showing six coin motors with 40mm spacing mounted on inner surface of upper knee band",
+      "priority": "technical_diagram",
+      "source": "Extracted from PDF - Figure 4",
+      "placement": "Methodology section - Device Design"
+    },
+    {
+      "file": "fig5_electronics_architecture.png",
+      "description": "Block diagram of electronics architecture showing Arduino Mega, ELEGOO Nano boards, flex sensors, ERM motors, and perfboard connections with signal flow",
+      "priority": "technical_diagram",
+      "source": "Extracted from PDF - Figure 5",
+      "placement": "Methodology section - Electronics Design"
+    },
+    {
+      "file": "fig6_vibration_pattern_forward.png",
+      "description": "Timing diagram showing ERM vibration staggering pattern for forward knee bend case, with left side showing outer knee motors and right side showing inner knee motors",
+      "priority": "methodology_image",
+      "source": "Extracted from PDF - Figure 6",
+      "placement": "Methodology section - Control Logic"
+    },
+    {
+      "file": "fig7_vibration_patterns_all.png",
+      "description": "ERM vibration patterns for all knee bend directions (forward, abduction, adduction) showing motor activation sequences",
+      "priority": "methodology_image",
+      "source": "Extracted from PDF - Figure 7",
+      "placement": "Methodology section - Control Logic"
+    },
+    {
+      "file": "fig8_control_architecture.png",
+      "description": "Overall control architecture flowchart of KICD device showing sensor input processing, threshold detection, and motor output control flow",
+      "priority": "technical_diagram",
+      "source": "Extracted from PDF - Figure 8",
+      "placement": "Methodology section - System Overview"
+    },
+    {
+      "file": "fig9_discrimination_results.png",
+      "description": "2-point discrimination testing results graph showing perception accuracy across four knee regions (1U=front, 2U=outer, 3U=back, 4U=inner) at varying motor spacings from 10-60mm",
+      "priority": "results_key_image",
+      "source": "Extracted from PDF - Figure 9",
+      "placement": "Results section - Perception Studies"
+    },
+    {
+      "file": "fig10_intensity_perception.png",
+      "description": "Normalized intensity perception curve for 9 test subjects showing 2nd order polynomial relationship (R²=0.999) between PWM duty cycle (110-255) and perceived vibration intensity",
+      "priority": "results_key_image",
+      "source": "Extracted from PDF - Figure 10",
+      "placement": "Results section - Perception Studies"
+    },
+    {
+      "file": "fig1_torn_acl.png",
+      "description": "Medical illustration of fully torn anterior cruciate ligament (ACL) showing damaged knee anatomy",
+      "priority": "body_image",
+      "source": "Extracted from PDF - Figure 1",
+      "placement": "Introduction/Background section"
+    },
+    {
+      "file": "fig2_altered_stance.png",
+      "description": "Illustration showing altered stance from torn ACL resulting in knee abduction and dynamic valgus",
+      "priority": "body_image",
+      "source": "Extracted from PDF - Figure 2",
+      "placement": "Introduction/Background section"
+    }
+  ],
+
+  "methodology": {
+    "sections": [
+      {
+        "name": "Problem & Motivation",
+        "content": "ACL injuries affect 80,000-120,000 people annually in the US, causing knee instability where the knee buckles toward the midline (dynamic valgus) during weight acceptance. Current rehabilitation uses passive bracing that causes muscle atrophy, or free movement that risks re-injury. The KICD provides a middle ground using haptic feedback to virtually limit dangerous movements while allowing physical freedom for strength development.",
+        "associated_media": ["fig1_torn_acl.png", "fig2_altered_stance.png"]
+      },
+      {
+        "name": "Device Design & Fabrication",
+        "content": "The KICD consists of two bands worn above and below the knee forming a soft brace base. Three 1-axis silicone elastomer flex sensors, housed in 3D-printed TPU enclosures, detect knee angle across sagittal, abduction, and adduction planes. Six 3.3V 80mA ERM coin motors (1020 type) are mounted with 40mm spacing in 3D-printed PLA mounts on the upper knee band, providing vibration frequencies from 79-183 Hz.",
+        "associated_media": ["fig3_device_demonstration.png", "fig4_erm_array.png"]
+      },
+      {
+        "name": "Electronics Architecture",
+        "content": "The system uses an Arduino Mega as the main controller, commanding all ERM motors and receiving data from ELEGOO Nano boards that interface with each flex sensor. Motors are driven through 2N2221A NPN transistors connected to 5V, controlled via PWM to overcome microcontroller current limitations. Two perfboards with connectorized bundles form the physical harness for serviceability.",
+        "associated_media": ["fig5_electronics_architecture.png"]
+      },
+      {
+        "name": "Control Logic",
+        "content": "When knee angle exceeds thresholds (5° for side sensors, 8° for front sensor), directional vibration feedback activates. The vibration pattern starts at the instability direction and traces toward stability, creating an intuitive 'follow me' sensation. Motors activate in a staggered running pattern until the knee returns to neutral position. Automatic calibration (5-10 seconds) accounts for individual leg geometry.",
+        "associated_media": ["fig6_vibration_pattern_forward.png", "fig7_vibration_patterns_all.png", "fig8_control_architecture.png"]
+      },
+      {
+        "name": "Perception Studies",
+        "content": "Preliminary vibrotactile perception studies determined optimal design parameters. Two-point discrimination testing across 4 knee regions with 4 subjects established 40mm motor spacing for ≥75% discrimination accuracy. Intensity perception testing with 9 subjects characterized the nonlinear relationship between PWM duty cycle and perceived intensity, following a 2nd-order polynomial (R²=0.999).",
+        "associated_media": ["fig9_discrimination_results.png", "fig10_intensity_perception.png"]
+      }
+    ]
+  },
+
+  "results": {
+    "key_findings": [
+      "100% accuracy for front knee bend detection and haptic triggering",
+      "50% accuracy for compounded abduction direction (requires per-user calibration tuning)",
+      "30+ subjects tested in haptic demo sessions with majority successfully perceiving directional feedback",
+      "≥75% two-point discrimination accuracy achieved above 24mm spacing, near-perfect above 40mm",
+      "Intensity perception follows 2nd-order polynomial curve (R²=0.999) with saturation at PWM 225-255",
+      "6% of subjects experienced knismesis (tickling sensation) preventing response",
+      "Vibration perceivable through clothing with no significant damping effect on discrimination"
+    ],
+    "comparison_table": {
+      "title": "Two-Point Discrimination Results by Knee Region",
+      "columns": ["Region", "Location", "24mm Accuracy", "40mm Accuracy"],
+      "rows": [
+        ["1U", "Front", "≥75%", "~100%"],
+        ["2U", "Outer", "≥75%", "~100%"],
+        ["3U", "Back", "≥75%", "Variable (excluded from design)"],
+        ["4U", "Inner", "≥75%", "~100%"]
+      ],
+      "highlight": "40mm spacing selected for ERM array to ensure reliable discrimination across all active regions"
+    },
+    "validation": "Device performance validated through testing on 2 individuals with uninjured knees across varying ranges of motion (peak abduction angle 22±11°), followed by haptic demo sessions with 30+ subjects of varying size and gender using a haptic twin configuration for safe manipulation.",
+    "future_scope": [
+      "Replace ERM motors with voice coils for independent frequency and amplitude modulation",
+      "Upgrade to 2-axis flex sensors for accurate compound bend detection",
+      "Redesign TPU mounts with accordion-style walls for multi-plane flexibility",
+      "Conduct formal user study with motor learning evaluation protocol",
+      "Investigate personalized calibration to address the 6% knismesis response rate"
+    ]
+  },
+
+  "additional_information_section": {
+    "primary_document": {
+      "file": "Haptics_F24_Final_Report-1.pdf",
+      "reason": "Complete technical report with methodology, results, and analysis"
+    },
+    "supplementary_documents": [],
+    "optional_documents": []
+  },
+
+  "website_text_replacements": {
+    "page_title": "Knee Instability Correction Device | Sai Pranav Avva",
+    "meta_description": "Wearable haptic knee brace for ACL rehabilitation using directional vibrotactile feedback. Hardware Lead - Arduino, flex sensors, ERM motors, 3D printing.",
+    "hero_section": {
+      "title": "Knee Instability Correction Device",
+      "subtitle_tagline": "Wearable haptic brace providing directional vibrotactile feedback for ACL rehabilitation",
+      "institution_credit_line": "Johns Hopkins University | 535.691 Haptic Interface Design",
+      "date_line": "Fall 2024",
+      "role_contribution_line": "Hardware Lead: Designed electronics architecture, fabricated sensor enclosures and motor mounts, integrated flex sensors and ERM array achieving 100% front-bend detection accuracy"
+    },
+    "hero_image": {
+      "file": "fig3_device_demonstration.png",
+      "alt_text": "KICD wearable haptic knee brace with flex sensor cage and ERM motor array worn on leg"
+    },
+    "body_images": [
+      {"file": "fig4_erm_array.png", "caption": "Internal view of 6-motor ERM array with 40mm spacing for optimal tactile discrimination"},
+      {"file": "fig5_electronics_architecture.png", "caption": "Electronics architecture: Arduino Mega controller with ELEGOO Nano sensor interfaces and transistor motor drivers"},
+      {"file": "fig7_vibration_patterns_all.png", "caption": "Directional vibration patterns for forward bend, abduction, and adduction correction"},
+      {"file": "fig9_discrimination_results.png", "caption": "Two-point discrimination testing results showing ≥75% accuracy above 24mm across knee regions"},
+      {"file": "fig10_intensity_perception.png", "caption": "Intensity perception curve (R²=0.999) characterizing nonlinear PWM-to-sensation relationship"}
+    ],
+    "skills_tags": [
+      "Haptic Interface Design",
+      "Arduino",
+      "Embedded Systems",
+      "PWM Motor Control",
+      "Flex Sensors",
+      "ERM Motors",
+      "3D Printing (TPU/PLA)",
+      "Circuit Design",
+      "Wearable Devices",
+      "Medical Device Prototyping",
+      "User Studies",
+      "Vibrotactile Feedback"
+    ],
+    "key_achievements": [
+      "Achieved 100% detection accuracy for front knee bend triggering",
+      "Designed electronics system with 6 ERM motors and 3 flex sensors on Arduino platform",
+      "Validated directional haptic feedback with 30+ test subjects",
+      "Characterized lower-limb vibration perception with R²=0.999 intensity curve fit"
+    ]
+  },
+
+  "source_files": {
+    "images": [
+      "fig1_torn_acl.png",
+      "fig2_altered_stance.png",
+      "fig3_device_demonstration.png",
+      "fig4_erm_array.png",
+      "fig5_electronics_architecture.png",
+      "fig6_vibration_pattern_forward.png",
+      "fig7_vibration_patterns_all.png",
+      "fig8_control_architecture.png",
+      "fig9_discrimination_results.png",
+      "fig10_intensity_perception.png"
+    ],
+    "presentations": [],
+    "documents": ["Haptics_F24_Final_Report-1.pdf"],
+    "videos": ["demovideo2.mp4"]
+  },
+
+  "file_placement": {
+    "images_folder": "images/knee-instability-correction-device/",
+    "documents_folder": "documents/Haptic Device/",
+    "page_file": "work2/knee-instability-correction-device.html"
+  },
+
+  "reference_template_url": "https://avvasai.github.io/work2/project1.html",
+  
+  "notes": [
+    "⚠️ ACTION REQUIRED: Extract figures 1-10 from PDF and save with suggested filenames",
+    "⚠️ ACTION REQUIRED: Confirm video filename is 'demovideo2.mp4' (or update in JSON)",
+    "Hero media strategy: Use demo video as primary with Fig 3 as fallback/thumbnail",
+    "Consider creating a GIF from demo video for faster loading on project cards",
+    "The 50% abduction accuracy is a known limitation - framed as 'requires per-user calibration' rather than failure",
+    "Back knee region (3U) was intentionally excluded from final design due to sensitivity - this is a design decision, not limitation"
+  ]
+}

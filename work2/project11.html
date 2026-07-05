@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accordion-Like Disk Resonator Gyroscope</title>
-  <meta name="description" content="A Novel Accordion-Like Disk Resonator Gyroscope (ADRG) - MEMS gyroscope design, simulation, fabrication and testing">
+  <title>Micromobility Vehicle Electronics | Sai Pranav Avva</title>
+  <meta name="description" content="IoT engineer intern project: Designed electronics system for electric kick scooter with fingerprint auth, Blynk app, CAN bus communication, achieving 50 km range.">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-
 <header class="masthead">
   <h1 class="giant-name">Avva Sai Pranav</h1>
   <nav class="pill-nav">
     <div class="pill-links">
-      <a href="index.html" class="pill">Home</a>
-      <a href="index.html#info" class="pill">Projects</a>
-      <a href="index.html#resume" class="pill">Resume</a>
-      <a href="index.html#contact" class="pill">Contact</a>
+      <a href="../index.html" class="pill">Home</a>
+      <a href="../index.html#info" class="pill">Projects</a>
+      <a href="../index.html#resume" class="pill">Resume</a>
+      <a href="../index.html#contact" class="pill">Contact</a>
     </div>
     <div class="pill-right">
       <span class="label">Theme:</span>
@@ -28,228 +27,429 @@
   </nav>
 </header>
 
-<!-- Project Hero -->
-<section class="project-hero">
-  <p class="section-eyebrow">Project</p>
-  <h1 class="project-title">A Novel Accordion-Like Disk Resonator Gyroscope</h1>
-  <p class="project-subtitle">MEMS Gyroscope Design · Simulation · Fabrication · Testing</p>
-  <div class="project-meta">
-    <span class="meta-item">🏛️ M2D2 Laboratory, Indian Institute of Science</span>
-    <span class="meta-item">👤 Prof. G. K. Ananthasuresh</span>
-    <span class="meta-item">🎤 ICMNSS Conference</span>
-  </div>
-</section>
-
-<!-- Key Results Stats -->
 <section class="section">
-  <div class="stats-row">
-    <div class="stat-card">
-      <span class="stat-value">3–4×</span>
-      <span class="stat-label">Higher Sensitivity</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">6771 Hz</span>
-      <span class="stat-label">Drive Frequency</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">&lt;1.4%</span>
-      <span class="stat-label">Sim-to-Fab Error</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">46.4%</span>
-      <span class="stat-label">Capacitance Change</span>
-    </div>
-  </div>
-</section>
+  <a href="../index.html#info" class="back-link">← Back to projects</a>
 
-<!-- Overview -->
-<section class="section">
-  <h2 class="section-title">Project Overview</h2>
-  <div class="two-col">
-    <div class="col-text">
-      <p>Disk Resonator Gyroscopes (DRGs) sense rotation using Coriolis forces acting on a vibrating ring — the same physics behind a Foucault pendulum, just shrunk down to millimeters.</p>
-      <p>Over the years, designs like the Boeing DRG, Honeycomb DRG, Cobweb DRG, and Gear DRG each pushed sensitivity a little further, from 0.04 deg/sec down to 0.015 deg/sec, but each traded off electrode placement against mechanical performance.</p>
-      <p>This project asked a simple question: <strong>could an entirely different ring geometry — an "accordion-like" pattern — beat the existing field on mechanical sensitivity and noise?</strong></p>
-    </div>
-    <div class="col-visual">
-      <img src="../documents/MEMS Engineer/2.jpeg" alt="ADRG die close-up showing ring pattern" class="project-img">
-      <p class="img-caption">ADRG die showing accordion-style ring pattern</p>
-    </div>
-  </div>
-</section>
+  <div class="project-layout">
 
-<!-- Design & Simulation -->
-<section class="section-alt">
-  <div class="section-inner">
-    <h2 class="section-title">Design & Simulation</h2>
-    <p>I ran finite-element eigenfrequency analysis across five ring topologies — DRG, HDRG, CDRG, GDRG, and my proposed ADRG — each built with 9 rings, an 8mm outer diameter, 10μm in-plane ring width, and 60μm thickness.</p>
-    
-    <div class="table-wrapper">
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>DRG Type</th>
-            <th>Eigenfrequency (Hz)</th>
-            <th>Quality Factor (k)</th>
-            <th>Mech. Sensitivity (μm/rad/s)</th>
-            <th>Brownian Noise (rad/s/√Hz)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>DRG</td>
-            <td>12720</td>
-            <td>103.62</td>
-            <td>3.83e-6</td>
-            <td>1.01e-6</td>
-          </tr>
-          <tr>
-            <td>HDRG</td>
-            <td>11306</td>
-            <td>105.42</td>
-            <td>4.27e-6</td>
-            <td>1.29e-6</td>
-          </tr>
-          <tr>
-            <td>CDRG</td>
-            <td>12611</td>
-            <td>99.99</td>
-            <td>3.61e-6</td>
-            <td>1.12e-6</td>
-          </tr>
-          <tr>
-            <td>GDRG</td>
-            <td>14761</td>
-            <td>91.58</td>
-            <td>2.76e-6</td>
-            <td>1.17e-6</td>
-          </tr>
-          <tr class="highlight-row">
-            <td>ADRG (Ours)</td>
-            <td>6771</td>
-            <td>181.55</td>
-            <td>12.1e-6</td>
-            <td>1.07e-6</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="table-note">The ADRG's mechanical sensitivity is roughly 3–4× higher than every other topology tested, while holding competitive noise performance.</p>
-    
-    <p>Capacitance modeling (accounting for fringing fields, not just the textbook parallel-plate formula) backed this up — the ADRG's relative sense capacitance change was the largest of the five designs at <strong>46.4%</strong>, versus 14–29% for the others.</p>
-  </div>
-</section>
+    <!-- STICKY SIDEBAR -->
+    <aside class="project-sidebar" id="projectSidebar">
+      <div class="sidebar-header">On This Page</div>
+      <a href="#summary" class="sidebar-link active">Summary</a>
+      <a href="#problem" class="sidebar-link">Problem Statement</a>
+      <a href="#methodology" class="sidebar-link">Methodology</a>
+      <a href="#iteration-1" class="sidebar-link sidebar-sublink">Iteration 1</a>
+      <a href="#iteration-2" class="sidebar-link sidebar-sublink">Iteration 2</a>
+      <a href="#iteration-3" class="sidebar-link sidebar-sublink">Iteration 3</a>
+      <a href="#test-setup" class="sidebar-link">Test Setup</a>
+      <a href="#results" class="sidebar-link">Results</a>
+      <a href="#additional-info" class="sidebar-link">Additional Information</a>
+      <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">↑ Top</button>
+    </aside>
 
-<!-- Fabrication -->
-<section class="section">
-  <h2 class="section-title">Fabrication</h2>
-  <p>The design moved from simulation to silicon at CeNSE (Centre for Nano Science and Engineering).</p>
-  
-  <div class="gallery">
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/2.jpeg" alt="ADRG die close-up showing ring pattern">
-      <figcaption>ADRG die with accordion ring pattern</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/3.jpeg" alt="ADRG chip wire-bonded into ceramic package">
-      <figcaption>Wire-bonded into 68-pin ceramic package</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/4.jpeg" alt="Fabricated ADRG dies on glass slides">
-      <figcaption>Fabricated dies on glass slides</figcaption>
-    </figure>
-  </div>
-  
-  <p>Individual ADRG chips on glass slides, each with the resonator's accordion-style ring pattern visible under its protective coating — and the completed chip wire-bonded into a 68-pin ceramic package with color-coded leads carrying drive, sense, and common signals to the test board.</p>
-</section>
+    <!-- MAIN CONTENT -->
+    <div class="project-content">
 
-<!-- Test Setup -->
-<section class="section-alt">
-  <div class="section-inner">
-    <h2 class="section-title">Pinout & Test Setup</h2>
-    <div class="two-col">
-      <div class="col-text">
-        <h3 class="section-subtitle">Electrode Configuration</h3>
-        <ul class="check-list">
-          <li>4 common pins</li>
-          <li>16 individually addressable outer electrodes for drive and sense</li>
-          <li>Companion accelerometer die with separate X/Y sense and feedback electrode pairs</li>
-        </ul>
-        
-        <h3 class="section-subtitle">LDV Testing</h3>
-        <ul class="check-list">
-          <li>Drive signal combining AC and DC bias excited the resonator</li>
-          <li>LDV measured out-of-plane velocity at 0° and 180° points on the ring</li>
-          <li>Characterized frequency response under controlled conditions</li>
+      <!-- SUMMARY -->
+      <div id="summary" class="project-block">
+        <div class="project-hero">
+          <div class="project-hero-text">
+            <p class="section-eyebrow">Project · IoT / Embedded Systems</p>
+            <h2>Micromobility Vehicle Electronics System</h2>
+            <p class="project-hero-meta">DeltaX Automotive · with PES University · Guided by Kithir Kareeb Navaz Ahmed Zackariya &amp; Harit Trivedi · Nov 2021 – Apr 2022</p>
+            <div class="spec-ribbon">
+              <div class="dim-tag"><span class="dim-value">50</span><span class="dim-label">km range</span></div>
+              <div class="dim-tag"><span class="dim-value">3</span><span class="dim-label">iterations</span></div>
+              <div class="dim-tag"><span class="dim-value">ESP32</span><span class="dim-label">MCU</span></div>
+              <div class="dim-tag"><span class="dim-value">CAN</span><span class="dim-label">bus telemetry</span></div>
+            </div>
+          </div>
+          <div class="hero-diagram-wrap">
+            <img src="../documents/Micromobility Veheicle Electronics/pcb-top-esp32-board.jpg" alt="Custom ESP32-based control board with fingerprint sensor module and JST connectors for micromobility vehicle" style="width:100%; border-radius: 8px;">
+          </div>
+        </div>
+
+        <!-- Hero Video -->
+        <figure style="margin: var(--space-6) 0;">
+          <video controls muted autoplay loop style="width:100%; border-radius: 8px;">
+            <source src="../documents/Micromobility Veheicle Electronics/demo-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>Demonstration of vehicle authorization flow: fingerprint scan to motor unlock sequence</figcaption>
+        </figure>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          At DeltaX Automotive, a micromobility startup focused on last-mile connectivity solutions, I worked as the IoT Engineer Intern on their flagship product 'KIX' – an electric kick scooter designed for 5-10 km urban commutes. My role encompassed the complete electronics system development from embedded software architecture to hardware manufacturing.
+        </p>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          The project involved designing a sophisticated authorization system featuring fingerprint-based keyless entry, electronic motor locking, and a swappable battery mechanism with automated door control. I developed the Blynk IoT mobile app for remote vehicle management, implemented CAN bus communication with the VESC motor controller for real-time telemetry, and designed both charging and discharging circuits for the dual-battery system.
+        </p>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          A significant challenge arose mid-project when the global chip shortage made Raspberry Pi Zero unavailable worldwide. I led the pivot to ESP32 architecture, porting the entire codebase from Python to C/C++ while maintaining all functionality. Through systematic range testing and motor controller tuning, we achieved the target 50 km range. The project culminated in a working MVP demonstrated to potential investors, showcasing the complete authorization flow from fingerprint scan to motor unlock.
+        </p>
+
+        <figure style="margin: var(--space-6) 0;">
+          <img src="../documents/Micromobility Veheicle Electronics/Figure5.jpg" alt="Evolution of the KIX electric scooter through multiple design iterations" style="width:100%; border-radius: 8px;">
+          <figcaption>Evolution of the KIX electric scooter through multiple design iterations</figcaption>
+        </figure>
+
+        <div class="stat-strip">
+          <div class="stat-card">
+            <span class="stat-value">50</span>
+            <span class="stat-unit">km</span>
+            <span class="stat-label">Vehicle range achieved through motor controller tuning</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">3</span>
+            <span class="stat-unit">iterations</span>
+            <span class="stat-label">Electronics system evolved to MVP status</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">CAN</span>
+            <span class="stat-unit">bus</span>
+            <span class="stat-label">Real-time telemetry with VESC motor controller</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">IoT</span>
+            <span class="stat-unit">app</span>
+            <span class="stat-label">Blynk mobile app for remote management</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROBLEM STATEMENT -->
+      <div id="problem" class="project-block">
+        <h3>Problem Statement</h3>
+        <ul class="bullet-list">
+          <li><strong>Need:</strong> DeltaX Automotive required a complete electronics system for their KIX electric scooter, including keyless authorization, motor control, and battery management for a target 50 km range</li>
+          <li><strong>Prior state:</strong> Existing prototype had basic electronics with reliability issues — relay failures, chassis voltage leakage, and unorganized wire harnesses prone to failure</li>
+          <li><strong>Challenge:</strong> Mid-project global chip shortage eliminated Raspberry Pi Zero availability, requiring a complete platform pivot without delaying the MVP timeline</li>
+          <li><strong>Open question:</strong> Could we design a modular, reliable electronics architecture that would enable rapid prototyping while meeting investor demonstration requirements?</li>
         </ul>
       </div>
-      <div class="col-visual">
-        <img src="../documents/MEMS Engineer/3.jpeg" alt="Wire-bonded package for testing" class="project-img">
-        <p class="img-caption">68-pin ceramic package ready for LDV testing</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Results -->
-<section class="section">
-  <h2 class="section-title">Results</h2>
-  <div class="resume-card">
-    <p>Under controlled atmospheric conditions (1 atm, 25°C), the fabricated ADRG resonated at approximately <strong>6.8 kHz</strong> — within <strong>1.2–1.4%</strong> of the FEM-predicted eigenfrequency, confirming the simulation model held up in the real device.</p>
-  </div>
-</section>
+      <!-- METHODOLOGY -->
+      <div id="methodology" class="project-block">
+        <h3>Methodology</h3>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-2);">
+          The project evolved through three major iterations, each addressing discovered issues and improving system reliability. Click a stage to jump there.
+        </p>
+        <nav class="process-stepper">
+          <a href="#iteration-1" class="process-step"><span class="step-num">1</span>RPi</a>
+          <span class="process-connector"></span>
+          <a href="#iteration-2" class="process-step"><span class="step-num">2</span>Pivot</a>
+          <span class="process-connector"></span>
+          <a href="#iteration-3" class="process-step"><span class="step-num">3</span>ESP32</a>
+          <span class="process-connector"></span>
+          <a href="#results" class="process-step"><span class="step-num">4</span>MVP</a>
+        </nav>
+      </div>
 
-<!-- My Contributions -->
-<section class="section">
-  <h2 class="section-title">My Contributions</h2>
-  <div class="role-grid">
-    <div class="role-item">
-      <span class="role-icon">📐</span>
-      <div class="role-text">
-        <strong>ADRG Geometry Design</strong>
-        <p>Designed the novel accordion-like ring topology</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">💻</span>
-      <div class="role-text">
-        <strong>FEM Modeling</strong>
-        <p>Led eigenfrequency and capacitance modeling across all five DRG topologies</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">🔬</span>
-      <div class="role-text">
-        <strong>Experimental Characterization</strong>
-        <p>Ran LDV-based testing of the fabricated device</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">📊</span>
-      <div class="role-text">
-        <strong>Comparative Analysis</strong>
-        <p>Benchmarked ADRG against DRG, HDRG, CDRG, and GDRG</p>
-      </div>
-    </div>
-  </div>
-</section>
+      <!-- ITERATION 1 -->
+      <div id="iteration-1" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Iteration 1: Raspberry Pi Integration</h4>
 
-<!-- Credits -->
-<section class="section">
-  <div class="credits-box">
-    <h3>Team & Acknowledgments</h3>
-    <p><strong>Advisor:</strong> Prof. G. K. Ananthasuresh</p>
-    <p><strong>Co-Advisor:</strong> Karthik (ISRO)</p>
-    <p><strong>Design & Simulation Support:</strong> Sai Kumar, Suman Acharya</p>
-    <p><strong>Fabrication:</strong> Sudhanshu Shekhar</p>
-    <p><strong>Funding:</strong> ISRO</p>
-    <p><strong>Facilities:</strong> CeNSE (Centre for Nano Science and Engineering)</p>
-  </div>
-</section>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Started by understanding the existing codebase and integrating a Raspberry Pi Zero with the pre-existing daughter board. Added RPM sensor functionality using an ADC for analog-to-digital conversion. Implemented hardware button for fingerprint enrollment and developed Bluetooth command protocol between two Raspberry Pi units for remote control testing.
+        </p>
 
-<!-- Back Link -->
-<section class="section" style="text-align: center;">
-  <a href="../index.html#info" class="btn btn-ghost">← Back to Projects</a>
+        <details class="detail-toggle">
+          <summary>
+            <span class="detail-label">Issues</span>
+            <span class="detail-title">Critical issues identified</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>Relay activation failure:</strong> 3.3V GPIO insufficient to trigger 5V relay coils</li>
+              <li><strong>Solenoid failure:</strong> Caused 14V chassis leakage creating safety hazard</li>
+              <li><strong>Wire harness:</strong> Solid-core wires with improper lengths causing connection failures</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <!-- ITERATION 2 -->
+      <div id="iteration-2" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Iteration 2: PCB Design &amp; Chip Shortage Pivot</h4>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Designed custom PCB with SMD components for a more robust system. During testing, a faulty component damaged the CPU, coinciding with the global chip shortage that made Raspberry Pi Zero unavailable until end of 2022. Conducted extensive research on alternative microcontrollers, evaluating supply chain reliability and automotive-grade options before selecting ESP32 as the new platform.
+        </p>
+
+        <details class="detail-toggle highlight-style">
+          <summary>
+            <span class="detail-label">Key Decision</span>
+            <span class="detail-title">ESP32 selection rationale</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>Supply chain:</strong> Widely available despite global shortage</li>
+              <li><strong>WiFi/BLE built-in:</strong> Enabled IoT app connectivity without additional modules</li>
+              <li><strong>GPIO availability:</strong> Sufficient pins for all sensors and peripherals</li>
+              <li><strong>Community support:</strong> Extensive libraries for CAN bus, sensors, and Blynk IoT</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <!-- ITERATION 3 -->
+      <div id="iteration-3" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Iteration 3: ESP32 Implementation &amp; MVP</h4>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Ported entire codebase from Python to C/C++ for ESP32 compatibility. Implemented complete feature set: fingerprint authorization (enroll, authenticate, delete), relay-based motor locking, Hall effect side stand detection, and LED-based HMI. Manufactured final protoboard with JST connectors for modularity. Added solid-state relay to prevent back-current damage discovered during range testing.
+        </p>
+
+        <figure style="margin: var(--space-4) 0;">
+          <img src="../documents/Micromobility Veheicle Electronics/Figure 1.jpeg" alt="Hand-soldered protoboard backside showing power rail routing and signal traces" style="width:100%; border-radius: 8px;">
+          <figcaption>Hand-soldered protoboard backside showing power rail routing and signal traces</figcaption>
+        </figure>
+
+        <h5 style="color:var(--headline); margin: var(--space-4) 0 var(--space-2);">Blynk IoT App Development</h5>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Designed and implemented mobile app using Blynk IoT platform to replace hardware buttons with software controls. App features include Enroll button for new fingerprint registration, Battery Door control for swappable battery access, and real-time HV/LV battery voltage monitoring.
+        </p>
+
+        <figure style="margin: var(--space-4) 0;">
+          <img src="../documents/Micromobility Veheicle Electronics/Figure6.jpg" alt="Blynk IoT mobile app interface for vehicle authorization and battery management" style="width:100%; border-radius: 8px;">
+          <figcaption>Blynk IoT mobile app interface for vehicle authorization and battery management</figcaption>
+        </figure>
+
+        <h5 style="color:var(--headline); margin: var(--space-4) 0 var(--space-2);">Wire Harness Design</h5>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Evolved harness design across three iterations to eliminate failure points from solid-core wires and improper lengths. Final harness used silicone wire with measured lengths (using thread for routing estimation), JST connectors for modularity, tape bundling for organization, and built-in slack for maintenance access and future expansion.
+        </p>
+
+        <figure style="margin: var(--space-4) 0;">
+          <img src="../documents/Micromobility Veheicle Electronics/Figure7.png" alt="Wire harness evolution from Iteration 1 (left) to Iteration 3 (right) showing improved organization" style="width:100%; border-radius: 8px;">
+          <figcaption>Wire harness evolution from Iteration 1 (left) to Iteration 3 (right) showing improved organization</figcaption>
+        </figure>
+
+        <h5 style="color:var(--headline); margin: var(--space-4) 0 var(--space-2);">Charging &amp; Discharging Circuits</h5>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Designed custom discharging circuit using series-connected 12V CPU fans to bring HV battery within ESC voltage tolerance (preventing over-voltage protection trips). Created LV charging circuit to charge the 4S Li-ion floor-mounted battery by stepping down 60V HV supply to 30V input for the charging board.
+        </p>
+
+        <figure style="margin: var(--space-4) 0;">
+          <img src="../documents/Micromobility Veheicle Electronics/Figure8.jpg" alt="Custom HV battery discharging circuit using CPU fans in series" style="width:100%; border-radius: 8px;">
+          <figcaption>Custom HV battery discharging circuit using CPU fans in series</figcaption>
+        </figure>
+
+        <h5 style="color:var(--headline); margin: var(--space-4) 0 var(--space-2);">Sensor Integration</h5>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Evaluated multiple sensor options for side stand detection: Z-stop switches, reed switches, and Hall effect modules. Selected Hall effect sensor for reliability and non-contact operation. Coordinated with mechanical team on sensor mounting to ensure protection from moving parts and proper isolation from chassis voltage.
+        </p>
+
+        <figure style="margin: var(--space-4) 0;">
+          <img src="../documents/Micromobility Veheicle Electronics/Figure9.png" alt="Sensor options evaluated for side stand detection: Z-stop, Reed, and Hall effect" style="width:100%; border-radius: 8px;">
+          <figcaption>Sensor options evaluated for side stand detection: Z-stop, Reed, and Hall effect</figcaption>
+        </figure>
+
+        <h5 style="color:var(--headline); margin: var(--space-4) 0 var(--space-2);">Motor Controller Communication</h5>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Attempted UART communication with VESC motor controller but encountered library compatibility issues. Successfully implemented CAN bus protocol, establishing reliable telemetry extraction including input voltage, MOSFET temperature, duty cycle, motor temperature, current draw, and tachometer readings. Developed data parsing to convert hexadecimal frames to human-readable values.
+        </p>
+      </div>
+
+      <!-- TEST SETUP -->
+      <div id="test-setup" class="project-block">
+        <h3>Test Setup</h3>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          System validated through multiple range tests and authorization flow demonstrations with potential investors and stakeholders.
+        </p>
+
+        <figure style="margin: var(--space-4) 0;">
+          <img src="../documents/Micromobility Veheicle Electronics/Figure3.jpeg" alt="Team assembly session on the KIX electric scooter prototype" style="width:100%; border-radius: 8px;">
+          <figcaption>Team assembly session on the KIX electric scooter prototype</figcaption>
+        </figure>
+
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-value">50 km</span><span class="spec-label">Range target</span></div>
+          <div class="spec-item"><span class="spec-value">VESC</span><span class="spec-label">Motor controller</span></div>
+          <div class="spec-item"><span class="spec-value">CAN</span><span class="spec-label">Telemetry bus</span></div>
+        </div>
+
+        <details class="detail-toggle">
+          <summary>
+            <span class="detail-label">Method</span>
+            <span class="detail-title">Testing methodology</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>Range testing:</strong> Multiple full-discharge runs with VESC parameter tuning to optimize efficiency</li>
+              <li><strong>E-brake testing:</strong> Iterative tuning for optimal ride feel and safety response</li>
+              <li><strong>Authorization flow:</strong> End-to-end testing from fingerprint scan to motor enable</li>
+              <li><strong>Reliability testing:</strong> Extended operation to verify no component failures under sustained use</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <!-- RESULTS -->
+      <div id="results" class="project-block">
+        <h3>Results</h3>
+
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-value">50 km</span><span class="spec-label">Range achieved</span></div>
+          <div class="spec-item"><span class="spec-value">MVP</span><span class="spec-label">Status reached</span></div>
+          <div class="spec-item"><span class="spec-value">100%</span><span class="spec-label">Feature parity</span></div>
+        </div>
+        <p style="color:var(--text-dim); font-size: var(--text-xs); margin-top: var(--space-2);">Successfully pivoted from Raspberry Pi to ESP32 without feature loss during global chip shortage.</p>
+
+        <details class="detail-toggle highlight-style">
+          <summary>
+            <span class="detail-label">Key Findings</span>
+            <span class="detail-title">Project achievements</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>Delivered stable, <strong>MVP-ready electronics system</strong> with full authorization flow</li>
+              <li>Achieved target vehicle range of <strong>50 km</strong> through motor controller optimization</li>
+              <li>Successfully established <strong>CAN bus communication</strong> with VESC for comprehensive telemetry</li>
+              <li>Pivoted from Raspberry Pi to <strong>ESP32 architecture</strong> during global chip shortage without feature loss</li>
+              <li>Identified and resolved back-current issue using <strong>solid-state relay protection</strong></li>
+              <li>Created <strong>modular wire harness design</strong> enabling rapid prototyping and component swaps</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="detail-toggle">
+          <summary>
+            <span class="detail-label">Data</span>
+            <span class="detail-title">Electronics iteration evolution table</span>
+          </summary>
+          <div class="detail-body">
+            <p style="color:var(--text-dim); margin-bottom: var(--space-3); font-size: var(--text-xs);">Comparison across three development iterations</p>
+            <div style="overflow-x: auto;">
+              <table style="width:100%; border-collapse: collapse; font-size: var(--text-sm);">
+                <thead>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <th style="padding: var(--space-2); text-align: left; color: var(--headline);">Feature</th>
+                    <th style="padding: var(--space-2); text-align: center; color: var(--headline);">Iteration 1</th>
+                    <th style="padding: var(--space-2); text-align: center; color: var(--headline);">Iteration 2</th>
+                    <th style="padding: var(--space-2); text-align: center; color: var(--headline);">Iteration 3 (MVP)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">Microcontroller</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">Raspberry Pi Zero</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">RPi Zero (failed)</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright); font-weight: bold;">ESP32</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">Programming Language</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">Python</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">Python</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright); font-weight: bold;">C/C++</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">Control Interface</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">HW buttons + BT</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">Hardware buttons</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright); font-weight: bold;">Blynk IoT App</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">Harness Quality</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">Solid-core, loose</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">Improved lengths</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright); font-weight: bold;">JST, bundled</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">Motor Locking</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">Relay (unreliable)</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">Relay</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright); font-weight: bold;">Solid-state relay</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: var(--space-2); color: var(--text);">Stand Detection</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">Hall effect</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">Hall effect</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright); font-weight: bold;">Hall (isolated)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="color:var(--text-dim); margin-top: var(--space-3); font-size: var(--text-xs);">Iteration 3 achieved MVP status with all features functional and reliable for investor demonstrations.</p>
+          </div>
+        </details>
+
+        <details class="detail-toggle" style="margin-top: var(--space-6);">
+          <summary>
+            <span class="detail-label">Skills</span>
+            <span class="detail-title">Technical skills demonstrated</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>Embedded Systems:</strong> ESP32, Raspberry Pi, C/C++, Python</li>
+              <li><strong>IoT:</strong> Blynk IoT Platform, WiFi/BLE connectivity</li>
+              <li><strong>Communication:</strong> CAN Bus, UART, SPI protocols</li>
+              <li><strong>Hardware:</strong> PCB Design, hand soldering, SMD soldering, wire harness design</li>
+              <li><strong>Motor Control:</strong> VESC tuning, ESC configuration, telemetry parsing</li>
+              <li><strong>Sensors:</strong> Hall effect, fingerprint module, RPM sensor with ADC</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="detail-toggle">
+          <summary>
+            <span class="detail-label">Future</span>
+            <span class="detail-title">Future work</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>Implement RTOS for improved system responsiveness and real-time performance</li>
+              <li>Convert battery voltage display to percentage-based indication in app</li>
+              <li>Integrate RPM sensor as safety interlock</li>
+              <li>Design professional PCB for production (replacing protoboard)</li>
+              <li>Add GPS tracking and fleet management capabilities for shared mobility deployment</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="detail-toggle compact">
+          <summary>
+            <span class="detail-label">Team</span>
+            <span class="detail-title">Contributions &amp; credits</span>
+          </summary>
+          <div class="detail-body">
+            <p style="margin-bottom: var(--space-3);">I designed the complete electronics architecture across 3 iterations including PCB design, ESP32 firmware, Blynk IoT app, and CAN bus motor controller integration. Led the platform pivot from Raspberry Pi to ESP32 during chip shortage.</p>
+            <p style="margin-bottom: var(--space-3);">Guided by Kithir Kareeb Navaz Ahmed Zackariya (Director & Co-Founder) and Harit Trivedi (Electronics Head) at DeltaX Automotive, with capstone guidance from Prof. Sachhidananda M H at PES University.</p>
+            <p>Mechanical chassis design and sensor mounting coordination done by the DeltaX mechanical team. Testing facilities provided by DeltaX Automotive.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- ADDITIONAL INFORMATION -->
+      <div id="additional-info" class="project-block">
+        <h3>Additional Information</h3>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-4);">Comprehensive internship report and presentation slides.</p>
+        <div class="resume-card">
+          <div class="pdf-wrapper">
+            <iframe
+              src="../documents/Micromobility Veheicle Electronics/final report internship.pdf"
+              title="DeltaX Internship Final Report"
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin: var(--space-4) 0;">Presentation slides with visual summaries of key work areas.</p>
+        <div class="resume-card">
+          <div class="pdf-wrapper">
+            <iframe
+              src="../documents/Micromobility Veheicle Electronics/DeltaX Internship Presentation.pdf"
+              title="DeltaX Internship Presentation"
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end project-content -->
+  </div><!-- end project-layout -->
 </section>
 
 <footer class="footer">
@@ -257,6 +457,7 @@
 </footer>
 
 <script>
+  // ── Theme & Clock ──
   const root = document.documentElement;
   const toggle = document.getElementById('themeToggle');
   const knob = document.getElementById('themeKnob');
@@ -286,6 +487,53 @@
   }
   tickClock();
   setInterval(tickClock, 1000);
+
+  // ── Sidebar Scrollspy ──
+  const sidebar = document.querySelector('.project-sidebar');
+  const sidebarHeader = document.querySelector('.sidebar-header');
+  const sidebarLinks = document.querySelectorAll('.sidebar-link');
+  const sections = [];
+
+  sidebarLinks.forEach(link => {
+    const targetId = link.getAttribute('href').substring(1);
+    const target = document.getElementById(targetId);
+    if (target) sections.push({ id: targetId, el: target, link: link });
+  });
+
+  function onScroll() {
+    const scrollY = window.scrollY;
+    let current = sections[0];
+
+    for (const sec of sections) {
+      if (scrollY >= sec.el.offsetTop - 120) current = sec;
+    }
+
+    sidebarLinks.forEach(l => l.classList.remove('active'));
+    if (current) current.link.classList.add('active');
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ── Smooth scroll for sidebar links ──
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // ── Back to top button ──
+  const topBtn = document.getElementById('sidebarTopBtn');
+  if (topBtn) {
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 </script>
 
 </body>

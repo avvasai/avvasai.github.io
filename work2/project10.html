@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accordion-Like Disk Resonator Gyroscope</title>
-  <meta name="description" content="A Novel Accordion-Like Disk Resonator Gyroscope (ADRG) - MEMS gyroscope design, simulation, fabrication and testing">
+  <title>Laboratory Robotic Automation | Sai Pranav Avva</title>
+  <meta name="description" content="Designed a 4-DOF robotic arm for automated test tube handling at a diagnostic lab. Led mechanical design, CAD, FEA, 3D printing, and cross-functional coordination.">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-
 <header class="masthead">
   <h1 class="giant-name">Avva Sai Pranav</h1>
   <nav class="pill-nav">
     <div class="pill-links">
-      <a href="index.html" class="pill">Home</a>
-      <a href="index.html#info" class="pill">Projects</a>
-      <a href="index.html#resume" class="pill">Resume</a>
-      <a href="index.html#contact" class="pill">Contact</a>
+      <a href="../index.html" class="pill">Home</a>
+      <a href="../index.html#info" class="pill">Projects</a>
+      <a href="../index.html#resume" class="pill">Resume</a>
+      <a href="../index.html#contact" class="pill">Contact</a>
     </div>
     <div class="pill-right">
       <span class="label">Theme:</span>
@@ -28,228 +27,442 @@
   </nav>
 </header>
 
-<!-- Project Hero -->
-<section class="project-hero">
-  <p class="section-eyebrow">Project</p>
-  <h1 class="project-title">A Novel Accordion-Like Disk Resonator Gyroscope</h1>
-  <p class="project-subtitle">MEMS Gyroscope Design · Simulation · Fabrication · Testing</p>
-  <div class="project-meta">
-    <span class="meta-item">🏛️ M2D2 Laboratory, Indian Institute of Science</span>
-    <span class="meta-item">👤 Prof. G. K. Ananthasuresh</span>
-    <span class="meta-item">🎤 ICMNSS Conference</span>
-  </div>
-</section>
-
-<!-- Key Results Stats -->
 <section class="section">
-  <div class="stats-row">
-    <div class="stat-card">
-      <span class="stat-value">3–4×</span>
-      <span class="stat-label">Higher Sensitivity</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">6771 Hz</span>
-      <span class="stat-label">Drive Frequency</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">&lt;1.4%</span>
-      <span class="stat-label">Sim-to-Fab Error</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">46.4%</span>
-      <span class="stat-label">Capacitance Change</span>
-    </div>
-  </div>
-</section>
+  <a href="../index.html#info" class="back-link">← Back to projects</a>
 
-<!-- Overview -->
-<section class="section">
-  <h2 class="section-title">Project Overview</h2>
-  <div class="two-col">
-    <div class="col-text">
-      <p>Disk Resonator Gyroscopes (DRGs) sense rotation using Coriolis forces acting on a vibrating ring — the same physics behind a Foucault pendulum, just shrunk down to millimeters.</p>
-      <p>Over the years, designs like the Boeing DRG, Honeycomb DRG, Cobweb DRG, and Gear DRG each pushed sensitivity a little further, from 0.04 deg/sec down to 0.015 deg/sec, but each traded off electrode placement against mechanical performance.</p>
-      <p>This project asked a simple question: <strong>could an entirely different ring geometry — an "accordion-like" pattern — beat the existing field on mechanical sensitivity and noise?</strong></p>
-    </div>
-    <div class="col-visual">
-      <img src="../documents/MEMS Engineer/2.jpeg" alt="ADRG die close-up showing ring pattern" class="project-img">
-      <p class="img-caption">ADRG die showing accordion-style ring pattern</p>
-    </div>
-  </div>
-</section>
+  <div class="project-layout">
 
-<!-- Design & Simulation -->
-<section class="section-alt">
-  <div class="section-inner">
-    <h2 class="section-title">Design & Simulation</h2>
-    <p>I ran finite-element eigenfrequency analysis across five ring topologies — DRG, HDRG, CDRG, GDRG, and my proposed ADRG — each built with 9 rings, an 8mm outer diameter, 10μm in-plane ring width, and 60μm thickness.</p>
-    
-    <div class="table-wrapper">
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>DRG Type</th>
-            <th>Eigenfrequency (Hz)</th>
-            <th>Quality Factor (k)</th>
-            <th>Mech. Sensitivity (μm/rad/s)</th>
-            <th>Brownian Noise (rad/s/√Hz)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>DRG</td>
-            <td>12720</td>
-            <td>103.62</td>
-            <td>3.83e-6</td>
-            <td>1.01e-6</td>
-          </tr>
-          <tr>
-            <td>HDRG</td>
-            <td>11306</td>
-            <td>105.42</td>
-            <td>4.27e-6</td>
-            <td>1.29e-6</td>
-          </tr>
-          <tr>
-            <td>CDRG</td>
-            <td>12611</td>
-            <td>99.99</td>
-            <td>3.61e-6</td>
-            <td>1.12e-6</td>
-          </tr>
-          <tr>
-            <td>GDRG</td>
-            <td>14761</td>
-            <td>91.58</td>
-            <td>2.76e-6</td>
-            <td>1.17e-6</td>
-          </tr>
-          <tr class="highlight-row">
-            <td>ADRG (Ours)</td>
-            <td>6771</td>
-            <td>181.55</td>
-            <td>12.1e-6</td>
-            <td>1.07e-6</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="table-note">The ADRG's mechanical sensitivity is roughly 3–4× higher than every other topology tested, while holding competitive noise performance.</p>
-    
-    <p>Capacitance modeling (accounting for fringing fields, not just the textbook parallel-plate formula) backed this up — the ADRG's relative sense capacitance change was the largest of the five designs at <strong>46.4%</strong>, versus 14–29% for the others.</p>
-  </div>
-</section>
+    <!-- STICKY SIDEBAR -->
+    <aside class="project-sidebar" id="projectSidebar">
+      <div class="sidebar-header">On This Page</div>
+      <a href="#summary" class="sidebar-link active">Summary</a>
+      <a href="#problem" class="sidebar-link">Problem Statement</a>
+      <a href="#methodology" class="sidebar-link">Methodology</a>
+      <a href="#design-sim" class="sidebar-link sidebar-sublink">Design &amp; Simulation</a>
+      <a href="#fabrication" class="sidebar-link sidebar-sublink">Fabrication</a>
+      <a href="#test-setup" class="sidebar-link">Test Setup</a>
+      <a href="#results" class="sidebar-link">Results</a>
+      <a href="#additional-info" class="sidebar-link">Additional Information</a>
+      <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">↑ Top</button>
+    </aside>
 
-<!-- Fabrication -->
-<section class="section">
-  <h2 class="section-title">Fabrication</h2>
-  <p>The design moved from simulation to silicon at CeNSE (Centre for Nano Science and Engineering).</p>
-  
-  <div class="gallery">
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/2.jpeg" alt="ADRG die close-up showing ring pattern">
-      <figcaption>ADRG die with accordion ring pattern</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/3.jpeg" alt="ADRG chip wire-bonded into ceramic package">
-      <figcaption>Wire-bonded into 68-pin ceramic package</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/4.jpeg" alt="Fabricated ADRG dies on glass slides">
-      <figcaption>Fabricated dies on glass slides</figcaption>
-    </figure>
-  </div>
-  
-  <p>Individual ADRG chips on glass slides, each with the resonator's accordion-style ring pattern visible under its protective coating — and the completed chip wire-bonded into a 68-pin ceramic package with color-coded leads carrying drive, sense, and common signals to the test board.</p>
-</section>
+    <!-- MAIN CONTENT -->
+    <div class="project-content">
 
-<!-- Test Setup -->
-<section class="section-alt">
-  <div class="section-inner">
-    <h2 class="section-title">Pinout & Test Setup</h2>
-    <div class="two-col">
-      <div class="col-text">
-        <h3 class="section-subtitle">Electrode Configuration</h3>
-        <ul class="check-list">
-          <li>4 common pins</li>
-          <li>16 individually addressable outer electrodes for drive and sense</li>
-          <li>Companion accelerometer die with separate X/Y sense and feedback electrode pairs</li>
+      <!-- SUMMARY -->
+      <div id="summary" class="project-block">
+        <div class="project-hero">
+          <div class="project-hero-text">
+            <p class="section-eyebrow">Project · Robotics</p>
+            <h2>Robotic Automation for Laboratory Test Tube Handling</h2>
+            <p class="project-hero-meta">PES University × Anand Diagnostic Center · Guided by Dr. D. Sethuram · Sep – Nov 2021</p>
+            <div class="spec-ribbon">
+              <div class="dim-tag"><span class="dim-value">7.25</span><span class="dim-label">kg robot weight</span></div>
+              <div class="dim-tag"><span class="dim-value">4</span><span class="dim-label">DOF arm</span></div>
+              <div class="dim-tag"><span class="dim-value">1 kg</span><span class="dim-label">payload capacity</span></div>
+              <div class="dim-tag"><span class="dim-value">₹1.25L</span><span class="dim-label">budget</span></div>
+            </div>
+          </div>
+          <div class="hero-diagram-wrap">
+            <figure>
+              <video autoplay muted loop playsinline style="width:100%; border-radius: 8px;">
+                <source src="../documents/Labratory Automation/demo-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <figcaption>Prototype motor and arm segment test</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <figure style="margin: var(--space-6) 0;">
+          <img src="../documents/Labratory Automation/FIgure1.jpg" alt="Assembled 4-DOF robotic arm with two-claw gripper and wrist-mounted camera for laboratory test tube handling" style="width:100%; border-radius: 8px;">
+          <figcaption>Assembled 4-DOF robotic arm with two-claw gripper and wrist-mounted camera</figcaption>
+        </figure>
+
+        <p style="color:var(--text); margin-bottom: var(--space-4);">
+          Anand Diagnostic Center processes over 2,000 test tube samples daily, but their existing conveyor-based segregation system required significant manual intervention for barcode verification and racking. Our team designed a 4-DOF robotic arm solution to automate the pick-scan-place workflow, eliminating manual labor and reducing errors.
+        </p>
+        <p style="color:var(--text); margin-bottom: var(--space-4);">
+          As Design Domain Lead, I owned the complete mechanical design—from the initial site visit to capture floor space constraints (1000×500mm) and payload requirements, through CAD modeling of custom worm and cycloidal gearboxes, to 3D printing the final components in heat-resistant PETG. I also managed component sourcing and kept the project under the ₹1,25,000 budget.
+        </p>
+        <p style="color:var(--text);">
+          The resulting robot weighs just 7.25 kg (well under the 13 kg portability target), handles 1 kg payloads, and features a modular two-claw gripper with an integrated Raspberry Pi camera for test tube detection. I proposed an overhead camera safety system using contour detection to halt the robot if operators enter the workspace. This was my first industry internship and a formative experience in cross-functional product development.
+        </p>
+
+        <div class="stat-strip">
+          <div class="stat-card">
+            <span class="stat-value">7.25</span>
+            <span class="stat-unit">kg</span>
+            <span class="stat-label">Total weight — 44% under 13 kg constraint</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">1</span>
+            <span class="stat-unit">kg</span>
+            <span class="stat-label">Payload capacity with torque margins</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">₹1.25L</span>
+            <span class="stat-unit">budget</span>
+            <span class="stat-label">Complete prototype within constraint</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">4</span>
+            <span class="stat-unit">DOF</span>
+            <span class="stat-label">Pick-and-place arm configuration</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROBLEM STATEMENT -->
+      <div id="problem" class="project-block">
+        <h3>Problem Statement</h3>
+        <figure style="margin-bottom: var(--space-4);">
+          <img src="../documents/Labratory Automation/Sorter.png" alt="Existing conveyor-based test tube segregator system at Anand Diagnostic Center" style="width:100%; border-radius: 8px;">
+          <figcaption>Existing conveyor-based segregation system requiring manual intervention</figcaption>
+        </figure>
+        <ul class="bullet-list">
+          <li><strong>Need:</strong> Anand Diagnostic Center processes 2,000+ test tube samples daily requiring automated segregation and racking</li>
+          <li><strong>Prior art:</strong> Existing conveyor-based system required manual barcode verification, no automated racking, and error-prone batch handling</li>
+          <li><strong>Constraints:</strong> 1000×500mm floor space, &lt;13kg total weight for portability, &lt;₹1,25,000 budget, and 250g payload (with 1.67× safety factor)</li>
+          <li><strong>Open question:</strong> Could a compact, affordable robotic arm automate the pick-scan-place workflow while maintaining safety for nearby workers?</li>
         </ul>
+      </div>
+
+      <!-- METHODOLOGY -->
+      <div id="methodology" class="project-block">
+        <h3>Methodology</h3>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-2);">
+          The project followed a comprehensive requirements-design-fabricate-test workflow for a 4-DOF robotic arm system. Click a stage to jump there.
+        </p>
+        <nav class="process-stepper">
+          <a href="#design-sim" class="process-step"><span class="step-num">1</span>Design</a>
+          <span class="process-connector"></span>
+          <a href="#fabrication" class="process-step"><span class="step-num">2</span>Fabricate</a>
+          <span class="process-connector"></span>
+          <a href="#test-setup" class="process-step"><span class="step-num">3</span>Test</a>
+          <span class="process-connector"></span>
+          <a href="#results" class="process-step"><span class="step-num">4</span>Results</a>
+        </nav>
+      </div>
+
+      <!-- DESIGN & SIMULATION -->
+      <div id="design-sim" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Design &amp; Simulation</h4>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          <strong>Requirements & Site Analysis:</strong> Conducted on-site visit to Anand Diagnostic Center to understand the complete sample workflow—from registration through department segregation to archiving. Captured critical constraints: 1000×500mm floor space, &lt;13kg total weight for portability, &lt;₹1,25,000 budget, and 250g payload (with 1.67× safety factor). Identified key pain points in the existing conveyor system: manual barcode verification, no automated racking, and error-prone batch handling.
+        </p>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          <strong>Actuator Design & Selection:</strong> Selected NEMA 17/23 stepper motors over servos for cost-effectiveness and ease of adding magnetic encoder feedback. Designed custom worm gearboxes (3:1 and 30:1 ratios) for their non-backdrivable characteristic—critical for holding payloads when powered off. Implemented cycloidal drive (8:1) for wrist rotation. All actuator housings were designed for 3D printing in PETG to handle motor temperatures up to 70°C.
+        </p>
+
+        <!-- Gearbox Images -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
+          <figure>
+            <img src="../documents/Labratory Automation/Wormgearfront.png" alt="Custom worm gearbox design – non-backdrivable for payload safety" style="width:100%; border-radius: 8px;">
+            <figcaption>Custom worm gearbox design – non-backdrivable for payload safety</figcaption>
+          </figure>
+          <figure>
+            <img src="../documents/Labratory Automation/wormgearinternal.png" alt="Internal view of worm gearbox showing gear meshing" style="width:100%; border-radius: 8px;">
+            <figcaption>Internal view of worm gearbox showing gear meshing</figcaption>
+          </figure>
+        </div>
+
+        <!-- <figure style="margin: var(--space-4) 0;">
+          <img src="../images/laboratory-robotic-automation/cycloidal-drive.jpg" alt="Cycloidal drive (8:1 reduction) for compact wrist actuation" style="width:100%; border-radius: 8px;">
+          <figcaption>Cycloidal drive (8:1 reduction) for compact wrist actuation</figcaption>
+        </figure> -->
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          <strong>Joint Torque Calculations:</strong> Performed torque calculations for all four joints considering link masses, payload, and fully extended arm configuration. Base joint required highest torque (233.25 kgcm), achieved using NEMA 23 with 30:1 worm reduction. Validated that selected motor-gearbox combinations provided adequate torque margins across the workspace.
+        </p>
+
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-value">233.25</span><span class="spec-label">kgcm max torque (base)</span></div>
+          <div class="spec-item"><span class="spec-value">30:1</span><span class="spec-label">worm gear reduction</span></div>
+          <div class="spec-item"><span class="spec-value">8:1</span><span class="spec-label">cycloidal reduction (wrist)</span></div>
+        </div>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-top: var(--space-4); margin-bottom: var(--space-4);">
+          <strong>End Effector Design:</strong> Iterated through two gripper designs. Initial encompassing gripper was modular but required separate camera mount. Final two-claw gripper used spur gears and four-bar linkage to achieve >3.5N gripping force (~0.5Nm torque). Integrated slots for force sensing strips as alternative to unavailable force-torque sensors.
+        </p>
+
+        <!-- Gripper Images -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
+          <figure>
+            <img src="../documents/Labratory Automation/encompassinggripper.png" alt="Initial encompassing gripper design" style="width:100%; border-radius: 8px;">
+            <figcaption>Initial encompassing gripper concept</figcaption>
+          </figure>
+          <figure>
+            <img src="../documents/Labratory Automation/twoclawgripper.png" alt="Two-claw gripper with four-bar linkage mechanism" style="width:100%; border-radius: 8px;">
+            <figcaption>Two-claw gripper with four-bar linkage mechanism</figcaption>
+          </figure>
+        </div>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          <strong>Vision System Integration:</strong> Selected Raspberry Pi HQ Camera (Sony IMX477R, 12.3MP) for wrist-mounted test tube detection and cap orientation identification. Designed modular camera adapter with dowel pins for precise, repeatable mounting. Positioned camera above end effector to maximize field of view without gripper obstruction.
+        </p>
+
+        <!-- Camera Images -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
+          <figure>
+            <img src="../documents/Labratory Automation/picammodule.png" alt="Raspberry Pi HQ Camera module" style="width:100%; border-radius: 8px;">
+            <figcaption>Raspberry Pi HQ Camera (12.3MP)</figcaption>
+          </figure>
+          <figure>
+            <img src="../documents/Labratory Automation/cameraadapter.png" alt="Custom camera adapter design" style="width:100%; border-radius: 8px;">
+            <figcaption>Custom camera adapter design</figcaption>
+          </figure>
+          <figure>
+            <img src="../documents/Labratory Automation/Cameramoduleinterface.png" alt="Modular camera mount with dowel pin alignment" style="width:100%; border-radius: 8px;">
+            <figcaption>Modular camera mount with dowel pin alignment</figcaption>
+          </figure>
+        </div>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          <strong>Safety System Architecture:</strong> Proposed overhead camera-based safety system using contour and line detection. When a human hand or body enters the robot's workspace, the system triggers an automatic stop. This architecture allows the robot to operate near human workers while maintaining safety compliance.
+        </p>
+
+        <figure style="margin: var(--space-4) 0;">
+          <img src="../documents/Labratory Automation/tasksequencing.png" alt="Task sequencing diagram showing pick-scan-place workflow" style="width:100%; border-radius: 8px;">
+          <figcaption>Task sequencing diagram showing pick-scan-place workflow</figcaption>
+        </figure>
+
+        <details class="detail-toggle">
+          <summary>
+            <span class="detail-label">Sensing</span>
+            <span class="detail-title">Force sensing integration</span>
+          </summary>
+          <div class="detail-body">
+            <figure>
+              <img src="../documents/Labratory Automation/Forcesensor.png" alt="Force sensing strip selected as alternative to bulk force-torque sensors" style="width:100%; border-radius: 8px;">
+              <figcaption>Force sensing strip selected as alternative to bulk force-torque sensors</figcaption>
+            </figure>
+            <p style="margin-top: var(--space-3);">Integrated slots for force sensing strips in the gripper design as a cost-effective alternative to unavailable force-torque sensors, enabling adaptive gripping force control.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- FABRICATION -->
+      <div id="fabrication" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Fabrication</h4>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-3);"><strong>3D Printing & Assembly:</strong> 3D printed all gearbox housings, gripper components, and camera mounts in PETG. Selected PETG over PLA for thermal stability and mechanical strength. Assembled complete robot including motor wiring, sensor integration, and Raspberry Pi mounting. Final weight: 7.25kg (excluding payload).</p>
         
-        <h3 class="section-subtitle">LDV Testing</h3>
-        <ul class="check-list">
-          <li>Drive signal combining AC and DC bias excited the resonator</li>
-          <li>LDV measured out-of-plane velocity at 0° and 180° points on the ring</li>
-          <li>Characterized frequency response under controlled conditions</li>
-        </ul>
-      </div>
-      <div class="col-visual">
-        <img src="../documents/MEMS Engineer/3.jpeg" alt="Wire-bonded package for testing" class="project-img">
-        <p class="img-caption">68-pin ceramic package ready for LDV testing</p>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-value">PETG</span><span class="spec-label">Material for heat resistance</span></div>
+          <div class="spec-item"><span class="spec-value">70°C</span><span class="spec-label">Motor operating temp tolerance</span></div>
+          <div class="spec-item"><span class="spec-value">7.25 kg</span><span class="spec-label">Final robot weight</span></div>
+        </div>
 
-<!-- Results -->
-<section class="section">
-  <h2 class="section-title">Results</h2>
-  <div class="resume-card">
-    <p>Under controlled atmospheric conditions (1 atm, 25°C), the fabricated ADRG resonated at approximately <strong>6.8 kHz</strong> — within <strong>1.2–1.4%</strong> of the FEM-predicted eigenfrequency, confirming the simulation model held up in the real device.</p>
-  </div>
-</section>
+        <figure style="margin: var(--space-6) 0;">
+          <img src="../documents/Labratory Automation/Figure2.jpg" alt="3D printed gearbox in PETG for heat resistance" style="width:100%; border-radius: 8px;">
+          <figcaption>3D printed gearbox in PETG for heat resistance</figcaption>
+        </figure>
 
-<!-- My Contributions -->
-<section class="section">
-  <h2 class="section-title">My Contributions</h2>
-  <div class="role-grid">
-    <div class="role-item">
-      <span class="role-icon">📐</span>
-      <div class="role-text">
-        <strong>ADRG Geometry Design</strong>
-        <p>Designed the novel accordion-like ring topology</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
+          <figure>
+            <img src="../documents/Labratory Automation/Figure1.jpg" alt="Fully assembled 4-DOF robotic arm" style="width:100%; border-radius: 8px;">
+            <figcaption>Fully assembled 4-DOF robotic arm</figcaption>
+          </figure>
+          <figure>
+            <img src="../documents/Labratory Automation/fullextension.png" alt="Robot in fully extended configuration" style="width:100%; border-radius: 8px;">
+            <figcaption>Robot in fully extended configuration</figcaption>
+          </figure>
+        </div>
       </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">💻</span>
-      <div class="role-text">
-        <strong>FEM Modeling</strong>
-        <p>Led eigenfrequency and capacitance modeling across all five DRG topologies</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">🔬</span>
-      <div class="role-text">
-        <strong>Experimental Characterization</strong>
-        <p>Ran LDV-based testing of the fabricated device</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">📊</span>
-      <div class="role-text">
-        <strong>Comparative Analysis</strong>
-        <p>Benchmarked ADRG against DRG, HDRG, CDRG, and GDRG</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Credits -->
-<section class="section">
-  <div class="credits-box">
-    <h3>Team & Acknowledgments</h3>
-    <p><strong>Advisor:</strong> Prof. G. K. Ananthasuresh</p>
-    <p><strong>Co-Advisor:</strong> Karthik (ISRO)</p>
-    <p><strong>Design & Simulation Support:</strong> Sai Kumar, Suman Acharya</p>
-    <p><strong>Fabrication:</strong> Sudhanshu Shekhar</p>
-    <p><strong>Funding:</strong> ISRO</p>
-    <p><strong>Facilities:</strong> CeNSE (Centre for Nano Science and Engineering)</p>
-  </div>
-</section>
+      <!-- TEST SETUP -->
+      <div id="test-setup" class="project-block">
+        <h3>Test Setup</h3>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Prototype was 3D printed and assembled. Actuators were tested for performance under load. Static and dynamic stability validated through ANSYS FEA. Contour detection algorithms demonstrated successful hand and test tube identification.
+        </p>
 
-<!-- Back Link -->
-<section class="section" style="text-align: center;">
-  <a href="../index.html#info" class="btn btn-ghost">← Back to Projects</a>
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-value">ANSYS</span><span class="spec-label">FEA validation</span></div>
+          <div class="spec-item"><span class="spec-value">SolidWorks</span><span class="spec-label">CAD modeling</span></div>
+          <div class="spec-item"><span class="spec-value">Python</span><span class="spec-label">Vision algorithms</span></div>
+        </div>
+
+        <!-- Contour Detection Images -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
+          <figure>
+            <img src="../documents/Labratory Automation/contourhand.png" alt="Contour detection for hand/human detection in workspace (safety system)" style="width:100%; border-radius: 8px;">
+            <figcaption>Contour detection for workspace safety – hand detection</figcaption>
+          </figure>
+          <figure>
+            <img src="../documents/Labratory Automation/contourtesttube.png" alt="Computer vision for test tube detection" style="width:100%; border-radius: 8px;">
+            <figcaption>Computer vision for test tube detection</figcaption>
+          </figure>
+        </div>
+
+        <details class="detail-toggle compact">
+          <summary>
+            <span class="detail-label">Tools</span>
+            <span class="detail-title">Software and equipment used</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>SolidWorks — Complete CAD modeling</li>
+              <li>ANSYS — Static and dynamic FEA validation</li>
+              <li>Raspberry Pi — Embedded control and camera interface</li>
+              <li>Python — Vision algorithms and system integration</li>
+              <li>3D Printer — PETG component fabrication</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <!-- RESULTS -->
+      <div id="results" class="project-block">
+        <h3>Results</h3>
+
+        <figure style="margin-bottom: var(--space-6);">
+          <img src="../documents/Labratory Automation/FIgure1.jpg" alt="Completed robot demonstrating full workspace reach" style="width:100%; border-radius: 8px;">
+          <figcaption>Completed robot demonstrating full workspace reach</figcaption>
+        </figure>
+
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-value">7.25 kg</span><span class="spec-label">Final weight (44% under target)</span></div>
+          <div class="spec-item"><span class="spec-value">13 kg</span><span class="spec-label">Weight constraint</span></div>
+          <div class="spec-item"><span class="spec-value">44%</span><span class="spec-label">Under budget on weight</span></div>
+        </div>
+
+        <details class="detail-toggle highlight-style">
+          <summary>
+            <span class="detail-label">Key Finding</span>
+            <span class="detail-title">Project achievements</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>Achieved <strong>7.25 kg total robot weight</strong> – 44% under the 13 kg portability constraint</li>
+              <li>Designed for <strong>1 kg payload capacity</strong> with appropriate torque margins at all joints</li>
+              <li>Completed design and prototype <strong>within ₹1,25,000 budget</strong></li>
+              <li>Successfully integrated <strong>contour detection</strong> for test tube identification and workspace safety</li>
+              <li><strong>Non-backdrivable worm gear design</strong> ensures payload security during power-off</li>
+              <li><strong>Modular design</strong> allows replication for archiving stations in other departments</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="detail-toggle">
+          <summary>
+            <span class="detail-label">Data</span>
+            <span class="detail-title">Motor-Gearbox Configuration by Joint</span>
+          </summary>
+          <div class="detail-body">
+            <p style="color:var(--text-dim); margin-bottom: var(--space-3); font-size: var(--text-xs);">Worm gearboxes selected for non-backdrivability – arm holds position when powered off</p>
+            <div style="overflow-x: auto;">
+              <table style="width:100%; border-collapse: collapse; font-size: var(--text-sm);">
+                <thead>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <th style="padding: var(--space-2); text-align: left; color: var(--headline);">Joint</th>
+                    <th style="padding: var(--space-2); text-align: left; color: var(--headline);">Motor</th>
+                    <th style="padding: var(--space-2); text-align: left; color: var(--headline);">Gearbox</th>
+                    <th style="padding: var(--space-2); text-align: right; color: var(--headline);">Reduction</th>
+                    <th style="padding: var(--space-2); text-align: right; color: var(--headline);">Required Torque (kgcm)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">Wrist (T1)</td>
+                    <td style="padding: var(--space-2); color: var(--text-dim);">NEMA 17 (4.2 kgcm)</td>
+                    <td style="padding: var(--space-2); color: var(--text-dim);">Cycloidal</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">8:1</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">12.5</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">Link 2 (T2)</td>
+                    <td style="padding: var(--space-2); color: var(--text-dim);">NEMA 17 (4.2 kgcm)</td>
+                    <td style="padding: var(--space-2); color: var(--text-dim);">Worm</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">3:1</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">74</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">Link 1 (T3)</td>
+                    <td style="padding: var(--space-2); color: var(--text-dim);">NEMA 23 (10.1 kgcm)</td>
+                    <td style="padding: var(--space-2); color: var(--text-dim);">Worm</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">30:1</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">233.25</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: var(--space-2); color: var(--text);">Base (T4)</td>
+                    <td style="padding: var(--space-2); color: var(--text-dim);">NEMA 23 (18.9 kgcm)</td>
+                    <td style="padding: var(--space-2); color: var(--text-dim);">Worm</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">30:1</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">—</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </details>
+
+        <details class="detail-toggle note-style">
+          <summary>
+            <span class="detail-label">Future</span>
+            <span class="detail-title">Future work</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>Integrate magnetic encoders on stepper motors for closed-loop position feedback</li>
+              <li>Add force-torque sensor at wrist for adaptive gripping and collision detection</li>
+              <li>Develop path planning algorithms for optimal pick-scan-place trajectories</li>
+              <li>Implement ROS-based control architecture for easier scaling and maintenance</li>
+              <li>Deploy and validate with live test tube samples at Anand Diagnostic Center</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <!-- ADDITIONAL INFORMATION -->
+      <div id="additional-info" class="project-block">
+        <h3>Additional Information</h3>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-4);">Complete internship report with methodology, calculations, CAD figures, and results.</p>
+        <div class="resume-card">
+          <div class="pdf-wrapper">
+            <iframe
+              src="../documents/Labratory Automation/Robotic Automation Solution_ Rashmi_Avva.pdf"
+              title="Robotic Automation Solution Report"
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+
+        <details class="detail-toggle" style="margin-top: var(--space-6);">
+          <summary>
+            <span class="detail-label">Skills</span>
+            <span class="detail-title">Technical skills demonstrated</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>CAD:</strong> SolidWorks — complete mechanical design and assembly</li>
+              <li><strong>Simulation:</strong> ANSYS FEA — static and dynamic structural validation</li>
+              <li><strong>Fabrication:</strong> 3D Printing (PETG) — actuator housings and gripper components</li>
+              <li><strong>Design:</strong> Gear design, torque calculations, robotic arm kinematics</li>
+              <li><strong>Embedded:</strong> Raspberry Pi, Python, computer vision integration</li>
+              <li><strong>Management:</strong> Requirements engineering, budget management, cross-domain coordination</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="detail-toggle compact">
+          <summary>
+            <span class="detail-label">Team</span>
+            <span class="detail-title">Contributions &amp; credits</span>
+          </summary>
+          <div class="detail-body">
+            <p style="margin-bottom: var(--space-3);">Led the Design Domain for a 4-person team, owning the complete mechanical design lifecycle from requirements gathering through fabrication. Responsible for CAD modeling, FEA validation, motor/gearbox selection, 3D printing, component sourcing, budget management, and cross-domain coordination. Also proposed the safety system architecture and contributed to embedded systems integration.</p>
+            <p style="margin-bottom: var(--space-3);">Guided by Dr. D. Sethuram (Primary Guide, PES University), Prof. Venkatrangan (Technical Guidance), and Dr. Sujay Prasad (Industry Mentor, Anand Diagnostic Center).</p>
+            <p>Project sponsored by Anand Diagnostic Center; fabricated at PES University Department of Mechanical Engineering.</p>
+          </div>
+        </details>
+      </div>
+
+    </div><!-- end project-content -->
+  </div><!-- end project-layout -->
 </section>
 
 <footer class="footer">
@@ -257,6 +470,7 @@
 </footer>
 
 <script>
+  // ── Theme & Clock ──
   const root = document.documentElement;
   const toggle = document.getElementById('themeToggle');
   const knob = document.getElementById('themeKnob');
@@ -286,6 +500,77 @@
   }
   tickClock();
   setInterval(tickClock, 1000);
+
+  // ── Sidebar Scrollspy ──
+  const sidebar = document.querySelector('.project-sidebar');
+  const sidebarHeader = document.querySelector('.sidebar-header');
+  const sidebarLinks = document.querySelectorAll('.sidebar-link');
+  const sections = [];
+
+  sidebarLinks.forEach(link => {
+    const targetId = link.getAttribute('href').substring(1);
+    const target = document.getElementById(targetId);
+    if (target) sections.push({ id: targetId, el: target, link: link });
+  });
+
+  function scrollSidebarToActive(activeLink) {
+    if (!sidebar || !activeLink) return;
+    const sidebarRect = sidebar.getBoundingClientRect();
+    const linkRect = activeLink.getBoundingClientRect();
+    const headerHeight = sidebarHeader ? sidebarHeader.offsetHeight : 0;
+    const relativeTop = linkRect.top - sidebarRect.top + sidebar.scrollTop;
+    const targetScroll = relativeTop - headerHeight - 20;
+    sidebar.scrollTo({ top: Math.max(0, targetScroll), behavior: 'smooth' });
+  }
+
+  function updateActiveLink() {
+    const scrollPos = window.scrollY + 180;
+    let current = sections[0];
+    for (const sec of sections) {
+      if (scrollPos >= sec.el.offsetTop) current = sec;
+    }
+    sidebarLinks.forEach(l => l.classList.remove('active'));
+    if (current) {
+      current.link.classList.add('active');
+      scrollSidebarToActive(current.link);
+    }
+  }
+
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        const headerOffset = 160;
+        const offsetPosition = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        sidebarLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        scrollSidebarToActive(link);
+      }
+    });
+  });
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => { updateActiveLink(); ticking = false; });
+      ticking = true;
+    }
+  });
+  updateActiveLink();
+
+  // ── Back to Top Button ──
+  const topBtn = document.getElementById('sidebarTopBtn');
+  if (topBtn) {
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (sidebar) sidebar.scrollTo({ top: 0, behavior: 'smooth' });
+      sidebarLinks.forEach(link => link.classList.remove('active'));
+      if (sidebarLinks[0]) sidebarLinks[0].classList.add('active');
+    });
+  }
 </script>
 
 </body>

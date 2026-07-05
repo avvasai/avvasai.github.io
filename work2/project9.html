@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accordion-Like Disk Resonator Gyroscope</title>
-  <meta name="description" content="A Novel Accordion-Like Disk Resonator Gyroscope (ADRG) - MEMS gyroscope design, simulation, fabrication and testing">
+  <title>DIY 3D Printer Using CD Drives | Sai Pranav Avva</title>
+  <meta name="description" content="Built a miniature 3D printer from recycled CD drives and $30 in parts. Hands-on learning project for mastering Marlin and Klipper firmware configuration.">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-
 <header class="masthead">
   <h1 class="giant-name">Avva Sai Pranav</h1>
   <nav class="pill-nav">
     <div class="pill-links">
-      <a href="index.html" class="pill">Home</a>
-      <a href="index.html#info" class="pill">Projects</a>
-      <a href="index.html#resume" class="pill">Resume</a>
-      <a href="index.html#contact" class="pill">Contact</a>
+      <a href="../index.html" class="pill">Home</a>
+      <a href="../index.html#info" class="pill">Projects</a>
+      <a href="../index.html#resume" class="pill">Resume</a>
+      <a href="../index.html#contact" class="pill">Contact</a>
     </div>
     <div class="pill-right">
       <span class="label">Theme:</span>
@@ -28,228 +27,229 @@
   </nav>
 </header>
 
-<!-- Project Hero -->
-<section class="project-hero">
-  <p class="section-eyebrow">Project</p>
-  <h1 class="project-title">A Novel Accordion-Like Disk Resonator Gyroscope</h1>
-  <p class="project-subtitle">MEMS Gyroscope Design · Simulation · Fabrication · Testing</p>
-  <div class="project-meta">
-    <span class="meta-item">🏛️ M2D2 Laboratory, Indian Institute of Science</span>
-    <span class="meta-item">👤 Prof. G. K. Ananthasuresh</span>
-    <span class="meta-item">🎤 ICMNSS Conference</span>
-  </div>
-</section>
-
-<!-- Key Results Stats -->
 <section class="section">
-  <div class="stats-row">
-    <div class="stat-card">
-      <span class="stat-value">3–4×</span>
-      <span class="stat-label">Higher Sensitivity</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">6771 Hz</span>
-      <span class="stat-label">Drive Frequency</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">&lt;1.4%</span>
-      <span class="stat-label">Sim-to-Fab Error</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">46.4%</span>
-      <span class="stat-label">Capacitance Change</span>
-    </div>
-  </div>
-</section>
+  <a href="../index.html#info" class="back-link">← Back to projects</a>
 
-<!-- Overview -->
-<section class="section">
-  <h2 class="section-title">Project Overview</h2>
-  <div class="two-col">
-    <div class="col-text">
-      <p>Disk Resonator Gyroscopes (DRGs) sense rotation using Coriolis forces acting on a vibrating ring — the same physics behind a Foucault pendulum, just shrunk down to millimeters.</p>
-      <p>Over the years, designs like the Boeing DRG, Honeycomb DRG, Cobweb DRG, and Gear DRG each pushed sensitivity a little further, from 0.04 deg/sec down to 0.015 deg/sec, but each traded off electrode placement against mechanical performance.</p>
-      <p>This project asked a simple question: <strong>could an entirely different ring geometry — an "accordion-like" pattern — beat the existing field on mechanical sensitivity and noise?</strong></p>
-    </div>
-    <div class="col-visual">
-      <img src="../documents/MEMS Engineer/2.jpeg" alt="ADRG die close-up showing ring pattern" class="project-img">
-      <p class="img-caption">ADRG die showing accordion-style ring pattern</p>
-    </div>
-  </div>
-</section>
+  <div class="project-layout">
 
-<!-- Design & Simulation -->
-<section class="section-alt">
-  <div class="section-inner">
-    <h2 class="section-title">Design & Simulation</h2>
-    <p>I ran finite-element eigenfrequency analysis across five ring topologies — DRG, HDRG, CDRG, GDRG, and my proposed ADRG — each built with 9 rings, an 8mm outer diameter, 10μm in-plane ring width, and 60μm thickness.</p>
-    
-    <div class="table-wrapper">
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>DRG Type</th>
-            <th>Eigenfrequency (Hz)</th>
-            <th>Quality Factor (k)</th>
-            <th>Mech. Sensitivity (μm/rad/s)</th>
-            <th>Brownian Noise (rad/s/√Hz)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>DRG</td>
-            <td>12720</td>
-            <td>103.62</td>
-            <td>3.83e-6</td>
-            <td>1.01e-6</td>
-          </tr>
-          <tr>
-            <td>HDRG</td>
-            <td>11306</td>
-            <td>105.42</td>
-            <td>4.27e-6</td>
-            <td>1.29e-6</td>
-          </tr>
-          <tr>
-            <td>CDRG</td>
-            <td>12611</td>
-            <td>99.99</td>
-            <td>3.61e-6</td>
-            <td>1.12e-6</td>
-          </tr>
-          <tr>
-            <td>GDRG</td>
-            <td>14761</td>
-            <td>91.58</td>
-            <td>2.76e-6</td>
-            <td>1.17e-6</td>
-          </tr>
-          <tr class="highlight-row">
-            <td>ADRG (Ours)</td>
-            <td>6771</td>
-            <td>181.55</td>
-            <td>12.1e-6</td>
-            <td>1.07e-6</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="table-note">The ADRG's mechanical sensitivity is roughly 3–4× higher than every other topology tested, while holding competitive noise performance.</p>
-    
-    <p>Capacitance modeling (accounting for fringing fields, not just the textbook parallel-plate formula) backed this up — the ADRG's relative sense capacitance change was the largest of the five designs at <strong>46.4%</strong>, versus 14–29% for the others.</p>
-  </div>
-</section>
+    <!-- STICKY SIDEBAR -->
+    <aside class="project-sidebar" id="projectSidebar">
+      <div class="sidebar-header">On This Page</div>
+      <a href="#summary" class="sidebar-link active">Summary</a>
+      <a href="#problem" class="sidebar-link">Problem Statement</a>
+      <a href="#methodology" class="sidebar-link">Methodology</a>
+      <a href="#design-build" class="sidebar-link sidebar-sublink">Design &amp; Build</a>
+      <a href="#electronics" class="sidebar-link sidebar-sublink">Electronics &amp; Firmware</a>
+      <a href="#results" class="sidebar-link">Results</a>
+      <a href="#additional-info" class="sidebar-link">Additional Information</a>
+      <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">↑ Top</button>
+    </aside>
 
-<!-- Fabrication -->
-<section class="section">
-  <h2 class="section-title">Fabrication</h2>
-  <p>The design moved from simulation to silicon at CeNSE (Centre for Nano Science and Engineering).</p>
-  
-  <div class="gallery">
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/2.jpeg" alt="ADRG die close-up showing ring pattern">
-      <figcaption>ADRG die with accordion ring pattern</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/3.jpeg" alt="ADRG chip wire-bonded into ceramic package">
-      <figcaption>Wire-bonded into 68-pin ceramic package</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/4.jpeg" alt="Fabricated ADRG dies on glass slides">
-      <figcaption>Fabricated dies on glass slides</figcaption>
-    </figure>
-  </div>
-  
-  <p>Individual ADRG chips on glass slides, each with the resonator's accordion-style ring pattern visible under its protective coating — and the completed chip wire-bonded into a 68-pin ceramic package with color-coded leads carrying drive, sense, and common signals to the test board.</p>
-</section>
+    <!-- MAIN CONTENT -->
+    <div class="project-content">
 
-<!-- Test Setup -->
-<section class="section-alt">
-  <div class="section-inner">
-    <h2 class="section-title">Pinout & Test Setup</h2>
-    <div class="two-col">
-      <div class="col-text">
-        <h3 class="section-subtitle">Electrode Configuration</h3>
-        <ul class="check-list">
-          <li>4 common pins</li>
-          <li>16 individually addressable outer electrodes for drive and sense</li>
-          <li>Companion accelerometer die with separate X/Y sense and feedback electrode pairs</li>
-        </ul>
-        
-        <h3 class="section-subtitle">LDV Testing</h3>
-        <ul class="check-list">
-          <li>Drive signal combining AC and DC bias excited the resonator</li>
-          <li>LDV measured out-of-plane velocity at 0° and 180° points on the ring</li>
-          <li>Characterized frequency response under controlled conditions</li>
+      <!-- SUMMARY -->
+      <div id="summary" class="project-block">
+        <div class="project-hero">
+          <div class="project-hero-text">
+            <p class="section-eyebrow">Project · DIY / Maker</p>
+            <h2>DIY 3D Printer Using CD Drives</h2>
+            <p class="project-hero-meta">Personal Project · 2024</p>
+            <div class="spec-ribbon">
+              <div class="dim-tag"><span class="dim-value">~$30</span><span class="dim-label">Total Cost</span></div>
+              <div class="dim-tag"><span class="dim-value">~40mm</span><span class="dim-label">Build Volume</span></div>
+              <div class="dim-tag"><span class="dim-value">3</span><span class="dim-label">CD Drives Used</span></div>
+              <div class="dim-tag"><span class="dim-value">2</span><span class="dim-label">Firmwares Learned</span></div>
+            </div>
+          </div>
+          <div class="hero-diagram-wrap">
+            <img 
+              src="../documents/DIY 3D printer Using CD drives/FrontView.jpeg" 
+              alt="Flat-lay of DIY 3D printer components including stepper motor, laser-cut plywood frame, CD drive mechanism, RAMPS 1.4 board, and wiring"
+              style="width:100%; border-radius: 8px;"
+            >
+          </div>
+        </div>
+
+        <!-- Hero Image -->
+        <figure style="margin: var(--space-6) 0;">
+          <img src="../documents/DIY 3D printer Using CD drives/FrontView.jpeg" alt="Completed DIY 3D printer assembly on workbench" style="width:100%; border-radius: 8px;">
+          <figcaption>Completed printer assembly on workbench showing the full Cartesian motion system</figcaption>
+        </figure>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Curious about what makes 3D printers tick, I decided to build one from scratch using recycled CD/DVD drives as the motion system. Inspired by Anhad Sawhney's DVD drive printer design, I sourced old optical drives from e-waste, extracted their precise lead screw mechanisms, and designed a laser-cut plywood frame to hold everything together.
+        </p>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          The electronics side used a RAMPS 1.4 shield with A4988 stepper drivers, and I integrated an E3D-style hotend with proper cooling. The real learning came from firmware configuration—I spent significant time understanding Marlin's architecture, calibrating steps/mm for the tiny CD drive lead screws, and later explored Klipper for its more modern approach.
+        </p>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          While this ~40mm build volume printer didn't achieve successful prints, that wasn't really the point. The project gave me hands-on understanding of Cartesian kinematics, stepper motor control, PID tuning, and firmware internals—skills I now apply when working with research-grade printers and CNC systems.
+        </p>
+      </div>
+
+      <!-- PROBLEM STATEMENT -->
+      <div id="problem" class="project-block">
+        <h3>Problem Statement</h3>
+        <ul class="bullet-list">
+          <li><strong>Goal:</strong> Learn how consumer 3D printers work by building one from scratch using recycled components</li>
+          <li><strong>Constraints:</strong> Limited budget (~$30), use recycled CD/DVD drives for motion system, compact form factor</li>
+          <li><strong>Focus:</strong> Skill-building exercise centered on mechanical design, motion control, electronics wiring, and firmware configuration rather than achieving production-grade print quality</li>
         </ul>
       </div>
-      <div class="col-visual">
-        <img src="../documents/MEMS Engineer/3.jpeg" alt="Wire-bonded package for testing" class="project-img">
-        <p class="img-caption">68-pin ceramic package ready for LDV testing</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Results -->
-<section class="section">
-  <h2 class="section-title">Results</h2>
-  <div class="resume-card">
-    <p>Under controlled atmospheric conditions (1 atm, 25°C), the fabricated ADRG resonated at approximately <strong>6.8 kHz</strong> — within <strong>1.2–1.4%</strong> of the FEM-predicted eigenfrequency, confirming the simulation model held up in the real device.</p>
-  </div>
-</section>
+      <!-- METHODOLOGY -->
+      <div id="methodology" class="project-block">
+        <h3>Methodology</h3>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-2);">
+          The project followed a learn-by-building workflow: source components, design the frame, assemble the motion system, wire the electronics, and configure firmware. Click a stage to jump there.
+        </p>
+        <nav class="process-stepper">
+          <a href="#design-build" class="process-step"><span class="step-num">1</span>Build</a>
+          <span class="process-connector"></span>
+          <a href="#electronics" class="process-step"><span class="step-num">2</span>Wire</a>
+          <span class="process-connector"></span>
+          <a href="#results" class="process-step"><span class="step-num">3</span>Results</a>
+        </nav>
+      </div>
 
-<!-- My Contributions -->
-<section class="section">
-  <h2 class="section-title">My Contributions</h2>
-  <div class="role-grid">
-    <div class="role-item">
-      <span class="role-icon">📐</span>
-      <div class="role-text">
-        <strong>ADRG Geometry Design</strong>
-        <p>Designed the novel accordion-like ring topology</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">💻</span>
-      <div class="role-text">
-        <strong>FEM Modeling</strong>
-        <p>Led eigenfrequency and capacitance modeling across all five DRG topologies</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">🔬</span>
-      <div class="role-text">
-        <strong>Experimental Characterization</strong>
-        <p>Ran LDV-based testing of the fabricated device</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">📊</span>
-      <div class="role-text">
-        <strong>Comparative Analysis</strong>
-        <p>Benchmarked ADRG against DRG, HDRG, CDRG, and GDRG</p>
-      </div>
-    </div>
-  </div>
-</section>
+      <!-- DESIGN & BUILD -->
+      <div id="design-build" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Design &amp; Build</h4>
 
-<!-- Credits -->
-<section class="section">
-  <div class="credits-box">
-    <h3>Team & Acknowledgments</h3>
-    <p><strong>Advisor:</strong> Prof. G. K. Ananthasuresh</p>
-    <p><strong>Co-Advisor:</strong> Karthik (ISRO)</p>
-    <p><strong>Design & Simulation Support:</strong> Sai Kumar, Suman Acharya</p>
-    <p><strong>Fabrication:</strong> Sudhanshu Shekhar</p>
-    <p><strong>Funding:</strong> ISRO</p>
-    <p><strong>Facilities:</strong> CeNSE (Centre for Nano Science and Engineering)</p>
-  </div>
-</section>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          <strong>Component Sourcing &amp; Teardown:</strong> Sourced three CD/DVD drives from old computers and e-waste. Carefully disassembled each drive to extract the linear motion mechanisms—these use precise lead screws with stepper motors that provide surprisingly accurate positioning despite their original purpose of moving a laser head.
+        </p>
 
-<!-- Back Link -->
-<section class="section" style="text-align: center;">
-  <a href="../index.html#info" class="btn btn-ghost">← Back to Projects</a>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          <strong>Frame Design &amp; Fabrication:</strong> Designed a compact frame using laser-cut plywood to mount the three CD drive mechanisms in a Cartesian configuration (X, Y, Z axes). Created custom mounting brackets to securely hold the drives while allowing adjustment for alignment.
+        </p>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          <strong>Hotend &amp; Extruder Mounting:</strong> Mounted an E3D-style hotend onto the X-axis CD drive carriage. Added a 30mm cooling fan for the cold end and integrated the heater block. This was the most mechanically challenging part—ensuring the hotend was rigid while the tiny carriage could still move freely.
+        </p>
+
+        <figure style="margin: var(--space-4) 0;">
+          <img src="../documents/DIY 3D printer Using CD drives/Printer Head.jpg" alt="Close-up of hotend assembly mounted on repurposed CD drive carriage with cooling fan" style="width:100%; border-radius: 8px;">
+          <figcaption>Hotend assembly mounted on repurposed CD drive carriage with cooling fan</figcaption>
+        </figure>
+      </div>
+
+      <!-- ELECTRONICS & FIRMWARE -->
+      <div id="electronics" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Electronics &amp; Firmware</h4>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          <strong>Electronics Integration:</strong> Wired a RAMPS 1.4 shield (on Arduino Mega) with A4988 stepper drivers for motor control. Connected thermistor for temperature sensing, heated nozzle, and cooling fan. Routed all cabling for clean wire management and accessibility.
+        </p>
+
+        <figure style="margin: var(--space-4) 0;">
+          <img src="../documents/DIY 3D printer Using CD drives/Electronics.jpg" alt="RAMPS 1.4 control board with A4988 stepper drivers and wiring harness" style="width:100%; border-radius: 8px;">
+          <figcaption>RAMPS 1.4 controller with A4988 stepper drivers and wiring harness</figcaption>
+        </figure>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          <strong>Firmware Configuration:</strong> Configured Marlin firmware for the unconventional hardware. Key challenge was calibrating steps/mm for the CD drive lead screws (much finer pitch than typical 3D printer lead screws). Also explored Klipper firmware to understand its architecture and advantages for future builds.
+        </p>
+
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-value">RAMPS 1.4</span><span class="spec-label">Controller</span></div>
+          <div class="spec-item"><span class="spec-value">A4988</span><span class="spec-label">Stepper Drivers</span></div>
+          <div class="spec-item"><span class="spec-value">Marlin</span><span class="spec-label">Primary Firmware</span></div>
+          <div class="spec-item"><span class="spec-value">Klipper</span><span class="spec-label">Alternative Explored</span></div>
+        </div>
+      </div>
+
+      <!-- RESULTS -->
+      <div id="results" class="project-block">
+        <h3>Results</h3>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          This was a learning project focused on skill development rather than print quality metrics. Successfully powered on system, achieved motor movement, and configured firmware parameters.
+        </p>
+
+        <details class="detail-toggle">
+          <summary>
+            <span class="detail-label">Outcomes</span>
+            <span class="detail-title">Key findings &amp; learnings</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>Successfully assembled complete 3D printer motion system from recycled CD drives</li>
+              <li>Achieved full electronics integration with RAMPS 1.4 at ~$30 total component cost</li>
+              <li>Gained working knowledge of Marlin firmware architecture and configuration</li>
+              <li>Learned Klipper firmware fundamentals as modern alternative</li>
+              <li>Understood practical limitations of CD drive mechanisms (limited travel ~40mm, low torque)</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="detail-toggle" style="margin-top: var(--space-4);">
+          <summary>
+            <span class="detail-label">Future</span>
+            <span class="detail-title">Future scope</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>Attempt first successful test prints with fine-tuned calibration</li>
+              <li>Upgrade to TMC2209 silent stepper drivers</li>
+              <li>Design 3D-printed structural parts to replace plywood frame</li>
+              <li>Add heated bed for better adhesion</li>
+              <li>Implement Klipper firmware for faster processing</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="detail-toggle" style="margin-top: var(--space-4);">
+          <summary>
+            <span class="detail-label">Skills</span>
+            <span class="detail-title">Technical skills demonstrated</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>Primary:</strong> 3D Printer Mechanics, Marlin Firmware, Klipper Firmware, RAMPS 1.4 Electronics</li>
+              <li><strong>Secondary:</strong> Stepper Motor Control, Laser Cutting, E-Waste Recycling/Upcycling, PID Tuning, G-Code Fundamentals</li>
+              <li><strong>Tools:</strong> Arduino IDE, Soldering Iron, Multimeter, Laser Cutter</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <!-- ADDITIONAL INFORMATION -->
+      <div id="additional-info" class="project-block">
+        <h3>Additional Information</h3>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-4);">Inspiration and acknowledgements for this project.</p>
+
+        <details class="detail-toggle highlight-style">
+          <summary>
+            <span class="detail-label">Inspiration</span>
+            <span class="detail-title">Project origin</span>
+          </summary>
+          <div class="detail-body">
+            <p style="margin-bottom: var(--space-3);">
+              This project was inspired by <a href="https://www.anhadsawhney.com/dvd-drive-3d-printer" target="_blank" rel="noopener noreferrer">Anhad Sawhney's DVD Drive 3D Printer</a> design concept.
+            </p>
+            <p>
+              The overall design concept was adapted from this open-source project. Used open-source RAMPS 1.4 electronics platform and Marlin firmware base.
+            </p>
+          </div>
+        </details>
+
+        <details class="detail-toggle compact">
+          <summary>
+            <span class="detail-label">Notes</span>
+            <span class="detail-title">Project context</span>
+          </summary>
+          <div class="detail-body">
+            <p style="margin-bottom: var(--space-3);">This was a learning project—framed honestly as a skill-building exercise rather than a production machine.</p>
+            <p style="margin-bottom: var(--space-3);">No demo video is available for this project.</p>
+            <p>No successful prints were achieved, but the focus was on understanding the full printer development stack from frame construction to firmware setup.</p>
+          </div>
+        </details>
+      </div>
+
+    </div><!-- end project-content -->
+  </div><!-- end project-layout -->
 </section>
 
 <footer class="footer">
@@ -257,6 +257,7 @@
 </footer>
 
 <script>
+  // ── Theme & Clock ──
   const root = document.documentElement;
   const toggle = document.getElementById('themeToggle');
   const knob = document.getElementById('themeKnob');
@@ -286,6 +287,91 @@
   }
   tickClock();
   setInterval(tickClock, 1000);
+
+  // ── Sidebar Scrollspy ──
+  const sidebar = document.querySelector('.project-sidebar');
+  const sidebarHeader = document.querySelector('.sidebar-header');
+  const sidebarLinks = document.querySelectorAll('.sidebar-link');
+  const sections = [];
+
+  sidebarLinks.forEach(link => {
+    const targetId = link.getAttribute('href').substring(1);
+    const target = document.getElementById(targetId);
+    if (target) sections.push({ id: targetId, el: target, link: link });
+  });
+
+  function scrollSidebarToActive(activeLink) {
+    if (!sidebar || !activeLink) return;
+    const allLinks = Array.from(sidebarLinks);
+    const activeIndex = allLinks.indexOf(activeLink);
+    const totalLinks = allLinks.length;
+    if (activeIndex >= totalLinks - 2) {
+      const headerHeight = sidebarHeader ? sidebarHeader.offsetHeight + 10 : 50;
+      sidebar.scrollTo({ top: activeLink.offsetTop - headerHeight, behavior: 'smooth' });
+    } else {
+      sidebar.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  function updateActiveLink() {
+    const scrollPos = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+    const atBottom = scrollPos + windowHeight >= docHeight - 50;
+
+    let activeSection = sections[0];
+    if (atBottom && sections.length > 0) {
+      activeSection = sections[sections.length - 1];
+    } else {
+      const offset = 200;
+      for (const section of sections) {
+        const rect = section.el.getBoundingClientRect();
+        if (rect.top <= offset) activeSection = section;
+      }
+    }
+
+    sidebarLinks.forEach(link => link.classList.remove('active'));
+    if (activeSection) {
+      activeSection.link.classList.add('active');
+      scrollSidebarToActive(activeSection.link);
+    }
+  }
+
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        const headerOffset = 160;
+        const offsetPosition = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        sidebarLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        scrollSidebarToActive(link);
+      }
+    });
+  });
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => { updateActiveLink(); ticking = false; });
+      ticking = true;
+    }
+  });
+  updateActiveLink();
+
+  // ── Back to Top Button ──
+  const topBtn = document.getElementById('sidebarTopBtn');
+  if (topBtn) {
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (sidebar) sidebar.scrollTo({ top: 0, behavior: 'smooth' });
+      sidebarLinks.forEach(link => link.classList.remove('active'));
+      if (sidebarLinks[0]) sidebarLinks[0].classList.add('active');
+    });
+  }
 </script>
 
 </body>

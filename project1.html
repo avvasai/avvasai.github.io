@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEMS Inertial Measurement Unit | Sai Pranav Avva</title>
+  <meta name="description" content="Two-year ISRO-IISc collaboration designing high-precision MEMS accelerometer and Accordion-like Disk Resonator Gyroscope with <5% simulation-to-hardware eigenfrequency error">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<header class="masthead">
+  <h1 class="giant-name">Avva Sai Pranav</h1>
+  <nav class="pill-nav">
+    <div class="pill-links">
+      <a href="../index.html" class="pill">Home</a>
+      <a href="../index.html#info" class="pill">Projects</a>
+      <a href="../index.html#resume" class="pill">Resume</a>
+      <a href="../index.html#contact" class="pill">Contact</a>
+    </div>
+    <div class="pill-right">
+      <span class="label">Theme:</span>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light theme">
+        <span id="themeKnob">☀</span>
+      </button>
+      <span class="clock" id="clock"></span>
+    </div>
+  </nav>
+</header>
+
+<section class="section">
+  <a href="../index.html#info" class="back-link">← Back to projects</a>
+
+  <div class="project-layout">
+
+    <!-- STICKY SIDEBAR -->
+    <aside class="project-sidebar" id="projectSidebar">
+      <div class="sidebar-header">On This Page</div>
+      <a href="#summary" class="sidebar-link active">Summary</a>
+      <a href="#problem" class="sidebar-link">Problem Statement</a>
+      <a href="#methodology" class="sidebar-link">Methodology</a>
+      <a href="#design-sim" class="sidebar-link sidebar-sublink">Design &amp; Simulation</a>
+      <a href="#fabrication" class="sidebar-link sidebar-sublink">Fabrication</a>
+      <a href="#test-setup" class="sidebar-link">Test Setup</a>
+      <a href="#results" class="sidebar-link">Results</a>
+      <a href="#additional-info" class="sidebar-link">Additional Information</a>
+      <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">↑ Top</button>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="project-content">
+
+      <!-- SUMMARY -->
+      <div id="summary" class="project-block">
+        <div class="project-hero">
+          <div class="project-hero-text">
+            <p class="section-eyebrow">Project · MEMS</p>
+            <h2>MEMS Inertial Measurement Unit</h2>
+            <p class="project-hero-meta">M2D2 Lab, IISc · with ISRO · Guided by Prof. G K Ananthasuresh · Jun 2022 – Jul 2024</p>
+            <div class="spec-ribbon">
+              <div class="dim-tag"><span class="dim-value">12.1</span><span class="dim-label">µm/rad/s sensitivity</span></div>
+              <div class="dim-tag"><span class="dim-value">6.77</span><span class="dim-label">kHz eigenfreq</span></div>
+              <div class="dim-tag"><span class="dim-value">181.6k</span><span class="dim-label">Q factor</span></div>
+              <div class="dim-tag"><span class="dim-value">&lt;5%</span><span class="dim-label">Sim-to-hw error</span></div>
+            </div>
+          </div>
+          <div class="hero-diagram-wrap">
+            <svg class="hero-diagram" viewBox="-150 -150 300 300" xmlns="http://www.w3.org/2000/svg">
+              <circle r="130" class="hd-ring" stroke-width="1"/>
+              <circle r="18" class="hd-core"/>
+              <polygon class="hd-ring-strong" stroke-width="1.2" points="72.0,0.0 62.8,4.9 71.1,11.3 61.3,14.7 68.5,22.2 58.2,24.1 64.2,32.7 53.7,32.9 58.2,42.3 47.9,40.9 50.9,50.9 40.9,47.9 42.3,58.2 32.9,53.7 32.7,64.2 24.1,58.2 22.2,68.5 14.7,61.3 11.3,71.1 4.9,62.8 0.0,72.0 -4.9,62.8 -11.3,71.1 -14.7,61.3 -22.2,68.5 -24.1,58.2 -32.7,64.2 -32.9,53.7 -42.3,58.2 -40.9,47.9 -50.9,50.9 -47.9,40.9 -58.2,42.3 -53.7,32.9 -64.2,32.7 -58.2,24.1 -68.5,22.2 -61.3,14.7 -71.1,11.3 -62.8,4.9 -72.0,0.0 -62.8,-4.9 -71.1,-11.3 -61.3,-14.7 -68.5,-22.2 -58.2,-24.1 -64.2,-32.7 -53.7,-32.9 -58.2,-42.3 -47.9,-40.9 -50.9,-50.9 -40.9,-47.9 -42.3,-58.2 -32.9,-53.7 -32.7,-64.2 -24.1,-58.2 -22.2,-68.5 -14.7,-61.3 -11.3,-71.1 -4.9,-62.8 -0.0,-72.0 4.9,-62.8 11.3,-71.1 14.7,-61.3 22.2,-68.5 24.1,-58.2 32.7,-64.2 32.9,-53.7 42.3,-58.2 40.9,-47.9 50.9,-50.9 47.9,-40.9 58.2,-42.3 53.7,-32.9 64.2,-32.7 58.2,-24.1 68.5,-22.2 61.3,-14.7 71.1,-11.3 62.8,-4.9" fill="none"/>
+              <g class="hd-elec">
+                <rect x="108.8" y="18.4" width="8" height="8"/><rect x="91.6" y="59.9" width="8" height="8"/>
+                <rect x="59.9" y="91.6" width="8" height="8"/><rect x="18.4" y="108.8" width="8" height="8"/>
+                <rect x="-26.4" y="108.8" width="8" height="8"/><rect x="-67.9" y="91.6" width="8" height="8"/>
+                <rect x="-99.6" y="59.9" width="8" height="8"/><rect x="-116.8" y="18.4" width="8" height="8"/>
+                <rect x="-116.8" y="-26.4" width="8" height="8"/><rect x="-99.6" y="-67.9" width="8" height="8"/>
+                <rect x="-67.9" y="-99.6" width="8" height="8"/><rect x="-26.4" y="-116.8" width="8" height="8"/>
+                <rect x="18.4" y="-116.8" width="8" height="8"/><rect x="59.9" y="-99.6" width="8" height="8"/>
+                <rect x="91.6" y="-67.9" width="8" height="8"/><rect x="108.8" y="-26.4" width="8" height="8"/>
+              </g>
+              <g class="hd-common">
+                <circle cx="115.0" cy="0.0" r="5"/><circle cx="0.0" cy="115.0" r="5"/>
+                <circle cx="-115.0" cy="0.0" r="5"/><circle cx="-0.0" cy="-115.0" r="5"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Hero SEM Image -->
+        <figure style="margin: var(--space-6) 0;">
+          <img src="../documents/MEMS Engineer/SEM.png" alt="SEM micrographs of fabricated ADRG showing accordion-like ring structure at multiple magnifications" style="width:100%; border-radius: 8px;">
+          <figcaption>SEM micrographs of fabricated ADRG showing accordion-like ring structure at multiple magnifications (28X, 200X, 450X)</figcaption>
+        </figure>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Over a two-year collaboration between IISc and ISRO, this project aimed to develop a complete MEMS Inertial Measurement Unit for space navigation applications. The IMU comprised two core sensors: a dual-axis capacitive accelerometer and an Accordion-like Disk Resonator Gyroscope (ADRG). Starting from an existing ring-and-spoke gyroscope concept, extensive parametric optimization was performed on both devices using COMSOL multiphysics simulations. Both devices were successfully fabricated at CeNSE, with the gyroscope validated via laser Doppler vibrometry achieving &lt;5% eigenfrequency error.
+        </p>
+
+        <div class="stat-strip">
+          <div class="stat-card">
+            <span class="stat-value">12.1</span>
+            <span class="stat-unit">µm/rad/s</span>
+            <span class="stat-label">Mechanical sensitivity — 3–4× prior designs</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">6.77</span>
+            <span class="stat-unit">kHz</span>
+            <span class="stat-label">Drive-mode eigenfrequency — matched within &lt;5% in test</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">181.6k</span>
+            <span class="stat-unit">Q factor</span>
+            <span class="stat-label">Highest of the five topologies tested</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">46.4%</span>
+            <span class="stat-unit">ΔC₀/C₀</span>
+            <span class="stat-label">Largest relative sense-capacitance change</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROBLEM STATEMENT -->
+      <div id="problem" class="project-block">
+        <h3>Problem Statement</h3>
+        <ul class="bullet-list">
+          <li><strong>Need:</strong> ISRO required high-precision inertial sensors for space navigation applications</li>
+          <li><strong>Prior art:</strong> Existing DRG topologies — standard DRG, Honeycomb DRG (HDRG), Concentric DRG (CDRG), and Gear-tooth DRG (GDRG) — each advanced sensitivity incrementally but always traded electrode placement against mechanical performance</li>
+          <li><strong>Open question:</strong> Could a novel ring geometry significantly improve mechanical sensitivity and quality factor without compromising noise performance or manufacturability?</li>
+        </ul>
+      </div>
+
+      <!-- METHODOLOGY -->
+      <div id="methodology" class="project-block">
+        <h3>Methodology</h3>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-2);">
+          The project followed a comprehensive design-simulate-fabricate-test workflow spanning both accelerometer and gyroscope development. Click a stage to jump there.
+        </p>
+        <nav class="process-stepper">
+          <a href="#design-sim" class="process-step"><span class="step-num">1</span>Design</a>
+          <span class="process-connector"></span>
+          <a href="#fabrication" class="process-step"><span class="step-num">2</span>Fabricate</a>
+          <span class="process-connector"></span>
+          <a href="#test-setup" class="process-step"><span class="step-num">3</span>Test</a>
+          <span class="process-connector"></span>
+          <a href="#results" class="process-step"><span class="step-num">4</span>Results</a>
+        </nav>
+      </div>
+
+      <!-- DESIGN & SIMULATION -->
+      <div id="design-sim" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Design &amp; Simulation</h4>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          <strong>Accelerometer Design:</strong> The MEMS accelerometer employs a proof mass suspended by folded-beam flexures with interdigitated comb-drive electrodes for differential capacitive sensing.
+        </p>
+
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-value">5–8 µm</span><span class="spec-label">Beam width (swept)</span></div>
+          <div class="spec-item"><span class="spec-value">10–60 µm</span><span class="spec-label">Thickness (swept)</span></div>
+          <div class="spec-item"><span class="spec-value">~3 kHz</span><span class="spec-label">Target eigenfrequency</span></div>
+        </div>
+
+        <details class="detail-toggle">
+          <summary>
+            <span class="detail-label">Optimization</span>
+            <span class="detail-title">Accelerometer optimization parameters</span>
+          </summary>
+          <div class="detail-body">
+            <p style="margin-bottom: var(--space-3);">A comprehensive parametric study varied beam width (5, 6, 7, 8 µm) and out-of-plane thickness (10, 20, 30, 60 µm) to optimize:</p>
+            <ul class="bullet-list">
+              <li>Eigenfrequency (~3 kHz target)</li>
+              <li>Displacement sensitivity</li>
+              <li>Capacitance sensitivity (ΔC/g)</li>
+              <li>Cross-axis sensitivity</li>
+              <li>Quality factor</li>
+              <li>Brownian noise equivalent acceleration</li>
+            </ul>
+          </div>
+        </details>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-top: var(--space-5); margin-bottom: var(--space-4);">
+          <strong>Gyroscope Topology Comparison:</strong> Five DRG topologies were evaluated using COMSOL Multiphysics. The novel Accordion-like DRG (ADRG) introduces accordion-shaped spoke connections that increase mechanical compliance while maintaining structural integrity.
+        </p>
+
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-value">9</span><span class="spec-label">Rings</span></div>
+          <div class="spec-item"><span class="spec-value">8 mm</span><span class="spec-label">Outer diameter</span></div>
+          <div class="spec-item"><span class="spec-value">10 µm</span><span class="spec-label">Ring width</span></div>
+          <div class="spec-item"><span class="spec-value">60 µm</span><span class="spec-label">Thickness</span></div>
+          <div class="spec-item"><span class="spec-value">0.5</span><span class="spec-label">Anchor : outer radius</span></div>
+        </div>
+        <p style="color:var(--text-faint); font-size: var(--text-xs);">Held constant across all five topologies for a fair comparison.</p>
+
+        <!-- Mode Shape Image -->
+        <figure style="margin: var(--space-6) 0;">
+          <img src="../documents/MEMS Engineer/Slide9.JPG" alt="COMSOL eigenfrequency mode shapes of ADRG analyzed by FEM" style="width:100%; border-radius: 8px;">
+          <figcaption>Mode shapes of ADRG analyzed by FEM showing eigenfrequencies from 2344 Hz to 8068 Hz</figcaption>
+        </figure>
+
+        <details class="detail-toggle note-style">
+          <summary>
+            <span class="detail-label">Note</span>
+            <span class="detail-title">Why accordion spokes?</span>
+          </summary>
+          <div class="detail-body">
+            Accordion-shaped spokes increase radial compliance while maintaining tangential stiffness. This geometry allows for larger modal displacements under Coriolis forces, directly improving mechanical sensitivity without compromising structural integrity or introducing additional thermoelastic damping paths. Eigenfrequency studies identified drive and sense mode frequencies, with mode matching critical for gyroscope sensitivity.
+          </div>
+        </details>
+
+        <!-- Mechanical Sensitivity Comparison Chart -->
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin: var(--space-6) 0 var(--space-3);">Mechanical Sensitivity (×10⁻⁶ µm/rad/s):</p>
+        <div class="bar-chart">
+          <div class="bar-row"><span class="bar-name">DRG</span><div class="bar-track"><div class="bar-fill" style="width:31.7%"></div></div><span class="bar-val">3.83</span></div>
+          <div class="bar-row"><span class="bar-name">HDRG</span><div class="bar-track"><div class="bar-fill" style="width:35.3%"></div></div><span class="bar-val">4.27</span></div>
+          <div class="bar-row"><span class="bar-name">CDRG</span><div class="bar-track"><div class="bar-fill" style="width:29.8%"></div></div><span class="bar-val">3.61</span></div>
+          <div class="bar-row"><span class="bar-name">GDRG</span><div class="bar-track"><div class="bar-fill" style="width:22.8%"></div></div><span class="bar-val">2.76</span></div>
+          <div class="bar-row bar-row-highlight"><span class="bar-name">ADRG</span><div class="bar-track"><div class="bar-fill bar-fill-highlight" style="width:100%;"></div></div><span class="bar-val">12.1</span></div>
+        </div>
+
+        <details class="detail-toggle">
+          <summary>
+            <span class="detail-label">Data</span>
+            <span class="detail-title">Complete topology comparison table</span>
+          </summary>
+          <div class="detail-body">
+            <p style="color:var(--text-dim); margin-bottom: var(--space-3); font-size: var(--text-xs);">Disk Resonator Gyroscope Topology Comparison (9 rings, 8mm OD, 10µm ring width, 60µm thickness)</p>
+            <div style="overflow-x: auto;">
+              <table style="width:100%; border-collapse: collapse; font-size: var(--text-sm);">
+                <thead>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <th style="padding: var(--space-2); text-align: left; color: var(--headline);">DRG Type</th>
+                    <th style="padding: var(--space-2); text-align: right; color: var(--headline);">Freq (Hz)</th>
+                    <th style="padding: var(--space-2); text-align: right; color: var(--headline);">Q (k)</th>
+                    <th style="padding: var(--space-2); text-align: right; color: var(--headline);">ΔC₀/C₀ (%)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">DRG</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">12,720</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">103.62</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">14.37</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">HDRG</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">11,306</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">105.42</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">16.39</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">CDRG</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">12,611</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">99.99</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">26.36</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">GDRG</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">14,761</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">91.58</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">29.40</td>
+                  </tr>
+                  <tr style="background: rgba(104, 172, 229, 0.1);">
+                    <td style="padding: var(--space-2); color: var(--accent-bright); font-weight: bold;">ADRG</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--accent-bright); font-weight: bold;">6,771</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--accent-bright); font-weight: bold;">181.55</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--accent-bright); font-weight: bold;">46.44</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- FABRICATION -->
+      <div id="fabrication" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Fabrication</h4>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-3);"><strong>Mask Layout Generation:</strong> Once mechanical and electrode parameters were finalized through simulation, designs were converted into semiconductor fabrication mask layouts.</p>
+        <ul class="bullet-list">
+          <li><strong>CleWin</strong> — initial layout design and layer definition</li>
+          <li><strong>KLayout</strong> — advanced editing and DRC (Design Rule Check) verification</li>
+        </ul>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-top: var(--space-4);"><strong>SOI Microfabrication:</strong> Devices were fabricated at the Centre for Nano Science and Engineering (CeNSE) at IISc using SOI-based surface micromachining.</p>
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-value">60 µm</span><span class="spec-label">Device thickness</span></div>
+          <div class="spec-item"><span class="spec-value">10 µm</span><span class="spec-label">Ring width</span></div>
+        </div>
+
+        <figure style="margin: var(--space-6) 0;">
+          <img src="../documents/MEMS Engineer/2.jpeg" alt="Batch of fabricated MEMS gyroscope dies from CeNSE" style="width:100%; border-radius: 8px;">
+          <figcaption>Batch of fabricated MEMS gyroscope dies from CeNSE fabrication run</figcaption>
+        </figure>
+
+        <p style="color:var(--text); font-size: var(--text-sm);"><strong>Wire Bonding:</strong> Wire bonding connected the MEMS die pads to the PCB carrier for electrical interfacing.</p>
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-value">16</span><span class="spec-label">Addressed outer electrodes</span></div>
+          <div class="spec-item"><span class="spec-value">4</span><span class="spec-label">Common connections</span></div>
+        </div>
+
+        <figure style="margin: var(--space-6) 0;">
+          <img src="../documents/MEMS Engineer/GDRGWireBond.jpeg" alt="Wire-bonded GDRG die showing M2D2 lab markings" style="width:100%; border-radius: 8px;">
+          <figcaption>Wire-bonded DRG die mounted showing M2D2 lab markings and concentric ring structure</figcaption>
+        </figure>
+
+        <details class="detail-toggle note-style">
+          <summary>
+            <span class="detail-label">Process</span>
+            <span class="detail-title">SOI microfabrication steps</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>Start with SOI wafer (60 µm device layer, 2 µm BOX)</li>
+              <li>Photolithography for device patterning</li>
+              <li>Deep reactive ion etching (DRIE) through device layer</li>
+              <li>HF vapor release of buried oxide</li>
+              <li>Critical point drying to prevent stiction</li>
+              <li>Metal deposition for electrodes and bond pads</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="detail-toggle compact">
+          <summary>
+            <span class="detail-label">Info</span>
+            <span class="detail-title">Pinout details</span>
+          </summary>
+          <div class="detail-body">
+            Custom pinout schematics were designed specifying electrode-to-pin mappings: the gyroscope required 16 individually addressed outer electrodes plus 4 common connections. This allows independent drive/sense control of each electrode pair for differential operation.
+          </div>
+        </details>
+      </div>
+
+      <!-- TEST SETUP -->
+      <div id="test-setup" class="project-block">
+        <h3>Test Setup</h3>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          The fabricated ADRG was characterized using a Polytec MSA-500 Micro System Analyzer (Laser Doppler Vibrometer) at atmospheric pressure and room temperature.
+        </p>
+
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-value">1 atm</span><span class="spec-label">Pressure</span></div>
+          <div class="spec-item"><span class="spec-value">25°C</span><span class="spec-label">Temperature</span></div>
+          <div class="spec-item"><span class="spec-value">0°/180°</span><span class="spec-label">Drive phase</span></div>
+        </div>
+
+        <details class="detail-toggle">
+          <summary>
+            <span class="detail-label">Method</span>
+            <span class="detail-title">How the measurement worked</span>
+          </summary>
+          <div class="detail-body">
+            The device was electrostatically driven with AC+DC excitation applied to opposing drive electrodes (0° and 180° phase). Frequency sweeps measured the mechanical frequency response, with the resonance peak identifying the eigenfrequency. The LDV measured out-of-plane velocity at multiple points across the resonator to verify mode shapes matched FEM predictions.
+          </div>
+        </details>
+
+        <!-- Pinout Diagrams -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
+          <figure>
+            <img src="../documents/MEMS Engineer/Slide3.JPG" alt="Gyroscope wire bonding pinout with 16 outer electrodes" style="width:100%; border-radius: 8px;">
+            <figcaption>Gyroscope pinout: 16 outer electrodes + 4 common</figcaption>
+          </figure>
+          <figure>
+            <img src="../documents/MEMS Engineer/Slide2.JPG" alt="Dual-axis accelerometer pinout with X/Y sense and feedback electrodes" style="width:100%; border-radius: 8px;">
+            <figcaption>Accelerometer pinout: X/Y sense and feedback electrodes</figcaption>
+          </figure>
+        </div>
+
+        <details class="detail-toggle compact">
+          <summary>
+            <span class="detail-label">Equipment</span>
+            <span class="detail-title">Full test equipment list</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>Polytec MSA-500 Micro System Analyzer</li>
+              <li>Keysight 33500B Waveform Generator</li>
+              <li>Stanford Research SR830 Lock-in Amplifier</li>
+              <li>Keithley 2400 SourceMeter (DC bias)</li>
+              <li>Custom vacuum chamber (for Q-factor measurements)</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <!-- RESULTS -->
+      <div id="results" class="project-block">
+        <h3>Results</h3>
+
+        <figure style="margin-bottom: var(--space-6);">
+          <img src="../documents/MEMS Engineer/Frequency response graph.png" alt="LDV frequency response showing measured resonance at 6.8 kHz" style="width:100%; border-radius: 8px;">
+          <figcaption>LDV frequency response validating 6.8 kHz resonance prediction</figcaption>
+        </figure>
+
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-value">6.8 kHz</span><span class="spec-label">Measured resonance</span></div>
+          <div class="spec-item"><span class="spec-value">6.771 kHz</span><span class="spec-label">FEM prediction</span></div>
+          <div class="spec-item"><span class="spec-value">~0.4%</span><span class="spec-label">Error</span></div>
+        </div>
+        <p style="color:var(--text-dim); font-size: var(--text-xs); margin-top: var(--space-2);">Target was &lt;5% — simulation methodology held up in silicon.</p>
+
+        <details class="detail-toggle highlight-style">
+          <summary>
+            <span class="detail-label">Key Finding</span>
+            <span class="detail-title">ADRG performance advantages</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>ADRG achieved <strong>highest quality factor (181.55k)</strong> among five DRG topologies tested</li>
+              <li>ADRG demonstrated <strong>best relative sense capacitance (46.44% ΔC₀/C₀)</strong></li>
+              <li>Mechanical sensitivity of <strong>12.1×10⁻⁶ µm/rad/s</strong> — 3-4× higher than prior designs</li>
+              <li>LDV validation showed <strong>&lt;5% eigenfrequency error</strong> between simulation and measurement</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="detail-toggle highlight-style">
+          <summary>
+            <span class="detail-label">Publication</span>
+            <span class="detail-title">Conference paper details</span>
+          </summary>
+          <div class="detail-body">
+            Sai Pranav Avva, Suman Acharya, Kandula Eswara Sai Kumar, Sudhanshu Shekar, Karthik Raveendranath, and G K Ananthasuresh. <strong>"A Novel Accordion-like Disk Resonator Gyroscope."</strong>
+            <em>International Conference on Micro, Nano, and Smart Systems (ICMNS)</em>, July 11, 2024.
+            <br><br>
+            The paper presents a comprehensive comparison of five DRG topologies (DRG, HDRG, CDRG, GDRG, ADRG) across mechanical sensitivity, Q factor, capacitance change, and Brownian noise floor metrics.
+          </div>
+        </details>
+
+        <!-- <details class="detail-toggle note-style">
+          <summary>
+            <span class="detail-label">Future</span>
+            <span class="detail-title">Future work</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>Complete accelerometer characterization using shake table</li>
+              <li>Implement closed-loop electronic readout circuits</li>
+              <li>Vacuum packaging to achieve higher Q factors (targeting >500k)</li>
+              <li>Integrate both sensors into single IMU package with ASIC readout</li>
+            </ul>
+          </div>
+        </details> -->
+      </div>
+
+      <!-- ADDITIONAL INFORMATION -->
+      <div id="additional-info" class="project-block">
+        <h3>Additional Information</h3>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-4);">Conference presentation slides.</p>
+        <div class="resume-card">
+          <div class="pdf-wrapper">
+            <iframe
+              src="../documents/MEMS Engineer/A_Novel_Accordion-Like_Disk_Resonator_Gyroscope.pdf"
+              title="A Novel Accordion-Like Disk Resonator Gyroscope Presentation"
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+
+        <details class="detail-toggle" style="margin-top: var(--space-6);">
+          <summary>
+            <span class="detail-label">Skills</span>
+            <span class="detail-title">Technical skills demonstrated</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>Simulation:</strong> COMSOL Multiphysics, FEM eigenfrequency/thermoelastic analysis</li>
+              <li><strong>CAD/Layout:</strong> CleWin, KLayout, mask design, DRC</li>
+              <li><strong>Fabrication:</strong> SOI micromachining, DRIE, HF vapor release</li>
+              <li><strong>Characterization:</strong> LDV, impedance analysis, wire bonding</li>
+              <li><strong>Analysis:</strong> MATLAB, Python data processing</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="detail-toggle compact">
+          <summary>
+            <span class="detail-label">Team</span>
+            <span class="detail-title">Contributions &amp; credits</span>
+          </summary>
+          <div class="detail-body">
+            <p style="margin-bottom: var(--space-3);">I led parametric design optimization for both sensors, performed COMSOL multiphysics simulations achieving &lt;5% eigenfrequency error, generated CleWin/KLayout fabrication masks, designed wire bonding pinouts, and first-authored the ICMNS 2024 conference paper.</p>
+            <p style="margin-bottom: var(--space-3);">Guided by Prof. G K Ananthasuresh and Karthik Raveendranath (ISRO), with simulation support from Sai Kumar and Suman Acharya, and fabrication by Sudhanshu Shekhar.</p>
+            <p>Funded by ISRO; fabricated and characterized at CeNSE.</p>
+          </div>
+        </details>
+      </div>
+
+    </div><!-- end project-content -->
+  </div><!-- end project-layout -->
+</section>
+
+<footer class="footer">
+  <span>© <span id="year"></span> Avva Sai Pranav</span>
+</footer>
+
+<script>
+  // ── Theme & Clock ──
+  const root = document.documentElement;
+  const toggle = document.getElementById('themeToggle');
+  const knob = document.getElementById('themeKnob');
+  const clockEl = document.getElementById('clock');
+  const yearEl = document.getElementById('year');
+
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  function applyTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    knob.textContent = theme === 'dark' ? '☀' : '☾';
+    try { localStorage.setItem('site-theme', theme); } catch (e) {}
+  }
+
+  let saved = null;
+  try { saved = localStorage.getItem('site-theme'); } catch (e) {}
+  const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+  applyTheme(saved || (prefersLight ? 'light' : 'dark'));
+
+  toggle.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+  });
+
+  function tickClock() {
+    if (clockEl) clockEl.textContent = new Date().toLocaleTimeString('en-GB');
+  }
+  tickClock();
+  setInterval(tickClock, 1000);
+
+  // ── Sidebar Scrollspy ──
+  const sidebar = document.querySelector('.project-sidebar');
+  const sidebarHeader = document.querySelector('.sidebar-header');
+  const sidebarLinks = document.querySelectorAll('.sidebar-link');
+  const sections = [];
+
+  sidebarLinks.forEach(link => {
+    const targetId = link.getAttribute('href').substring(1);
+    const target = document.getElementById(targetId);
+    if (target) sections.push({ id: targetId, el: target, link: link });
+  });
+
+  function scrollSidebarToActive(activeLink) {
+    if (!sidebar || !activeLink) return;
+    const allLinks = Array.from(sidebarLinks);
+    const activeIndex = allLinks.indexOf(activeLink);
+    const totalLinks = allLinks.length;
+    if (activeIndex >= totalLinks - 2) {
+      const headerHeight = sidebarHeader ? sidebarHeader.offsetHeight + 10 : 50;
+      sidebar.scrollTo({ top: activeLink.offsetTop - headerHeight, behavior: 'smooth' });
+    } else {
+      sidebar.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  function updateActiveLink() {
+    const scrollPos = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+    const atBottom = scrollPos + windowHeight >= docHeight - 50;
+
+    let activeSection = sections[0];
+    if (atBottom && sections.length > 0) {
+      activeSection = sections[sections.length - 1];
+    } else {
+      const offset = 200;
+      for (const section of sections) {
+        const rect = section.el.getBoundingClientRect();
+        if (rect.top <= offset) activeSection = section;
+      }
+    }
+
+    sidebarLinks.forEach(link => link.classList.remove('active'));
+    if (activeSection) {
+      activeSection.link.classList.add('active');
+      scrollSidebarToActive(activeSection.link);
+    }
+  }
+
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        const headerOffset = 160;
+        const offsetPosition = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        sidebarLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        scrollSidebarToActive(link);
+      }
+    });
+  });
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => { updateActiveLink(); ticking = false; });
+      ticking = true;
+    }
+  });
+  updateActiveLink();
+
+  // ── Back to Top Button ──
+  const topBtn = document.getElementById('sidebarTopBtn');
+  if (topBtn) {
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (sidebar) sidebar.scrollTo({ top: 0, behavior: 'smooth' });
+      sidebarLinks.forEach(link => link.classList.remove('active'));
+      if (sidebarLinks[0]) sidebarLinks[0].classList.add('active');
+    });
+  }
+</script>
+
+</body>
+</html>

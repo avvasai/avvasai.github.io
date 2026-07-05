@@ -3,20 +3,171 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accordion-Like Disk Resonator Gyroscope</title>
-  <meta name="description" content="A Novel Accordion-Like Disk Resonator Gyroscope (ADRG) - MEMS gyroscope design, simulation, fabrication and testing">
+  <title>CAD & FEA Gallery | Sai Pranav Avva</title>
+  <meta name="description" content="Portfolio of CAD models, mechanism animations, and FEA simulations using ANSYS, COMSOL, Creo, SolidWorks, and Fusion 360 by Sai Pranav Avva.">
   <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* Gallery-specific styles */
+    .video-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-4);
+      margin: var(--space-6) 0;
+    }
+    .video-card {
+      background: var(--surface);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .video-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+    .video-card video {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+    }
+    .video-card-info {
+      padding: var(--space-3);
+    }
+    .video-card-title {
+      font-weight: 600;
+      color: var(--headline);
+      margin-bottom: var(--space-1);
+      font-size: var(--text-sm);
+    }
+    .video-card-desc {
+      color: var(--text-dim);
+      font-size: var(--text-xs);
+      line-height: 1.4;
+    }
+    .video-card-software {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--bg);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      margin-top: var(--space-2);
+      font-weight: 500;
+    }
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-bottom: var(--space-4);
+    }
+    .filter-btn {
+      padding: 8px 16px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: var(--text-sm);
+      transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--accent);
+      color: var(--bg);
+      border-color: var(--accent);
+    }
+    .software-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin: var(--space-4) 0;
+    }
+    .software-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+      padding: 6px 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: var(--text-sm);
+      color: var(--text);
+    }
+    .fea-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: var(--space-4);
+      margin-bottom: var(--space-4);
+    }
+    .fea-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-bottom: var(--space-3);
+    }
+    .fea-card-title {
+      font-size: var(--text-lg);
+      font-weight: 600;
+      color: var(--headline);
+    }
+    .fea-card-software {
+      background: var(--accent);
+      color: var(--bg);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: var(--text-xs);
+      font-weight: 500;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: var(--space-3);
+      margin: var(--space-4) 0;
+    }
+    .result-item {
+      text-align: center;
+      padding: var(--space-3);
+      background: var(--bg);
+      border-radius: 8px;
+    }
+    .result-value {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--accent);
+      display: block;
+    }
+    .result-label {
+      font-size: var(--text-xs);
+      color: var(--text-dim);
+      margin-top: 4px;
+    }
+    .analysis-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-1);
+      margin-top: var(--space-3);
+    }
+    .analysis-tag {
+      background: var(--bg);
+      color: var(--text-dim);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+    }
+  </style>
 </head>
 <body>
-
 <header class="masthead">
   <h1 class="giant-name">Avva Sai Pranav</h1>
   <nav class="pill-nav">
     <div class="pill-links">
-      <a href="index.html" class="pill">Home</a>
-      <a href="index.html#info" class="pill">Projects</a>
-      <a href="index.html#resume" class="pill">Resume</a>
-      <a href="index.html#contact" class="pill">Contact</a>
+      <a href="../index.html" class="pill">Home</a>
+      <a href="../index.html#info" class="pill">Projects</a>
+      <a href="../index.html#resume" class="pill">Resume</a>
+      <a href="../index.html#contact" class="pill">Contact</a>
     </div>
     <div class="pill-right">
       <span class="label">Theme:</span>
@@ -28,228 +179,450 @@
   </nav>
 </header>
 
-<!-- Project Hero -->
-<section class="project-hero">
-  <p class="section-eyebrow">Project</p>
-  <h1 class="project-title">A Novel Accordion-Like Disk Resonator Gyroscope</h1>
-  <p class="project-subtitle">MEMS Gyroscope Design · Simulation · Fabrication · Testing</p>
-  <div class="project-meta">
-    <span class="meta-item">🏛️ M2D2 Laboratory, Indian Institute of Science</span>
-    <span class="meta-item">👤 Prof. G. K. Ananthasuresh</span>
-    <span class="meta-item">🎤 ICMNSS Conference</span>
-  </div>
-</section>
-
-<!-- Key Results Stats -->
 <section class="section">
-  <div class="stats-row">
-    <div class="stat-card">
-      <span class="stat-value">3–4×</span>
-      <span class="stat-label">Higher Sensitivity</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">6771 Hz</span>
-      <span class="stat-label">Drive Frequency</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">&lt;1.4%</span>
-      <span class="stat-label">Sim-to-Fab Error</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">46.4%</span>
-      <span class="stat-label">Capacitance Change</span>
-    </div>
-  </div>
-</section>
+  <a href="../index.html#info" class="back-link">← Back to projects</a>
 
-<!-- Overview -->
-<section class="section">
-  <h2 class="section-title">Project Overview</h2>
-  <div class="two-col">
-    <div class="col-text">
-      <p>Disk Resonator Gyroscopes (DRGs) sense rotation using Coriolis forces acting on a vibrating ring — the same physics behind a Foucault pendulum, just shrunk down to millimeters.</p>
-      <p>Over the years, designs like the Boeing DRG, Honeycomb DRG, Cobweb DRG, and Gear DRG each pushed sensitivity a little further, from 0.04 deg/sec down to 0.015 deg/sec, but each traded off electrode placement against mechanical performance.</p>
-      <p>This project asked a simple question: <strong>could an entirely different ring geometry — an "accordion-like" pattern — beat the existing field on mechanical sensitivity and noise?</strong></p>
-    </div>
-    <div class="col-visual">
-      <img src="../documents/MEMS Engineer/2.jpeg" alt="ADRG die close-up showing ring pattern" class="project-img">
-      <p class="img-caption">ADRG die showing accordion-style ring pattern</p>
-    </div>
-  </div>
-</section>
+  <div class="project-layout">
 
-<!-- Design & Simulation -->
-<section class="section-alt">
-  <div class="section-inner">
-    <h2 class="section-title">Design & Simulation</h2>
-    <p>I ran finite-element eigenfrequency analysis across five ring topologies — DRG, HDRG, CDRG, GDRG, and my proposed ADRG — each built with 9 rings, an 8mm outer diameter, 10μm in-plane ring width, and 60μm thickness.</p>
-    
-    <div class="table-wrapper">
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>DRG Type</th>
-            <th>Eigenfrequency (Hz)</th>
-            <th>Quality Factor (k)</th>
-            <th>Mech. Sensitivity (μm/rad/s)</th>
-            <th>Brownian Noise (rad/s/√Hz)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>DRG</td>
-            <td>12720</td>
-            <td>103.62</td>
-            <td>3.83e-6</td>
-            <td>1.01e-6</td>
-          </tr>
-          <tr>
-            <td>HDRG</td>
-            <td>11306</td>
-            <td>105.42</td>
-            <td>4.27e-6</td>
-            <td>1.29e-6</td>
-          </tr>
-          <tr>
-            <td>CDRG</td>
-            <td>12611</td>
-            <td>99.99</td>
-            <td>3.61e-6</td>
-            <td>1.12e-6</td>
-          </tr>
-          <tr>
-            <td>GDRG</td>
-            <td>14761</td>
-            <td>91.58</td>
-            <td>2.76e-6</td>
-            <td>1.17e-6</td>
-          </tr>
-          <tr class="highlight-row">
-            <td>ADRG (Ours)</td>
-            <td>6771</td>
-            <td>181.55</td>
-            <td>12.1e-6</td>
-            <td>1.07e-6</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="table-note">The ADRG's mechanical sensitivity is roughly 3–4× higher than every other topology tested, while holding competitive noise performance.</p>
-    
-    <p>Capacitance modeling (accounting for fringing fields, not just the textbook parallel-plate formula) backed this up — the ADRG's relative sense capacitance change was the largest of the five designs at <strong>46.4%</strong>, versus 14–29% for the others.</p>
-  </div>
-</section>
+    <!-- STICKY SIDEBAR -->
+    <aside class="project-sidebar" id="projectSidebar">
+      <div class="sidebar-header">On This Page</div>
+      <a href="#summary" class="sidebar-link active">Summary</a>
+      <a href="#software" class="sidebar-link">Software Proficiency</a>
+      <a href="#mechanisms" class="sidebar-link">Mechanisms Gallery</a>
+      <a href="#mechanical-systems" class="sidebar-link sidebar-sublink">Mechanical Systems</a>
+      <a href="#fea-gallery" class="sidebar-link sidebar-sublink">FEA Simulations</a>
+      <a href="#fea-projects" class="sidebar-link">FEA Projects</a>
+      <a href="#results" class="sidebar-link">Results</a>
+      <a href="#additional-info" class="sidebar-link">Additional Information</a>
+      <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">↑ Top</button>
+    </aside>
 
-<!-- Fabrication -->
-<section class="section">
-  <h2 class="section-title">Fabrication</h2>
-  <p>The design moved from simulation to silicon at CeNSE (Centre for Nano Science and Engineering).</p>
-  
-  <div class="gallery">
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/2.jpeg" alt="ADRG die close-up showing ring pattern">
-      <figcaption>ADRG die with accordion ring pattern</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/3.jpeg" alt="ADRG chip wire-bonded into ceramic package">
-      <figcaption>Wire-bonded into 68-pin ceramic package</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/4.jpeg" alt="Fabricated ADRG dies on glass slides">
-      <figcaption>Fabricated dies on glass slides</figcaption>
-    </figure>
-  </div>
-  
-  <p>Individual ADRG chips on glass slides, each with the resonator's accordion-style ring pattern visible under its protective coating — and the completed chip wire-bonded into a 68-pin ceramic package with color-coded leads carrying drive, sense, and common signals to the test board.</p>
-</section>
+    <!-- MAIN CONTENT -->
+    <div class="project-content">
 
-<!-- Test Setup -->
-<section class="section-alt">
-  <div class="section-inner">
-    <h2 class="section-title">Pinout & Test Setup</h2>
-    <div class="two-col">
-      <div class="col-text">
-        <h3 class="section-subtitle">Electrode Configuration</h3>
-        <ul class="check-list">
-          <li>4 common pins</li>
-          <li>16 individually addressable outer electrodes for drive and sense</li>
-          <li>Companion accelerometer die with separate X/Y sense and feedback electrode pairs</li>
-        </ul>
+      <!-- SUMMARY -->
+      <div id="summary" class="project-block">
+        <div class="project-hero">
+          <div class="project-hero-text">
+            <p class="section-eyebrow">Project · CAD/FEA</p>
+            <h2>CAD Modeling & FEA Simulation Gallery</h2>
+            <p class="project-hero-meta">Johns Hopkins University | Personal Projects · 2024 – Present</p>
+            <div class="spec-ribbon">
+              <div class="dim-tag"><span class="dim-value">11</span><span class="dim-label">Mechanism animations</span></div>
+              <div class="dim-tag"><span class="dim-value">2</span><span class="dim-label">FEA studies</span></div>
+              <div class="dim-tag"><span class="dim-value">5</span><span class="dim-label">Software platforms</span></div>
+              <div class="dim-tag"><span class="dim-value">100kN</span><span class="dim-label">Crash load validated</span></div>
+            </div>
+          </div>
+          <div class="hero-diagram-wrap">
+            <video autoplay loop muted playsinline style="width: 100%; max-width: 300px; border-radius: 12px;">
+              <source src="../images/cad-fea-gallery/videos/Force_Application_in_X.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <!-- Hero Video -->
+        <figure style="margin: var(--space-6) 0;">
+          <video autoplay loop muted playsinline style="width:100%; border-radius: 8px;">
+            <source src="../documents/CAD/Force Application in X.mp4" type="video/mp4">
+          </video>
+          <figcaption>MEMS accelerometer finite element analysis showing displacement under applied force</figcaption>
+        </figure>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          This gallery showcases my CAD modeling and simulation capabilities, developed through coursework at Johns Hopkins University and independent practice. From classical mechanisms like Geneva drives and rack-and-pinion systems to advanced multi-physics FEA of EV batteries and MEMS accelerometers, this collection demonstrates proficiency across the full spectrum of mechanical design and analysis tools.
+        </p>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          The collection includes mechanism animations demonstrating kinematic understanding—from simple pulleys and gears to complex Geneva mechanisms and multi-body assemblies. The FEA work ranges from macro-scale EV battery pack crash and thermal simulations to micro-scale MEMS accelerometer characterization including modal analysis, harmonic response, and electrostatic heating effects.
+        </p>
+      </div>
+
+      <!-- SOFTWARE PROFICIENCY -->
+      <div id="software" class="project-block">
+        <h3>Software Proficiency</h3>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          All work was completed using industry-standard tools across multiple platforms.
+        </p>
+        <div class="software-badges">
+          <span class="software-badge">🔧 ANSYS</span>
+          <span class="software-badge">🔬 COMSOL</span>
+          <span class="software-badge">⚙️ Creo Simulate</span>
+          <span class="software-badge">📐 SolidWorks</span>
+          <span class="software-badge">🎨 Fusion 360</span>
+        </div>
+      </div>
+
+      <!-- MECHANISMS GALLERY -->
+      <div id="mechanisms" class="project-block">
+        <h3>Mechanisms & Power Transmission</h3>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Kinematic animations of classical mechanical systems demonstrating motion conversion and power transmission principles.
+        </p>
+
+        <div class="video-gallery">
+          <!-- BELT -->
+          <div class="video-card" data-category="mechanisms">
+            <video muted loop playsinline onmouseenter="this.play()" onmouseleave="this.pause()">
+              <source src="../documents/CAD/BELT.mp4" type="video/mp4">
+            </video>
+            <div class="video-card-info">
+              <div class="video-card-title">Belt Drive System</div>
+              <div class="video-card-desc">Pulley system modeling with belt-driven animation showing power transmission mechanics</div>
+              <span class="video-card-software">CAD Animation</span>
+            </div>
+          </div>
+
+          <!-- Gears -->
+          <div class="video-card" data-category="mechanisms">
+            <video muted loop playsinline onmouseenter="this.play()" onmouseleave="this.pause()">
+              <source src="../documents/CAD/GEARS.mp4" type="video/mp4">
+            </video>
+            <div class="video-card-info">
+              <div class="video-card-title">Spur Gear Mesh</div>
+              <div class="video-card-desc">Spur gear mesh animation showing tooth engagement and rotational kinematics</div>
+              <span class="video-card-software">CAD Animation</span>
+            </div>
+          </div>
+
+          <!-- Geneva -->
+          <div class="video-card" data-category="mechanisms">
+            <video muted loop playsinline onmouseenter="this.play()" onmouseleave="this.pause()">
+              <source src="../documents/CAD/GENEVA.mp4" type="video/mp4">
+            </video>
+            <div class="video-card-info">
+              <div class="video-card-title">Geneva Mechanism</div>
+              <div class="video-card-desc">Geneva mechanism (Maltese cross) animation demonstrating intermittent rotary motion conversion</div>
+              <span class="video-card-software">CAD Animation</span>
+            </div>
+          </div>
+
+          <!-- MSD -->
+          <div class="video-card" data-category="mechanisms">
+            <video muted loop playsinline onmouseenter="this.play()" onmouseleave="this.pause()">
+              <source src="../documents/CAD/MSD.mp4" type="video/mp4">
+            </video>
+            <div class="video-card-info">
+              <div class="video-card-title">Mass-Spring-Damper System</div>
+              <div class="video-card-desc">Mass-spring-damper pulley system animation showing dynamic mechanical response</div>
+              <span class="video-card-software">CAD Animation</span>
+            </div>
+          </div>
+
+          <!-- RACK -->
+          <div class="video-card" data-category="mechanisms">
+            <video muted loop playsinline onmouseenter="this.play()" onmouseleave="this.pause()">
+              <source src="../documents/CAD/RACK.mp4" type="video/mp4">
+            </video>
+            <div class="video-card-info">
+              <div class="video-card-title">Rack and Pinion</div>
+              <div class="video-card-desc">Rack and pinion gear animation demonstrating linear-to-rotary motion conversion</div>
+              <span class="video-card-software">CAD Animation</span>
+            </div>
+          </div>
+
+          <!-- RSTN -->
+          <div class="video-card" data-category="mechanisms">
+            <video muted loop playsinline onmouseenter="this.play()" onmouseleave="this.pause()">
+              <source src="../documents/CAD/RSTN.mp4" type="video/mp4">
+            </video>
+            <div class="video-card-info">
+              <div class="video-card-title">Lead Screw Mechanism</div>
+              <div class="video-card-desc">Lead screw mechanism animation showing rotational-to-linear translation with thread engagement</div>
+              <span class="video-card-software">CAD Animation</span>
+            </div>
+          </div>
+
+          <!-- exam2 -->
+          <div class="video-card" data-category="mechanisms">
+            <video muted loop playsinline onmouseenter="this.play()" onmouseleave="this.pause()">
+              <source src="../documents/CAD/exam2.mp4" type="video/mp4">
+            </video>
+            <div class="video-card-info">
+              <div class="video-card-title">Multi-Body Linkage</div>
+              <div class="video-card-desc">Complex multi-body mechanism animation demonstrating advanced kinematic linkages</div>
+              <span class="video-card-software">CAD Animation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MECHANICAL SYSTEMS -->
+      <div id="mechanical-systems" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Mechanical Systems</h4>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Complete mechanical assembly models with working animations.
+        </p>
+
+        <div class="video-gallery">
+          <!-- CRANE -->
+          <div class="video-card" data-category="mechanical-systems">
+            <video muted loop playsinline onmouseenter="this.play()" onmouseleave="this.pause()">
+              <source src="../documents/CAD/CRANE.mp4" type="video/mp4">
+            </video>
+            <div class="video-card-info">
+              <div class="video-card-title">Crane Mechanism</div>
+              <div class="video-card-desc">Crane mechanism model with animated boom and cable assembly demonstrating multi-body kinematics</div>
+              <span class="video-card-software">CAD Animation</span>
+            </div>
+          </div>
+
+          <!-- PUMP1 -->
+          <div class="video-card" data-category="mechanical-systems">
+            <video muted loop playsinline onmouseenter="this.play()" onmouseleave="this.pause()">
+              <source src="../documents/CAD/PUMP1.mp4" type="video/mp4">
+            </video>
+            <div class="video-card-info">
+              <div class="video-card-title">Positive Displacement Pump</div>
+              <div class="video-card-desc">Positive displacement pump mechanism animation showing fluid handling components in motion</div>
+              <span class="video-card-software">CAD Animation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FEA GALLERY -->
+      <div id="fea-gallery" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">MEMS & Finite Element Analysis</h4>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Multi-physics simulations spanning structural, thermal, and dynamic analyses at both macro and micro scales.
+        </p>
+
+        <div class="video-gallery">
+          <!-- Force_Application_in_X -->
+          <div class="video-card" data-category="fea">
+            <video muted loop playsinline onmouseenter="this.play()" onmouseleave="this.pause()">
+              <source src="../documents/CAD/Force Application in X.mp4" type="video/mp4">
+            </video>
+            <div class="video-card-info">
+              <div class="video-card-title">MEMS Accelerometer FEA</div>
+              <div class="video-card-desc">MEMS accelerometer FEA showing displacement response under single-axis force application</div>
+              <span class="video-card-software">ANSYS/COMSOL</span>
+            </div>
+          </div>
+
+          <!-- Displacement -->
+          <div class="video-card" data-category="fea">
+            <video muted loop playsinline onmouseenter="this.play()" onmouseleave="this.pause()">
+              <source src="../documents/CAD/Displacement.mp4" type="video/mp4">
+            </video>
+            <div class="video-card-info">
+              <div class="video-card-title">Water Tank FEA</div>
+              <div class="video-card-desc">FEA stress animation of water tank shell structure under loading conditions</div>
+              <span class="video-card-software">FEA Software</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FEA PROJECTS -->
+      <div id="fea-projects" class="project-block">
+        <h3>FEA Projects</h3>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Comprehensive finite element analysis studies with detailed reports.
+        </p>
+
+        <!-- EV Battery Pack -->
+        <div class="fea-card">
+          <div class="fea-card-header">
+            <div class="fea-card-title">EV Battery Pack Multi-Physics Analysis</div>
+            <span class="fea-card-software">Creo Simulate</span>
+          </div>
+          
+          <div class="results-grid">
+            <div class="result-item">
+              <span class="result-value">100,000 N</span>
+              <span class="result-label">Max Impact Load</span>
+            </div>
+            <div class="result-item">
+              <span class="result-value">1.09 mm</span>
+              <span class="result-label">Max Deformation</span>
+            </div>
+            <div class="result-item">
+              <span class="result-value">265°C</span>
+              <span class="result-label">Max Temperature</span>
+            </div>
+            <div class="result-item">
+              <span class="result-value">950 Hz</span>
+              <span class="result-label">1st Resonant Freq</span>
+            </div>
+            <div class="result-item">
+              <span class="result-value">>100 Hz ✓</span>
+              <span class="result-label">Safety Requirement</span>
+            </div>
+          </div>
+
+          <div class="analysis-tags">
+            <span class="analysis-tag">Structural (Crash Impact)</span>
+            <span class="analysis-tag">Thermal (Rapid Discharge)</span>
+            <span class="analysis-tag">Combined MEC/T Loads</span>
+            <span class="analysis-tag">Dynamic Random Vibration</span>
+            <span class="analysis-tag">Modal Analysis</span>
+          </div>
+
+          <details class="detail-toggle" style="margin-top: var(--space-4);">
+            <summary>
+              <span class="detail-label">Details</span>
+              <span class="detail-title">Materials & highlights</span>
+            </summary>
+            <div class="detail-body">
+              <p style="margin-bottom: var(--space-3);"><strong>Materials:</strong> Steel HSLA (casing), Nickel-Copper alloy (electrodes), Aluminum Wrought (cell proxies)</p>
+              <ul class="bullet-list">
+                <li>Battery pack validated for use as structural monocoque member</li>
+                <li>Thermal analysis based on Tesla 21700 cell specifications</li>
+                <li>Natural convection cooling analysis with recommendations for active cooling</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <!-- MEMS Accelerometer -->
+        <div class="fea-card">
+          <div class="fea-card-header">
+            <div class="fea-card-title">Dual-Axis MEMS Capacitive Accelerometer</div>
+            <span class="fea-card-software">ANSYS/COMSOL</span>
+          </div>
+          
+          <div class="results-grid">
+            <div class="result-item">
+              <span class="result-value">2867.7 Hz</span>
+              <span class="result-label">Eigenfrequency</span>
+            </div>
+            <div class="result-item">
+              <span class="result-value">3.7 µm/g</span>
+              <span class="result-label">Displacement Sensitivity</span>
+            </div>
+            <div class="result-item">
+              <span class="result-value">1.66 ΔC/g</span>
+              <span class="result-label">Capacitance Sensitivity</span>
+            </div>
+            <div class="result-item">
+              <span class="result-value">3.2 nm/g</span>
+              <span class="result-label">Cross-axis Sensitivity</span>
+            </div>
+            <div class="result-item">
+              <span class="result-value">492</span>
+              <span class="result-label">Quality Factor</span>
+            </div>
+          </div>
+
+          <div class="analysis-tags">
+            <span class="analysis-tag">Modal Analysis (20 modes)</span>
+            <span class="analysis-tag">Harmonic Response</span>
+            <span class="analysis-tag">Static Structural (1G)</span>
+            <span class="analysis-tag">Steady-State Thermal</span>
+          </div>
+
+          <details class="detail-toggle" style="margin-top: var(--space-4);">
+            <summary>
+              <span class="detail-label">Details</span>
+              <span class="detail-title">Performance characterization</span>
+            </summary>
+            <div class="detail-body">
+              <p>Achieved market-comparable specifications for MEMS accelerometer design with comprehensive multi-physics analysis including electrostatic heating effects and thermal-structural coupling.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <!-- RESULTS -->
+      <div id="results" class="project-block">
+        <h3>Results</h3>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Key findings and demonstrated capabilities from this body of work.
+        </p>
+
+        <details class="detail-toggle">
+          <summary>
+            <span class="detail-label">Findings</span>
+            <span class="detail-title">Key findings</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>Demonstrated proficiency across 5 industry-standard CAD/FEA platforms</li>
+              <li>Completed multi-physics analyses spanning structural, thermal, and dynamic domains</li>
+              <li>Modeled mechanisms covering all major motion conversion types (rotary, linear, intermittent)</li>
+              <li>Achieved market-comparable specifications for MEMS accelerometer design</li>
+              <li>Validated EV battery pack for crash safety requirements exceeding industry standards</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="detail-toggle" style="margin-top: var(--space-4);">
+          <summary>
+            <span class="detail-label">Skills</span>
+            <span class="detail-title">Technical skills demonstrated</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>CAD:</strong> Parametric modeling, Assembly animation, Mechanism design</li>
+              <li><strong>FEA:</strong> Mesh generation and optimization, Boundary condition definition</li>
+              <li><strong>Analysis:</strong> Modal and harmonic analysis, Thermal-structural coupling</li>
+              <li><strong>Validation:</strong> Results interpretation and validation</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="detail-toggle" style="margin-top: var(--space-4);">
+          <summary>
+            <span class="detail-label">Future</span>
+            <span class="detail-title">Future scope</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>Expand MEMS analysis to include squeeze-film damping effects</li>
+              <li>Add CFD analysis for battery pack active cooling design</li>
+              <li>Create parametric mechanism library with configurable dimensions</li>
+              <li>Implement mesh convergence studies for higher confidence results</li>
+              <li>Explore topology optimization for lightweight structural designs</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <!-- ADDITIONAL INFORMATION -->
+      <div id="additional-info" class="project-block">
+        <h3>Additional Information</h3>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-4);">Downloadable FEA reports with complete methodology and results.</p>
         
-        <h3 class="section-subtitle">LDV Testing</h3>
-        <ul class="check-list">
-          <li>Drive signal combining AC and DC bias excited the resonator</li>
-          <li>LDV measured out-of-plane velocity at 0° and 180° points on the ring</li>
-          <li>Characterized frequency response under controlled conditions</li>
-        </ul>
-      </div>
-      <div class="col-visual">
-        <img src="../documents/MEMS Engineer/3.jpeg" alt="Wire-bonded package for testing" class="project-img">
-        <p class="img-caption">68-pin ceramic package ready for LDV testing</p>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="resume-card" style="margin-bottom: var(--space-4);">
+          <h4 style="color:var(--headline); margin-bottom: var(--space-2); font-size: var(--text-base);">EV Battery Pack FEA Report</h4>
+          <p style="color:var(--text-dim); font-size: var(--text-xs); margin-bottom: var(--space-3);">Complete analysis including crash, thermal, combined loads, and dynamic vibration studies</p>
+          <div class="pdf-wrapper">
+            <iframe
+              src="../documents/CAD/Avva_MidtermFinal.pdf"
+              title="EV Battery Pack Multi-Physics Analysis Report"
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
 
-<!-- Results -->
-<section class="section">
-  <h2 class="section-title">Results</h2>
-  <div class="resume-card">
-    <p>Under controlled atmospheric conditions (1 atm, 25°C), the fabricated ADRG resonated at approximately <strong>6.8 kHz</strong> — within <strong>1.2–1.4%</strong> of the FEM-predicted eigenfrequency, confirming the simulation model held up in the real device.</p>
-  </div>
-</section>
+        <div class="resume-card">
+          <h4 style="color:var(--headline); margin-bottom: var(--space-2); font-size: var(--text-base);">MEMS Accelerometer FEA Report</h4>
+          <p style="color:var(--text-dim); font-size: var(--text-xs); margin-bottom: var(--space-3);">Complete performance characterization with modal, harmonic, and thermal analysis</p>
+          <div class="pdf-wrapper">
+            <iframe
+              src="../documents/CAD/Avva_Final.pdf"
+              title="MEMS Accelerometer FEA Report"
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
 
-<!-- My Contributions -->
-<section class="section">
-  <h2 class="section-title">My Contributions</h2>
-  <div class="role-grid">
-    <div class="role-item">
-      <span class="role-icon">📐</span>
-      <div class="role-text">
-        <strong>ADRG Geometry Design</strong>
-        <p>Designed the novel accordion-like ring topology</p>
+        <details class="detail-toggle compact" style="margin-top: var(--space-6);">
+          <summary>
+            <span class="detail-label">Course</span>
+            <span class="detail-title">Acknowledgements</span>
+          </summary>
+          <div class="detail-body">
+            <p>FEA work completed as part of Johns Hopkins University - 535.632 Applied Finite Element Analysis Course.</p>
+          </div>
+        </details>
       </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">💻</span>
-      <div class="role-text">
-        <strong>FEM Modeling</strong>
-        <p>Led eigenfrequency and capacitance modeling across all five DRG topologies</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">🔬</span>
-      <div class="role-text">
-        <strong>Experimental Characterization</strong>
-        <p>Ran LDV-based testing of the fabricated device</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">📊</span>
-      <div class="role-text">
-        <strong>Comparative Analysis</strong>
-        <p>Benchmarked ADRG against DRG, HDRG, CDRG, and GDRG</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Credits -->
-<section class="section">
-  <div class="credits-box">
-    <h3>Team & Acknowledgments</h3>
-    <p><strong>Advisor:</strong> Prof. G. K. Ananthasuresh</p>
-    <p><strong>Co-Advisor:</strong> Karthik (ISRO)</p>
-    <p><strong>Design & Simulation Support:</strong> Sai Kumar, Suman Acharya</p>
-    <p><strong>Fabrication:</strong> Sudhanshu Shekhar</p>
-    <p><strong>Funding:</strong> ISRO</p>
-    <p><strong>Facilities:</strong> CeNSE (Centre for Nano Science and Engineering)</p>
-  </div>
-</section>
-
-<!-- Back Link -->
-<section class="section" style="text-align: center;">
-  <a href="../index.html#info" class="btn btn-ghost">← Back to Projects</a>
+    </div><!-- end project-content -->
+  </div><!-- end project-layout -->
 </section>
 
 <footer class="footer">
@@ -257,6 +630,7 @@
 </footer>
 
 <script>
+  // ── Theme & Clock ──
   const root = document.documentElement;
   const toggle = document.getElementById('themeToggle');
   const knob = document.getElementById('themeKnob');
@@ -286,6 +660,77 @@
   }
   tickClock();
   setInterval(tickClock, 1000);
+
+  // ── Sidebar Scrollspy ──
+  const sidebar = document.querySelector('.project-sidebar');
+  const sidebarHeader = document.querySelector('.sidebar-header');
+  const sidebarLinks = document.querySelectorAll('.sidebar-link');
+  const sections = [];
+
+  sidebarLinks.forEach(link => {
+    const targetId = link.getAttribute('href').substring(1);
+    const target = document.getElementById(targetId);
+    if (target) sections.push({ id: targetId, el: target, link: link });
+  });
+
+  function scrollSidebarToActive(link) {
+    if (!sidebar) return;
+    const sidebarRect = sidebar.getBoundingClientRect();
+    const linkRect = link.getBoundingClientRect();
+    const headerHeight = sidebarHeader ? sidebarHeader.offsetHeight : 0;
+    if (linkRect.top < sidebarRect.top + headerHeight || linkRect.bottom > sidebarRect.bottom) {
+      link.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  function updateActiveLink() {
+    const scrollY = window.scrollY;
+    let current = sections[0];
+    for (const sec of sections) {
+      if (scrollY >= sec.el.offsetTop - 180) current = sec;
+    }
+    sidebarLinks.forEach(link => link.classList.remove('active'));
+    if (current && current.link) {
+      current.link.classList.add('active');
+      scrollSidebarToActive(current.link);
+    }
+  }
+
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        const headerOffset = 160;
+        const offsetPosition = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        sidebarLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        scrollSidebarToActive(link);
+      }
+    });
+  });
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => { updateActiveLink(); ticking = false; });
+      ticking = true;
+    }
+  });
+  updateActiveLink();
+
+  // ── Back to Top Button ──
+  const topBtn = document.getElementById('sidebarTopBtn');
+  if (topBtn) {
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (sidebar) sidebar.scrollTo({ top: 0, behavior: 'smooth' });
+      sidebarLinks.forEach(link => link.classList.remove('active'));
+      if (sidebarLinks[0]) sidebarLinks[0].classList.add('active');
+    });
+  }
 </script>
 
 </body>

@@ -320,16 +320,13 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 2px;
 }
 
-/* Skills Cloud */
 .skills-cloud {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  gap: var(--space-2);
-  max-width: 420px;
-  min-height: 150px;
+  gap: 0.5rem;
+  min-height: 320px; /* Use min-height instead of fixed height */
+  align-content: flex-start;
+  overflow: hidden; /* Hides any potential scrollbar */
 }
 
 /* Skill Tags/Chips */

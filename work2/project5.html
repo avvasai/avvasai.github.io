@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Knee Instability Correction Device | Sai Pranav Avva</title>
-  <meta name="description" content="Wearable haptic knee brace for ACL rehabilitation using directional vibrotactile feedback. Hardware Lead - Arduino, flex sensors, ERM motors, 3D printing.">
+  <meta name="description" content="Wearable haptic brace providing directional vibrotactile feedback for ACL rehabilitation at Johns Hopkins University.">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -31,148 +31,206 @@
   <a href="../index.html#info" class="back-link">← Back to projects</a>
 
   <div class="project-layout">
-    
-    <!-- STICKY SIDEBAR - Always visible -->
+
+    <!-- STICKY SIDEBAR -->
     <aside class="project-sidebar" id="projectSidebar">
-    <div class="sidebar-header">On This Page</div>
-    <a href="#summary" class="sidebar-link active">Summary</a>
-    <a href="#problem" class="sidebar-link">Problem Statement</a>
-    <a href="#methodology" class="sidebar-link">Methodology</a>
-    <a href="#design-fab" class="sidebar-link sidebar-sublink">Design & Fabrication</a>
-    <a href="#electronics" class="sidebar-link sidebar-sublink">Electronics</a>
-    <a href="#control-logic" class="sidebar-link sidebar-sublink">Control Logic</a>
-    <a href="#test-setup" class="sidebar-link">Test Setup</a>
-    <a href="#results" class="sidebar-link">Results</a>
-    <a href="#demo-video" class="sidebar-link">Demo Video</a>
-    <a href="#additional-info" class="sidebar-link">Additional Information</a>
-    <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">
-  ↑ Top
-    </button>
-  </aside>
-  
+      <div class="sidebar-header">On This Page</div>
+      <a href="#summary" class="sidebar-link active">Summary</a>
+      <a href="#problem" class="sidebar-link">Problem Statement</a>
+      <a href="#methodology" class="sidebar-link">Methodology</a>
+      <a href="#design-fab" class="sidebar-link sidebar-sublink">Design &amp; Fabrication</a>
+      <a href="#electronics" class="sidebar-link sidebar-sublink">Electronics</a>
+      <a href="#control-logic" class="sidebar-link sidebar-sublink">Control Logic</a>
+      <a href="#test-setup" class="sidebar-link">Test Setup</a>
+      <a href="#results" class="sidebar-link">Results</a>
+      <a href="#demo-video" class="sidebar-link">Demo Video</a>
+      <a href="#additional-info" class="sidebar-link">Additional Information</a>
+      <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">↑ Top</button>
+    </aside>
+
     <!-- MAIN CONTENT -->
     <div class="project-content">
 
-      <!-- SUMMARY -->
-      <div id="summary" class="project-block">
-        <p class="section-eyebrow">Project · Haptics</p>
-        <h2>Knee Instability Correction Device</h2>
-        <p>
-          Wearable haptic brace providing directional vibrotactile feedback for ACL rehabilitation — Johns Hopkins University | 535.691 Haptic Interface Design | Guided by Prof. Jeremy Brown
-        </p>
-        <p>
-          <strong>Duration:</strong> Aug 2024 – Dec 2024
-        </p>
-        <p>
-          <strong>Role:</strong> Hardware Lead: Designed electronics architecture, fabricated sensor enclosures and motor mounts, integrated flex sensors and ERM array achieving 100% front-bend detection accuracy
-        </p>
-
-        <!-- Hero Image -->
-        <figure style="margin: var(--space-6) 0;">
-          <img src="../documents/Haptic Device/fig3.jpg" alt="KICD wearable haptic knee brace with flex sensor cage and ERM motor array worn on leg" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">KICD device worn on leg showing flex sensor cage around knee joint and ERM motor band on upper thigh</figcaption>
-        </figure>
-
-        <p>
-          Knee instability from ACL injuries affects 80,000-120,000 people annually in the US, with current rehabilitation methods risking muscle atrophy from over-bracing or re-injury from premature free movement. The Knee Instability Correction Device (KICD) bridges this gap using vibrotactile feedback to guide users toward stable knee positions without physically constraining movement.
-        </p>
-        <p>
-          As Hardware Lead, I designed and built the complete wearable system: three flex sensors in 3D-printed TPU enclosures detect knee angle across sagittal, abduction, and adduction planes, while six ERM motors arranged in a 40mm-spaced array deliver directional 'tracing' vibrations that intuitively guide the user back to stability. Testing with 30+ subjects demonstrated 100% accuracy for front-bend detection and successful directional perception in the majority of users.
-        </p>
+      <!-- HERO / SUMMARY -->
+      <div class="project-hero" id="summary">
+        <div class="project-hero-text">
+          <p class="project-hero-meta">Johns Hopkins University · 535.691 Haptic Interface Design · Prof. Jeremy Brown</p>
+          <h2>Knee Instability Correction Device (KICD)</h2>
+          <p style="color:var(--text); max-width:62ch;">
+            Wearable haptic brace providing directional vibrotactile feedback for ACL rehabilitation — guiding users toward stable knee positions without constraining movement.
+          </p>
+          <div class="spec-ribbon">
+            <div class="dim-tag">
+              <span class="dim-value">Aug–Dec 2024</span>
+              <span class="dim-label">Duration</span>
+            </div>
+            <div class="dim-tag">
+              <span class="dim-value">Hardware Lead</span>
+              <span class="dim-label">Role</span>
+            </div>
+            <div class="dim-tag">
+              <span class="dim-value">100%</span>
+              <span class="dim-label">Front-bend accuracy</span>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- Hero Image -->
+      <figure style="margin: var(--space-6) 0;">
+        <img src="../documents/Haptic Device/fig3.jpg" alt="KICD wearable haptic knee brace with flex sensor cage and ERM motor array worn on leg" style="width:100%; border-radius: 8px;">
+        <figcaption>KICD device worn on leg showing flex sensor cage around knee joint and ERM motor band on upper thigh</figcaption>
+      </figure>
 
       <!-- PROBLEM STATEMENT -->
       <div id="problem" class="project-block">
         <h3>Problem Statement</h3>
-        <p style="color:var(--text);">
-          ACL injuries affect 80,000-120,000 people annually in the US, causing knee instability where the knee buckles toward the midline (dynamic valgus) during weight acceptance. Current rehabilitation uses passive bracing that causes muscle atrophy, or free movement that risks re-injury. The challenge: could a wearable haptic device provide a middle ground using vibrotactile feedback to virtually limit dangerous movements while allowing physical freedom for strength development?
+        <p style="color:var(--text); max-width:62ch; margin-bottom: var(--space-4);">
+          Knee instability from ACL injuries affects 80,000–120,000 people annually in the US. Current rehabilitation methods face a critical tradeoff.
         </p>
-
-        <!-- ACL Injury Illustrations -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); margin-top: var(--space-6);">
-          <figure>
-            <img src="../documents/Haptic Device/fig1.jpg" alt="Medical illustration of fully torn anterior cruciate ligament showing damaged knee anatomy" style="width:100%; border-radius: 8px;">
-            <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Torn ACL anatomy</figcaption>
-          </figure>
-          <figure>
-            <img src="../documents/Haptic Device/fig2.png" alt="Illustration showing altered stance from torn ACL resulting in knee abduction and dynamic valgus" style="width:100%; border-radius: 8px;">
-            <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Altered stance with dynamic valgus</figcaption>
-          </figure>
-        </div>
+        <ul class="bullet-list">
+          <li><strong>Over-bracing risk:</strong> Passive braces constrain movement → muscle atrophy</li>
+          <li><strong>Under-bracing risk:</strong> Free movement during recovery → re-injury</li>
+          <li><strong>Dynamic valgus:</strong> Lateral knee collapse during movement is primary injury mechanism</li>
+          <li><strong>Gap:</strong> No device provides active guidance without physical constraint</li>
+        </ul>
       </div>
 
       <!-- METHODOLOGY -->
       <div id="methodology" class="project-block">
         <h3>Methodology</h3>
-        <p style="color:var(--text-dim); font-size: var(--text-sm);">
-          The project followed a comprehensive design-fabricate-test workflow integrating mechanical design, electronics development, and human perception studies.
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-2);">
+          Complete wearable system with sensing, actuation, and closed-loop control. Click a stage to jump there.
         </p>
+        <nav class="process-stepper">
+          <a href="#design-fab" class="process-step"><span class="step-num">1</span>Design</a>
+          <span class="process-connector"></span>
+          <a href="#electronics" class="process-step"><span class="step-num">2</span>Electronics</a>
+          <span class="process-connector"></span>
+          <a href="#control-logic" class="process-step"><span class="step-num">3</span>Control</a>
+          <span class="process-connector"></span>
+          <a href="#test-setup" class="process-step"><span class="step-num">4</span>Test</a>
+          <span class="process-connector"></span>
+          <a href="#results" class="process-step"><span class="step-num">5</span>Results</a>
+        </nav>
       </div>
 
       <!-- DESIGN & FABRICATION -->
       <div id="design-fab" class="project-subblock">
         <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Design &amp; Fabrication</h4>
-        
-        <p style="color:var(--text); margin-bottom: var(--space-4);">
-          The KICD consists of two bands worn above and below the knee forming a soft brace base. Three 1-axis silicone elastomer flex sensors, housed in 3D-printed TPU enclosures, detect knee angle across sagittal, abduction, and adduction planes. Six 3.3V 80mA ERM coin motors (1020 type) are mounted with 40mm spacing in 3D-printed PLA mounts on the upper knee band, providing vibration frequencies from 79-183 Hz.
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          The device consists of two adjustable bands: a lower band with flex sensors around the knee and an upper band with the ERM motor array on the thigh.
         </p>
 
-        <!-- ERM Array Image -->
-        <figure style="margin-bottom: var(--space-6);">
-          <img src="../documents/Haptic Device/fig4.jpg" alt="Internal view of 6-motor ERM array with 40mm spacing for optimal tactile discrimination" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Internal view of 6-motor ERM array with 40mm spacing for optimal tactile discrimination</figcaption>
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-value">2</span><span class="spec-label">Bands</span></div>
+          <div class="spec-item"><span class="spec-value">3</span><span class="spec-label">Flex sensors</span></div>
+          <div class="spec-item"><span class="spec-value">6</span><span class="spec-label">ERM motors</span></div>
+          <div class="spec-item"><span class="spec-value">40 mm</span><span class="spec-label">Motor spacing</span></div>
+        </div>
+
+        <ul class="bullet-list" style="margin-top: var(--space-4);">
+          <li><strong>Flex sensors:</strong> 3D-printed TPU enclosures for durability and compliance</li>
+          <li><strong>ERM motors:</strong> 1020-type, 79–183 Hz frequency range, 40mm spacing for ≥75% discrimination</li>
+          <li><strong>Bands:</strong> Adjustable elastic with Velcro attachment</li>
+        </ul>
+
+        <figure style="margin: var(--space-6) 0;">
+          <img src="../documents/Haptic Device/fig4.jpg" alt="KICD mechanical design showing flex sensor enclosures and ERM motor mounting" style="width:100%; border-radius: 8px;">
+          <figcaption>Flex sensor enclosures (TPU) and ERM motor array mounting configuration</figcaption>
         </figure>
       </div>
 
       <!-- ELECTRONICS -->
       <div id="electronics" class="project-subblock">
         <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Electronics Architecture</h4>
-        
-        <p style="color:var(--text); margin-bottom: var(--space-4);">
-          The system uses an Arduino Mega as the main controller, commanding all ERM motors and receiving data from ELEGOO Nano boards that interface with each flex sensor. Motors are driven through 2N2221A NPN transistors connected to 5V, controlled via PWM to overcome microcontroller current limitations. Two perfboards with connectorized bundles form the physical harness for serviceability.
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          The system uses an Arduino Mega as the main controller, commanding all ERM motors and receiving data from ELEGOO Nano boards that interface with each flex sensor.
         </p>
 
-        <!-- Electronics Architecture Image -->
-        <figure style="margin-bottom: var(--space-6);">
+        <ul class="bullet-list">
+          <li><strong>Main controller:</strong> Arduino Mega for motor control and data aggregation</li>
+          <li><strong>Sensor interface:</strong> ELEGOO Nano boards for each flex sensor</li>
+          <li><strong>Motor drivers:</strong> 2N2221A NPN transistors, PWM-controlled</li>
+          <li><strong>Wiring:</strong> Two perfboards with connectorized bundles for serviceability</li>
+        </ul>
+
+        <figure style="margin: var(--space-6) 0;">
           <img src="../documents/Haptic Device/fig5.png" alt="Electronics architecture: Arduino Mega controller with ELEGOO Nano sensor interfaces and transistor motor drivers" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Electronics architecture: Arduino Mega controller with ELEGOO Nano sensor interfaces and transistor motor drivers</figcaption>
+          <figcaption>Electronics architecture showing Arduino Mega, Nano sensor interfaces, and transistor motor drivers</figcaption>
         </figure>
       </div>
 
       <!-- CONTROL LOGIC -->
       <div id="control-logic" class="project-subblock">
         <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Control Logic</h4>
-        
-        <p style="color:var(--text); margin-bottom: var(--space-4);">
-          When knee angle exceeds thresholds (5° for side sensors, 8° for front sensor), directional vibration feedback activates. The vibration pattern starts at the instability direction and traces toward stability, creating an intuitive 'follow me' sensation. Motors activate in a staggered running pattern until the knee returns to neutral position. Automatic calibration (5-10 seconds) accounts for individual leg geometry.
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Threshold-based detection with staggered "follow me" vibration patterns that intuitively guide users toward stability.
         </p>
 
-        <!-- Vibration Pattern Images -->
-        <figure style="margin-bottom: var(--space-6);">
-          <img src="../documents/Haptic Device/fig6.jpg" alt="Timing diagram showing ERM vibration staggering pattern for forward knee bend case" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">ERM vibration staggering pattern for forward knee bend case</figcaption>
-        </figure>
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-value">5°</span><span class="spec-label">Warning threshold</span></div>
+          <div class="spec-item"><span class="spec-value">8°</span><span class="spec-label">Active threshold</span></div>
+          <div class="spec-item"><span class="spec-value">Auto</span><span class="spec-label">Calibration</span></div>
+        </div>
 
-        <figure style="margin-bottom: var(--space-6);">
-          <img src="../documents/Haptic Device/fig7.jpg" alt="ERM vibration patterns for all knee bend directions showing motor activation sequences" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Directional vibration patterns for forward bend, abduction, and adduction correction</figcaption>
-        </figure>
+        <ul class="bullet-list" style="margin-top: var(--space-4);">
+          <li><strong>Detection:</strong> Flex sensors detect knee angle across sagittal, abduction, and adduction planes</li>
+          <li><strong>Thresholds:</strong> 5° triggers warning, 8° triggers active correction feedback</li>
+          <li><strong>Feedback:</strong> Staggered "tracing" vibration pattern guides user directionally</li>
+          <li><strong>Calibration:</strong> Auto-calibration routine on startup for per-user adaptation</li>
+        </ul>
 
-        <figure style="margin-bottom: var(--space-6);">
-          <img src="../documents/Haptic Device/fig8.jpg" alt="Overall control architecture flowchart of KICD device" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Overall control architecture flowchart showing sensor input processing, threshold detection, and motor output control flow</figcaption>
-        </figure>
+        <!-- Control Logic Images -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
+          <figure>
+            <img src="../documents/Haptic Device/fig6.jpg" alt="Control logic diagram showing threshold-based detection" style="width:100%; border-radius: 8px;">
+            <figcaption>Threshold detection logic</figcaption>
+          </figure>
+          <figure>
+            <img src="../documents/Haptic Device/fig7.jpg" alt="Staggered vibration pattern visualization" style="width:100%; border-radius: 8px;">
+            <figcaption>Staggered vibration pattern</figcaption>
+          </figure>
+          <figure>
+            <img src="../documents/Haptic Device/fig8.jpg" alt="Directional feedback mapping" style="width:100%; border-radius: 8px;">
+            <figcaption>Directional feedback mapping</figcaption>
+          </figure>
+        </div>
       </div>
 
       <!-- TEST SETUP -->
       <div id="test-setup" class="project-block">
         <h3>Test Setup</h3>
-        <p style="color:var(--text); margin-bottom: var(--space-4);">
-          <strong>Perception Studies:</strong> Preliminary vibrotactile perception studies determined optimal design parameters. Two-point discrimination testing across 4 knee regions with 4 subjects established 40mm motor spacing for ≥75% discrimination accuracy. Intensity perception testing with 9 subjects characterized the nonlinear relationship between PWM duty cycle and perceived intensity, following a 2nd-order polynomial (R²=0.999).
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          <strong>Perception Studies:</strong> Preliminary vibrotactile perception studies determined optimal design parameters.
         </p>
-        <p style="color:var(--text); margin-bottom: var(--space-4);">
-          <strong>Device Validation:</strong> Device performance was validated through testing on 2 individuals with uninjured knees across varying ranges of motion (peak abduction angle 22±11°), followed by haptic demo sessions with 30+ subjects of varying size and gender using a haptic twin configuration for safe manipulation.
-        </p>
+
+        <div class="stat-strip">
+          <div class="stat-card">
+            <span class="stat-value">4</span>
+            <span class="stat-label">Subjects (discrimination)</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">9</span>
+            <span class="stat-label">Subjects (intensity)</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">30+</span>
+            <span class="stat-label">Demo subjects</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">22±11°</span>
+            <span class="stat-label">Peak abduction angle</span>
+          </div>
+        </div>
+
+        <ul class="bullet-list" style="margin-top: var(--space-4);">
+          <li><strong>Two-point discrimination:</strong> Testing across 4 knee regions established 40mm motor spacing</li>
+          <li><strong>Intensity perception:</strong> Characterized nonlinear PWM-to-sensation relationship</li>
+          <li><strong>Device validation:</strong> Tested on 2 individuals with uninjured knees</li>
+          <li><strong>Haptic demos:</strong> 30+ subjects using haptic twin configuration for safe manipulation</li>
+        </ul>
       </div>
 
       <!-- RESULTS -->
@@ -182,88 +240,107 @@
         <!-- Discrimination Results Image -->
         <figure style="margin-bottom: var(--space-6);">
           <img src="../documents/Haptic Device/fig9.png" alt="Two-point discrimination testing results showing perception accuracy across knee regions" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Two-point discrimination testing results showing ≥75% accuracy above 24mm across knee regions</figcaption>
+          <figcaption>Two-point discrimination results showing ≥75% accuracy above 24mm across knee regions</figcaption>
         </figure>
 
         <!-- Intensity Perception Image -->
         <figure style="margin-bottom: var(--space-6);">
           <img src="../documents/Haptic Device/fig10.png" alt="Intensity perception curve showing 2nd order polynomial relationship" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Intensity perception curve (R²=0.999) characterizing nonlinear PWM-to-sensation relationship</figcaption>
+          <figcaption>Intensity perception curve (R²=0.999) characterizing nonlinear PWM-to-sensation relationship</figcaption>
         </figure>
 
-        <p style="color:var(--text); margin-bottom: var(--space-4);">
-          <strong>Key Findings:</strong>
-        </p>
-        <ul style="color:var(--text); margin-bottom: var(--space-4); padding-left: var(--space-6);">
-          <li>100% accuracy for front knee bend detection and haptic triggering</li>
-          <li>50% accuracy for compounded abduction direction (requires per-user calibration tuning)</li>
-          <li>30+ subjects tested in haptic demo sessions with majority successfully perceiving directional feedback</li>
-          <li>≥75% two-point discrimination accuracy achieved above 24mm spacing, near-perfect above 40mm</li>
-          <li>Intensity perception follows 2nd-order polynomial curve (R²=0.999) with saturation at PWM 225-255</li>
-          <li>6% of subjects experienced knismesis (tickling sensation) preventing response</li>
-          <li>Vibration perceivable through clothing with no significant damping effect on discrimination</li>
-        </ul>
+        <details class="detail-toggle highlight-style">
+          <summary>
+            <span class="detail-label">Data</span>
+            <span class="detail-title">Key findings from testing</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>100% accuracy:</strong> Front knee bend detection and haptic triggering</li>
+              <li><strong>50% accuracy:</strong> Compounded abduction direction (requires per-user calibration)</li>
+              <li><strong>≥75% discrimination:</strong> Achieved above 24mm spacing, near-perfect above 40mm</li>
+              <li><strong>R²=0.999:</strong> Intensity perception follows 2nd-order polynomial curve</li>
+              <li><strong>6% knismesis:</strong> Subjects experienced tickling sensation preventing response</li>
+              <li><strong>Clothing:</strong> Vibration perceivable through clothing with no significant damping</li>
+            </ul>
+          </div>
+        </details>
 
         <!-- Results Table -->
-        <div style="margin-bottom: var(--space-6); overflow-x: auto;">
-          <p style="color:var(--headline); font-weight: 600; margin-bottom: var(--space-3);">Two-Point Discrimination Results by Knee Region</p>
-          <table style="width:100%; border-collapse: collapse; font-size: var(--text-sm);">
-            <thead>
-              <tr style="background: var(--surface-2); color: var(--headline);">
-                <th style="padding: var(--space-3); text-align: left; border: 1px solid var(--border);">Region</th>
-                <th style="padding: var(--space-3); text-align: left; border: 1px solid var(--border);">Location</th>
-                <th style="padding: var(--space-3); text-align: left; border: 1px solid var(--border);">24mm Accuracy</th>
-                <th style="padding: var(--space-3); text-align: left; border: 1px solid var(--border);">40mm Accuracy</th>
-              </tr>
-            </thead>
-            <tbody style="color: var(--text);">
-              <tr>
-                <td style="padding: var(--space-3); border: 1px solid var(--border);">1U</td>
-                <td style="padding: var(--space-3); border: 1px solid var(--border);">Front</td>
-                <td style="padding: var(--space-3); border: 1px solid var(--border);">≥75%</td>
-                <td style="padding: var(--space-3); border: 1px solid var(--border);">~100%</td>
-              </tr>
-              <tr>
-                <td style="padding: var(--space-3); border: 1px solid var(--border);">2U</td>
-                <td style="padding: var(--space-3); border: 1px solid var(--border);">Outer</td>
-                <td style="padding: var(--space-3); border: 1px solid var(--border);">≥75%</td>
-                <td style="padding: var(--space-3); border: 1px solid var(--border);">~100%</td>
-              </tr>
-              <tr>
-                <td style="padding: var(--space-3); border: 1px solid var(--border);">3U</td>
-                <td style="padding: var(--space-3); border: 1px solid var(--border);">Back</td>
-                <td style="padding: var(--space-3); border: 1px solid var(--border);">≥75%</td>
-                <td style="padding: var(--space-3); border: 1px solid var(--border);">Variable (excluded from design)</td>
-              </tr>
-              <tr>
-                <td style="padding: var(--space-3); border: 1px solid var(--border);">4U</td>
-                <td style="padding: var(--space-3); border: 1px solid var(--border);">Inner</td>
-                <td style="padding: var(--space-3); border: 1px solid var(--border);">≥75%</td>
-                <td style="padding: var(--space-3); border: 1px solid var(--border);">~100%</td>
-              </tr>
-            </tbody>
-          </table>
-          <p style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2); font-style: italic;">
-            40mm spacing selected for ERM array to ensure reliable discrimination across all active regions
-          </p>
-        </div>
+        <details class="detail-toggle compact" style="margin-top: var(--space-4);">
+          <summary>
+            <span class="detail-label">Table</span>
+            <span class="detail-title">Two-point discrimination by region</span>
+          </summary>
+          <div class="detail-body">
+            <div style="overflow-x: auto;">
+              <table style="width:100%; border-collapse: collapse; font-size: var(--text-sm);">
+                <thead>
+                  <tr style="border-bottom: 2px solid var(--text-dim);">
+                    <th style="text-align: left; padding: var(--space-2); color: var(--headline);">Region</th>
+                    <th style="text-align: left; padding: var(--space-2); color: var(--headline);">Location</th>
+                    <th style="text-align: left; padding: var(--space-2); color: var(--headline);">24mm Accuracy</th>
+                    <th style="text-align: left; padding: var(--space-2); color: var(--headline);">40mm Accuracy</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">1U</td>
+                    <td style="padding: var(--space-2); color: var(--text-dim);">Front</td>
+                    <td style="padding: var(--space-2); color: var(--text-dim);">≥75%</td>
+                    <td style="padding: var(--space-2); color: var(--text-dim);">~100%</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">2U</td>
+                    <td style="padding: var(--space-2); color: var(--text-dim);">Outer</td>
+                    <td style="padding: var(--space-2); color: var(--text-dim);">≥75%</td>
+                    <td style="padding: var(--space-2); color: var(--text-dim);">~100%</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">3U</td>
+                    <td style="padding: var(--space-2); color: var(--text-dim);">Back</td>
+                    <td style="padding: var(--space-2); color: var(--text-dim);">≥75%</td>
+                    <td style="padding: var(--space-2); color: var(--text-dim);">Variable</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: var(--space-2); color: var(--text);">4U</td>
+                    <td style="padding: var(--space-2); color: var(--text-dim);">Inner</td>
+                    <td style="padding: var(--space-2); color: var(--text-dim);">≥75%</td>
+                    <td style="padding: var(--space-2); color: var(--text-dim);">~100%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </details>
 
-        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-4);">
-          <strong style="color:var(--headline);">Future Work:</strong> Replace ERM motors with voice coils for independent frequency and amplitude modulation; upgrade to 2-axis flex sensors for accurate compound bend detection; redesign TPU mounts with accordion-style walls for multi-plane flexibility; conduct formal user study with motor learning evaluation protocol.
-        </p>
+        <details class="detail-toggle compact" style="margin-top: var(--space-4);">
+          <summary>
+            <span class="detail-label">Future</span>
+            <span class="detail-title">Planned improvements</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>Voice coils:</strong> Replace ERMs for finer frequency control</li>
+              <li><strong>2-axis flex sensors:</strong> Better abduction/adduction detection</li>
+              <li><strong>Accordion TPU mounts:</strong> Improved mechanical compliance</li>
+              <li><strong>Formal user study:</strong> IRB-approved clinical validation</li>
+            </ul>
+          </div>
+        </details>
       </div>
 
       <!-- DEMO VIDEO -->
       <div id="demo-video" class="project-block">
         <h3>Demo Video</h3>
-        <p style="color:var(--text-dim); max-width:62ch; margin-bottom: var(--space-6); font-size: var(--text-sm);">
-          Demonstration of the KICD device mounted on a teddy bear mannequin, showing flex sensor detection of incorrect knee positions in multiple orientations and corresponding directional haptic feedback response from the ERM motor array.
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Demonstration of the KICD device mounted on a teddy bear mannequin, showing flex sensor detection of incorrect knee positions and corresponding directional haptic feedback response.
         </p>
         <div style="position: relative; width: 100%; padding-bottom: 56.25%; margin-bottom: var(--space-6);">
           <video 
             controls 
             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px;"
-            poster="../documents/Haptic Device/fig3_device_demonstration.png">
+            poster="../documents/Haptic Device/fig3.jpg">
             <source src="../documents/Haptic Device/demovideo2.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -285,6 +362,21 @@
             </iframe>
           </div>
         </div>
+
+        <details class="detail-toggle compact" style="margin-top: var(--space-6);">
+          <summary>
+            <span class="detail-label">Skills</span>
+            <span class="detail-title">Technical skills demonstrated</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>Electronics:</strong> Arduino, transistor motor drivers, PWM control</li>
+              <li><strong>Fabrication:</strong> 3D printing (TPU), wearable integration</li>
+              <li><strong>Haptics:</strong> Vibrotactile perception, two-point discrimination</li>
+              <li><strong>User Studies:</strong> Perception testing, data analysis</li>
+            </ul>
+          </div>
+        </details>
       </div>
 
     </div><!-- end project-content -->
@@ -328,144 +420,39 @@
   setInterval(tickClock, 1000);
 
   // ── Sidebar Scrollspy ──
-const sidebar = document.querySelector('.project-sidebar');
-const sidebarHeader = document.querySelector('.sidebar-header');
-const sidebarLinks = document.querySelectorAll('.sidebar-link');
-const sections = [];
+  const sidebar = document.querySelector('.project-sidebar');
+  const sidebarHeader = document.querySelector('.sidebar-header');
+  const sidebarLinks = document.querySelectorAll('.sidebar-link');
+  const sections = [];
 
-// Build sections array
-sidebarLinks.forEach(link => {
-  const targetId = link.getAttribute('href').substring(1);
-  const target = document.getElementById(targetId);
-  if (target) {
-    sections.push({ id: targetId, el: target, link: link });
-  }
-});
-
-// Smart auto-scroll sidebar to keep header + active link visible
-function scrollSidebarToActive(activeLink) {
-  if (!sidebar || !activeLink) return;
-  
-  const allLinks = Array.from(sidebarLinks);
-  const activeIndex = allLinks.indexOf(activeLink);
-  const totalLinks = allLinks.length;
-  
-  // Only scroll sidebar down for the last 2 items (Results, Gallery)
-  // Otherwise, keep at top so Summary is always visible
-  if (activeIndex >= totalLinks - 2) {
-    // For bottom items, scroll to show them
-    const headerHeight = sidebarHeader ? sidebarHeader.offsetHeight + 10 : 50;
-    const scrollTarget = activeLink.offsetTop - headerHeight;
-    sidebar.scrollTo({
-      top: scrollTarget,
-      behavior: 'smooth'
-    });
-  } else {
-    // For top/middle items, keep sidebar at top
-    sidebar.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  }
-}
-
-function updateActiveLink() {
-  const scrollPos = window.scrollY;
-  const windowHeight = window.innerHeight;
-  const docHeight = document.documentElement.scrollHeight;
-  
-  // Check if at bottom of page
-  const atBottom = scrollPos + windowHeight >= docHeight - 50;
-  
-  let activeSection = sections[0];
-  
-  if (atBottom && sections.length > 0) {
-    activeSection = sections[sections.length - 1];
-  } else {
-    const offset = 200;
-    for (const section of sections) {
-      const rect = section.el.getBoundingClientRect();
-      if (rect.top <= offset) {
-        activeSection = section;
-      }
-    }
-  }
-  
-  // Update active states
-  sidebarLinks.forEach(link => link.classList.remove('active'));
-  if (activeSection) {
-    activeSection.link.classList.add('active');
-    scrollSidebarToActive(activeSection.link);
-  }
-}
-
-// Smooth scroll on click
-sidebarLinks.forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
+  sidebarLinks.forEach(link => {
     const targetId = link.getAttribute('href').substring(1);
     const target = document.getElementById(targetId);
-    
-    if (target) {
-      const headerOffset = 160;
-      const elementPosition = target.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.scrollY - headerOffset;
-      
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-      
-      // Update active state immediately
-      sidebarLinks.forEach(l => l.classList.remove('active'));
-      link.classList.add('active');
-      scrollSidebarToActive(link);
-    }
+    if (target) sections.push({ id: targetId, el: target, link: link });
   });
-});
 
-// Throttled scroll listener
-let ticking = false;
-window.addEventListener('scroll', () => {
-  if (!ticking) {
-    window.requestAnimationFrame(() => {
-      updateActiveLink();
-      ticking = false;
-    });
-    ticking = true;
+  function updateActiveLink() {
+    let current = sections[0];
+    const scrollY = window.scrollY + 180;
+
+    for (const section of sections) {
+      if (section.el.offsetTop <= scrollY) current = section;
+    }
+
+    sidebarLinks.forEach(link => link.classList.remove('active'));
+    if (current) current.link.classList.add('active');
   }
-});
 
-// Initial state
-updateActiveLink();
+  window.addEventListener('scroll', updateActiveLink, { passive: true });
+  updateActiveLink();
 
   // ── Back to Top Button ──
-const topBtn = document.getElementById('sidebarTopBtn');
-
-if (topBtn) {
-  topBtn.addEventListener('click', () => {
-    // Scroll page to top
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  const topBtn = document.getElementById('sidebarTopBtn');
+  if (topBtn) {
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-    
-    // Scroll sidebar to top
-    if (sidebar) {
-      sidebar.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
-    
-    // Update active state to Summary
-    sidebarLinks.forEach(link => link.classList.remove('active'));
-    if (sidebarLinks[0]) {
-      sidebarLinks[0].classList.add('active');
-    }
-  });
-}
+  }
 </script>
-
 </body>
 </html>

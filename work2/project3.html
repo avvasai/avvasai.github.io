@@ -31,54 +31,80 @@
   <a href="../index.html#info" class="back-link">← Back to projects</a>
 
   <div class="project-layout">
-    
-    <!-- STICKY SIDEBAR - Always visible -->
+
+    <!-- STICKY SIDEBAR -->
     <aside class="project-sidebar" id="projectSidebar">
-    <div class="sidebar-header">On This Page</div>
-    <a href="#summary" class="sidebar-link active">Summary</a>
-    <a href="#problem" class="sidebar-link">Problem Statement</a>
-    <a href="#methodology" class="sidebar-link">Methodology</a>
-    <a href="#preprocessing" class="sidebar-link sidebar-sublink">Data Preprocessing</a>
-    <a href="#models" class="sidebar-link sidebar-sublink">ML Models</a>
-    <a href="#validation" class="sidebar-link">Cross-Validation</a>
-    <a href="#results" class="sidebar-link">Results</a>
-    <a href="#additional-info" class="sidebar-link">Additional Information</a>
-    <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">
-  ↑ Top
-    </button>
-  </aside>
-  
+      <div class="sidebar-header">On This Page</div>
+      <a href="#summary" class="sidebar-link active">Summary</a>
+      <a href="#problem" class="sidebar-link">Problem Statement</a>
+      <a href="#methodology" class="sidebar-link">Methodology</a>
+      <a href="#preprocessing" class="sidebar-link sidebar-sublink">Data Preprocessing</a>
+      <a href="#models" class="sidebar-link sidebar-sublink">ML Models</a>
+      <a href="#validation" class="sidebar-link">Cross-Validation</a>
+      <a href="#results" class="sidebar-link">Results</a>
+      <a href="#additional-info" class="sidebar-link">Additional Information</a>
+      <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">↑ Top</button>
+    </aside>
+
     <!-- MAIN CONTENT -->
     <div class="project-content">
 
       <!-- SUMMARY -->
       <div id="summary" class="project-block">
-        <p class="section-eyebrow">Project · Data Science & Machine Learning</p>
-        <h2>MoBI: Mobile Brain/Body Imaging Data Analysis</h2>
-        <p>
-          Machine learning pipeline for analyzing Mobile Brain/Body Imaging data to predict behavioral errors — Johns Hopkins University, Biomedical Data Design | Team MoBI
-        </p>
-        <p>
-          <strong>Duration:</strong> September 2024 – November 2024
-        </p>
-        <p>
+        <div class="project-hero">
+          <div class="project-hero-text">
+            <p class="section-eyebrow">Project · Data Science &amp; Machine Learning</p>
+            <h2>MoBI: Mobile Brain/Body Imaging Data Analysis</h2>
+            <p class="project-hero-meta">Johns Hopkins University · Biomedical Data Design · Team MoBI · Sep 2024 – Nov 2024</p>
+            <div class="spec-ribbon">
+              <div class="dim-tag"><span class="dim-value">61</span><span class="dim-label">Subjects</span></div>
+              <div class="dim-tag"><span class="dim-value">~17k</span><span class="dim-label">Data streams/subject</span></div>
+              <div class="dim-tag"><span class="dim-value">14</span><span class="dim-label">Input features</span></div>
+              <div class="dim-tag"><span class="dim-value">0.8–1.0</span><span class="dim-label">R² (within-subject)</span></div>
+            </div>
+          </div>
+        </div>
+
+        <p style="color:var(--text); margin-top: var(--space-6);">
           This research project at Johns Hopkins University focused on developing machine learning models to analyze Mobile Brain/Body Imaging (MoBI) data and predict behavioral errors. The goal was to reduce the number of required data streams for MoBI experiments while maintaining predictive accuracy—ultimately working toward simplified diagnostic tools for the 17.4% of children affected by mental, behavioral, and developmental disorders. I implemented and compared Ridge Regression and Random Forest models, applied multiple normalization techniques (Z-score, Min-Max, Robust Scaling), and conducted extensive cross-validation including 5-fold CV and Leave-One-Out CV across 61 subjects with ~17,000 data streams each. Key findings showed that Random Forest achieved R² values of 0.8-1.0 at sample fractions above 0.8, while cross-subject generalization remained challenging. The project established a foundation for feature importance analysis and transfer learning approaches planned for manuscript publication.
         </p>
-        <p>
-          <strong>Team Members:</strong> Isha Dev, Sai Pranav Avva, Taiming Chen, Liora Dsilva, Deborah Roman, Riya Modi
+
+        <div class="stat-strip" style="margin-top: var(--space-6);">
+          <div class="stat-card">
+            <span class="stat-value">61</span>
+            <span class="stat-label">Subjects Analyzed</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">~17,000</span>
+            <span class="stat-label">Data Streams per Subject</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">14</span>
+            <span class="stat-label">Input Features</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">0.8–1.0</span>
+            <span class="stat-label">R² (RF, high sample fraction)</span>
+          </div>
+        </div>
+
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-4);">
+          <strong style="color:var(--headline);">Team Members:</strong> Isha Dev, Sai Pranav Avva, Taiming Chen, Liora Dsilva, Deborah Roman, Riya Modi
         </p>
       </div>
 
       <!-- PROBLEM STATEMENT -->
       <div id="problem" class="project-block">
         <h3>Problem Statement</h3>
-        <p style="color:var(--text);">
-          Running complete MoBI experiments is time-consuming and expensive. Existing model limitations include high prediction error and reliance on simple ridge regression approaches. The challenge: could we reduce the number of data streams required for MoBI experiments while maintaining predictive accuracy? Could we find a relationship between MoBI data and behavioral errors that enables simplified diagnostic tools for the 17.4% of children affected by mental, behavioral, and developmental disorders?
-        </p>
-        <p style="color:var(--text); margin-top: var(--space-4);">
-          <strong>Our Novel Approach:</strong>
-        </p>
-        <ul style="color:var(--text); margin-bottom: var(--space-4); padding-left: var(--space-4);">
+        <ul class="bullet-list">
+          <li><strong>Time &amp; Cost:</strong> Running complete MoBI experiments is time-consuming and expensive</li>
+          <li><strong>Model Limitations:</strong> Existing approaches rely on simple ridge regression with high prediction error</li>
+          <li><strong>Core Challenge:</strong> Could we reduce the number of data streams required for MoBI experiments while maintaining predictive accuracy?</li>
+          <li><strong>Clinical Impact:</strong> Could we find a relationship between MoBI data and behavioral errors that enables simplified diagnostic tools for the 17.4% of children affected by mental, behavioral, and developmental disorders?</li>
+        </ul>
+
+        <p style="color:var(--text); margin-top: var(--space-4);"><strong>Our Novel Approach:</strong></p>
+        <ul class="bullet-list">
           <li>Comparing ridge regression with nonlinear regression models (Random Forest)</li>
           <li>Characterize feature importance</li>
           <li>Implement time as a feature in the ML model for this dataset</li>
@@ -88,9 +114,18 @@
       <!-- METHODOLOGY -->
       <div id="methodology" class="project-block">
         <h3>Methodology</h3>
-        <p style="color:var(--text-dim); font-size: var(--text-sm);">
-          The project followed a comprehensive data preprocessing, model development, and validation workflow comparing linear and nonlinear regression approaches. We replicated results across all team members' systems to ensure reproducibility before applying advanced techniques.
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-2);">
+          The project followed a comprehensive data preprocessing, model development, and validation workflow comparing linear and nonlinear regression approaches. We replicated results across all team members' systems to ensure reproducibility before applying advanced techniques. Click a stage to jump there.
         </p>
+        <nav class="process-stepper">
+          <a href="#preprocessing" class="process-step"><span class="step-num">1</span>Preprocess</a>
+          <span class="process-connector"></span>
+          <a href="#models" class="process-step"><span class="step-num">2</span>Model</a>
+          <span class="process-connector"></span>
+          <a href="#validation" class="process-step"><span class="step-num">3</span>Validate</a>
+          <span class="process-connector"></span>
+          <a href="#results" class="process-step"><span class="step-num">4</span>Results</a>
+        </nav>
       </div>
 
       <!-- DATA PREPROCESSING -->
@@ -100,26 +135,25 @@
         <p style="color:var(--text); margin-bottom: var(--space-4);">
           <strong>Dataset Overview:</strong> Processed and analyzed data from 61 subjects with approximately 17,000 data streams per subject across 14 input features including:
         </p>
-        <ul style="color:var(--text); margin-bottom: var(--space-4); padding-left: var(--space-4);">
-          <li>ECG metrics: ecg_rri, ecg_task_ts, ecg_heart_rate, ecg_rri_mean_5, ecg_rri_mean_10, ecg_rri_std_5, ecg_rri_std_10</li>
-          <li>EDA signals: eda_filtered, eda_peaks</li>
-          <li>Respiration data: resp_filtered, resp_resp_rate</li>
-          <li>Motion and EMG: abs_motion_filtered, emg1_filtered, emg2_filtered</li>
+        <ul class="bullet-list">
+          <li><strong>ECG metrics:</strong> ecg_rri, ecg_task_ts, ecg_heart_rate, ecg_rri_mean_5, ecg_rri_mean_10, ecg_rri_std_5, ecg_rri_std_10</li>
+          <li><strong>EDA signals:</strong> eda_filtered, eda_peaks</li>
+          <li><strong>Respiration data:</strong> resp_filtered, resp_resp_rate</li>
+          <li><strong>Motion and EMG:</strong> abs_motion_filtered, emg1_filtered, emg2_filtered</li>
         </ul>
 
-        <p style="color:var(--text); margin-bottom: var(--space-4);">
+        <p style="color:var(--text); margin-top: var(--space-4); margin-bottom: var(--space-4);">
           <strong>Normalization Techniques:</strong> To ensure fair contribution of all features to the regression models, three normalization preprocessing techniques were applied with comparative heatmap visualization:
         </p>
-        <ul style="color:var(--text); margin-bottom: var(--space-4); padding-left: var(--space-4);">
+        <ul class="bullet-list">
           <li><strong>Min-Max Scaling:</strong> Rescales features to [0, 1] range</li>
           <li><strong>Z-Score Normalization:</strong> Standardizes to zero mean and unit variance</li>
           <li><strong>Robust Scaling:</strong> Uses median and IQR, robust to outliers</li>
         </ul>
 
-        <!-- Normalization Heatmaps Image -->
-        <figure style="margin-bottom: var(--space-6);">
+        <figure style="margin-top: var(--space-6);">
           <img src="../documents/Biomedical Data Design/mobi_normalization_heatmaps.jpg" alt="Comparison of normalization techniques: Before normalization, Min-Max, Z-Score, and Robust Scaling heatmaps showing Subject 1 data across all 14 features and 17000 time steps" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Heatmap visualization comparing raw data with three normalization preprocessing techniques applied to Subject 1 MoBI dataset across 14 features</figcaption>
+          <figcaption>Heatmap visualization comparing raw data with three normalization preprocessing techniques applied to Subject 1 MoBI dataset across 14 features</figcaption>
         </figure>
       </div>
 
@@ -135,14 +169,11 @@
           <strong>Random Forest Regression:</strong> Implemented nonlinear Random Forest regression to capture complex relationships in the MoBI data. Initial replication encountered inconsistencies due to multithreading issues, which were resolved by explicitly calling the random seed (RS = 23) prior to every trial. Evaluated performance across varying sample fractions on a logarithmic scale from 1000 to the total number of data streams.
         </p>
 
-        <p style="color:var(--text); margin-bottom: var(--space-4);">
-          <strong>Target Variables:</strong> Three target variables were predicted:
-        </p>
-        <ul style="color:var(--text); margin-bottom: var(--space-4); padding-left: var(--space-4);">
-          <li><strong>Position Difference (y_pos_dif):</strong> user_pos - stim_pos</li>
-          <li><strong>Stimulus Position (y_pos/stim_pos):</strong> Target position</li>
-          <li><strong>Stimulus Speed (y_speed/change_rate_x):</strong> Rate of change</li>
-        </ul>
+        <div class="spec-grid" style="margin-top: var(--space-4);">
+          <div class="spec-item"><span class="spec-value">0.01</span><span class="spec-label">Ridge alpha (optimized)</span></div>
+          <div class="spec-item"><span class="spec-value">RS = 23</span><span class="spec-label">Random seed</span></div>
+          <div class="spec-item"><span class="spec-value">Log scale</span><span class="spec-label">Sample fraction sweep</span></div>
+        </div>
       </div>
 
       <!-- CROSS-VALIDATION -->
@@ -151,11 +182,11 @@
         <p style="color:var(--text); margin-bottom: var(--space-4);">
           Implemented comprehensive cross-validation strategies to evaluate model generalization:
         </p>
-        <ul style="color:var(--text); margin-bottom: var(--space-4); padding-left: var(--space-4);">
+        <ul class="bullet-list">
           <li><strong>5-Fold Cross-Validation:</strong> Within-subject validation to assess model performance on held-out data from the same subject</li>
           <li><strong>Leave-One-Out Cross-Validation (LOOCV):</strong> Cross-subject validation where models trained on N-1 subjects predict on the held-out subject — critical for assessing generalizability</li>
         </ul>
-        <p style="color:var(--text); margin-bottom: var(--space-4);">
+        <p style="color:var(--text); margin-top: var(--space-4);">
           Identified optimal training-to-test split ratio of 0.4:0.6 for computational efficiency. Resolved cross-system reproducibility issues through explicit random seed initialization (RS = 23).
         </p>
       </div>
@@ -170,46 +201,29 @@
           Random Forest regression with 5-fold cross-validation across all 61 subjects (~17,000 raw data streams each). Sample fractions above approximately 0.8 consistently achieved R² values between 0.8 and 1.0, indicating excellent within-subject prediction performance.
         </p>
 
-        <!-- RF Position Difference -->
         <figure style="margin-bottom: var(--space-6);">
-          <img src="../documents/Biomedical Data Design/image5.jpg"alt="Random Forest Regression for Position Difference: R2 Score vs Sample Fraction showing all 61 subjects reaching 0.8-1.0 R² at high sample fractions" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Random Forest — Target: Position Difference | 5-fold CV | 61 subjects | Truncated at R² = 0</figcaption>
+          <img src="../documents/Biomedical Data Design/image5.jpg" alt="Random Forest Regression for Position Difference: R2 Score vs Sample Fraction showing all 61 subjects reaching 0.8-1.0 R² at high sample fractions" style="width:100%; border-radius: 8px;">
+          <figcaption>Random Forest — Target: Position Difference | 5-fold CV | 61 subjects | Truncated at R² = 0</figcaption>
         </figure>
 
-        <!-- RF Stimulus Position -->
         <figure style="margin-bottom: var(--space-6);">
           <img src="../documents/Biomedical Data Design/image9.jpg" alt="Random Forest Regression for Stimulus Position: R2 Score vs Sample Fraction showing convergence to R² near 1.0" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Random Forest — Target: Stimulus Position | 5-fold CV | 61 subjects</figcaption>
+          <figcaption>Random Forest — Target: Stimulus Position | 5-fold CV | 61 subjects</figcaption>
         </figure>
 
-        <!-- RF Stimulus Speed -->
         <figure style="margin-bottom: var(--space-6);">
           <img src="../documents/Biomedical Data Design/image1.jpg" alt="Random Forest Regression for Stimulus Speed: R2 Score vs Sample Fraction" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Random Forest — Target: Stimulus Speed (change_rate_x) | 5-fold CV | 61 subjects</figcaption>
+          <figcaption>Random Forest — Target: Stimulus Speed (change_rate_x) | 5-fold CV | 61 subjects</figcaption>
         </figure>
 
-        <h4 style="color:var(--headline); margin-top: var(--space-6); margin-bottom: var(--space-3);">Normalization Impact — Random Forest</h4>
-        
-        <p style="color:var(--text); margin-bottom: var(--space-4);">
-          Comparison of Random Forest performance across raw data and three normalization techniques (5 subjects, ~17,000 normalized data streams). All normalization methods showed similar performance, with minimal impact on final R² scores.
-        </p>
-
-        <!-- RF Normalized Position Difference -->
-        <figure style="margin-bottom: var(--space-6);">
-          <img src="../documents/Biomedical Data Design/image15.jpg" alt="Random Forest Mean R² Scores for Position Difference comparing Raw Data, Min-Max, Z-Score, and Robust Scaling normalization" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Random Forest Mean R² — Position Difference | Comparing normalization techniques</figcaption>
-        </figure>
-
-        <!-- RF Normalized Stimulus Position -->
         <figure style="margin-bottom: var(--space-6);">
           <img src="../documents/Biomedical Data Design/image18.jpg" alt="Random Forest Mean R² Scores for Stimulus Position comparing normalization methods" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Random Forest Mean R² — Stimulus Position | Comparing normalization techniques</figcaption>
+          <figcaption>Random Forest Mean R² — Stimulus Position | Comparing normalization techniques</figcaption>
         </figure>
 
-        <!-- RF Normalized Stimulus Speed -->
         <figure style="margin-bottom: var(--space-6);">
           <img src="../documents/Biomedical Data Design/image10.jpg" alt="Random Forest Mean R² Scores for Stimulus Speed comparing normalization methods" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Random Forest Mean R² — Stimulus Speed | Comparing normalization techniques</figcaption>
+          <figcaption>Random Forest Mean R² — Stimulus Speed | Comparing normalization techniques</figcaption>
         </figure>
 
         <h4 style="color:var(--headline); margin-top: var(--space-6); margin-bottom: var(--space-3);">Ridge Regression — 5-Fold Cross-Validation</h4>
@@ -218,22 +232,19 @@
           Ridge regression showed significantly lower R² values (max ~0.08) compared to Random Forest, confirming the nonlinear nature of the MoBI data relationships. Results shown for 1 subject with ~17,000 normalized data streams.
         </p>
 
-        <!-- Ridge Position Difference -->
         <figure style="margin-bottom: var(--space-6);">
           <img src="../documents/Biomedical Data Design/image27.jpg" alt="Ridge Regression Mean R² Scores for Position Difference showing max R² around 0.07-0.08" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Ridge Regression Mean R² — Position Difference | 5-fold CV | Comparing normalization techniques</figcaption>
+          <figcaption>Ridge Regression Mean R² — Position Difference | 5-fold CV | Comparing normalization techniques</figcaption>
         </figure>
 
-        <!-- Ridge Stimulus Position -->
         <figure style="margin-bottom: var(--space-6);">
           <img src="../documents/Biomedical Data Design/image12.jpg" alt="Ridge Regression Mean R² Scores for Stimulus Position" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Ridge Regression Mean R² — Stimulus Position | 5-fold CV | Comparing normalization techniques</figcaption>
+          <figcaption>Ridge Regression Mean R² — Stimulus Position | 5-fold CV | Comparing normalization techniques</figcaption>
         </figure>
 
-        <!-- Ridge Stimulus Speed -->
         <figure style="margin-bottom: var(--space-6);">
           <img src="../documents/Biomedical Data Design/image2.jpg" alt="Ridge Regression Mean R² Scores for Stimulus Speed showing max R² around 0.014" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Ridge Regression Mean R² — Stimulus Speed | 5-fold CV | Comparing normalization techniques</figcaption>
+          <figcaption>Ridge Regression Mean R² — Stimulus Speed | 5-fold CV | Comparing normalization techniques</figcaption>
         </figure>
 
         <h4 style="color:var(--headline); margin-top: var(--space-6); margin-bottom: var(--space-3);">Ridge vs Random Forest — Direct Comparison</h4>
@@ -242,22 +253,19 @@
           Side-by-side comparison clearly demonstrates Random Forest superiority over Ridge Regression for within-subject MoBI prediction tasks.
         </p>
 
-        <!-- Comparison Position Difference -->
         <figure style="margin-bottom: var(--space-6);">
           <img src="../documents/Biomedical Data Design/comparison_position_difference.png" alt="Side-by-side comparison of Ridge (max 0.07) vs Random Forest (max 1.0) for Position Difference" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Ridge vs Random Forest — Position Difference | Note the scale difference: Ridge maxes at ~0.07, RF reaches ~1.0</figcaption>
+          <figcaption>Ridge vs Random Forest — Position Difference | Note the scale difference: Ridge maxes at ~0.07, RF reaches ~1.0</figcaption>
         </figure>
 
-        <!-- Comparison Stimulus Position -->
         <figure style="margin-bottom: var(--space-6);">
           <img src="../documents/Biomedical Data Design/comparison_stimulus_position.png" alt="Side-by-side comparison of Ridge vs Random Forest for Stimulus Position" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Ridge vs Random Forest — Stimulus Position</figcaption>
+          <figcaption>Ridge vs Random Forest — Stimulus Position</figcaption>
         </figure>
 
-        <!-- Comparison Stimulus Speed -->
         <figure style="margin-bottom: var(--space-6);">
           <img src="../documents/Biomedical Data Design/comparison_stimulus_speed.png" alt="Side-by-side comparison of Ridge vs Random Forest for Stimulus Speed" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Ridge vs Random Forest — Stimulus Speed</figcaption>
+          <figcaption>Ridge vs Random Forest — Stimulus Speed</figcaption>
         </figure>
 
         <h4 style="color:var(--headline); margin-top: var(--space-6); margin-bottom: var(--space-3);">Leave-One-Out Cross-Validation (LOOCV)</h4>
@@ -266,54 +274,33 @@
           <strong>Cross-Subject Generalization Challenge:</strong> LOOCV revealed significant challenges in cross-subject generalization. When training on N-1 subjects and predicting on the held-out subject, R² values dropped dramatically, ranging between -3.0 and 0.1 — indicating high inter-subject variability.
         </p>
 
-        <!-- RF LOOCV Results -->
         <figure style="margin-bottom: var(--space-6);">
           <img src="../documents/Biomedical Data Design/mobi_rf_results.png" alt="Random Forest LOOCV results showing negative R² values for 3 subjects, indicating poor cross-subject generalization" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Random Forest LOOCV — 3 subjects | Before vs Min-Max Normalization | Negative R² indicates model performs worse than mean prediction</figcaption>
+          <figcaption>Random Forest LOOCV — 3 subjects | Before vs Min-Max Normalization | Negative R² indicates model performs worse than mean prediction</figcaption>
         </figure>
 
-        <!-- Ridge LOOCV 61 subjects -->
         <figure style="margin-bottom: var(--space-6);">
           <img src="../documents/Biomedical Data Design/mobi_loocv_results.png" alt="Ridge Regression LOOCV results across all 61 subjects showing consistently negative R² values" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Ridge Regression LOOCV — 61 subjects | All three targets | Before Normalization, Min-Max, and Robust Scaling</figcaption>
+          <figcaption>Ridge Regression LOOCV — 61 subjects | All three targets | Before Normalization, Min-Max, and Robust Scaling</figcaption>
         </figure>
 
-        <!-- Ridge LOOCV 3 subjects -->
-        <!-- <figure style="margin-bottom: var(--space-6);">
-          <img src="../documents/Biomedical Data Design/mobi_rf_results.png" alt="Ridge Regression LOOCV detailed view for 3 subjects" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Ridge Regression LOOCV — 3 subjects detailed view | Comparing normalization methods</figcaption>
-        </figure> -->
-
-        <h4 style="color:var(--headline); margin-top: var(--space-6); margin-bottom: var(--space-3);">Key Metrics</h4>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); margin-bottom: var(--space-6);">
-          <div style="background: var(--surface); padding: var(--space-4); border-radius: 8px; border: 1px solid var(--border);">
-            <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-1);">Subjects Analyzed</p>
-            <p style="color:var(--headline); font-size: var(--text-xl); font-weight: 600;">61</p>
+        <details class="detail-toggle highlight-style">
+          <summary>
+            <span class="detail-label">Key Finding</span>
+            <span class="detail-title">Random Forest outperforms Ridge Regression</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>Random Forest achieved <strong>R² values of 0.8–1.0</strong> at sample fractions above 0.8 (within-subject)</li>
+              <li>Ridge Regression maxed at <strong>R² ~0.08</strong>, confirming nonlinear data relationships</li>
+              <li>Cross-subject generalization remains challenging: <strong>LOOCV R² between -3.0 and 0.1</strong></li>
+              <li>Established reproducible ML pipeline across multiple development environments</li>
+            </ul>
           </div>
-          <div style="background: var(--surface); padding: var(--space-4); border-radius: 8px; border: 1px solid var(--border);">
-            <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-1);">Data Streams per Subject</p>
-            <p style="color:var(--headline); font-size: var(--text-xl); font-weight: 600;">~17,000</p>
-          </div>
-          <div style="background: var(--surface); padding: var(--space-4); border-radius: 8px; border: 1px solid var(--border);">
-            <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-1);">Input Features</p>
-            <p style="color:var(--headline); font-size: var(--text-xl); font-weight: 600;">14</p>
-          </div>
-          <div style="background: var(--surface); padding: var(--space-4); border-radius: 8px; border: 1px solid var(--border);">
-            <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-1);">Best R² (Random Forest)</p>
-            <p style="color:var(--headline); font-size: var(--text-xl); font-weight: 600;">0.8–1.0</p>
-          </div>
-          <div style="background: var(--surface); padding: var(--space-4); border-radius: 8px; border: 1px solid var(--border);">
-            <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-1);">Optimal Penalty (Ridge)</p>
-            <p style="color:var(--headline); font-size: var(--text-xl); font-weight: 600;">0.01</p>
-          </div>
-          <div style="background: var(--surface); padding: var(--space-4); border-radius: 8px; border: 1px solid var(--border);">
-            <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-1);">Cross-Validation Error</p>
-            <p style="color:var(--headline); font-size: var(--text-xl); font-weight: 600;">&lt;1%</p>
-          </div>
-        </div>
+        </details>
 
         <h4 style="color:var(--headline); margin-top: var(--space-6); margin-bottom: var(--space-3);">Key Achievements</h4>
-        <ul style="color:var(--text); margin-bottom: var(--space-4); padding-left: var(--space-4);">
+        <ul class="bullet-list">
           <li>Established reproducible ML pipeline across multiple development environments</li>
           <li>Demonstrated Random Forest superiority over Ridge Regression for within-subject prediction</li>
           <li>Identified challenges in cross-subject generalization (R² between -3.0 and 0.1 for LOOCV)</li>
@@ -321,21 +308,46 @@
         </ul>
 
         <h4 style="color:var(--headline); margin-top: var(--space-6); margin-bottom: var(--space-3);">Next Steps</h4>
-        <ul style="color:var(--text); margin-bottom: var(--space-4); padding-left: var(--space-4);">
+        <ul class="bullet-list">
           <li>Implement transfer learning Sillyf algorithm for improved cross-subject generalization</li>
           <li>Apply feature importance algorithm to highlight key predictors</li>
           <li>Apply the selected regression model with Sillyf and feature importance</li>
           <li>Target R² values range between 0.5 and 1 for cross-subject prediction</li>
           <li>Write submission draft for manuscript publication</li>
         </ul>
+
+        <details class="detail-toggle">
+          <summary>
+            <span class="detail-label">Skills</span>
+            <span class="detail-title">Tools &amp; technologies used</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>Languages:</strong> Python</li>
+              <li><strong>ML Libraries:</strong> Scikit-learn, NumPy, Pandas</li>
+              <li><strong>Visualization:</strong> Matplotlib, Seaborn</li>
+              <li><strong>Techniques:</strong> Ridge Regression, Random Forest, 5-Fold CV, LOOCV</li>
+              <li><strong>Data Processing:</strong> Z-score, Min-Max, Robust Scaling normalization</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="detail-toggle compact">
+          <summary>
+            <span class="detail-label">Team</span>
+            <span class="detail-title">Contributions &amp; credits</span>
+          </summary>
+          <div class="detail-body">
+            <p style="margin-bottom: var(--space-3);">I implemented Ridge Regression and Random Forest models, applied multiple normalization techniques, conducted 5-fold and Leave-One-Out cross-validation, and contributed to reproducibility testing across team systems.</p>
+            <p><strong>Team Members:</strong> Isha Dev, Sai Pranav Avva, Taiming Chen, Liora Dsilva, Deborah Roman, Riya Modi</p>
+          </div>
+        </details>
       </div>
 
       <!-- ADDITIONAL INFORMATION -->
       <div id="additional-info" class="project-block">
         <h3>Additional Information</h3>
-        <p style="color:var(--text-dim); max-width:62ch; margin-bottom: var(--space-6); font-size: var(--text-sm);">
-          Heilmeier Catechism and final results presentation slides detailing the MoBI project goals, methodology, and experimental findings.
-        </p>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-4);">Heilmeier Catechism and final results presentation slides detailing the MoBI project goals, methodology, and experimental findings.</p>
         <div class="resume-card">
           <div class="pdf-wrapper">
             <iframe
@@ -356,138 +368,22 @@
 </footer>
 
 <script>
-  // ── Theme & Clock ──
-  const root = document.documentElement;
-  const toggle = document.getElementById('themeToggle');
-  const knob = document.getElementById('themeKnob');
-  const clockEl = document.getElementById('clock');
-  const yearEl = document.getElementById('year');
+  const root=document.documentElement,toggle=document.getElementById('themeToggle'),knob=document.getElementById('themeKnob'),clockEl=document.getElementById('clock'),yearEl=document.getElementById('year');
+  if(yearEl)yearEl.textContent=new Date().getFullYear();
+  function applyTheme(t){root.setAttribute('data-theme',t);knob.textContent=t==='dark'?'☀':'☾';try{localStorage.setItem('site-theme',t);}catch(e){}}
+  let saved=null;try{saved=localStorage.getItem('site-theme');}catch(e){}
+  const prefersLight=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches;
+  applyTheme(saved||(prefersLight?'light':'dark'));
+  toggle.addEventListener('click',()=>{applyTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');});
+  function tickClock(){if(clockEl)clockEl.textContent=new Date().toLocaleTimeString('en-GB');}tickClock();setInterval(tickClock,1000);
 
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-  function applyTheme(theme) {
-    root.setAttribute('data-theme', theme);
-    knob.textContent = theme === 'dark' ? '☀' : '☾';
-    try { localStorage.setItem('site-theme', theme); } catch (e) {}
-  }
-
-  let saved = null;
-  try { saved = localStorage.getItem('site-theme'); } catch (e) {}
-  const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-  applyTheme(saved || (prefersLight ? 'light' : 'dark'));
-
-  toggle.addEventListener('click', () => {
-    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    applyTheme(next);
-  });
-
-  function tickClock() {
-    if (clockEl) clockEl.textContent = new Date().toLocaleTimeString('en-GB');
-  }
-  tickClock();
-  setInterval(tickClock, 1000);
-
-  // ── Sidebar Scrollspy ──
-  const sidebar = document.querySelector('.project-sidebar');
-  const sidebarHeader = document.querySelector('.sidebar-header');
-  const sidebarLinks = document.querySelectorAll('.sidebar-link');
-  const sections = [];
-
-  // Build sections array
-  sidebarLinks.forEach(link => {
-    const targetId = link.getAttribute('href').substring(1);
-    const target = document.getElementById(targetId);
-    if (target) {
-      sections.push({ id: targetId, el: target, link: link });
-    }
-  });
-
-  // Smart auto-scroll sidebar to keep header + active link visible
-  function scrollSidebarToActive(activeLink) {
-    if (!sidebar || !activeLink) return;
-    
-    const allLinks = Array.from(sidebarLinks);
-    const activeIndex = allLinks.indexOf(activeLink);
-    const totalLinks = allLinks.length;
-    
-    // Only scroll sidebar down for the last 2 items
-    // Otherwise, keep at top so Summary is always visible
-    if (activeIndex >= totalLinks - 2) {
-      // For bottom items, scroll to show them
-      const headerHeight = sidebarHeader ? sidebarHeader.offsetHeight + 10 : 50;
-      const scrollTarget = activeLink.offsetTop - headerHeight;
-      sidebar.scrollTo({
-        top: scrollTarget,
-        behavior: 'smooth'
-      });
-    } else {
-      // For top/middle items, keep sidebar at top
-      sidebar.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
-  }
-
-  function updateActiveLink() {
-    const scrollPos = window.scrollY;
-    const windowHeight = window.innerHeight;
-    const docHeight = document.documentElement.scrollHeight;
-    
-    // Check if at bottom of page
-    const atBottom = scrollPos + windowHeight >= docHeight - 50;
-    
-    let activeSection = sections[0];
-    
-    if (atBottom && sections.length > 0) {
-      activeSection = sections[sections.length - 1];
-    } else {
-      const offset = 200;
-      for (const section of sections) {
-        const rect = section.el.getBoundingClientRect();
-        if (rect.top <= offset) {
-          activeSection = section;
-        }
-      }
-    }
-    
-    // Update active states
-    sidebarLinks.forEach(link => link.classList.remove('active'));
-    if (activeSection) {
-      activeSection.link.classList.add('active');
-      scrollSidebarToActive(activeSection.link);
-    }
-  }
-
-  window.addEventListener('scroll', updateActiveLink, { passive: true });
-  updateActiveLink();
-
-  // ── Back to Top Button ──
-  const topBtn = document.getElementById('sidebarTopBtn');
-
-  if (topBtn) {
-    topBtn.addEventListener('click', () => {
-      // Scroll page to top
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-      
-      // Scroll sidebar to top
-      if (sidebar) {
-        sidebar.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      }
-      
-      // Update active state to Summary
-      sidebarLinks.forEach(link => link.classList.remove('active'));
-      if (sidebarLinks[0]) {
-        sidebarLinks[0].classList.add('active');
-      }
-    });
-  }
+  const sidebar=document.querySelector('.project-sidebar'),sidebarLinks=document.querySelectorAll('.sidebar-link'),sections=[];
+  sidebarLinks.forEach(link=>{const id=link.getAttribute('href').substring(1),el=document.getElementById(id);if(el)sections.push({id,el,link});});
+  function scrollSidebarToActive(link){if(sidebar&&link){const rect=link.getBoundingClientRect(),sidebarRect=sidebar.getBoundingClientRect();if(rect.top<sidebarRect.top||rect.bottom>sidebarRect.bottom)link.scrollIntoView({block:'nearest',behavior:'smooth'});}}
+  function updateActiveLink(){const scrollPos=window.scrollY+180;let current=sections[0];for(const s of sections){if(s.el.offsetTop<=scrollPos)current=s;}sidebarLinks.forEach(l=>l.classList.remove('active'));if(current){current.link.classList.add('active');scrollSidebarToActive(current.link);}}
+  sidebarLinks.forEach(link=>{link.addEventListener('click',e=>{e.preventDefault();const id=link.getAttribute('href').substring(1),target=document.getElementById(id);if(target){window.scrollTo({top:target.getBoundingClientRect().top+window.scrollY-160,behavior:'smooth'});sidebarLinks.forEach(l=>l.classList.remove('active'));link.classList.add('active');scrollSidebarToActive(link);}});});
+  let ticking=false;window.addEventListener('scroll',()=>{if(!ticking){window.requestAnimationFrame(()=>{updateActiveLink();ticking=false;});ticking=true;}});updateActiveLink();
+  const topBtn=document.getElementById('sidebarTopBtn');if(topBtn){topBtn.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});if(sidebar)sidebar.scrollTo({top:0,behavior:'smooth'});sidebarLinks.forEach(l=>l.classList.remove('active'));if(sidebarLinks[0])sidebarLinks[0].classList.add('active');});}
 </script>
 
 </body>

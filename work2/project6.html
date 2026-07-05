@@ -31,147 +31,204 @@
   <a href="../index.html#info" class="back-link">← Back to projects</a>
 
   <div class="project-layout">
-    
-    <!-- STICKY SIDEBAR - Always visible -->
+
+    <!-- STICKY SIDEBAR -->
     <aside class="project-sidebar" id="projectSidebar">
       <div class="sidebar-header">On This Page</div>
       <a href="#summary" class="sidebar-link active">Summary</a>
       <a href="#problem" class="sidebar-link">Problem Statement</a>
       <a href="#methodology" class="sidebar-link">Methodology</a>
-      <a href="#design-sim" class="sidebar-link sidebar-sublink">Design & Simulation</a>
+      <a href="#design-sim" class="sidebar-link sidebar-sublink">Design &amp; Simulation</a>
       <a href="#fabrication" class="sidebar-link sidebar-sublink">Fabrication</a>
       <a href="#test-setup" class="sidebar-link">Test Setup</a>
       <a href="#results" class="sidebar-link">Results</a>
       <a href="#additional-info" class="sidebar-link">Additional Information</a>
-      <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">
-        ↑ Top
-      </button>
+      <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">↑ Top</button>
     </aside>
-  
+
     <!-- MAIN CONTENT -->
     <div class="project-content">
-      <!-- SUMMARY -->
-      <div id="summary" class="project-block">
-        <p class="section-eyebrow">Johns Hopkins University | EN.530.666 Magnetically Actuated Robots</p>
-        <h2>Haptic-Guided Magnetic Microbot Navigation</h2>
-        <p class="project-meta">Spring 2025</p>
-        <p style="max-width: 70ch;">
-          Developed a real-time wall collision detection system with gradient haptic feedback for magnetically actuated surgical microrobots.
-          The system helps operators “feel” walls that are otherwise hard to perceive visually during teleoperation.
-        </p>
 
-        <div class="project-highlight">
-          <strong>My contribution:</strong> collision detection algorithm using joystick-robot direction dot product, custom maze design and fabrication,
-          and a 4-user haptic feedback study.
-        </div>
-
-        <div class="media-frame" style="margin-top: var(--space-6);">
-          <video controls autoplay muted loop playsinline poster="../documents/Haptic Guided Magnetic Microbot Navigation/system_setup_labeled.jpg" style="width:100%; border-radius:16px;">
-            <source src="../documents/Haptic Guided Magnetic Microbot Navigation/Demo Video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          
+      <!-- HERO / SUMMARY -->
+      <div class="project-hero" id="summary">
+        <div class="project-hero-text">
+          <p class="project-hero-meta">Johns Hopkins University · EN.530.666 Magnetically Actuated Robots · Spring 2025</p>
+          <h2>Haptic-Guided Magnetic Microbot Navigation</h2>
+          <p style="color:var(--text); max-width:62ch;">
+            Real-time wall collision detection system with gradient haptic feedback for magnetically actuated surgical microrobots.
+          </p>
+          <div class="spec-ribbon">
+            <div class="dim-tag">
+              <span class="dim-value">4-coil</span>
+              <span class="dim-label">EM Array</span>
+            </div>
+            <div class="dim-tag">
+              <span class="dim-value">MATLAB</span>
+              <span class="dim-label">Control</span>
+            </div>
+            <div class="dim-tag">
+              <span class="dim-value">4</span>
+              <span class="dim-label">User study</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- PROBLEM -->
+      <!-- Hero Video -->
+      <div class="media-frame" style="margin: var(--space-6) 0;">
+        <video controls autoplay muted loop playsinline poster="../documents/Haptic Guided Magnetic Microbot Navigation/system_setup_labeled.jpg" style="width:100%; border-radius:16px;">
+          <source src="../documents/Haptic Guided Magnetic Microbot Navigation/Demo Video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="project-highlight" style="margin-bottom: var(--space-6);">
+        <strong>My contribution:</strong> collision detection algorithm using joystick-robot direction dot product, custom maze design and fabrication, and a 4-user haptic feedback study.
+      </div>
+
+      <!-- PROBLEM STATEMENT -->
       <div id="problem" class="project-block">
         <h3>Problem Statement</h3>
-        <p style="max-width: 75ch;">
-          Magnetic microbots can navigate in confined environments, but operators often struggle to detect wall contact early enough to avoid
-          collisions. Because the microrobot is small and the environment is visually dense, a teleoperator needs additional cues beyond the
-          camera feed. This project explores haptic feedback as an intuitive way to indicate when the robot is approaching or touching a wall.
+        <p style="color:var(--text); max-width:62ch; margin-bottom: var(--space-4);">
+          Magnetic microbots can navigate in confined environments, but operators often struggle to detect wall contact early enough to avoid collisions.
         </p>
+        <ul class="bullet-list">
+          <li><strong>Visual limitation:</strong> Microrobot is small and environment is visually dense</li>
+          <li><strong>Delayed detection:</strong> Operators detect wall contact too late to prevent collision</li>
+          <li><strong>Camera dependency:</strong> Teleoperator needs additional cues beyond the camera feed</li>
+          <li><strong>Solution:</strong> Haptic feedback as intuitive indication of wall proximity</li>
+        </ul>
       </div>
 
       <!-- METHODOLOGY -->
       <div id="methodology" class="project-block">
         <h3>Methodology</h3>
-        <p style="max-width: 75ch;">
-          The system combines electromagnetic actuation, visual localization, and joystick-based haptic feedback. Robot position is tracked from
-          an overhead camera feed, then compared against the maze geometry to estimate collision risk. When the direction of intended motion
-          conflicts with the detected wall proximity, the joystick vibrates with intensity that increases as the robot gets closer to the wall.
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-2);">
+          The system combines electromagnetic actuation, visual localization, and joystick-based haptic feedback. Click a stage to jump there.
         </p>
-
-        <p style="max-width: 75ch;">
-          The main control architecture was implemented in MATLAB, with helper scripts handling localization, wall detection, actuation, and
-          vibration control.
+        <nav class="process-stepper">
+          <a href="#design-sim" class="process-step"><span class="step-num">1</span>Design</a>
+          <span class="process-connector"></span>
+          <a href="#fabrication" class="process-step"><span class="step-num">2</span>Fabricate</a>
+          <span class="process-connector"></span>
+          <a href="#test-setup" class="process-step"><span class="step-num">3</span>Test</a>
+          <span class="process-connector"></span>
+          <a href="#results" class="process-step"><span class="step-num">4</span>Results</a>
+        </nav>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-top: var(--space-4);">
+          Robot position is tracked from an overhead camera feed, then compared against the maze geometry to estimate collision risk. When the direction of intended motion conflicts with detected wall proximity, the joystick vibrates with intensity that increases as the robot gets closer to the wall.
+        </p>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-top: var(--space-3);">
+          The main control architecture was implemented in MATLAB, with helper scripts handling localization, wall detection, actuation, and vibration control.
         </p>
       </div>
 
       <!-- DESIGN & SIMULATION -->
-      <div id="design-sim" class="project-block">
-        <h3>Design & Simulation</h3>
-        <p style="max-width: 75ch;">
-          The core collision logic uses the dot product between the joystick command direction and the robot-to-wall direction. If the robot is
-          moving toward a wall and the geometric conditions indicate imminent contact, the system triggers haptic vibration. This creates a
-          “virtual tactile boundary” for the operator by utilizing the haptic motor present in modern joysticks. The vibration is directly proportional to the force 
-          dot product.
+      <div id="design-sim" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Design &amp; Simulation</h4>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          The core collision logic uses the dot product between the joystick command direction and the robot-to-wall direction.
         </p>
-
-        <div class="image-grid">
-          <!-- <figure class="image-card">
-            <img src="../documents/Haptic Guided Magnetic Microbot Navigation/system_setup_labeled.jpg" alt="Magnetic microrobot control system with 4-coil array, Arduino, motor controllers, joystick, and overhead camera at Johns Hopkins University">
-            <figcaption>Experimental setup with electromagnetic coils, joystick control, and overhead vision.</figcaption>
-          </figure> -->
-          <!-- <figure class="image-card">
-            <img src="../documents/Haptic Guided Magnetic Microbot Navigation/Maze.png" alt="Live camera feed showing magnetic robot navigating through custom maze with wall detection overlay">
-            <figcaption>Live maze navigation with real-time wall detection overlay.</figcaption>
-          </figure> -->
-        </div>
+        <ul class="bullet-list">
+          <li><strong>Collision detection:</strong> Dot product between joystick direction and robot-to-wall vector</li>
+          <li><strong>Virtual boundary:</strong> Haptic vibration creates "virtual tactile boundary" for operator</li>
+          <li><strong>Proportional feedback:</strong> Vibration intensity directly proportional to force dot product</li>
+          <li><strong>Real-time processing:</strong> Continuous position tracking and wall proximity estimation</li>
+        </ul>
       </div>
 
       <!-- FABRICATION -->
-      <div id="fabrication" class="project-block">
-        <h3>Fabrication</h3>
-        <p style="max-width: 75ch;">
-          A custom test maze was fabricated for controlled navigation experiments. The maze was designed to create narrow passages and turning
-          regions where wall detection and haptic feedback would be useful. The setup also included the actuation hardware, joystick interface,
-          and camera-based localization pipeline.
+      <div id="fabrication" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Fabrication</h4>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          A custom test maze was fabricated for controlled navigation experiments.
         </p>
+        <ul class="bullet-list">
+          <li><strong>Maze design:</strong> Narrow passages and turning regions for wall detection testing</li>
+          <li><strong>Actuation hardware:</strong> 4-coil electromagnetic array</li>
+          <li><strong>Joystick interface:</strong> Xbox-style controller with haptic motor</li>
+          <li><strong>Localization pipeline:</strong> FLIR overhead camera with computer vision</li>
+        </ul>
       </div>
 
       <!-- TEST SETUP -->
       <div id="test-setup" class="project-block">
         <h3>Test Setup</h3>
-        <div class="media-frame" style="margin-top: var(--space-4);">
-          <img src="../documents/Haptic Guided Magnetic Microbot Navigation/Controlarchitecture.jpg" alt="Complete experimental setup showing 4-coil electromagnetic array, Arduino microcontroller, dual motor controllers, Xbox-style joystick for remote control, FLIR overhead camera, DC voltage supply, and laptop running MATLAB control software" style="width:100%; border-radius:16px;">
-        </div>
-        <div class="media-frame" style="margin-top: var(--space-4);">
-          <img src="../documents/Haptic Guided Magnetic Microbot Navigation/SystemImage.png" alt="Complete experimental setup showing 4-coil electromagnetic array, Arduino microcontroller, dual motor controllers, Xbox-style joystick for remote control, FLIR overhead camera, DC voltage supply, and laptop running MATLAB control software" style="width:100%; border-radius:16px;">
-        </div>
 
-        <p style="max-width: 75ch; margin-top: var(--space-4);">
-          The setup includes a 4-coil electromagnetic array, Arduino microcontroller, dual motor controllers, joystick interface, overhead camera,
-          and a laptop running MATLAB for actuation, localization, and feedback control.
-        </p>
+        <figure style="margin-bottom: var(--space-4);">
+          <img src="../documents/Haptic Guided Magnetic Microbot Navigation/Controlarchitecture.jpg" alt="Control architecture diagram showing electromagnetic array, Arduino, motor controllers, joystick, and MATLAB interface" style="width:100%; border-radius: 8px;">
+          <figcaption>Control architecture: 4-coil EM array, Arduino, motor controllers, joystick, and MATLAB</figcaption>
+        </figure>
+
+        <figure style="margin-bottom: var(--space-4);">
+          <img src="../documents/Haptic Guided Magnetic Microbot Navigation/SystemImage.png" alt="Complete experimental setup showing all hardware components" style="width:100%; border-radius: 8px;">
+          <figcaption>Complete experimental setup with electromagnetic coils, joystick control, and overhead vision</figcaption>
+        </figure>
+
+        <div class="stat-strip">
+          <div class="stat-card">
+            <span class="stat-value">4-coil</span>
+            <span class="stat-label">EM array</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">Arduino</span>
+            <span class="stat-label">Microcontroller</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">FLIR</span>
+            <span class="stat-label">Overhead camera</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">MATLAB</span>
+            <span class="stat-label">Control software</span>
+          </div>
+        </div>
       </div>
 
       <!-- RESULTS -->
       <div id="results" class="project-block">
         <h3>Results</h3>
-        <!-- <div class="media-frame" style="margin-top: var(--space-4);">
-          <img src="../documents/Haptic Guided Magnetic Microbot Navigation/maze_navigation_live.jpg" alt="Live camera feed showing magnetic robot navigating through custom-designed maze with wall detection and coordinate overlay" style="width:100%; border-radius:16px;">
-        </div> -->
-
-        <p style="max-width: 75ch; margin-top: var(--space-4);">
-          The navigation interface successfully displayed wall proximity in real time and provided haptic cues through the joystick. During
-          demonstration, the robot was able to traverse the maze while the operator received feedback whenever the robot approached a wall.
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          The navigation interface successfully displayed wall proximity in real time and provided haptic cues through the joystick.
         </p>
 
-        <p style="max-width: 75ch;">
-          The live overlay showed wall detection status, frame rate, and robot position coordinates, allowing the operator to maintain situational
-          awareness while relying less on direct visual inspection of the maze boundaries.
-        </p>
+        <details class="detail-toggle highlight-style">
+          <summary>
+            <span class="detail-label">Output</span>
+            <span class="detail-title">System performance</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>Maze traversal:</strong> Robot successfully navigated maze while operator received feedback</li>
+              <li><strong>Wall detection:</strong> Live overlay showed wall detection status and robot position</li>
+              <li><strong>Haptic cues:</strong> Joystick vibrated when robot approached walls</li>
+              <li><strong>Situational awareness:</strong> Operator maintained awareness while relying less on direct visual inspection</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="detail-toggle compact" style="margin-top: var(--space-4);">
+          <summary>
+            <span class="detail-label">Display</span>
+            <span class="detail-title">Live overlay features</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>Wall detection status indicator</li>
+              <li>Frame rate display</li>
+              <li>Robot position coordinates</li>
+              <li>Collision risk visualization</li>
+            </ul>
+          </div>
+        </details>
       </div>
 
       <!-- ADDITIONAL INFORMATION -->
       <div id="additional-info" class="project-block">
         <h3>Additional Information</h3>
         <p style="color:var(--text-dim); max-width:62ch; margin-bottom: var(--space-6); font-size: var(--text-sm);">
-          Project report, supporting documents, and implementation files are included below.
+          Project report, supporting documents, and implementation files from EN.530.666 Magnetically Actuated Robots.
         </p>
-
         <div class="resume-card">
           <div class="pdf-wrapper">
             <iframe
@@ -181,15 +238,22 @@
             </iframe>
           </div>
         </div>
-      </div>
 
-      <!-- OPTIONAL GALLERY SECTION -->
-      <!--
-      <div id="gallery" class="project-block gallery-section">
-        <p class="section-eyebrow">Gallery</p>
-        <h3>Gallery</h3>
+        <details class="detail-toggle compact" style="margin-top: var(--space-6);">
+          <summary>
+            <span class="detail-label">Skills</span>
+            <span class="detail-title">Technical skills demonstrated</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>Control:</strong> MATLAB real-time control, electromagnetic actuation</li>
+              <li><strong>Computer Vision:</strong> Camera-based localization, position tracking</li>
+              <li><strong>Haptics:</strong> Gradient haptic feedback, joystick integration</li>
+              <li><strong>Fabrication:</strong> Custom maze design and construction</li>
+            </ul>
+          </div>
+        </details>
       </div>
-      -->
 
     </div><!-- end project-content -->
   </div><!-- end project-layout -->
@@ -231,10 +295,39 @@
   tickClock();
   setInterval(tickClock, 1000);
 
-  // Sidebar top button
+  // ── Sidebar Scrollspy ──
+  const sidebar = document.querySelector('.project-sidebar');
+  const sidebarHeader = document.querySelector('.sidebar-header');
+  const sidebarLinks = document.querySelectorAll('.sidebar-link');
+  const sections = [];
+
+  sidebarLinks.forEach(link => {
+    const targetId = link.getAttribute('href').substring(1);
+    const target = document.getElementById(targetId);
+    if (target) sections.push({ id: targetId, el: target, link: link });
+  });
+
+  function updateActiveLink() {
+    let current = sections[0];
+    const scrollY = window.scrollY + 180;
+
+    for (const section of sections) {
+      if (section.el.offsetTop <= scrollY) current = section;
+    }
+
+    sidebarLinks.forEach(link => link.classList.remove('active'));
+    if (current) current.link.classList.add('active');
+  }
+
+  window.addEventListener('scroll', updateActiveLink, { passive: true });
+  updateActiveLink();
+
+  // ── Back to Top Button ──
   const topBtn = document.getElementById('sidebarTopBtn');
   if (topBtn) {
-    topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
 </script>
 </body>

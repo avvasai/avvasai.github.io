@@ -3,9 +3,113 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MEMS Inertial Measurement Unit | Sai Pranav Avva</title>
-  <meta name="description" content="Two-year ISRO-IISc collaboration designing high-precision MEMS accelerometer and Accordion-like Disk Resonator Gyroscope with <5% simulation-to-hardware eigenfrequency error">
+  <title>DIY Benchtop Power Supply | Sai Pranav Avva</title>
+  <meta name="description" content="Custom benchtop power supply built from ATX PSU with CC/CV control, fine/coarse tuning, 24V boost, and multi-rail outputs for under $10.">
   <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* ── Carousel Styles ── */
+    .carousel {
+      position: relative;
+      width: 100%;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+    }
+    .carousel-viewport { overflow: hidden; }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.4s ease;
+    }
+    .carousel-slide {
+      min-width: 100%;
+      flex-shrink: 0;
+    }
+    .carousel-slide img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+    }
+    .carousel-slide figcaption {
+      padding: 0.75rem 1rem;
+      font-size: var(--text-sm);
+      color: var(--text-dim);
+      background: var(--bg-elevated);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(calc(-50% - 20px));
+      z-index: 5;
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      backdrop-filter: blur(4px);
+      transition: background 0.2s;
+    }
+    .carousel-arrow:hover { background: rgba(0,0,0,0.7); }
+    .carousel-prev { left: 10px; }
+    .carousel-next { right: 10px; }
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 0.75rem 0;
+      background: var(--bg-elevated);
+    }
+    .carousel-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,0.25);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .carousel-dot.active {
+      background: var(--accent-bright);
+      transform: scale(1.25);
+    }
+    .video-wrapper { border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--border); }
+    .video-wrapper video { width: 100%; display: block; }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: var(--text-sm);
+      margin-top: var(--space-4);
+    }
+    .comparison-table th, .comparison-table td {
+      padding: var(--space-3);
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .comparison-table th {
+      color: var(--headline);
+      font-weight: 600;
+      background: var(--bg-elevated);
+    }
+    .comparison-table td { color: var(--text); }
+    .credit-box {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      padding: var(--space-4);
+      margin-top: var(--space-6);
+      font-size: var(--text-sm);
+      color: var(--text-dim);
+    }
+    .credit-box a { color: var(--accent-bright); }
+  </style>
 </head>
 <body>
 <header class="masthead">
@@ -32,66 +136,80 @@
 
   <div class="project-layout">
 
+    <!-- STICKY SIDEBAR -->
     <aside class="project-sidebar" id="projectSidebar">
       <div class="sidebar-header">On This Page</div>
       <a href="#summary" class="sidebar-link active">Summary</a>
       <a href="#problem" class="sidebar-link">Problem Statement</a>
       <a href="#methodology" class="sidebar-link">Methodology</a>
-      <a href="#design-sim" class="sidebar-link sidebar-sublink">Design &amp; Simulation</a>
+      <a href="#components" class="sidebar-link sidebar-sublink">Components</a>
       <a href="#fabrication" class="sidebar-link sidebar-sublink">Fabrication</a>
       <a href="#test-setup" class="sidebar-link">Test Setup</a>
       <a href="#results" class="sidebar-link">Results</a>
       <a href="#additional-info" class="sidebar-link">Additional Information</a>
+      <a href="#gallery" class="sidebar-link">Gallery</a>
       <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">↑ Top</button>
     </aside>
 
+    <!-- MAIN CONTENT -->
     <div class="project-content">
 
-      <!-- SUMMARY -->
-      <div id="summary" class="project-block">
-        <div class="project-hero">
-          <div class="project-hero-text">
-            <p class="section-eyebrow">Project · MEMS</p>
-            <h2>MEMS Inertial Measurement Unit</h2>
-            <p class="project-hero-meta">M2D2 Lab, IISc · with ISRO · Guided by Prof. G K Ananthasuresh · Jun 2022 – Jul 2024</p>
-            <div class="spec-ribbon">
-              <div class="dim-tag"><span class="dim-value">6.8 kHz</span><span class="dim-label">Resonance</span></div>
-              <div class="dim-tag"><span class="dim-value">&lt;5%</span><span class="dim-label">Sim-to-hw error</span></div>
-              <div class="dim-tag"><span class="dim-value">16+4</span><span class="dim-label">Electrodes</span></div>
-              <div class="dim-tag"><span class="dim-value">CeNSE</span><span class="dim-label">Fabrication</span></div>
+      <!-- HERO / SUMMARY -->
+      <div class="project-hero" id="summary">
+        <div class="project-hero-text">
+          <p class="project-hero-meta">Personal Project · 2023</p>
+          <h2>DIY Benchtop Power Supply</h2>
+          <p style="color:var(--text); max-width:62ch;">
+            ATX PSU conversion with CC/CV control, fine/coarse tuning &amp; multi-rail outputs — under $10.
+          </p>
+          <div class="spec-ribbon">
+            <div class="dim-tag">
+              <span class="dim-value">400W</span>
+              <span class="dim-label">Power capacity</span>
+            </div>
+            <div class="dim-tag">
+              <span class="dim-value">~$10</span>
+              <span class="dim-label">Additional cost</span>
+            </div>
+            <div class="dim-tag">
+              <span class="dim-value">5</span>
+              <span class="dim-label">Output rails</span>
             </div>
           </div>
-          <div class="hero-diagram-wrap">
-            <svg class="hero-diagram" viewBox="-150 -150 300 300" xmlns="http://www.w3.org/2000/svg">
-              <circle r="130" class="hd-ring" stroke-width="1"/>
-              <circle r="18" class="hd-core"/>
-              <polygon class="hd-ring-strong" stroke-width="1.2" points="72.0,0.0 62.8,4.9 71.1,11.3 61.3,14.7 68.5,22.2 58.2,24.1 64.2,32.7 53.7,32.9 58.2,42.3 47.9,40.9 50.9,50.9 40.9,47.9 42.3,58.2 32.9,53.7 32.7,64.2 24.1,58.2 22.2,68.5 14.7,61.3 11.3,71.1 4.9,62.8 0.0,72.0 -4.9,62.8 -11.3,71.1 -14.7,61.3 -22.2,68.5 -24.1,58.2 -32.7,64.2 -32.9,53.7 -42.3,58.2 -40.9,47.9 -50.9,50.9 -47.9,40.9 -58.2,42.3 -53.7,32.9 -64.2,32.7 -58.2,24.1 -68.5,22.2 -61.3,14.7 -71.1,11.3 -62.8,4.9 -72.0,0.0 -62.8,-4.9 -71.1,-11.3 -61.3,-14.7 -68.5,-22.2 -58.2,-24.1 -64.2,-32.7 -53.7,-32.9 -58.2,-42.3 -47.9,-40.9 -50.9,-50.9 -40.9,-47.9 -42.3,-58.2 -32.9,-53.7 -32.7,-64.2 -24.1,-58.2 -22.2,-68.5 -14.7,-61.3 -11.3,-71.1 -4.9,-62.8 -0.0,-72.0 4.9,-62.8 11.3,-71.1 14.7,-61.3 22.2,-68.5 24.1,-58.2 32.7,-64.2 32.9,-53.7 42.3,-58.2 40.9,-47.9 50.9,-50.9 47.9,-40.9 58.2,-42.3 53.7,-32.9 64.2,-32.7 58.2,-24.1 68.5,-22.2 61.3,-14.7 71.1,-11.3 62.8,-4.9" fill="none"/>
-              <g class="hd-elec">
-                <rect x="108.8" y="18.4" width="8" height="8"/><rect x="91.6" y="59.9" width="8" height="8"/>
-                <rect x="59.9" y="91.6" width="8" height="8"/><rect x="18.4" y="108.8" width="8" height="8"/>
-                <rect x="-26.4" y="108.8" width="8" height="8"/><rect x="-67.9" y="91.6" width="8" height="8"/>
-                <rect x="-99.6" y="59.9" width="8" height="8"/><rect x="-116.8" y="18.4" width="8" height="8"/>
-                <rect x="-116.8" y="-26.4" width="8" height="8"/><rect x="-99.6" y="-67.9" width="8" height="8"/>
-                <rect x="-67.9" y="-99.6" width="8" height="8"/><rect x="-26.4" y="-116.8" width="8" height="8"/>
-                <rect x="18.4" y="-116.8" width="8" height="8"/><rect x="59.9" y="-99.6" width="8" height="8"/>
-                <rect x="91.6" y="-67.9" width="8" height="8"/><rect x="108.8" y="-26.4" width="8" height="8"/>
-              </g>
-              <g class="hd-common">
-                <circle cx="115.0" cy="0.0" r="5"/><circle cx="0.0" cy="115.0" r="5"/>
-                <circle cx="-115.0" cy="0.0" r="5"/><circle cx="-0.0" cy="-115.0" r="5"/>
-              </g>
-            </svg>
-          </div>
         </div>
+      </div>
+
+      <!-- Hero Image -->
+      <figure style="margin: var(--space-6) 0;">
+        <img src="../documents/DIY Benchtop Power Supply/fig5.jpg" alt="Completed DIY benchtop power supply with digital display, USB ports, adjustment knobs, and banana jack outputs" style="width:100%; border-radius: 8px;">
+        <figcaption>Completed benchtop power supply with V/A display, USB ports, and multi-rail banana jack outputs</figcaption>
+      </figure>
+
+      <!-- SUMMARY TEXT -->
+      <div class="project-block">
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Commercial benchtop power supplies with variable voltage and current limiting typically cost $50–$150 or more. This project repurposes a salvaged 400W ATX computer power supply into a fully featured lab bench supply for under $10 in additional components.
+        </p>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          While the basic ATX conversion concept was inspired by the <a href="https://dronebotworkshop.com/atx-bench-supply/" target="_blank" rel="noopener noreferrer">DroneBot Workshop tutorial</a>, this build significantly extends the functionality by adding an XL4015-based constant current/constant voltage (CC/CV) module for a true variable output with current limiting — essential for safely powering sensitive circuits and charging batteries.
+        </p>
+        <p style="color:var(--text); font-size: var(--text-sm);">
+          A dual fine/coarse knob system enables precision voltage and current adjustment, while a boost converter provides a 24V rail not available from standard ATX supplies. The front panel was hand-fabricated using an angle grinder and Dremel.
+        </p>
       </div>
 
       <!-- PROBLEM STATEMENT -->
       <div id="problem" class="project-block">
         <h3>Problem Statement</h3>
+        <p style="color:var(--text); max-width:62ch; margin-bottom: var(--space-4);">
+          Needed a reliable, low-cost benchtop power supply for Arduino projects, circuit prototyping, and embedded systems development without spending $100+ on commercial equipment.
+        </p>
         <ul class="bullet-list">
-          <li><strong>Need:</strong> high-precision inertial sensors for ISRO space navigation</li>
-          <li><strong>Prior art:</strong> DRG, Honeycomb (HDRG), Concentric (CDRG), Gear-tooth (GDRG),  incremental sensitivity gains, each trading electrode placement against mechanical performance</li>
-          <li><strong>Open question:</strong> a ring geometry that raises sensitivity and Q factor without hurting noise performance or manufacturability</li>
+          <li><strong>Reuse:</strong> Salvaged ATX PSU instead of buying new bench supply</li>
+          <li><strong>Variable output:</strong> Adjustable voltage with current limiting for safe testing</li>
+          <li><strong>Multiple rails:</strong> Fixed 3.3V, 5V, 12V plus 24V for motors</li>
+          <li><strong>Convenience:</strong> USB charging ports and real-time V/A monitoring</li>
+          <li><strong>Accessibility:</strong> Functional, labeled front panel with easy output access</li>
         </ul>
       </div>
 
@@ -99,10 +217,10 @@
       <div id="methodology" class="project-block">
         <h3>Methodology</h3>
         <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-2);">
-          A real pipeline, run in parallel for both sensors : Click a stage to jump there.
+          Step-by-step conversion from ATX PSU to fully featured bench supply. Click a stage to jump there.
         </p>
         <nav class="process-stepper">
-          <a href="#design-sim" class="process-step"><span class="step-num">1</span>Design</a>
+          <a href="#components" class="process-step"><span class="step-num">1</span>Components</a>
           <span class="process-connector"></span>
           <a href="#fabrication" class="process-step"><span class="step-num">2</span>Fabricate</a>
           <span class="process-connector"></span>
@@ -112,250 +230,199 @@
         </nav>
       </div>
 
-      <!-- DESIGN & SIMULATION -->
-      <div id="design-sim" class="project-subblock">
-        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Design &amp; Simulation</h4>
+      <!-- COMPONENTS -->
+      <div id="components" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Component Selection &amp; Planning</h4>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Selected a salvaged 400W ATX power supply as the base unit, providing native 3.3V, 5V, and 12V rails with sufficient current capacity for bench use.
+        </p>
+        <ul class="bullet-list">
+          <li><strong>XL4015 module:</strong> 5A CC/CV buck converter for variable output with current limiting</li>
+          <li><strong>Boost converter:</strong> 24V generation from 12V rail</li>
+          <li><strong>Potentiometers:</strong> Fine/coarse adjustment for V and I</li>
+          <li><strong>Banana jacks:</strong> Outputs for all voltage rails</li>
+          <li><strong>Digital display:</strong> Dual V/A monitoring</li>
+          <li><strong>USB-A ports:</strong> Device charging</li>
+        </ul>
 
-        <p style="color:var(--text); font-size: var(--text-sm);"><strong>Accelerometer</strong> : proof mass on folded-beam flexures, interdigitated comb-drive electrodes, differential capacitive sensing.</p>
-        <div class="spec-grid">
-          <div class="spec-item"><span class="spec-value">5–8 µm</span><span class="spec-label">Beam width (swept)</span></div>
-          <div class="spec-item"><span class="spec-value">10–60 µm</span><span class="spec-label">Thickness (swept)</span></div>
-          <div class="spec-item"><span class="spec-value">~3 kHz</span><span class="spec-label">Target eigenfrequency</span></div>
-        </div>
-
-        <details class="detail-toggle">
-          <summary>
-            <span class="detail-label">Optimization</span>
-            <span class="detail-title">What was optimized for</span>
-          </summary>
-          <div class="detail-body">
-            <ul class="bullet-list">
-              <li>Displacement sensitivity</li>
-              <li>Capacitance sensitivity (ΔC/g)</li>
-              <li>Cross-axis sensitivity</li>
-              <li>Quality factor</li>
-              <li>Brownian noise equivalent acceleration</li>
-            </ul>
-          </div>
-        </details>
-
-        <p style="color:var(--text); font-size: var(--text-sm); margin-top: var(--space-5);"><strong>Gyroscope</strong> : 5 DRG topologies compared in COMSOL; ADRG uses accordion-shaped spokes for higher compliance without losing structural integrity.</p>
-        <div class="spec-grid">
-          <div class="spec-item"><span class="spec-value">9</span><span class="spec-label">Rings</span></div>
-          <div class="spec-item"><span class="spec-value">8 mm</span><span class="spec-label">Outer diameter</span></div>
-          <div class="spec-item"><span class="spec-value">10 µm</span><span class="spec-label">Ring width</span></div>
-          <div class="spec-item"><span class="spec-value">60 µm</span><span class="spec-label">Thickness</span></div>
-          <div class="spec-item"><span class="spec-value">0.5</span><span class="spec-label">Anchor : outer radius</span></div>
-        </div>
-        <p style="color:var(--text-faint); font-size: var(--text-xs);">Held constant across all five topologies for a fair comparison.</p>
-
-        <details class="detail-toggle note-style">
-          <summary>
-            <span class="detail-label">Note</span>
-            <span class="detail-title">Why accordion spokes?</span>
-          </summary>
-          <div class="detail-body">
-            Accordion-shaped spokes increase radial compliance while maintaining tangential stiffness. This geometry allows for larger modal displacements under Coriolis forces, directly improving mechanical sensitivity without compromising structural integrity or introducing additional thermoelastic damping paths.
-          </div>
-        </details>
+        <h4 style="color:var(--headline); margin-top: var(--space-5); margin-bottom: var(--space-3);">ATX Power Supply Preparation</h4>
+        <p style="color:var(--text); font-size: var(--text-sm);">
+          Opened the ATX PSU and identified all output rails by wire color: Yellow (12V), Red (5V), Orange (3.3V), Black (GND), Green (PS_ON), and Purple (−5V standby). Bundled and sorted wires by voltage rail for organized connection to front panel outputs. Shorted PS_ON (green) to GND (black) to enable the supply to turn on without a motherboard connection.
+        </p>
       </div>
 
       <!-- FABRICATION -->
       <div id="fabrication" class="project-subblock">
-        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Fabrication</h4>
-
-        <p style="color:var(--text); font-size: var(--text-sm);"><strong>Mask layout</strong></p>
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Front Panel Fabrication</h4>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Hand-fabricated the front panel from the original ATX case material using an angle grinder for major cuts and a Dremel for precision cutouts.
+        </p>
         <ul class="bullet-list">
-          <li><strong>CleWin</strong> — initial layout, layer definition</li>
-          <li><strong>KLayout</strong> — advanced editing, DRC verification</li>
+          <li><strong>Mounting holes:</strong> Digital display, USB ports, four potentiometer knobs, ten banana jack pairs</li>
+          <li><strong>Design goal:</strong> Easy access to all voltage rails in compact form factor</li>
         </ul>
 
-        <p style="color:var(--text); font-size: var(--text-sm);"><strong>SOI microfabrication</strong> — at CeNSE, SOI-based surface micromachining.</p>
-        <div class="spec-grid">
-          <div class="spec-item"><span class="spec-value">60 µm</span><span class="spec-label">Device thickness</span></div>
-          <div class="spec-item"><span class="spec-value">10 µm</span><span class="spec-label">Ring width</span></div>
-        </div>
+        <h4 style="color:var(--headline); margin-top: var(--space-5); margin-bottom: var(--space-3);">CC/CV Module Integration</h4>
+        <p style="color:var(--text); font-size: var(--text-sm);">
+          Integrated the XL4015 5A CC/CV buck converter module, fed from the 12V ATX rail, to provide a variable voltage output with adjustable current limiting. Replaced the onboard trim pots with panel-mounted potentiometers arranged in a fine/coarse configuration for precise voltage adjustment (coarse for range, fine for mV-level tuning) and separate fine/coarse current limit adjustment.
+        </p>
 
-        <figure style="margin: var(--space-4) 0 var(--space-6);">
-          <img src="../documents/MEMS Engineer/2.jpeg" alt="Batch of fabricated MEMS gyroscope dies from CeNSE" style="width:100%; border-radius: 8px;">
-          <figcaption>Batch of fabricated MEMS gyroscope dies from CeNSE fabrication run</figcaption>
-        </figure>
-
-        <p style="color:var(--text); font-size: var(--text-sm);"><strong>Wire bonding</strong> — die pads to PCB carrier.</p>
-        <div class="spec-grid">
-          <div class="spec-item"><span class="spec-value">16</span><span class="spec-label">Addressed outer electrodes</span></div>
-          <div class="spec-item"><span class="spec-value">4</span><span class="spec-label">Common connections</span></div>
-        </div>
-
-        <details class="detail-toggle compact">
-          <summary>
-            <span class="detail-label">Info</span>
-            <span class="detail-title">More on the pinout</span>
-          </summary>
-          <div class="detail-body">
-            Custom pinout schematics mapped electrode-to-pin for both the gyroscope (16 addressed outer electrodes + 4 common) and the companion accelerometer die on the same package. This allows independent drive/sense control of each electrode pair for differential operation.
-          </div>
-        </details>
-
-        <figure style="margin: var(--space-4) 0 var(--space-2);">
-          <img src="../documents/MEMS Engineer/GDRGWireBond.jpeg" alt="Wire-bonded GDRG die showing M2D2 lab markings" style="width:100%; border-radius: 8px;">
-          <figcaption>Wire-bonded DRG die mounted showing M2D2 lab markings and concentric ring structure</figcaption>
-        </figure>
-
-        <details class="detail-toggle note-style">
-          <summary>
-            <span class="detail-label">Process</span>
-            <span class="detail-title">SOI microfabrication steps</span>
-          </summary>
-          <div class="detail-body">
-            <ul class="bullet-list">
-              <li>Start with SOI wafer (60 µm device layer, 2 µm BOX)</li>
-              <li>Photolithography for device patterning</li>
-              <li>Deep reactive ion etching (DRIE) through device layer</li>
-              <li>HF vapor release of buried oxide</li>
-              <li>Critical point drying to prevent stiction</li>
-              <li>Metal deposition for electrodes and bond pads</li>
-            </ul>
-          </div>
-        </details>
+        <h4 style="color:var(--headline); margin-top: var(--space-5); margin-bottom: var(--space-3);">24V Boost Converter Addition</h4>
+        <p style="color:var(--text); font-size: var(--text-sm);">
+          Added a boost converter module fed from the 12V rail to generate a 24V output, extending the supply's capability beyond standard ATX voltages. This rail is useful for powering 24V motors, solenoids, and industrial sensors commonly used in robotics and automation projects.
+        </p>
       </div>
 
       <!-- TEST SETUP -->
       <div id="test-setup" class="project-block">
         <h3>Test Setup</h3>
-        <p style="color:var(--text); font-size: var(--text-sm);">Polytec MSA-500 Micro System Analyzer (Laser Doppler Vibrometer).</p>
-        <div class="spec-grid">
-          <div class="spec-item"><span class="spec-value">1 atm</span><span class="spec-label">Pressure</span></div>
-          <div class="spec-item"><span class="spec-value">25°C</span><span class="spec-label">Temperature</span></div>
-          <div class="spec-item"><span class="spec-value">0°/180°</span><span class="spec-label">Drive phase</span></div>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          All output rails verified with a digital multimeter. Variable output tested across full voltage range with resistive loads. Current limiting verified by setting limit and shorting output — supply correctly enters constant current mode. USB ports tested with phone charging. Supply has been in regular use for embedded systems development since 2023.
+        </p>
+
+        <div class="stat-strip">
+          <div class="stat-card">
+            <span class="stat-value">3.3V, 5V, 12V</span>
+            <span class="stat-label">Fixed rails</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">24V</span>
+            <span class="stat-label">Boosted rail</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">1.25–10V+</span>
+            <span class="stat-label">Variable range</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">0–5A</span>
+            <span class="stat-label">Current limit</span>
+          </div>
         </div>
-
-        <details class="detail-toggle">
-          <summary>
-            <span class="detail-label">Method</span>
-            <span class="detail-title">How the measurement worked</span>
-          </summary>
-          <div class="detail-body">
-            Electrostatic AC+DC drive on opposing electrodes (0°/180° phase); frequency sweeps traced the mechanical response, and the resonance peak gave the eigenfrequency. The LDV measured out-of-plane velocity at multiple points across the resonator to verify mode shapes matched FEM predictions.
-          </div>
-        </details>
-
-        <details class="detail-toggle compact">
-          <summary>
-            <span class="detail-label">Equipment</span>
-            <span class="detail-title">Full test equipment list</span>
-          </summary>
-          <div class="detail-body">
-            <ul class="bullet-list">
-              <li>Polytec MSA-500 Micro System Analyzer</li>
-              <li>Keysight 33500B Waveform Generator</li>
-              <li>Stanford Research SR830 Lock-in Amplifier</li>
-              <li>Keithley 2400 SourceMeter (DC bias)</li>
-              <li>Custom vacuum chamber (for Q-factor measurements)</li>
-            </ul>
-          </div>
-        </details>
       </div>
 
       <!-- RESULTS -->
       <div id="results" class="project-block">
         <h3>Results</h3>
-
-        <figure style="margin-bottom: var(--space-6);">
-          <img src="../documents/MEMS Engineer/Frequency response graph.png" alt="LDV frequency response showing measured resonance at 6.8 kHz" style="width:100%; border-radius: 8px;">
-          <figcaption>LDV frequency response validating 6.8 kHz resonance prediction</figcaption>
-        </figure>
-
-        <div class="spec-grid">
-          <div class="spec-item"><span class="spec-value">6.8 kHz</span><span class="spec-label">Measured resonance</span></div>
-          <div class="spec-item"><span class="spec-value">6.771 kHz</span><span class="spec-label">FEM prediction</span></div>
-          <div class="spec-item"><span class="spec-value">~0.4%</span><span class="spec-label">Error</span></div>
-        </div>
-        <p style="color:var(--text-dim); font-size: var(--text-xs);">Target was &lt;5% — simulation held up in silicon.</p>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Achieved commercial-grade functionality at less than 10% of the cost by repurposing salvaged components and adding targeted enhancements.
+        </p>
 
         <details class="detail-toggle highlight-style">
           <summary>
-            <span class="detail-label">Key Finding</span>
-            <span class="detail-title">ADRG performance advantages</span>
+            <span class="detail-label">Compare</span>
+            <span class="detail-title">DIY vs Commercial comparison</span>
           </summary>
           <div class="detail-body">
-            The Accordion-like DRG demonstrated <strong>12.1 µm/rad/s mechanical sensitivity</strong> — a 2.3× improvement over conventional DRG designs. The accordion spoke geometry achieved <strong>181.6k thermoelastic Q factor</strong> while maintaining structural robustness suitable for ISRO's space navigation requirements.
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>This DIY Build</th>
+                  <th>Typical Commercial (~$50–150)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Cost</td><td>~$10 + salvaged ATX PSU</td><td>$50 – $150+</td></tr>
+                <tr><td>Variable Output</td><td>Yes (CC/CV)</td><td>Yes</td></tr>
+                <tr><td>Current Limiting</td><td>Yes (0–5A adjustable)</td><td>Yes</td></tr>
+                <tr><td>Fine/Coarse Adjust</td><td>Yes (V and I)</td><td>Sometimes</td></tr>
+                <tr><td>Fixed Rails (3.3V, 5V, 12V)</td><td>Yes</td><td>Rarely</td></tr>
+                <tr><td>24V Output</td><td>Yes (boost converter)</td><td>Sometimes</td></tr>
+                <tr><td>USB Charging Ports</td><td>Yes (2×)</td><td>Rarely</td></tr>
+                <tr><td>V/A Display</td><td>Yes</td><td>Yes</td></tr>
+                <tr><td>Power Capacity</td><td>400W</td><td>Typically 150–300W</td></tr>
+              </tbody>
+            </table>
           </div>
         </details>
 
-        <details class="detail-toggle highlight-style">
+        <details class="detail-toggle compact" style="margin-top: var(--space-4);">
           <summary>
-            <span class="detail-label">Publication</span>
-            <span class="detail-title">Conference paper details</span>
-          </summary>
-          <div class="detail-body">
-            Sai Pranav Avva, Suman Acharya, Kandula Eswara Sai Kumar, Sudhanshu Shekar, Karthik Raveendranath, and G K Ananthasuresh. <strong>"A Novel Accordion-like Disk Resonator Gyroscope."</strong>
-            <em>International Conference on Micro, Nano, and Smart Systems (ICMNS)</em>, July 11, 2024.
-            <br><br>
-            The paper presents a comprehensive comparison of five DRG topologies (DRG, HDRG, CDRG, GDRG, ADRG) across mechanical sensitivity, Q factor, capacitance change, and Brownian noise floor metrics.
-          </div>
-        </details>
-
-        <details class="detail-toggle note-style">
-          <summary>
-            <span class="detail-label">Data</span>
-            <span class="detail-title">Topology comparison summary</span>
+            <span class="detail-label">Future</span>
+            <span class="detail-title">Planned improvements</span>
           </summary>
           <div class="detail-body">
             <ul class="bullet-list">
-              <li><strong>DRG (baseline):</strong> 5.2 µm/rad/s sensitivity, 156k Q</li>
-              <li><strong>HDRG:</strong> 7.1 µm/rad/s sensitivity, 142k Q</li>
-              <li><strong>CDRG:</strong> 6.8 µm/rad/s sensitivity, 168k Q</li>
-              <li><strong>GDRG:</strong> 9.4 µm/rad/s sensitivity, 151k Q</li>
-              <li><strong>ADRG (ours):</strong> 12.1 µm/rad/s sensitivity, 181.6k Q</li>
+              <li><strong>Negative rail:</strong> Add −12V for op-amp circuits</li>
+              <li><strong>Overcurrent protection:</strong> Auto-shutdown on overload</li>
+              <li><strong>Port covers:</strong> Banana jack caps for unused outputs</li>
+              <li><strong>Front panel overlay:</strong> 3D printed cleaner design</li>
+              <li><strong>Output switches:</strong> Enable/disable switches for each rail</li>
             </ul>
           </div>
         </details>
+
+        <div class="credit-box">
+          <strong>Original Idea Credit:</strong> Base ATX conversion concept inspired by <a href="https://dronebotworkshop.com/atx-bench-supply/" target="_blank" rel="noopener noreferrer">DroneBot Workshop's ATX Bench Supply Tutorial</a>. All enhancements — including CC/CV control, fine/coarse adjustment, 24V boost rail, and front panel fabrication — are original work.
+        </div>
       </div>
 
       <!-- ADDITIONAL INFORMATION -->
       <div id="additional-info" class="project-block">
         <h3>Additional Information</h3>
-        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-4);">Conference presentation slides.</p>
-        <div class="resume-card">
-          <div class="pdf-wrapper">
-            <iframe
-              src="../documents/MEMS Engineer/A_Novel_Accordion-Like_Disk_Resonator_Gyroscope.pdf"
-              title="A Novel Accordion-Like Disk Resonator Gyroscope Presentation"
-              loading="lazy">
-            </iframe>
-          </div>
+        <p style="color:var(--text-dim); max-width:62ch; margin-bottom:var(--space-4); font-size:var(--text-sm);">
+          Demo video showing the variable voltage range and fine/coarse tuning demonstration.
+        </p>
+        <div class="video-wrapper">
+          <video controls preload="metadata" poster="../documents/DIY Benchtop Power Supply/fig5.jpg">
+            <source src="../documents/DIY Benchtop Power Supply/demovideo1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
 
-        <details class="detail-toggle" style="margin-top: var(--space-6);">
+        <details class="detail-toggle compact" style="margin-top: var(--space-6);">
           <summary>
             <span class="detail-label">Skills</span>
             <span class="detail-title">Technical skills demonstrated</span>
           </summary>
           <div class="detail-body">
             <ul class="bullet-list">
-              <li><strong>Simulation:</strong> COMSOL Multiphysics, FEM eigenfrequency/thermoelastic analysis</li>
-              <li><strong>CAD/Layout:</strong> CleWin, KLayout, mask design, DRC</li>
-              <li><strong>Fabrication:</strong> SOI micromachining, DRIE, HF vapor release</li>
-              <li><strong>Characterization:</strong> LDV, impedance analysis, wire bonding</li>
-              <li><strong>Analysis:</strong> MATLAB, Python data processing</li>
+              <li><strong>Electronics:</strong> Power supply design, CC/CV regulation, boost conversion</li>
+              <li><strong>Fabrication:</strong> Metal cutting, panel layout, wiring</li>
+              <li><strong>Integration:</strong> Module interfacing, potentiometer wiring</li>
+              <li><strong>Testing:</strong> Load testing, current limit verification</li>
             </ul>
-          </div>
-        </details>
-
-        <details class="detail-toggle compact">
-          <summary>
-            <span class="detail-label">Team</span>
-            <span class="detail-title">Collaborators and acknowledgments</span>
-          </summary>
-          <div class="detail-body">
-            This work was conducted at the M2D2 Lab, Indian Institute of Science, under Prof. G K Ananthasuresh. Fabrication was performed at CeNSE, IISc. Special thanks to ISRO for project sponsorship and Suman Acharya for gyroscope design collaboration.
           </div>
         </details>
       </div>
 
-    </div>
-  </div>
+      <!-- GALLERY -->
+      <div id="gallery" class="project-block gallery-section">
+        <p class="section-eyebrow">Build Process</p>
+        <h3>Gallery</h3>
+        <p style="color:var(--text-dim); max-width:70ch; margin-bottom:var(--space-4); font-size:var(--text-sm);">
+          Photos from the build process. Use the arrows or dots to browse.
+        </p>
+
+        <div class="carousel" id="fabCarousel" tabindex="0">
+          <div class="carousel-viewport">
+            <div class="carousel-track" id="fabTrack">
+              <figure class="carousel-slide">
+                <img src="../documents/DIY Benchtop Power Supply/fig1.jpg" alt="Components laid out for the build" loading="lazy">
+                <figcaption>Bill of materials — ATX PSU, XL4015 module, pots, jacks, display</figcaption>
+              </figure>
+              <figure class="carousel-slide">
+                <img src="../documents/DIY Benchtop Power Supply/fig4.jpg" alt="ATX wiring sorted by rail color" loading="lazy">
+                <figcaption>ATX rail wiring — color-coded and bundled for front panel</figcaption>
+              </figure>
+              <figure class="carousel-slide">
+                <img src="../documents/DIY Benchtop Power Supply/fig2.jpg" alt="Internal wiring with CC/CV module" loading="lazy">
+                <figcaption>Internal assembly — XL4015 CC/CV module with heatsink installed</figcaption>
+              </figure>
+              <figure class="carousel-slide">
+                <img src="../documents/DIY Benchtop Power Supply/fig3.jpg" alt="Front panel fabrication in progress" loading="lazy">
+                <figcaption>Front panel progress — hand-cut openings for display and jacks</figcaption>
+              </figure>
+            </div>
+          </div>
+          <button type="button" class="carousel-arrow carousel-prev" aria-label="Previous slide">‹</button>
+          <button type="button" class="carousel-arrow carousel-next" aria-label="Next slide">›</button>
+          <div class="carousel-dots" id="fabDots"></div>
+        </div>
+      </div>
+
+    </div><!-- end project-content -->
+  </div><!-- end project-layout -->
 </section>
 
 <footer class="footer">
@@ -363,6 +430,7 @@
 </footer>
 
 <script>
+  // ── Theme & Clock ──
   const root = document.documentElement;
   const toggle = document.getElementById('themeToggle');
   const knob = document.getElementById('themeKnob');
@@ -393,7 +461,7 @@
   tickClock();
   setInterval(tickClock, 1000);
 
-  // Sidebar navigation
+  // ── Sidebar Scrollspy ──
   const sidebar = document.querySelector('.project-sidebar');
   const sidebarHeader = document.querySelector('.sidebar-header');
   const sidebarLinks = document.querySelectorAll('.sidebar-link');
@@ -405,78 +473,83 @@
     if (target) sections.push({ id: targetId, el: target, link: link });
   });
 
-  function scrollSidebarToActive(activeLink) {
-    if (!sidebar || !activeLink) return;
-    const allLinks = Array.from(sidebarLinks);
-    const activeIndex = allLinks.indexOf(activeLink);
-    const totalLinks = allLinks.length;
-    if (activeIndex >= totalLinks - 2) {
-      const headerHeight = sidebarHeader ? sidebarHeader.offsetHeight + 10 : 50;
-      sidebar.scrollTo({ top: activeLink.offsetTop - headerHeight, behavior: 'smooth' });
-    } else {
-      sidebar.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  }
-
   function updateActiveLink() {
-    const scrollPos = window.scrollY;
-    const windowHeight = window.innerHeight;
-    const docHeight = document.documentElement.scrollHeight;
-    const atBottom = scrollPos + windowHeight >= docHeight - 50;
+    let current = sections[0];
+    const scrollY = window.scrollY + 180;
 
-    let activeSection = sections[0];
-    if (atBottom && sections.length > 0) {
-      activeSection = sections[sections.length - 1];
-    } else {
-      const offset = 200;
-      for (const section of sections) {
-        const rect = section.el.getBoundingClientRect();
-        if (rect.top <= offset) activeSection = section;
-      }
+    for (const section of sections) {
+      if (section.el.offsetTop <= scrollY) current = section;
     }
 
     sidebarLinks.forEach(link => link.classList.remove('active'));
-    if (activeSection) {
-      activeSection.link.classList.add('active');
-      scrollSidebarToActive(activeSection.link);
-    }
+    if (current) current.link.classList.add('active');
   }
 
-  sidebarLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute('href').substring(1);
-      const target = document.getElementById(targetId);
-      if (target) {
-        const headerOffset = 160;
-        const offsetPosition = target.getBoundingClientRect().top + window.scrollY - headerOffset;
-        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-        sidebarLinks.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-        scrollSidebarToActive(link);
-      }
-    });
-  });
-
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => { updateActiveLink(); ticking = false; });
-      ticking = true;
-    }
-  });
+  window.addEventListener('scroll', updateActiveLink, { passive: true });
   updateActiveLink();
 
+  // ── Back to Top Button ──
   const topBtn = document.getElementById('sidebarTopBtn');
   if (topBtn) {
     topBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      if (sidebar) sidebar.scrollTo({ top: 0, behavior: 'smooth' });
-      sidebarLinks.forEach(link => link.classList.remove('active'));
-      if (sidebarLinks[0]) sidebarLinks[0].classList.add('active');
     });
   }
-</script>
 
+  // ── Carousel Functionality ──
+  function initCarousel(carouselEl) {
+    const track = carouselEl.querySelector('.carousel-track');
+    const slides = carouselEl.querySelectorAll('.carousel-slide');
+    const prevBtn = carouselEl.querySelector('.carousel-prev');
+    const nextBtn = carouselEl.querySelector('.carousel-next');
+    const dotsContainer = carouselEl.querySelector('.carousel-dots');
+
+    if (!track || slides.length === 0) return;
+
+    let index = 0;
+
+    // Create dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === index));
+    }
+
+    function goTo(i) {
+      index = (i + slides.length) % slides.length;
+      updateCarousel();
+    }
+
+    prevBtn.addEventListener('click', () => goTo(index - 1));
+    nextBtn.addEventListener('click', () => goTo(index + 1));
+
+    // Keyboard navigation
+    carouselEl.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') goTo(index - 1);
+      if (e.key === 'ArrowRight') goTo(index + 1);
+    });
+
+    // Optional autoplay with pause on hover
+    let autoplay = setInterval(() => goTo(index + 1), 5000);
+    carouselEl.addEventListener('mouseenter', () => clearInterval(autoplay));
+    carouselEl.addEventListener('mouseleave', () => {
+      autoplay = setInterval(() => goTo(index + 1), 5000);
+    });
+
+    updateCarousel();
+  }
+
+  // Initialize all carousels
+  document.querySelectorAll('.carousel').forEach(initCarousel);
+</script>
 </body>
 </html>

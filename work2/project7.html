@@ -6,60 +6,43 @@
   <title>DIY Benchtop Power Supply | Sai Pranav Avva</title>
   <meta name="description" content="Custom benchtop power supply built from ATX PSU with CC/CV control, fine/coarse tuning, 24V boost, and multi-rail outputs for under $10.">
   <link rel="stylesheet" href="../styles.css">
-
   <style>
-    /* ── Page-specific overrides for slightly smaller layout ── */
-    .project-layout {
-      max-width: 1100px;
-    }
-    .project-content {
-      max-width: 800px;
-    }
-
-    /* ── Carousel Styles (matching template pattern) ── */
+    /* ── Carousel Styles ── */
     .carousel {
       position: relative;
       width: 100%;
-      border-radius: var(--radius-lg, 18px);
+      border-radius: var(--r-lg);
       overflow: hidden;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
     }
-
-    .carousel-viewport {
-      overflow: hidden;
-    }
-
+    .carousel-viewport { overflow: hidden; }
     .carousel-track {
       display: flex;
       transition: transform 0.4s ease;
     }
-
     .carousel-slide {
       min-width: 100%;
       flex-shrink: 0;
     }
-
     .carousel-slide img {
       width: 100%;
       display: block;
       aspect-ratio: 16 / 10;
       object-fit: cover;
     }
-
     .carousel-slide figcaption {
       padding: 0.75rem 1rem;
-      font-size: var(--text-sm, 0.9rem);
+      font-size: var(--text-sm);
       color: var(--text-dim);
-      background: rgba(0,0,0,0.15);
-      border-top: 1px solid rgba(255,255,255,0.06);
+      background: var(--bg-elevated);
+      border-top: 1px solid var(--border);
+      text-align: center;
     }
-
     .carousel-arrow {
       position: absolute;
       top: 50%;
-      transform: translateY(-50%);
+      transform: translateY(calc(-50% - 20px));
       z-index: 5;
       width: 40px;
       height: 40px;
@@ -74,21 +57,16 @@
       backdrop-filter: blur(4px);
       transition: background 0.2s;
     }
-
-    .carousel-arrow:hover {
-      background: rgba(0,0,0,0.7);
-    }
-
+    .carousel-arrow:hover { background: rgba(0,0,0,0.7); }
     .carousel-prev { left: 10px; }
     .carousel-next { right: 10px; }
-
     .carousel-dots {
       display: flex;
       justify-content: center;
       gap: 8px;
       padding: 0.75rem 0;
+      background: var(--bg-elevated);
     }
-
     .carousel-dot {
       width: 9px;
       height: 9px;
@@ -98,74 +76,39 @@
       cursor: pointer;
       transition: background 0.2s, transform 0.2s;
     }
-
     .carousel-dot.active {
-      background: var(--accent, #7c5cff);
+      background: var(--accent-bright);
       transform: scale(1.25);
     }
-
-    /* ── Credit box ── */
-    .credit-box {
-      margin-top: var(--space-4, 1rem);
-      padding: 1rem 1.15rem;
-      border-left: 4px solid var(--accent, #7c5cff);
-      background: rgba(124, 92, 255, 0.07);
-      border-radius: var(--radius-md, 12px);
-      font-size: var(--text-sm, 0.9rem);
-      color: var(--text);
-    }
-
-    .credit-box a {
-      color: var(--accent, #7c5cff);
-      text-decoration: none;
-    }
-
-    .credit-box a:hover {
-      text-decoration: underline;
-    }
-
-    /* ── Comparison Table ── */
+    .video-wrapper { border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--border); }
+    .video-wrapper video { width: 100%; display: block; }
     .comparison-table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: var(--space-4, 1rem);
-      font-size: var(--text-sm, 0.9rem);
+      font-size: var(--text-sm);
+      margin-top: var(--space-4);
     }
-
-    .comparison-table th,
-    .comparison-table td {
-      padding: 0.65rem 0.85rem;
+    .comparison-table th, .comparison-table td {
+      padding: var(--space-3);
       text-align: left;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid var(--border);
     }
-
     .comparison-table th {
-      background: rgba(255,255,255,0.04);
-      color: var(--text);
+      color: var(--headline);
       font-weight: 600;
+      background: var(--bg-elevated);
     }
-
-    .comparison-table td {
+    .comparison-table td { color: var(--text); }
+    .credit-box {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      padding: var(--space-4);
+      margin-top: var(--space-6);
+      font-size: var(--text-sm);
       color: var(--text-dim);
     }
-
-    .comparison-table tr:hover td {
-      background: rgba(255,255,255,0.02);
-    }
-
-    /* ── Video wrapper ── */
-    .video-wrapper {
-      position: relative;
-      width: 100%;
-      border-radius: var(--radius-lg, 18px);
-      overflow: hidden;
-      background: #000;
-    }
-
-    .video-wrapper video {
-      width: 100%;
-      display: block;
-    }
+    .credit-box a { color: var(--accent-bright); }
   </style>
 </head>
 <body>
@@ -212,135 +155,202 @@
     <div class="project-content">
 
       <!-- HERO / SUMMARY -->
-      <div class="hero-block project-block" id="summary">
-        <p class="section-eyebrow">Personal Project • 2023</p>
-        <h2>DIY Benchtop Power Supply</h2>
-        <p class="hero-subtitle" style="max-width:68ch;">
-          ATX PSU conversion with CC/CV control, fine/coarse tuning & multi-rail outputs — under $10
-        </p>
-        <p style="color:var(--text-dim); font-size:var(--text-sm); margin-bottom:var(--space-4);">
-          Designed and built complete benchtop supply with XL4015 CC/CV module, dual fine/coarse V/I adjustment, 24V boost converter, hand-fabricated front panel.
-        </p>
-
-        <!-- Hero Image -->
-        <div class="hero-media">
-          <img
-            src="../documents/DIY Benchtop Power Supply/fig5.jpg"
-            alt="Completed DIY benchtop power supply with digital display, USB ports, adjustment knobs, and banana jack outputs for multiple voltage rails"
-            loading="eager">
+      <div class="project-hero" id="summary">
+        <div class="project-hero-text">
+          <p class="project-hero-meta">Personal Project · 2023</p>
+          <h2>DIY Benchtop Power Supply</h2>
+          <p style="color:var(--text); max-width:62ch;">
+            ATX PSU conversion with CC/CV control, fine/coarse tuning &amp; multi-rail outputs — under $10.
+          </p>
+          <div class="spec-ribbon">
+            <div class="dim-tag">
+              <span class="dim-value">400W</span>
+              <span class="dim-label">Power capacity</span>
+            </div>
+            <div class="dim-tag">
+              <span class="dim-value">~$10</span>
+              <span class="dim-label">Additional cost</span>
+            </div>
+            <div class="dim-tag">
+              <span class="dim-value">5</span>
+              <span class="dim-label">Output rails</span>
+            </div>
+          </div>
         </div>
       </div>
 
+      <!-- Hero Image -->
+      <figure style="margin: var(--space-6) 0;">
+        <img src="../documents/DIY Benchtop Power Supply/fig5.jpg" alt="Completed DIY benchtop power supply with digital display, USB ports, adjustment knobs, and banana jack outputs" style="width:100%; border-radius: 8px;">
+        <figcaption>Completed benchtop power supply with V/A display, USB ports, and multi-rail banana jack outputs</figcaption>
+      </figure>
+
       <!-- SUMMARY TEXT -->
       <div class="project-block">
-        <h3>Summary</h3>
-        <p>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
           Commercial benchtop power supplies with variable voltage and current limiting typically cost $50–$150 or more. This project repurposes a salvaged 400W ATX computer power supply into a fully featured lab bench supply for under $10 in additional components.
         </p>
-        <p>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
           While the basic ATX conversion concept was inspired by the <a href="https://dronebotworkshop.com/atx-bench-supply/" target="_blank" rel="noopener noreferrer">DroneBot Workshop tutorial</a>, this build significantly extends the functionality by adding an XL4015-based constant current/constant voltage (CC/CV) module for a true variable output with current limiting — essential for safely powering sensitive circuits and charging batteries.
         </p>
-        <p>
-          A dual fine/coarse knob system enables precision voltage and current adjustment, while a boost converter provides a 24V rail not available from standard ATX supplies. The front panel was hand-fabricated using an angle grinder and Dremel, featuring banana jack outputs for 3.3V, 5V, 12V, 24V, and variable voltage rails, plus dual USB ports for device charging and a digital V/A display for real-time monitoring.
+        <p style="color:var(--text); font-size: var(--text-sm);">
+          A dual fine/coarse knob system enables precision voltage and current adjustment, while a boost converter provides a 24V rail not available from standard ATX supplies. The front panel was hand-fabricated using an angle grinder and Dremel.
         </p>
       </div>
 
       <!-- PROBLEM STATEMENT -->
       <div id="problem" class="project-block">
         <h3>Problem Statement</h3>
-        <p>
+        <p style="color:var(--text); max-width:62ch; margin-bottom: var(--space-4);">
           Needed a reliable, low-cost benchtop power supply for Arduino projects, circuit prototyping, and embedded systems development without spending $100+ on commercial equipment.
         </p>
-        <ul style="margin:0; padding-left:1.1rem; color:var(--text); line-height:1.75;">
-          <li>Reuse a salvaged ATX PSU instead of buying a new bench supply</li>
-          <li>Add variable voltage output with adjustable current limiting for safe testing</li>
-          <li>Provide multiple fixed voltage rails (3.3V, 5V, 12V) plus 24V for motors</li>
-          <li>Include USB charging ports and real-time V/A monitoring</li>
-          <li>Build a functional, labeled front panel with easy access to all outputs</li>
+        <ul class="bullet-list">
+          <li><strong>Reuse:</strong> Salvaged ATX PSU instead of buying new bench supply</li>
+          <li><strong>Variable output:</strong> Adjustable voltage with current limiting for safe testing</li>
+          <li><strong>Multiple rails:</strong> Fixed 3.3V, 5V, 12V plus 24V for motors</li>
+          <li><strong>Convenience:</strong> USB charging ports and real-time V/A monitoring</li>
+          <li><strong>Accessibility:</strong> Functional, labeled front panel with easy output access</li>
         </ul>
       </div>
 
       <!-- METHODOLOGY -->
       <div id="methodology" class="project-block">
         <h3>Methodology</h3>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-2);">
+          Step-by-step conversion from ATX PSU to fully featured bench supply. Click a stage to jump there.
+        </p>
+        <nav class="process-stepper">
+          <a href="#components" class="process-step"><span class="step-num">1</span>Components</a>
+          <span class="process-connector"></span>
+          <a href="#fabrication" class="process-step"><span class="step-num">2</span>Fabricate</a>
+          <span class="process-connector"></span>
+          <a href="#test-setup" class="process-step"><span class="step-num">3</span>Test</a>
+          <span class="process-connector"></span>
+          <a href="#results" class="process-step"><span class="step-num">4</span>Results</a>
+        </nav>
+      </div>
 
-        <div id="components">
-          <h4>Component Selection & Planning</h4>
-          <p>
-            Selected a salvaged 400W ATX power supply as the base unit, providing native 3.3V, 5V, and 12V rails with sufficient current capacity for bench use. Sourced an XL4015-based 5A CC/CV buck converter module for variable output with current limiting, a boost converter for 24V generation, potentiometers for fine/coarse adjustment, banana jacks for outputs, a dual digital V/A display, and USB-A ports for device charging. Total additional component cost: approximately $10.
-          </p>
-        </div>
+      <!-- COMPONENTS -->
+      <div id="components" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Component Selection &amp; Planning</h4>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Selected a salvaged 400W ATX power supply as the base unit, providing native 3.3V, 5V, and 12V rails with sufficient current capacity for bench use.
+        </p>
+        <ul class="bullet-list">
+          <li><strong>XL4015 module:</strong> 5A CC/CV buck converter for variable output with current limiting</li>
+          <li><strong>Boost converter:</strong> 24V generation from 12V rail</li>
+          <li><strong>Potentiometers:</strong> Fine/coarse adjustment for V and I</li>
+          <li><strong>Banana jacks:</strong> Outputs for all voltage rails</li>
+          <li><strong>Digital display:</strong> Dual V/A monitoring</li>
+          <li><strong>USB-A ports:</strong> Device charging</li>
+        </ul>
 
-        <div style="margin-top:var(--space-5);">
-          <h4>ATX Power Supply Preparation</h4>
-          <p>
-            Opened the ATX PSU and identified all output rails by wire color: Yellow (12V), Red (5V), Orange (3.3V), Black (GND), Green (PS_ON), and Purple (−5V standby). Bundled and sorted wires by voltage rail for organized connection to front panel outputs. Shorted PS_ON (green) to GND (black) to enable the supply to turn on without a motherboard connection.
-          </p>
-        </div>
+        <h4 style="color:var(--headline); margin-top: var(--space-5); margin-bottom: var(--space-3);">ATX Power Supply Preparation</h4>
+        <p style="color:var(--text); font-size: var(--text-sm);">
+          Opened the ATX PSU and identified all output rails by wire color: Yellow (12V), Red (5V), Orange (3.3V), Black (GND), Green (PS_ON), and Purple (−5V standby). Bundled and sorted wires by voltage rail for organized connection to front panel outputs. Shorted PS_ON (green) to GND (black) to enable the supply to turn on without a motherboard connection.
+        </p>
+      </div>
 
-        <div id="fabrication" style="margin-top:var(--space-5);">
-          <h4>Front Panel Fabrication</h4>
-          <p>
-            Hand-fabricated the front panel from the original ATX case material using an angle grinder for major cuts and a Dremel for precision cutouts. Created mounting holes for the digital display, USB ports, four potentiometer knobs, and ten banana jack pairs. The panel was designed to provide easy access to all voltage rails while maintaining a compact form factor.
-          </p>
-        </div>
+      <!-- FABRICATION -->
+      <div id="fabrication" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Front Panel Fabrication</h4>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Hand-fabricated the front panel from the original ATX case material using an angle grinder for major cuts and a Dremel for precision cutouts.
+        </p>
+        <ul class="bullet-list">
+          <li><strong>Mounting holes:</strong> Digital display, USB ports, four potentiometer knobs, ten banana jack pairs</li>
+          <li><strong>Design goal:</strong> Easy access to all voltage rails in compact form factor</li>
+        </ul>
 
-        <div style="margin-top:var(--space-5);">
-          <h4>CC/CV Module Integration</h4>
-          <p>
-            Integrated the XL4015 5A CC/CV buck converter module, fed from the 12V ATX rail, to provide a variable voltage output with adjustable current limiting. Replaced the onboard trim pots with panel-mounted potentiometers arranged in a fine/coarse configuration for precise voltage adjustment (coarse for range, fine for mV-level tuning) and separate fine/coarse current limit adjustment. This enables safe powering of sensitive loads and battery charging applications.
-          </p>
-        </div>
+        <h4 style="color:var(--headline); margin-top: var(--space-5); margin-bottom: var(--space-3);">CC/CV Module Integration</h4>
+        <p style="color:var(--text); font-size: var(--text-sm);">
+          Integrated the XL4015 5A CC/CV buck converter module, fed from the 12V ATX rail, to provide a variable voltage output with adjustable current limiting. Replaced the onboard trim pots with panel-mounted potentiometers arranged in a fine/coarse configuration for precise voltage adjustment (coarse for range, fine for mV-level tuning) and separate fine/coarse current limit adjustment.
+        </p>
 
-        <div style="margin-top:var(--space-5);">
-          <h4>24V Boost Converter Addition</h4>
-          <p>
-            Added a boost converter module fed from the 12V rail to generate a 24V output, extending the supply's capability beyond standard ATX voltages. This rail is useful for powering 24V motors, solenoids, and industrial sensors commonly used in robotics and automation projects.
-          </p>
-        </div>
+        <h4 style="color:var(--headline); margin-top: var(--space-5); margin-bottom: var(--space-3);">24V Boost Converter Addition</h4>
+        <p style="color:var(--text); font-size: var(--text-sm);">
+          Added a boost converter module fed from the 12V rail to generate a 24V output, extending the supply's capability beyond standard ATX voltages. This rail is useful for powering 24V motors, solenoids, and industrial sensors commonly used in robotics and automation projects.
+        </p>
       </div>
 
       <!-- TEST SETUP -->
       <div id="test-setup" class="project-block">
         <h3>Test Setup</h3>
-        <p>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
           All output rails verified with a digital multimeter. Variable output tested across full voltage range with resistive loads. Current limiting verified by setting limit and shorting output — supply correctly enters constant current mode. USB ports tested with phone charging. Supply has been in regular use for embedded systems development since 2023.
         </p>
-        <ul style="margin:0; padding-left:1.1rem; color:var(--text); line-height:1.75;">
-          <li>Measured fixed rails: 3.3V, 5V, 12V, 24V (boosted)</li>
-          <li>Variable output: 1.25V – 10V+ range with fine/coarse adjustment</li>
-          <li>Current limiting: 0 – 5A adjustable, verified with short-circuit test</li>
-          <li>USB ports: functional for device charging</li>
-        </ul>
+
+        <div class="stat-strip">
+          <div class="stat-card">
+            <span class="stat-value">3.3V, 5V, 12V</span>
+            <span class="stat-label">Fixed rails</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">24V</span>
+            <span class="stat-label">Boosted rail</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">1.25–10V+</span>
+            <span class="stat-label">Variable range</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">0–5A</span>
+            <span class="stat-label">Current limit</span>
+          </div>
+        </div>
       </div>
 
       <!-- RESULTS -->
       <div id="results" class="project-block">
         <h3>Results</h3>
-        <p>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
           Achieved commercial-grade functionality at less than 10% of the cost by repurposing salvaged components and adding targeted enhancements.
         </p>
 
-        <table class="comparison-table">
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>This DIY Build</th>
-              <th>Typical Commercial (~$50–150)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Cost</td><td>~$10 + salvaged ATX PSU</td><td>$50 – $150+</td></tr>
-            <tr><td>Variable Output</td><td>Yes (CC/CV)</td><td>Yes</td></tr>
-            <tr><td>Current Limiting</td><td>Yes (0–5A adjustable)</td><td>Yes</td></tr>
-            <tr><td>Fine/Coarse Adjust</td><td>Yes (V and I)</td><td>Sometimes</td></tr>
-            <tr><td>Fixed Rails (3.3V, 5V, 12V)</td><td>Yes</td><td>Rarely</td></tr>
-            <tr><td>24V Output</td><td>Yes (boost converter)</td><td>Sometimes</td></tr>
-            <tr><td>USB Charging Ports</td><td>Yes (2×)</td><td>Rarely</td></tr>
-            <tr><td>V/A Display</td><td>Yes</td><td>Yes</td></tr>
-            <tr><td>Power Capacity</td><td>400W</td><td>Typically 150–300W</td></tr>
-          </tbody>
-        </table>
+        <details class="detail-toggle highlight-style">
+          <summary>
+            <span class="detail-label">Compare</span>
+            <span class="detail-title">DIY vs Commercial comparison</span>
+          </summary>
+          <div class="detail-body">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>This DIY Build</th>
+                  <th>Typical Commercial (~$50–150)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Cost</td><td>~$10 + salvaged ATX PSU</td><td>$50 – $150+</td></tr>
+                <tr><td>Variable Output</td><td>Yes (CC/CV)</td><td>Yes</td></tr>
+                <tr><td>Current Limiting</td><td>Yes (0–5A adjustable)</td><td>Yes</td></tr>
+                <tr><td>Fine/Coarse Adjust</td><td>Yes (V and I)</td><td>Sometimes</td></tr>
+                <tr><td>Fixed Rails (3.3V, 5V, 12V)</td><td>Yes</td><td>Rarely</td></tr>
+                <tr><td>24V Output</td><td>Yes (boost converter)</td><td>Sometimes</td></tr>
+                <tr><td>USB Charging Ports</td><td>Yes (2×)</td><td>Rarely</td></tr>
+                <tr><td>V/A Display</td><td>Yes</td><td>Yes</td></tr>
+                <tr><td>Power Capacity</td><td>400W</td><td>Typically 150–300W</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <details class="detail-toggle compact" style="margin-top: var(--space-4);">
+          <summary>
+            <span class="detail-label">Future</span>
+            <span class="detail-title">Planned improvements</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>Negative rail:</strong> Add −12V for op-amp circuits</li>
+              <li><strong>Overcurrent protection:</strong> Auto-shutdown on overload</li>
+              <li><strong>Port covers:</strong> Banana jack caps for unused outputs</li>
+              <li><strong>Front panel overlay:</strong> 3D printed cleaner design</li>
+              <li><strong>Output switches:</strong> Enable/disable switches for each rail</li>
+            </ul>
+          </div>
+        </details>
 
         <div class="credit-box">
           <strong>Original Idea Credit:</strong> Base ATX conversion concept inspired by <a href="https://dronebotworkshop.com/atx-bench-supply/" target="_blank" rel="noopener noreferrer">DroneBot Workshop's ATX Bench Supply Tutorial</a>. All enhancements — including CC/CV control, fine/coarse adjustment, 24V boost rail, and front panel fabrication — are original work.
@@ -360,14 +370,20 @@
           </video>
         </div>
 
-        <h4 style="margin-top:var(--space-6);">Future Improvements</h4>
-        <ul style="margin:0; padding-left:1.1rem; color:var(--text-dim); line-height:1.75; font-size:var(--text-sm);">
-          <li>Add negative voltage rail (−12V) for op-amp circuits</li>
-          <li>Integrate overcurrent protection with auto-shutdown</li>
-          <li>Add banana jack covers/caps for unused ports</li>
-          <li>Design and 3D print a cleaner front panel overlay</li>
-          <li>Add output enable switches for each rail</li>
-        </ul>
+        <details class="detail-toggle compact" style="margin-top: var(--space-6);">
+          <summary>
+            <span class="detail-label">Skills</span>
+            <span class="detail-title">Technical skills demonstrated</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>Electronics:</strong> Power supply design, CC/CV regulation, boost conversion</li>
+              <li><strong>Fabrication:</strong> Metal cutting, panel layout, wiring</li>
+              <li><strong>Integration:</strong> Module interfacing, potentiometer wiring</li>
+              <li><strong>Testing:</strong> Load testing, current limit verification</li>
+            </ul>
+          </div>
+        </details>
       </div>
 
       <!-- GALLERY -->
@@ -381,10 +397,6 @@
         <div class="carousel" id="fabCarousel" tabindex="0">
           <div class="carousel-viewport">
             <div class="carousel-track" id="fabTrack">
-              <!-- <figure class="carousel-slide">
-                <img src="../images/diy-benchtop-power-supply/benchtop-psu-complete.jpg" alt="Completed DIY benchtop power supply" loading="lazy">
-                <figcaption>Completed unit — display, USB ports, multi-rail banana jack outputs</figcaption>
-              </figure> -->
               <figure class="carousel-slide">
                 <img src="../documents/DIY Benchtop Power Supply/fig1.jpg" alt="Components laid out for the build" loading="lazy">
                 <figcaption>Bill of materials — ATX PSU, XL4015 module, pots, jacks, display</figcaption>
@@ -458,101 +470,42 @@
   sidebarLinks.forEach(link => {
     const targetId = link.getAttribute('href').substring(1);
     const target = document.getElementById(targetId);
-    if (target) {
-      sections.push({ id: targetId, el: target, link: link });
-    }
+    if (target) sections.push({ id: targetId, el: target, link: link });
   });
 
-  function scrollSidebarToActive(activeLink) {
-    if (!sidebar || !activeLink) return;
-    const allLinks = Array.from(sidebarLinks);
-    const activeIndex = allLinks.indexOf(activeLink);
-    const totalLinks = allLinks.length;
-
-    if (activeIndex >= totalLinks - 2) {
-      const headerHeight = sidebarHeader ? sidebarHeader.offsetHeight + 10 : 50;
-      const scrollTarget = activeLink.offsetTop - headerHeight;
-      sidebar.scrollTo({ top: scrollTarget, behavior: 'smooth' });
-    } else {
-      sidebar.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  }
-
   function updateActiveLink() {
-    const scrollPos = window.scrollY;
-    const windowHeight = window.innerHeight;
-    const docHeight = document.documentElement.scrollHeight;
-    const atBottom = scrollPos + windowHeight >= docHeight - 50;
+    let current = sections[0];
+    const scrollY = window.scrollY + 180;
 
-    let activeSection = sections[0];
-
-    if (atBottom && sections.length > 0) {
-      activeSection = sections[sections.length - 1];
-    } else {
-      const offset = 200;
-      for (const section of sections) {
-        const rect = section.el.getBoundingClientRect();
-        if (rect.top <= offset) {
-          activeSection = section;
-        }
-      }
+    for (const section of sections) {
+      if (section.el.offsetTop <= scrollY) current = section;
     }
 
     sidebarLinks.forEach(link => link.classList.remove('active'));
-    if (activeSection) {
-      activeSection.link.classList.add('active');
-      scrollSidebarToActive(activeSection.link);
-    }
+    if (current) current.link.classList.add('active');
   }
 
-  // Smooth scroll on sidebar click
-  sidebarLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute('href').substring(1);
-      const target = document.getElementById(targetId);
-
-      if (target) {
-        const headerOffset = 160;
-        const elementPosition = target.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.scrollY - headerOffset;
-
-        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-
-        sidebarLinks.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-        scrollSidebarToActive(link);
-      }
-    });
-  });
-
-  // Throttled scroll listener
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        updateActiveLink();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  });
-
+  window.addEventListener('scroll', updateActiveLink, { passive: true });
   updateActiveLink();
 
   // ── Back to Top Button ──
   const topBtn = document.getElementById('sidebarTopBtn');
   if (topBtn) {
-    topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
 
-  // ── Media Carousel ──
+  // ── Carousel Functionality ──
   function initCarousel(carouselEl) {
     const track = carouselEl.querySelector('.carousel-track');
-    const slides = Array.from(track.children);
+    const slides = carouselEl.querySelectorAll('.carousel-slide');
     const prevBtn = carouselEl.querySelector('.carousel-prev');
     const nextBtn = carouselEl.querySelector('.carousel-next');
-    const dotsWrap = carouselEl.querySelector('.carousel-dots');
+    const dotsContainer = carouselEl.querySelector('.carousel-dots');
+
+    if (!track || slides.length === 0) return;
+
     let index = 0;
 
     // Create dots
@@ -561,10 +514,10 @@
       dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
       dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
       dot.addEventListener('click', () => goTo(i));
-      dotsWrap.appendChild(dot);
+      dotsContainer.appendChild(dot);
     });
 
-    const dots = dotsWrap.querySelectorAll('.carousel-dot');
+    const dots = dotsContainer.querySelectorAll('.carousel-dot');
 
     function updateCarousel() {
       track.style.transform = `translateX(-${index * 100}%)`;

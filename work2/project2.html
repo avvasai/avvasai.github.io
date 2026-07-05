@@ -31,90 +31,127 @@
   <a href="../index.html#info" class="back-link">← Back to projects</a>
 
   <div class="project-layout">
-    
-    <!-- STICKY SIDEBAR - Always visible -->
+
+    <!-- STICKY SIDEBAR -->
     <aside class="project-sidebar" id="projectSidebar">
-    <div class="sidebar-header">On This Page</div>
-    <a href="#summary" class="sidebar-link active">Summary</a>
-    <a href="#problem" class="sidebar-link">Problem Statement</a>
-    <a href="#methodology" class="sidebar-link">Methodology</a>
-    <a href="#photogrammetry" class="sidebar-link sidebar-sublink">Photogrammetry</a>
-    <a href="#wing-design" class="sidebar-link sidebar-sublink">Wing Design</a>
-    <a href="#mechanism" class="sidebar-link sidebar-sublink">Mechanism Synthesis</a>
-    <a href="#system-integration" class="sidebar-link sidebar-sublink">System Integration</a>
-    <a href="#results" class="sidebar-link">Results</a>
-    <a href="#additional-info" class="sidebar-link">Additional Information</a>
-    <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">
-  ↑ Top
-    </button>
-  </aside>
-  
+      <div class="sidebar-header">On This Page</div>
+      <a href="#summary" class="sidebar-link active">Summary</a>
+      <a href="#problem" class="sidebar-link">Problem Statement</a>
+      <a href="#methodology" class="sidebar-link">Methodology</a>
+      <a href="#photogrammetry" class="sidebar-link sidebar-sublink">Photogrammetry</a>
+      <a href="#wing-design" class="sidebar-link sidebar-sublink">Wing Design</a>
+      <a href="#mechanism" class="sidebar-link sidebar-sublink">Mechanism Synthesis</a>
+      <a href="#system-integration" class="sidebar-link sidebar-sublink">System Integration</a>
+      <a href="#results" class="sidebar-link">Results</a>
+      <a href="#additional-info" class="sidebar-link">Additional Information</a>
+      <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">↑ Top</button>
+    </aside>
+
     <!-- MAIN CONTENT -->
     <div class="project-content">
 
       <!-- SUMMARY -->
       <div id="summary" class="project-block">
-        <p class="section-eyebrow">Project · Biomimetics</p>
-        <h2>Biomimetic of a Hummingbird</h2>
-        <p>
-          Design and Analysis of Wing and Flapping Mechanism — PES University, Department of Mechanical Engineering | Guided by Mr. Sachhidananda M H
-        </p>
-        <p>
-          <strong>Duration:</strong> Aug 2021 – May 2022
-        </p>
+        <div class="project-hero">
+          <div class="project-hero-text">
+            <p class="section-eyebrow">Project · Biomimetics</p>
+            <h2>Biomimetic of a Hummingbird</h2>
+            <p class="project-hero-meta">PES University, Department of Mechanical Engineering · Guided by Mr. Sachhidananda M H · Aug 2021 – May 2022</p>
+            <div class="spec-ribbon">
+              <div class="dim-tag"><span class="dim-value">±60°</span><span class="dim-label">Flap amplitude</span></div>
+              <div class="dim-tag"><span class="dim-value">70</span><span class="dim-label">Hz frequency</span></div>
+              <div class="dim-tag"><span class="dim-value">52</span><span class="dim-label">g weight</span></div>
+              <div class="dim-tag"><span class="dim-value">82.5</span><span class="dim-label">mm wing length</span></div>
+            </div>
+          </div>
+        </div>
 
         <!-- Hero Image -->
         <figure style="margin: var(--space-6) 0;">
           <img src="../documents/Biomimetic Humming Bird/conceptual-model.png" alt="Conceptual assembly of biomimetic hummingbird testbed showing wing, 4-bar flapping mechanism, and integrated electronics" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Conceptual assembly of the biomimetic hummingbird testbed</figcaption>
+          <figcaption>Conceptual assembly of the biomimetic hummingbird testbed</figcaption>
         </figure>
 
-        <p>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
           Hummingbirds are nature's most agile flyers, capable of sustained hover and rapid directional changes through their unique figure-of-eight wing stroke. This capstone project aimed to understand and replicate this remarkable flight mechanism through a biomimetic design approach.
         </p>
-        <p>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
           I led the multi-domain analysis effort, starting with photogrammetry-based flight path extraction using image processing techniques on high-speed footage. This provided the kinematic targets for mechanism design. I then designed the wing geometry through iterative CAD modeling, arriving at optimized dimensions of 82.5mm length and 22mm tip chord.
         </p>
-        <p>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
           The core challenge was synthesizing a mechanism that could achieve the required flapping motion. I designed a 4-bar linkage that converts 360° rotary input into ±60° flapping amplitude at 70Hz, while maintaining transmission angles within the feasible range (65°–114°). The complete testbed was weight-budgeted to 52 grams, accounting for motor, battery, microcontroller, and structural components.
         </p>
-        <p>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
           This project strengthened my skills in mechanism synthesis, image-based motion analysis, and integrating constraints across multiple engineering domains—capabilities I continue to apply in my robotics and medical device work.
         </p>
+
+        <div class="stat-strip">
+          <div class="stat-card">
+            <span class="stat-value">±60°</span>
+            <span class="stat-unit">amplitude</span>
+            <span class="stat-label">Flapping amplitude from 360° rotary input</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">70</span>
+            <span class="stat-unit">Hz</span>
+            <span class="stat-label">Target flapping frequency</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">52</span>
+            <span class="stat-unit">grams</span>
+            <span class="stat-label">Total testbed weight budget</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">65°–114°</span>
+            <span class="stat-unit">η range</span>
+            <span class="stat-label">Transmission angle feasibility range</span>
+          </div>
+        </div>
       </div>
 
       <!-- PROBLEM STATEMENT -->
       <div id="problem" class="project-block">
         <h3>Problem Statement</h3>
-        <p style="color:var(--text);">
-          Micro Air Vehicles (MAVs) that mimic biological flight offer unique advantages in maneuverability and efficiency over conventional rotary or fixed-wing designs. Hummingbirds, with their ability to hover, fly backwards, and execute rapid directional changes, represent an ideal biological model for biomimetic flight. The challenge: design a flapping mechanism that can replicate the hummingbird's characteristic figure-of-eight wing stroke pattern while operating at the required high frequency (~70Hz) with sufficient amplitude (±60°), all within the strict weight constraints (~52g) necessary for achieving lift.
-        </p>
+        <ul class="bullet-list">
+          <li><strong>Application:</strong> Micro Air Vehicles (MAVs) that mimic biological flight offer unique advantages in maneuverability and efficiency over conventional rotary or fixed-wing designs</li>
+          <li><strong>Biological model:</strong> Hummingbirds, with their ability to hover, fly backwards, and execute rapid directional changes, represent an ideal biological model for biomimetic flight</li>
+          <li><strong>Challenge:</strong> Design a flapping mechanism that can replicate the hummingbird's characteristic figure-of-eight wing stroke pattern while operating at the required high frequency (~70Hz) with sufficient amplitude (±60°), all within the strict weight constraints (~52g) necessary for achieving lift</li>
+        </ul>
       </div>
 
       <!-- METHODOLOGY -->
       <div id="methodology" class="project-block">
         <h3>Methodology</h3>
-        <p style="color:var(--text-dim); font-size: var(--text-sm);">
-          The project followed a multi-domain approach: photogrammetry-based flight analysis, wing geometry optimization, 4-bar mechanism synthesis, and system-level weight budgeting.
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-2);">
+          The project followed a multi-domain approach: photogrammetry-based flight analysis, wing geometry optimization, 4-bar mechanism synthesis, and system-level weight budgeting. Click a stage to jump there.
         </p>
+        <nav class="process-stepper">
+          <a href="#photogrammetry" class="process-step"><span class="step-num">1</span>Analyze</a>
+          <span class="process-connector"></span>
+          <a href="#wing-design" class="process-step"><span class="step-num">2</span>Design</a>
+          <span class="process-connector"></span>
+          <a href="#mechanism" class="process-step"><span class="step-num">3</span>Synthesize</a>
+          <span class="process-connector"></span>
+          <a href="#system-integration" class="process-step"><span class="step-num">4</span>Integrate</a>
+        </nav>
       </div>
 
       <!-- PHOTOGRAMMETRY & FLIGHT PATH ANALYSIS -->
       <div id="photogrammetry" class="project-subblock">
         <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Photogrammetry &amp; Flight Path Analysis</h4>
         
-        <p style="color:var(--text); margin-bottom: var(--space-4);">
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
           High-speed footage of hummingbird flight (capable of capturing ~3000 fps) was analyzed using image processing techniques. The procedure involved DPI calibration using physical ruler measurements, followed by pixel-to-millimeter conversion for accurate dimensional extraction. Wing boundary tracking revealed the characteristic figure-of-eight stroke pattern, providing kinematic targets for the mechanism design phase.
         </p>
 
         <figure style="margin-bottom: var(--space-6);">
           <img src="../documents/Biomimetic Humming Bird/wing-stroke-path.jpg" alt="Figure-of-eight wing stroke pattern extracted through image processing photogrammetry" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Figure-of-eight wing stroke pattern extracted through image processing photogrammetry</figcaption>
+          <figcaption>Figure-of-eight wing stroke pattern extracted through image processing photogrammetry</figcaption>
         </figure>
 
         <figure style="margin-bottom: var(--space-6);">
           <img src="../documents/Biomimetic Humming Bird/front-view-flapping.jpg" alt="Front view visualization of the flapping motion showing wing sweep amplitude" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Front view visualization of the flapping motion showing wing sweep amplitude</figcaption>
+          <figcaption>Front view visualization of the flapping motion showing wing sweep amplitude</figcaption>
         </figure>
       </div>
 
@@ -122,13 +159,19 @@
       <div id="wing-design" class="project-subblock">
         <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Wing Design &amp; CAD Modeling</h4>
         
-        <p style="color:var(--text); margin-bottom: var(--space-4);">
-          The wing geometry was designed through iterative CAD modeling, referencing hummingbird morphology data from literature. Final optimized dimensions achieved were: wing length of 82.5mm and tip chord of 22mm. The wing was modeled as a flat, rigid structure for initial analysis, with the lift formula Lift = ρ C<sub>L</sub> S (Φ fR)² used for frequency-induced flapping calculations.
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          The wing geometry was designed through iterative CAD modeling, referencing hummingbird morphology data from literature. Final optimized dimensions achieved were: wing length of 82.5mm and tip chord of 22mm. The wing was modeled as a flat, rigid structure for initial analysis, with the lift formula Lift = ρ C<sub>L</sub> v² A / 2 used for performance estimation.
         </p>
 
-        <figure style="margin-bottom: var(--space-6);">
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-value">82.5 mm</span><span class="spec-label">Wing length</span></div>
+          <div class="spec-item"><span class="spec-value">22 mm</span><span class="spec-label">Tip chord</span></div>
+          <div class="spec-item"><span class="spec-value">10–15°</span><span class="spec-label">Optimal AoA</span></div>
+        </div>
+
+        <figure style="margin: var(--space-6) 0;">
           <img src="../documents/Biomimetic Humming Bird/wing-cad-model.png" alt="CAD model of the biomimetic wing showing geometry with 82.5mm length and 22mm tip chord" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Wing CAD model with optimized dimensions (82.5mm × 22mm)</figcaption>
+          <figcaption>Wing CAD model with optimized dimensions (82.5mm × 22mm)</figcaption>
         </figure>
       </div>
 
@@ -136,18 +179,24 @@
       <div id="mechanism" class="project-subblock">
         <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Mechanism Synthesis &amp; Kinematic Analysis</h4>
         
-        <p style="color:var(--text); margin-bottom: var(--space-4);">
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
           A 4-bar linkage mechanism was synthesized to convert continuous rotary input (360°) into oscillatory flapping motion (±60° amplitude). Transmission angle analysis confirmed feasibility with η<sub>max</sub> ≈ 114° and η<sub>min</sub> ≈ 65°, both within acceptable ranges for efficient force transmission. Complete position, velocity, and acceleration profiles were generated to validate mechanism performance at the target 70Hz flapping frequency.
         </p>
 
-        <figure style="margin-bottom: var(--space-6);">
-          <img src="../documents/Biomimetic Humming Bird/four-bar-fbd-transmission.png" alt="4-bar mechanism free body diagram with transmission angles (η_max ≈ 114°, η_min ≈ 65°)" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">4-bar mechanism free body diagram with transmission angles (η<sub>max</sub> ≈ 114°, η<sub>min</sub> ≈ 65°)</figcaption>
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-value">360°</span><span class="spec-label">Rotary input</span></div>
+          <div class="spec-item"><span class="spec-value">±60°</span><span class="spec-label">Flap output</span></div>
+          <div class="spec-item"><span class="spec-value">η: 65°–114°</span><span class="spec-label">Transmission angles</span></div>
+        </div>
+
+        <figure style="margin: var(--space-6) 0;">
+          <img src="../documents/Biomimetic Humming Bird/four-bar-fbd-transmission.png" alt="Four-bar mechanism free body diagram and transmission angle analysis showing feasible range" style="width:100%; border-radius: 8px;">
+          <figcaption>Four-bar mechanism free body diagram and transmission angle analysis</figcaption>
         </figure>
 
         <figure style="margin-bottom: var(--space-6);">
-          <img src="../documents/Biomimetic Humming Bird/position-velocity-acceleration.png" alt="Kinematic analysis: position, velocity, and acceleration profiles of flapping mechanism" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Kinematic analysis: position, velocity, and acceleration profiles of flapping mechanism</figcaption>
+          <img src="../documents/Biomimetic Humming Bird/position-velocity-acceleration.png" alt="Position, velocity, and acceleration profiles for the 4-bar flapping mechanism" style="width:100%; border-radius: 8px;">
+          <figcaption>Position, velocity, and acceleration profiles for the 4-bar mechanism</figcaption>
         </figure>
       </div>
 
@@ -155,13 +204,13 @@
       <div id="system-integration" class="project-subblock">
         <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Weight Approximation &amp; System Integration</h4>
         
-        <p style="color:var(--text); margin-bottom: var(--space-4);">
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
           A comprehensive weight budget was developed for the testbed, accounting for motor, battery, microcontroller, and structural components. The total system weight was constrained to 52 grams to ensure sufficient lift generation. Component selection balanced weight against performance requirements for the 70Hz flapping frequency target.
         </p>
 
         <figure style="margin-bottom: var(--space-6);">
           <img src="../documents/Biomimetic Humming Bird/electronics-weight-table.png" alt="Weight approximation table for testbed electronics including motor, battery, microcontroller components totaling 52 grams" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Weight approximation table for testbed electronics totaling 52 grams</figcaption>
+          <figcaption>Weight approximation table for testbed electronics totaling 52 grams</figcaption>
         </figure>
       </div>
 
@@ -169,13 +218,12 @@
       <div id="results" class="project-block">
         <h3>Results</h3>
 
-        <!-- Lift vs AoA Image -->
         <figure style="margin-bottom: var(--space-6);">
           <img src="../documents/Biomimetic Humming Bird/lift-vs-aoa.png" alt="Lift vs Angle of Attack showing optimal range of 10-15 degrees" style="width:100%; border-radius: 8px;">
-          <figcaption style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-2);">Lift vs Angle of Attack showing optimal range of 10-15 degrees</figcaption>
+          <figcaption>Lift vs Angle of Attack showing optimal range of 10-15 degrees</figcaption>
         </figure>
 
-        <p style="color:var(--text); margin-bottom: var(--space-4);">
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
           The designed 4-bar mechanism successfully converts 360° continuous rotary input into ±60° oscillatory flapping motion at the target frequency of 70Hz. Transmission angle analysis validated the mechanism feasibility with angles maintained within the acceptable range (65°–114°) throughout the motion cycle.
         </p>
 
@@ -240,32 +288,57 @@
           </table>
         </div>
 
-        <p style="color:var(--text); margin-bottom: var(--space-4);">
-          <strong>Key Achievements:</strong>
-        </p>
-        <ul style="color:var(--text); margin-bottom: var(--space-4); padding-left: var(--space-5);">
-          <li>Designed 4-bar mechanism achieving ±60° flapping amplitude from 360° rotary input</li>
-          <li>Developed image processing pipeline for flight path extraction from high-speed footage</li>
-          <li>Optimized testbed weight to 52 grams with 70Hz flapping frequency target</li>
-          <li>Maintained transmission angles within feasible range (65°–114°)</li>
-          <li>CFD simulations validated aerodynamic performance at 10-15° angle of attack range</li>
-        </ul>
+        <details class="detail-toggle highlight-style">
+          <summary>
+            <span class="detail-label">Key Finding</span>
+            <span class="detail-title">Key achievements</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>Designed 4-bar mechanism achieving <strong>±60° flapping amplitude</strong> from 360° rotary input</li>
+              <li>Developed <strong>image processing pipeline</strong> for flight path extraction from high-speed footage</li>
+              <li>Optimized testbed weight to <strong>52 grams</strong> with 70Hz flapping frequency target</li>
+              <li>Maintained transmission angles within <strong>feasible range (65°–114°)</strong></li>
+              <li>CFD simulations validated aerodynamic performance at <strong>10-15° angle of attack range</strong></li>
+            </ul>
+          </div>
+        </details>
 
         <p style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-4);">
           <strong style="color:var(--headline);">Validation:</strong> Kinematic path analysis was validated through image processing comparison with literature data. Transmission angle analysis confirmed mechanism feasibility. CFD simulations (performed by team members) validated aerodynamic performance at the specified angle of attack range.
         </p>
 
-        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-4);">
-          <strong style="color:var(--headline);">Acknowledgements:</strong> Guided by Mr. Sachhidananda M H. CFD simulations performed by Rohit K Narang, Sharan Manick, and Shaunak Anup Vaidya.
-        </p>
+        <details class="detail-toggle" style="margin-top: var(--space-6);">
+          <summary>
+            <span class="detail-label">Skills</span>
+            <span class="detail-title">Technical skills demonstrated</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>Image Processing:</strong> Photogrammetry, DPI calibration, pixel-to-mm conversion</li>
+              <li><strong>Mechanism Design:</strong> 4-bar linkage synthesis, transmission angle analysis</li>
+              <li><strong>CAD:</strong> Wing geometry modeling, assembly design</li>
+              <li><strong>Kinematics:</strong> Position, velocity, acceleration analysis</li>
+              <li><strong>Systems Engineering:</strong> Weight budgeting, component selection</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="detail-toggle compact">
+          <summary>
+            <span class="detail-label">Team</span>
+            <span class="detail-title">Contributions &amp; credits</span>
+          </summary>
+          <div class="detail-body">
+            <p style="margin-bottom: var(--space-3);"><strong style="color:var(--headline);">Acknowledgements:</strong> Guided by Mr. Sachhidananda M H. CFD simulations performed by Rohit K Narang, Sharan Manick, and Shaunak Anup Vaidya.</p>
+          </div>
+        </details>
       </div>
 
       <!-- ADDITIONAL INFORMATION -->
       <div id="additional-info" class="project-block">
         <h3>Additional Information</h3>
-        <p style="color:var(--text-dim); max-width:62ch; margin-bottom: var(--space-6); font-size: var(--text-sm);">
-          Complete capstone project report with detailed methodology, analysis, and results.
-        </p>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-4);">Complete capstone project report with detailed methodology, analysis, and results.</p>
         <div class="resume-card">
           <div class="pdf-wrapper">
             <iframe
@@ -336,114 +409,32 @@
   const sidebarLinks = document.querySelectorAll('.sidebar-link');
   const sections = [];
 
-  // Build sections array
   sidebarLinks.forEach(link => {
     const targetId = link.getAttribute('href').substring(1);
     const target = document.getElementById(targetId);
-    if (target) {
-      sections.push({ id: targetId, el: target, link: link });
-    }
+    if (target) sections.push({ id: targetId, el: target, link: link });
   });
-
-  // Smart auto-scroll sidebar to keep header + active link visible
-  function scrollSidebarToActive(activeLink) {
-    if (!sidebar || !activeLink) return;
-    
-    const allLinks = Array.from(sidebarLinks);
-    const activeIndex = allLinks.indexOf(activeLink);
-    const totalLinks = allLinks.length;
-    
-    // Only scroll sidebar down for the last 2 items (Results, Additional Info)
-    // Otherwise, keep at top so Summary is always visible
-    if (activeIndex >= totalLinks - 2) {
-      // For bottom items, scroll to show them
-      const headerHeight = sidebarHeader ? sidebarHeader.offsetHeight + 10 : 50;
-      const scrollTarget = activeLink.offsetTop - headerHeight;
-      sidebar.scrollTo({
-        top: scrollTarget,
-        behavior: 'smooth'
-      });
-    } else {
-      // For top/middle items, keep sidebar at top
-      sidebar.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
-  }
 
   function updateActiveLink() {
-    const scrollPos = window.scrollY;
-    const windowHeight = window.innerHeight;
-    const docHeight = document.documentElement.scrollHeight;
-    
-    // Check if at bottom of page
-    const atBottom = scrollPos + windowHeight >= docHeight - 50;
-    
-    let activeSection = sections[0];
-    
-    if (atBottom && sections.length > 0) {
-      activeSection = sections[sections.length - 1];
-    } else {
-      const offset = 200;
-      for (const section of sections) {
-        const rect = section.el.getBoundingClientRect();
-        if (rect.top <= offset) {
-          activeSection = section;
-        }
-      }
+    let current = sections[0];
+    const scrollY = window.scrollY + 180;
+    for (const sec of sections) {
+      if (sec.el.offsetTop <= scrollY) current = sec;
     }
-    
-    // Update active states
-    sidebarLinks.forEach(link => link.classList.remove('active'));
-    if (activeSection) {
-      activeSection.link.classList.add('active');
-      scrollSidebarToActive(activeSection.link);
-    }
+    sidebarLinks.forEach(l => l.classList.remove('active'));
+    if (current) current.link.classList.add('active');
   }
 
-  // Throttle scroll events
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        updateActiveLink();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  });
-
-  // Initial call
+  window.addEventListener('scroll', updateActiveLink, { passive: true });
   updateActiveLink();
 
-  // ── Back to Top Button ──
+  // ── Back to Top ──
   const topBtn = document.getElementById('sidebarTopBtn');
-
   if (topBtn) {
     topBtn.addEventListener('click', () => {
-      // Scroll page to top
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-      
-      // Scroll sidebar to top
-      if (sidebar) {
-        sidebar.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      }
-      
-      // Update active state to Summary
-      sidebarLinks.forEach(link => link.classList.remove('active'));
-      if (sidebarLinks[0]) {
-        sidebarLinks[0].classList.add('active');
-      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 </script>
-
 </body>
 </html>

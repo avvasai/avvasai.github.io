@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accordion-Like Disk Resonator Gyroscope</title>
+  <meta name="description" content="A Novel Accordion-Like Disk Resonator Gyroscope (ADRG) - MEMS gyroscope design, simulation, fabrication and testing">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <h1 class="giant-name">Avva Sai Pranav</h1>
+  <nav class="pill-nav">
+    <div class="pill-links">
+      <a href="index.html" class="pill">Home</a>
+      <a href="index.html#info" class="pill">Projects</a>
+      <a href="index.html#resume" class="pill">Resume</a>
+      <a href="index.html#contact" class="pill">Contact</a>
+    </div>
+    <div class="pill-right">
+      <span class="label">Theme:</span>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light theme">
+        <span id="themeKnob">☀</span>
+      </button>
+      <span class="clock" id="clock"></span>
+    </div>
+  </nav>
+</header>
+
+<!-- Project Hero -->
+<section class="project-hero">
+  <p class="section-eyebrow">Project</p>
+  <h1 class="project-title">A Novel Accordion-Like Disk Resonator Gyroscope</h1>
+  <p class="project-subtitle">MEMS Gyroscope Design · Simulation · Fabrication · Testing</p>
+  <div class="project-meta">
+    <span class="meta-item">🏛️ M2D2 Laboratory, Indian Institute of Science</span>
+    <span class="meta-item">👤 Prof. G. K. Ananthasuresh</span>
+    <span class="meta-item">🎤 ICMNSS Conference</span>
+  </div>
+</section>
+
+<!-- Key Results Stats -->
+<section class="section">
+  <div class="stats-row">
+    <div class="stat-card">
+      <span class="stat-value">3–4×</span>
+      <span class="stat-label">Higher Sensitivity</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value">6771 Hz</span>
+      <span class="stat-label">Drive Frequency</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value">&lt;1.4%</span>
+      <span class="stat-label">Sim-to-Fab Error</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value">46.4%</span>
+      <span class="stat-label">Capacitance Change</span>
+    </div>
+  </div>
+</section>
+
+<!-- Overview -->
+<section class="section">
+  <h2 class="section-title">Project Overview</h2>
+  <div class="two-col">
+    <div class="col-text">
+      <p>Disk Resonator Gyroscopes (DRGs) sense rotation using Coriolis forces acting on a vibrating ring — the same physics behind a Foucault pendulum, just shrunk down to millimeters.</p>
+      <p>Over the years, designs like the Boeing DRG, Honeycomb DRG, Cobweb DRG, and Gear DRG each pushed sensitivity a little further, from 0.04 deg/sec down to 0.015 deg/sec, but each traded off electrode placement against mechanical performance.</p>
+      <p>This project asked a simple question: <strong>could an entirely different ring geometry — an "accordion-like" pattern — beat the existing field on mechanical sensitivity and noise?</strong></p>
+    </div>
+    <div class="col-visual">
+      <img src="../documents/MEMS Engineer/2.jpeg" alt="ADRG die close-up showing ring pattern" class="project-img">
+      <p class="img-caption">ADRG die showing accordion-style ring pattern</p>
+    </div>
+  </div>
+</section>
+
+<!-- Design & Simulation -->
+<section class="section-alt">
+  <div class="section-inner">
+    <h2 class="section-title">Design & Simulation</h2>
+    <p>I ran finite-element eigenfrequency analysis across five ring topologies — DRG, HDRG, CDRG, GDRG, and my proposed ADRG — each built with 9 rings, an 8mm outer diameter, 10μm in-plane ring width, and 60μm thickness.</p>
+    
+    <div class="table-wrapper">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>DRG Type</th>
+            <th>Eigenfrequency (Hz)</th>
+            <th>Quality Factor (k)</th>
+            <th>Mech. Sensitivity (μm/rad/s)</th>
+            <th>Brownian Noise (rad/s/√Hz)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>DRG</td>
+            <td>12720</td>
+            <td>103.62</td>
+            <td>3.83e-6</td>
+            <td>1.01e-6</td>
+          </tr>
+          <tr>
+            <td>HDRG</td>
+            <td>11306</td>
+            <td>105.42</td>
+            <td>4.27e-6</td>
+            <td>1.29e-6</td>
+          </tr>
+          <tr>
+            <td>CDRG</td>
+            <td>12611</td>
+            <td>99.99</td>
+            <td>3.61e-6</td>
+            <td>1.12e-6</td>
+          </tr>
+          <tr>
+            <td>GDRG</td>
+            <td>14761</td>
+            <td>91.58</td>
+            <td>2.76e-6</td>
+            <td>1.17e-6</td>
+          </tr>
+          <tr class="highlight-row">
+            <td>ADRG (Ours)</td>
+            <td>6771</td>
+            <td>181.55</td>
+            <td>12.1e-6</td>
+            <td>1.07e-6</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">The ADRG's mechanical sensitivity is roughly 3–4× higher than every other topology tested, while holding competitive noise performance.</p>
+    
+    <p>Capacitance modeling (accounting for fringing fields, not just the textbook parallel-plate formula) backed this up — the ADRG's relative sense capacitance change was the largest of the five designs at <strong>46.4%</strong>, versus 14–29% for the others.</p>
+  </div>
+</section>
+
+<!-- Fabrication -->
+<section class="section">
+  <h2 class="section-title">Fabrication</h2>
+  <p>The design moved from simulation to silicon at CeNSE (Centre for Nano Science and Engineering).</p>
+  
+  <div class="gallery">
+    <figure class="gallery-item">
+      <img src="../documents/MEMS Engineer/2.jpeg" alt="ADRG die close-up showing ring pattern">
+      <figcaption>ADRG die with accordion ring pattern</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="../documents/MEMS Engineer/3.jpeg" alt="ADRG chip wire-bonded into ceramic package">
+      <figcaption>Wire-bonded into 68-pin ceramic package</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="../documents/MEMS Engineer/4.jpeg" alt="Fabricated ADRG dies on glass slides">
+      <figcaption>Fabricated dies on glass slides</figcaption>
+    </figure>
+  </div>
+  
+  <p>Individual ADRG chips on glass slides, each with the resonator's accordion-style ring pattern visible under its protective coating — and the completed chip wire-bonded into a 68-pin ceramic package with color-coded leads carrying drive, sense, and common signals to the test board.</p>
+</section>
+
+<!-- Test Setup -->
+<section class="section-alt">
+  <div class="section-inner">
+    <h2 class="section-title">Pinout & Test Setup</h2>
+    <div class="two-col">
+      <div class="col-text">
+        <h3 class="section-subtitle">Electrode Configuration</h3>
+        <ul class="check-list">
+          <li>4 common pins</li>
+          <li>16 individually addressable outer electrodes for drive and sense</li>
+          <li>Companion accelerometer die with separate X/Y sense and feedback electrode pairs</li>
+        </ul>
+        
+        <h3 class="section-subtitle">LDV Testing</h3>
+        <ul class="check-list">
+          <li>Drive signal combining AC and DC bias excited the resonator</li>
+          <li>LDV measured out-of-plane velocity at 0° and 180° points on the ring</li>
+          <li>Characterized frequency response under controlled conditions</li>
+        </ul>
+      </div>
+      <div class="col-visual">
+        <img src="../documents/MEMS Engineer/3.jpeg" alt="Wire-bonded package for testing" class="project-img">
+        <p class="img-caption">68-pin ceramic package ready for LDV testing</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Results -->
+<section class="section">
+  <h2 class="section-title">Results</h2>
+  <div class="resume-card">
+    <p>Under controlled atmospheric conditions (1 atm, 25°C), the fabricated ADRG resonated at approximately <strong>6.8 kHz</strong> — within <strong>1.2–1.4%</strong> of the FEM-predicted eigenfrequency, confirming the simulation model held up in the real device.</p>
+  </div>
+</section>
+
+<!-- My Contributions -->
+<section class="section">
+  <h2 class="section-title">My Contributions</h2>
+  <div class="role-grid">
+    <div class="role-item">
+      <span class="role-icon">📐</span>
+      <div class="role-text">
+        <strong>ADRG Geometry Design</strong>
+        <p>Designed the novel accordion-like ring topology</p>
+      </div>
+    </div>
+    <div class="role-item">
+      <span class="role-icon">💻</span>
+      <div class="role-text">
+        <strong>FEM Modeling</strong>
+        <p>Led eigenfrequency and capacitance modeling across all five DRG topologies</p>
+      </div>
+    </div>
+    <div class="role-item">
+      <span class="role-icon">🔬</span>
+      <div class="role-text">
+        <strong>Experimental Characterization</strong>
+        <p>Ran LDV-based testing of the fabricated device</p>
+      </div>
+    </div>
+    <div class="role-item">
+      <span class="role-icon">📊</span>
+      <div class="role-text">
+        <strong>Comparative Analysis</strong>
+        <p>Benchmarked ADRG against DRG, HDRG, CDRG, and GDRG</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Credits -->
+<section class="section">
+  <div class="credits-box">
+    <h3>Team & Acknowledgments</h3>
+    <p><strong>Advisor:</strong> Prof. G. K. Ananthasuresh</p>
+    <p><strong>Co-Advisor:</strong> Karthik (ISRO)</p>
+    <p><strong>Design & Simulation Support:</strong> Sai Kumar, Suman Acharya</p>
+    <p><strong>Fabrication:</strong> Sudhanshu Shekhar</p>
+    <p><strong>Funding:</strong> ISRO</p>
+    <p><strong>Facilities:</strong> CeNSE (Centre for Nano Science and Engineering)</p>
+  </div>
+</section>
+
+<!-- Back Link -->
+<section class="section" style="text-align: center;">
+  <a href="../index.html#info" class="btn btn-ghost">← Back to Projects</a>
+</section>
+
+<footer class="footer">
+  <span>© <span id="year"></span> Avva Sai Pranav</span>
+</footer>
+
+<script>
+  const root = document.documentElement;
+  const toggle = document.getElementById('themeToggle');
+  const knob = document.getElementById('themeKnob');
+  const clockEl = document.getElementById('clock');
+  const yearEl = document.getElementById('year');
+
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  function applyTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    knob.textContent = theme === 'dark' ? '☀' : '☾';
+    try { localStorage.setItem('site-theme', theme); } catch (e) {}
+  }
+
+  let saved = null;
+  try { saved = localStorage.getItem('site-theme'); } catch (e) {}
+  const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+  applyTheme(saved || (prefersLight ? 'light' : 'dark'));
+
+  toggle.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+  });
+
+  function tickClock() {
+    if (clockEl) clockEl.textContent = new Date().toLocaleTimeString('en-GB');
+  }
+  tickClock();
+  setInterval(tickClock, 1000);
+</script>
+
+</body>
+</html>

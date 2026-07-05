@@ -47,7 +47,6 @@
     <g transform="translate(90,90)">
       <rect x="0" y="0" width="120" height="80" fill="none" class="bp-part-fine" stroke-width="1.2"/>
       <path d="M0,80 L120,-10 M-10,60 L40,-10 M40,80 L100,-10 M70,80 L130,10" class="bp-hatch" stroke-width="1"/>
-      <text x="0" y="-12" class="bp-text" font-size="12" letter-spacing="1">SECTION A–A</text>
     </g>
 
     <g class="bp-center" stroke-width="1" fill="none">
@@ -140,22 +139,22 @@
     <div class="bubble-field">
       <button id="proj_one" type="button" class="bubble rectangle" data-domains="domain-4 domain-3">MEMS Engineer : Navigational Sensors</button>
       <button id="proj_two" type="button" class="bubble rectangle" data-domains="domain-1 domain-4">Data Acquisition System</button>
-      <button type="button" class="bubble rectangle" data-domains="domain-3 domain-1  domain-4  domain-5">Laboratory Automation</button>
-      <button type="button" class="bubble rectangle" data-domains="domain-5 domain-3 domain-4">Micro-Mobility Vehicle Electronics</button>
+      <button id = "proj_three" type="button" class="bubble rectangle" data-domains="domain-3 domain-1  domain-4  domain-5">Laboratory Automation</button>
+      <button id = "proj_four" type="button" class="bubble rectangle" data-domains="domain-5 domain-3 domain-4">Micro-Mobility Vehicle Electronics</button>
 
-      <button type="button" class="bubble rectangle" data-domains="domain-1 domain-3">Robotic Assistant for MRI-Guided Low Back Pain Injections</button>
-      <button type="button" class="bubble rectangle" data-domains="domain-1 domain-5">Haptic-Guided Magnetic Microrobot Navigation</button>
-      <button type="button" class="bubble rectangle" data-domains="domain-3 domain-1  domain-4  domain-5">MRI-Guided Lumbar Spine Needle Insertion Robot</button>
-      <button type="button" class="bubble rectangle" data-domains="domain-1 domain-3 domain-5">MRI-Guided Soft Robotic Catheter for Lung Biopsy Navigation</button>
+      <button id = "proj_five" type="button" class="bubble rectangle" data-domains="domain-1 domain-3">Robotic Assistant for MRI-Guided Low Back Pain Injections</button>
+      <button id = "proj_six" type="button" class="bubble rectangle" data-domains="domain-1 domain-5">Haptic-Guided Magnetic Microrobot Navigation</button>
+      <button id = "proj_seven" type="button" class="bubble rectangle" data-domains="domain-3 domain-1  domain-4  domain-5">MRI-Guided Lumbar Spine Needle Insertion Robot</button>
+      <button id = "proj_eight" type="button" class="bubble rectangle" data-domains="domain-1 domain-3 domain-5">MRI-Guided Soft Robotic Catheter for Lung Biopsy Navigation</button>
 
-      <button type="button" class="bubble rectangle" data-domains="domain-4 domain-5">Semi-Autonomous Robotic Ultrasound Scanning with UR5e and RealSense</button>
-      <button type="button" class="bubble rectangle" data-domains="domain-3">Biomimetic Hummingbird: Wing Kinematics & Mechanism Design</button>
-      <button type="button" class="bubble rectangle" data-domains="domain-4 domain-5 domain-3">Wireless Steering Wheel Display</button>
-      <button type="button" class="bubble rectangle" data-domains="domain-3 domain-5">Computational Design of Machine Elements</button>
-      <button type="button" class="bubble rectangle" data-domains="domain-1 domain-4 domain-5">Haptic Device for Knee Instability</button>
-      <button type="button" class="bubble rectangle" data-domains="domain-5">Biomedical Data Design</button>
-      <button type="button" class="bubble rectangle" data-domains="domain-3">CAD Mechanisms & FEA</button>
-      <button type="button" class="bubble rectangle" data-domains="domain-3 domain-4 domain-5">DIY 3D Printer using CD-Drives</button>
+      <button id = "proj_nine" type="button" class="bubble rectangle" data-domains="domain-4 domain-5">Semi-Autonomous Robotic Ultrasound Scanning with UR5e and RealSense</button>
+      <button id = "proj_ten" type="button" class="bubble rectangle" data-domains="domain-3">Biomimetic Hummingbird: Wing Kinematics & Mechanism Design</button>
+      <button id = "proj_eleven" type="button" class="bubble rectangle" data-domains="domain-4 domain-5 domain-3">Wireless Steering Wheel Display</button>
+      <button id = "proj_twelve" type="button" class="bubble rectangle" data-domains="domain-3 domain-5">Computational Design of Machine Elements</button>
+      <button id = "proj_thirteen" type="button" class="bubble rectangle" data-domains="domain-1 domain-4 domain-5">Haptic Device for Knee Instability</button>
+      <button id = "proj_fourteen" type="button" class="bubble rectangle" data-domains="domain-5">Biomedical Data Design</button>
+      <button id = "proj_fifteen" type="button" class="bubble rectangle" data-domains="domain-3">CAD Mechanisms & FEA</button>
+      <button id = "proj_sixteen" type="button" class="bubble rectangle" data-domains="domain-3 domain-4 domain-5">DIY 3D Printer using CD-Drives</button>
     </div>
 
     <div class="skills-list">
@@ -232,15 +231,34 @@
   tickClock();
   setInterval(tickClock, 1000);
 
-  const projOne = document.getElementById("proj_one");
-  const projTwo = document.getElementById("proj_two");
+  // Project navigation - all 16 projects
+  const projectLinks = {
+    'proj_one': 'work2/project1.html',
+    'proj_two': 'work2/project2.html',
+    'proj_three': 'work2/project3.html',
+    'proj_four': 'work2/project4.html',
+    'proj_five': 'work2/project5.html',
+    'proj_six': 'work2/project6.html',
+    'proj_seven': 'work2/project7.html',
+    'proj_eight': 'work2/project8.html',
+    'proj_nine': 'work2/project9.html',
+    'proj_ten': 'work2/project10.html',
+    'proj_eleven': 'work2/project11.html',
+    'proj_twelve': 'work2/project12.html',
+    'proj_thirteen': 'work2/project13.html',
+    'proj_fourteen': 'work2/project14.html',
+    'proj_fifteen': 'work2/project15.html',
+    'proj_sixteen': 'work2/project16.html'
+  };
 
-  if (projOne) {
-    projOne.addEventListener("click", () => { window.location.href = "work2/project1.html"; });
-  }
-  if (projTwo) {
-    projTwo.addEventListener("click", () => { window.location.href = "work2/project2.html"; });
-  }
+  Object.entries(projectLinks).forEach(([id, url]) => {
+    const btn = document.getElementById(id);
+    if (btn) {
+      btn.addEventListener('click', () => {
+        window.location.href = url;
+      });
+    }
+  });
 
   const domainChips = document.querySelectorAll('.skills-list .chip');
   const bubbles = document.querySelectorAll('.bubble[data-domains]');

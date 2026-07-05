@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accordion-Like Disk Resonator Gyroscope</title>
-  <meta name="description" content="A Novel Accordion-Like Disk Resonator Gyroscope (ADRG) - MEMS gyroscope design, simulation, fabrication and testing">
+  <title>MRI Guided Needle Insertion Robot | Sai Pranav Avva</title>
+  <meta name="description" content="MRI-compatible pneumatic robot for lumbar spine needle insertion achieving <2mm accuracy using 3D Slicer image processing and MATLAB path planning.">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-
 <header class="masthead">
   <h1 class="giant-name">Avva Sai Pranav</h1>
   <nav class="pill-nav">
     <div class="pill-links">
-      <a href="index.html" class="pill">Home</a>
-      <a href="index.html#info" class="pill">Projects</a>
-      <a href="index.html#resume" class="pill">Resume</a>
-      <a href="index.html#contact" class="pill">Contact</a>
+      <a href="../index.html" class="pill">Home</a>
+      <a href="../index.html#info" class="pill">Projects</a>
+      <a href="../index.html#resume" class="pill">Resume</a>
+      <a href="../index.html#contact" class="pill">Contact</a>
     </div>
     <div class="pill-right">
       <span class="label">Theme:</span>
@@ -28,228 +27,422 @@
   </nav>
 </header>
 
-<!-- Project Hero -->
-<section class="project-hero">
-  <p class="section-eyebrow">Project</p>
-  <h1 class="project-title">A Novel Accordion-Like Disk Resonator Gyroscope</h1>
-  <p class="project-subtitle">MEMS Gyroscope Design · Simulation · Fabrication · Testing</p>
-  <div class="project-meta">
-    <span class="meta-item">🏛️ M2D2 Laboratory, Indian Institute of Science</span>
-    <span class="meta-item">👤 Prof. G. K. Ananthasuresh</span>
-    <span class="meta-item">🎤 ICMNSS Conference</span>
-  </div>
-</section>
-
-<!-- Key Results Stats -->
 <section class="section">
-  <div class="stats-row">
-    <div class="stat-card">
-      <span class="stat-value">3–4×</span>
-      <span class="stat-label">Higher Sensitivity</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">6771 Hz</span>
-      <span class="stat-label">Drive Frequency</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">&lt;1.4%</span>
-      <span class="stat-label">Sim-to-Fab Error</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">46.4%</span>
-      <span class="stat-label">Capacitance Change</span>
-    </div>
-  </div>
-</section>
+  <a href="../index.html#info" class="back-link">← Back to projects</a>
 
-<!-- Overview -->
-<section class="section">
-  <h2 class="section-title">Project Overview</h2>
-  <div class="two-col">
-    <div class="col-text">
-      <p>Disk Resonator Gyroscopes (DRGs) sense rotation using Coriolis forces acting on a vibrating ring — the same physics behind a Foucault pendulum, just shrunk down to millimeters.</p>
-      <p>Over the years, designs like the Boeing DRG, Honeycomb DRG, Cobweb DRG, and Gear DRG each pushed sensitivity a little further, from 0.04 deg/sec down to 0.015 deg/sec, but each traded off electrode placement against mechanical performance.</p>
-      <p>This project asked a simple question: <strong>could an entirely different ring geometry — an "accordion-like" pattern — beat the existing field on mechanical sensitivity and noise?</strong></p>
-    </div>
-    <div class="col-visual">
-      <img src="../documents/MEMS Engineer/2.jpeg" alt="ADRG die close-up showing ring pattern" class="project-img">
-      <p class="img-caption">ADRG die showing accordion-style ring pattern</p>
-    </div>
-  </div>
-</section>
+  <div class="project-layout">
 
-<!-- Design & Simulation -->
-<section class="section-alt">
-  <div class="section-inner">
-    <h2 class="section-title">Design & Simulation</h2>
-    <p>I ran finite-element eigenfrequency analysis across five ring topologies — DRG, HDRG, CDRG, GDRG, and my proposed ADRG — each built with 9 rings, an 8mm outer diameter, 10μm in-plane ring width, and 60μm thickness.</p>
-    
-    <div class="table-wrapper">
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>DRG Type</th>
-            <th>Eigenfrequency (Hz)</th>
-            <th>Quality Factor (k)</th>
-            <th>Mech. Sensitivity (μm/rad/s)</th>
-            <th>Brownian Noise (rad/s/√Hz)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>DRG</td>
-            <td>12720</td>
-            <td>103.62</td>
-            <td>3.83e-6</td>
-            <td>1.01e-6</td>
-          </tr>
-          <tr>
-            <td>HDRG</td>
-            <td>11306</td>
-            <td>105.42</td>
-            <td>4.27e-6</td>
-            <td>1.29e-6</td>
-          </tr>
-          <tr>
-            <td>CDRG</td>
-            <td>12611</td>
-            <td>99.99</td>
-            <td>3.61e-6</td>
-            <td>1.12e-6</td>
-          </tr>
-          <tr>
-            <td>GDRG</td>
-            <td>14761</td>
-            <td>91.58</td>
-            <td>2.76e-6</td>
-            <td>1.17e-6</td>
-          </tr>
-          <tr class="highlight-row">
-            <td>ADRG (Ours)</td>
-            <td>6771</td>
-            <td>181.55</td>
-            <td>12.1e-6</td>
-            <td>1.07e-6</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="table-note">The ADRG's mechanical sensitivity is roughly 3–4× higher than every other topology tested, while holding competitive noise performance.</p>
-    
-    <p>Capacitance modeling (accounting for fringing fields, not just the textbook parallel-plate formula) backed this up — the ADRG's relative sense capacitance change was the largest of the five designs at <strong>46.4%</strong>, versus 14–29% for the others.</p>
-  </div>
-</section>
+    <!-- STICKY SIDEBAR -->
+    <aside class="project-sidebar" id="projectSidebar">
+      <div class="sidebar-header">On This Page</div>
+      <a href="#summary" class="sidebar-link active">Summary</a>
+      <a href="#problem" class="sidebar-link">Problem Statement</a>
+      <a href="#methodology" class="sidebar-link">Methodology</a>
+      <a href="#image-processing" class="sidebar-link sidebar-sublink">Image Processing</a>
+      <a href="#path-planning" class="sidebar-link sidebar-sublink">Path Planning</a>
+      <a href="#coord-transform" class="sidebar-link sidebar-sublink">Coordinate Transform</a>
+      <a href="#inverse-kinematics" class="sidebar-link sidebar-sublink">Inverse Kinematics</a>
+      <a href="#system-integration" class="sidebar-link sidebar-sublink">System Integration</a>
+      <a href="#test-setup" class="sidebar-link">Test Setup</a>
+      <a href="#results" class="sidebar-link">Results</a>
+      <a href="#additional-info" class="sidebar-link">Additional Information</a>
+      <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">↑ Top</button>
+    </aside>
 
-<!-- Fabrication -->
-<section class="section">
-  <h2 class="section-title">Fabrication</h2>
-  <p>The design moved from simulation to silicon at CeNSE (Centre for Nano Science and Engineering).</p>
-  
-  <div class="gallery">
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/2.jpeg" alt="ADRG die close-up showing ring pattern">
-      <figcaption>ADRG die with accordion ring pattern</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/3.jpeg" alt="ADRG chip wire-bonded into ceramic package">
-      <figcaption>Wire-bonded into 68-pin ceramic package</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/4.jpeg" alt="Fabricated ADRG dies on glass slides">
-      <figcaption>Fabricated dies on glass slides</figcaption>
-    </figure>
-  </div>
-  
-  <p>Individual ADRG chips on glass slides, each with the resonator's accordion-style ring pattern visible under its protective coating — and the completed chip wire-bonded into a 68-pin ceramic package with color-coded leads carrying drive, sense, and common signals to the test board.</p>
-</section>
+    <!-- MAIN CONTENT -->
+    <div class="project-content">
 
-<!-- Test Setup -->
-<section class="section-alt">
-  <div class="section-inner">
-    <h2 class="section-title">Pinout & Test Setup</h2>
-    <div class="two-col">
-      <div class="col-text">
-        <h3 class="section-subtitle">Electrode Configuration</h3>
-        <ul class="check-list">
-          <li>4 common pins</li>
-          <li>16 individually addressable outer electrodes for drive and sense</li>
-          <li>Companion accelerometer die with separate X/Y sense and feedback electrode pairs</li>
-        </ul>
-        
-        <h3 class="section-subtitle">LDV Testing</h3>
-        <ul class="check-list">
-          <li>Drive signal combining AC and DC bias excited the resonator</li>
-          <li>LDV measured out-of-plane velocity at 0° and 180° points on the ring</li>
-          <li>Characterized frequency response under controlled conditions</li>
+      <!-- SUMMARY -->
+      <div id="summary" class="project-block">
+        <div class="project-hero">
+          <div class="project-hero-text">
+            <p class="section-eyebrow">Project · Medical Robotics</p>
+            <h2>MRI Guided Lumbar Spine Needle Insertion Robot</h2>
+            <p class="project-hero-meta">Johns Hopkins University · EN.530.666 - Magnetically Actuated and MRI Compatible Robots · Fall 2024</p>
+            <div class="spec-ribbon">
+              <div class="dim-tag"><span class="dim-value">&lt;2mm</span><span class="dim-label">Needle accuracy</span></div>
+              <div class="dim-tag"><span class="dim-value">3-DOF</span><span class="dim-label">Pneumatic actuation</span></div>
+              <div class="dim-tag"><span class="dim-value">25 psi</span><span class="dim-label">Operating pressure</span></div>
+              <div class="dim-tag"><span class="dim-value">4</span><span class="dim-label">Vertebral paths (L1-L5)</span></div>
+            </div>
+          </div>
+          <div class="hero-diagram-wrap">
+            <video class="hero-diagram" autoplay muted loop playsinline style="width:100%; max-width:400px; border-radius:8px;">
+              <source src="../documents/MRI Guided Lumbar SPine Needle Insertion Robot/Block_Demo.mp4" type="video/mp4">
+              <img src="../documents/MRI Guided Lumbar SPine Needle Insertion Robot/ideal_paths_overlay.jpg" alt="MATLAB visualization showing computed optimal needle insertion paths overlaid on MRI vertebrae image">
+            </video>
+          </div>
+        </div>
+
+        <div class="stat-strip">
+          <div class="stat-card">
+            <span class="stat-value">&lt;2</span>
+            <span class="stat-unit">mm</span>
+            <span class="stat-label">Needle depth accuracy — after Stage 3 optimization</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">3</span>
+            <span class="stat-unit">bugs fixed</span>
+            <span class="stat-label">Reduced positioning error from 15mm to &lt;2mm</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">1.20225</span>
+            <span class="stat-unit">px/mm</span>
+            <span class="stat-label">Corrected conversion factor (vs 1.367)</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">4</span>
+            <span class="stat-unit">paths</span>
+            <span class="stat-label">L1/L2 through L4/L5 intervertebral targeting</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROBLEM STATEMENT -->
+      <div id="problem" class="project-block">
+        <h3>Problem Statement</h3>
+        <ul class="bullet-list">
+          <li><strong>Clinical need:</strong> Lumbar spine needle procedures (biopsies, epidural injections) require precise targeting between vertebrae to avoid nerve damage and bone contact</li>
+          <li><strong>MRI compatibility:</strong> Traditional robotic actuators use ferromagnetic components incompatible with MRI environments, limiting real-time image-guided intervention</li>
+          <li><strong>Open challenge:</strong> Develop a pneumatically-actuated robot with image-to-robot coordinate transformation achieving millimeter-scale accuracy for intervertebral needle placement</li>
         </ul>
       </div>
-      <div class="col-visual">
-        <img src="../documents/MEMS Engineer/3.jpeg" alt="Wire-bonded package for testing" class="project-img">
-        <p class="img-caption">68-pin ceramic package ready for LDV testing</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Results -->
-<section class="section">
-  <h2 class="section-title">Results</h2>
-  <div class="resume-card">
-    <p>Under controlled atmospheric conditions (1 atm, 25°C), the fabricated ADRG resonated at approximately <strong>6.8 kHz</strong> — within <strong>1.2–1.4%</strong> of the FEM-predicted eigenfrequency, confirming the simulation model held up in the real device.</p>
-  </div>
-</section>
+      <!-- METHODOLOGY -->
+      <div id="methodology" class="project-block">
+        <h3>Methodology</h3>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-2);">
+          The project followed a complete image-guided intervention pipeline: MRI acquisition → image processing → path planning → coordinate transformation → robot control. Click a stage to jump there.
+        </p>
+        <nav class="process-stepper">
+          <a href="#image-processing" class="process-step"><span class="step-num">1</span>Image</a>
+          <span class="process-connector"></span>
+          <a href="#path-planning" class="process-step"><span class="step-num">2</span>Plan</a>
+          <span class="process-connector"></span>
+          <a href="#coord-transform" class="process-step"><span class="step-num">3</span>Transform</a>
+          <span class="process-connector"></span>
+          <a href="#inverse-kinematics" class="process-step"><span class="step-num">4</span>Control</a>
+          <span class="process-connector"></span>
+          <a href="#system-integration" class="process-step"><span class="step-num">5</span>Debug</a>
+        </nav>
+      </div>
 
-<!-- My Contributions -->
-<section class="section">
-  <h2 class="section-title">My Contributions</h2>
-  <div class="role-grid">
-    <div class="role-item">
-      <span class="role-icon">📐</span>
-      <div class="role-text">
-        <strong>ADRG Geometry Design</strong>
-        <p>Designed the novel accordion-like ring topology</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">💻</span>
-      <div class="role-text">
-        <strong>FEM Modeling</strong>
-        <p>Led eigenfrequency and capacitance modeling across all five DRG topologies</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">🔬</span>
-      <div class="role-text">
-        <strong>Experimental Characterization</strong>
-        <p>Ran LDV-based testing of the fabricated device</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">📊</span>
-      <div class="role-text">
-        <strong>Comparative Analysis</strong>
-        <p>Benchmarked ADRG against DRG, HDRG, CDRG, and GDRG</p>
-      </div>
-    </div>
-  </div>
-</section>
+      <!-- IMAGE PROCESSING -->
+      <div id="image-processing" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">MRI Image Acquisition &amp; Processing</h4>
 
-<!-- Credits -->
-<section class="section">
-  <div class="credits-box">
-    <h3>Team & Acknowledgments</h3>
-    <p><strong>Advisor:</strong> Prof. G. K. Ananthasuresh</p>
-    <p><strong>Co-Advisor:</strong> Karthik (ISRO)</p>
-    <p><strong>Design & Simulation Support:</strong> Sai Kumar, Suman Acharya</p>
-    <p><strong>Fabrication:</strong> Sudhanshu Shekhar</p>
-    <p><strong>Funding:</strong> ISRO</p>
-    <p><strong>Facilities:</strong> CeNSE (Centre for Nano Science and Engineering)</p>
-  </div>
-</section>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          MRI scans were processed using 3D Slicer software to select optimal slices showing fiducial markers and vertebrae contours clearly. Window-leveling was applied to maximize fiducial contrast for localization and reduce gray noise in vertebrae images for robust boundary detection. Images were exported at 256×256 resolution to match the coordinate conversion factor.
+        </p>
 
-<!-- Back Link -->
-<section class="section" style="text-align: center;">
-  <a href="../index.html#info" class="btn btn-ghost">← Back to Projects</a>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
+          <figure>
+            <img src="../documents/MRI Guided Lumbar SPine Needle Insertion Robot/3d_slicer_fiducials.jpg" alt="3D Slicer screenshot showing robot fiducial markers used for coordinate registration" style="width:100%; border-radius: 8px;">
+            <figcaption>3D Slicer slice showing robot fiducial markers for coordinate registration</figcaption>
+          </figure>
+          <figure>
+            <img src="../documents/MRI Guided Lumbar SPine Needle Insertion Robot/vertebrae_before_windowing.jpg" alt="MRI slice showing vertebrae before window-leveling adjustment" style="width:100%; border-radius: 8px;">
+            <figcaption>Vertebrae before window-leveling adjustment</figcaption>
+          </figure>
+          <figure>
+            <img src="../documents/MRI Guided Lumbar SPine Needle Insertion Robot/vertebrae_after_windowing.jpg" alt="MRI slice after window-leveling to reduce gray noise" style="width:100%; border-radius: 8px;">
+            <figcaption>Window-leveled MRI slice optimized for vertebrae boundary detection</figcaption>
+          </figure>
+        </div>
+
+        <details class="detail-toggle compact">
+          <summary>
+            <span class="detail-label">Process</span>
+            <span class="detail-title">3D Slicer workflow details</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>Loaded MRI DICOM series and navigated to slice containing both robot fiducials and vertebrae</li>
+              <li>Applied window-leveling to maximize fiducial marker contrast for accurate localization</li>
+              <li>Separately window-leveled vertebrae images to reduce gray noise while preserving bone boundaries</li>
+              <li>Exported images at 256×256 resolution for consistent pixel-to-mm conversion</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <!-- PATH PLANNING -->
+      <div id="path-planning" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Vertebrae Detection &amp; Path Planning</h4>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          MATLAB scripts performed morphological closing (<code>imclose</code>) followed by boundary detection (<code>bwboundaries</code>) to identify each vertebra. Region properties including centroids, area, and perimeter were computed using <code>regionprops</code>. For each intervertebral space (L1/L2 through L4/L5), the optimal needle path was calculated by averaging Y-values between upper and lower vertebrae boundaries, maximizing distance from bone.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
+          <figure>
+            <img src="../documents/MRI Guided Lumbar SPine Needle Insertion Robot/l1_boundary_detection.png" alt="Custom boundary detection for L1 vertebrae showing extracted lower boundary contour" style="width:100%; border-radius: 8px;">
+            <figcaption>Custom boundary detection for partially visible L1 vertebra</figcaption>
+          </figure>
+          <figure>
+            <img src="../documents/MRI Guided Lumbar SPine Needle Insertion Robot/ideal_paths_overlay.jpg" alt="MATLAB-generated visualization showing computed optimal needle paths overlaid on vertebrae image" style="width:100%; border-radius: 8px;">
+            <figcaption>Computed optimal needle paths (green) overlaid on vertebrae for all 4 intervertebral slots</figcaption>
+          </figure>
+        </div>
+
+        <details class="detail-toggle">
+          <summary>
+            <span class="detail-label">Algorithm</span>
+            <span class="detail-title">Path computation details</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>A custom script (<code>L1_vertebrae_code.m</code>) handled the partially visible top vertebra by extracting only its lower boundary</li>
+              <li>For each intervertebral space, the algorithm computed the midline between adjacent vertebrae boundaries</li>
+              <li>Entry point selected at skin surface; target point at disc center, maximizing clearance from bone</li>
+              <li>Angled insertion paths demonstrated easier penetration than perpendicular approaches</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <!-- COORDINATE TRANSFORMATION -->
+      <div id="coord-transform" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Coordinate Transformation</h4>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          A critical pipeline converted coordinates from 3D Slicer image space to real-world robot commands. The conversion factor was empirically measured as 1.20225 (corrected from the Slicer-provided 1.367). The transformation accounted for image orientation without flipping, handling coordinate conversion in the final robot command stage instead.
+        </p>
+
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-value">1.20225</span><span class="spec-label">Corrected conversion factor</span></div>
+          <div class="spec-item"><span class="spec-value">1.367</span><span class="spec-label">Slicer-provided (incorrect)</span></div>
+          <div class="spec-item"><span class="spec-value">256×256</span><span class="spec-label">Image resolution</span></div>
+          <div class="spec-item"><span class="spec-value">0.16</span><span class="spec-label">Factor error caused 15mm offset</span></div>
+        </div>
+
+        <details class="detail-toggle highlight-style">
+          <summary>
+            <span class="detail-label">Key Bug</span>
+            <span class="detail-title">Conversion factor error impact</span>
+          </summary>
+          <div class="detail-body">
+            <p>The conversion factor error of 0.16 (1.367 − 1.20225) caused a <strong>15mm X-offset and 7mm Y-offset</strong> at the first vertebral slot. This was the largest single source of positioning error, identified through systematic line-by-line code review during live demonstration debugging.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- INVERSE KINEMATICS -->
+      <div id="inverse-kinematics" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Inverse Kinematics &amp; Robot Control</h4>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          The 3-stage pneumatic system uses 2D inverse kinematics since height is fixed. Stage 1 controls Y-direction with a 70mm platform (stage_center = 35mm). Stage 2 controls rotation angle theta. Stage 3 controls needle insertion depth affecting both X and Y. Trigonometric calculations determine travel distances, which are then converted to motor steps.
+        </p>
+
+        <figure style="margin: var(--space-6) 0;">
+          <img src="../documents/MRI Guided Lumbar SPine Needle Insertion Robot/inverse_kinematics_diagram.png" alt="Diagram showing inverse kinematics variables including needletiplength, drivetohome, and stage_center measurements" style="width:100%; max-width:600px; border-radius: 8px;">
+          <figcaption>Inverse kinematics variables for the 3-stage pneumatic actuation system</figcaption>
+        </figure>
+
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-value">25 psi</span><span class="spec-label">Operating pressure</span></div>
+          <div class="spec-item"><span class="spec-value">70mm</span><span class="spec-label">Stage 1 platform</span></div>
+          <div class="spec-item"><span class="spec-value">35mm</span><span class="spec-label">Stage center offset</span></div>
+          <div class="spec-item"><span class="spec-value">50%</span><span class="spec-label">Stage 3 speed (for accuracy)</span></div>
+        </div>
+
+        <details class="detail-toggle compact">
+          <summary>
+            <span class="detail-label">Stages</span>
+            <span class="detail-title">3-DOF actuation breakdown</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>Stage 1:</strong> Y-axis translation — positions needle laterally relative to vertebral column</li>
+              <li><strong>Stage 2:</strong> Angular rotation (θ) — orients needle angle for entry trajectory</li>
+              <li><strong>Stage 3:</strong> Needle insertion depth — controls penetration with half-speed operation for accuracy</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <!-- SYSTEM INTEGRATION & DEBUGGING -->
+      <div id="system-integration" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">System Integration &amp; Debugging</h4>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Live demonstration revealed three critical bugs that were systematically identified through line-by-line code review and resolved:
+        </p>
+
+        <div class="spec-grid" style="margin-bottom: var(--space-4);">
+          <div class="spec-item" style="background: rgba(255, 100, 100, 0.1);"><span class="spec-value">Bug 1</span><span class="spec-label">X/Y coordinates flipped → theta mirrored</span></div>
+          <div class="spec-item" style="background: rgba(255, 100, 100, 0.1);"><span class="spec-value">Bug 2</span><span class="spec-label">Conversion factor error → 15mm/7mm offset</span></div>
+          <div class="spec-item" style="background: rgba(255, 100, 100, 0.1);"><span class="spec-value">Bug 3</span><span class="spec-label">Theta reference line → 20° vs 10° error</span></div>
+        </div>
+
+        <details class="detail-toggle highlight-style">
+          <summary>
+            <span class="detail-label">Debug Log</span>
+            <span class="detail-title">Systematic bug resolution</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>Bug 1 — Coordinate flip:</strong> X and Y coordinates were swapped in the transformation code, causing theta to be mirrored. Fixed by correcting variable assignment order.</li>
+              <li><strong>Bug 2 — Conversion factor:</strong> Using Slicer-provided 1.367 instead of measured 1.20225 caused 15mm X-offset and 7mm Y-offset. Fixed by empirical measurement from fiducial distances.</li>
+              <li><strong>Bug 3 — Theta reference:</strong> Reference line calculation using fiducial markers introduced angular errors (20° vs correct 10°). Simplified to horizontal reference (slope=0).</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <!-- TEST SETUP -->
+      <div id="test-setup" class="project-block">
+        <h3>Test Setup</h3>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          System validated through resistance force tests on silicone blocks and targeting tests on a 3D printed spine phantom model. The pneumatic robot operated at 25 psi with Stage 3 running at half speed for insertion accuracy.
+        </p>
+
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-value">25 psi</span><span class="spec-label">Operating pressure</span></div>
+          <div class="spec-item"><span class="spec-value">50%</span><span class="spec-label">Stage 3 speed</span></div>
+          <div class="spec-item"><span class="spec-value">Silicone</span><span class="spec-label">Force testing medium</span></div>
+          <div class="spec-item"><span class="spec-value">3D printed</span><span class="spec-label">Spine phantom model</span></div>
+        </div>
+
+        <details class="detail-toggle compact">
+          <summary>
+            <span class="detail-label">Equipment</span>
+            <span class="detail-title">Test setup components</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>3-stage pneumatic robot with MRI-compatible materials</li>
+              <li>3D Slicer for MRI image processing and slice selection</li>
+              <li>MATLAB for path planning and robot command generation</li>
+              <li>Silicone blocks for resistance force validation</li>
+              <li>3D printed spine phantom for targeting accuracy tests</li>
+              <li>Team 5's robot (equipment assistance for some test footage)</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <!-- RESULTS -->
+      <div id="results" class="project-block">
+        <h3>Results</h3>
+
+        <figure style="margin-bottom: var(--space-6);">
+          <img src="../documents/MRI Guided Lumbar SPine Needle Insertion Robot/silicone_block_test.jpg" alt="Needle insertion validation test on silicone block showing less than 2mm depth accuracy" style="width:100%; border-radius: 8px;">
+          <figcaption>Needle insertion validation test on silicone block showing &lt;2mm depth accuracy</figcaption>
+        </figure>
+
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-value">&lt;2mm</span><span class="spec-label">Depth accuracy</span></div>
+          <div class="spec-item"><span class="spec-value">~few mm</span><span class="spec-label">Positioning accuracy</span></div>
+          <div class="spec-item"><span class="spec-value">10°</span><span class="spec-label">Theta accuracy (post-fix)</span></div>
+        </div>
+        <p style="color:var(--text-dim); font-size: var(--text-xs); margin-top: var(--space-2);">Post-debugging positioning accuracy achieved within a few millimeters across all 4 vertebral slots.</p>
+
+        <details class="detail-toggle">
+          <summary>
+            <span class="detail-label">Data</span>
+            <span class="detail-title">Computed needle path coordinates</span>
+          </summary>
+          <div class="detail-body">
+            <p style="color:var(--text-dim); margin-bottom: var(--space-3); font-size: var(--text-xs);">Needle path coordinates computed in MATLAB image space (256×256), maximizing distance from vertebrae boundaries for safe insertion.</p>
+            <div style="overflow-x: auto;">
+              <table style="width:100%; border-collapse: collapse; font-size: var(--text-sm);">
+                <thead>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <th style="padding: var(--space-2); text-align: left; color: var(--headline);">Vertebral Path</th>
+                    <th style="padding: var(--space-2); text-align: right; color: var(--headline);">Entry Point (x,y)</th>
+                    <th style="padding: var(--space-2); text-align: right; color: var(--headline);">Target Point (x,y)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">L1/L2</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">(93, 105)</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">(81, 102.833)</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">L2/L3</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">(92, 132)</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">(80, 128.5)</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">L3/L4</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">(90, 157.75)</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">(79, 159)</td>
+                  </tr>
+                  <tr style="background: rgba(104, 172, 229, 0.1);">
+                    <td style="padding: var(--space-2); color: var(--accent-bright); font-weight: bold;">L4/L5</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--accent-bright); font-weight: bold;">(92, 183)</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--accent-bright); font-weight: bold;">(80, 181.167)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </details>
+
+        <details class="detail-toggle highlight-style">
+          <summary>
+            <span class="detail-label">Key Finding</span>
+            <span class="detail-title">Debugging impact on accuracy</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>Corrected conversion factor (1.20225 vs 1.367) eliminated <strong>15mm X / 7mm Y positioning errors</strong></li>
+              <li>Simplified theta reference (horizontal line, slope=0) reduced angular error from <strong>20° to 10°</strong></li>
+              <li>Angled needle insertion demonstrated <strong>easier penetration</strong> than perpendicular approach</li>
+              <li>Final system achieved <strong>&lt;2mm needle depth accuracy</strong> after Stage 3 speed optimization</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="detail-toggle note-style">
+          <summary>
+            <span class="detail-label">Future</span>
+            <span class="detail-title">Future work</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>Improve part tolerancing to reduce wobble and mechanical errors affecting accuracy</li>
+              <li>Enhance motor reliability to prevent step skipping during operation</li>
+              <li>Develop more accurate conversion factor calculation method less sensitive to fiducial position variations</li>
+              <li>Implement closed-loop feedback for real-time position correction</li>
+              <li>Extend to 3D path planning with variable insertion height</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <!-- ADDITIONAL INFORMATION -->
+      <div id="additional-info" class="project-block">
+        <h3>Additional Information</h3>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-4);">Lab report documenting the complete methodology, results, and analysis.</p>
+        <div class="resume-card">
+          <div class="pdf-wrapper">
+            <iframe
+              src="../documents/MRI Guided Lumbar SPine Needle Insertion Robot/Group1_Avva_Date_RN_Lab9.pdf"
+              title="MRI Guided Lumbar Spine Needle Insertion Robot Lab Report"
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+
+        <details class="detail-toggle compact">
+          <summary>
+            <span class="detail-label">Team</span>
+            <span class="detail-title">Contributions &amp; credits</span>
+          </summary>
+          <div class="detail-body">
+            <p style="margin-bottom: var(--space-3);">I developed the inverse kinematics calculations, MATLAB image processing pipeline for vertebrae boundary detection and path planning, and led the systematic debugging effort that identified and resolved three critical coordinate transformation bugs, achieving &lt;2mm needle positioning accuracy.</p>
+            <p style="margin-bottom: var(--space-3);">Team collaboration with Date and RN (equal contribution). Equipment assistance from Team 5 for testing.</p>
+            <p>Course: EN.530.666 - Magnetically Actuated and MRI Compatible Robots, Johns Hopkins University - Whiting School of Engineering.</p>
+          </div>
+        </details>
+      </div>
+
+    </div><!-- end project-content -->
+  </div><!-- end project-layout -->
 </section>
 
 <footer class="footer">
@@ -257,6 +450,7 @@
 </footer>
 
 <script>
+  // ── Theme & Clock ──
   const root = document.documentElement;
   const toggle = document.getElementById('themeToggle');
   const knob = document.getElementById('themeKnob');
@@ -286,6 +480,91 @@
   }
   tickClock();
   setInterval(tickClock, 1000);
+
+  // ── Sidebar Scrollspy ──
+  const sidebar = document.querySelector('.project-sidebar');
+  const sidebarHeader = document.querySelector('.sidebar-header');
+  const sidebarLinks = document.querySelectorAll('.sidebar-link');
+  const sections = [];
+
+  sidebarLinks.forEach(link => {
+    const targetId = link.getAttribute('href').substring(1);
+    const target = document.getElementById(targetId);
+    if (target) sections.push({ id: targetId, el: target, link: link });
+  });
+
+  function scrollSidebarToActive(activeLink) {
+    if (!sidebar || !activeLink) return;
+    const allLinks = Array.from(sidebarLinks);
+    const activeIndex = allLinks.indexOf(activeLink);
+    const totalLinks = allLinks.length;
+    if (activeIndex >= totalLinks - 2) {
+      const headerHeight = sidebarHeader ? sidebarHeader.offsetHeight + 10 : 50;
+      sidebar.scrollTo({ top: activeLink.offsetTop - headerHeight, behavior: 'smooth' });
+    } else {
+      sidebar.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  function updateActiveLink() {
+    const scrollPos = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+    const atBottom = scrollPos + windowHeight >= docHeight - 50;
+
+    let activeSection = sections[0];
+    if (atBottom && sections.length > 0) {
+      activeSection = sections[sections.length - 1];
+    } else {
+      const offset = 200;
+      for (const section of sections) {
+        const rect = section.el.getBoundingClientRect();
+        if (rect.top <= offset) activeSection = section;
+      }
+    }
+
+    sidebarLinks.forEach(link => link.classList.remove('active'));
+    if (activeSection) {
+      activeSection.link.classList.add('active');
+      scrollSidebarToActive(activeSection.link);
+    }
+  }
+
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        const headerOffset = 160;
+        const offsetPosition = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        sidebarLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        scrollSidebarToActive(link);
+      }
+    });
+  });
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => { updateActiveLink(); ticking = false; });
+      ticking = true;
+    }
+  });
+  updateActiveLink();
+
+  // ── Back to Top Button ──
+  const topBtn = document.getElementById('sidebarTopBtn');
+  if (topBtn) {
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (sidebar) sidebar.scrollTo({ top: 0, behavior: 'smooth' });
+      sidebarLinks.forEach(link => link.classList.remove('active'));
+      if (sidebarLinks[0]) sidebarLinks[0].classList.add('active');
+    });
+  }
 </script>
 
 </body>

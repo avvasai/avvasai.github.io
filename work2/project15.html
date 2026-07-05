@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accordion-Like Disk Resonator Gyroscope</title>
-  <meta name="description" content="A Novel Accordion-Like Disk Resonator Gyroscope (ADRG) - MEMS gyroscope design, simulation, fabrication and testing">
+  <title>Team Haya Racing — Formula Student | Sai Pranav Avva</title>
+  <meta name="description" content="Vehicle dynamics, wireless steering wheel display, and DAQ mentorship for PES University's Formula Student racing team.">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-
 <header class="masthead">
   <h1 class="giant-name">Avva Sai Pranav</h1>
   <nav class="pill-nav">
     <div class="pill-links">
-      <a href="index.html" class="pill">Home</a>
-      <a href="index.html#info" class="pill">Projects</a>
-      <a href="index.html#resume" class="pill">Resume</a>
-      <a href="index.html#contact" class="pill">Contact</a>
+      <a href="../index.html" class="pill">Home</a>
+      <a href="../index.html#info" class="pill">Projects</a>
+      <a href="../index.html#resume" class="pill">Resume</a>
+      <a href="../index.html#contact" class="pill">Contact</a>
     </div>
     <div class="pill-right">
       <span class="label">Theme:</span>
@@ -28,228 +27,296 @@
   </nav>
 </header>
 
-<!-- Project Hero -->
-<section class="project-hero">
-  <p class="section-eyebrow">Project</p>
-  <h1 class="project-title">A Novel Accordion-Like Disk Resonator Gyroscope</h1>
-  <p class="project-subtitle">MEMS Gyroscope Design · Simulation · Fabrication · Testing</p>
-  <div class="project-meta">
-    <span class="meta-item">🏛️ M2D2 Laboratory, Indian Institute of Science</span>
-    <span class="meta-item">👤 Prof. G. K. Ananthasuresh</span>
-    <span class="meta-item">🎤 ICMNSS Conference</span>
-  </div>
-</section>
-
-<!-- Key Results Stats -->
 <section class="section">
-  <div class="stats-row">
-    <div class="stat-card">
-      <span class="stat-value">3–4×</span>
-      <span class="stat-label">Higher Sensitivity</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">6771 Hz</span>
-      <span class="stat-label">Drive Frequency</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">&lt;1.4%</span>
-      <span class="stat-label">Sim-to-Fab Error</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">46.4%</span>
-      <span class="stat-label">Capacitance Change</span>
-    </div>
-  </div>
-</section>
+  <a href="../index.html#info" class="back-link">← Back to projects</a>
 
-<!-- Overview -->
-<section class="section">
-  <h2 class="section-title">Project Overview</h2>
-  <div class="two-col">
-    <div class="col-text">
-      <p>Disk Resonator Gyroscopes (DRGs) sense rotation using Coriolis forces acting on a vibrating ring — the same physics behind a Foucault pendulum, just shrunk down to millimeters.</p>
-      <p>Over the years, designs like the Boeing DRG, Honeycomb DRG, Cobweb DRG, and Gear DRG each pushed sensitivity a little further, from 0.04 deg/sec down to 0.015 deg/sec, but each traded off electrode placement against mechanical performance.</p>
-      <p>This project asked a simple question: <strong>could an entirely different ring geometry — an "accordion-like" pattern — beat the existing field on mechanical sensitivity and noise?</strong></p>
-    </div>
-    <div class="col-visual">
-      <img src="../documents/MEMS Engineer/2.jpeg" alt="ADRG die close-up showing ring pattern" class="project-img">
-      <p class="img-caption">ADRG die showing accordion-style ring pattern</p>
-    </div>
-  </div>
-</section>
+  <div class="project-layout">
 
-<!-- Design & Simulation -->
-<section class="section-alt">
-  <div class="section-inner">
-    <h2 class="section-title">Design & Simulation</h2>
-    <p>I ran finite-element eigenfrequency analysis across five ring topologies — DRG, HDRG, CDRG, GDRG, and my proposed ADRG — each built with 9 rings, an 8mm outer diameter, 10μm in-plane ring width, and 60μm thickness.</p>
-    
-    <div class="table-wrapper">
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>DRG Type</th>
-            <th>Eigenfrequency (Hz)</th>
-            <th>Quality Factor (k)</th>
-            <th>Mech. Sensitivity (μm/rad/s)</th>
-            <th>Brownian Noise (rad/s/√Hz)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>DRG</td>
-            <td>12720</td>
-            <td>103.62</td>
-            <td>3.83e-6</td>
-            <td>1.01e-6</td>
-          </tr>
-          <tr>
-            <td>HDRG</td>
-            <td>11306</td>
-            <td>105.42</td>
-            <td>4.27e-6</td>
-            <td>1.29e-6</td>
-          </tr>
-          <tr>
-            <td>CDRG</td>
-            <td>12611</td>
-            <td>99.99</td>
-            <td>3.61e-6</td>
-            <td>1.12e-6</td>
-          </tr>
-          <tr>
-            <td>GDRG</td>
-            <td>14761</td>
-            <td>91.58</td>
-            <td>2.76e-6</td>
-            <td>1.17e-6</td>
-          </tr>
-          <tr class="highlight-row">
-            <td>ADRG (Ours)</td>
-            <td>6771</td>
-            <td>181.55</td>
-            <td>12.1e-6</td>
-            <td>1.07e-6</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="table-note">The ADRG's mechanical sensitivity is roughly 3–4× higher than every other topology tested, while holding competitive noise performance.</p>
-    
-    <p>Capacitance modeling (accounting for fringing fields, not just the textbook parallel-plate formula) backed this up — the ADRG's relative sense capacitance change was the largest of the five designs at <strong>46.4%</strong>, versus 14–29% for the others.</p>
-  </div>
-</section>
+    <!-- STICKY SIDEBAR -->
+    <aside class="project-sidebar" id="projectSidebar">
+      <div class="sidebar-header">On This Page</div>
+      <a href="#summary" class="sidebar-link active">Summary</a>
+      <a href="#problem" class="sidebar-link">Problem Statement</a>
+      <a href="#methodology" class="sidebar-link">Methodology</a>
+      <a href="#steering-display" class="sidebar-link sidebar-sublink">Steering Display</a>
+      <a href="#vehicle-dynamics" class="sidebar-link sidebar-sublink">Vehicle Dynamics</a>
+      <a href="#fabrication" class="sidebar-link sidebar-sublink">Fabrication</a>
+      <a href="#mentorship" class="sidebar-link sidebar-sublink">DAQ Mentorship</a>
+      <a href="#test-setup" class="sidebar-link">Test Setup</a>
+      <a href="#results" class="sidebar-link">Results</a>
+      <a href="#additional-info" class="sidebar-link">Additional Information</a>
+      <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">↑ Top</button>
+    </aside>
 
-<!-- Fabrication -->
-<section class="section">
-  <h2 class="section-title">Fabrication</h2>
-  <p>The design moved from simulation to silicon at CeNSE (Centre for Nano Science and Engineering).</p>
-  
-  <div class="gallery">
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/2.jpeg" alt="ADRG die close-up showing ring pattern">
-      <figcaption>ADRG die with accordion ring pattern</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/3.jpeg" alt="ADRG chip wire-bonded into ceramic package">
-      <figcaption>Wire-bonded into 68-pin ceramic package</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/4.jpeg" alt="Fabricated ADRG dies on glass slides">
-      <figcaption>Fabricated dies on glass slides</figcaption>
-    </figure>
-  </div>
-  
-  <p>Individual ADRG chips on glass slides, each with the resonator's accordion-style ring pattern visible under its protective coating — and the completed chip wire-bonded into a 68-pin ceramic package with color-coded leads carrying drive, sense, and common signals to the test board.</p>
-</section>
+    <!-- MAIN CONTENT -->
+    <div class="project-content">
 
-<!-- Test Setup -->
-<section class="section-alt">
-  <div class="section-inner">
-    <h2 class="section-title">Pinout & Test Setup</h2>
-    <div class="two-col">
-      <div class="col-text">
-        <h3 class="section-subtitle">Electrode Configuration</h3>
-        <ul class="check-list">
-          <li>4 common pins</li>
-          <li>16 individually addressable outer electrodes for drive and sense</li>
-          <li>Companion accelerometer die with separate X/Y sense and feedback electrode pairs</li>
-        </ul>
-        
-        <h3 class="section-subtitle">LDV Testing</h3>
-        <ul class="check-list">
-          <li>Drive signal combining AC and DC bias excited the resonator</li>
-          <li>LDV measured out-of-plane velocity at 0° and 180° points on the ring</li>
-          <li>Characterized frequency response under controlled conditions</li>
+      <!-- SUMMARY -->
+      <div id="summary" class="project-block">
+        <div class="project-hero">
+          <div class="project-hero-text">
+            <p class="section-eyebrow">Project · Formula Student</p>
+            <h2>Team Haya Racing — Formula Student</h2>
+            <p class="project-hero-meta">PES University, Bangalore · Formula Student India / Formula Bharat · Guided by Dr. Rajesh Mathivanan N · May 2019 – Apr 2021</p>
+            <div class="spec-ribbon">
+              <div class="dim-tag"><span class="dim-value">&lt;5s</span><span class="dim-label">Disconnect time</span></div>
+              <div class="dim-tag"><span class="dim-value">MQTT</span><span class="dim-label">Wireless protocol</span></div>
+              <div class="dim-tag"><span class="dim-value">4</span><span class="dim-label">Students mentored</span></div>
+              <div class="dim-tag"><span class="dim-value">6 weeks</span><span class="dim-label">DAQ program</span></div>
+            </div>
+          </div>
+          <figure class="hero-image-wrap">
+            <img src="../documents/TeamHaya/Picture2.jpg" alt="Team Haya Racing Formula Student car #11 with carbon fiber bodywork at competition" class="hero-image">
+          </figure>
+        </div>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-top: var(--space-4);">
+          <strong>Wireless telemetry, suspension design, and mentoring the next generation of racing engineers.</strong>
+        </p>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-top: var(--space-3);">
+          Team Haya Racing is the Formula Student racing chapter of PES University, competing in Formula Bharat and Formula Student India events. I joined as an intern in summer 2019 and worked my way up to the vehicle dynamics team, eventually mentoring incoming students.
+        </p>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-top: var(--space-3);">
+          My first major project was designing a wireless steering wheel display — a necessity because Formula Student rules require the steering wheel to detach in under 5 seconds for driver extraction. I built a battery-powered system with a Raspberry Pi and display mounted on the steering wheel, receiving real-time ECU data wirelessly from an ESP32 via MQTT protocol. The GUI was developed in Processing IDE and displayed critical parameters like RPM, speed, and engine temperature.
+        </p>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-top: var(--space-3);">
+          As a vehicle dynamics team member, I worked on A-arm design iterations and built instrumentation to verify suspension parameters like slip angle using physical sensors. I also got my hands dirty with fabrication — cutting, assembly, and assisting with carbon fiber mold preparation.
+        </p>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-top: var(--space-3);">
+          In my final year, I mentored four first-year students through 'Project Ignition,' a 6-week program where they learned Arduino, CAN protocol, and data acquisition. They built a Tkinter-based GUI for logging and visualizing vehicle data — skills that would feed directly into the team's telemetry capabilities.
+        </p>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-top: var(--space-3);">
+          Beyond engineering, I contributed to the business side by helping with cost estimation and BOM preparation for competition presentations, and I designed the team's website.
+        </p>
+      </div>
+
+      <!-- PROBLEM STATEMENT -->
+      <div id="problem" class="project-block">
+        <h3>Problem Statement</h3>
+        <ul class="bullet-list">
+          <li><strong>Safety Requirement:</strong> Formula Student regulations mandate that the steering wheel must detach in under 5 seconds for emergency driver extraction — wired displays complicate this</li>
+          <li><strong>Data Visibility:</strong> Driver needs real-time access to critical engine parameters (RPM, speed, gear position, temperature) without looking away from the track</li>
+          <li><strong>Knowledge Transfer:</strong> Racing teams face annual turnover as students graduate — how do you efficiently onboard new members on complex DAQ systems?</li>
+          <li><strong>Design Validation:</strong> Simulation-based suspension designs need physical instrumentation to verify parameters like slip angle match real-world behavior</li>
         </ul>
       </div>
-      <div class="col-visual">
-        <img src="../documents/MEMS Engineer/3.jpeg" alt="Wire-bonded package for testing" class="project-img">
-        <p class="img-caption">68-pin ceramic package ready for LDV testing</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Results -->
-<section class="section">
-  <h2 class="section-title">Results</h2>
-  <div class="resume-card">
-    <p>Under controlled atmospheric conditions (1 atm, 25°C), the fabricated ADRG resonated at approximately <strong>6.8 kHz</strong> — within <strong>1.2–1.4%</strong> of the FEM-predicted eigenfrequency, confirming the simulation model held up in the real device.</p>
-  </div>
-</section>
+      <!-- METHODOLOGY -->
+      <div id="methodology" class="project-block">
+        <h3>Methodology</h3>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-2);">
+          The project spanned multiple work streams across vehicle electronics, dynamics, fabrication, and mentorship. Click a stage to jump there.
+        </p>
+        <nav class="process-stepper">
+          <a href="#steering-display" class="process-step"><span class="step-num">1</span>Display</a>
+          <span class="process-connector"></span>
+          <a href="#vehicle-dynamics" class="process-step"><span class="step-num">2</span>Dynamics</a>
+          <span class="process-connector"></span>
+          <a href="#fabrication" class="process-step"><span class="step-num">3</span>Fabrication</a>
+          <span class="process-connector"></span>
+          <a href="#mentorship" class="process-step"><span class="step-num">4</span>Mentorship</a>
+        </nav>
+      </div>
 
-<!-- My Contributions -->
-<section class="section">
-  <h2 class="section-title">My Contributions</h2>
-  <div class="role-grid">
-    <div class="role-item">
-      <span class="role-icon">📐</span>
-      <div class="role-text">
-        <strong>ADRG Geometry Design</strong>
-        <p>Designed the novel accordion-like ring topology</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">💻</span>
-      <div class="role-text">
-        <strong>FEM Modeling</strong>
-        <p>Led eigenfrequency and capacitance modeling across all five DRG topologies</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">🔬</span>
-      <div class="role-text">
-        <strong>Experimental Characterization</strong>
-        <p>Ran LDV-based testing of the fabricated device</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">📊</span>
-      <div class="role-text">
-        <strong>Comparative Analysis</strong>
-        <p>Benchmarked ADRG against DRG, HDRG, CDRG, and GDRG</p>
-      </div>
-    </div>
-  </div>
-</section>
+      <!-- WIRELESS STEERING WHEEL DISPLAY -->
+      <div id="steering-display" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Wireless Steering Wheel Display</h4>
 
-<!-- Credits -->
-<section class="section">
-  <div class="credits-box">
-    <h3>Team & Acknowledgments</h3>
-    <p><strong>Advisor:</strong> Prof. G. K. Ananthasuresh</p>
-    <p><strong>Co-Advisor:</strong> Karthik (ISRO)</p>
-    <p><strong>Design & Simulation Support:</strong> Sai Kumar, Suman Acharya</p>
-    <p><strong>Fabrication:</strong> Sudhanshu Shekhar</p>
-    <p><strong>Funding:</strong> ISRO</p>
-    <p><strong>Facilities:</strong> CeNSE (Centre for Nano Science and Engineering)</p>
-  </div>
-</section>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Formula Student regulations require the steering wheel to detach in under 5 seconds for emergency driver extraction. A wired display would complicate this, so I designed a fully wireless solution.
+        </p>
 
-<!-- Back Link -->
-<section class="section" style="text-align: center;">
-  <a href="../index.html#info" class="btn btn-ghost">← Back to Projects</a>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-3);">
+          <strong>System Architecture:</strong> The steering wheel houses a battery-powered Raspberry Pi and display, while an ESP32 connected to the ECU reads CAN bus data and transmits it via MQTT protocol. I developed the GUI in Processing IDE to display RPM, speed, gear position, and engine temperature in real-time.
+        </p>
+
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-value">MQTT</span><span class="spec-label">Protocol</span></div>
+          <div class="spec-item"><span class="spec-value">ESP32</span><span class="spec-label">Transmitter</span></div>
+          <div class="spec-item"><span class="spec-value">RPi</span><span class="spec-label">Display unit</span></div>
+          <div class="spec-item"><span class="spec-value">&lt;5s</span><span class="spec-label">Disconnect time</span></div>
+        </div>
+
+        <details class="detail-toggle" style="margin-top: var(--space-4);">
+          <summary>
+            <span class="detail-label">Technical</span>
+            <span class="detail-title">Display parameters shown</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>RPM:</strong> Engine revolutions per minute with shift indicator</li>
+              <li><strong>Speed:</strong> Vehicle speed from wheel speed sensors</li>
+              <li><strong>Gear Position:</strong> Current gear selection</li>
+              <li><strong>Engine Temperature:</strong> Coolant temperature warning</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <!-- VEHICLE DYNAMICS -->
+      <div id="vehicle-dynamics" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Vehicle Dynamics &amp; Design Validation</h4>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          As part of the vehicle dynamics sub-team, I worked on suspension geometry — specifically iterating on A-arm designs based on hardpoint analysis. I also conceptualized instrumentation for verifying physical parameters like slip angle, using sensors to validate simulation results against real-world measurements. This data-driven approach helped optimize the car's handling characteristics.
+        </p>
+
+        <figure style="margin: var(--space-4) 0;">
+          <img src="../documents/TeamHaya/RearPowerTrain.jpg" alt="Rear suspension and powertrain assembly in the Team Haya workshop" style="width:100%; border-radius: 8px;">
+          <figcaption>Rear suspension and powertrain assembly in the Team Haya workshop</figcaption>
+        </figure>
+      </div>
+
+      <!-- FABRICATION -->
+      <div id="fabrication" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Fabrication &amp; Manufacturing</h4>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          I contributed to hands-on fabrication work including cutting and assembly using power tools. I also assisted with carbon fiber composite manufacturing — preparing molds, sanding, and finishing body panels. This gave me practical experience with composite layup techniques and workshop safety.
+        </p>
+
+        <figure style="margin: var(--space-4) 0;">
+          <img src="../documents/TeamHaya/Picture1.jpg" alt="Team Haya workshop with multiple generations of cars" style="width:100%; border-radius: 8px;">
+          <figcaption>Team Haya workshop with multiple generations of cars</figcaption>
+        </figure>
+
+        <figure style="margin: var(--space-4) 0;">
+          <img src="../documents/TeamHaya/CarTestRun.jpg" alt="Test run on campus with fiberglass nose cone installed" style="width:100%; border-radius: 8px;">
+          <figcaption>Test run on campus with fiberglass nose cone installed</figcaption>
+        </figure>
+      </div>
+
+      <!-- DAQ MENTORSHIP -->
+      <div id="mentorship" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Project Ignition — DAQ Mentorship</h4>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          In my final year, I mentored four first-year students through a 6-week 'Project Ignition' program. I designed a curriculum covering Arduino fundamentals, sensor interfacing (MPU9250 IMU, GPS modules), CAN protocol and message framing, and data visualization using Python Tkinter. The students built a functional DAQ system that logged vehicle data to CSV and displayed real-time plots of speed, acceleration, and heading.
+        </p>
+
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-value">4</span><span class="spec-label">Mentees</span></div>
+          <div class="spec-item"><span class="spec-value">6 weeks</span><span class="spec-label">Duration</span></div>
+          <div class="spec-item"><span class="spec-value">Tkinter</span><span class="spec-label">GUI framework</span></div>
+          <div class="spec-item"><span class="spec-value">CAN</span><span class="spec-label">Protocol taught</span></div>
+        </div>
+
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-top: var(--space-3);">
+          Mentees: V Ananth Sai Gautham Konijeti, Harshith Kumar M B, Koustubh, Eshan Deb
+        </p>
+      </div>
+
+      <!-- TEST SETUP -->
+      <div id="test-setup" class="project-block">
+        <h3>Test Setup</h3>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Steering wheel display tested during vehicle test runs on campus. DAQ system validated by logging data from a moving vehicle and plotting speed, engine RPM, and heading in real-time.
+        </p>
+
+        <figure style="margin: var(--space-4) 0;">
+          <img src="../documents/TeamHaya/Front.jpeg" alt="Front view during campus testing" style="width:100%; border-radius: 8px;">
+          <figcaption>Front view during campus testing</figcaption>
+        </figure>
+      </div>
+
+      <!-- RESULTS -->
+      <div id="results" class="project-block">
+        <h3>Results</h3>
+
+        <details class="detail-toggle highlight-style">
+          <summary>
+            <span class="detail-label">Key Finding</span>
+            <span class="detail-title">Project outcomes</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>Successfully implemented wireless steering wheel display meeting <strong>&lt;5 second disconnect requirement</strong></li>
+              <li>MQTT protocol provided <strong>reliable real-time data transmission</strong> from ECU to steering wheel</li>
+              <li>Suspension parameter verification using physical sensors <strong>validated simulation models</strong></li>
+              <li>Project Ignition mentees completed <strong>functional DAQ system</strong> with Tkinter GUI in 6 weeks</li>
+              <li>GPS module identified as <strong>cost-effective alternative</strong> to MPU9250 for speed and position data</li>
+            </ul>
+          </div>
+        </details>
+
+        <h4 style="color:var(--headline); margin-top: var(--space-5); margin-bottom: var(--space-3);">DAQ Sensor Comparison (from Project Ignition)</h4>
+        <div style="overflow-x: auto;">
+          <table style="width:100%; border-collapse: collapse; font-size: var(--text-sm); color: var(--text);">
+            <thead>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <th style="text-align:left; padding: var(--space-2);">Parameter</th>
+                <th style="text-align:center; padding: var(--space-2);">MPU9250</th>
+                <th style="text-align:center; padding: var(--space-2);">GPS Module</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td style="padding: var(--space-2);">Acceleration</td><td style="text-align:center;">✓ (3-axis)</td><td style="text-align:center;">✓ (derived)</td></tr>
+              <tr><td style="padding: var(--space-2);">Gyroscope</td><td style="text-align:center;">✓ (3-axis)</td><td style="text-align:center;">✗</td></tr>
+              <tr><td style="padding: var(--space-2);">Magnetometer</td><td style="text-align:center;">✓ (3-axis)</td><td style="text-align:center;">✗</td></tr>
+              <tr><td style="padding: var(--space-2);">Speed</td><td style="text-align:center;">✗ (derived)</td><td style="text-align:center;">✓ (instantaneous)</td></tr>
+              <tr><td style="padding: var(--space-2);">Position</td><td style="text-align:center;">✗</td><td style="text-align:center;">✓ (lat/long)</td></tr>
+              <tr><td style="padding: var(--space-2);">Heading</td><td style="text-align:center;">✓ (derived)</td><td style="text-align:center;">✓ (direct)</td></tr>
+              <tr><td style="padding: var(--space-2);">Lap Timing</td><td style="text-align:center;">✗</td><td style="text-align:center;">✓</td></tr>
+              <tr><td style="padding: var(--space-2);">Cost</td><td style="text-align:center;">~₹300</td><td style="text-align:center;">~₹300</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="color:var(--text-dim); font-size: var(--text-xs); margin-top: var(--space-2);">GPS module provides more direct vehicle dynamics parameters (speed, position, lap time) at similar cost to IMU.</p>
+
+        <details class="detail-toggle" style="margin-top: var(--space-6);">
+          <summary>
+            <span class="detail-label">Skills</span>
+            <span class="detail-title">Technical skills demonstrated</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>Electronics:</strong> MQTT Protocol, Raspberry Pi, ESP32, CAN Bus, Arduino</li>
+              <li><strong>Software:</strong> Processing IDE, Python, Tkinter, Web Development</li>
+              <li><strong>Vehicle Dynamics:</strong> Suspension Design, A-arm geometry, Slip angle instrumentation</li>
+              <li><strong>Fabrication:</strong> Carbon Fiber Composites, Power Tools, Workshop safety</li>
+              <li><strong>Leadership:</strong> Mentorship, Curriculum design, Technical training</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="detail-toggle compact">
+          <summary>
+            <span class="detail-label">Team</span>
+            <span class="detail-title">Contributions &amp; credits</span>
+          </summary>
+          <div class="detail-body">
+            <p style="margin-bottom: var(--space-3);">Progressed from intern to vehicle dynamics team member to student mentor over two years. Designed wireless steering wheel display, contributed to suspension design iterations, and mentored four first-year students through a 6-week DAQ training program.</p>
+            <p style="margin-bottom: var(--space-3);">Guided by Dr. Rajesh Mathivanan N — Faculty Advisor and Chairperson, Mechanical Engineering Department.</p>
+            <p style="margin-bottom: var(--space-3);">Technical collaboration with Team Haya Racing senior members on chassis, powertrain, and aerodynamics.</p>
+            <p>Facilitated by PES University workshop facilities and equipment.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- ADDITIONAL INFORMATION -->
+      <div id="additional-info" class="project-block">
+        <h3>Additional Information</h3>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-4);">External links and team photo.</p>
+
+        <figure style="margin: var(--space-4) 0;">
+          <img src="../documents/TeamHaya/Picture3.jpg" alt="Team photo with faculty advisors" style="width:100%; border-radius: 8px;">
+          <figcaption>Team photo with faculty advisors</figcaption>
+        </figure>
+
+        <div style="display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-4);">
+          <a href="https://github.com/avvasai/display_UI" target="_blank" rel="noopener noreferrer" class="pill" style="display: inline-flex; align-items: center; gap: 0.5em;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            Steering Wheel Display GUI — GitHub
+          </a>
+          <a href="https://github.com/avvasai/teamhayaracing" target="_blank" rel="noopener noreferrer" class="pill" style="display: inline-flex; align-items: center; gap: 0.5em;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            Team Website — GitHub
+          </a>
+        </div>
+      </div>
+
+    </div><!-- end project-content -->
+  </div><!-- end project-layout -->
 </section>
 
 <footer class="footer">
@@ -257,6 +324,7 @@
 </footer>
 
 <script>
+  // ── Theme & Clock ──
   const root = document.documentElement;
   const toggle = document.getElementById('themeToggle');
   const knob = document.getElementById('themeKnob');
@@ -286,6 +354,80 @@
   }
   tickClock();
   setInterval(tickClock, 1000);
+
+  // ── Sidebar Scrollspy ──
+  const sidebar = document.querySelector('.project-sidebar');
+  const sidebarHeader = document.querySelector('.sidebar-header');
+  const sidebarLinks = document.querySelectorAll('.sidebar-link');
+  const sections = [];
+
+  sidebarLinks.forEach(link => {
+    const targetId = link.getAttribute('href').substring(1);
+    const target = document.getElementById(targetId);
+    if (target) sections.push({ id: targetId, el: target, link: link });
+  });
+
+  function scrollSidebarToActive(link) {
+    if (!sidebar || !sidebarHeader) return;
+    const sidebarRect = sidebar.getBoundingClientRect();
+    const linkRect = link.getBoundingClientRect();
+    const headerHeight = sidebarHeader.offsetHeight;
+    const visibleTop = sidebarRect.top + headerHeight;
+    const visibleBottom = sidebarRect.bottom;
+    if (linkRect.top < visibleTop || linkRect.bottom > visibleBottom) {
+      const scrollTarget = link.offsetTop - headerHeight - 8;
+      sidebar.scrollTo({ top: scrollTarget, behavior: 'smooth' });
+    }
+  }
+
+  function updateActiveLink() {
+    const scrollY = window.scrollY;
+    let current = sections[0];
+    for (const sec of sections) {
+      if (scrollY >= sec.el.offsetTop - 180) current = sec;
+    }
+    sidebarLinks.forEach(l => l.classList.remove('active'));
+    if (current) {
+      current.link.classList.add('active');
+      scrollSidebarToActive(current.link);
+    }
+  }
+
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        const headerOffset = 160;
+        const offsetPosition = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        sidebarLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        scrollSidebarToActive(link);
+      }
+    });
+  });
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => { updateActiveLink(); ticking = false; });
+      ticking = true;
+    }
+  });
+  updateActiveLink();
+
+  // ── Back to Top Button ──
+  const topBtn = document.getElementById('sidebarTopBtn');
+  if (topBtn) {
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (sidebar) sidebar.scrollTo({ top: 0, behavior: 'smooth' });
+      sidebarLinks.forEach(link => link.classList.remove('active'));
+      if (sidebarLinks[0]) sidebarLinks[0].classList.add('active');
+    });
+  }
 </script>
 
 </body>

@@ -1,0 +1,151 @@
+{
+  "project_id": "mito-dex-startup",
+  "title": "Mito Dex",
+  "subtitle": "Coursera for Robots — Capturing multi-modal skill datasets for robotic foundation models",
+  "institution": "Startup (Pre-incorporation)",
+  "collaborating_organizations": [
+    "3 Partner Gait Labs in India"
+  ],
+  "date_range": "2025 – Present",
+  "duration": "1.5 months (mostly full-time)",
+  "website": "mitochondrial.in",
+  "category": "Robotics",
+  "stage": "Pre-revenue, early prototype",
+  "location": {
+    "current": "Delhi/Bangalore, India & Baltimore, USA",
+    "planned_post_yc": "Bangalore, India & San Francisco, USA"
+  },
+
+  "founders": [
+    {
+      "name": "Vrishank Bhardwaj",
+      "role": "Co-founder"
+    },
+    {
+      "name": "Sanchit Jhunjhunwala",
+      "role": "Co-founder"
+    },
+    {
+      "name": "Sai Pranav Avva",
+      "role": "Co-founder"
+    }
+  ],
+
+  "founder_relationships": {
+    "sanchit_avva": "4 years — Worked together at Sanchit's startup",
+    "avva_vrishank": "3 years — Both consulted for Sanchit's startup",
+    "all_met_in_person": true
+  },
+
+  "user_contribution": {
+    "summary": "Designed and built the hardware and video processing pipeline for multi-modal data capture. Created a reproducible recording setup using DSLRs, Intel RealSense, webcams, ESP32, head mounts, and uniform lighting systems. Contributed to AI pipeline setup for faster processing.",
+    "tasks": [
+      "Multi-camera capture rig (DSLRs, Intel RealSense, webcams)",
+      "ESP32-based sensor integration",
+      "Head-mounted camera systems",
+      "Uniform lighting setup",
+      "Video recording and processing pipeline",
+      "AI pipeline optimization"
+    ],
+    "cofounder_contributions": "Business development, customer outreach, gait lab partnerships, and partial hardware/software pipeline work"
+  },
+
+  "product": {
+    "one_liner": "Coursera for Robots",
+    "description": "Building a dynamic catalogue of skills that robots can pull and do test-time training on during deployment. Capturing student-teacher interaction datasets to teach robots how to learn skills and interact with humans.",
+    "differentiation": [
+      "Focus on student-teacher instruction interactions (not in-the-wild egocentric data)",
+      "Capture modalities competitors miss: gripping force, temperature, chain-of-thought audio, full-body pose",
+      "Custom economical hardware matching target robot sensory inputs"
+    ]
+  },
+
+  "tech_stack": [
+    "Optitrack (Motion Capture)",
+    "Head-mounted Dashcams",
+    "Intel RealSense",
+    "DSLRs",
+    "Webcams",
+    "ESP32",
+    "Claude Code",
+    "HaWoR (3D hand pose reconstruction)"
+  ],
+
+  "unique_data_modalities": [
+    "Gripping Force",
+    "Temperature sensing",
+    "Chain-of-thought audio (self-annotation)",
+    "Full body pose",
+    "Student-teacher interactions",
+    "Exception cases (task failures)",
+    "Multi-modal instructions (PDF, assembly videos)"
+  ],
+
+  "progress": {
+    "current_status": "Sample dataset captured; in conversation with potential customers",
+    "achievements": [
+      "Captured sample dataset covering soldering and dexterous skills",
+      "Operating with 3 gait labs in India",
+      "Reaching out to robotics companies for contracts"
+    ],
+    "product_ready": true,
+    "users": false,
+    "revenue": false
+  },
+
+  "business_model": {
+    "revenue_source": "Licensing datasets of captured skills",
+    "target_customers": "Foundation model companies, robotics companies",
+    "market_insight": "Post-training data market is larger than pre-training; physical AI lacks internet-scale datasets"
+  },
+
+  "competitors": {
+    "larger": ["Micro1", "Scale", "Surge"],
+    "smaller": ["MicroAGI", "BuildAI"],
+    "yc_companies": ["HumanArchive", "Sensei", "Cortex", "Spatial"]
+  },
+
+  "future_plans": [
+    "Secure data licensing contracts with robotics companies",
+    "Scale data collection across more gait labs",
+    "Build custom decentralized wearable data capture device",
+    "Create standardized data capture protocol for franchise model",
+    "Retrain humans on newer skills using captured data"
+  ],
+
+  "motivation": "Inspired by Westworld — want to make robots in homes and industry common. Experience building Data Acquisition systems to create custom hardware for worthwhile datasets. Robotics researchers at leading labs are enthusiastic about such data.",
+
+  "legal_status": {
+    "incorporated": false,
+    "investment_raised": false
+  },
+
+  "demo_video": {
+    "file": "mito-dex-demo.mp4",
+    "source_url": "https://docs.google.com/videos/d/13K2NUBewRWYeG8HpL0Q3RbIhkfhh-n3MJYCYKjZOHao/edit",
+    "description": "Demo video of the Mito Dex multi-modal data capture system",
+    "placement": "Hero section"
+  },
+
+  "skills_demonstrated": [
+    "Robotics",
+    "Data Acquisition",
+    "Intel RealSense",
+    "ESP32",
+    "Embedded Systems",
+    "Computer Vision",
+    "Multi-camera Systems",
+    "Video Processing",
+    "Hardware Design",
+    "Sensor Integration",
+    "Startup"
+  ],
+
+  "file_placement": {
+    "video_folder": "images/mito-dex/",
+    "documents_folder": "documents/YCombinator/",
+    "page_file": "work2/mito-dex.html"
+  },
+
+  "source_file": "Apply to Y Combinator.html"
+}

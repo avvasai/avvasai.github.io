@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mito Dex – Coursera for Robots | Sai Pranav Avva</title>
+  <meta name="description" content="Co-founded Mito Dex, building multi-modal datasets to train robotic foundation models. Designed hardware capture systems using RealSense, ESP32, and DSLRs.">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<header class="masthead">
+  <h1 class="giant-name">Avva Sai Pranav</h1>
+  <nav class="pill-nav">
+    <div class="pill-links">
+      <a href="../index.html" class="pill">Home</a>
+      <a href="../index.html#info" class="pill">Projects</a>
+      <a href="../index.html#resume" class="pill">Resume</a>
+      <a href="../index.html#contact" class="pill">Contact</a>
+    </div>
+    <div class="pill-right">
+      <span class="label">Theme:</span>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light theme">
+        <span id="themeKnob">☀</span>
+      </button>
+      <span class="clock" id="clock"></span>
+    </div>
+  </nav>
+</header>
+
+<section class="section">
+  <a href="../index.html#info" class="back-link">← Back to projects</a>
+
+  <div class="project-layout">
+
+    <!-- STICKY SIDEBAR -->
+    <aside class="project-sidebar" id="projectSidebar">
+      <div class="sidebar-header">On This Page</div>
+      <a href="#summary" class="sidebar-link active">Summary</a>
+      <a href="#problem" class="sidebar-link">Problem Statement</a>
+      <a href="#methodology" class="sidebar-link">Methodology</a>
+      <a href="#hardware" class="sidebar-link sidebar-sublink">Hardware Design</a>
+      <a href="#capture" class="sidebar-link sidebar-sublink">Data Capture</a>
+      <a href="#pipeline" class="sidebar-link sidebar-sublink">Processing Pipeline</a>
+      <a href="#results" class="sidebar-link">Results</a>
+      <a href="#additional-info" class="sidebar-link">Additional Information</a>
+      <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">↑ Top</button>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="project-content">
+
+      <!-- SUMMARY -->
+      <div id="summary" class="project-block">
+        <div class="project-hero">
+          <div class="project-hero-text">
+            <p class="section-eyebrow">Project · Robotics Startup</p>
+            <h2>Mito Dex</h2>
+            <p class="project-hero-meta">Startup (Pre-incorporation) · Co-founded with Vrishank Bhardwaj &amp; Sanchit Jhunjhunwala · 2025 – Present</p>
+            <div class="spec-ribbon">
+              <div class="dim-tag"><span class="dim-value">7</span><span class="dim-label">Unique modalities</span></div>
+              <div class="dim-tag"><span class="dim-value">3</span><span class="dim-label">Partner gait labs</span></div>
+              <div class="dim-tag"><span class="dim-value">1.5</span><span class="dim-label">Months full-time</span></div>
+              <div class="dim-tag"><span class="dim-value">ESP32</span><span class="dim-label">Sensor integration</span></div>
+            </div>
+          </div>
+          <div class="hero-diagram-wrap">
+            <video autoplay loop muted playsinline style="width:100%; max-width:300px; border-radius: 8px;">
+              <source src="../documents/YCombinator/intro.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          <strong>Coursera for Robots</strong> — Capturing multi-modal skill datasets for robotic foundation models
+        </p>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Building a dynamic catalogue of skills that robots can pull and do test-time training on during deployment. We capture student-teacher interaction datasets to teach robots how to learn skills and interact with humans — unlike existing data companies that focus on in-the-wild egocentric footage.
+        </p>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          As a co-founder, I designed and built the hardware and video processing pipeline for multi-modal data capture. Created a reproducible recording setup using DSLRs, Intel RealSense, webcams, ESP32, head mounts, and uniform lighting systems. Also contributed to AI pipeline setup for faster processing.
+        </p>
+
+        <div class="stat-strip">
+          <div class="stat-card">
+            <span class="stat-value">7</span>
+            <span class="stat-unit">modalities</span>
+            <span class="stat-label">Unique data types competitors miss</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">3</span>
+            <span class="stat-unit">labs</span>
+            <span class="stat-label">Partner gait labs in India</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">Multi</span>
+            <span class="stat-unit">camera</span>
+            <span class="stat-label">DSLRs, RealSense, Optitrack</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">HaWoR</span>
+            <span class="stat-unit">3D pose</span>
+            <span class="stat-label">Hand pose reconstruction</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROBLEM STATEMENT -->
+      <div id="problem" class="project-block">
+        <h3>Problem Statement</h3>
+        <ul class="bullet-list">
+          <li><strong>Need:</strong> Robotic foundation models require high-quality, multi-modal training data to learn dexterous manipulation skills — but physical AI lacks internet-scale datasets</li>
+          <li><strong>Prior art:</strong> Existing robotics data companies (Micro1, Scale, Surge, MicroAGI, BuildAI) focus primarily on in-the-wild egocentric footage, missing critical modalities like gripping force, temperature sensing, and structured student-teacher interactions</li>
+          <li><strong>Open question:</strong> Could custom economical hardware matching target robot sensory inputs, combined with structured skill demonstrations, provide significantly higher-value post-training data for physical AI?</li>
+        </ul>
+      </div>
+
+      <!-- METHODOLOGY -->
+      <div id="methodology" class="project-block">
+        <h3>Methodology</h3>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-2);">
+          The project follows a comprehensive hardware-capture-process workflow for building scalable robotics training datasets. Click a stage to jump there.
+        </p>
+        <nav class="process-stepper">
+          <a href="#hardware" class="process-step"><span class="step-num">1</span>Hardware</a>
+          <span class="process-connector"></span>
+          <a href="#capture" class="process-step"><span class="step-num">2</span>Capture</a>
+          <span class="process-connector"></span>
+          <a href="#pipeline" class="process-step"><span class="step-num">3</span>Process</a>
+          <span class="process-connector"></span>
+          <a href="#results" class="process-step"><span class="step-num">4</span>Results</a>
+        </nav>
+      </div>
+
+      <!-- HARDWARE DESIGN -->
+      <div id="hardware" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Hardware Design &amp; Integration</h4>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Designed a reproducible multi-camera capture system integrating professional motion capture with consumer-grade sensors. The setup is engineered to be portable and deployable across our partner gait labs in India.
+        </p>
+
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-value">Optitrack</span><span class="spec-label">Motion capture</span></div>
+          <div class="spec-item"><span class="spec-value">RealSense</span><span class="spec-label">Depth capture</span></div>
+          <div class="spec-item"><span class="spec-value">DSLRs</span><span class="spec-label">High-res video</span></div>
+          <div class="spec-item"><span class="spec-value">Webcams</span><span class="spec-label">Auxiliary angles</span></div>
+        </div>
+
+        <details class="detail-toggle" style="margin-top: var(--space-4);">
+          <summary>
+            <span class="detail-label">Stack</span>
+            <span class="detail-title">Complete tech stack</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>Motion Capture:</strong> Optitrack for precise full-body pose tracking</li>
+              <li><strong>Egocentric:</strong> Head-mounted dashcams for first-person perspective</li>
+              <li><strong>Depth:</strong> Intel RealSense for RGB-D capture</li>
+              <li><strong>Video:</strong> DSLRs and webcams for multi-angle coverage</li>
+              <li><strong>Sensors:</strong> ESP32 for gripping force and temperature data</li>
+              <li><strong>Processing:</strong> Claude Code for pipeline automation, HaWoR for 3D hand pose reconstruction</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="detail-toggle" style="margin-top: var(--space-4);">
+          <summary>
+            <span class="detail-label">Sensors</span>
+            <span class="detail-title">ESP32 sensor integration</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>Gripping Force:</strong> Force-sensitive resistors integrated into tool handles for measuring grip pressure during manipulation tasks</li>
+              <li><strong>Temperature:</strong> Thermocouples for capturing thermal data relevant to soldering and heat-sensitive tasks</li>
+              <li><strong>Synchronization:</strong> ESP32 timestamps all sensor readings for alignment with video streams</li>
+              <li><strong>Wireless:</strong> Data transmitted via WiFi to central recording system</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <!-- DATA CAPTURE -->
+      <div id="capture" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Data Capture System</h4>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Capturing student-teacher interaction datasets to teach robots how to learn skills and interact with humans. Our unique approach focuses on structured instruction rather than in-the-wild egocentric footage.
+        </p>
+
+        <details class="detail-toggle highlight-style">
+          <summary>
+            <span class="detail-label">Key</span>
+            <span class="detail-title">7 unique data modalities</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>Gripping Force:</strong> Measuring grip pressure during manipulation tasks</li>
+              <li><strong>Temperature Sensing:</strong> Thermal data for heat-sensitive tasks like soldering</li>
+              <li><strong>Chain-of-thought Audio:</strong> Self-annotation through verbal explanation during tasks</li>
+              <li><strong>Full Body Pose:</strong> Complete skeletal tracking via Optitrack</li>
+              <li><strong>Student-Teacher Interactions:</strong> Structured learning demonstrations</li>
+              <li><strong>Exception Cases:</strong> Captured task failures for robust training</li>
+              <li><strong>Multi-modal Instructions:</strong> PDFs, assembly videos paired with demonstrations</li>
+            </ul>
+          </div>
+        </details>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-top: var(--space-4); margin-bottom: var(--space-4);">
+          <strong>Egocentric Capture:</strong> Head-mounted dashcams capture first-person perspective essential for training robots on human visual perception during task execution. Uniform lighting systems ensure consistent image quality across all recording sessions.
+        </p>
+      </div>
+
+      <!-- PROCESSING PIPELINE -->
+      <div id="pipeline" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Processing Pipeline</h4>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Established the video recording and processing pipeline for handling multi-view synchronized footage. Integrated HaWoR for 3D hand pose reconstruction and contributed to AI pipeline optimization for faster processing throughput.
+        </p>
+
+        <details class="detail-toggle">
+          <summary>
+            <span class="detail-label">Pipeline</span>
+            <span class="detail-title">Processing workflow</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>Synchronization:</strong> Multi-view video streams aligned using audio sync and timestamp matching</li>
+              <li><strong>Pose Estimation:</strong> HaWoR integration for accurate 3D hand pose reconstruction</li>
+              <li><strong>Annotation:</strong> Chain-of-thought audio enables self-annotation of skill demonstrations</li>
+              <li><strong>Automation:</strong> Claude Code for pipeline automation and quality checks</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <!-- RESULTS -->
+      <div id="results" class="project-block">
+        <h3>Results</h3>
+
+        <details class="detail-toggle highlight-style">
+          <summary>
+            <span class="detail-label">Progress</span>
+            <span class="detail-title">Current achievements</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>Captured <strong>sample dataset covering soldering and dexterous skills</strong></li>
+              <li>Operating with <strong>3 gait labs in India</strong> for scalable data collection</li>
+              <li><strong>Product ready</strong> — in conversation with potential customers</li>
+              <li>Reaching out to <strong>robotics companies for licensing contracts</strong></li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="detail-toggle" style="margin-top: var(--space-4);">
+          <summary>
+            <span class="detail-label">Data</span>
+            <span class="detail-title">Mito Dex vs. Competitors</span>
+          </summary>
+          <div class="detail-body">
+            <p style="color:var(--text-dim); margin-bottom: var(--space-3); font-size: var(--text-xs);">Mito Dex captures 7 unique modalities that competitors typically miss, focusing on the higher-value post-training data market.</p>
+            <div style="overflow-x: auto;">
+              <table style="width:100%; border-collapse: collapse; font-size: var(--text-sm);">
+                <thead>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <th style="padding: var(--space-2); text-align: left; color: var(--headline);">Data Modality</th>
+                    <th style="padding: var(--space-2); text-align: center; color: var(--headline);">Mito Dex</th>
+                    <th style="padding: var(--space-2); text-align: center; color: var(--headline);">Competitors</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">Gripping Force</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">✓</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">✗</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">Temperature Sensing</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">✓</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">✗</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">Chain-of-thought Audio</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">✓</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">✗</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">Full Body Pose</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">✓</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">Partial</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">Student-Teacher Interactions</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">✓</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">✗</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">Exception Cases (Failures)</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">✓</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">✗</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">Multi-modal Instructions</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">✓</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">✗</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2); color: var(--text);">Egocentric Video</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">✓</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">✓</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: var(--space-2); color: var(--text);">Depth Data</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">✓</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">✓</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </details>
+
+        <details class="detail-toggle" style="margin-top: var(--space-4);">
+          <summary>
+            <span class="detail-label">Market</span>
+            <span class="detail-title">Competitive landscape</span>
+          </summary>
+          <div class="detail-body">
+            <p style="margin-bottom: var(--space-3);"><strong>Larger competitors:</strong> Micro1, Scale, Surge</p>
+            <p style="margin-bottom: var(--space-3);"><strong>Smaller competitors:</strong> MicroAGI, BuildAI</p>
+            <p><strong>YC companies in space:</strong> HumanArchive, Sensei, Cortex, Spatial</p>
+          </div>
+        </details>
+
+        <details class="detail-toggle" style="margin-top: var(--space-6);">
+          <summary>
+            <span class="detail-label">Future</span>
+            <span class="detail-title">Future plans</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>Secure data licensing contracts with robotics companies</li>
+              <li>Scale data collection across more gait labs</li>
+              <li>Build custom decentralized wearable data capture device</li>
+              <li>Create standardized data capture protocol for franchise model</li>
+              <li>Retrain humans on newer skills using captured data</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="detail-toggle" style="margin-top: var(--space-6);">
+          <summary>
+            <span class="detail-label">Skills</span>
+            <span class="detail-title">Technical skills demonstrated</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>Hardware:</strong> Multi-camera system design, ESP32 embedded systems, sensor integration</li>
+              <li><strong>Capture:</strong> Intel RealSense, Optitrack motion capture, DSLR video, head-mounted rigs</li>
+              <li><strong>Processing:</strong> Video synchronization, 3D pose estimation (HaWoR), data pipelines</li>
+              <li><strong>Computer Vision:</strong> Multi-view geometry, depth sensing, hand tracking</li>
+              <li><strong>Startup:</strong> Co-founder responsibilities, partnership development, product design</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="detail-toggle compact" style="margin-top: var(--space-6);">
+          <summary>
+            <span class="detail-label">Team</span>
+            <span class="detail-title">Contributions &amp; credits</span>
+          </summary>
+          <div class="detail-body">
+            <p style="margin-bottom: var(--space-3);">I designed and built the hardware and video processing pipeline for multi-modal data capture. Created a reproducible recording setup using DSLRs, Intel RealSense, webcams, ESP32, head mounts, and uniform lighting systems. Contributed to AI pipeline setup for faster processing.</p>
+            <p style="margin-bottom: var(--space-3);"><strong>Co-founders:</strong> Vrishank Bhardwaj and Sanchit Jhunjhunwala handle business development, customer outreach, gait lab partnerships, and partial hardware/software pipeline work.</p>
+            <p style="margin-bottom: var(--space-3);"><strong>Founder relationships:</strong></p>
+            <ul class="bullet-list">
+              <li>Sanchit &amp; Avva: 4 years — Worked together at Sanchit's startup</li>
+              <li>Avva &amp; Vrishank: 3 years — Both consulted for Sanchit's startup</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <!-- ADDITIONAL INFORMATION -->
+      <div id="additional-info" class="project-block">
+        <h3>Additional Information</h3>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-4);">Demo video of the Mito Dex multi-modal data capture system.</p>
+        
+        <div class="resume-card" style="margin-bottom: var(--space-6);">
+          <div class="pdf-wrapper">
+            <video controls style="width:100%; border-radius: 8px;">
+              <source src="../documents/YCombinator/intro.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
+        <details class="detail-toggle" style="margin-top: var(--space-4);">
+          <summary>
+            <span class="detail-label">Why</span>
+            <span class="detail-title">Motivation</span>
+          </summary>
+          <div class="detail-body">
+            <p>Inspired by Westworld — want to make robots in homes and industry common. Experience building Data Acquisition systems to create custom hardware for worthwhile datasets. Robotics researchers at leading labs are enthusiastic about such data.</p>
+          </div>
+        </details>
+
+        <details class="detail-toggle" style="margin-top: var(--space-4);">
+          <summary>
+            <span class="detail-label">Info</span>
+            <span class="detail-title">Company details</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>Website:</strong> <a href="https://mitochondrial.in" target="_blank" rel="noopener">mitochondrial.in</a></li>
+              <li><strong>Stage:</strong> Pre-revenue, early prototype</li>
+              <li><strong>Status:</strong> Pre-incorporation, no investment raised</li>
+              <li><strong>Location:</strong> Delhi/Bangalore, India &amp; Baltimore, USA</li>
+              <li><strong>Post-YC:</strong> Bangalore, India &amp; San Francisco, USA</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+    </div><!-- end project-content -->
+  </div><!-- end project-layout -->
+</section>
+
+<footer class="footer">
+  <span>© <span id="year"></span> Avva Sai Pranav</span>
+</footer>
+
+<script>
+  // ── Theme & Clock ──
+  const root = document.documentElement;
+  const toggle = document.getElementById('themeToggle');
+  const knob = document.getElementById('themeKnob');
+  const clockEl = document.getElementById('clock');
+  const yearEl = document.getElementById('year');
+
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  function applyTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    knob.textContent = theme === 'dark' ? '☀' : '☾';
+    try { localStorage.setItem('site-theme', theme); } catch (e) {}
+  }
+
+  let saved = null;
+  try { saved = localStorage.getItem('site-theme'); } catch (e) {}
+  const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+  applyTheme(saved || (prefersLight ? 'light' : 'dark'));
+
+  toggle.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+  });
+
+  function tickClock() {
+    if (clockEl) clockEl.textContent = new Date().toLocaleTimeString('en-GB');
+  }
+  tickClock();
+  setInterval(tickClock, 1000);
+
+  // ── Sidebar Scrollspy ──
+  const sidebar = document.querySelector('.project-sidebar');
+  const sidebarHeader = document.querySelector('.sidebar-header');
+  const sidebarLinks = document.querySelectorAll('.sidebar-link');
+  const sections = [];
+
+  sidebarLinks.forEach(link => {
+    const targetId = link.getAttribute('href').substring(1);
+    const target = document.getElementById(targetId);
+    if (target) sections.push({ id: targetId, el: target, link: link });
+  });
+
+  function scrollSidebarToActive(activeLink) {
+    if (!sidebar || !activeLink) return;
+    const allLinks = Array.from(sidebarLinks);
+    const activeIndex = allLinks.indexOf(activeLink);
+    const totalLinks = allLinks.length;
+    if (activeIndex >= totalLinks - 2) {
+      const headerHeight = sidebarHeader ? sidebarHeader.offsetHeight + 10 : 50;
+      sidebar.scrollTo({ top: activeLink.offsetTop - headerHeight, behavior: 'smooth' });
+    } else {
+      sidebar.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  function updateActiveLink() {
+    const scrollPos = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+    const atBottom = scrollPos + windowHeight >= docHeight - 50;
+
+    let activeSection = sections[0];
+    if (atBottom && sections.length > 0) {
+      activeSection = sections[sections.length - 1];
+    } else {
+      const offset = 200;
+      for (const section of sections) {
+        const rect = section.el.getBoundingClientRect();
+        if (rect.top <= offset) activeSection = section;
+      }
+    }
+
+    sidebarLinks.forEach(link => link.classList.remove('active'));
+    if (activeSection) {
+      activeSection.link.classList.add('active');
+      scrollSidebarToActive(activeSection.link);
+    }
+  }
+
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        const headerOffset = 160;
+        const offsetPosition = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        sidebarLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        scrollSidebarToActive(link);
+      }
+    });
+  });
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => { updateActiveLink(); ticking = false; });
+      ticking = true;
+    }
+  });
+  updateActiveLink();
+
+  // ── Back to Top Button ──
+  const topBtn = document.getElementById('sidebarTopBtn');
+  if (topBtn) {
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (sidebar) sidebar.scrollTo({ top: 0, behavior: 'smooth' });
+      sidebarLinks.forEach(link => link.classList.remove('active'));
+      if (sidebarLinks[0]) sidebarLinks[0].classList.add('active');
+    });
+  }
+</script>
+
+</body>
+</html>

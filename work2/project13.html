@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accordion-Like Disk Resonator Gyroscope</title>
-  <meta name="description" content="A Novel Accordion-Like Disk Resonator Gyroscope (ADRG) - MEMS gyroscope design, simulation, fabrication and testing">
+  <title>MRI-Guided Lumbar Spine Robot | Sai Pranav Avva</title>
+  <meta name="description" content="FEA-optimized I-beam linkage profiles for MR-compatible spinal injection robot, achieving carbon fiber-equivalent stiffness at Johns Hopkins CIS II.">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-
 <header class="masthead">
   <h1 class="giant-name">Avva Sai Pranav</h1>
   <nav class="pill-nav">
     <div class="pill-links">
-      <a href="index.html" class="pill">Home</a>
-      <a href="index.html#info" class="pill">Projects</a>
-      <a href="index.html#resume" class="pill">Resume</a>
-      <a href="index.html#contact" class="pill">Contact</a>
+      <a href="../index.html" class="pill">Home</a>
+      <a href="../index.html#info" class="pill">Projects</a>
+      <a href="../index.html#resume" class="pill">Resume</a>
+      <a href="../index.html#contact" class="pill">Contact</a>
     </div>
     <div class="pill-right">
       <span class="label">Theme:</span>
@@ -28,228 +27,298 @@
   </nav>
 </header>
 
-<!-- Project Hero -->
-<section class="project-hero">
-  <p class="section-eyebrow">Project</p>
-  <h1 class="project-title">A Novel Accordion-Like Disk Resonator Gyroscope</h1>
-  <p class="project-subtitle">MEMS Gyroscope Design · Simulation · Fabrication · Testing</p>
-  <div class="project-meta">
-    <span class="meta-item">🏛️ M2D2 Laboratory, Indian Institute of Science</span>
-    <span class="meta-item">👤 Prof. G. K. Ananthasuresh</span>
-    <span class="meta-item">🎤 ICMNSS Conference</span>
-  </div>
-</section>
-
-<!-- Key Results Stats -->
 <section class="section">
-  <div class="stats-row">
-    <div class="stat-card">
-      <span class="stat-value">3–4×</span>
-      <span class="stat-label">Higher Sensitivity</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">6771 Hz</span>
-      <span class="stat-label">Drive Frequency</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">&lt;1.4%</span>
-      <span class="stat-label">Sim-to-Fab Error</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-value">46.4%</span>
-      <span class="stat-label">Capacitance Change</span>
-    </div>
-  </div>
-</section>
+  <a href="../index.html#info" class="back-link">← Back to projects</a>
 
-<!-- Overview -->
-<section class="section">
-  <h2 class="section-title">Project Overview</h2>
-  <div class="two-col">
-    <div class="col-text">
-      <p>Disk Resonator Gyroscopes (DRGs) sense rotation using Coriolis forces acting on a vibrating ring — the same physics behind a Foucault pendulum, just shrunk down to millimeters.</p>
-      <p>Over the years, designs like the Boeing DRG, Honeycomb DRG, Cobweb DRG, and Gear DRG each pushed sensitivity a little further, from 0.04 deg/sec down to 0.015 deg/sec, but each traded off electrode placement against mechanical performance.</p>
-      <p>This project asked a simple question: <strong>could an entirely different ring geometry — an "accordion-like" pattern — beat the existing field on mechanical sensitivity and noise?</strong></p>
-    </div>
-    <div class="col-visual">
-      <img src="../documents/MEMS Engineer/2.jpeg" alt="ADRG die close-up showing ring pattern" class="project-img">
-      <p class="img-caption">ADRG die showing accordion-style ring pattern</p>
-    </div>
-  </div>
-</section>
+  <div class="project-layout">
 
-<!-- Design & Simulation -->
-<section class="section-alt">
-  <div class="section-inner">
-    <h2 class="section-title">Design & Simulation</h2>
-    <p>I ran finite-element eigenfrequency analysis across five ring topologies — DRG, HDRG, CDRG, GDRG, and my proposed ADRG — each built with 9 rings, an 8mm outer diameter, 10μm in-plane ring width, and 60μm thickness.</p>
-    
-    <div class="table-wrapper">
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>DRG Type</th>
-            <th>Eigenfrequency (Hz)</th>
-            <th>Quality Factor (k)</th>
-            <th>Mech. Sensitivity (μm/rad/s)</th>
-            <th>Brownian Noise (rad/s/√Hz)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>DRG</td>
-            <td>12720</td>
-            <td>103.62</td>
-            <td>3.83e-6</td>
-            <td>1.01e-6</td>
-          </tr>
-          <tr>
-            <td>HDRG</td>
-            <td>11306</td>
-            <td>105.42</td>
-            <td>4.27e-6</td>
-            <td>1.29e-6</td>
-          </tr>
-          <tr>
-            <td>CDRG</td>
-            <td>12611</td>
-            <td>99.99</td>
-            <td>3.61e-6</td>
-            <td>1.12e-6</td>
-          </tr>
-          <tr>
-            <td>GDRG</td>
-            <td>14761</td>
-            <td>91.58</td>
-            <td>2.76e-6</td>
-            <td>1.17e-6</td>
-          </tr>
-          <tr class="highlight-row">
-            <td>ADRG (Ours)</td>
-            <td>6771</td>
-            <td>181.55</td>
-            <td>12.1e-6</td>
-            <td>1.07e-6</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="table-note">The ADRG's mechanical sensitivity is roughly 3–4× higher than every other topology tested, while holding competitive noise performance.</p>
-    
-    <p>Capacitance modeling (accounting for fringing fields, not just the textbook parallel-plate formula) backed this up — the ADRG's relative sense capacitance change was the largest of the five designs at <strong>46.4%</strong>, versus 14–29% for the others.</p>
-  </div>
-</section>
+    <!-- STICKY SIDEBAR -->
+    <aside class="project-sidebar" id="projectSidebar">
+      <div class="sidebar-header">On This Page</div>
+      <a href="#summary" class="sidebar-link active">Summary</a>
+      <a href="#problem" class="sidebar-link">Problem Statement</a>
+      <a href="#methodology" class="sidebar-link">Methodology</a>
+      <a href="#design-sim" class="sidebar-link sidebar-sublink">Design &amp; Simulation</a>
+      <a href="#fabrication" class="sidebar-link sidebar-sublink">Fabrication</a>
+      <a href="#test-setup" class="sidebar-link">Test Setup</a>
+      <a href="#results" class="sidebar-link">Results</a>
+      <a href="#additional-info" class="sidebar-link">Additional Information</a>
+      <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">↑ Top</button>
+    </aside>
 
-<!-- Fabrication -->
-<section class="section">
-  <h2 class="section-title">Fabrication</h2>
-  <p>The design moved from simulation to silicon at CeNSE (Centre for Nano Science and Engineering).</p>
-  
-  <div class="gallery">
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/2.jpeg" alt="ADRG die close-up showing ring pattern">
-      <figcaption>ADRG die with accordion ring pattern</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/3.jpeg" alt="ADRG chip wire-bonded into ceramic package">
-      <figcaption>Wire-bonded into 68-pin ceramic package</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <img src="../documents/MEMS Engineer/4.jpeg" alt="Fabricated ADRG dies on glass slides">
-      <figcaption>Fabricated dies on glass slides</figcaption>
-    </figure>
-  </div>
-  
-  <p>Individual ADRG chips on glass slides, each with the resonator's accordion-style ring pattern visible under its protective coating — and the completed chip wire-bonded into a 68-pin ceramic package with color-coded leads carrying drive, sense, and common signals to the test board.</p>
-</section>
+    <!-- MAIN CONTENT -->
+    <div class="project-content">
 
-<!-- Test Setup -->
-<section class="section-alt">
-  <div class="section-inner">
-    <h2 class="section-title">Pinout & Test Setup</h2>
-    <div class="two-col">
-      <div class="col-text">
-        <h3 class="section-subtitle">Electrode Configuration</h3>
-        <ul class="check-list">
-          <li>4 common pins</li>
-          <li>16 individually addressable outer electrodes for drive and sense</li>
-          <li>Companion accelerometer die with separate X/Y sense and feedback electrode pairs</li>
+      <!-- SUMMARY -->
+      <div id="summary" class="project-block">
+        <div class="project-hero">
+          <div class="project-hero-text">
+            <p class="section-eyebrow">Project · Medical Robotics</p>
+            <h2>Robotic Assistant for MRI-Guided Low Back Pain Injections</h2>
+            <p class="project-hero-meta">Johns Hopkins University · Computer Integrated Surgery II · Guided by Dr. Iordachita · Jan 2025 – May 2025</p>
+            <div class="spec-ribbon">
+              <div class="dim-tag"><span class="dim-value">1.6</span><span class="dim-label">µm deflection</span></div>
+              <div class="dim-tag"><span class="dim-value">5-DOF</span><span class="dim-label">robot architecture</span></div>
+              <div class="dim-tag"><span class="dim-value">6</span><span class="dim-label">profiles analyzed</span></div>
+              <div class="dim-tag"><span class="dim-value">MR</span><span class="dim-label">compatible</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Image -->
+        <figure style="margin: var(--space-6) 0;">
+          <img src="../documents/Robotic Assistant For MRI Guided Low Back Pain Injections/Figure1.jpg" alt="5-DOF MR-compatible robot linkage system for lumbar spine needle insertion showing kinematic workspace" style="width:100%; border-radius: 8px;">
+          <figcaption>5-DOF MR-compatible robot linkage system for lumbar spine needle insertion showing kinematic workspace</figcaption>
+        </figure>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Low back pain affects over 600 million people globally, and MRI-guided spinal injections offer a radiation-free diagnostic and therapeutic approach. This project continued development of a 5-DOF MR-compatible robot for lumbar spine needle insertion, focusing on improving mechanical rigidity to meet clinical accuracy requirements (&lt;1 mm positioning, &lt;1° angular error).
+        </p>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          My primary contribution was leading the FEA-based redesign of the robot's linkage profiles. The original PLA linkages lacked sufficient stiffness for needle insertion forces, while carbon fiber—though rigid—is only MR-conditional due to potential heating effects. I systematically analyzed six beam cross-sections, optimizing for the highest second moment of inertia to weight ratio. Through iterative FEA simulation, I developed an I-beam profile in ABS that matched the 6 mm carbon fiber's stiffness (15 µm deflection under 5 N loading) while maintaining full MR compatibility.
+        </p>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          I also contributed to CAD modeling, 3D printing the optimized profiles, validating performance through bending tests, assisting with robot debugging, and documenting the design process. The redesigned profiles are ready for integration into the robot to improve endpoint accuracy for future phantom and clinical testing.
+        </p>
+
+        <div class="stat-strip">
+          <div class="stat-card">
+            <span class="stat-value">1.6</span>
+            <span class="stat-unit">µm</span>
+            <span class="stat-label">ABS I-beam deflection under 5 N load</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">10.01</span>
+            <span class="stat-unit">×10⁻⁴</span>
+            <span class="stat-label">I-beam second moment of inertia to weight ratio</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">48</span>
+            <span class="stat-unit">mm</span>
+            <span class="stat-label">Final I-beam total height</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">&lt;1</span>
+            <span class="stat-unit">mm</span>
+            <span class="stat-label">Target positioning accuracy</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROBLEM STATEMENT -->
+      <div id="problem" class="project-block">
+        <h3>Problem Statement</h3>
+        <ul class="bullet-list">
+          <li><strong>Need:</strong> MRI-guided spinal injections require a robot with high endpoint accuracy (&lt;1 mm positioning, &lt;1° angular error) that is fully MR-compatible</li>
+          <li><strong>Prior art:</strong> The robot's original PLA linkages lacked sufficient rigidity for needle insertion forces, causing deflection that compromised endpoint accuracy. Carbon fiber linkages improved stiffness but are only MR-conditional due to potential heating in MRI fields</li>
+          <li><strong>Open question:</strong> Could an optimized 3D-printable profile using MR-compatible materials (ABS/PLA) match carbon fiber stiffness without changing the robot's kinematics or workspace?</li>
         </ul>
-        
-        <h3 class="section-subtitle">LDV Testing</h3>
-        <ul class="check-list">
-          <li>Drive signal combining AC and DC bias excited the resonator</li>
-          <li>LDV measured out-of-plane velocity at 0° and 180° points on the ring</li>
-          <li>Characterized frequency response under controlled conditions</li>
-        </ul>
-      </div>
-      <div class="col-visual">
-        <img src="../documents/MEMS Engineer/3.jpeg" alt="Wire-bonded package for testing" class="project-img">
-        <p class="img-caption">68-pin ceramic package ready for LDV testing</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Results -->
-<section class="section">
-  <h2 class="section-title">Results</h2>
-  <div class="resume-card">
-    <p>Under controlled atmospheric conditions (1 atm, 25°C), the fabricated ADRG resonated at approximately <strong>6.8 kHz</strong> — within <strong>1.2–1.4%</strong> of the FEM-predicted eigenfrequency, confirming the simulation model held up in the real device.</p>
-  </div>
-</section>
+        <!-- System Overview Image -->
+        <figure style="margin: var(--space-6) 0;">
+          <img src="../documents/Robotic Assistant For MRI Guided Low Back Pain Injections/Figure4.jpg" alt="Full experimental setup with robot secured to table, Atracsys optical tracker on tripod, and optical markers on robot linkages" style="width:100%; border-radius: 8px;">
+          <figcaption>Full system experimental setup with Atracsys optical tracking for accuracy validation</figcaption>
+        </figure>
+      </div>
 
-<!-- My Contributions -->
-<section class="section">
-  <h2 class="section-title">My Contributions</h2>
-  <div class="role-grid">
-    <div class="role-item">
-      <span class="role-icon">📐</span>
-      <div class="role-text">
-        <strong>ADRG Geometry Design</strong>
-        <p>Designed the novel accordion-like ring topology</p>
+      <!-- METHODOLOGY -->
+      <div id="methodology" class="project-block">
+        <h3>Methodology</h3>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-2);">
+          The project followed a systematic design-simulate-fabricate-test workflow for linkage profile optimization. Click a stage to jump there.
+        </p>
+        <nav class="process-stepper">
+          <a href="#design-sim" class="process-step"><span class="step-num">1</span>Design</a>
+          <span class="process-connector"></span>
+          <a href="#fabrication" class="process-step"><span class="step-num">2</span>Fabricate</a>
+          <span class="process-connector"></span>
+          <a href="#test-setup" class="process-step"><span class="step-num">3</span>Test</a>
+          <span class="process-connector"></span>
+          <a href="#results" class="process-step"><span class="step-num">4</span>Results</a>
+        </nav>
       </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">💻</span>
-      <div class="role-text">
-        <strong>FEM Modeling</strong>
-        <p>Led eigenfrequency and capacitance modeling across all five DRG topologies</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">🔬</span>
-      <div class="role-text">
-        <strong>Experimental Characterization</strong>
-        <p>Ran LDV-based testing of the fabricated device</p>
-      </div>
-    </div>
-    <div class="role-item">
-      <span class="role-icon">📊</span>
-      <div class="role-text">
-        <strong>Comparative Analysis</strong>
-        <p>Benchmarked ADRG against DRG, HDRG, CDRG, and GDRG</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Credits -->
-<section class="section">
-  <div class="credits-box">
-    <h3>Team & Acknowledgments</h3>
-    <p><strong>Advisor:</strong> Prof. G. K. Ananthasuresh</p>
-    <p><strong>Co-Advisor:</strong> Karthik (ISRO)</p>
-    <p><strong>Design & Simulation Support:</strong> Sai Kumar, Suman Acharya</p>
-    <p><strong>Fabrication:</strong> Sudhanshu Shekhar</p>
-    <p><strong>Funding:</strong> ISRO</p>
-    <p><strong>Facilities:</strong> CeNSE (Centre for Nano Science and Engineering)</p>
-  </div>
-</section>
+      <!-- DESIGN & SIMULATION -->
+      <div id="design-sim" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Design &amp; Simulation</h4>
 
-<!-- Back Link -->
-<section class="section" style="text-align: center;">
-  <a href="../index.html#info" class="btn btn-ghost">← Back to Projects</a>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          <strong>Problem Definition & Constraints:</strong> Design constraints included: fixed bolt hole dimensions, linkage length (111 mm), width (12 mm), and material limited to ABS for MR-compatibility.
+        </p>
+
+        <!-- Carbon Fiber Linkages Image -->
+        <figure style="margin: var(--space-4) 0;">
+          <img src="../documents/Robotic Assistant For MRI Guided Low Back Pain Injections/Figure5.jpg" alt="Carbon fiber robot linkages showing the baseline design" style="width:100%; border-radius: 8px;">
+          <figcaption>Carbon fiber robot linkages — the baseline design that the ABS I-beam profiles were designed to match in stiffness</figcaption>
+        </figure>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          <strong>Profile Selection via FEA:</strong> Six beam cross-sections were analyzed using FEA simulation under identical loading conditions (5 N cantilever load, ABS material). Profiles compared included I-beam, C-channel, hollow rectangular, solid rectangular, T-beam, and custom sections. The selection criterion was the ratio of second moment of inertia to weight—maximizing stiffness while minimizing mass. The I-beam profile emerged as optimal with the highest ratio (10.01×10⁻⁴) among all candidates.
+        </p>
+
+        <!-- Profile Comparison Table Image -->
+        <figure style="margin: var(--space-4) 0;">
+          <img src="../documents/Robotic Assistant For MRI Guided Low Back Pain Injections/Figure15.jpg" alt="Comparison table of 6 beam profiles showing second moment of inertia, weight, ratio, and deflection under 5 N loading" style="width:100%; border-radius: 8px;">
+          <figcaption>Comparison table of 6 beam profiles showing second moment of inertia, weight, ratio, and deflection under 5 N loading</figcaption>
+        </figure>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          <strong>Iterative I-Beam Optimization:</strong> With I-beam selected, iterative FEA optimization varied geometric parameters to match carbon fiber performance. Attempt 2 varied web width, confirming increased width improves rigidity. Attempt 3 fixed width at 7 mm and varied height to match 5 mm and 6 mm carbon fiber deflection targets. Attempt 4 optimized beam proportions (70% web height, 15% flange height). A second-order curvature optimization on the flanges further reduced deflection while achieving only 2% weight reduction—confirming the design was near-optimal.
+        </p>
+
+        <!-- I-Beam Profile Views Image -->
+        <figure style="margin: var(--space-4) 0;">
+          <img src="../documents/Robotic Assistant For MRI Guided Low Back Pain Injections/Figure 18.png" alt="Optimized I-beam profile design: profile side view, cross-section view, and linkage integration view" style="width:100%; border-radius: 8px;">
+          <figcaption>Optimized I-beam profile design: profile side view, cross-section view, and linkage integration view</figcaption>
+        </figure>
+
+        <!-- FEA Optimization Curve Image -->
+        <figure style="margin: var(--space-4) 0;">
+          <img src="../documents/Robotic Assistant For MRI Guided Low Back Pain Injections/Figure6.png" alt="FEA optimization curve showing deflection reduction through iterative curvature refinement" style="width:100%; border-radius: 8px;">
+          <figcaption>FEA optimization curve showing deflection reduction through iterative curvature refinement</figcaption>
+        </figure>
+
+        <!-- Software Architecture Image -->
+        <figure style="margin: var(--space-4) 0;">
+          <img src="../documents/Robotic Assistant For MRI Guided Low Back Pain Injections/Figure3.jpg" alt="Software architecture diagram showing integration between Galil controller, Atracsys SDK, and 3D Slicer UI" style="width:100%; border-radius: 8px;">
+          <figcaption>Software architecture diagram showing integration between Galil controller, Atracsys SDK, and 3D Slicer UI</figcaption>
+        </figure>
+
+        <!-- 3D Slicer UI Image -->
+        <figure style="margin: var(--space-4) 0;">
+          <img src="../documents/Robotic Assistant For MRI Guided Low Back Pain Injections/Figure2.jpg" alt="3D Slicer UI prototype showing robot pose visualization and path planning interface for MRI-guided procedures" style="width:100%; border-radius: 8px;">
+          <figcaption>3D Slicer UI prototype showing robot pose visualization and path planning interface for MRI-guided procedures</figcaption>
+        </figure>
+      </div>
+
+      <!-- FABRICATION -->
+      <div id="fabrication" class="project-subblock">
+        <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Fabrication</h4>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          The optimized I-beam profiles were fabricated using 3D printing with ABS material. The final I-beam parameters were: Total Height 48 mm, Web Height 33.6 mm, Web Thickness 4.2 mm, and Beam Base Height 7.2 mm. Multiple iterations were printed to validate the FEA predictions through physical testing.
+        </p>
+
+        <!-- I-Beam Parameters Table Image -->
+        <figure style="margin: var(--space-4) 0;">
+          <img src="../documents/Robotic Assistant For MRI Guided Low Back Pain Injections/Figure16.png" alt="Final I-beam parameters: Total Height 48mm, Web Height 33.6mm, Web Thickness 4.2mm, Beam Base Height 7.2mm" style="width:100%; border-radius: 8px;">
+          <figcaption>Final I-beam parameters: Total Height 48 mm, Web Height 33.6 mm, Web Thickness 4.2 mm, Beam Base Height 7.2 mm</figcaption>
+        </figure>
+      </div>
+
+      <!-- TEST SETUP -->
+      <div id="test-setup" class="project-block">
+        <h3>Test Setup</h3>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Physical bending tests validated FEA predictions by loading 3D-printed ABS profiles and 6 mm carbon fiber members at 5, 10, and 15 N. Deflection was measured at the free end across 8 equidistant points.
+        </p>
+
+        <!-- Bending Test Setup Image -->
+        <figure style="margin: var(--space-4) 0;">
+          <img src="../documents/Robotic Assistant For MRI Guided Low Back Pain Injections/Figure11.jpg" alt="Bending test experimental setup for validating 3D-printed profiles against carbon fiber under 5, 10, and 15 N loads" style="width:100%; border-radius: 8px;">
+          <figcaption>Bending test setup for experimental validation of FEA-predicted profile performance</figcaption>
+        </figure>
+      </div>
+
+      <!-- RESULTS -->
+      <div id="results" class="project-block">
+        <h3>Results</h3>
+
+        <!-- Results Comparison Image -->
+        <figure style="margin-bottom: var(--space-6);">
+          <img src="../documents/Robotic Assistant For MRI Guided Low Back Pain Injections/Figure22.png" alt="Results comparison table showing deflection values: Carbon Fiber vs. ABS I-beam" style="width:100%; border-radius: 8px;">
+          <figcaption>Performance comparison: ABS I-beam (1.6 µm) vs. Carbon Fiber (8.1–9.7 µm) deflection under 5 N load</figcaption>
+        </figure>
+
+        <div class="spec-grid">
+          <div class="spec-item"><span class="spec-value">1.6 µm</span><span class="spec-label">ABS I-beam deflection</span></div>
+          <div class="spec-item"><span class="spec-value">8.1–9.7 µm</span><span class="spec-label">Carbon fiber deflection</span></div>
+          <div class="spec-item"><span class="spec-value">Matched</span><span class="spec-label">Performance target</span></div>
+        </div>
+        <p style="color:var(--text-dim); font-size: var(--text-xs); margin-top: var(--space-2);">The 3D-printed ABS I-beam profile achieved carbon fiber-equivalent stiffness while maintaining full MR compatibility.</p>
+
+        <!-- Bending Test Results Image -->
+        <figure style="margin: var(--space-6) 0;">
+          <img src="../documents/Robotic Assistant For MRI Guided Low Back Pain Injections/Figure12.png" alt="Bending test results graph comparing deflection of 3D-printed ABS profile vs. carbon fiber" style="width:100%; border-radius: 8px;">
+          <figcaption>Bending test results confirming 3D-printed ABS profile matches carbon fiber stiffness</figcaption>
+        </figure>
+
+        <details class="detail-toggle highlight-style">
+          <summary>
+            <span class="detail-label">Key Finding</span>
+            <span class="detail-title">Carbon fiber Young's modulus discrepancy</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>The 3D-printed profile matched carbon fiber deflection as predicted by FEA</li>
+              <li>However, measured deflections differed from FEA predictions</li>
+              <li>Investigation revealed that the carbon fiber's true Young's modulus (~45 GPa) was significantly lower than datasheet values (240 GPa)</li>
+              <li>Adjusting the FEA model with experimental Young's modulus reconciled the results</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="detail-toggle" style="margin-top: var(--space-4);">
+          <summary>
+            <span class="detail-label">Achievements</span>
+            <span class="detail-title">Key project outcomes</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li>Designed MR-compatible ABS I-beam profile achieving 1.6 µm deflection (outperforming 6 mm carbon fiber)</li>
+              <li>Identified optimal cross-section from 6 candidates using second moment of inertia to weight ratio analysis</li>
+              <li>Validated FEA predictions through physical bending tests at 5, 10, and 15 N loads</li>
+              <li>Discovered carbon fiber Young's modulus discrepancy (45 GPa actual vs. 240 GPa datasheet)</li>
+              <li>Redesigned profiles ready for robot integration to improve endpoint accuracy</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="detail-toggle" style="margin-top: var(--space-6);">
+          <summary>
+            <span class="detail-label">Skills</span>
+            <span class="detail-title">Technical skills demonstrated</span>
+          </summary>
+          <div class="detail-body">
+            <ul class="bullet-list">
+              <li><strong>Simulation:</strong> Finite Element Analysis (FEA), ANSYS/COMSOL</li>
+              <li><strong>CAD:</strong> SolidWorks, profile optimization</li>
+              <li><strong>Fabrication:</strong> 3D Printing (ABS)</li>
+              <li><strong>Design:</strong> Mechanical Design, Structural Analysis, MR-Compatible Design</li>
+              <li><strong>Analysis:</strong> MATLAB, Experimental Validation</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="detail-toggle compact">
+          <summary>
+            <span class="detail-label">Team</span>
+            <span class="detail-title">Contributions &amp; credits</span>
+          </summary>
+          <div class="detail-body">
+            <p style="margin-bottom: var(--space-3);">I led the finite element analysis (FEA) effort to redesign robot linkage profiles, achieving carbon fiber-equivalent stiffness using MR-compatible ABS material. Contributed to bending test validation, CAD modeling of optimized profiles, 3D printing fabrication, documentation, and robot debugging. Presented FEA work in all team meetings and project presentations.</p>
+            <p style="margin-bottom: var(--space-3);">Guided by Dr. Iordachita (Faculty Advisor) and Aabhas (Project Mentor). Technical collaboration with Tyler Lehrfeld (Software Development, Optical Tracking, Testing Procedures) and Diana Shaughnessy (CAD, Robot Debugging, Lower Body Mount, Data Analysis).</p>
+            <p>Conducted at Johns Hopkins University Laboratory for Computational Sensing and Robotics (LCSR).</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- ADDITIONAL INFORMATION -->
+      <div id="additional-info" class="project-block">
+        <h3>Additional Information</h3>
+        <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-4);">Final project report with detailed methodology, results, and deliverables status.</p>
+        <div class="resume-card">
+          <div class="pdf-wrapper">
+            <iframe
+              src="../documents/Robotic Assistant For MRI Guided Low Back Pain Injections/T3 Final Report DUE 5_4.pdf"
+              title="T3 Final Report - MRI-Guided Lumbar Spine Robot"
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end project-content -->
+  </div><!-- end project-layout -->
 </section>
 
 <footer class="footer">
@@ -257,6 +326,7 @@
 </footer>
 
 <script>
+  // ── Theme & Clock ──
   const root = document.documentElement;
   const toggle = document.getElementById('themeToggle');
   const knob = document.getElementById('themeKnob');
@@ -286,6 +356,91 @@
   }
   tickClock();
   setInterval(tickClock, 1000);
+
+  // ── Sidebar Scrollspy ──
+  const sidebar = document.querySelector('.project-sidebar');
+  const sidebarHeader = document.querySelector('.sidebar-header');
+  const sidebarLinks = document.querySelectorAll('.sidebar-link');
+  const sections = [];
+
+  sidebarLinks.forEach(link => {
+    const targetId = link.getAttribute('href').substring(1);
+    const target = document.getElementById(targetId);
+    if (target) sections.push({ id: targetId, el: target, link: link });
+  });
+
+  function scrollSidebarToActive(activeLink) {
+    if (!sidebar || !activeLink) return;
+    const allLinks = Array.from(sidebarLinks);
+    const activeIndex = allLinks.indexOf(activeLink);
+    const totalLinks = allLinks.length;
+    if (activeIndex >= totalLinks - 2) {
+      const headerHeight = sidebarHeader ? sidebarHeader.offsetHeight + 10 : 50;
+      sidebar.scrollTo({ top: activeLink.offsetTop - headerHeight, behavior: 'smooth' });
+    } else {
+      sidebar.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  function updateActiveLink() {
+    const scrollPos = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+    const atBottom = scrollPos + windowHeight >= docHeight - 50;
+
+    let activeSection = sections[0];
+    if (atBottom && sections.length > 0) {
+      activeSection = sections[sections.length - 1];
+    } else {
+      const offset = 200;
+      for (const section of sections) {
+        const rect = section.el.getBoundingClientRect();
+        if (rect.top <= offset) activeSection = section;
+      }
+    }
+
+    sidebarLinks.forEach(link => link.classList.remove('active'));
+    if (activeSection) {
+      activeSection.link.classList.add('active');
+      scrollSidebarToActive(activeSection.link);
+    }
+  }
+
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        const headerOffset = 160;
+        const offsetPosition = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        sidebarLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        scrollSidebarToActive(link);
+      }
+    });
+  });
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => { updateActiveLink(); ticking = false; });
+      ticking = true;
+    }
+  });
+  updateActiveLink();
+
+  // ── Back to Top Button ──
+  const topBtn = document.getElementById('sidebarTopBtn');
+  if (topBtn) {
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (sidebar) sidebar.scrollTo({ top: 0, behavior: 'smooth' });
+      sidebarLinks.forEach(link => link.classList.remove('active'));
+      if (sidebarLinks[0]) sidebarLinks[0].classList.add('active');
+    });
+  }
 </script>
 
 </body>

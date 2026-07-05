@@ -897,6 +897,17 @@ a { color: inherit; text-decoration: none; }
   width: 100%; height: 100%;
   animation: hero-spin 50s linear infinite;
 }
+/* For videos - no spin, larger size */
+.hero-diagram-wrap.video-wrap {
+  width: auto;
+  height: auto;
+  max-width: 600px;
+}
+
+.hero-diagram-wrap.video-wrap .hero-diagram {
+  animation: none;
+  border-radius: 8px;
+}
 .hero-diagram .hd-ring { stroke: var(--bp-line, var(--text-faint)); opacity: .5; fill: none; }
 .hero-diagram .hd-ring-strong { stroke: var(--bp-line-strong, var(--accent-bright)); opacity: .7; fill: none; }
 .hero-diagram .hd-elec { fill: var(--bp-line, var(--text-faint)); opacity: .55; }

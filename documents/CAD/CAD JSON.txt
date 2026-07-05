@@ -1,0 +1,381 @@
+{
+  "project_id": "cad-fea-gallery",
+  "title": "CAD Modeling & FEA Simulation Gallery",
+  "subtitle": "A collection of mechanical designs, mechanism animations, and finite element analyses showcasing proficiency across ANSYS, COMSOL, Creo, SolidWorks, and Fusion 360",
+  "institution": "Johns Hopkins University",
+  "collaborating_organizations": [],
+  "guide": null,
+  "venue": null,
+  "date_range": "2024 – Present",
+
+  "acknowledgements": {
+    "guidance": [],
+    "technical_collaboration": [],
+    "fabrication_testing": [],
+    "funding_facilities": ["Johns Hopkins University - 535.632 Applied Finite Element Analysis Course"]
+  },
+
+  "user_contribution": {
+    "summary": "Independently created all CAD models, mechanism animations, and FEA simulations as part of coursework and personal practice. Work spans mechanical systems, MEMS devices, and multi-physics analyses across five industry-standard software platforms.",
+    "tasks": [
+      "Modeled and animated 11 mechanical systems including gears, Geneva mechanisms, rack & pinion, lead screws, pumps, and cranes",
+      "Conducted multi-physics FEA on EV battery pack: structural (100kN crash), thermal (1200W), combined loads, and dynamic vibration analysis",
+      "Performed comprehensive MEMS accelerometer analysis: modal (20 modes), harmonic response at 2.84 kHz, and thermal characterization",
+      "Achieved displacement sensitivity of 3.7 µm/g and capacitance sensitivity of 1.66 ΔC/g for accelerometer design",
+      "Validated EV battery pack design with first resonant frequency at 950 Hz (exceeding 100 Hz safety requirement)"
+    ],
+    "tools_used": ["ANSYS", "COMSOL", "Creo Simulate", "SolidWorks", "Fusion 360"],
+    "not_contributed": "N/A - All work is original"
+  },
+
+  "project_summary": "This gallery showcases my CAD modeling and finite element analysis capabilities developed through coursework and independent practice. The collection includes mechanism animations demonstrating kinematic understanding—from simple pulleys and gears to complex Geneva mechanisms and multi-body assemblies. The FEA work ranges from macro-scale EV battery pack crash and thermal simulations to micro-scale MEMS accelerometer characterization including modal analysis, harmonic response, and electrostatic heating effects. All work was completed using industry-standard tools: ANSYS and COMSOL for advanced multi-physics simulations, Creo Simulate for integrated CAD-FEA workflows, and SolidWorks/Fusion 360 for parametric modeling and animations. This body of work demonstrates proficiency in structural, thermal, dynamic, and coupled-field analyses across multiple length scales.",
+
+  "gallery_media": [
+    {
+      "file": "BELT.mp4",
+      "description": "Pulley system modeling with belt-driven animation showing power transmission mechanics",
+      "priority": "body_video",
+      "category": "Mechanisms & Power Transmission",
+      "software": "CAD Animation",
+      "source": "User provided",
+      "placement": "Gallery grid - Mechanisms section"
+    },
+    {
+      "file": "CRANE.mp4",
+      "description": "Crane mechanism model with animated boom and cable assembly demonstrating multi-body kinematics",
+      "priority": "body_video",
+      "category": "Mechanical Systems",
+      "software": "CAD Animation",
+      "source": "User provided",
+      "placement": "Gallery grid - Mechanical Systems section"
+    },
+    {
+      "file": "Displacement.mp4",
+      "description": "FEA stress animation of water tank shell structure under loading conditions",
+      "priority": "body_video",
+      "category": "FEA Visualization",
+      "software": "FEA Software",
+      "source": "User provided",
+      "placement": "Gallery grid - FEA section"
+    },
+    {
+      "file": "exam2.mp4",
+      "description": "Complex multi-body mechanism animation demonstrating advanced kinematic linkages",
+      "priority": "body_video",
+      "category": "Mechanisms & Power Transmission",
+      "software": "CAD Animation",
+      "source": "User provided",
+      "placement": "Gallery grid - Mechanisms section"
+    },
+    {
+      "file": "Force_Application_in_X.mp4",
+      "description": "MEMS accelerometer FEA showing displacement response under single-axis force application",
+      "priority": "hero_video",
+      "category": "MEMS & Micro-scale FEA",
+      "software": "ANSYS/COMSOL",
+      "source": "User provided",
+      "placement": "Gallery grid - Featured/MEMS section"
+    },
+    {
+      "file": "Gears.mp4",
+      "description": "Spur gear mesh animation showing tooth engagement and rotational kinematics",
+      "priority": "body_video",
+      "category": "Mechanisms & Power Transmission",
+      "software": "CAD Animation",
+      "source": "User provided",
+      "placement": "Gallery grid - Mechanisms section"
+    },
+    {
+      "file": "Geneva.mp4",
+      "description": "Geneva mechanism (Maltese cross) animation demonstrating intermittent rotary motion conversion",
+      "priority": "body_video",
+      "category": "Mechanisms & Power Transmission",
+      "software": "CAD Animation",
+      "source": "User provided",
+      "placement": "Gallery grid - Mechanisms section"
+    },
+    {
+      "file": "MSD.mp4",
+      "description": "Mass-spring-damper pulley system animation showing dynamic mechanical response",
+      "priority": "body_video",
+      "category": "Mechanisms & Power Transmission",
+      "software": "CAD Animation",
+      "source": "User provided",
+      "placement": "Gallery grid - Mechanisms section"
+    },
+    {
+      "file": "PUMP1.mp4",
+      "description": "Positive displacement pump mechanism animation showing fluid handling components in motion",
+      "priority": "body_video",
+      "category": "Mechanical Systems",
+      "software": "CAD Animation",
+      "source": "User provided",
+      "placement": "Gallery grid - Mechanical Systems section"
+    },
+    {
+      "file": "RACK.mp4",
+      "description": "Rack and pinion gear animation demonstrating linear-to-rotary motion conversion",
+      "priority": "body_video",
+      "category": "Mechanisms & Power Transmission",
+      "software": "CAD Animation",
+      "source": "User provided",
+      "placement": "Gallery grid - Mechanisms section"
+    },
+    {
+      "file": "RSTN.mp4",
+      "description": "Lead screw mechanism animation showing rotational-to-linear translation with thread engagement",
+      "priority": "body_video",
+      "category": "Mechanisms & Power Transmission",
+      "software": "CAD Animation",
+      "source": "User provided",
+      "placement": "Gallery grid - Mechanisms section"
+    },
+    {
+      "file": "Avva_MidtermFinal.pdf",
+      "description": "Complete FEA report for EV Battery Pack analysis including crash, thermal, combined loads, and dynamic vibration studies using Creo Simulate",
+      "priority": "primary_document",
+      "category": "FEA Reports",
+      "software": "Creo Simulate",
+      "source": "User provided",
+      "placement": "Documents section"
+    },
+    {
+      "file": "Avva_Final.pdf",
+      "description": "Comprehensive MEMS accelerometer FEA report covering modal analysis, harmonic response, structural loading, and thermal characterization",
+      "priority": "primary_document",
+      "category": "FEA Reports",
+      "software": "ANSYS/COMSOL",
+      "source": "User provided",
+      "placement": "Documents section"
+    }
+  ],
+
+  "gallery_sections": [
+    {
+      "section_id": "mechanisms",
+      "section_title": "Mechanisms & Power Transmission",
+      "section_description": "Kinematic animations of classical mechanical systems demonstrating motion conversion and power transmission principles",
+      "media": ["BELT.mp4", "Gears.mp4", "Geneva.mp4", "MSD.mp4", "RACK.mp4", "RSTN.mp4", "exam2.mp4"]
+    },
+    {
+      "section_id": "mechanical-systems",
+      "section_title": "Mechanical Systems",
+      "section_description": "Complete mechanical assembly models with working animations",
+      "media": ["CRANE.mp4", "PUMP1.mp4"]
+    },
+    {
+      "section_id": "fea-mems",
+      "section_title": "MEMS & Finite Element Analysis",
+      "section_description": "Multi-physics simulations spanning structural, thermal, and dynamic analyses at both macro and micro scales",
+      "media": ["Force_Application_in_X.mp4", "Displacement.mp4"],
+      "associated_reports": ["Avva_MidtermFinal.pdf", "Avva_Final.pdf"]
+    }
+  ],
+
+  "fea_projects": [
+    {
+      "project_name": "EV Battery Pack Multi-Physics Analysis",
+      "report_file": "Avva_MidtermFinal.pdf",
+      "software": "Creo Simulate",
+      "analysis_types": ["Structural (Crash Impact)", "Thermal (Rapid Discharge)", "Combined MEC/T Loads", "Dynamic Random Vibration", "Modal Analysis"],
+      "key_results": {
+        "max_impact_load": "100,000 N",
+        "max_deformation": "1.09 mm (combined loads)",
+        "max_temperature": "265°C (rapid discharge)",
+        "first_resonant_frequency": "950 Hz",
+        "safety_requirement_met": "First mode >100 Hz ✓"
+      },
+      "materials": ["Steel HSLA (casing)", "Nickel-Copper alloy (electrodes)", "Aluminum Wrought (cell proxies)"],
+      "highlights": [
+        "Battery pack validated for use as structural monocoque member",
+        "Thermal analysis based on Tesla 21700 cell specifications",
+        "Natural convection cooling analysis with recommendations for active cooling"
+      ]
+    },
+    {
+      "project_name": "Dual-Axis MEMS Capacitive Accelerometer",
+      "report_file": "Avva_Final.pdf",
+      "software": "ANSYS/COMSOL",
+      "analysis_types": ["Modal Analysis (20 modes)", "Harmonic Response", "Static Structural (1G)", "Steady-State Thermal"],
+      "key_results": {
+        "eigenfrequency": "2867.7 Hz",
+        "displacement_sensitivity": "3.7 µm/g",
+        "capacitance_sensitivity": "1.66 ΔC/g",
+        "cross_axis_sensitivity": "3.2 nm/g",
+        "quality_factor": "492",
+        "brownian_noise_equivalent_acceleration": "6.31E-07",
+        "degenerate_modes": "Mode 11 & 12 at 2.84 kHz"
+      },
+      "materials": ["Pure Silicon"],
+      "highlights": [
+        "Identified optimal degenerate mode shapes for active operation",
+        "Verified displacement amplifying compliant mechanism behavior",
+        "Thermal effects from electrostatic actuation found negligible"
+      ]
+    }
+  ],
+
+  "software_proficiency": [
+    {
+      "software": "ANSYS",
+      "category": "FEA/Multi-physics",
+      "demonstrated_in": ["MEMS Accelerometer Analysis", "Structural simulations"]
+    },
+    {
+      "software": "COMSOL Multiphysics",
+      "category": "FEA/Multi-physics",
+      "demonstrated_in": ["MEMS device characterization", "Coupled-field analyses"]
+    },
+    {
+      "software": "Creo Simulate",
+      "category": "Integrated CAD-FEA",
+      "demonstrated_in": ["EV Battery Pack complete analysis suite"]
+    },
+    {
+      "software": "SolidWorks",
+      "category": "CAD/Animation",
+      "demonstrated_in": ["Mechanism modeling", "Assembly animations"]
+    },
+    {
+      "software": "Fusion 360",
+      "category": "CAD/Animation",
+      "demonstrated_in": ["Parametric modeling", "Motion studies"]
+    }
+  ],
+
+  "results": {
+    "key_findings": [
+      "Demonstrated proficiency across 5 industry-standard CAD/FEA platforms",
+      "Completed multi-physics analyses spanning structural, thermal, and dynamic domains",
+      "Modeled mechanisms covering all major motion conversion types (rotary, linear, intermittent)",
+      "Achieved market-comparable specifications for MEMS accelerometer design",
+      "Validated EV battery pack for crash safety requirements exceeding industry standards"
+    ],
+    "skills_demonstrated": [
+      "Parametric CAD modeling",
+      "Kinematic mechanism design",
+      "Assembly animation",
+      "Mesh generation and optimization",
+      "Boundary condition definition",
+      "Modal and harmonic analysis",
+      "Thermal-structural coupling",
+      "Results interpretation and validation"
+    ],
+    "future_scope": [
+      "Expand MEMS analysis to include squeeze-film damping effects",
+      "Add CFD analysis for battery pack active cooling design",
+      "Create parametric mechanism library with configurable dimensions",
+      "Implement mesh convergence studies for higher confidence results",
+      "Explore topology optimization for lightweight structural designs"
+    ]
+  },
+
+  "additional_information_section": {
+    "primary_documents": [
+      {"file": "Avva_MidtermFinal.pdf", "reason": "Complete EV Battery Pack FEA report with methodology, results, and conclusions"},
+      {"file": "Avva_Final.pdf", "reason": "Complete MEMS Accelerometer FEA report with performance characterization"}
+    ],
+    "supplementary_documents": [],
+    "optional_documents": []
+  },
+
+  "website_text_replacements": {
+    "page_title": "CAD & FEA Gallery | Sai Pranav Avva",
+    "meta_description": "Portfolio of CAD models, mechanism animations, and FEA simulations using ANSYS, COMSOL, Creo, SolidWorks, and Fusion 360 by Sai Pranav Avva.",
+    "hero_section": {
+      "title": "CAD Modeling & FEA Simulation Gallery",
+      "subtitle_tagline": "Mechanical Design • Mechanism Animation • Multi-Physics Analysis",
+      "institution_credit_line": "Johns Hopkins University | Personal Projects",
+      "date_line": "2024 – Present",
+      "role_contribution_line": "11 mechanism animations + 2 comprehensive FEA studies across 5 software platforms"
+    },
+    "hero_image": {
+      "file": "Force_Application_in_X.mp4",
+      "alt_text": "MEMS accelerometer finite element analysis showing displacement under applied force",
+      "note": "Consider using a thumbnail/poster frame from this video or creating a collage of mechanism thumbnails"
+    },
+    "body_content": {
+      "intro_paragraph": "This gallery showcases my CAD modeling and simulation capabilities, developed through coursework at Johns Hopkins University and independent practice. From classical mechanisms like Geneva drives and rack-and-pinion systems to advanced multi-physics FEA of EV batteries and MEMS accelerometers, this collection demonstrates proficiency across the full spectrum of mechanical design and analysis tools."
+    },
+    "skills_tags": [
+      "ANSYS",
+      "COMSOL",
+      "Creo Simulate",
+      "SolidWorks",
+      "Fusion 360",
+      "Finite Element Analysis",
+      "Modal Analysis",
+      "Thermal Analysis",
+      "Structural Analysis",
+      "CAD Modeling",
+      "Mechanism Design",
+      "MEMS",
+      "Multi-physics Simulation",
+      "Dynamic Analysis"
+    ],
+    "key_achievements": [
+      "Modeled 11 mechanical systems with working animations",
+      "Validated EV battery pack for 100kN crash loads with <1.1mm deformation",
+      "Characterized MEMS accelerometer: 3.7 µm/g sensitivity at 2.84 kHz",
+      "First resonant frequency 950 Hz (9.5× above 100 Hz safety requirement)",
+      "Proficient in 5 industry-standard CAD/FEA platforms"
+    ]
+  },
+
+  "source_files": {
+    "videos": [
+      "BELT.mp4",
+      "CRANE.mp4",
+      "Displacement.mp4",
+      "exam2.mp4",
+      "Force_Application_in_X.mp4",
+      "Gears.mp4",
+      "Geneva.mp4",
+      "MSD.mp4",
+      "PUMP1.mp4",
+      "RACK.mp4",
+      "RSTN.mp4"
+    ],
+    "documents": [
+      "Avva_MidtermFinal.pdf",
+      "Avva_Final.pdf"
+    ],
+    "images": [],
+    "presentations": []
+  },
+
+  "file_placement": {
+    "videos_folder": "images/cad-fea-gallery/videos/",
+    "documents_folder": "documents/CAD/",
+    "thumbnails_folder": "images/cad-fea-gallery/thumbnails/",
+    "page_file": "work2/cad-fea-gallery.html"
+  },
+
+  "reference_template_url": "https://avvasai.github.io/work2/project1.html",
+  
+  "notes": [
+    "Consider generating thumbnail images from each video for the gallery grid view",
+    "Video file extensions assumed as .mp4 - update if different format",
+    "Hero section could use a collage/montage of mechanism thumbnails instead of single video",
+    "May want to add hover-to-play functionality for video thumbnails",
+    "FEA reports contain additional images that could be extracted for the gallery if desired"
+  ],
+
+  "suggested_page_layout": {
+    "structure": "Gallery grid with filterable categories",
+    "sections_order": [
+      "Hero with intro text",
+      "Software proficiency badges",
+      "Video gallery grid (filterable by category)",
+      "FEA Projects detail cards",
+      "Downloadable reports section",
+      "Skills tags"
+    ],
+    "interaction_suggestions": [
+      "Click video thumbnail to open modal with full playback",
+      "Filter buttons for: All | Mechanisms | Mechanical Systems | FEA",
+      "Hover effect showing video title and software used",
+      "FEA project cards expandable to show full results tables"
+    ]
+  }
+}

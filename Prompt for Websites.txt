@@ -1,0 +1,1 @@
+Taking the format of the website from project1.html and the content from the .txt file ensures the headers are not changed, adds in the images, and gives me the entire code of project.html

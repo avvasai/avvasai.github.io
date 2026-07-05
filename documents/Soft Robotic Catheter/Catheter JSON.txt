@@ -1,0 +1,190 @@
+{
+  "project_id": "soft-robotic-catheter-lung-biopsy",
+  "title": "4-DoF Soft Robotic Catheter for Lung Biopsy",
+  "subtitle": "Proof-of-concept pneumatic soft robot with custom enclosure and extended range of motion for minimally invasive lung biopsy navigation",
+  "institution": "Johns Hopkins University",
+  "collaborating_organizations": [],
+  "guide": null,
+  "venue": "EN.530.721 Medical Robot System Design (MRSD) - Lab 9 Final Project",
+  "date_range": "Fall 2025",
+  
+  "acknowledgements": {
+    "guidance": ["EN.530.721 MRSD Course Instructors"],
+    "technical_collaboration": ["Adithya R N", "Manyu Garg", "Rahul Kalpana Anwardeen"],
+    "fabrication_testing": [],
+    "funding_facilities": ["Johns Hopkins University MRSD Lab"]
+  },
+  
+  "user_contribution": {
+    "summary": "Led the hardware development for this soft robotics project, designing and fabricating a custom LED-lit enclosure for repeatable data collection and integrating a Maxon motor with NEMA-17 linear stage to add rotational and translational degrees of freedom to the catheter system.",
+    "tasks": [
+      "Designed LED-lit enclosure in SolidWorks and Fusion 360 using shadow dilution principle inspired by surgical lights",
+      "3D printed enclosure in Prusament PLA Galaxy Silver with surface roughening to minimize reflections",
+      "Integrated Maxon motor 464703 with NEMA-17 driven linear stage for additional rotational and translational DOF",
+      "Designed and 3D printed custom mounting components for linear stage assembly",
+      "Proposed initial project concept for flexible catheter integration with robotic surgical systems"
+    ],
+    "tools_used": ["SolidWorks", "Fusion 360", "3D Printing (FDM)", "Maxon Motor Integration", "NEMA-17 Stepper Motors", "LED Strip Integration"],
+    "not_contributed": "Neural network implementation, training, data collection (2,208 samples), and error analysis were performed by teammates. Final report was a collaborative team effort."
+  },
+  
+  "project_summary": "Lung needle biopsy is a common but risky procedure requiring precise navigation through the ribs to reach tumor sites. This project developed a proof-of-concept 4-DoF soft robotic catheter system aimed at safer, more precise lung biopsy navigation.\n\nMy primary contributions focused on the hardware infrastructure. I designed and fabricated a custom enclosure featuring strategically placed LED strips based on the shadow dilution principle used in surgical lighting—this ensured uniform, glare-free illumination for reliable camera-based tracking during data collection. The enclosure was 3D printed in Prusament PLA Galaxy Silver with roughened surfaces to minimize reflections.\n\nI also designed and built the range-of-motion extension system, integrating a Maxon combination motor with a NEMA-17 driven linear stage. This added rotational and translational capabilities to the existing 2-DoF pneumatic catheter, effectively creating a 4-DoF system with significantly improved workspace coverage.\n\nThe team successfully demonstrated the system's capabilities, with a neural network model (developed by teammates) accurately predicting the catheter's hysteresis behavior with mean errors of 9.72° and 15.42° for the two joint angles.",
+  
+  "gallery_media": [
+    {
+      "file": "demo1.mp4",
+      "description": "Demonstration of the additional degree of freedom system showing the Maxon motor and NEMA-17 linear stage integration",
+      "priority": "demo_video_lead",
+      "source": "User provided video",
+      "placement": "Hero section - primary demo"
+    },
+    {
+      "file": "demo2.mp4",
+      "description": "Demonstration of the soft catheter motion when attached to the rotational and translational stage, showing extended range of motion",
+      "priority": "demo_video_lead",
+      "source": "User provided video",
+      "placement": "Hero section - secondary demo"
+    },
+    {
+      "file": "figure5_enclosure.png",
+      "description": "Internal and external view of the custom LED-lit enclosure designed for repeatable data collection conditions",
+      "priority": "hero_image",
+      "source": "Extracted from PDF - Figure 5",
+      "placement": "Hero section static image / Methodology - Enclosure Design"
+    },
+    {
+      "file": "figure6_rom_setup.png",
+      "description": "Setup showing Maxon motor 464703 mounted on NEMA-17 driven linear stage for increased range of motion",
+      "priority": "results_key_image",
+      "source": "Extracted from PDF - Figure 6",
+      "placement": "Methodology - Range of Motion section"
+    }
+  ],
+  
+  "methodology": {
+    "sections": [
+      {
+        "name": "Project Selection & Concept",
+        "content": "The team evaluated four potential applications for soft robotic catheters: coronary artery navigation, lung biopsy, ophthalmic anesthesia delivery, and mitral valve surgery. Considering timeline constraints and team expertise, we selected the lung biopsy application as it offered a feasible scope for demonstrating improved control and range of motion of the soft catheter system.",
+        "associated_media": []
+      },
+      {
+        "name": "Enclosure Design for Data Collection",
+        "content": "I designed a custom enclosure inspired by surgical lights that use shadow dilution—multiple sparsely placed light sources with overlapping coverage to minimize harsh shadows. LED strips were placed overhead (with sufficient distance from camera mount to prevent glare), along all four sides for uniform lateral illumination, and at three angles near the base to eliminate overcast shadows. The enclosure was 3D printed in Prusament PLA Galaxy Silver, with surfaces roughened using sandpaper to reduce reflections and improve tracking reliability.",
+        "associated_media": ["figure5_enclosure.png"]
+      },
+      {
+        "name": "Range of Motion Extension",
+        "content": "To expand the catheter's workspace beyond its native 2-DoF pneumatic bending, I designed and integrated a mechanical stage providing rotational and translational motion. A Maxon combination motor (model 464703) was mounted on a NEMA-17 driven linear stage. Custom mounting components were designed in SolidWorks/Fusion 360 and 3D printed, combined with off-the-shelf hardware. This effectively created a 4-DoF system capable of reaching a significantly larger workspace.",
+        "associated_media": ["figure6_rom_setup.png", "demo1.mp4", "demo2.mp4"]
+      },
+      {
+        "name": "Neural Network Modeling (Team Contribution)",
+        "content": "Teammates implemented a hysteresis-aware neural network based on work by Z. Chen et al. The network takes pump displacements and movement directions as inputs (4 dimensions) and predicts two joint angles as outputs. With 4 hidden layers of 64 neurons each, ReLU activation, and Adam optimizer, the model was trained on 2,208 samples over 10,000 epochs to capture the nonlinear, hysteretic behavior of the soft robot.",
+        "associated_media": []
+      }
+    ]
+  },
+  
+  "results": {
+    "key_findings": [
+      "Successfully demonstrated 4-DoF proof-of-concept catheter system for lung biopsy application",
+      "Neural network accurately models general smooth trajectory and hysteresis behavior of the soft robot",
+      "Mean prediction errors of 9.72° (Angle 1) and 15.42° (Angle 2) achieved",
+      "Custom enclosure provided repeatable, uniform lighting conditions for camera-based tracking",
+      "Extended range of motion achieved through integrated rotational and translational stages"
+    ],
+    "comparison_table": {
+      "title": "Neural Network Prediction Error",
+      "columns": ["Angle", "Mean Error (deg)", "Std. Deviation (deg)"],
+      "rows": [
+        ["Angle 1 (Base-Waist)", "9.72", "28.32"],
+        ["Angle 2 (Waist-Tip)", "15.42", "34.05"]
+      ],
+      "highlight": "High standard deviation attributed to noise in camera tracking system rather than model limitations"
+    },
+    "validation": "Neural network predictions were validated against smooth test sample trajectories, demonstrating accurate tracking of general motion trends and hysteresis loops. Error analysis identified camera tracking noise as primary source of variance.",
+    "future_scope": [
+      "Integrate pressure sensors for more reliable pneumatic system modeling and closed-loop control",
+      "Implement Model Predictive Control (MPC) or Model Predictive Path Integral Control (MPPI) for obstacle avoidance",
+      "Add encoder feedback to syringe piston for improved repeatability",
+      "Investigate temperature compensation for resin catheter (elasticity decreases below 10°C)",
+      "Reduce payload weight further to address Maxon motor load capacity constraints"
+    ]
+  },
+  
+  "additional_information_section": {
+    "primary_document": {
+      "file": "group2_report.pdf",
+      "reason": "Complete final project report with methodology, results, and analysis"
+    },
+    "supplementary_documents": [],
+    "optional_documents": []
+  },
+  
+  "website_text_replacements": {
+    "page_title": "4-DoF Soft Robotic Catheter for Lung Biopsy | Sai Pranav Avva",
+    "meta_description": "Designed custom LED enclosure and integrated Maxon motor linear stage for 4-DoF soft robotic catheter system targeting minimally invasive lung biopsy.",
+    "hero_section": {
+      "title": "4-DoF Soft Robotic Catheter for Lung Biopsy",
+      "subtitle_tagline": "Hardware design and integration for a proof-of-concept pneumatic soft robot with extended range of motion",
+      "institution_credit_line": "Johns Hopkins University | EN.530.721 Medical Robot System Design",
+      "date_line": "Fall 2025",
+      "role_contribution_line": "Designed LED-lit enclosure using shadow dilution principle and integrated Maxon motor with NEMA-17 linear stage for rotational/translational DOF extension"
+    },
+    "hero_image": {
+      "file": "figure5_enclosure.png",
+      "alt_text": "Custom 3D-printed LED-lit enclosure for soft robotic catheter data collection showing internal lighting arrangement and external structure"
+    },
+    "body_images": [
+      {
+        "file": "figure6_rom_setup.png",
+        "caption": "Range of motion extension setup: Maxon motor 464703 mounted on NEMA-17 driven linear stage for added rotational and translational degrees of freedom"
+      }
+    ],
+    "skills_tags": [
+      "Soft Robotics",
+      "SolidWorks",
+      "Fusion 360",
+      "3D Printing (FDM)",
+      "Mechatronics Integration",
+      "Maxon Motors",
+      "NEMA-17 Stepper Motors",
+      "LED Lighting Design",
+      "Medical Robotics",
+      "Pneumatic Systems",
+      "CAD Design",
+      "Hardware Prototyping"
+    ],
+    "key_achievements": [
+      "Designed and fabricated LED-lit enclosure using surgical light-inspired shadow dilution principle for repeatable data collection",
+      "Extended soft catheter from 2-DoF to 4-DoF by integrating Maxon motor with NEMA-17 linear stage",
+      "Contributed to proof-of-concept system achieving 9.72° mean prediction error for neural network-based control"
+    ]
+  },
+  
+  "source_files": {
+    "images": [
+      "figure5_enclosure.png",
+      "figure6_rom_setup.png"
+    ],
+    "presentations": [],
+    "documents": ["group2_report.pdf"],
+    "videos": ["demo1.mp4", "demo2.mp4"]
+  },
+  
+  "file_placement": {
+    "images_folder": "images/soft-robotic-catheter/",
+    "documents_folder": "documents/Soft Robotic Catheter/",
+    "videos_folder": "images/soft-robotic-catheter/",
+    "page_file": "work2/soft-robotic-catheter-lung-biopsy.html"
+  },
+  
+  "reference_template_url": "https://avvasai.github.io/work2/project1.html",
+  
+  "notes": [
+    "Extract Figures 5 and 6 from the PDF for use as portfolio images",
+    "Demo videos (demo1.mp4, demo2.mp4) should be converted to web-friendly format (MP4 H.264) if not already",
+    "Consider creating a composite hero image if video embedding is not supported in hero section"
+  ]
+}

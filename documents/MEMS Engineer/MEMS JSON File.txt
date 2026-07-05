@@ -1,0 +1,377 @@
+{
+  "project_id": "mems-imu",
+  "title": "MEMS Inertial Measurement Unit: Accelerometer & Disk Resonator Gyroscope",
+  "subtitle": "Designing high-precision MEMS inertial sensors through parametric optimization, multiphysics simulation, and microfabrication for space navigation applications",
+  "institution": "M2D2 Laboratory, Mechanical Engineering, Indian Institute of Science",
+  "collaborating_organization": "Indian Space Research Organization (ISRO)",
+  "guide": "Prof. G K Ananthasuresh",
+  "isro_liaison": "Karthik Raveendranath (ISRO)",
+  "venue": "International Conference on Micro, Nano, and Smart Systems (ICMNS 2024)",
+  "date_range": "Jun 2022 – Jul 2024",
+  "duration": "2 years",
+
+  "acknowledgements": {
+    "guidance": ["Prof. G K Ananthasuresh", "Karthik Raveendranath (ISRO)"],
+    "design_baseline": ["Sai Kumar (original ring-spoke concept)", "Suman Acharya (original ring-spoke concept)"],
+    "fabrication": ["Sudhanshu Shekhar (microfabrication)"],
+    "testing": ["Lab team (LDV characterization)"],
+    "funding_facilities": ["ISRO funded the project", "CeNSE IISc provided fabrication and characterization facilities"]
+  },
+
+  "user_contribution": {
+    "summary": "Led the design and simulation of a complete MEMS Inertial Measurement Unit comprising a dual-axis capacitive accelerometer and an Accordion-like Disk Resonator Gyroscope (ADRG). Conducted extensive parametric optimization studies varying beam width, thickness, ring geometry, and electrode configurations. Built multiphysics COMSOL models coupling mechanical and electrostatic domains, achieving <5% eigenfrequency error between simulation and fabricated devices. Generated all semiconductor fabrication mask files using CleWin and KLayout, and designed the wire bonding pinout schematics for device integration. First-authored the peer-reviewed conference paper presented at ICMNS 2024.",
+    "tasks": [
+      "Designed MEMS accelerometer with parametric sweeps across beam widths (5-8 µm) and thicknesses (10-60 µm)",
+      "Optimized gyroscope parameters: ring number (1-9), ring width, outer radius, anchor-to-outer-radius ratio, and spoke angle",
+      "Ran eigenfrequency modal studies in COMSOL across five DRG topologies (DRG, HDRG, CDRG, GDRG, ADRG)",
+      "Built multiphysics parametric simulations combining mechanical deformation and electrostatic capacitance behavior",
+      "Simulated capacitance with fringing field corrections and bounding box sensitivity analysis",
+      "Generated semiconductor fabrication mask layouts using CleWin and KLayout",
+      "Designed wire bonding pinout diagrams for both accelerometer (X/Y sense, feedback electrodes) and gyroscope (16 outer electrodes)",
+      "First-authored and presented the ADRG conference paper at ICMNS 2024"
+    ],
+    "tools_used": ["COMSOL Multiphysics", "CleWin", "KLayout", "MATLAB", "SolidWorks"],
+    "not_contributed": "The original ring-and-spoke gyroscope concept was developed by Sai Kumar and Suman Acharya. Physical microfabrication was performed by Sudhanshu Shekhar at CeNSE. LDV testing and characterization was conducted by the lab team."
+  },
+
+  "project_summary": "Over a two-year collaboration between IISc and ISRO, this project aimed to develop a complete MEMS Inertial Measurement Unit for space navigation applications. The IMU comprised two core sensors: a dual-axis capacitive accelerometer and an Accordion-like Disk Resonator Gyroscope (ADRG). Starting from an existing ring-and-spoke gyroscope concept, extensive parametric optimization was performed on both devices using COMSOL multiphysics simulations. The accelerometer design explored beam widths from 5-8 µm and thicknesses from 10-60 µm to optimize displacement sensitivity, capacitance response, and Brownian noise floor. For the gyroscope, five different disk resonator topologies were compared, with the novel ADRG design achieving the highest quality factor (181.55k) and relative sense capacitance (46.44%). Both devices were successfully fabricated at CeNSE, though only the gyroscope was characterized via laser Doppler vibrometry before the project concluded, validating the simulation predictions with <5% eigenfrequency error. The gyroscope work was published at ICMNS 2024.",
+
+  "gallery_media": [
+    {
+      "file": "ldv_measurement_setup.jpg",
+      "description": "Complete LDV measurement setup showing wire-bonded DRG on PCB carrier with drive signals (0° and 180°) connected to Polytec MSA-500 Micro System Analyzer",
+      "priority": "hero_image",
+      "source": "Uploaded image",
+      "placement": "Hero section, main project visual"
+    },
+    {
+      "file": "adrg_sem_composite.jpg",
+      "description": "SEM micrographs of fabricated ADRG at multiple magnifications (28X full device, 200X spoke detail, 450X ring cross-section) showing 60 µm device thickness and 10 µm ring width",
+      "priority": "hero_image_alternate",
+      "source": "Uploaded image",
+      "placement": "Results section, fabrication validation"
+    },
+    {
+      "file": "ldv_frequency_response.jpg",
+      "description": "LDV frequency response plot showing measured resonance at 6.8 kHz, validating COMSOL eigenfrequency predictions",
+      "priority": "results_key_image",
+      "source": "Uploaded image",
+      "placement": "Results section"
+    },
+    {
+      "file": "fabricated_dies_batch.jpg",
+      "description": "Batch of seven fabricated MEMS dies on foil-wrapped tray from CeNSE fabrication run, showing multiple gyroscope variants",
+      "priority": "body_image",
+      "source": "Uploaded image",
+      "placement": "Fabrication methodology section"
+    },
+    {
+      "file": "fabricated_dies_closeup.jpg",
+      "description": "Close-up of fabricated dies showing ring-and-spoke gyroscope geometry visible through the device layer",
+      "priority": "body_image",
+      "source": "Uploaded image",
+      "placement": "Fabrication methodology section"
+    },
+    {
+      "file": "gdrg_die_wirebonded.jpg",
+      "description": "Wire-bonded GDRG die mounted on PCB showing M2D2 lab markings and concentric ring structure",
+      "priority": "body_image",
+      "source": "Uploaded image",
+      "placement": "Testing methodology section"
+    },
+    {
+      "file": "gyroscope_pinout_diagram.png",
+      "description": "Wire bonding pinout schematic for gyroscope showing 16 outer electrodes (color-coded) and 4 common ground connections",
+      "priority": "technical_diagram",
+      "source": "Uploaded image",
+      "placement": "Additional information / Technical documentation"
+    },
+    {
+      "file": "accelerometer_pinout_diagram.png",
+      "description": "Wire bonding pinout schematic for dual-axis accelerometer showing X/Y sense electrodes, feedback electrodes, and common connections",
+      "priority": "technical_diagram",
+      "source": "Uploaded image",
+      "placement": "Additional information / Technical documentation"
+    },
+    {
+      "file": "adrg_mode_shape_1.png",
+      "description": "COMSOL eigenfrequency mode shape visualization showing in-plane radial deformation pattern of the ADRG ring structure",
+      "priority": "methodology_image",
+      "source": "Uploaded image",
+      "placement": "Methodology - FEA section"
+    },
+    {
+      "file": "adrg_mode_shape_2.png",
+      "description": "Secondary COMSOL mode shape showing alternative vibration pattern for mode matching analysis",
+      "priority": "methodology_image",
+      "source": "Uploaded image",
+      "placement": "Methodology - FEA section"
+    }
+  ],
+
+  "methodology": {
+    "sections": [
+      {
+        "name": "Project Overview & IMU Architecture",
+        "content": "The project aimed to develop a complete MEMS Inertial Measurement Unit for ISRO space navigation applications. The IMU architecture comprised two core sensors: a dual-axis capacitive accelerometer for linear acceleration measurement and an Accordion-like Disk Resonator Gyroscope (ADRG) for angular rate sensing. Both devices utilize electrostatic actuation and capacitive sensing, enabling high-resolution measurement through differential electrode configurations.",
+        "associated_media": ["gyroscope_pinout_diagram.png", "accelerometer_pinout_diagram.png"]
+      },
+      {
+        "name": "Accelerometer Design & Parametric Optimization",
+        "content": "The MEMS accelerometer employs a proof mass suspended by folded-beam flexures with interdigitated comb-drive electrodes for differential capacitive sensing. A comprehensive parametric study varied beam width (5, 6, 7, 8 µm) and out-of-plane thickness (10, 20, 30, 60 µm) to characterize the design trade-offs. Key metrics evaluated included eigenfrequency (targeting ~3 kHz), displacement sensitivity, capacitance sensitivity (ΔC/g), cross-axis sensitivity, quality factor, and Brownian noise equivalent acceleration. The dual-axis configuration provides independent X and Y acceleration sensing with dedicated sense and feedback electrode pairs.",
+        "associated_media": ["accelerometer_pinout_diagram.png"]
+      },
+      {
+        "name": "Gyroscope Concept & Topology Comparison",
+        "content": "Disk Resonator Gyroscopes (DRGs) sense rotation through the Coriolis effect, transferring energy between two degenerate vibration modes similar to a Foucault pendulum. Five topologies were evaluated: standard DRG, Honeycomb DRG (HDRG), Concentric DRG (CDRG), Gear-tooth DRG (GDRG), and the novel Accordion-like DRG (ADRG). All designs used 9 rings, 8 mm outer diameter, 10 µm ring width, 60 µm thickness, and 0.5 anchor-to-outer-radius ratio for fair comparison. The ADRG introduces accordion-shaped spoke connections that increase mechanical compliance while maintaining structural integrity.",
+        "associated_media": ["adrg_mode_shape_1.png", "adrg_mode_shape_2.png"]
+      },
+      {
+        "name": "Multiphysics COMSOL Simulation",
+        "content": "COMSOL Multiphysics was used for coupled electro-mechanical simulations. Eigenfrequency studies identified the drive and sense mode frequencies for each topology, with mode matching critical for gyroscope sensitivity. Capacitance simulations modeled the multi-electrode configurations with fringing field corrections, validated through bounding box sensitivity checks. The parametric sweep capability enabled rapid exploration of the design space, with key outputs including thermoelastic quality factor, mechanical sensitivity (µm/rad/s), Brownian noise floor, and relative sense capacitance (ΔC₀/C₀).",
+        "associated_media": ["adrg_mode_shape_1.png", "adrg_mode_shape_2.png"]
+      },
+      {
+        "name": "Fabrication File Generation",
+        "content": "Once mechanical and electrode parameters were finalized through simulation, the designs were converted into semiconductor fabrication mask layouts. CleWin was used for initial layout design and layer definition, while KLayout provided advanced editing and DRC (Design Rule Check) verification. The mask files defined the SOI (Silicon-on-Insulator) device layer patterns, electrode metallization, and release etch boundaries for the CeNSE microfabrication process.",
+        "associated_media": ["fabricated_dies_batch.jpg"]
+      },
+      {
+        "name": "Microfabrication & Wire Bonding",
+        "content": "Devices were fabricated at the Centre for Nano Science and Engineering (CeNSE) at IISc using SOI-based surface micromachining. The fabrication process yielded multiple dies of each sensor type. Wire bonding connected the MEMS die pads to the PCB carrier for electrical interfacing. Custom pinout schematics were designed specifying electrode-to-pin mappings: the accelerometer used color-coded connections for X/Y sense (red/green), feedback (gray/blue), and common (black) electrodes; the gyroscope required 16 individually addressed outer electrodes plus 4 common connections.",
+        "associated_media": ["fabricated_dies_closeup.jpg", "gdrg_die_wirebonded.jpg", "gyroscope_pinout_diagram.png", "accelerometer_pinout_diagram.png"]
+      },
+      {
+        "name": "LDV Characterization (Gyroscope)",
+        "content": "The fabricated ADRG was characterized using a Polytec MSA-500 Micro System Analyzer (Laser Doppler Vibrometer) at atmospheric pressure and room temperature. The device was electrostatically driven with AC+DC excitation applied to opposing drive electrodes (0° and 180° phase). Frequency sweeps measured the mechanical frequency response, with the resonance peak identifying the eigenfrequency. The measured resonance at 6.8 kHz closely matched COMSOL predictions, achieving <5% eigenfrequency error and validating the simulation methodology.",
+        "associated_media": ["ldv_measurement_setup.jpg", "ldv_frequency_response.jpg"]
+      }
+    ]
+  },
+
+  "results": {
+    "key_findings": [
+      "Successfully designed and fabricated both accelerometer and gyroscope components of the MEMS IMU",
+      "ADRG achieved highest quality factor (181.55k) among five DRG topologies tested",
+      "ADRG demonstrated best relative sense capacitance (46.44% ΔC₀/C₀)",
+      "LDV validation showed <5% eigenfrequency error between simulation and measurement",
+      "Measured gyroscope resonance at 6.8 kHz matches COMSOL prediction"
+    ],
+    
+    "gyroscope_comparison_table": {
+      "title": "Disk Resonator Gyroscope Topology Comparison",
+      "description": "All designs: 9 rings, 8mm OD, 10µm ring width, 60µm thickness, 0.5 anchor ratio",
+      "columns": ["DRG Type", "Eigenfrequency (Hz)", "Thermoelastic Q (k)", "Mech. Sensitivity (µm/rad/s)", "Brownian Noise (rad/s/√Hz)", "Base C₀ (pF)", "Sense ΔC₀ (pF)", "ΔC₀/C₀ (%)"],
+      "rows": [
+        ["DRG", "12,720", "103.62", "3.83×10⁻⁶", "1.01×10⁻⁶", "3.32", "0.216", "14.37"],
+        ["HDRG", "11,306", "105.42", "4.27×10⁻⁶", "1.29×10⁻⁶", "3.60", "0.207", "16.39"],
+        ["CDRG", "12,611", "99.99", "3.61×10⁻⁶", "1.12×10⁻⁶", "3.42", "0.125", "26.36"],
+        ["GDRG", "14,761", "91.58", "2.76×10⁻⁶", "1.17×10⁻⁶", "3.80", "0.125", "29.40"],
+        ["ADRG", "6,771", "181.55", "12.1×10⁻⁶", "1.07×10⁻⁶", "5.93", "0.125", "46.44"]
+      ],
+      "highlight": "ADRG achieves highest quality factor, mechanical sensitivity, and relative sense capacitance"
+    },
+
+    "accelerometer_parametric_table": {
+      "title": "Accelerometer Parametric Study Results",
+      "description": "Key performance metrics across beam width and thickness variations",
+      "subtables": [
+        {
+          "beam_width": "5 µm",
+          "columns": ["Thickness (µm)", "Eigenfreq (Hz)", "Disp. Sens. (µm/g)", "Cap. Sens. ΔC/g", "Cross-Axis (nm/g)", "Q Factor", "Brownian Noise (g/√Hz)"],
+          "rows": [
+            ["10", "2867.7", "3.7", "1.66", "3.2", "492", "6.31×10⁻⁷"],
+            ["20", "2886.1", "1.9", "0.70", "1.9", "121", "9.02×10⁻⁷"],
+            ["30", "2885.2", "1.3", "0.62", "1.3", "53.3", "1.11×10⁻⁶"],
+            ["60", "2893.9", "0.63", "0.28", "1.2", "13.5", "1.56×10⁻⁶"]
+          ]
+        },
+        {
+          "beam_width": "6 µm",
+          "columns": ["Thickness (µm)", "Eigenfreq (Hz)", "Disp. Sens. (µm/g)", "Cap. Sens. ΔC/g", "Cross-Axis (nm/g)", "Q Factor", "Brownian Noise (g/√Hz)"],
+          "rows": [
+            ["10", "2923.9", "3.65", "1.57", "3.8", "497", "6.32×10⁻⁷"],
+            ["20", "2939.3", "1.9", "0.43", "-", "122", "9.05×10⁻⁷"],
+            ["30", "2938.7", "1.27", "0.65", "1.6", "54.1", "1.11×10⁻⁶"],
+            ["60", "2946.7", "0.64", "0.28", "0.9", "13.5", "1.57×10⁻⁶"]
+          ]
+        },
+        {
+          "beam_width": "7 µm",
+          "columns": ["Thickness (µm)", "Eigenfreq (Hz)", "Disp. Sens. (µm/g)", "Cap. Sens. ΔC/g", "Cross-Axis (nm/g)", "Q Factor", "Brownian Noise (g/√Hz)"],
+          "rows": [
+            ["10", "2961.4", "3.6", "1.47", "3.8", "503", "6.31×10⁻⁷"],
+            ["20", "2973.5", "1.87", "0.68", "2.0", "123", "9.02×10⁻⁷"],
+            ["30", "2973.6", "1.25", "0.59", "1.5", "54.7", "1.11×10⁻⁶"],
+            ["60", "2981.4", "0.63", "0.46", "0.86", "13.6", "1.57×10⁻⁶"]
+          ]
+        },
+        {
+          "beam_width": "8 µm",
+          "columns": ["Thickness (µm)", "Eigenfreq (Hz)", "Disp. Sens. (µm/g)", "Cap. Sens. ΔC/g", "Cross-Axis (nm/g)", "Q Factor", "Brownian Noise (g/√Hz)"],
+          "rows": [
+            ["10", "2990.5", "3.5", "1.32", "3.9", "511", "6.26×10⁻⁷"],
+            ["20", "3002.7", "1.85", "0.74", "2.3", "124", "9.00×10⁻⁷"],
+            ["30", "3003.0", "1.2", "0.34", "1.6", "56.0", "1.09×10⁻⁶"],
+            ["60", "3010.1", "0.61", "0.74", "0.4", "13.9", "1.56×10⁻⁶"]
+          ]
+        }
+      ],
+      "key_observations": [
+        "Eigenfrequency increases slightly with beam width (2867→3010 Hz)",
+        "Displacement sensitivity decreases with increasing thickness (3.7→0.63 µm/g)",
+        "Quality factor decreases significantly with thickness (492→13.5)",
+        "Cross-axis sensitivity improves (decreases) with thickness",
+        "Trade-off between sensitivity and cross-axis rejection"
+      ]
+    },
+
+    "validation": {
+      "method": "Laser Doppler Vibrometry (Polytec MSA-500)",
+      "conditions": "Atmospheric pressure, 25°C",
+      "measured_frequency": "6.8 kHz",
+      "simulated_frequency": "6.771 kHz (ADRG)",
+      "error": "< 5% (approximately 0.4%)",
+      "note": "Only gyroscope was characterized; accelerometer testing pending due to project timeline"
+    },
+
+    "future_scope": [
+      "Complete accelerometer characterization using shake table and reference accelerometer",
+      "Implement closed-loop electronic readout circuits for both sensors",
+      "Vacuum packaging to achieve higher quality factors (targeting >500k for gyroscope)",
+      "Allan variance and bias drift characterization over extended test periods",
+      "Integrate accelerometer and gyroscope into single IMU package with ASIC readout",
+      "Temperature compensation and calibration across operational range"
+    ]
+  },
+
+  "additional_information_section": {
+    "primary_document": {
+      "file": "A_Novel_Accordion-Like_Disk_Resonator_Gyroscope.pptx",
+      "reason": "Main ICMNS 2024 conference presentation covering ADRG design rationale, topology comparison, simulation methodology, and experimental validation"
+    },
+    "supplementary_documents": [
+      {
+        "file": "Eigenfrequency-Analysis.pptx",
+        "reason": "Detailed FEM mode shape results for all five DRG variants with parametric sweep data"
+      },
+      {
+        "file": "Pinouts-for-the-Accelerometer-and-Gyroscope.pptx",
+        "reason": "Technical documentation for wire bonding and electrode configuration for both sensors"
+      }
+    ],
+    "optional_documents": [
+      {
+        "file": "Accelerometer_Parametric_Study.xlsx",
+        "reason": "Raw simulation data for accelerometer design space exploration"
+      },
+      {
+        "file": "Weekly-Meeting-5th-October-2023.pptx",
+        "reason": "Progress documentation showing iterative design evolution (optional for portfolio)"
+      }
+    ],
+    "conference_paper": {
+      "citation": "Sai Pranav Avva, Suman Acharya, Kandula Eswara Sai Kumar, Sudhanshu Shekar, Karthik Raveendranath, and G K Ananthasuresh. 'A Novel Accordion-like Disk Resonator Gyroscope.' International Conference on Micro, Nano, and Smart Systems (ICMNS), July 11, 2024.",
+      "embed_recommendation": "Include PDF or link to conference proceedings"
+    }
+  },
+
+  "website_text_replacements": {
+    "page_title": "MEMS Inertial Measurement Unit | Sai Pranav Avva",
+    "meta_description": "Two-year ISRO-IISc collaboration designing high-precision MEMS accelerometer and Accordion-like Disk Resonator Gyroscope with <5% simulation-to-hardware eigenfrequency error",
+    
+    "hero_section": {
+      "title": "MEMS Inertial Measurement Unit",
+      "subtitle_tagline": "Designing high-precision MEMS accelerometer and gyroscope for space navigation through parametric optimization and multiphysics simulation",
+      "institution_credit_line": "M2D2 Laboratory, Indian Institute of Science | In collaboration with ISRO | Guided by Prof. G K Ananthasuresh",
+      "date_line": "Jun 2022 – Jul 2024",
+      "role_contribution_line": "Led parametric design optimization for both sensors, performed COMSOL multiphysics simulations achieving <5% eigenfrequency error, generated CleWin/KLayout fabrication masks, designed wire bonding pinouts, and first-authored ICMNS 2024 conference paper"
+    },
+    
+    "hero_image": {
+      "file": "ldv_measurement_setup.jpg",
+      "alt_text": "LDV measurement setup with wire-bonded disk resonator gyroscope and Polytec MSA-500 analyzer"
+    },
+    
+    "body_images": [
+      {"file": "adrg_sem_composite.jpg", "caption": "SEM micrographs of fabricated ADRG showing accordion-like ring structure at multiple magnifications"},
+      {"file": "ldv_frequency_response.jpg", "caption": "LDV frequency response validating 6.8 kHz resonance prediction"},
+      {"file": "fabricated_dies_batch.jpg", "caption": "Batch of fabricated MEMS gyroscope dies from CeNSE"},
+      {"file": "gdrg_die_wirebonded.jpg", "caption": "Wire-bonded GDRG die showing M2D2 lab markings"},
+      {"file": "gyroscope_pinout_diagram.png", "caption": "Gyroscope wire bonding pinout with 16 outer electrodes"},
+      {"file": "accelerometer_pinout_diagram.png", "caption": "Dual-axis accelerometer pinout with X/Y sense and feedback electrodes"},
+      {"file": "adrg_mode_shape_1.png", "caption": "COMSOL eigenfrequency mode shape - drive mode"},
+      {"file": "adrg_mode_shape_2.png", "caption": "COMSOL eigenfrequency mode shape - sense mode"}
+    ],
+    
+    "results_table_slot": "Insert gyroscope_comparison_table showing ADRG superiority across five topologies",
+    "secondary_table_slot": "Insert accelerometer_parametric_table showing design trade-offs (can be collapsible/expandable)",
+    
+    "video_embed_slot": "No demo video available",
+    
+    "skills_tags": [
+      "MEMS Design",
+      "COMSOL Multiphysics",
+      "Parametric Optimization",
+      "CleWin",
+      "KLayout",
+      "Capacitive Sensing",
+      "Electrostatic Actuation",
+      "SOI Microfabrication",
+      "FEA Simulation",
+      "Inertial Sensors",
+      "Wire Bonding",
+      "MATLAB"
+    ],
+    
+    "key_achievements": [
+      "0.001 deg/hr resolution target through parametric optimization",
+      "<5% eigenfrequency error between simulation and fabrication",
+      "181.55k quality factor achieved (ADRG)",
+      "46.44% relative sense capacitance (best among 5 topologies)",
+      "First-author conference publication at ICMNS 2024"
+    ]
+  },
+
+  "source_files": {
+    "images": [
+      "ldv_measurement_setup.jpg",
+      "adrg_sem_composite.jpg",
+      "ldv_frequency_response.jpg",
+      "fabricated_dies_batch.jpg",
+      "fabricated_dies_closeup.jpg",
+      "gdrg_die_wirebonded.jpg",
+      "gyroscope_pinout_diagram.png",
+      "accelerometer_pinout_diagram.png",
+      "adrg_mode_shape_1.png",
+      "adrg_mode_shape_2.png"
+    ],
+    "presentations": [
+      "A_Novel_Accordion-Like_Disk_Resonator_Gyroscope.pptx",
+      "Eigenfrequency-Analysis.pptx",
+      "Pinouts-for-the-Accelerometer-and-Gyroscope.pptx",
+      "Weekly-Meeting-5th-October-2023.pptx"
+    ],
+    "documents": [
+      "Accelerometer_Parametric_Study.xlsx",
+      "ICMNS_2024_Conference_Paper.pdf"
+    ],
+    "videos": []
+  },
+
+  "file_placement_in_portfolio": {
+    "images_folder": "images/mems-imu/",
+    "documents_folder": "documents/MEMS Engineer/",
+    "page_file": "work2/mems-imu.html"
+  },
+
+  "reference_template_url": "https://avvasai.github.io/work2/project1.html",
+  
+  "notes": [
+    "This project represents a 2-year comprehensive effort spanning both accelerometer and gyroscope development",
+    "Only gyroscope was tested due to time constraints - accelerometer characterization is listed as future work",
+    "The ADRG design is the novel contribution, building upon existing ring-spoke concepts from lab predecessors",
+    "Wire bonding pinout diagrams show the integration pathway for electronics readout",
+    "Conference paper validates the work and provides academic credibility"
+  ]
+}

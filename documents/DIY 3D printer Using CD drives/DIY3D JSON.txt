@@ -1,0 +1,238 @@
+{
+  "project_id": "diy-3d-printer-cd-drives",
+  "title": "DIY 3D Printer Using CD Drives",
+  "subtitle": "Built a functional 3D printer frame from recycled CD/DVD drives and $30 in components",
+  "institution": "Personal Project",
+  "collaborating_organizations": [],
+  "guide": null,
+  "venue": null,
+  "date_range": "2024",
+
+  "acknowledgements": {
+    "guidance": [],
+    "technical_collaboration": [],
+    "fabrication_testing": [],
+    "funding_facilities": [],
+    "inspiration": [
+      {
+        "name": "Anhad Sawhney",
+        "contribution": "Original DVD Drive 3D Printer design concept",
+        "link": "https://www.anhadsawhney.com/dvd-drive-3d-printer"
+      }
+    ]
+  },
+
+  "user_contribution": {
+    "summary": "Independently built a miniature 3D printer by repurposing CD/DVD drive mechanisms for the motion system, designing a laser-cut plywood frame, and integrating RAMPS 1.4 electronics. This hands-on project served as a learning platform for mastering Marlin and Klipper firmware configuration.",
+    "tasks": [
+      "Sourced and disassembled recycled CD/DVD drives to extract linear motion mechanisms",
+      "Designed and laser-cut plywood structural frame and mounting brackets",
+      "Wired RAMPS 1.4 controller with stepper drivers, thermistor, and hotend",
+      "Integrated E3D-style hotend onto CD drive carriage with cooling system",
+      "Configured Marlin firmware: calibrated steps/mm for CD drive lead screws",
+      "Explored Klipper firmware as alternative control system",
+      "Completed full build under $30 budget using recycled components"
+    ],
+    "tools_used": [
+      "Marlin Firmware",
+      "Klipper Firmware", 
+      "Arduino IDE",
+      "RAMPS 1.4",
+      "A4988 Stepper Drivers",
+      "Laser Cutter",
+      "Soldering Iron",
+      "Multimeter"
+    ],
+    "not_contributed": "Overall design concept adapted from Anhad Sawhney's open-source DVD Drive 3D Printer project. Used open-source RAMPS 1.4 electronics platform and Marlin firmware base."
+  },
+
+  "project_summary": "Curious about what makes 3D printers tick, I decided to build one from scratch using recycled CD/DVD drives as the motion system. Inspired by Anhad Sawhney's DVD drive printer design, I sourced old optical drives from e-waste, extracted their precise lead screw mechanisms, and designed a laser-cut plywood frame to hold everything together.\n\nThe electronics side used a RAMPS 1.4 shield with A4988 stepper drivers, and I integrated an E3D-style hotend with proper cooling. The real learning came from firmware configuration—I spent significant time understanding Marlin's architecture, calibrating steps/mm for the tiny CD drive lead screws, and later explored Klipper for its more modern approach.\n\nWhile this ~40mm build volume printer didn't achieve successful prints, that wasn't really the point. The project gave me hands-on understanding of Cartesian kinematics, stepper motor control, PID tuning, and firmware internals—skills I now apply when working with research-grade printers and CNC systems. Total cost: about $30 plus recycled parts.",
+
+  "gallery_media": [
+    {
+      "file": "cd-drive-printer-components.jpg",
+      "original_file": "Image 2 (flat-lay components)",
+      "description": "Flat-lay of all printer components: NEMA 17 stepper motor, laser-cut plywood frame pieces, CD/DVD drive mechanism with lead screw, RAMPS 1.4 board, thermistor wiring, and custom wood mounting brackets",
+      "priority": "hero_image",
+      "source": "Uploaded image",
+      "placement": "Hero section, top of page"
+    },
+    {
+      "file": "cd-drive-hotend-assembly.jpg",
+      "original_file": "Image 4 (hotend close-up)",
+      "description": "Close-up of hotend assembly mounted on repurposed CD drive carriage, showing extruder with 30mm cooling fan, heater block with brass nozzle, and optical drive sled mechanism",
+      "priority": "results_key_image",
+      "source": "Uploaded image",
+      "placement": "Methodology section - Hotend Integration"
+    },
+    {
+      "file": "ramps-electronics-wiring.jpg",
+      "original_file": "Image 3 (RAMPS board)",
+      "description": "RAMPS 1.4 control board with A4988 stepper drivers installed, showing complete wiring harness for stepper motors, thermistor, and power connections",
+      "priority": "technical_diagram",
+      "source": "Uploaded image",
+      "placement": "Methodology section - Electronics"
+    },
+    {
+      "file": "cd-drive-printer-workspace.jpg",
+      "original_file": "Image 1 (workspace shot)",
+      "description": "Assembled 3D printer on workbench showing full build in workshop environment, demonstrating DIY maker setup",
+      "priority": "body_image",
+      "source": "Uploaded image",
+      "placement": "Project summary section or gallery"
+    }
+  ],
+
+  "methodology": {
+    "sections": [
+      {
+        "name": "Component Sourcing & Teardown",
+        "content": "Sourced three CD/DVD drives from old computers and e-waste. Carefully disassembled each drive to extract the linear motion mechanisms—these use precise lead screws with stepper motors that provide surprisingly accurate positioning despite their original purpose of moving a laser head.",
+        "associated_media": ["cd-drive-printer-components.jpg"]
+      },
+      {
+        "name": "Frame Design & Fabrication",
+        "content": "Designed a compact frame using laser-cut plywood to mount the three CD drive mechanisms in a Cartesian configuration (X, Y, Z axes). Created custom mounting brackets to securely hold the drives while allowing adjustment for alignment.",
+        "associated_media": ["cd-drive-printer-components.jpg"]
+      },
+      {
+        "name": "Electronics Integration",
+        "content": "Wired a RAMPS 1.4 shield (on Arduino Mega) with A4988 stepper drivers for motor control. Connected thermistor for temperature sensing, heated nozzle, and cooling fan. Routed all cabling for clean wire management and accessibility.",
+        "associated_media": ["ramps-electronics-wiring.jpg"]
+      },
+      {
+        "name": "Hotend & Extruder Mounting",
+        "content": "Mounted an E3D-style hotend onto the X-axis CD drive carriage. Added a 30mm cooling fan for the cold end and integrated the heater block. This was the most mechanically challenging part—ensuring the hotend was rigid while the tiny carriage could still move freely.",
+        "associated_media": ["cd-drive-hotend-assembly.jpg"]
+      },
+      {
+        "name": "Firmware Configuration",
+        "content": "Configured Marlin firmware for the unconventional hardware. Key challenge was calibrating steps/mm for the CD drive lead screws (much finer pitch than typical 3D printer lead screws). Also explored Klipper firmware to understand its architecture and advantages for future builds.",
+        "associated_media": []
+      }
+    ]
+  },
+
+  "results": {
+    "key_findings": [
+      "Successfully assembled complete 3D printer motion system from recycled CD drives",
+      "Achieved full electronics integration with RAMPS 1.4 at ~$30 total component cost",
+      "Gained working knowledge of Marlin firmware architecture and configuration",
+      "Learned Klipper firmware fundamentals as modern alternative",
+      "Understood practical limitations of CD drive mechanisms (limited travel ~40mm, low torque)"
+    ],
+    "comparison_table": null,
+    "validation": "Learning project - focused on skill development rather than print quality metrics. Successfully powered on system, achieved motor movement, and configured firmware parameters.",
+    "future_scope": [
+      "Attempt first successful test prints with fine-tuned calibration",
+      "Upgrade to TMC2209 silent stepper drivers",
+      "Design 3D-printed structural parts to replace plywood frame",
+      "Add heated bed for better adhesion",
+      "Implement Klipper firmware for faster processing"
+    ]
+  },
+
+  "skills_learned": {
+    "primary": [
+      "3D Printer Mechanics",
+      "Marlin Firmware",
+      "Klipper Firmware",
+      "RAMPS 1.4 Electronics"
+    ],
+    "secondary": [
+      "Stepper Motor Control",
+      "Laser Cutting",
+      "E-Waste Recycling/Upcycling",
+      "PID Tuning",
+      "G-Code Fundamentals"
+    ]
+  },
+
+  "additional_information_section": {
+    "primary_document": null,
+    "supplementary_documents": [],
+    "optional_documents": [],
+    "external_links": [
+      {
+        "title": "Inspiration: Anhad Sawhney's DVD Drive 3D Printer",
+        "url": "https://www.anhadsawhney.com/dvd-drive-3d-printer",
+        "reason": "Original design concept this project was adapted from"
+      }
+    ]
+  },
+
+  "website_text_replacements": {
+    "page_title": "DIY 3D Printer Using CD Drives | Sai Pranav Avva",
+    "meta_description": "Built a miniature 3D printer from recycled CD drives and $30 in parts. Hands-on learning project for mastering Marlin and Klipper firmware configuration.",
+    "hero_section": {
+      "title": "DIY 3D Printer Using CD Drives",
+      "subtitle_tagline": "Learning 3D printer mechanics from the ground up—with recycled parts and a $30 budget",
+      "institution_credit_line": "Personal Project",
+      "date_line": "2024",
+      "role_contribution_line": "Designed and built complete motion system from recycled CD/DVD drives; configured Marlin & Klipper firmware"
+    },
+    "hero_image": {
+      "file": "cd-drive-printer-components.jpg",
+      "alt_text": "Flat-lay of DIY 3D printer components including stepper motor, laser-cut plywood frame, CD drive mechanism, RAMPS 1.4 board, and wiring"
+    },
+    "body_images": [
+      {
+        "file": "cd-drive-hotend-assembly.jpg",
+        "caption": "Hotend assembly mounted on repurposed CD drive carriage with cooling fan"
+      },
+      {
+        "file": "ramps-electronics-wiring.jpg",
+        "caption": "RAMPS 1.4 controller with A4988 stepper drivers and wiring harness"
+      },
+      {
+        "file": "cd-drive-printer-workspace.jpg",
+        "caption": "Completed printer assembly on workbench"
+      }
+    ],
+    "skills_tags": [
+      "3D Printing",
+      "Marlin Firmware",
+      "Klipper Firmware",
+      "RAMPS 1.4",
+      "Arduino",
+      "Stepper Motors",
+      "Laser Cutting",
+      "Electronics Integration",
+      "DIY/Maker"
+    ],
+    "key_achievements": [
+      "Built functional 3D printer frame for ~$30 using recycled CD drives",
+      "Mastered Marlin firmware configuration and calibration",
+      "Learned Klipper firmware architecture for future projects"
+    ]
+  },
+
+  "source_files": {
+    "images": [
+      "cd-drive-printer-components.jpg",
+      "cd-drive-hotend-assembly.jpg", 
+      "ramps-electronics-wiring.jpg",
+      "cd-drive-printer-workspace.jpg"
+    ],
+    "presentations": [],
+    "documents": [],
+    "videos": []
+  },
+
+  "file_placement": {
+    "images_folder": "images/diy-3d-printer-cd-drives/",
+    "documents_folder": "documents/DIY 3D printer Using CD drives/",
+    "page_file": "work2/diy-3d-printer-cd-drives.html"
+  },
+
+  "reference_template_url": "https://avvasai.github.io/work2/project1.html",
+  
+  "notes": [
+    "Learning project - frame honestly as skill-building exercise",
+    "No demo video available",
+    "No successful prints achieved - focus on skills learned instead",
+    "Consider adding photos of any future successful prints",
+    "Could link to future projects that benefited from these firmware skills",
+    "Inspiration project should be credited with link"
+  ]
+}

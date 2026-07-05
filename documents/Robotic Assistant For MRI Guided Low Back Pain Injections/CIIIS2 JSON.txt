@@ -1,0 +1,316 @@
+{
+  "project_id": "mri-guided-lumbar-spine-robot",
+  "title": "Robotic Assistant for MRI-Guided Low Back Pain Injections",
+  "subtitle": "FEA-optimized I-beam linkage profiles achieving carbon fiber-equivalent stiffness (15–30 µm deflection) for MR-compatible spinal injection robot",
+  "institution": "Johns Hopkins University",
+  "collaborating_organizations": [],
+  "guide": "Dr. Iordachita",
+  "mentor": "Aabhas",
+  "venue": "EN.601.496/656: Computer Integrated Surgery II (CIS II)",
+  "date_range": "Jan 2025 – May 2025",
+
+  "acknowledgements": {
+    "guidance": [
+      "Dr. Iordachita (Faculty Advisor)",
+      "Aabhas (Project Mentor)"
+    ],
+    "technical_collaboration": [
+      "Tyler Lehrfeld (Software Development, Optical Tracking, Testing Procedures)",
+      "Diana Shaughnessy (CAD, Robot Debugging, Lower Body Mount, Data Analysis)"
+    ],
+    "fabrication_testing": [
+      "Team collaboration on bending test validation",
+      "Diana Shaughnessy and Aabhas on robot operation procedures"
+    ],
+    "funding_facilities": [
+      "Johns Hopkins University Laboratory for Computational Sensing and Robotics (LCSR)"
+    ]
+  },
+
+  "user_contribution": {
+    "summary": "Led the finite element analysis (FEA) effort to redesign robot linkage profiles, achieving carbon fiber-equivalent stiffness using MR-compatible ABS material. Contributed to bending test validation, CAD modeling of optimized profiles, 3D printing fabrication, documentation, and robot debugging. Presented FEA work in all team meetings and project presentations.",
+    "tasks": [
+      "Conducted FEA simulation to optimize linkage cross-sectional profiles for maximum rigidity",
+      "Compared 6+ beam profiles (I-beam, C-channel, hollow rectangular, etc.) using second moment of inertia to weight ratio",
+      "Iteratively optimized I-beam geometry: varied width, height, and curvature across 4+ design attempts",
+      "Achieved deflection of 1.6–1.7 µm (ABS I-beam) matching 6 mm carbon fiber performance (15 µm under 5 N)",
+      "Defined final I-beam parameters: 48 mm total height, 33.6 mm web height, 4.2 mm web thickness, 7.2 mm beam base height",
+      "Created CAD models of optimized profiles for 3D printing",
+      "Fabricated ABS profiles via 3D printing for physical validation",
+      "Participated in bending test validation comparing 3D-printed profiles vs. carbon fiber under 5, 10, 15 N loads",
+      "Identified discrepancy between datasheet Young's modulus (240 GPa) and experimental value (45 GPa) for carbon fiber",
+      "Contributed to project documentation (wiki, procedures)",
+      "Assisted with robot debugging (motor/encoder issues)",
+      "Presented FEA methodology and results in all team meetings and project presentations"
+    ],
+    "tools_used": [
+      "FEA Software (ANSYS/COMSOL)",
+      "SolidWorks",
+      "3D Printing (ABS)",
+      "MATLAB"
+    ],
+    "not_contributed": "Did not work on software development, optical tracker operation, testing procedure design, 3D Slicer UI, lower body mount CAD, or kinematics analysis. These were handled by Tyler Lehrfeld and Diana Shaughnessy."
+  },
+
+  "project_summary": "Low back pain affects over 600 million people globally, and MRI-guided spinal injections offer a radiation-free diagnostic and therapeutic approach. This project continued development of a 5-DOF MR-compatible robot for lumbar spine needle insertion, focusing on improving mechanical rigidity to meet clinical accuracy requirements (<1 mm positioning, <1° angular error).\n\nMy primary contribution was leading the FEA-based redesign of the robot's linkage profiles. The original PLA linkages lacked sufficient stiffness for needle insertion forces, while carbon fiber—though rigid—is only MR-conditional due to potential heating effects. I systematically analyzed six beam cross-sections, optimizing for the highest second moment of inertia to weight ratio. Through iterative FEA simulation, I developed an I-beam profile in ABS that matched the 6 mm carbon fiber's stiffness (15 µm deflection under 5 N loading) while maintaining full MR compatibility.\n\nI also contributed to CAD modeling, 3D printing the optimized profiles, validating performance through bending tests, assisting with robot debugging, and documenting the design process. I presented the FEA methodology and results in all team meetings and the final project presentation. The redesigned profiles are ready for integration into the robot to improve endpoint accuracy for future phantom and clinical testing.",
+
+  "gallery_media": [
+    {
+      "file": "robot-linkage-workspace.png",
+      "description": "Robot linkage kinematic workspace showing the 5-DOF architecture with two 2-DOF layers and needle insertion axis",
+      "priority": "hero_image",
+      "source": "Extracted from T3 Final Report Figure 1",
+      "placement": "Hero section, top of page"
+    },
+    {
+      "file": "i-beam-profile-views.png",
+      "description": "I-beam profile design showing profile side view, profile view, and linkage view with optimized cross-section geometry",
+      "priority": "technical_diagram",
+      "source": "Extracted from 4/4 Meeting Updates Slide 7",
+      "placement": "Methodology section - Profile Design"
+    },
+    {
+      "file": "fea-optimization-curve.png",
+      "description": "FEA optimization curve showing deflection vs. profile curvature for I-beam design, demonstrating path to carbon fiber-equivalent stiffness",
+      "priority": "results_key_image",
+      "source": "Extracted from T3 Final Report Figure 7",
+      "placement": "Results section - FEA Optimization"
+    },
+    {
+      "file": "profile-comparison-table.png",
+      "description": "Comparison table of 6 beam profiles showing second moment of inertia, weight, ratio, and deflection under 5 N loading",
+      "priority": "technical_diagram",
+      "source": "Extracted from 4/4 Meeting Updates Slide 14",
+      "placement": "Methodology section - Profile Selection"
+    },
+    {
+      "file": "results-comparison-cf-abs.png",
+      "description": "Results comparison table showing deflection values: Carbon Fiber 5mm (9.7 µm), 6mm (8.1 µm) vs. ABS I-beam Attempt 3 (1.7 µm), Attempt 4 (1.6 µm)",
+      "priority": "results_key_image",
+      "source": "Extracted from 4/4 Meeting Updates Slide 13",
+      "placement": "Results section - Performance Validation"
+    },
+    {
+      "file": "carbon-fiber-linkages.png",
+      "description": "Carbon fiber robot linkages showing the baseline design that the ABS I-beam profiles were designed to match in stiffness",
+      "priority": "body_image",
+      "source": "Extracted from T3 Final Report Figure 5",
+      "placement": "Background section - Original Design"
+    },
+    {
+      "file": "bending-test-setup.png",
+      "description": "Bending test experimental setup for validating 3D-printed profiles against carbon fiber under 5, 10, and 15 N loads",
+      "priority": "methodology_image",
+      "source": "Extracted from T3 Final Report Figure 12",
+      "placement": "Methodology section - Experimental Validation"
+    },
+    {
+      "file": "bending-test-results.png",
+      "description": "Bending test results graph comparing deflection of 3D-printed ABS profile vs. carbon fiber, showing matched performance and Young's modulus correction",
+      "priority": "results_key_image",
+      "source": "Extracted from T3 Final Report Figure 13",
+      "placement": "Results section - Experimental Validation"
+    },
+    {
+      "file": "experimental-setup.png",
+      "description": "Full experimental setup with robot secured to table, Atracsys optical tracker on tripod, and optical markers on robot linkages",
+      "priority": "body_image",
+      "source": "Extracted from T3 Final Report Figure 4",
+      "placement": "Background section - System Overview"
+    },
+    {
+      "file": "3d-slicer-ui.png",
+      "description": "3D Slicer UI prototype showing robot pose visualization and path planning interface for MRI-guided procedures",
+      "priority": "body_image",
+      "source": "Extracted from T3 Final Report Figure 2",
+      "placement": "System Overview section"
+    },
+    {
+      "file": "software-architecture.png",
+      "description": "Software architecture diagram showing integration between Galil controller, Atracsys SDK, and 3D Slicer UI",
+      "priority": "technical_diagram",
+      "source": "Extracted from T3 Final Report Figure 3",
+      "placement": "System Overview section"
+    },
+    {
+      "file": "i-beam-parameters-table.png",
+      "description": "Final I-beam parameters: Total Height 48mm, Web Height 33.6mm, Web Thickness 4.2mm, Beam Base Height 7.2mm",
+      "priority": "technical_diagram",
+      "source": "Extracted from T3 Final Report Table 5",
+      "placement": "Results section - Final Design"
+    }
+  ],
+
+  "methodology": {
+    "sections": [
+      {
+        "name": "Problem Definition & Constraints",
+        "content": "The robot's original PLA linkages lacked sufficient rigidity for needle insertion forces, causing deflection that compromised endpoint accuracy. Carbon fiber linkages improved stiffness but are only MR-conditional due to potential heating in MRI fields. The goal was to design 3D-printable profiles using MR-compatible materials (ABS/PLA) that match carbon fiber stiffness without changing the robot's kinematics or workspace. Design constraints included: fixed bolt hole dimensions, linkage length (111 mm), width (12 mm), and material limited to ABS.",
+        "associated_media": ["carbon-fiber-linkages.png"]
+      },
+      {
+        "name": "Profile Selection via FEA",
+        "content": "Six beam cross-sections were analyzed using FEA simulation under identical loading conditions (5 N cantilever load, ABS material). Profiles compared included I-beam, C-channel, hollow rectangular, solid rectangular, T-beam, and custom sections. The selection criterion was the ratio of second moment of inertia to weight—maximizing stiffness while minimizing mass. The I-beam profile emerged as optimal with the highest ratio (10.01×10⁻⁴) among all candidates.",
+        "associated_media": ["profile-comparison-table.png", "i-beam-profile-views.png"]
+      },
+      {
+        "name": "Iterative I-Beam Optimization",
+        "content": "With I-beam selected, iterative FEA optimization varied geometric parameters to match carbon fiber performance. Attempt 2 varied web width, confirming increased width improves rigidity. Attempt 3 fixed width at 7 mm and varied height to match 5 mm and 6 mm carbon fiber deflection targets. Attempt 4 optimized beam proportions (70% web height, 15% flange height). A second-order curvature optimization on the flanges further reduced deflection while achieving only 2% weight reduction—confirming the design was near-optimal.",
+        "associated_media": ["fea-optimization-curve.png"]
+      },
+      {
+        "name": "Experimental Validation (Bending Test)",
+        "content": "Physical bending tests validated FEA predictions by loading 3D-printed ABS profiles and 6 mm carbon fiber members at 5, 10, and 15 N. Deflection was measured at the free end across 8 equidistant points. The 3D-printed profile matched carbon fiber deflection as predicted. However, measured deflections differed from FEA predictions, revealing that the carbon fiber's true Young's modulus (~45 GPa) was significantly lower than datasheet values (240 GPa). Adjusting the FEA model with experimental Young's modulus reconciled the results.",
+        "associated_media": ["bending-test-setup.png", "bending-test-results.png"]
+      }
+    ]
+  },
+
+  "results": {
+    "key_findings": [
+      "I-beam profile identified as optimal cross-section with highest stiffness-to-weight ratio (10.01×10⁻⁴)",
+      "Optimized ABS I-beam achieved 1.6–1.7 µm deflection under 5 N, outperforming carbon fiber (8.1–9.7 µm in FEA; ~15–30 µm actual)",
+      "Final I-beam parameters: 48 mm total height, 33.6 mm web height, 4.2 mm web thickness, 7.2 mm beam base height",
+      "Bending tests confirmed FEA predictions after correcting for true Young's modulus",
+      "Carbon fiber Young's modulus found to be ~45 GPa (vs. 240 GPa datasheet)—critical finding for future FEA accuracy",
+      "Redesigned profiles maintain full MR compatibility while matching carbon fiber stiffness"
+    ],
+    "comparison_table": {
+      "title": "FEA Deflection Comparison: Carbon Fiber vs. Optimized ABS I-Beam",
+      "columns": ["Material", "Thickness/Variant", "Deflection under 5 N (µm)"],
+      "rows": [
+        ["Carbon Fiber", "5 mm", "30 (FEA) / 9.7 (adjusted)"],
+        ["Carbon Fiber", "6 mm", "15 (FEA) / 8.1 (adjusted)"],
+        ["ABS I-Beam", "Attempt 3 (100 mm)", "1.7"],
+        ["ABS I-Beam", "Attempt 4 (100 mm)", "1.6"]
+      ],
+      "highlight": "Optimized ABS I-beam profiles achieved lower deflection than carbon fiber while maintaining MR compatibility"
+    },
+    "validation": "Physical bending tests at 5, 10, and 15 N loads confirmed that 3D-printed ABS profiles matched carbon fiber deflection performance. Discrepancy between FEA and experimental results was resolved by identifying the true Young's modulus of carbon fiber through experimentation.",
+    "future_scope": [
+      "Integrate optimized I-beam profiles into robot and validate improved endpoint accuracy",
+      "Implement backlash compensation in motor control to reduce positioning error",
+      "Implement kinematic compensation to improve needle tip accuracy beyond current 2.687 mm error",
+      "Complete 3D Slicer UI integration for real-time robot pose visualization",
+      "Conduct phantom targeting experiments for IEEE conference paper submission",
+      "Validate lower body mount design on human subjects"
+    ]
+  },
+
+  "additional_information_section": {
+    "primary_document": {
+      "file": "T3 Final Report DUE 5_4.pdf",
+      "reason": "Comprehensive final report with methodology, results, and deliverables status"
+    },
+    "supplementary_documents": [
+      {
+        "file": "4_4 Meeting Updates.pdf",
+        "reason": "Detailed FEA iteration slides with profile comparison data and progress updates"
+      }
+    ],
+    "optional_documents": []
+  },
+
+  "website_text_replacements": {
+    "page_title": "MRI-Guided Lumbar Spine Robot | Sai Pranav Avva",
+    "meta_description": "FEA-optimized I-beam linkage profiles for MR-compatible spinal injection robot, achieving carbon fiber-equivalent stiffness at Johns Hopkins CIS II.",
+    "hero_section": {
+      "title": "Robotic Assistant for MRI-Guided Low Back Pain Injections",
+      "subtitle_tagline": "FEA-driven profile optimization for MR-compatible surgical robotics",
+      "institution_credit_line": "Johns Hopkins University · Computer Integrated Surgery II",
+      "date_line": "Jan 2025 – May 2025",
+      "role_contribution_line": "Led FEA simulation and profile optimization, achieving carbon fiber-equivalent stiffness (1.6 µm deflection) using MR-compatible ABS I-beam design"
+    },
+    "hero_image": {
+      "file": "robot-linkage-workspace.png",
+      "alt_text": "5-DOF MR-compatible robot linkage system for lumbar spine needle insertion showing kinematic workspace"
+    },
+    "body_images": [
+      {
+        "file": "i-beam-profile-views.png",
+        "caption": "Optimized I-beam profile design: profile side view, cross-section view, and linkage integration view"
+      },
+      {
+        "file": "fea-optimization-curve.png",
+        "caption": "FEA optimization curve showing deflection reduction through iterative curvature refinement"
+      },
+      {
+        "file": "results-comparison-cf-abs.png",
+        "caption": "Performance comparison: ABS I-beam (1.6 µm) vs. Carbon Fiber (8.1–9.7 µm) deflection under 5 N load"
+      },
+      {
+        "file": "bending-test-setup.png",
+        "caption": "Bending test setup for experimental validation of FEA-predicted profile performance"
+      },
+      {
+        "file": "bending-test-results.png",
+        "caption": "Bending test results confirming 3D-printed ABS profile matches carbon fiber stiffness"
+      },
+      {
+        "file": "experimental-setup.png",
+        "caption": "Full system experimental setup with Atracsys optical tracking for accuracy validation"
+      }
+    ],
+    "skills_tags": [
+      "Finite Element Analysis (FEA)",
+      "SolidWorks",
+      "ANSYS/COMSOL",
+      "3D Printing (ABS)",
+      "Mechanical Design",
+      "Profile Optimization",
+      "MR-Compatible Design",
+      "Structural Analysis",
+      "Experimental Validation",
+      "Medical Robotics",
+      "MATLAB"
+    ],
+    "key_achievements": [
+      "Designed MR-compatible ABS I-beam profile achieving 1.6 µm deflection (outperforming 6 mm carbon fiber)",
+      "Identified optimal cross-section from 6 candidates using second moment of inertia to weight ratio analysis",
+      "Validated FEA predictions through physical bending tests at 5, 10, and 15 N loads",
+      "Discovered carbon fiber Young's modulus discrepancy (45 GPa actual vs. 240 GPa datasheet)",
+      "Contributed to robot debugging, resolving motor and encoder faults"
+    ]
+  },
+
+  "source_files": {
+    "images": [
+      "robot-linkage-workspace.png",
+      "i-beam-profile-views.png",
+      "fea-optimization-curve.png",
+      "profile-comparison-table.png",
+      "results-comparison-cf-abs.png",
+      "carbon-fiber-linkages.png",
+      "bending-test-setup.png",
+      "bending-test-results.png",
+      "experimental-setup.png",
+      "3d-slicer-ui.png",
+      "software-architecture.png",
+      "i-beam-parameters-table.png"
+    ],
+    "presentations": [
+      "4_4 Meeting Updates.pdf"
+    ],
+    "documents": [
+      "T3 Final Report DUE 5_4.pdf"
+    ],
+    "videos": []
+  },
+
+  "file_placement": {
+    "images_folder": "images/mri-guided-lumbar-spine-robot/",
+    "documents_folder": "documents/MRI Guided Lumbar Spine Needle Insertion/",
+    "page_file": "work2/mri-guided-lumbar-spine-robot.html"
+  },
+
+  "reference_template_url": "https://avvasai.github.io/work2/project1.html",
+
+  "notes": [
+    "No demo videos available - consider recording robot operation for future portfolio update",
+    "Images need to be extracted from PDF figures - recommend using PDF extraction tool or screenshots",
+    "FEA deflection values in meeting slides (1.6–1.7 µm for ABS) appear more favorable than carbon fiber (8.1–9.7 µm) - verify these are comparable loading conditions",
+    "The 'Robotic Assistant For MRI Guided Low Back Pain' folder already exists in your portfolio structure - confirm if this is the same project or a different phase",
+    "Consider adding FEA simulation screenshots/animations if available from your ANSYS/COMSOL work",
+    "Team photo or presentation photo would strengthen the page if available"
+  ]
+}

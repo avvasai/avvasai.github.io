@@ -1,0 +1,242 @@
+{
+  "project_id": "mri-guided-needle-insertion",
+  "title": "MRI Guided Lumbar Spine Needle Insertion Robot",
+  "subtitle": "Pneumatically-actuated 3-DOF robot achieving <2mm needle depth accuracy using MRI image-guided path planning",
+  "institution": "Johns Hopkins University",
+  "collaborating_organizations": [],
+  "guide": "EN.530.666 Course Instructor",
+  "venue": "EN.530.666 - Magnetically Actuated and MRI Compatible Robots",
+  "date_range": "Fall 2024",
+
+  "acknowledgements": {
+    "guidance": ["EN.530.666 Course Instructor"],
+    "technical_collaboration": ["Date (Team Member)", "RN (Team Member)", "Team 5 (Equipment assistance for testing)"],
+    "fabrication_testing": ["Group 1 Team - Equal Contribution"],
+    "funding_facilities": ["Johns Hopkins University - Whiting School of Engineering"]
+  },
+
+  "user_contribution": {
+    "summary": "As part of a 3-member team, contributed equally to developing an MRI-compatible needle insertion robot for lumbar spine procedures. Played a key role in robot assembly, system debugging, and resolving critical coordinate transformation errors that improved targeting accuracy from ~15mm error to within a few millimeters.",
+    "tasks": [
+      "Designed and implemented inverse kinematics for 3-stage pneumatic actuation system",
+      "Developed MATLAB image processing pipeline for vertebrae boundary detection and optimal path planning",
+      "Built and assembled the MRI-compatible robot with pneumatic actuators operating at 25 psi",
+      "Debugged critical X/Y coordinate flip and conversion factor errors, reducing positioning error from 15mm to <2mm",
+      "Implemented 3D Slicer to robot coordinate transformations with corrected conversion factor (1.20225)",
+      "Performed system validation tests on silicone blocks and 3D printed spine phantom models"
+    ],
+    "tools_used": ["MATLAB", "3D Slicer", "Pneumatic Actuation Systems", "3D Printing", "MRI Imaging"],
+    "not_contributed": "Work was distributed equally among three team members (Avva, Date, RN). Testing video footage was captured using Team 5's robot with permission due to needle fixture issues on our system."
+  },
+
+  "project_summary": "Developed an MRI-compatible robotic system for image-guided needle insertion into lumbar spine intervertebral spaces (L1-L5) as part of a graduate robotics course at Johns Hopkins University. The robot features a 3-stage pneumatic actuation system: Stage 1 for Y-axis translation, Stage 2 for angular rotation (theta), and Stage 3 for needle insertion depth. The control pipeline processes MRI images through 3D Slicer for slice selection and window-leveling, then uses MATLAB for vertebrae boundary detection via morphological operations and centroid computation. An optimal needle path is calculated by maximizing distance from vertebrae boundaries. The system converts image coordinates to robot commands through inverse kinematics with step conversion. After identifying and fixing critical bugs including flipped X/Y coordinates, an incorrect conversion factor (1.367 vs. actual 1.20225), and theta reference line errors, the system achieved needle depth accuracy of less than 2mm. This project provided hands-on experience with medical robotics, image-guided intervention, and the unique challenges of MRI-compatible system design.",
+
+  "gallery_media": [
+    {
+      "file": "needle_insertion_demo.mp4",
+      "description": "Demonstration video showing automated needle insertion into spine phantom model with pneumatic actuation",
+      "priority": "demo_video_lead",
+      "source": "User-provided video",
+      "placement": "Hero section - primary media"
+    },
+    {
+      "file": "ideal_paths_overlay.png",
+      "description": "MATLAB-generated visualization showing computed optimal needle paths (green) overlaid on vertebrae image for all four intervertebral slots (L1/L2 through L4/L5)",
+      "priority": "hero_image",
+      "source": "Extracted from PDF report - path planning results",
+      "placement": "Hero section fallback / Results section primary"
+    },
+    {
+      "file": "3d_slicer_fiducials.png",
+      "description": "3D Slicer screenshot showing robot fiducial markers used for coordinate registration and conversion factor calculation",
+      "priority": "methodology_image",
+      "source": "Extracted from PDF report - 3D Slicer screenshots",
+      "placement": "Methodology - Image Processing section"
+    },
+    {
+      "file": "vertebrae_before_windowing.png",
+      "description": "MRI slice showing vertebrae before window-leveling adjustment in 3D Slicer",
+      "priority": "body_image",
+      "source": "Extracted from PDF report",
+      "placement": "Methodology - Image Processing section"
+    },
+    {
+      "file": "vertebrae_after_windowing.png",
+      "description": "MRI slice showing vertebrae after window-leveling to reduce gray noise and improve boundary detection",
+      "priority": "body_image",
+      "source": "Extracted from PDF report",
+      "placement": "Methodology - Image Processing section"
+    },
+    {
+      "file": "l1_boundary_detection.png",
+      "description": "Custom boundary detection for L1 vertebrae showing extracted lower boundary contour for partially visible vertebrae",
+      "priority": "technical_diagram",
+      "source": "Extracted from PDF report",
+      "placement": "Methodology - Path Planning section"
+    },
+    {
+      "file": "inverse_kinematics_diagram.png",
+      "description": "Diagram showing inverse kinematics variables including needletiplength, drivetohome, and stage_center measurements for the 3-stage system",
+      "priority": "technical_diagram",
+      "source": "Extracted from PDF report",
+      "placement": "Methodology - Inverse Kinematics section"
+    },
+    {
+      "file": "silicone_block_test.png",
+      "description": "Screenshot from resistance force testing showing needle insertion into silicone block achieving <2mm depth accuracy",
+      "priority": "results_key_image",
+      "source": "Extracted from PDF report",
+      "placement": "Results section"
+    }
+  ],
+
+  "methodology": {
+    "sections": [
+      {
+        "name": "MRI Image Acquisition & Processing",
+        "content": "MRI scans were processed using 3D Slicer software to select optimal slices showing fiducial markers and vertebrae contours clearly. Window-leveling was applied to maximize fiducial contrast for localization and reduce gray noise in vertebrae images for robust boundary detection. Images were exported at 256x256 resolution to match the coordinate conversion factor.",
+        "associated_media": ["3d_slicer_fiducials.png", "vertebrae_before_windowing.png", "vertebrae_after_windowing.png"]
+      },
+      {
+        "name": "Vertebrae Detection & Path Planning",
+        "content": "MATLAB scripts performed morphological closing (imclose) followed by boundary detection (bwboundaries) to identify each vertebra. Region properties including centroids, area, and perimeter were computed using regionprops. For each intervertebral space (L1/L2 through L4/L5), the optimal needle path was calculated by averaging Y-values between upper and lower vertebrae boundaries, maximizing distance from bone. A custom script (L1_vertebrae_code.m) handled the partially visible top vertebra.",
+        "associated_media": ["l1_boundary_detection.png", "ideal_paths_overlay.png"]
+      },
+      {
+        "name": "Coordinate Transformation",
+        "content": "A critical pipeline converted coordinates from 3D Slicer image space to real-world robot commands. The conversion factor was empirically measured as 1.20225 (corrected from the Slicer-provided 1.367). The transformation accounted for image orientation without flipping, handling coordinate conversion in the final robot command stage instead.",
+        "associated_media": []
+      },
+      {
+        "name": "Inverse Kinematics & Robot Control",
+        "content": "The 3-stage pneumatic system uses 2D inverse kinematics since height is fixed. Stage 1 controls Y-direction with a 70mm platform (stage_center = 35mm). Stage 2 controls rotation angle theta. Stage 3 controls needle insertion depth affecting both X and Y. Trigonometric calculations determine travel distances, which are then converted to motor steps. The system operates at 25 psi with Stage 3 running at half speed for insertion accuracy.",
+        "associated_media": ["inverse_kinematics_diagram.png"]
+      },
+      {
+        "name": "System Integration & Debugging",
+        "content": "Live demonstration revealed three critical bugs: (1) X and Y coordinates were flipped in the transformation code, causing theta to be mirrored; (2) the conversion factor error of 0.16 caused 15mm X-offset and 7mm Y-offset at slot 1; (3) theta reference line calculation using fiducial markers introduced angular errors (20° vs correct 10°). All issues were systematically identified through line-by-line code review and resolved.",
+        "associated_media": []
+      }
+    ]
+  },
+
+  "results": {
+    "key_findings": [
+      "Achieved needle depth accuracy of <2mm after speed optimization of Stage 3",
+      "Corrected conversion factor (1.20225 vs 1.367) eliminated 15mm X / 7mm Y positioning errors",
+      "Simplified theta reference (horizontal line, slope=0) reduced angular error from 20° to 10°",
+      "Angled needle insertion demonstrated easier penetration than perpendicular approach",
+      "Post-debugging positioning accuracy within a few millimeters across all 4 vertebral slots"
+    ],
+    "comparison_table": {
+      "title": "Computed Needle Path Coordinates (MATLAB Image Space)",
+      "columns": ["Vertebral Path", "Entry Point (x,y)", "Target Point (x,y)"],
+      "rows": [
+        ["L1/L2", "(93, 105)", "(81, 102.833)"],
+        ["L2/L3", "(92, 132)", "(80, 128.5)"],
+        ["L3/L4", "(90, 157.75)", "(79, 159)"],
+        ["L4/L5", "(92, 183)", "(80, 181.167)"]
+      ],
+      "highlight": "Path coordinates computed by maximizing distance from vertebrae boundaries for safe needle insertion"
+    },
+    "validation": "System validated through resistance force tests on silicone blocks and targeting tests on 3D printed spine phantom model. Depth accuracy measured at <2mm error. Positioning accuracy confirmed within a few millimeters after bug fixes.",
+    "future_scope": [
+      "Improve part tolerancing to reduce wobble and mechanical errors affecting accuracy",
+      "Enhance motor reliability to prevent step skipping during operation",
+      "Develop more accurate conversion factor calculation method less sensitive to fiducial position variations",
+      "Implement closed-loop feedback for real-time position correction",
+      "Extend to 3D path planning with variable insertion height"
+    ]
+  },
+
+  "additional_information_section": {
+    "primary_document": {
+      "file": "Group1_Avva_Date_RN_Lab9.pdf",
+      "reason": "Complete technical report with methodology, results, and error analysis"
+    },
+    "supplementary_documents": [],
+    "optional_documents": []
+  },
+
+  "website_text_replacements": {
+    "page_title": "MRI Guided Needle Insertion Robot | Sai Pranav Avva",
+    "meta_description": "MRI-compatible pneumatic robot for lumbar spine needle insertion achieving <2mm accuracy using 3D Slicer image processing and MATLAB path planning.",
+    "hero_section": {
+      "title": "MRI Guided Lumbar Spine Needle Insertion Robot",
+      "subtitle_tagline": "Pneumatically-actuated 3-DOF robot with image-guided path planning",
+      "institution_credit_line": "Johns Hopkins University | EN.530.666 - Magnetically Actuated and MRI Compatible Robots",
+      "date_line": "Fall 2024",
+      "role_contribution_line": "Developed inverse kinematics, MATLAB image processing pipeline, and debugged coordinate transformation achieving <2mm needle positioning accuracy"
+    },
+    "hero_image": {
+      "file": "ideal_paths_overlay.png",
+      "alt_text": "MATLAB visualization showing computed optimal needle insertion paths overlaid on MRI vertebrae image"
+    },
+    "body_images": [
+      {
+        "file": "3d_slicer_fiducials.png",
+        "caption": "3D Slicer slice showing robot fiducial markers for coordinate registration"
+      },
+      {
+        "file": "vertebrae_after_windowing.png",
+        "caption": "Window-leveled MRI slice optimized for vertebrae boundary detection"
+      },
+      {
+        "file": "inverse_kinematics_diagram.png",
+        "caption": "Inverse kinematics variables for the 3-stage pneumatic actuation system"
+      },
+      {
+        "file": "silicone_block_test.png",
+        "caption": "Needle insertion validation test on silicone block showing <2mm depth accuracy"
+      }
+    ],
+    "skills_tags": [
+      "MATLAB",
+      "3D Slicer",
+      "Medical Imaging",
+      "Inverse Kinematics",
+      "Path Planning",
+      "Pneumatic Actuation",
+      "MRI-Compatible Design",
+      "Image Processing",
+      "Robot Integration",
+      "System Debugging"
+    ],
+    "key_achievements": [
+      "Achieved <2mm needle depth accuracy through optimized pneumatic control",
+      "Identified and resolved 3 critical bugs reducing positioning error from 15mm to <2mm",
+      "Developed robust vertebrae boundary detection algorithm for 4 intervertebral paths (L1-L5)",
+      "Implemented complete MRI-to-robot coordinate transformation pipeline"
+    ]
+  },
+
+  "source_files": {
+    "images": [
+      "ideal_paths_overlay.png",
+      "3d_slicer_fiducials.png",
+      "vertebrae_before_windowing.png",
+      "vertebrae_after_windowing.png",
+      "l1_boundary_detection.png",
+      "inverse_kinematics_diagram.png",
+      "silicone_block_test.png"
+    ],
+    "presentations": [],
+    "documents": ["Group1_Avva_Date_RN_Lab9.pdf"],
+    "videos": ["needle_insertion_demo.mp4"]
+  },
+
+  "file_placement": {
+    "images_folder": "images/mri-guided-needle-insertion/",
+    "documents_folder": "documents/MRI Guided Lumbar Spine Needle Insertion/",
+    "page_file": "work2/mri-guided-needle-insertion.html"
+  },
+
+  "reference_template_url": "https://avvasai.github.io/work2/project1.html",
+  
+  "notes": [
+    "⚠️ DEMO VIDEO NEEDED: Please upload the available demo video - this will be the highest priority media for the portfolio page",
+    "📸 IMAGES TO EXTRACT: The PDF contains embedded screenshots that need to be extracted or re-captured for the portfolio. Consider taking fresh screenshots from your MATLAB code and 3D Slicer if originals aren't available.",
+    "🔗 The report mentions Team 5's robot was used for some test footage - ensure any shared footage is credited appropriately if used",
+    "📝 Course instructor name not found in document - update 'guide' field if you want to credit a specific professor"
+  ]
+}

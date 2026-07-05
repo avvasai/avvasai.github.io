@@ -1,0 +1,312 @@
+{
+  "project_id": "team-haya-racing-formula-student",
+  "title": "Team Haya Racing — Formula Student",
+  "subtitle": "Vehicle dynamics, wireless telemetry, and data acquisition for a collegiate racing team",
+  "institution": "PES University, Bangalore",
+  "collaborating_organizations": [],
+  "guide": "Dr. Rajesh Mathivanan N (Faculty Advisor, Mechanical Engineering Department)",
+  "venue": "Formula Student India / Formula Bharat",
+  "date_range": "May 2019 – Apr 2021",
+
+  "acknowledgements": {
+    "guidance": [
+      "Dr. Rajesh Mathivanan N — Faculty Advisor and Chairperson, Mechanical Engineering Department"
+    ],
+    "technical_collaboration": [
+      "Team Haya Racing senior members — chassis, powertrain, and aerodynamics",
+      "Project Ignition mentees: V Ananth Sai Gautham Konijeti, Harshith Kumar M B, Koustubh, Eshan Deb"
+    ],
+    "fabrication_testing": [
+      "Team Haya Racing — welding, carbon fiber layup, and vehicle assembly"
+    ],
+    "funding_facilities": [
+      "PES University — workshop facilities and equipment"
+    ]
+  },
+
+  "user_contribution": {
+    "summary": "Progressed from intern to vehicle dynamics team member to student mentor over two years. Designed and developed a wireless steering wheel display system using MQTT protocol and Processing IDE, contributed to suspension A-arm design iterations and data-driven design validation, and mentored four first-year students on building a vehicle data acquisition system.",
+    "tasks": [
+      "Designed and coded a wireless steering wheel display GUI using Processing IDE (Java-based)",
+      "Implemented MQTT protocol for wireless CAN bus data transmission between ECU (ESP32) and steering wheel (Raspberry Pi)",
+      "Architected battery-powered steering wheel electronics to meet quick-disconnect requirements (<5 seconds)",
+      "Iterated on suspension A-arm geometry based on hardpoint analysis",
+      "Conceptualized and designed instrumentation for slip angle and suspension parameter verification",
+      "Assisted with carbon fiber mold manufacturing, sanding, and finishing",
+      "Contributed to vehicle fabrication using power tools (cutting, assembly)",
+      "Developed team website (https://github.com/avvasai/teamhayaracing)",
+      "Contributed to business plan competition including cost estimation and BOM preparation",
+      "Mentored 4 first-year students through a 6-week DAQ training program (Project Ignition)",
+      "Designed curriculum covering Arduino, sensors, CAN protocol, GPS modules, and Python visualization"
+    ],
+    "tools_used": [
+      "Processing IDE",
+      "MQTT Protocol",
+      "Raspberry Pi",
+      "ESP32/NodeMCU",
+      "CAN Bus (MCP2515)",
+      "Arduino",
+      "Python",
+      "Tkinter",
+      "SolidWorks",
+      "Power Tools",
+      "Fiberglass/Carbon Fiber Layup"
+    ],
+    "not_contributed": "Chassis and frame design/welding were done by dedicated team members. Engine tuning and powertrain integration were handled by the powertrain sub-team. Carbon fiber body manufacturing was led by others; I assisted with mold preparation and sanding. The DAQ Python/Tkinter code in the final report was written by the mentees under my guidance."
+  },
+
+  "project_summary": "Team Haya Racing is the Formula Student racing chapter of PES University, competing in Formula Bharat and Formula Student India events. I joined as an intern in summer 2019 and worked my way up to the vehicle dynamics team, eventually mentoring incoming students.\n\nMy first major project was designing a wireless steering wheel display — a necessity because Formula Student rules require the steering wheel to detach in under 5 seconds for driver extraction. I built a battery-powered system with a Raspberry Pi and display mounted on the steering wheel, receiving real-time ECU data wirelessly from an ESP32 via MQTT protocol. The GUI was developed in Processing IDE and displayed critical parameters like RPM, speed, and engine temperature.\n\nAs a vehicle dynamics team member, I worked on A-arm design iterations and built instrumentation to verify suspension parameters like slip angle using physical sensors. I also got my hands dirty with fabrication — cutting, assembly, and assisting with carbon fiber mold preparation.\n\nIn my final year, I mentored four first-year students through 'Project Ignition,' a 6-week program where they learned Arduino, CAN protocol, and data acquisition. They built a Tkinter-based GUI for logging and visualizing vehicle data — skills that would feed directly into the team's telemetry capabilities.\n\nBeyond engineering, I contributed to the business side by helping with cost estimation and BOM preparation for competition presentations, and I designed the team's website.",
+
+  "gallery_media": [
+    {
+      "file": "car_competition_side.jpg",
+      "description": "Team Haya Racing car #11 at Formula Student competition with full carbon fiber bodywork",
+      "priority": "hero_image",
+      "source": "Uploaded image",
+      "placement": "Hero section"
+    },
+    {
+      "file": "car_rear_assembly.jpg",
+      "description": "Rear view of the car showing engine, rear suspension geometry, differential, and exhaust system during workshop assembly",
+      "priority": "body_image",
+      "source": "Uploaded image",
+      "placement": "Vehicle Dynamics / Fabrication section"
+    },
+    {
+      "file": "car_test_run_nosecone.jpg",
+      "description": "Car with fiberglass nose cone during test run on campus, showing full vehicle integration",
+      "priority": "body_image",
+      "source": "Uploaded image",
+      "placement": "Testing section"
+    },
+    {
+      "file": "car_front_test.jpg",
+      "description": "Front three-quarter view of car during testing with team members observing",
+      "priority": "body_image",
+      "source": "Uploaded image",
+      "placement": "Testing section"
+    },
+    {
+      "file": "workshop_panorama.jpg",
+      "description": "Team Haya workshop showing multiple car generations and the iconic 'HAYA' graffiti wall",
+      "priority": "body_image",
+      "source": "Uploaded image",
+      "placement": "Context / About section"
+    },
+    {
+      "file": "team_photo_faculty.jpg",
+      "description": "Full Team Haya Racing group photo with faculty advisors in the workshop",
+      "priority": "body_image",
+      "source": "Uploaded image",
+      "placement": "Acknowledgements section"
+    }
+  ],
+
+  "methodology": {
+    "sections": [
+      {
+        "name": "Wireless Steering Wheel Display",
+        "content": "Formula Student regulations require the steering wheel to detach in under 5 seconds for emergency driver extraction. A wired display would complicate this, so I designed a fully wireless solution. The steering wheel houses a battery-powered Raspberry Pi and display, while an ESP32 connected to the ECU reads CAN bus data and transmits it via MQTT protocol. I developed the GUI in Processing IDE to display RPM, speed, gear position, and engine temperature in real-time.",
+        "associated_media": []
+      },
+      {
+        "name": "Vehicle Dynamics & Design Validation",
+        "content": "As part of the vehicle dynamics sub-team, I worked on suspension geometry — specifically iterating on A-arm designs based on hardpoint analysis. I also conceptualized instrumentation for verifying physical parameters like slip angle, using sensors to validate simulation results against real-world measurements. This data-driven approach helped optimize the car's handling characteristics.",
+        "associated_media": ["car_rear_assembly.jpg"]
+      },
+      {
+        "name": "Fabrication & Manufacturing",
+        "content": "I contributed to hands-on fabrication work including cutting and assembly using power tools. I also assisted with carbon fiber composite manufacturing — preparing molds, sanding, and finishing body panels. This gave me practical experience with composite layup techniques and workshop safety.",
+        "associated_media": ["workshop_panorama.jpg", "car_test_run_nosecone.jpg"]
+      },
+      {
+        "name": "Project Ignition — DAQ Mentorship",
+        "content": "In my final year, I mentored four first-year students through a 6-week 'Project Ignition' program. I designed a curriculum covering Arduino fundamentals, sensor interfacing (MPU9250 IMU, GPS modules), CAN protocol and message framing, and data visualization using Python Tkinter. The students built a functional DAQ system that logged vehicle data to CSV and displayed real-time plots of speed, acceleration, and heading.",
+        "associated_media": []
+      },
+      {
+        "name": "Business & Team Operations",
+        "content": "Beyond engineering, I contributed to the business plan competition by preparing cost estimations and bill of materials (BOM). I also designed and coded the team's website to improve recruitment and sponsor visibility.",
+        "associated_media": []
+      }
+    ]
+  },
+
+  "results": {
+    "key_findings": [
+      "Successfully implemented wireless steering wheel display meeting <5 second disconnect requirement",
+      "MQTT protocol provided reliable real-time data transmission from ECU to steering wheel",
+      "Suspension parameter verification using physical sensors validated simulation models",
+      "Project Ignition mentees completed functional DAQ system with Tkinter GUI in 6 weeks",
+      "GPS module identified as cost-effective alternative to MPU9250 for speed and position data"
+    ],
+    "comparison_table": {
+      "title": "DAQ Sensor Comparison (from Project Ignition)",
+      "columns": ["Parameter", "MPU9250", "GPS Module"],
+      "rows": [
+        ["Acceleration", "✓ (3-axis)", "✓ (derived)"],
+        ["Gyroscope", "✓ (3-axis)", "✗"],
+        ["Magnetometer", "✓ (3-axis)", "✗"],
+        ["Speed", "✗ (derived)", "✓ (instantaneous)"],
+        ["Position", "✗", "✓ (lat/long)"],
+        ["Heading", "✓ (derived)", "✓ (direct)"],
+        ["Lap Timing", "✗", "✓"],
+        ["Cost", "~₹300", "~₹300"]
+      ],
+      "highlight": "GPS module provides more direct vehicle dynamics parameters (speed, position, lap time) at similar cost to IMU"
+    },
+    "validation": "Steering wheel display tested during vehicle test runs on campus. DAQ system validated by logging data from a moving vehicle and plotting speed, engine RPM, and heading in real-time.",
+    "future_scope": [
+      "Integrate DAQ system with steering wheel display for unified telemetry",
+      "Add SD card logging for post-race analysis",
+      "Implement real-time wireless telemetry to pit crew",
+      "Expand sensor suite to include wheel speed sensors and brake pressure",
+      "Develop predictive lap time algorithms using GPS data"
+    ]
+  },
+
+  "additional_information_section": {
+    "primary_document": {
+      "file": "",
+      "reason": ""
+    },
+    "supplementary_documents": [],
+    "optional_documents": []
+  },
+
+  "website_text_replacements": {
+    "page_title": "Team Haya Racing — Formula Student | Sai Pranav Avva",
+    "meta_description": "Vehicle dynamics, wireless steering wheel display, and DAQ mentorship for PES University's Formula Student racing team.",
+    "hero_section": {
+      "title": "Team Haya Racing — Formula Student",
+      "subtitle_tagline": "Wireless telemetry, suspension design, and mentoring the next generation of racing engineers",
+      "institution_credit_line": "PES University, Bangalore",
+      "date_line": "May 2019 – Apr 2021",
+      "role_contribution_line": "Designed wireless steering wheel display using MQTT + Processing IDE; iterated on A-arm suspension geometry; mentored 4 students through DAQ training program"
+    },
+    "hero_image": {
+      "file": "car_competition_side.jpg",
+      "alt_text": "Team Haya Racing Formula Student car #11 with carbon fiber bodywork at competition"
+    },
+    "body_images": [
+      {
+        "file": "car_rear_assembly.jpg",
+        "caption": "Rear suspension and powertrain assembly in the Team Haya workshop"
+      },
+      {
+        "file": "car_test_run_nosecone.jpg",
+        "caption": "Test run on campus with fiberglass nose cone installed"
+      },
+      {
+        "file": "workshop_panorama.jpg",
+        "caption": "Team Haya workshop with multiple generations of cars"
+      },
+      {
+        "file": "team_photo_faculty.jpg",
+        "caption": "Team photo with faculty advisors"
+      },
+      {
+        "file": "car_front_test.jpg",
+        "caption": "Front view during campus testing"
+      }
+    ],
+    "skills_tags": [
+      "Formula Student",
+      "Vehicle Dynamics",
+      "MQTT Protocol",
+      "Processing IDE",
+      "Raspberry Pi",
+      "ESP32",
+      "CAN Bus",
+      "Arduino",
+      "Python",
+      "Tkinter",
+      "Data Acquisition",
+      "Suspension Design",
+      "Carbon Fiber Composites",
+      "Power Tools",
+      "Mentorship",
+      "Web Development"
+    ],
+    "key_achievements": [
+      "Designed wireless steering wheel display meeting <5s disconnect requirement using MQTT + Raspberry Pi",
+      "Mentored 4 first-year students through 6-week DAQ training program (Project Ignition)",
+      "Contributed to A-arm suspension design iterations and slip angle verification instrumentation",
+      "Developed team website and contributed to business plan cost estimation"
+    ]
+  },
+
+  "source_files": {
+    "images": [
+      "car_competition_side.jpg",
+      "car_rear_assembly.jpg",
+      "car_test_run_nosecone.jpg",
+      "car_front_test.jpg",
+      "workshop_panorama.jpg",
+      "team_photo_faculty.jpg"
+    ],
+    "presentations": [],
+    "documents": [],
+    "videos": []
+  },
+
+  "file_placement": {
+    "images_folder": "images/team-haya-racing/",
+    "documents_folder": "documents/Team Haya Racing/",
+    "page_file": "work2/team-haya-racing.html"
+  },
+
+  "reference_template_url": "https://avvasai.github.io/work2/project1.html",
+
+  "external_links": [
+    {
+      "label": "Steering Wheel Display GUI — GitHub",
+      "url": "https://github.com/avvasai/display_UI",
+      "icon": "github"
+    },
+    {
+      "label": "Team Website — GitHub",
+      "url": "https://github.com/avvasai/teamhayaracing",
+      "icon": "github"
+    }
+  ],
+
+  "gallery_carousel": {
+    "enabled": true,
+    "images": [
+      {
+        "file": "car_competition_side.jpg",
+        "caption": "Competition-ready car #11 with carbon fiber bodywork"
+      },
+      {
+        "file": "car_rear_assembly.jpg",
+        "caption": "Rear suspension and powertrain assembly"
+      },
+      {
+        "file": "car_test_run_nosecone.jpg",
+        "caption": "Campus test run with fiberglass nose cone"
+      },
+      {
+        "file": "car_front_test.jpg",
+        "caption": "Front view during testing"
+      },
+      {
+        "file": "workshop_panorama.jpg",
+        "caption": "Team Haya workshop with car generations"
+      },
+      {
+        "file": "team_photo_faculty.jpg",
+        "caption": "Team photo with faculty advisors"
+      }
+    ]
+  },
+
+  "notes": [
+    "No demo videos available for steering wheel display or DAQ system",
+    "DAQ Final Report not attached per user request",
+    "User assisted (not led) carbon fiber work",
+    "Only 6 uploaded images used — no extracted diagrams from DAQ report",
+    "Consider adding steering wheel display system diagram if created later",
+    "GitHub repos should be verified for public accessibility before linking"
+  ]
+}

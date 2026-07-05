@@ -1,0 +1,342 @@
+{
+  "project_id": "micromobility-vehicle-electronics",
+  "title": "Micromobility Vehicle Electronics System",
+  "subtitle": "IoT-enabled authorization and control system for electric kick scooter achieving 50 km range",
+  "institution": "DeltaX Automotive",
+  "collaborating_organizations": ["PES University"],
+  "guide": "Kithir Kareeb Navaz Ahmed Zackariya (Co-Founder), Harit Trivedi (Electronics Head)",
+  "venue": null,
+  "date_range": "Nov 2021 – Apr 2022",
+
+  "acknowledgements": {
+    "guidance": [
+      "Kithir Kareeb Navaz Ahmed Zackariya – Director & Co-Founder, DeltaX Automotive",
+      "Harit Trivedi – Electronics Head, DeltaX Automotive",
+      "Prof. Sachhidananda M H – Capstone Project Guide, PES University"
+    ],
+    "technical_collaboration": [
+      "Mechanical team at DeltaX Automotive (chassis design, sensor mounting coordination)"
+    ],
+    "fabrication_testing": [],
+    "funding_facilities": [
+      "DeltaX Automotive – workspace, components, and testing facilities"
+    ]
+  },
+
+  "user_contribution": {
+    "summary": "Served as the primary IoT Engineer responsible for designing and implementing the complete electronics architecture for a micromobility electric scooter. Led the development across 3 hardware iterations, from embedded software to PCB design, successfully delivering an MVP-ready system with fingerprint authorization, app-based control, and CAN bus motor controller communication.",
+    "tasks": [
+      "Designed PCB schematic and layout files for the main control board (Iteration 2)",
+      "Implemented complete vehicle logic: fingerprint authorization → relay locking → motor enable flow",
+      "Developed and deployed Blynk IoT mobile app for remote enroll, battery door control, and voltage monitoring",
+      "Established CAN bus communication protocol with VESC motor controller for telemetry data extraction",
+      "Designed and built HV battery discharging circuit using series CPU fans to bring voltage within ESC operating range",
+      "Designed LV charging circuit to charge 4S Li-ion battery from 60V HV system (stepped down to 30V)",
+      "Terminated BMS connections and evaluated multiple ESC options for compatibility",
+      "Created wire harnesses across 3 iterations with JST connectors and proper strain relief",
+      "Ported embedded code from Python (Raspberry Pi) to C/C++ (ESP32) after global chip shortage",
+      "Integrated sensors: Hall effect (side stand), fingerprint module, RPM sensor with ADC",
+      "Conducted range testing achieving target 50 km range through motor controller parameter tuning",
+      "Performed E-brake testing and tuning for optimal ride feel",
+      "Implemented HMI using LEDs for system status indication (locked/unlocked, enrollment mode)",
+      "Established GitHub repository and ClickUp project management for team collaboration"
+    ],
+    "tools_used": [
+      "ESP32",
+      "Raspberry Pi Zero",
+      "Python",
+      "C/C++",
+      "Blynk IoT Platform",
+      "CAN Bus Protocol",
+      "VESC Motor Controller",
+      "Hall Effect Sensors",
+      "Fingerprint Sensor Module",
+      "Solid-State Relays",
+      "JST Connectors",
+      "Hand Soldering",
+      "SMD Soldering",
+      "Protoboard PCB Fabrication",
+      "GitHub",
+      "ClickUp"
+    ],
+    "not_contributed": "Mechanical chassis design, battery pack assembly, and initial prototype electronics (pre-existing before internship start) were done by other team members."
+  },
+
+  "project_summary": "At DeltaX Automotive, a micromobility startup focused on last-mile connectivity solutions, I worked as the IoT Engineer Intern on their flagship product 'KIX' – an electric kick scooter designed for 5-10 km urban commutes. My role encompassed the complete electronics system development from embedded software architecture to hardware manufacturing.\n\nThe project involved designing a sophisticated authorization system featuring fingerprint-based keyless entry, electronic motor locking, and a swappable battery mechanism with automated door control. I developed the Blynk IoT mobile app for remote vehicle management, implemented CAN bus communication with the VESC motor controller for real-time telemetry, and designed both charging and discharging circuits for the dual-battery system.\n\nA significant challenge arose mid-project when the global chip shortage made Raspberry Pi Zero unavailable worldwide. I led the pivot to ESP32 architecture, porting the entire codebase from Python to C/C++ while maintaining all functionality. Through systematic range testing and motor controller tuning, we achieved the target 50 km range. The project culminated in a working MVP demonstrated to potential investors, showcasing the complete authorization flow from fingerprint scan to motor unlock.",
+
+  "gallery_media": [
+    {
+      "file": "demo-video.mp4",
+      "description": "Full vehicle authorization flow demonstration showing fingerprint scanning, system unlock, motor enable sequence, and battery door control via Blynk app",
+      "priority": "demo_video_lead",
+      "source": "User-provided video file",
+      "placement": "Hero section - primary media"
+    },
+    {
+      "file": "pcb-top-esp32-board.jpg",
+      "description": "Top side of manufactured daughter board featuring ESP32 microcontroller, fingerprint sensor module, and JST connectors with labeled pins for RPM, side stand (SS), fingerprint (FP), and door control",
+      "priority": "hero_image",
+      "source": "Uploaded image",
+      "placement": "Hero section - fallback if video doesn't autoplay"
+    },
+    {
+      "file": "pcb-backside-solder.jpg",
+      "description": "Backside of hand-soldered protoboard showing 5V and ground rail traces with multi-colored signal wires (red, yellow, white, blue, green) routed through jumpers",
+      "priority": "technical_diagram",
+      "source": "Uploaded image",
+      "placement": "Methodology section - PCB Manufacturing"
+    },
+    {
+      "file": "team-kix-assembly.jpg",
+      "description": "Team members working on KIX scooter prototype assembly, showing yellow tubular chassis frame, hub motor wheel, and battery bay area",
+      "priority": "body_image",
+      "source": "Uploaded image",
+      "placement": "Project overview or methodology section"
+    },
+    {
+      "file": "vehicle-iterations.jpg",
+      "description": "Various iterations of the KIX electric scooter showing design evolution",
+      "priority": "body_image",
+      "source": "Extracted from Report - Fig 1, Page 6",
+      "placement": "About/Context section"
+    },
+    {
+      "file": "blynk-app-interface.jpg",
+      "description": "Blynk IoT mobile app interface showing Enroll button, Battery Door control, and HV/LV battery voltage displays",
+      "priority": "results_key_image",
+      "source": "Extracted from Report - Fig 8, Page 14",
+      "placement": "Features section - App Control"
+    },
+    {
+      "file": "wire-harness-comparison.jpg",
+      "description": "Comparison of wire harness evolution from Iteration 1 (loose wires) to Iteration 3 (organized with JST connectors and tape bundling)",
+      "priority": "methodology_image",
+      "source": "Extracted from Report - Fig 4(a) & 4(b), Page 12",
+      "placement": "Methodology section - Wire Harness"
+    },
+    {
+      "file": "discharging-circuit.jpg",
+      "description": "Custom HV battery discharging circuit using multiple 12V CPU fans in series to bring battery voltage within ESC operating range",
+      "priority": "technical_diagram",
+      "source": "Extracted from Report - Fig 10, Page 16",
+      "placement": "Methodology section - Charging/Discharging"
+    },
+    {
+      "file": "sensors-hall-reed-zstop.jpg",
+      "description": "Sensor options evaluated for side stand detection: Z-stop switch, Reed switch, and Hall Effect module",
+      "priority": "technical_diagram",
+      "source": "Extracted from Report - Fig 5, 6, 7, Page 13",
+      "placement": "Methodology section - Sensor Integration"
+    }
+  ],
+
+  "methodology": {
+    "sections": [
+      {
+        "name": "Iteration 1: Raspberry Pi Integration",
+        "content": "Started by understanding the existing codebase and integrating a Raspberry Pi Zero with the pre-existing daughter board. Added RPM sensor functionality using an ADC for analog-to-digital conversion. Implemented hardware button for fingerprint enrollment and developed Bluetooth command protocol between two Raspberry Pi units for remote control testing. Identified critical issues including relay activation failure (3.3V GPIO vs 5V requirement) and solenoid failure causing 14V chassis leakage.",
+        "associated_media": ["vehicle-iterations.jpg"]
+      },
+      {
+        "name": "Iteration 2: PCB Design & Chip Shortage Pivot",
+        "content": "Designed custom PCB with SMD components for a more robust system. During testing, a faulty component damaged the CPU, coinciding with the global chip shortage that made Raspberry Pi Zero unavailable until end of 2022. Conducted extensive research on alternative microcontrollers, evaluating supply chain reliability and automotive-grade options before selecting ESP32 as the new platform.",
+        "associated_media": []
+      },
+      {
+        "name": "Iteration 3: ESP32 Implementation & MVP",
+        "content": "Ported entire codebase from Python to C/C++ for ESP32 compatibility. Implemented complete feature set: fingerprint authorization (enroll, authenticate, delete), relay-based motor locking, Hall effect side stand detection, and LED-based HMI. Manufactured final protoboard with JST connectors for modularity. Added solid-state relay to prevent back-current damage discovered during range testing.",
+        "associated_media": ["pcb-top-esp32-board.jpg", "pcb-backside-solder.jpg"]
+      },
+      {
+        "name": "Blynk IoT App Development",
+        "content": "Designed and implemented mobile app using Blynk IoT platform to replace hardware buttons with software controls. App features include Enroll button for new fingerprint registration, Battery Door control for swappable battery access, and real-time HV/LV battery voltage monitoring. Planned future enhancement to convert voltage readings to percentage display.",
+        "associated_media": ["blynk-app-interface.jpg"]
+      },
+      {
+        "name": "Wire Harness Design",
+        "content": "Evolved harness design across three iterations to eliminate failure points from solid-core wires and improper lengths. Final harness used silicone wire with measured lengths (using thread for routing estimation), JST connectors for modularity, tape bundling for organization, and built-in slack for maintenance access and future expansion.",
+        "associated_media": ["wire-harness-comparison.jpg"]
+      },
+      {
+        "name": "Charging & Discharging Circuits",
+        "content": "Designed custom discharging circuit using series-connected 12V CPU fans to bring HV battery within ESC voltage tolerance (preventing over-voltage protection trips). Created LV charging circuit to charge the 4S Li-ion floor-mounted battery by stepping down 60V HV supply to 30V input for the charging board.",
+        "associated_media": ["discharging-circuit.jpg"]
+      },
+      {
+        "name": "Sensor Integration",
+        "content": "Evaluated multiple sensor options for side stand detection: Z-stop switches, reed switches, and Hall effect modules. Selected Hall effect sensor for reliability and non-contact operation. Coordinated with mechanical team on sensor mounting to ensure protection from moving parts and proper isolation from chassis voltage.",
+        "associated_media": ["sensors-hall-reed-zstop.jpg"]
+      },
+      {
+        "name": "Motor Controller Communication",
+        "content": "Attempted UART communication with VESC motor controller but encountered library compatibility issues. Successfully implemented CAN bus protocol, establishing reliable telemetry extraction including input voltage, MOSFET temperature, duty cycle, motor temperature, current draw, and tachometer readings. Developed data parsing to convert hexadecimal frames to human-readable values.",
+        "associated_media": []
+      },
+      {
+        "name": "Testing & Tuning",
+        "content": "Conducted systematic range testing with various battery configurations, tracking distance via Strava app. Tuned motor controller parameters (wattage limits, current settings) to achieve target 50 km range. Performed E-brake testing to evaluate regenerative braking feel and effectiveness, balancing stopping power with ride comfort.",
+        "associated_media": ["team-kix-assembly.jpg"]
+      }
+    ]
+  },
+
+  "results": {
+    "key_findings": [
+      "Delivered stable, MVP-ready electronics system with full authorization flow",
+      "Achieved target vehicle range of 50 km through motor controller optimization",
+      "Successfully established CAN bus communication with VESC for comprehensive telemetry",
+      "Pivoted from Raspberry Pi to ESP32 architecture during global chip shortage without feature loss",
+      "Identified and resolved back-current issue using solid-state relay protection",
+      "Created modular wire harness design enabling rapid prototyping and component swaps"
+    ],
+    "comparison_table": {
+      "title": "Electronics Iteration Evolution",
+      "columns": ["Feature", "Iteration 1", "Iteration 2", "Iteration 3 (MVP)"],
+      "rows": [
+        ["Microcontroller", "Raspberry Pi Zero", "Raspberry Pi Zero (failed)", "ESP32"],
+        ["Programming Language", "Python", "Python", "C/C++"],
+        ["Control Interface", "Hardware buttons + Bluetooth", "Hardware buttons", "Blynk IoT App"],
+        ["Harness Quality", "Solid-core, loose", "Improved lengths", "JST connectors, bundled"],
+        ["Motor Locking", "Relay (unreliable)", "Relay", "Solid-state relay"],
+        ["Stand Detection", "Hall effect", "Hall effect", "Hall effect (isolated mount)"]
+      ],
+      "highlight": "Iteration 3 achieved MVP status with all features functional and reliable for investor demonstrations"
+    },
+    "validation": "System validated through multiple range tests achieving 50 km target, successful authorization flow demonstrations to stakeholders, and reliable operation across testing sessions without component failures",
+    "future_scope": [
+      "Implement RTOS for improved system responsiveness and real-time performance",
+      "Convert battery voltage display to percentage-based indication in app",
+      "Integrate RPM sensor as safety interlock (prevented by code architecture conflicts)",
+      "Design professional PCB for production (replacing protoboard)",
+      "Add GPS tracking and fleet management capabilities for shared mobility deployment"
+    ]
+  },
+
+  "additional_information_section": {
+    "primary_document": {
+      "file": "final report internship.pdf",
+      "reason": "Comprehensive 19-page technical report covering all iterations, methodologies, and results"
+    },
+    "supplementary_documents": [
+      {
+        "file": "DeltaX Internship Presentation.pdf",
+        "reason": "Presentation slides with visual summaries of key work areas"
+      }
+    ],
+    "optional_documents": []
+  },
+
+  "website_text_replacements": {
+    "page_title": "Micromobility Vehicle Electronics | Sai Pranav Avva",
+    "meta_description": "IoT engineer intern project: Designed electronics system for electric kick scooter with fingerprint auth, Blynk app, CAN bus communication, achieving 50 km range.",
+    "hero_section": {
+      "title": "Micromobility Vehicle Electronics System",
+      "subtitle_tagline": "IoT-enabled authorization and control for last-mile electric mobility",
+      "institution_credit_line": "DeltaX Automotive | PES University",
+      "date_line": "November 2021 – April 2022",
+      "role_contribution_line": "Designed complete electronics architecture across 3 iterations including PCB design, ESP32 firmware, Blynk IoT app, and CAN bus motor controller integration, achieving 50 km vehicle range"
+    },
+    "hero_image": {
+      "file": "pcb-top-esp32-board.jpg",
+      "alt_text": "Custom ESP32-based control board with fingerprint sensor module and JST connectors for micromobility vehicle"
+    },
+    "hero_video": {
+      "file": "demo-video.mp4",
+      "alt_text": "Demonstration of vehicle authorization flow: fingerprint scan to motor unlock sequence"
+    },
+    "body_images": [
+      {
+        "file": "vehicle-iterations.jpg",
+        "caption": "Evolution of the KIX electric scooter through multiple design iterations"
+      },
+      {
+        "file": "blynk-app-interface.jpg",
+        "caption": "Blynk IoT mobile app interface for vehicle authorization and battery management"
+      },
+      {
+        "file": "wire-harness-comparison.jpg",
+        "caption": "Wire harness evolution from Iteration 1 (left) to Iteration 3 (right) showing improved organization"
+      },
+      {
+        "file": "team-kix-assembly.jpg",
+        "caption": "Team assembly session on the KIX electric scooter prototype"
+      },
+      {
+        "file": "pcb-backside-solder.jpg",
+        "caption": "Hand-soldered protoboard backside showing power rail routing and signal traces"
+      },
+      {
+        "file": "discharging-circuit.jpg",
+        "caption": "Custom HV battery discharging circuit using CPU fans in series"
+      },
+      {
+        "file": "sensors-hall-reed-zstop.jpg",
+        "caption": "Sensor options evaluated for side stand detection: Z-stop, Reed, and Hall effect"
+      }
+    ],
+    "skills_tags": [
+      "ESP32",
+      "Raspberry Pi",
+      "Python",
+      "C/C++",
+      "Embedded Systems",
+      "PCB Design",
+      "IoT",
+      "Blynk",
+      "CAN Bus",
+      "VESC",
+      "Motor Controllers",
+      "Sensor Integration",
+      "Wire Harness Design",
+      "Battery Management",
+      "Soldering",
+      "Prototyping",
+      "GitHub",
+      "Electric Vehicles"
+    ],
+    "key_achievements": [
+      "Achieved 50 km vehicle range through systematic motor controller tuning",
+      "Delivered MVP-ready electronics demonstrated to potential investors",
+      "Successfully pivoted from Raspberry Pi to ESP32 during global chip shortage",
+      "Implemented CAN bus telemetry extraction from VESC motor controller",
+      "Designed and deployed Blynk IoT app for remote vehicle management"
+    ]
+  },
+
+  "source_files": {
+    "images": [
+      "pcb-top-esp32-board.jpg",
+      "pcb-backside-solder.jpg",
+      "team-kix-assembly.jpg",
+      "vehicle-iterations.jpg",
+      "blynk-app-interface.jpg",
+      "wire-harness-comparison.jpg",
+      "discharging-circuit.jpg",
+      "sensors-hall-reed-zstop.jpg"
+    ],
+    "presentations": [
+      "DeltaX Internship Presentation.pdf"
+    ],
+    "documents": [
+      "final report internship.pdf"
+    ],
+    "videos": [
+      "demo-video.mp4"
+    ]
+  },
+
+  "file_placement": {
+    "images_folder": "images/micromobility-vehicle-electronics/",
+    "documents_folder": "documents/Micromobility Vehicle Electronics/",
+    "page_file": "work2/micromobility-vehicle-electronics.html"
+  },
+
+  "reference_template_url": "https://avvasai.github.io/work2/project1.html",
+
+  "notes": [
+    "All 9 media items now available (8 images + 1 video)",
+    "Demo video shows full authorization flow - use as hero media with autoplay muted",
+    "Chip shortage narrative is compelling - consider highlighting in project story",
+    "Images extracted from PDF report pages 6, 12, 13, 14, 16"
+  ]
+}

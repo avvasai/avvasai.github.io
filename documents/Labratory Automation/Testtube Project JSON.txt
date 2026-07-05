@@ -1,0 +1,353 @@
+{
+  "project_id": "laboratory-robotic-automation",
+  "title": "Design of Robotic Automation Solution for Laboratory Test Tube Handling",
+  "subtitle": "4-DOF robotic arm for automated test tube segregation and racking, achieving <13kg total weight within ₹1.25L budget",
+  "institution": "PES University, Bangalore",
+  "collaborating_organizations": ["Anand Diagnostic Center"],
+  "guide": "Dr. D. Sethuram",
+  "venue": null,
+  "date_range": "Sep 2021 – Nov 2021",
+
+  "acknowledgements": {
+    "guidance": [
+      "Dr. D. Sethuram – Primary Guide, Professor, Mechanical Department, PES University",
+      "Prof. Venkatrangan – Technical Guidance",
+      "Dr. Sujay Prasad – Industry Mentor, Anand Diagnostic Center"
+    ],
+    "technical_collaboration": [
+      "3-member team – Power Systems, Electronics, and Software domains"
+    ],
+    "fabrication_testing": [
+      "In-house 3D printing and assembly"
+    ],
+    "funding_facilities": [
+      "Anand Diagnostic Center – Project sponsorship and facility access",
+      "PES University – Department of Mechanical Engineering"
+    ]
+  },
+
+  "user_contribution": {
+    "summary": "Led the Design Domain for a 4-person team, owning the complete mechanical design lifecycle from requirements gathering through fabrication. Responsible for CAD modeling, FEA validation, motor/gearbox selection, 3D printing, component sourcing, budget management, and cross-domain coordination. Also proposed the safety system architecture and contributed to embedded systems integration.",
+    "tasks": [
+      "Conducted site visit and requirements gathering at Anand Diagnostic Center (2000+ samples/day facility)",
+      "Designed complete 4-DOF robotic arm in SolidWorks – worm gearboxes, cycloidal drive, gripper, camera mount",
+      "Performed static and dynamic FEA analysis in ANSYS for structural validation",
+      "Calculated joint torques and selected motor-gearbox combinations (NEMA 17/23 + worm/cycloidal drives)",
+      "Achieved 7.25 kg total weight (44% under 13 kg constraint) with 1 kg payload capacity",
+      "3D printed actuator components in PETG – selected for heat resistance up to 70°C motor operating temperature",
+      "Designed two-claw gripper with >3.5N gripping force using spur gears and four-bar mechanism",
+      "Designed modular camera mount with dowel pin alignment for Raspberry Pi HQ camera",
+      "Managed project budget under ₹1,25,000 constraint – sourced all components",
+      "Proposed contour detection-based safety system for workspace intrusion detection",
+      "Contributed to Raspberry Pi embedded programming and system integration",
+      "Coordinated between Design, Electronics, Power Systems, and Software domains"
+    ],
+    "tools_used": [
+      "SolidWorks",
+      "ANSYS",
+      "3D Printing (PETG)",
+      "Raspberry Pi",
+      "Python"
+    ],
+    "not_contributed": "Image processing/contour detection coding was implemented by teammates based on my safety system proposal. Power systems design and portions of the software development were handled by other team members."
+  },
+
+  "project_summary": "Anand Diagnostic Center processes over 2,000 test tube samples daily, but their existing conveyor-based segregation system required significant manual intervention for barcode verification and racking. Our team designed a 4-DOF robotic arm solution to automate the pick-scan-place workflow, eliminating manual labor and reducing errors.\n\nAs Design Domain Lead, I owned the complete mechanical design—from the initial site visit to capture floor space constraints (1000×500mm) and payload requirements, through CAD modeling of custom worm and cycloidal gearboxes, to 3D printing the final components in heat-resistant PETG. I also managed component sourcing and kept the project under the ₹1,25,000 budget.\n\nThe resulting robot weighs just 7.25 kg (well under the 13 kg portability target), handles 1 kg payloads, and features a modular two-claw gripper with an integrated Raspberry Pi camera for test tube detection. I proposed an overhead camera safety system using contour detection to halt the robot if operators enter the workspace. This was my first industry internship and a formative experience in cross-functional product development.",
+
+  "gallery_media": [
+    {
+      "file": "demo-video.mp4",
+      "description": "Demo video showing motor actuation and arm segment movement during prototype testing",
+      "priority": "demo_video_lead",
+      "source": "Recorded during prototype testing",
+      "placement": "Hero section – autoplay muted or click-to-play above the fold"
+    },
+    {
+      "file": "robotic-arm-assembled.jpg",
+      "description": "Fully assembled 4-DOF robotic arm showing base, links, wrist joint, and two-claw gripper with camera mount",
+      "priority": "hero_image",
+      "source": "Extracted from PDF – Fig 11/12",
+      "placement": "Hero section and project header"
+    },
+    {
+      "file": "robotic-arm-extended.jpg",
+      "description": "Robotic arm in fully extended configuration demonstrating workspace reach",
+      "priority": "results_key_image",
+      "source": "Extracted from PDF – Fig 12",
+      "placement": "Results section"
+    },
+    {
+      "file": "worm-gearbox-front.jpg",
+      "description": "CAD model of custom worm gearbox (front view) used for high-torque, non-backdrivable joints",
+      "priority": "technical_diagram",
+      "source": "Extracted from PDF – Fig 2a",
+      "placement": "Methodology – Actuator Design"
+    },
+    {
+      "file": "worm-gearbox-internal.jpg",
+      "description": "Internal view of worm gearbox showing gear meshing and shaft alignment",
+      "priority": "technical_diagram",
+      "source": "Extracted from PDF – Fig 2b",
+      "placement": "Methodology – Actuator Design"
+    },
+    {
+      "file": "cycloidal-drive.jpg",
+      "description": "CAD model of cycloidal gear drive (8:1 reduction) for wrist rotation",
+      "priority": "technical_diagram",
+      "source": "Extracted from PDF – Fig 3",
+      "placement": "Methodology – Actuator Design"
+    },
+    {
+      "file": "encompassing-gripper.jpg",
+      "description": "First iteration encompassing gripper design with modular mounting interface",
+      "priority": "methodology_image",
+      "source": "Extracted from PDF – Fig 4",
+      "placement": "Methodology – End Effector Design"
+    },
+    {
+      "file": "two-claw-gripper.jpg",
+      "description": "Final two-claw gripper design using spur gears and four-bar linkage mechanism",
+      "priority": "methodology_image",
+      "source": "Extracted from PDF – Fig 5",
+      "placement": "Methodology – End Effector Design"
+    },
+    {
+      "file": "camera-module.jpg",
+      "description": "Raspberry Pi HQ Camera module (Sony IMX477R, 12.3MP) selected for wrist-mounted vision",
+      "priority": "body_image",
+      "source": "Extracted from PDF – Fig 6",
+      "placement": "Methodology – Vision System"
+    },
+    {
+      "file": "camera-adapter.jpg",
+      "description": "Custom camera adapter mount designed for wrist integration",
+      "priority": "body_image",
+      "source": "Extracted from PDF – Fig 7",
+      "placement": "Methodology – Vision System"
+    },
+    {
+      "file": "camera-interface.jpg",
+      "description": "Camera adapter interfacing with robotic arm wrist showing dowel pin alignment features",
+      "priority": "technical_diagram",
+      "source": "Extracted from PDF – Fig 8",
+      "placement": "Methodology – Vision System"
+    },
+    {
+      "file": "force-sensor.jpg",
+      "description": "Force sensing strip selected as alternative to bulk-only force-torque sensors",
+      "priority": "body_image",
+      "source": "Extracted from PDF – Fig 9",
+      "placement": "Methodology – Sensing"
+    },
+    {
+      "file": "manufactured-gearbox.jpg",
+      "description": "3D printed gearbox prototype manufactured in PETG material",
+      "priority": "results_key_image",
+      "source": "Extracted from PDF – Fig 10",
+      "placement": "Results – Fabrication"
+    },
+    {
+      "file": "task-sequencing.jpg",
+      "description": "Task sequencing diagram showing pick-scan-place workflow",
+      "priority": "methodology_image",
+      "source": "Extracted from PDF – Fig 13",
+      "placement": "Methodology – System Architecture"
+    },
+    {
+      "file": "contour-detection-hand.jpg",
+      "description": "Contour detection output for hand/human detection in workspace (safety system)",
+      "priority": "body_image",
+      "source": "Extracted from PDF – Fig 14",
+      "placement": "Results – Safety System"
+    },
+    {
+      "file": "contour-detection-tubes.jpg",
+      "description": "Contour detection output for test tube identification",
+      "priority": "body_image",
+      "source": "Extracted from PDF – Fig 15",
+      "placement": "Results – Vision System"
+    },
+    {
+      "file": "test-tube-segregator-existing.jpg",
+      "description": "Existing conveyor-based test tube segregator system at Anand Diagnostic Center",
+      "priority": "body_image",
+      "source": "Extracted from PDF – Fig 1",
+      "placement": "Problem Statement section"
+    }
+  ],
+
+  "methodology": {
+    "sections": [
+      {
+        "name": "Requirements & Site Analysis",
+        "content": "Conducted on-site visit to Anand Diagnostic Center to understand the complete sample workflow—from registration through department segregation to archiving. Captured critical constraints: 1000×500mm floor space, <13kg total weight for portability, <₹1,25,000 budget, and 250g payload (with 1.67× safety factor). Identified key pain points in the existing conveyor system: manual barcode verification, no automated racking, and error-prone batch handling.",
+        "associated_media": ["test-tube-segregator-existing.jpg"]
+      },
+      {
+        "name": "Actuator Design & Selection",
+        "content": "Selected NEMA 17/23 stepper motors over servos for cost-effectiveness and ease of adding magnetic encoder feedback. Designed custom worm gearboxes (3:1 and 30:1 ratios) for their non-backdrivable characteristic—critical for holding payloads when powered off. Implemented cycloidal drive (8:1) for wrist rotation. All actuator housings were designed for 3D printing in PETG to handle motor temperatures up to 70°C.",
+        "associated_media": ["worm-gearbox-front.jpg", "worm-gearbox-internal.jpg", "cycloidal-drive.jpg", "demo-video.mp4"]
+      },
+      {
+        "name": "Joint Torque Calculations",
+        "content": "Performed torque calculations for all four joints considering link masses, payload, and fully extended arm configuration. Base joint required highest torque (233.25 kgcm), achieved using NEMA 23 with 30:1 worm reduction. Validated that selected motor-gearbox combinations provided adequate torque margins across the workspace.",
+        "associated_media": []
+      },
+      {
+        "name": "End Effector Design",
+        "content": "Iterated through two gripper designs. Initial encompassing gripper was modular but required separate camera mount. Final two-claw gripper used spur gears and four-bar linkage to achieve >3.5N gripping force (~0.5Nm torque). Integrated slots for force sensing strips as alternative to unavailable force-torque sensors.",
+        "associated_media": ["encompassing-gripper.jpg", "two-claw-gripper.jpg", "force-sensor.jpg"]
+      },
+      {
+        "name": "Vision System Integration",
+        "content": "Selected Raspberry Pi HQ Camera (Sony IMX477R, 12.3MP) for wrist-mounted test tube detection and cap orientation identification. Designed modular camera adapter with dowel pins for precise, repeatable mounting. Positioned camera above end effector to maximize field of view without gripper obstruction.",
+        "associated_media": ["camera-module.jpg", "camera-adapter.jpg", "camera-interface.jpg"]
+      },
+      {
+        "name": "Safety System Architecture",
+        "content": "Proposed overhead camera-based safety system using contour and line detection. When a human hand or body enters the robot's workspace, the system triggers an automatic stop. This architecture allows the robot to operate near human workers while maintaining safety compliance.",
+        "associated_media": ["contour-detection-hand.jpg", "task-sequencing.jpg"]
+      },
+      {
+        "name": "Fabrication & Assembly",
+        "content": "3D printed all gearbox housings, gripper components, and camera mounts in PETG. Selected PETG over PLA for thermal stability and mechanical strength. Assembled complete robot including motor wiring, sensor integration, and Raspberry Pi mounting. Final weight: 7.25kg (excluding payload).",
+        "associated_media": ["manufactured-gearbox.jpg", "robotic-arm-assembled.jpg", "robotic-arm-extended.jpg"]
+      }
+    ]
+  },
+
+  "results": {
+    "key_findings": [
+      "Achieved 7.25 kg total robot weight – 44% under the 13 kg portability constraint",
+      "Designed for 1 kg payload capacity with appropriate torque margins at all joints",
+      "Completed design and prototype within ₹1,25,000 budget",
+      "Successfully integrated contour detection for test tube identification and workspace safety",
+      "Non-backdrivable worm gear design ensures payload security during power-off",
+      "Modular design allows replication for archiving stations in other departments"
+    ],
+    "comparison_table": {
+      "title": "Motor-Gearbox Configuration by Joint",
+      "columns": ["Joint", "Motor", "Gearbox", "Reduction", "Required Torque (kgcm)"],
+      "rows": [
+        ["Wrist (T1)", "NEMA 17 (4.2 kgcm)", "Cycloidal", "8:1", "12.5"],
+        ["Link 2 (T2)", "NEMA 17 (4.2 kgcm)", "Worm", "3:1", "74"],
+        ["Link 1 (T3)", "NEMA 23 (10.1 kgcm)", "Worm", "30:1", "233.25"],
+        ["Base (T4)", "NEMA 23 (18.9 kgcm)", "Worm", "30:1", "—"]
+      ],
+      "highlight": "Worm gearboxes selected for non-backdrivability – arm holds position when powered off"
+    },
+    "validation": "Prototype was 3D printed and assembled. Actuators were tested for performance under load (see demo video). Static and dynamic stability validated through ANSYS FEA. Contour detection algorithms demonstrated successful hand and test tube identification.",
+    "future_scope": [
+      "Integrate magnetic encoders on stepper motors for closed-loop position feedback",
+      "Add force-torque sensor at wrist for adaptive gripping and collision detection",
+      "Develop path planning algorithms for optimal pick-scan-place trajectories",
+      "Implement ROS-based control architecture for easier scaling and maintenance",
+      "Deploy and validate with live test tube samples at Anand Diagnostic Center"
+    ]
+  },
+
+  "additional_information_section": {
+    "primary_document": {
+      "file": "Robotic_Automation_Solution_Rashmi_Avva.pdf",
+      "reason": "Complete internship report with methodology, calculations, CAD figures, and results"
+    },
+    "supplementary_documents": [],
+    "optional_documents": []
+  },
+
+  "website_text_replacements": {
+    "page_title": "Laboratory Robotic Automation | Sai Pranav Avva",
+    "meta_description": "Designed a 4-DOF robotic arm for automated test tube handling at a diagnostic lab. Led mechanical design, CAD, FEA, 3D printing, and cross-functional coordination.",
+    "hero_section": {
+      "title": "Robotic Automation for Laboratory Test Tube Handling",
+      "subtitle_tagline": "4-DOF pick-and-place arm for automated sample segregation and racking",
+      "institution_credit_line": "PES University × Anand Diagnostic Center",
+      "date_line": "Sep – Nov 2021",
+      "role_contribution_line": "Design Domain Lead: CAD, FEA, fabrication, component sourcing, budget management, and cross-domain coordination for 4-person team"
+    },
+    "hero_video": {
+      "file": "demo-video.mp4",
+      "alt_text": "Demo video of robotic arm motor and segment actuation",
+      "caption": "Prototype motor and arm segment test"
+    },
+    "hero_image": {
+      "file": "robotic-arm-assembled.jpg",
+      "alt_text": "Assembled 4-DOF robotic arm with two-claw gripper and wrist-mounted camera for laboratory test tube handling"
+    },
+    "body_images": [
+      {"file": "worm-gearbox-front.jpg", "caption": "Custom worm gearbox design – non-backdrivable for payload safety"},
+      {"file": "cycloidal-drive.jpg", "caption": "Cycloidal drive (8:1 reduction) for compact wrist actuation"},
+      {"file": "two-claw-gripper.jpg", "caption": "Two-claw gripper with four-bar linkage mechanism"},
+      {"file": "camera-interface.jpg", "caption": "Modular camera mount with dowel pin alignment"},
+      {"file": "manufactured-gearbox.jpg", "caption": "3D printed gearbox in PETG for heat resistance"},
+      {"file": "robotic-arm-extended.jpg", "caption": "Robot in fully extended configuration"},
+      {"file": "contour-detection-tubes.jpg", "caption": "Computer vision for test tube detection"}
+    ],
+    "skills_tags": [
+      "SolidWorks",
+      "ANSYS FEA",
+      "3D Printing",
+      "Mechanical Design",
+      "Robotic Arm Design",
+      "Gear Design",
+      "Torque Calculations",
+      "Raspberry Pi",
+      "Python",
+      "Computer Vision",
+      "PETG",
+      "Stepper Motors",
+      "Product Development",
+      "Requirements Engineering",
+      "Budget Management"
+    ],
+    "key_achievements": [
+      "Designed 4-DOF robot weighing 7.25 kg (44% under 13 kg target) with 1 kg payload capacity",
+      "Delivered complete prototype within ₹1,25,000 budget constraint",
+      "Custom worm and cycloidal gearbox designs for non-backdrivable, high-torque joints",
+      "Proposed and architected contour detection-based safety system for human-robot workspace sharing"
+    ]
+  },
+
+  "source_files": {
+    "images": [
+      "robotic-arm-assembled.jpg",
+      "robotic-arm-extended.jpg",
+      "worm-gearbox-front.jpg",
+      "worm-gearbox-internal.jpg",
+      "cycloidal-drive.jpg",
+      "encompassing-gripper.jpg",
+      "two-claw-gripper.jpg",
+      "camera-module.jpg",
+      "camera-adapter.jpg",
+      "camera-interface.jpg",
+      "force-sensor.jpg",
+      "manufactured-gearbox.jpg",
+      "task-sequencing.jpg",
+      "contour-detection-hand.jpg",
+      "contour-detection-tubes.jpg",
+      "test-tube-segregator-existing.jpg"
+    ],
+    "presentations": [],
+    "documents": ["Robotic_Automation_Solution_Rashmi_Avva.pdf"],
+    "videos": ["demo-video.mp4"]
+  },
+
+  "file_placement": {
+    "images_folder": "images/laboratory-robotic-automation/",
+    "documents_folder": "documents/Laboratory Automation/",
+    "videos_folder": "images/laboratory-robotic-automation/",
+    "page_file": "work2/laboratory-robotic-automation.html"
+  },
+
+  "reference_template_url": "https://avvasai.github.io/work2/project1.html",
+
+  "notes": [
+    "⚠️ All images need to be extracted from the PDF – no separate image files provided",
+    "📷 Recommend extracting Fig 11 or 12 as hero image (assembled robot)",
+    "🎬 Demo video available – short clip showing motor and arm segment working; use as lead media above hero image",
+    "📹 Rename video file from 'demo video' to 'demo-video.mp4' for URL consistency",
+    "📊 Tables in report have been preserved with exact values",
+    "💡 Consider adding original SolidWorks renders if CAD files are still available – would significantly improve visual quality",
+    "🔧 Project folder already exists: documents/Laboratory Automation/ – confirm this is the correct location"
+  ]
+}

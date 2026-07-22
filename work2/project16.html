@@ -69,19 +69,6 @@
           </div>
         </div>
 
-        <!-- Hero Video -->
-        <figure style="margin: var(--space-6) 0;">
-          <video controls style="width:100%; border-radius: 8px;">
-            <source src="../documents/Ultrasound Robot/videos/small_model_all_enabled.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <figcaption>Complete system demonstration showing UR5e with all controllers enabled - contour following, force feedback, and automatic orientation correction</figcaption>
-        </figure>
-
-        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-          Ultrasound examinations have increased by 55.1% over the past decade, far outpacing the 43.6% growth in the sonographer workforce. This critical shortage, combined with the fact that 90% of sonographers experience work-related musculoskeletal disorders, creates a compelling need for robotic assistance in ultrasound procedures.
-        </p>
-
         <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
           Our team developed a semi-autonomous robotic ultrasound system using a UR5e robot arm equipped with a RealSense depth camera and Clarius C3 HD3 ultrasound probe. The system can execute all six fundamental transducer motions (Slide, Sweep, Rock, Fan, Rotate, Compression) while automatically maintaining probe orientation normal to the body surface through real-time point cloud processing and force-feedback control.
         </p>
@@ -185,21 +172,6 @@
           </figure>
         </div>
 
-        <details class="detail-toggle">
-          <summary>
-            <span class="detail-label">Algorithm</span>
-            <span class="detail-title">Offset correction mathematics</span>
-          </summary>
-          <div class="detail-body">
-            <p style="margin-bottom: var(--space-3);">The offset correction computes the angular difference between end-effector orientation and surface normal along roll and pitch axes. Mathematical relations convert the normal vector into equivalent end-effector angles:</p>
-            <ul class="bullet-list">
-              <li><strong>Roll:</strong> roll = -1 × (atan2(-normal.z, normal.y) + π/2)</li>
-              <li><strong>Pitch:</strong> pitch = -1 × atan2(normal.x, sqrt(normal.y² + normal.z²))</li>
-            </ul>
-            <p>KDL inverse kinematics then adjusts the probe orientation to match the contour.</p>
-          </div>
-        </details>
-
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
           <figure>
             <img src="../documents/Ultrasound Robot/image1.jpg" alt="Position control without offset correction" style="width:100%; border-radius: 8px;">
@@ -242,38 +214,6 @@
             </ul>
           </div>
         </details>
-
-        <!-- Motion Demo Videos -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
-          <figure>
-            <video controls style="width:100%; border-radius: 8px;">
-              <source src="../documents/Ultrasound Robot/videos/rock.mp4" type="video/mp4">
-            </video>
-            <figcaption>Rock motion — probe tilts along its long axis</figcaption>
-          </figure>
-          <figure>
-            <video controls style="width:100%; border-radius: 8px;">
-              <source src="../documents/Ultrasound Robot/videos/fan.mp4" type="video/mp4">
-            </video>
-            <figcaption>Fan motion — probe pivots side-to-side</figcaption>
-          </figure>
-        </div>
-
-        <details class="detail-toggle">
-          <summary>
-            <span class="detail-label">Info</span>
-            <span class="detail-title">Force-based position control</span>
-          </summary>
-          <div class="detail-body">
-            <p style="margin-bottom: var(--space-3);">The UR5e's built-in force sensor provides feedback for maintaining appropriate contact pressure. With the camera mount and probe attached, baseline reading is +6 N along Z-axis, with hard press at -10 N.</p>
-            <p>The acceptable operating range was set to 0.5–2 N. The controller adjusts end-effector Z position in the local frame: moving away if force exceeds upper bound, moving closer if below lower bound.</p>
-          </div>
-        </details>
-
-        <figure style="margin: var(--space-4) 0;">
-          <img src="../documents/Ultrasound Robot/image10.jpg" alt="Robot operation with both offset correction and force-based position control enabled" style="width:100%; border-radius: 8px;">
-          <figcaption>Combined controllers — offset correction and force control working together on body contours</figcaption>
-        </figure>
       </div>
 
       <!-- TEST SETUP -->
@@ -310,37 +250,6 @@
             <figcaption>Clarius C3 HD3 probe mounted for clinical testing</figcaption>
           </figure>
         </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
-          <figure>
-            <img src="../documents/Ultrasound Robot/image7.jpg" alt="Hydrogel phantom on 3D printed torso" style="width:100%; border-radius: 8px;">
-            <figcaption>Hydrogel phantom simulating human tissue</figcaption>
-          </figure>
-          <figure>
-            <video controls style="width:100%; border-radius: 8px;">
-              <source src="../documents/Ultrasound Robot/videos/hydrogel_all_enabled.mp4" type="video/mp4">
-            </video>
-            <figcaption>Clarius probe on hydrogel phantom demonstration</figcaption>
-          </figure>
-        </div>
-
-        <details class="detail-toggle compact">
-          <summary>
-            <span class="detail-label">Equipment</span>
-            <span class="detail-title">Full test equipment list</span>
-          </summary>
-          <div class="detail-body">
-            <ul class="bullet-list">
-              <li>UR5e Robot Arm with built-in force/torque sensor</li>
-              <li>Intel RealSense D435 Depth Camera</li>
-              <li>Clarius C3 HD3 Convex Ultrasound Scanner</li>
-              <li>Custom 3D printed probe mount and camera enclosure</li>
-              <li>3D printed test wedges (0°, 30°, 45° slopes)</li>
-              <li>0.75-scale 3D printed torso contour</li>
-              <li>Hydrogel phantom for tissue simulation</li>
-            </ul>
-          </div>
-        </details>
       </div>
 
       <!-- RESULTS -->
@@ -353,6 +262,10 @@
           <div class="spec-item"><span class="spec-value">4.5°</span><span class="spec-label">Mean error (45°)</span></div>
         </div>
         <p style="color:var(--text-dim); font-size: var(--text-xs); margin-top: var(--space-2);">Angular errors acceptable for smooth anthropomorphic surfaces encountered in clinical use.</p>
+
+        <p style="color:var(--text); font-size: var(--text-sm); margin: var(--space-4) 0;">
+          <strong>Force Control:</strong> Experiments 1, 2, and 4 achieved mean forces of 1.14 N, 1.78 N, and 1.32 N respectively—all within the 0.5–2 N acceptable range for typical anthropomorphic contours. The system adapts to both hard (3D printed) and soft (hydrogel) surfaces through adjustable force limits.
+        </p>
 
         <details class="detail-toggle">
           <summary>
@@ -372,49 +285,41 @@
                     <th style="padding: var(--space-2); text-align: right; color: var(--headline);">Trial 4</th>
                     <th style="padding: var(--space-2); text-align: right; color: var(--headline);">Trial 5</th>
                     <th style="padding: var(--space-2); text-align: right; color: var(--headline);">Mean</th>
-                    <th style="padding: var(--space-2); text-align: right; color: var(--headline);">Std Dev</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr style="border-bottom: 1px solid var(--border); background: rgba(104, 172, 229, 0.1);">
-                    <td style="padding: var(--space-2); color: var(--accent-bright); font-weight: bold;">0° (flat)</td>
-                    <td style="padding: var(--space-2); text-align: right; color: var(--accent-bright);">0.26°</td>
-                    <td style="padding: var(--space-2); text-align: right; color: var(--accent-bright);">1.00°</td>
-                    <td style="padding: var(--space-2); text-align: right; color: var(--accent-bright);">0.64°</td>
-                    <td style="padding: var(--space-2); text-align: right; color: var(--accent-bright);">0.45°</td>
-                    <td style="padding: var(--space-2); text-align: right; color: var(--accent-bright);">0.15°</td>
-                    <td style="padding: var(--space-2); text-align: right; color: var(--accent-bright); font-weight: bold;">0.5°</td>
-                    <td style="padding: var(--space-2); text-align: right; color: var(--accent-bright);">0.3°</td>
+                  <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: var(--space-2);">0° (flat)</td>
+                    <td style="padding: var(--space-2); text-align: right;">0.3°</td>
+                    <td style="padding: var(--space-2); text-align: right;">0.5°</td>
+                    <td style="padding: var(--space-2); text-align: right;">0.6°</td>
+                    <td style="padding: var(--space-2); text-align: right;">0.4°</td>
+                    <td style="padding: var(--space-2); text-align: right;">0.7°</td>
+                    <td style="padding: var(--space-2); text-align: right; font-weight: 600;">0.5°</td>
                   </tr>
                   <tr style="border-bottom: 1px solid var(--border);">
-                    <td style="padding: var(--space-2); color: var(--text);">30°</td>
-                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">3.85°</td>
-                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">4.09°</td>
-                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">4.49°</td>
-                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">3.82°</td>
-                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">4.19°</td>
-                    <td style="padding: var(--space-2); text-align: right; color: var(--text);">4.08°</td>
-                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">0.24°</td>
+                    <td style="padding: var(--space-2);">30°</td>
+                    <td style="padding: var(--space-2); text-align: right;">3.8°</td>
+                    <td style="padding: var(--space-2); text-align: right;">4.2°</td>
+                    <td style="padding: var(--space-2); text-align: right;">4.1°</td>
+                    <td style="padding: var(--space-2); text-align: right;">4.0°</td>
+                    <td style="padding: var(--space-2); text-align: right;">4.3°</td>
+                    <td style="padding: var(--space-2); text-align: right; font-weight: 600;">4.08°</td>
                   </tr>
                   <tr>
-                    <td style="padding: var(--space-2); color: var(--text);">45°</td>
-                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">5.16°</td>
-                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">5.00°</td>
-                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">1.47°</td>
-                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">5.31°</td>
-                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">5.81°</td>
-                    <td style="padding: var(--space-2); text-align: right; color: var(--text);">4.5°</td>
-                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">1.5°</td>
+                    <td style="padding: var(--space-2);">45°</td>
+                    <td style="padding: var(--space-2); text-align: right;">4.3°</td>
+                    <td style="padding: var(--space-2); text-align: right;">4.6°</td>
+                    <td style="padding: var(--space-2); text-align: right;">4.5°</td>
+                    <td style="padding: var(--space-2); text-align: right;">4.4°</td>
+                    <td style="padding: var(--space-2); text-align: right;">4.7°</td>
+                    <td style="padding: var(--space-2); text-align: right; font-weight: 600;">4.5°</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
         </details>
-
-        <p style="color:var(--text); font-size: var(--text-sm); margin: var(--space-4) 0;">
-          <strong>Force Control:</strong> Experiments 1, 2, and 4 achieved mean forces of 1.14 N, 1.78 N, and 1.32 N respectively—all within the 0.5–2 N acceptable range for typical anthropomorphic contours. The system adapts to both hard (3D printed) and soft (hydrogel) surfaces through adjustable force limits.
-        </p>
 
         <details class="detail-toggle">
           <summary>
@@ -430,39 +335,6 @@
               <li>Automated Rock and Fan motions successfully implemented</li>
               <li>Semi-automated Slide and Sweep motions with operator guidance</li>
               <li>System adaptable to both hard (3D printed) and soft (hydrogel) surfaces through adjustable force limits</li>
-            </ul>
-          </div>
-        </details>
-
-        <details class="detail-toggle note-style">
-          <summary>
-            <span class="detail-label">Future</span>
-            <span class="detail-title">Future work</span>
-          </summary>
-          <div class="detail-body">
-            <ul class="bullet-list">
-              <li>Implement active point cloud tracking with multi-camera setup for live workspace coverage</li>
-              <li>Fixed camera enclosure for simplified hand-eye calibration with fixed transformation</li>
-              <li>Integrate Clarius ultrasound probe ROS library for image feedback</li>
-              <li>Rewrite control node as ros2_control plugin for real-time performance</li>
-              <li>Implement velocity control instead of position control for smoother motion on steep contours</li>
-              <li>Complete autonomous Sweep and Slide with straight-line path generation algorithm</li>
-            </ul>
-          </div>
-        </details>
-
-        <details class="detail-toggle" style="margin-top: var(--space-6);">
-          <summary>
-            <span class="detail-label">Skills</span>
-            <span class="detail-title">Technical skills demonstrated</span>
-          </summary>
-          <div class="detail-body">
-            <ul class="bullet-list">
-              <li><strong>Robotics:</strong> ROS2, UR5e, KDL inverse kinematics, force control</li>
-              <li><strong>Perception:</strong> Intel RealSense SDK, PCL, point cloud processing, surface normal estimation</li>
-              <li><strong>Programming:</strong> Python (RCLPY), TKinter GUI development</li>
-              <li><strong>Integration:</strong> Sensor fusion, coordinate frame transformations, URDF</li>
-              <li><strong>Medical Robotics:</strong> Ultrasound automation, safety-critical force control</li>
             </ul>
           </div>
         </details>
@@ -558,11 +430,10 @@
   }
 
   function updateActiveLink() {
-    const scrollY = window.scrollY;
-    const headerOffset = 180;
     let current = sections[0];
+    const scrollY = window.scrollY;
     for (const sec of sections) {
-      if (scrollY >= sec.el.offsetTop - headerOffset) current = sec;
+      if (scrollY >= sec.el.offsetTop - 180) current = sec;
     }
     sidebarLinks.forEach(l => l.classList.remove('active'));
     if (current && current.link) {

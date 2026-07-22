@@ -13,7 +13,7 @@
   <h1 class="giant-name">Avva Sai Pranav</h1>
   <nav class="pill-nav">
     <div class="pill-links">
-      <a href="index.html" class="pill active">Home</a>
+      <a href="#home" class="pill active">Home</a>
       <a href="#info" class="pill">Projects</a>
       <a href="#resume" class="pill">Resume</a>
       <a href="#contact" class="pill">Contact</a>
@@ -28,7 +28,7 @@
   </nav>
 </header>
 
-<section class="hero-banner">
+<section class="hero-banner" id="home">
   <svg class="blueprint-svg" viewBox="0 0 1600 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <pattern id="bp-grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -261,6 +261,67 @@
         chip.classList.add('active');
         highlightDomain(chip.dataset.domain);
       }
+    });
+  });
+
+  // ========================================
+  // SCROLL SPY FOR NAVIGATION PILLS - FIX
+  // ========================================
+  const navPills = document.querySelectorAll('.pill-links .pill');
+  const navSections = document.querySelectorAll('#home, #skills, #info, #resume, #contact');
+
+  function updateActiveNav() {
+    const scrollPos = window.scrollY + 180; // Offset for sticky header
+    
+    let currentSection = 'home';
+    
+    navSections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      
+      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+        currentSection = section.getAttribute('id');
+      }
+    });
+    
+    // Map section IDs to nav hrefs
+    const sectionToNav = {
+      'home': '#home',
+      'skills': '#home',  // Skills section maps to Home nav
+      'info': '#info',
+      'resume': '#resume',
+      'contact': '#contact'
+    };
+    
+    const activeHref = sectionToNav[currentSection] || '#home';
+    
+    navPills.forEach(pill => {
+      pill.classList.remove('active');
+      if (pill.getAttribute('href') === activeHref) {
+        pill.classList.add('active');
+      }
+    });
+  }
+
+  // Listen for scroll events with throttling for performance
+  let scrollTimeout;
+  window.addEventListener('scroll', () => {
+    if (scrollTimeout) {
+      window.cancelAnimationFrame(scrollTimeout);
+    }
+    scrollTimeout = window.requestAnimationFrame(() => {
+      updateActiveNav();
+    });
+  });
+
+  // Update on page load
+  updateActiveNav();
+
+  // Also update when clicking nav links (for immediate feedback)
+  navPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      navPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
     });
   });
 

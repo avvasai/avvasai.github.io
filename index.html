@@ -79,39 +79,41 @@
   <p class="section-eyebrow">About</p>
   <h2>Projects &amp; Domains</h2>
   <p style="color:var(--text-dim); max-width:62ch; margin-bottom: var(--space-6); font-size: var(--text-sm);">
-    Hover or tap a domain on the right to see related project cards highlight on the left.
+    Tap a domain to highlight its projects. Tap it again to clear.
   </p>
 
   <div class="projects-skills">
+    <div class="domain-filter" role="group" aria-label="Filter projects by domain">
+      <button type="button" class="chip" data-domain="domain-1" aria-pressed="false">Medical Robotics</button>
+      <!-- <button type="button" class="chip" data-domain="domain-2" aria-pressed="false">Medical Imaging</button> -->
+      <button type="button" class="chip" data-domain="domain-3" aria-pressed="false">Mechanical and Automotive</button>
+      <button type="button" class="chip" data-domain="domain-4" aria-pressed="false">Embedded Systems</button>
+      <button type="button" class="chip" data-domain="domain-5" aria-pressed="false">Computer Science</button>
+    </div>
     <div class="bubble-field">
-      <a href="work2/project1.html"><button id="proj_one" type="button" class="bubble rectangle" data-domains="domain-4 domain-3">MEMS Engineer : Navigational Sensors</button></a>
-      <a href="work2/project7.html"><button id="proj_seven" type="button" class="bubble rectangle" data-domains="domain-5 domain-3 domain-4">DIY BenchTop Power Supply</button></a>
-      <a href="work2/project10.html"><button id="proj_ten" type="button" class="bubble rectangle" data-domains="domain-3 domain-1 domain-4 domain-5">Automatic Test Tube Handling</button></a>
-      <a href="work2/project11.html"><button id="proj_eleven" type="button" class="bubble rectangle" data-domains="domain-5 domain-3 domain-4">Micro-Mobility Vehicle Electronics</button></a>
+      <a href="work2/project1.html" id="proj_one" class="bubble rectangle" data-domains="domain-4 domain-3">MEMS Engineer : Navigational Sensors</a>
+      <a href="work2/project7.html" id="proj_seven" class="bubble rectangle" data-domains="domain-5 domain-3 domain-4">DIY BenchTop Power Supply</a>
+      <a href="work2/project10.html" id="proj_ten" class="bubble rectangle" data-domains="domain-3 domain-1 domain-4 domain-5">Automatic Test Tube Handling</a>
+      <a href="work2/project11.html" id="proj_eleven" class="bubble rectangle" data-domains="domain-5 domain-3 domain-4">Micro-Mobility Vehicle Electronics</a>
 
-      <a href="work2/project13.html"><button id="proj_thirteen" type="button" class="bubble rectangle" data-domains="domain-3 domain-1 domain-4 domain-5">Robotic Assistant for MRI-Guided Low Back Pain Injections</button></a>
-      <a href="work2/project6.html"><button id="proj_six" type="button" class="bubble rectangle" data-domains="domain-1 domain-4">Haptic-Guided Magnetic Microrobot Navigation</button></a>
-      <a href="work2/project12.html"><button id="proj_twelve" type="button" class="bubble rectangle" data-domains="domain-3 domain-1 domain-4 domain-5">MRI-Guided Lumbar Spine Needle Insertion Robot</button></a>
-      <a href="work2/project14.html"><button id="proj_fourteen" type="button" class="bubble rectangle" data-domains="domain-1 domain-3 domain-5">MRI-Guided Soft Robotic Catheter for Lung Biopsy Navigation</button></a>
+      <a href="work2/project13.html" id="proj_thirteen" class="bubble rectangle" data-domains="domain-3 domain-1 domain-4 domain-5">Robotic Assistant for MRI-Guided Low Back Pain Injections</a>
+      <a href="work2/project6.html" id="proj_six" class="bubble rectangle" data-domains="domain-1 domain-4">Haptic-Guided Magnetic Microrobot Navigation</a>
+      <a href="work2/project12.html" id="proj_twelve" class="bubble rectangle" data-domains="domain-3 domain-1 domain-4 domain-5">MRI-Guided Lumbar Spine Needle Insertion Robot</a>
+      <a href="work2/project14.html" id="proj_fourteen" class="bubble rectangle" data-domains="domain-1 domain-3 domain-5">MRI-Guided Soft Robotic Catheter for Lung Biopsy Navigation</a>
 
-      <a href="work2/project16.html"><button id="proj_sixteen" type="button" class="bubble rectangle" data-domains="domain-3 domain-1 domain-5">Semi-Autonomous Robotic Ultrasound Scanning with UR5e and RealSense</button></a>
-      <a href="work2/project2.html"><button id="proj_two" type="button" class="bubble rectangle" data-domains="domain-3">Biomimetic Hummingbird: Wing Kinematics & Mechanism Design</button></a>
-      <a href="work2/project15.html"><button id="proj_fifteen" type="button" class="bubble rectangle" data-domains="domain-4 domain-5 domain-3">Formula Student Racing Team</button></a>
-      <a href="work2/project4.html"><button id="proj_four" type="button" class="bubble rectangle" data-domains="domain-3 domain-5">Computational Design of Machine Elements</button></a>
+      <a href="work2/project16.html" id="proj_sixteen" class="bubble rectangle" data-domains="domain-3 domain-1 domain-5">Semi-Autonomous Robotic Ultrasound Scanning with UR5e and RealSense</a>
+      <a href="work2/project2.html" id="proj_two" class="bubble rectangle" data-domains="domain-3">Biomimetic Hummingbird: Wing Kinematics & Mechanism Design</a>
+      <a href="work2/project15.html" id="proj_fifteen" class="bubble rectangle" data-domains="domain-4 domain-5 domain-3">Formula Student Racing Team</a>
+      <a href="work2/project4.html" id="proj_four" class="bubble rectangle" data-domains="domain-3 domain-5">Computational Design of Machine Elements</a>
 
-      <a href="work2/project5.html"><button id="proj_five" type="button" class="bubble rectangle" data-domains="domain-1 domain-4 domain-5">Haptic Device for Knee Instability</button></a>
-      <a href="work2/project3.html"><button id="proj_three" type="button" class="bubble rectangle" data-domains="domain-1 domain-5">Biomedical Data Design</button></a>
-      <a href="work2/project8.html"><button id="proj_eight" type="button" class="bubble rectangle" data-domains="domain-3">CAD Mechanisms & FEA</button></a>
-      <a href="work2/project9.html"><button id="proj_nine" type="button" class="bubble rectangle" data-domains="domain-3 domain-4 domain-5">DIY 3D Printer using CD-Drives</button></a>
+      <a href="work2/project5.html" id="proj_five" class="bubble rectangle" data-domains="domain-1 domain-4 domain-5">Haptic Device for Knee Instability</a>
+      <a href="work2/project3.html" id="proj_three" class="bubble rectangle" data-domains="domain-1 domain-5">Biomedical Data Design</a>
+      <a href="work2/project8.html" id="proj_eight" class="bubble rectangle" data-domains="domain-3">CAD Mechanisms & FEA</a>
+      <a href="work2/project9.html" id="proj_nine" class="bubble rectangle" data-domains="domain-3 domain-4 domain-5">DIY 3D Printer using CD-Drives</a>
+
+      <a href="work2/ycomb.html" id="proj_mitodex" class="bubble rectangle" data-domains="domain-4 domain-5">Mito Dex – Coursera for Robots</a>
     </div>
 
-    <div class="skills-list">
-      <span class="chip" data-domain="domain-1">Medical Robotics</span>
-      <!-- <span class="chip" data-domain="domain-2">Medical Imaging</span> -->
-      <span class="chip" data-domain="domain-3">Mechanical and Automotive</span>
-      <span class="chip" data-domain="domain-4">Embedded Systems</span>
-      <span class="chip" data-domain="domain-5">Computer Science</span>
-    </div>
   </div>
 </section>
 
@@ -181,8 +183,9 @@
   setInterval(tickClock, 1000);
 
   // Domain highlighting for project bubbles
-  const domainChips = document.querySelectorAll('.skills-list .chip');
+  const domainChips = document.querySelectorAll('.domain-filter .chip');
   const bubbles = document.querySelectorAll('.bubble[data-domains]');
+  let activeDomain = null;
 
   function highlightDomain(domain) {
     bubbles.forEach(b => {
@@ -191,21 +194,26 @@
       b.classList.toggle('dim', !matches);
     });
   }
-  function clearHighlight() {
-    bubbles.forEach(b => b.classList.remove('highlight', 'dim'));
-    domainChips.forEach(c => c.classList.remove('active'));
+  function showActive() {
+    if (activeDomain) highlightDomain(activeDomain);
+    else bubbles.forEach(b => b.classList.remove('highlight', 'dim'));
   }
 
+  // Tap/click toggles a domain; hover previews only on devices with a mouse
+  const canHover = window.matchMedia('(hover: hover)').matches;
   domainChips.forEach(chip => {
-    chip.addEventListener('mouseenter', () => highlightDomain(chip.dataset.domain));
-    chip.addEventListener('mouseleave', clearHighlight);
+    if (canHover) {
+      chip.addEventListener('mouseenter', () => highlightDomain(chip.dataset.domain));
+      chip.addEventListener('mouseleave', showActive);
+    }
     chip.addEventListener('click', () => {
-      const isActive = chip.classList.contains('active');
-      clearHighlight();
-      if (!isActive) {
-        chip.classList.add('active');
-        highlightDomain(chip.dataset.domain);
-      }
+      activeDomain = activeDomain === chip.dataset.domain ? null : chip.dataset.domain;
+      domainChips.forEach(c => {
+        const on = c.dataset.domain === activeDomain;
+        c.classList.toggle('active', on);
+        c.setAttribute('aria-pressed', on);
+      });
+      showActive();
     });
   });
 

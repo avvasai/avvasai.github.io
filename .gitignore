@@ -1,0 +1,4 @@
+# Local tooling output
+.archify/
+graphify-out/
+.gitattributes

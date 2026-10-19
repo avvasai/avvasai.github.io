@@ -232,16 +232,43 @@ html { scroll-padding-top: calc(var(--bar-h) + var(--space-4)); }
   .bubble-field > .bubble { flex-basis: calc((100% - var(--gap)) / 2); }
 }
 
-/* Phone: single-column list */
+/* Card content: title, role · result line, primary domain tag at the bottom */
+.bubble-field > .bubble.rectangle {
+  flex-direction: column; align-items: flex-start; justify-content: flex-start;
+  gap: var(--space-2); text-align: left;
+  padding: var(--space-4);
+}
+.card-title {
+  font-size: var(--text-base); font-weight: 700; line-height: 1.25;
+  color: var(--headline);
+}
+.card-role {
+  font-size: var(--text-sm); font-weight: 400; line-height: 1.4;
+  color: var(--text-dim);
+}
+/* Domain tags: primary first with a gold outline, the rest neutral */
+.card-tags {
+  margin-top: auto; padding-top: var(--space-2);
+  display: flex; flex-wrap: wrap; gap: .3rem;
+}
+.card-tag {
+  font-size: .68rem; font-weight: 600; letter-spacing: .02em;
+  padding: .15em .6em; border-radius: 999px;
+  border: 1px solid var(--border); color: var(--text-dim);
+}
+.card-tag:first-child { border-color: var(--jhu-gold); }
+
+/* Phone: single-column list (title + role line, no tag) */
 @media (max-width: 600px) {
   .bubble-field { --gap: var(--space-2); }
   .bubble-field > .bubble.rectangle {
     flex-basis: 100%;
     aspect-ratio: auto; min-height: 52px;
-    justify-content: flex-start; text-align: left;
+    gap: .25rem;
     padding: var(--space-3) var(--space-4);
     --bscale: 1;
   }
+  .card-tags { display: none; }
 }
 
 .bubble {

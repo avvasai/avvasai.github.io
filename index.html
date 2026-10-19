@@ -49,28 +49,81 @@
 <section id="skills" class="skills-section">
   <h2 class="section-title">Skills</h2>
   
-  <div class="skills-container">
-    <!-- Central display area -->
-    <div class="skills-center-display">
-      <div class="current-category-title"></div>
-      <div class="skills-cloud"></div>
+  <div class="skills-grid">
+    <div class="skill-col">
+      <h3>Mechanical</h3>
+      <ul class="skill-list">
+        <li>MEMS Design</li>
+        <li>COMSOL Multiphysics</li>
+        <li>Finite Element Analysis</li>
+        <li>ANSYS</li>
+        <li>SolidWorks</li>
+        <li>AutoCAD</li>
+        <li>Creo Parametric</li>
+        <li>Microfabrication</li>
+        <li>SEM Imaging</li>
+        <li>LDV Characterization</li>
+        <li>Vibration Analysis</li>
+        <li>Thermal Analysis</li>
+        <li>3D Printing</li>
+        <li>GD&amp;T</li>
+      </ul>
     </div>
-    
-    <!-- Four corner boxes -->
-    <div class="skill-box top-left" data-category="mechanical">
-      <span class="box-label">Mechanical</span>
+    <div class="skill-col">
+      <h3>Electronics</h3>
+      <ul class="skill-list">
+        <li>Circuit Design</li>
+        <li>PCB Layout</li>
+        <li>Altium Designer</li>
+        <li>KiCad</li>
+        <li>Oscilloscopes</li>
+        <li>Signal Generators</li>
+        <li>Lock-in Amplifiers</li>
+        <li>Capacitive Sensing</li>
+        <li>Analog Design</li>
+        <li>Wire Bonding</li>
+        <li>Soldering</li>
+        <li>Power Electronics</li>
+        <li>Arduino</li>
+        <li>Raspberry Pi</li>
+      </ul>
     </div>
-    
-    <div class="skill-box top-right" data-category="electronics">
-      <span class="box-label">Electronics</span>
+    <div class="skill-col">
+      <h3>Robotics &amp; Controls</h3>
+      <ul class="skill-list">
+        <li>ROS/ROS2</li>
+        <li>MATLAB/Simulink</li>
+        <li>Control Systems</li>
+        <li>PID Tuning</li>
+        <li>State Estimation</li>
+        <li>Kalman Filtering</li>
+        <li>Sensor Fusion</li>
+        <li>Motion Planning</li>
+        <li>Kinematics</li>
+        <li>Dynamics</li>
+        <li>LabVIEW</li>
+        <li>Data Acquisition</li>
+        <li>Robotic Arm Programming</li>
+        <li>UR5e</li>
+        <li>RealSense Cameras</li>
+      </ul>
     </div>
-    
-    <div class="skill-box bottom-left" data-category="robotics">
-      <span class="box-label">Robotics & Controls</span>
-    </div>
-    
-    <div class="skill-box bottom-right" data-category="cs">
-      <span class="box-label">Computer Science</span>
+    <div class="skill-col">
+      <h3>Computer Science</h3>
+      <ul class="skill-list">
+        <li>Python</li>
+        <li>C/C++</li>
+        <li>MATLAB</li>
+        <li>Git/GitHub</li>
+        <li>Linux</li>
+        <li>Machine Learning Basics</li>
+        <li>Computer Vision</li>
+        <li>OpenCV</li>
+        <li>Image Processing</li>
+        <li>NumPy</li>
+        <li>Pandas</li>
+        <li>Matplotlib</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -120,13 +173,82 @@
 <section class="section" id="resume">
   <p class="section-eyebrow">Resume</p>
   <h2>Resume</h2>
-  <p style="color:var(--text-dim); max-width:62ch; margin-bottom: var(--space-6); font-size: var(--text-sm);">
-    My full resume with education, experience, and skills.
-  </p>
+  <p class="resume-intro">Education, experience, projects and publications — two pages.</p>
+  <div class="resume-actions">
+    <a href="documents/Avva_Mechatronics.pdf" class="btn-primary" download="Avva_Sai_Pranav_Resume.pdf">Download Resume (PDF)</a>
+    <a href="documents/Avva_Mechatronics.pdf" class="btn-outline" target="_blank" rel="noopener">Open in new tab</a>
+  </div>
+
+  <h3 class="timeline-title">Experience &amp; Education</h3>
+  <ol class="timeline">
+    <li>
+      <span class="tl-date">Sep 2026 – Present</span>
+      <div class="tl-body">
+        <p class="tl-role">Mechatronics Engineer, Robotics Integration</p>
+        <p class="tl-org">Deploy Inc (YC 26)</p>
+        <p class="tl-note">Scaled warehouse robot cells to 3 systems; built custom grippers, 6 leader arms and enclosures for 12-hour continuous operation.</p>
+      </div>
+    </li>
+    <li>
+      <span class="tl-date">Aug 2025 – Aug 2026</span>
+      <div class="tl-body">
+        <p class="tl-role">Graduate Researcher, Medical Device Design</p>
+        <p class="tl-org">IMERSE Lab, Johns Hopkins University</p>
+        <p class="tl-note">Tetherless magnetic soft-robotic gripper that passively grasps irregular tissue such as polyps.</p>
+      </div>
+    </li>
+    <li class="tl-edu">
+      <span class="tl-date">Aug 2024 – Aug 2026</span>
+      <div class="tl-body">
+        <p class="tl-role">M.S. Mechanical Engineering <span class="tl-badge">Education</span></p>
+        <p class="tl-org">Johns Hopkins University, Baltimore</p>
+      </div>
+    </li>
+    <li>
+      <span class="tl-date">Aug 2023 – Aug 2024</span>
+      <div class="tl-body">
+        <p class="tl-role">Electronics Consultant, Biomechanical Data Acquisition</p>
+        <p class="tl-org">Translead MedTech</p>
+        <p class="tl-note">EMG + IMU data acquisition for an assistive chair; showed 10% less user effort in sit-to-stand.</p>
+      </div>
+    </li>
+    <li>
+      <span class="tl-date">Jun 2022 – Jul 2024</span>
+      <div class="tl-body">
+        <p class="tl-role">MEMS Engineer, Navigational Sensors</p>
+        <p class="tl-org">Indian Institute of Science &amp; ISRO</p>
+        <p class="tl-note">Designed a MEMS accelerometer and disk resonator gyroscope; co-authored ICMNS 2024 paper.</p>
+      </div>
+    </li>
+    <li>
+      <span class="tl-date">Dec 2021 – May 2022</span>
+      <div class="tl-body">
+        <p class="tl-role">IoT Engineer, Micro-Mobility Vehicle Electronics</p>
+        <p class="tl-org">Delta X Automotive</p>
+        <p class="tl-note">ESP32 control system and custom PCB for an e-scooter with 50 km range; co-inventor on a pending patent.</p>
+      </div>
+    </li>
+    <li>
+      <span class="tl-date">Sep 2021 – Dec 2021</span>
+      <div class="tl-body">
+        <p class="tl-role">Mechatronics Engineer, Laboratory Automation</p>
+        <p class="tl-org">Anand Diagnostic Labs</p>
+        <p class="tl-note">Vision-guided 4-DOF test-tube sorting arm that raised lab throughput by 40%.</p>
+      </div>
+    </li>
+    <li class="tl-edu">
+      <span class="tl-date">2018 – 2022</span>
+      <div class="tl-body">
+        <p class="tl-role">B.Tech Mechanical Engineering <span class="tl-badge">Education</span></p>
+        <p class="tl-org">PES University, Bangalore</p>
+      </div>
+    </li>
+  </ol>
+
   <div class="resume-card">
     <div class="pdf-wrapper">
       <iframe
-        src="documents/Avva.pdf"
+        src="documents/Avva_Mechatronics.pdf"
         title="Avva Sai Pranav Resume"
         loading="lazy">
       </iframe>
@@ -138,17 +260,29 @@
   <p class="section-eyebrow" style="text-align:center;">Contact</p>
   <h2>Want to get in touch?</h2>
   <p class="lead">Drop me a line!</p>
-  <div class="contact-emails">
-    <a href="mailto:saipranavavva@gmail.com">saipranavavva@gmail.com</a>
+  <div class="contact-email-row">
+    <a href="mailto:saipranavavva@gmail.com" class="contact-email">saipranavavva@gmail.com</a>
+    <button type="button" class="copy-email" data-email="saipranavavva@gmail.com">Copy email</button>
   </div>
-  <div class="social-links">
-    <a href="https://github.com/avvasai" target="_blank" rel="noopener">Github</a>
-    <a href="https://www.linkedin.com/in/avva-saipranav" target="_blank" rel="noopener">LinkedIn</a>
+  <div class="contact-buttons">
+    <a href="mailto:saipranavavva@gmail.com" class="contact-btn">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+      Email
+    </a>
+    <a href="https://www.linkedin.com/in/avva-saipranav" class="contact-btn" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
+      LinkedIn
+    </a>
+    <a href="https://github.com/avvasai" class="contact-btn" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+      GitHub
+    </a>
   </div>
 </section>
 
 <footer class="footer">
-  <span><span id="year"></span> Avva Sai Pranav</span>
+  <span>© <span id="year"></span> Avva Sai Pranav</span>
+  <a href="#home" class="to-top">↑ Back to top</a>
 </footer>
 
 <script>
@@ -162,6 +296,19 @@
   const toggle = document.getElementById('themeToggle');
   const knob = document.getElementById('themeKnob');
   const clockEl = document.getElementById('clock');
+  // Copy email to clipboard (contact section)
+  document.querySelectorAll('.copy-email').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(btn.dataset.email);
+        btn.textContent = 'Copied!';
+      } catch {
+        btn.textContent = 'Copy failed';
+      }
+      setTimeout(() => { btn.textContent = 'Copy email'; }, 2000);
+    });
+  });
+
   const yearEl = document.getElementById('year');
 
   if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -282,154 +429,6 @@
       navPills.forEach(p => p.classList.remove('active'));
       pill.classList.add('active');
     });
-  });
-
-  // Skills data by category
-  const skillsData = {
-    mechanical: [
-      'MEMS Design', 'COMSOL Multiphysics', 'Finite Element Analysis', 'ANSYS',
-      'SolidWorks', 'AutoCAD', 'Creo Parametric', 'Microfabrication',
-       'SEM Imaging', 'LDV Characterization',
-      'Vibration Analysis', 'Thermal Analysis', '3D Printing', 'GD&T'
-    ],
-    electronics: [
-      'Circuit Design', 'PCB Layout', 'Altium Designer', 'KiCad', 
-      'Oscilloscopes', 'Signal Generators', 'Lock-in Amplifiers',
-      'Capacitive Sensing', 'Analog Design', 
-       'Wire Bonding', 'Soldering', 
-      'Power Electronics', 'Arduino', 'Raspberry Pi', 
-    ],
-    robotics: [
-      'ROS/ROS2', 'MATLAB/Simulink', 'Control Systems', 'PID Tuning',
-      'State Estimation', 'Kalman Filtering', 'Sensor Fusion',
-      'Motion Planning', 'Kinematics', 'Dynamics', 'LabVIEW',
-      'Data Acquisition', 'Robotic Arm Programming', 'UR5e', 'RealSense Cameras'
-    ],
-    cs: [
-      'Python', 'C/C++', 'MATLAB', 'Git/GitHub', 'Linux',
-      'Machine Learning Basics',
-      'Computer Vision', 'OpenCV', 'Image Processing',
-      'NumPy', 'Pandas', 'Matplotlib',
-    ]
-  };
-
-  const categoryNames = {
-    mechanical: 'Mechanical',
-    electronics: 'Electronics',
-    robotics: 'Robotics & Controls',
-    cs: 'Computer Science'
-  };
-
-  const categoryKeys = Object.keys(skillsData);
-  let currentIndex = 0;
-  let rotationInterval;
-  let isHovering = false;
-
-  const categoryTitle = document.querySelector('.current-category-title');
-  const skillsCloud = document.querySelector('.skills-cloud');
-  const skillBoxes = document.querySelectorAll('.skill-box');
-
-  // Display skills for a category with animation
-  function displayCategory(categoryKey, animate = true) {
-    const skills = skillsData[categoryKey];
-    const title = categoryNames[categoryKey];
-    
-    // Update title
-    categoryTitle.textContent = title;
-    
-    // Clear existing tags
-    skillsCloud.innerHTML = '';
-    
-    // Create new tags
-    skills.forEach((skill, i) => {
-      const tag = document.createElement('span');
-      tag.className = 'skill-tag';
-      tag.textContent = skill;
-      skillsCloud.appendChild(tag);
-    });
-    
-    // Animate in
-    if (animate) {
-      requestAnimationFrame(() => {
-        skillsCloud.querySelectorAll('.skill-tag').forEach(tag => {
-          tag.classList.add('visible');
-        });
-      });
-    } else {
-      skillsCloud.querySelectorAll('.skill-tag').forEach(tag => {
-        tag.classList.add('visible');
-        tag.style.transitionDelay = '0s';
-      });
-    }
-    
-    // Highlight corresponding box
-    skillBoxes.forEach(box => {
-      box.classList.toggle('active', box.dataset.category === categoryKey);
-    });
-  }
-
-  // Fade out current skills
-  function fadeOutSkills() {
-    return new Promise(resolve => {
-      const tags = skillsCloud.querySelectorAll('.skill-tag');
-      tags.forEach(tag => {
-        tag.classList.remove('visible');
-        tag.classList.add('fading');
-      });
-      setTimeout(resolve, 1000);
-    });
-  }
-
-  // Rotate to next category
-  async function rotateToNext() {
-    if (isHovering) return;
-    
-    await fadeOutSkills();
-    
-    if (isHovering) return;
-    
-    currentIndex = (currentIndex + 1) % categoryKeys.length;
-    displayCategory(categoryKeys[currentIndex], true);
-  }
-
-  // Start auto-rotation
-  function startRotation() {
-    displayCategory(categoryKeys[currentIndex], true);
-    rotationInterval = setInterval(rotateToNext, 3500);
-  }
-
-  // Stop auto-rotation
-  function stopRotation() {
-    clearInterval(rotationInterval);
-  }
-
-  // Handle hover on corner boxes
-  skillBoxes.forEach(box => {
-    box.addEventListener('mouseenter', () => {
-      isHovering = true;
-      stopRotation();
-      const category = box.dataset.category;
-      
-      // Quick transition to hovered category
-      fadeOutSkills().then(() => {
-        displayCategory(category, true);
-      });
-    });
-  });
-
-  // Handle mouse leave from entire container
-  document.querySelector('.skills-container').addEventListener('mouseleave', () => {
-    isHovering = false;
-    // Resume from where we left off
-    currentIndex = categoryKeys.indexOf(
-      document.querySelector('.skill-box.active')?.dataset.category || categoryKeys[0]
-    );
-    startRotation();
-  });
-
-  // Initialize on page load
-  document.addEventListener('DOMContentLoaded', () => {
-    startRotation();
   });
 </script>
 

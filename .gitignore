@@ -2,3 +2,6 @@
 .archify/
 graphify-out/
 .gitattributes
+
+# Old resumes stay local only
+documents/Old Resumes/

@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Avva Sai Pranav">
-  <meta property="og:title" content="Robotic Ultrasound Scanning — Avva Sai Pranav">
+  <meta property="og:title" content="Robotic Ultrasound Scanning | Avva Sai Pranav">
   <meta property="og:description" content="Semi-autonomous robotic ultrasound using UR5e with RealSense depth camera, achieving 0.5° angular accuracy and force-controlled contour following.">
   <meta property="og:url" content="https://avvasai.github.io/work2/robotic-ultrasound-scanning.html">
   <meta property="og:image" content="https://avvasai.github.io/documents/Ultrasound%20Robot/image10.jpg">
@@ -30,7 +30,7 @@
     <div class="pill-right">
       <span class="label">Theme:</span>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light theme">
-        <span id="themeKnob">☀</span>
+        <span id="themeKnob">Light</span>
       </button>
       <span class="clock" id="clock"></span>
     </div>
@@ -39,7 +39,7 @@
 
 <section class="section">
   <div class="id-strip">
-    <a href="../index.html" class="id-name" aria-label="Avva Sai Pranav — home page">Avva Sai Pranav</a>
+    <a href="../index.html" class="id-name" aria-label="Avva Sai Pranav, home page">Avva Sai Pranav</a>
     <a href="../index.html#projects" class="pager-all">← All projects</a>
   </div>
 
@@ -56,7 +56,8 @@
       <a href="#control-gui" class="sidebar-link sidebar-sublink">Control GUI</a>
       <a href="#test-setup" class="sidebar-link">Test Setup</a>
       <a href="#results" class="sidebar-link">Results</a>
-      <a href="#additional-info" class="sidebar-link">Additional Information</a>
+      <a href="#hardest" class="sidebar-link">The Hardest Parts</a>
+      <a href="#additional-info" class="sidebar-link">Full Report</a>
       <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">↑ Top</button>
     </aside>
 
@@ -67,15 +68,8 @@
       <div id="summary" class="project-block">
         <div class="project-hero">
           <div class="project-hero-text">
-            <p class="section-eyebrow">Project · Medical Robotics</p>
             <h2>Robotic Ultrasound Scanning</h2>
             <p class="project-hero-meta">Johns Hopkins University · EN.530.721 Medical Robotic System Design · Oct 2025</p>
-            <div class="spec-ribbon">
-              <div class="dim-tag"><span class="dim-value">0.5°</span><span class="dim-label">Angular error</span></div>
-              <div class="dim-tag"><span class="dim-value">0.5–2 N</span><span class="dim-label">Force range</span></div>
-              <div class="dim-tag"><span class="dim-value">1280×720p</span><span class="dim-label">@ 6fps</span></div>
-              <div class="dim-tag"><span class="dim-value">6</span><span class="dim-label">Motions</span></div>
-            </div>
           </div>
           <div class="hero-diagram-wrap">
             <img src="../documents/Ultrasound Robot/image10.jpg" alt="TKinter Control GUI for Automated Ultrasound System showing control buttons for robot motion modes including Free Move, Contour Move, Rock, Fan, Sweep, and Slide" style="width:100%; border-radius: 8px;">
@@ -133,11 +127,11 @@
       <div id="problem" class="project-block">
         <h3>Problem Statement</h3>
         <ul class="bullet-list">
-          <li><strong>Need:</strong> Ultrasound demand increased 55.1% over a decade while sonographer workforce grew only 43.6%, creating critical staffing gaps</li>
-          <li><strong>Ergonomic burden:</strong> 90% of sonographers develop work-related musculoskeletal disorders from repetitive probe positioning and sustained postures</li>
-          <li><strong>Technical challenge:</strong> Ultrasound imaging requires precise probe orientation perpendicular to tissue surfaces while maintaining consistent contact force—difficult to automate on complex body contours</li>
-          <li><strong>Open question:</strong> Can a semi-autonomous system execute fundamental ultrasound motions while automatically maintaining correct probe orientation and safe contact force?</li>
+          <li>Need: Ultrasound demand increased 55.1% over a decade while sonographer workforce grew only 43.6%, leaving a staffing gap</li>
+          <li>Ergonomic burden: 90% of sonographers develop work-related musculoskeletal disorders from repetitive probe positioning and sustained postures</li>
+          <li>Technical challenge: Ultrasound imaging requires precise probe orientation perpendicular to tissue surfaces while maintaining consistent contact force, difficult to automate on complex body contours</li>
         </ul>
+        <p style="color:var(--text); font-size: var(--text-sm); margin: var(--space-4) 0;">We wanted to see whether a semi-autonomous system could perform the basic ultrasound motions while keeping the probe at the right angle and a safe contact force.</p>
         <figure style="margin: var(--space-4) 0;">
           <img loading="lazy" decoding="async" src="../documents/Ultrasound Robot/image14.jpg" alt="Six fundamental ultrasound transducer motions: Sliding, Sweeping, Rocking, Fanning, Rotating, and Compression" style="width:100%; border-radius: 8px;">
           <figcaption>Six fundamental ultrasound transducer motions that the system must execute</figcaption>
@@ -148,17 +142,8 @@
       <div id="methodology" class="project-block">
         <h3>Methodology</h3>
         <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-2);">
-          The project followed a modular ROS2 architecture integrating depth perception, control interface, and motion planning. Click a stage to jump there.
+          The project followed a modular ROS2 architecture integrating depth perception, control interface, and motion planning.
         </p>
-        <nav class="process-stepper">
-          <a href="#system-arch" class="process-step"><span class="step-num">1</span>Architecture</a>
-          <span class="process-connector"></span>
-          <a href="#point-cloud" class="process-step"><span class="step-num">2</span>Perception</a>
-          <span class="process-connector"></span>
-          <a href="#control-gui" class="process-step"><span class="step-num">3</span>Control</a>
-          <span class="process-connector"></span>
-          <a href="#test-setup" class="process-step"><span class="step-num">4</span>Test</a>
-        </nav>
       </div>
 
       <!-- SYSTEM ARCHITECTURE -->
@@ -174,11 +159,6 @@
           <figcaption>System architecture showing four ROS2 packages with data flow connections</figcaption>
         </figure>
 
-        <div class="spec-grid">
-          <div class="spec-item"><span class="spec-value">4</span><span class="spec-label">ROS2 packages</span></div>
-          <div class="spec-item"><span class="spec-value">UR5e</span><span class="spec-label">Robot platform</span></div>
-          <div class="spec-item"><span class="spec-value">KDL</span><span class="spec-label">Inverse kinematics</span></div>
-        </div>
       </div>
 
       <!-- POINT CLOUD PROCESSING -->
@@ -203,11 +183,11 @@
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
           <figure>
             <img loading="lazy" decoding="async" src="../documents/Ultrasound Robot/image1.jpg" alt="Position control without offset correction" style="width:100%; border-radius: 8px;">
-            <figcaption>Position control only — orientation does not match contour</figcaption>
+            <figcaption>Position control only: orientation does not match contour</figcaption>
           </figure>
           <figure>
             <img loading="lazy" decoding="async" src="../documents/Ultrasound Robot/image26.jpg" alt="With offset correction enabled" style="width:100%; border-radius: 8px;">
-            <figcaption>With offset correction — probe aligns to surface normal</figcaption>
+            <figcaption>With offset correction: probe aligns to surface normal</figcaption>
           </figure>
         </div>
       </div>
@@ -220,24 +200,19 @@
           I created a TKinter-based GUI using RCLPY that allows operators to control the robot through intuitive button presses. The GUI publishes ROS2 Twist messages containing Cartesian displacement commands. Key modes include Free Move (unrestricted Cartesian motion), Contour Move (surface-constrained motion with automatic normal alignment), and automated Rock/Fan motions. A linear speed slider allows adjustment of movement rate.
         </p>
 
-        <div class="spec-grid">
-          <div class="spec-item"><span class="spec-value">8</span><span class="spec-label">Control buttons</span></div>
-          <div class="spec-item"><span class="spec-value">Twist</span><span class="spec-label">ROS2 messages</span></div>
-          <div class="spec-item"><span class="spec-value">TKinter</span><span class="spec-label">GUI framework</span></div>
-        </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
           <figure>
             <video class="muted-demo" muted loop playsinline preload="metadata" disablepictureinpicture aria-label="Automated fan motion demo" style="width:100%; border-radius: 8px;">
               <source src="../documents/Ultrasound Robot/videos/fan.mp4#t=0.1" type="video/mp4">
             </video>
-            <figcaption>Automated Fan — the probe pivots side to side while keeping its contact point</figcaption>
+            <figcaption>Automated Fan: the probe pivots side to side while keeping its contact point</figcaption>
           </figure>
           <figure>
             <video class="muted-demo" muted loop playsinline preload="metadata" disablepictureinpicture aria-label="Automated rock motion demo" style="width:100%; border-radius: 8px;">
               <source src="../documents/Ultrasound Robot/videos/rock.mp4#t=0.1" type="video/mp4">
             </video>
-            <figcaption>Automated Rock — the probe tilts along its long axis while staying in contact</figcaption>
+            <figcaption>Automated Rock: the probe tilts along its long axis while staying in contact</figcaption>
           </figure>
         </div>
 
@@ -266,11 +241,6 @@
           Testing was conducted on 3D printed wedges (0°, 30°, 45°) for angular accuracy, a 0.75-scale 3D printed torso for contour following, and a hydrogel phantom with the actual Clarius C3 HD3 probe for representative clinical testing. Force limits were adjusted for the softer hydrogel material to maintain contact without damage.
         </p>
 
-        <div class="spec-grid">
-          <div class="spec-item"><span class="spec-value">3</span><span class="spec-label">Test wedge angles</span></div>
-          <div class="spec-item"><span class="spec-value">0.75×</span><span class="spec-label">Torso scale</span></div>
-          <div class="spec-item"><span class="spec-value">30 s</span><span class="spec-label">Data collection runs</span></div>
-        </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
           <figure>
@@ -307,7 +277,7 @@
         <p style="color:var(--text-dim); font-size: var(--text-xs); margin-top: var(--space-2);">Angular errors acceptable for smooth anthropomorphic surfaces encountered in clinical use.</p>
 
         <p style="color:var(--text); font-size: var(--text-sm); margin: var(--space-4) 0;">
-          <strong>Force Control:</strong> Experiments 1, 2, and 4 achieved mean forces of 1.14 N, 1.78 N, and 1.32 N respectively—all within the 0.5–2 N acceptable range for typical anthropomorphic contours. The system adapts to both hard (3D printed) and soft (hydrogel) surfaces through adjustable force limits.
+          For force control, experiments 1, 2 and 4 achieved mean forces of 1.14 N, 1.78 N, and 1.32 N respectively, all within the 0.5–2 N acceptable range for typical anthropomorphic contours. The system adapts to both hard (3D printed) and soft (hydrogel) surfaces through adjustable force limits.
         </p>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
@@ -315,13 +285,13 @@
             <video class="muted-demo" muted loop playsinline preload="metadata" disablepictureinpicture aria-label="Full system demo on the 3D printed torso" style="width:100%; border-radius: 8px;">
               <source src="../documents/Ultrasound Robot/videos/small_model_all_enabled.mp4#t=0.1" type="video/mp4">
             </video>
-            <figcaption>Full system on the 3D-printed torso — contour following, force feedback and orientation correction together</figcaption>
+            <figcaption>Full system on the 3D-printed torso: contour following, force feedback and orientation correction together</figcaption>
           </figure>
           <figure>
             <video class="muted-demo" muted loop playsinline preload="metadata" disablepictureinpicture aria-label="Clarius probe test on a hydrogel phantom" style="width:100%; border-radius: 8px;">
               <source src="../documents/Ultrasound Robot/videos/hydrogel_all_enabled.mp4#t=0.1" type="video/mp4">
             </video>
-            <figcaption>Clarius C3 HD3 probe on a hydrogel tissue phantom — force-controlled contact and contour following</figcaption>
+            <figcaption>Clarius C3 HD3 probe on a hydrogel tissue phantom, force-controlled contact and contour following</figcaption>
           </figure>
         </div>
 
@@ -387,11 +357,11 @@
           </summary>
           <div class="detail-body">
             <ul class="bullet-list">
-              <li>Successfully demonstrated semi-autonomous contour following on 3D printed torso and hydrogel phantom</li>
+              <li>Demonstrated semi-autonomous contour following on 3D printed torso and hydrogel phantom</li>
               <li>Achieved 0.5° mean angular error on flat surfaces with 0.3° standard deviation</li>
-              <li>Angular error of 4.08° mean on 30° slopes and 4.5° mean on 45° slopes — acceptable for smooth anthropomorphic surfaces</li>
+              <li>Angular error of 4.08° mean on 30° slopes and 4.5° mean on 45° slopes, acceptable for smooth anthropomorphic surfaces</li>
               <li>Force control maintained within 0.5–2 N range for typical contours</li>
-              <li>Automated Rock and Fan motions successfully implemented</li>
+              <li>Automated Rock and Fan motions implemented</li>
               <li>Semi-automated Slide and Sweep motions with operator guidance</li>
               <li>System adaptable to both hard (3D printed) and soft (hydrogel) surfaces through adjustable force limits</li>
             </ul>
@@ -411,9 +381,16 @@
         </details>
       </div>
 
+      <div id="hardest" class="project-block">
+        <h3>The Hardest Parts</h3>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          The hardest parts to get right were the point-cloud processing and the force control.
+        </p>
+      </div>
+
       <!-- ADDITIONAL INFORMATION -->
       <div id="additional-info" class="project-block">
-        <h3>Additional Information</h3>
+        <h3>Full Report</h3>
         <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-4);">Complete technical report with methodology, implementation details, and results.</p>
         <div class="resume-card">
           <div class="pdf-wrapper">
@@ -453,7 +430,7 @@
 
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
-    knob.textContent = theme === 'dark' ? '☀' : '☾';
+    knob.textContent = theme === 'dark' ? 'Light' : 'Dark';
     try { localStorage.setItem('site-theme', theme); } catch (e) {}
   }
 

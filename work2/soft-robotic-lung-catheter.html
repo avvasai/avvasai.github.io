@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Avva Sai Pranav">
-  <meta property="og:title" content="Soft Robotic Lung Catheter — Avva Sai Pranav">
+  <meta property="og:title" content="Soft Robotic Lung Catheter | Avva Sai Pranav">
   <meta property="og:description" content="Designed custom LED enclosure and integrated Maxon motor linear stage for 4-DoF soft robotic catheter system targeting minimally invasive lung biopsy.">
   <meta property="og:url" content="https://avvasai.github.io/work2/soft-robotic-lung-catheter.html">
   <meta property="og:image" content="https://avvasai.github.io/assets/og-card.png">
@@ -30,7 +30,7 @@
     <div class="pill-right">
       <span class="label">Theme:</span>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light theme">
-        <span id="themeKnob">☀</span>
+        <span id="themeKnob">Light</span>
       </button>
       <span class="clock" id="clock"></span>
     </div>
@@ -39,7 +39,7 @@
 
 <section class="section">
   <div class="id-strip">
-    <a href="../index.html" class="id-name" aria-label="Avva Sai Pranav — home page">Avva Sai Pranav</a>
+    <a href="../index.html" class="id-name" aria-label="Avva Sai Pranav, home page">Avva Sai Pranav</a>
     <a href="../index.html#projects" class="pager-all">← All projects</a>
   </div>
 
@@ -54,7 +54,8 @@
       <a href="#enclosure-design" class="sidebar-link sidebar-sublink">Enclosure Design</a>
       <a href="#rom-extension" class="sidebar-link sidebar-sublink">ROM Extension</a>
       <a href="#results" class="sidebar-link">Results</a>
-      <a href="#additional-info" class="sidebar-link">Additional Information</a>
+      <a href="#lighting" class="sidebar-link">Why Surgical-Style Lighting</a>
+      <a href="#additional-info" class="sidebar-link">Full Report</a>
       <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">↑ Top</button>
     </aside>
 
@@ -65,14 +66,8 @@
       <div id="summary" class="project-block">
         <div class="project-hero">
           <div class="project-hero-text">
-            <p class="section-eyebrow">Project · Soft Robotics</p>
             <h2>Soft Robotic Lung Catheter</h2>
             <p class="project-hero-meta">Johns Hopkins University · EN.530.721 Medical Robot System Design · Fall 2025</p>
-            <div class="spec-ribbon">
-              <div class="dim-tag"><span class="dim-value">4</span><span class="dim-label">DoF system</span></div>
-              <div class="dim-tag"><span class="dim-value">9.72°</span><span class="dim-label">Mean error (Angle 1)</span></div>
-              <div class="dim-tag"><span class="dim-value">2,208</span><span class="dim-label">Training samples</span></div>
-            </div>
           </div>
         </div>
 
@@ -102,15 +97,15 @@
         </p>
 
         <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-          My primary contributions focused on the hardware infrastructure. I designed and fabricated a custom enclosure featuring strategically placed LED strips based on the shadow dilution principle used in surgical lighting—this ensured uniform, glare-free illumination for reliable camera-based tracking during data collection. The enclosure was 3D printed in Prusament PLA Galaxy Silver with roughened surfaces to minimize reflections.
+          My primary contributions focused on the hardware infrastructure. I designed and fabricated a custom enclosure featuring strategically placed LED strips based on the shadow dilution principle used in surgical lighting, this ensured uniform, glare-free illumination for reliable camera-based tracking during data collection. The enclosure was 3D printed in Prusament PLA Galaxy Silver with roughened surfaces to minimize reflections.
         </p>
 
         <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-          I also designed and built the range-of-motion extension system, integrating a Maxon combination motor with a NEMA-17 driven linear stage. This added rotational and translational capabilities to the existing 2-DoF pneumatic catheter, effectively creating a 4-DoF system with significantly improved workspace coverage.
+          I also designed and built the range-of-motion extension system, integrating a Maxon combination motor with a NEMA-17 driven linear stage. This added rotational and translational capabilities to the existing 2-DoF pneumatic catheter, creating a 4-DoF system with a larger workspace.
         </p>
 
         <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-          <strong>Role:</strong> Designed LED-lit enclosure using shadow dilution principle and integrated Maxon motor with NEMA-17 linear stage for rotational/translational DOF extension.
+          I designed the LED-lit enclosure using the shadow-dilution principle, and integrated a Maxon motor with a NEMA-17 linear stage to add rotation and translation.
         </p>
 
         <div class="stat-strip">
@@ -136,25 +131,18 @@
       <div id="problem" class="project-block">
         <h3>Problem Statement</h3>
         <ul class="bullet-list">
-          <li><strong>Need:</strong> Lung needle biopsy is a common but risky procedure requiring precise navigation through the ribs to reach tumor sites</li>
-          <li><strong>Challenge:</strong> Soft robotic catheters offer compliance advantages for navigating tortuous anatomy, but suffer from limited degrees of freedom and difficulty in accurate position prediction due to hysteresis</li>
-          <li><strong>Open question:</strong> Could we extend a 2-DoF pneumatic catheter to 4-DoF while developing reliable tracking and control methods for the nonlinear, hysteretic system?</li>
+          <li>Need: Lung needle biopsy is a common but risky procedure requiring precise navigation through the ribs to reach tumor sites</li>
+          <li>Challenge: Soft robotic catheters offer compliance advantages for navigating tortuous anatomy, but suffer from limited degrees of freedom and difficulty in accurate position prediction due to hysteresis</li>
         </ul>
+        <p style="color:var(--text); font-size: var(--text-sm); margin: var(--space-4) 0;">The aim was to take a 2-DoF pneumatic catheter to 4-DoF, and to find a dependable way to track and control a soft robot that doesn't move the same way twice.</p>
       </div>
 
       <!-- METHODOLOGY -->
       <div id="methodology" class="project-block">
         <h3>Methodology</h3>
         <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-2);">
-          The project followed a design-fabricate-test workflow with parallel hardware and software development tracks. Click a stage to jump there.
+          The project followed a design-fabricate-test workflow with parallel hardware and software development tracks.
         </p>
-        <nav class="process-stepper">
-          <a href="#enclosure-design" class="process-step"><span class="step-num">1</span>Enclosure</a>
-          <span class="process-connector"></span>
-          <a href="#rom-extension" class="process-step"><span class="step-num">2</span>ROM Extension</a>
-          <span class="process-connector"></span>
-          <a href="#results" class="process-step"><span class="step-num">3</span>Results</a>
-        </nav>
       </div>
 
       <!-- ENCLOSURE DESIGN -->
@@ -162,7 +150,7 @@
         <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Enclosure Design for Data Collection</h4>
 
         <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-          I designed a custom enclosure inspired by surgical lights that use shadow dilution—multiple sparsely placed light sources with overlapping coverage to minimize harsh shadows. LED strips were placed overhead (with sufficient distance from camera mount to prevent glare), along all four sides for uniform lateral illumination, and at three angles near the base to eliminate overcast shadows.
+          I designed a custom enclosure inspired by surgical lights that use shadow dilution, multiple sparsely placed light sources with overlapping coverage to minimize harsh shadows. LED strips were placed overhead (with sufficient distance from camera mount to prevent glare), along all four sides for uniform lateral illumination, and at three angles near the base to eliminate overcast shadows.
         </p>
 
         <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
@@ -190,7 +178,7 @@
         <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Range of Motion Extension</h4>
 
         <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-          To expand the catheter's workspace beyond its native 2-DoF pneumatic bending, I designed and integrated a mechanical stage providing rotational and translational motion. A Maxon combination motor (model 464703) was mounted on a NEMA-17 driven linear stage. Custom mounting components were designed in SolidWorks/Fusion 360 and 3D printed, combined with off-the-shelf hardware. This effectively created a 4-DoF system capable of reaching a significantly larger workspace.
+          To expand the catheter's workspace beyond its native 2-DoF pneumatic bending, I designed and integrated a mechanical stage providing rotational and translational motion. A Maxon combination motor (model 464703) was mounted on a NEMA-17 driven linear stage. Custom mounting components were designed in SolidWorks/Fusion 360 and 3D printed, combined with off-the-shelf hardware. This created a 4-DoF system capable of reaching a much larger workspace.
         </p>
 
         <figure style="margin: var(--space-6) 0;">
@@ -198,11 +186,6 @@
           <figcaption>Range of motion extension setup: Maxon motor 464703 mounted on NEMA-17 driven linear stage for added rotational and translational degrees of freedom</figcaption>
         </figure>
 
-        <div class="spec-grid">
-          <div class="spec-item"><span class="spec-value">Maxon 464703</span><span class="spec-label">Combination motor</span></div>
-          <div class="spec-item"><span class="spec-value">NEMA-17</span><span class="spec-label">Linear stage driver</span></div>
-          <div class="spec-item"><span class="spec-value">+2 DoF</span><span class="spec-label">Rotation + Translation</span></div>
-        </div>
 
         <!-- Demo Videos -->
         <div style="margin: var(--space-6) 0;">
@@ -259,7 +242,7 @@
           </summary>
           <div class="detail-body">
             <ul class="bullet-list">
-              <li>Successfully demonstrated <strong>4-DoF proof-of-concept</strong> catheter system for lung biopsy application</li>
+              <li>Demonstrated <strong>4-DoF proof-of-concept</strong> catheter system for lung biopsy application</li>
               <li>Neural network accurately models <strong>general smooth trajectory and hysteresis behavior</strong> of the soft robot</li>
               <li>Custom enclosure provided <strong>repeatable, uniform lighting conditions</strong> for camera-based tracking</li>
               <li>Extended range of motion achieved through <strong>integrated rotational and translational stages</strong></li>
@@ -346,9 +329,16 @@
         </details>
       </div>
 
+      <div id="lighting" class="project-block">
+        <h3>Why Surgical-Style Lighting</h3>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          The lighting came from surgical lights, which use several light sources so that nothing casts a shadow. That approach already works, so repurposing it was faster, and wiser, than inventing something new.
+        </p>
+      </div>
+
       <!-- ADDITIONAL INFORMATION -->
       <div id="additional-info" class="project-block">
-        <h3>Additional Information</h3>
+        <h3>Full Report</h3>
         <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-4);">Complete final project report with methodology, results, and analysis.</p>
         <div class="resume-card">
           <div class="pdf-wrapper">
@@ -388,7 +378,7 @@
 
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
-    knob.textContent = theme === 'dark' ? '☀' : '☾';
+    knob.textContent = theme === 'dark' ? 'Light' : 'Dark';
     try { localStorage.setItem('site-theme', theme); } catch (e) {}
   }
 

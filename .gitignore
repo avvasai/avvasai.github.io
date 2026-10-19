@@ -11,3 +11,11 @@ documents/Bistable Gripper/**/*.tex
 documents/Bistable Gripper/**/*.bib
 documents/Bistable Gripper/**/*.sty
 documents/Bistable Gripper/**/*.icc
+
+# Content-drafting notes stay local (not part of the site)
+JSON Prompt.txt
+Prompt for Websites.txt
+documents/**/*JSON*.txt
+documents/**/*Json*.txt
+documents/Biomedical Data Design/Project 3.txt
+documents/Bistable Gripper/**/*placeholder*

@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Avva Sai Pranav">
-  <meta property="og:title" content="Haptic Magnetic Microrobot — Avva Sai Pranav">
+  <meta property="og:title" content="Haptic Magnetic Microrobot | Avva Sai Pranav">
   <meta property="og:description" content="Developed real-time wall collision detection with gradient haptic feedback for magnetically actuated surgical microrobots at Johns Hopkins University.">
   <meta property="og:url" content="https://avvasai.github.io/work2/haptic-magnetic-microrobot.html">
   <meta property="og:image" content="https://avvasai.github.io/assets/og-card.png">
@@ -30,7 +30,7 @@
     <div class="pill-right">
       <span class="label">Theme:</span>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light theme">
-        <span id="themeKnob">☀</span>
+        <span id="themeKnob">Light</span>
       </button>
       <span class="clock" id="clock"></span>
     </div>
@@ -39,7 +39,7 @@
 
 <section class="section">
   <div class="id-strip">
-    <a href="../index.html" class="id-name" aria-label="Avva Sai Pranav — home page">Avva Sai Pranav</a>
+    <a href="../index.html" class="id-name" aria-label="Avva Sai Pranav, home page">Avva Sai Pranav</a>
     <a href="../index.html#projects" class="pager-all">← All projects</a>
   </div>
 
@@ -55,7 +55,8 @@
       <a href="#fabrication" class="sidebar-link sidebar-sublink">Fabrication</a>
       <a href="#test-setup" class="sidebar-link">Test Setup</a>
       <a href="#results" class="sidebar-link">Results</a>
-      <a href="#additional-info" class="sidebar-link">Additional Information</a>
+      <a href="#users" class="sidebar-link">What the Users Taught Us</a>
+      <a href="#additional-info" class="sidebar-link">Full Report</a>
       <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">↑ Top</button>
     </aside>
 
@@ -70,20 +71,6 @@
           <p style="color:var(--text); max-width:62ch;">
             Real-time wall collision detection system with gradient haptic feedback for magnetically actuated surgical microrobots.
           </p>
-          <div class="spec-ribbon">
-            <div class="dim-tag">
-              <span class="dim-value">4-coil</span>
-              <span class="dim-label">EM Array</span>
-            </div>
-            <div class="dim-tag">
-              <span class="dim-value">MATLAB</span>
-              <span class="dim-label">Control</span>
-            </div>
-            <div class="dim-tag">
-              <span class="dim-value">4</span>
-              <span class="dim-label">User study</span>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -111,7 +98,7 @@
       </div>
 
       <div class="project-highlight" style="margin-bottom: var(--space-6);">
-        <strong>My contribution:</strong> collision detection algorithm using joystick-robot direction dot product, custom maze design and fabrication, and a 4-user haptic feedback study.
+        My part was the collision-detection algorithm using joystick-robot direction dot product, custom maze design and fabrication, and a 4-user haptic feedback study.
       </div>
 
       <!-- PROBLEM STATEMENT -->
@@ -121,10 +108,10 @@
           Magnetic microbots can navigate in confined environments, but operators often struggle to detect wall contact early enough to avoid collisions.
         </p>
         <ul class="bullet-list">
-          <li><strong>Visual limitation:</strong> Microrobot is small and environment is visually dense</li>
-          <li><strong>Delayed detection:</strong> Operators detect wall contact too late to prevent collision</li>
-          <li><strong>Camera dependency:</strong> Teleoperator needs additional cues beyond the camera feed</li>
-          <li><strong>Solution:</strong> Haptic feedback as intuitive indication of wall proximity</li>
+          <li>Visual limitation: Microrobot is small and environment is visually dense</li>
+          <li>Delayed detection: Operators detect wall contact too late to prevent collision</li>
+          <li>Camera dependency: Teleoperator needs additional cues beyond the camera feed</li>
+          <li>Solution: Haptic feedback as intuitive indication of wall proximity</li>
         </ul>
       </div>
 
@@ -132,17 +119,8 @@
       <div id="methodology" class="project-block">
         <h3>Methodology</h3>
         <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-2);">
-          The system combines electromagnetic actuation, visual localization, and joystick-based haptic feedback. Click a stage to jump there.
+          The system combines electromagnetic actuation, visual localization, and joystick-based haptic feedback.
         </p>
-        <nav class="process-stepper">
-          <a href="#design-sim" class="process-step"><span class="step-num">1</span>Design</a>
-          <span class="process-connector"></span>
-          <a href="#fabrication" class="process-step"><span class="step-num">2</span>Fabricate</a>
-          <span class="process-connector"></span>
-          <a href="#test-setup" class="process-step"><span class="step-num">3</span>Test</a>
-          <span class="process-connector"></span>
-          <a href="#results" class="process-step"><span class="step-num">4</span>Results</a>
-        </nav>
         <p style="color:var(--text); font-size: var(--text-sm); margin-top: var(--space-4);">
           Robot position is tracked from an overhead camera feed, then compared against the maze geometry to estimate collision risk. When the direction of intended motion conflicts with detected wall proximity, the joystick vibrates with intensity that increases as the robot gets closer to the wall.
         </p>
@@ -217,7 +195,7 @@
       <div id="results" class="project-block">
         <h3>Results</h3>
         <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-          The navigation interface successfully displayed wall proximity in real time and provided haptic cues through the joystick.
+          The navigation interface displayed wall proximity in real time and provided haptic cues through the joystick.
         </p>
 
         <details class="detail-toggle highlight-style">
@@ -227,7 +205,7 @@
           </summary>
           <div class="detail-body">
             <ul class="bullet-list">
-              <li><strong>Maze traversal:</strong> Robot successfully navigated maze while operator received feedback</li>
+              <li><strong>Maze traversal:</strong> Robot navigated maze while operator received feedback</li>
               <li><strong>Wall detection:</strong> Live overlay showed wall detection status and robot position</li>
               <li><strong>Haptic cues:</strong> Joystick vibrated when robot approached walls</li>
               <li><strong>Situational awareness:</strong> Operator maintained awareness while relying less on direct visual inspection</li>
@@ -251,9 +229,16 @@
         </details>
       </div>
 
+      <div id="users" class="project-block">
+        <h3>What the Users Taught Us</h3>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Watching people use the system changed the design. How intuitive it felt, and how each person responded to the haptic feedback and interacted with the joystick, drove most of the changes we made.
+        </p>
+      </div>
+
       <!-- ADDITIONAL INFORMATION -->
       <div id="additional-info" class="project-block">
-        <h3>Additional Information</h3>
+        <h3>Full Report</h3>
         <p style="color:var(--text-dim); max-width:62ch; margin-bottom: var(--space-6); font-size: var(--text-sm);">
           Project report, supporting documents, and implementation files from EN.530.666 Magnetically Actuated Robots.
         </p>
@@ -310,7 +295,7 @@
 
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
-    knob.textContent = theme === 'dark' ? '☀' : '☾';
+    knob.textContent = theme === 'dark' ? 'Light' : 'Dark';
     try { localStorage.setItem('site-theme', theme); } catch (e) {}
   }
 

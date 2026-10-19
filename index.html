@@ -4,18 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Avva Sai Pranav - Portfolio</title>
-<meta name="description" content="Mechatronics engineer — medical robotics, embedded systems and MEMS. M.S. Mechanical Engineering, Johns Hopkins University.">
+<meta name="description" content="Mechatronics engineer working in medical robotics, embedded systems and MEMS. M.S. Mechanical Engineering, Johns Hopkins University.">
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <link rel="icon" href="assets/favicon-32.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Avva Sai Pranav">
-<meta property="og:title" content="Avva Sai Pranav — Portfolio">
-<meta property="og:description" content="Mechatronics engineer — medical robotics, embedded systems and MEMS. M.S. Mechanical Engineering, Johns Hopkins University.">
+<meta property="og:title" content="Avva Sai Pranav | Portfolio">
+<meta property="og:description" content="Mechatronics engineer working in medical robotics, embedded systems and MEMS. M.S. Mechanical Engineering, Johns Hopkins University.">
 <meta property="og:url" content="https://avvasai.github.io/">
 <meta property="og:image" content="https://avvasai.github.io/assets/og-card.png">
-<meta property="og:image:alt" content="Avva Sai Pranav — Mechatronics Engineer, Medical Robotics">
+<meta property="og:image:alt" content="Avva Sai Pranav, Mechatronics Engineer, Medical Robotics">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
@@ -31,7 +31,7 @@
     <div class="pill-right">
       <span class="label">Theme:</span>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light theme">
-        <span id="themeKnob">☀</span>
+        <span id="themeKnob">Light</span>
       </button>
       <span class="clock" id="clock"></span>
     </div>
@@ -140,7 +140,6 @@
 </section>
 
 <section class="section" id="projects">
-  <p class="section-eyebrow">About</p>
   <h2>Projects &amp; Domains</h2>
   <p style="color:var(--text-dim); max-width:62ch; margin-bottom: var(--space-6); font-size: var(--text-sm);">
     Tap a domain to highlight its projects. Tap it again to clear.
@@ -183,9 +182,8 @@
 </section>
 
 <section class="section" id="resume">
-  <p class="section-eyebrow">Resume</p>
   <h2>Resume</h2>
-  <p class="resume-intro">Education, experience, projects and publications — two pages.</p>
+  <p class="resume-intro">Education, experience, projects and publications, on two pages.</p>
   <div class="resume-actions">
     <a href="documents/Avva_Mechatronics.pdf" class="btn-primary" download="Avva_Sai_Pranav_Resume.pdf">Download Resume (PDF)</a>
     <a href="documents/Avva_Mechatronics.pdf" class="btn-outline" target="_blank" rel="noopener">Open in new tab</a>
@@ -269,7 +267,6 @@
 </section>
 
 <section class="section contact" id="contact">
-  <p class="section-eyebrow" style="text-align:center;">Contact</p>
   <h2>Want to get in touch?</h2>
   <p class="lead">Drop me a line!</p>
   <div class="contact-email-row">
@@ -293,7 +290,7 @@
 </section>
 
 <footer class="footer">
-  <span>© <span id="year"></span> Avva Sai Pranav</span>
+  <span>© <span id="year"></span> Avva Sai Pranav · Last updated October 2026</span>
   <a href="#home" class="to-top">↑ Back to top</a>
 </footer>
 
@@ -327,7 +324,7 @@
 
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
-    knob.textContent = theme === 'dark' ? '☀' : '☾';
+    knob.textContent = theme === 'dark' ? 'Light' : 'Dark';
     try { localStorage.setItem('site-theme', theme); } catch (e) {}
   }
 
@@ -383,7 +380,7 @@
   });
 
   // ========================================
-  // SCROLL SPY FOR NAVIGATION PILLS - FIX
+  // Scroll spy: highlight the nav pill for the section in view
   // ========================================
   const navPills = document.querySelectorAll('.pill-links .pill');
   const navSections = document.querySelectorAll('#home, #skills, #projects, #resume, #contact');

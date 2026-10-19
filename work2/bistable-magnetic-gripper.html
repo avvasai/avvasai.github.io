@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bistable Magnetic Gripper | Sai Pranav Avva</title>
-  <meta name="description" content="M.S. thesis: a tetherless, magnetically actuated bistable gripper for minimally invasive procedures — snap-through force cut 86% to 1.93 N across 8 FEA-guided design iterations.">
+  <meta name="description" content="M.S. thesis: a tetherless, magnetically actuated bistable gripper for minimally invasive procedures. Snap-through force cut 86% to 1.93 N across 8 FEA-guided design iterations.">
   <link rel="stylesheet" href="../styles.css">
   <link rel="icon" href="../assets/favicon.ico" sizes="any">
   <link rel="icon" href="../assets/favicon-32.png" type="image/png">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Avva Sai Pranav">
-  <meta property="og:title" content="Bistable Magnetic Gripper — Avva Sai Pranav">
-  <meta property="og:description" content="M.S. thesis: a tetherless, magnetically actuated bistable gripper for minimally invasive procedures — snap-through force cut 86% to 1.93 N across 8 FEA-guided design iterations.">
+  <meta property="og:title" content="Bistable Magnetic Gripper | Avva Sai Pranav">
+  <meta property="og:description" content="M.S. thesis: a tetherless, magnetically actuated bistable gripper for minimally invasive procedures. Snap-through force cut 86% to 1.93 N across 8 FEA-guided design iterations.">
   <meta property="og:url" content="https://avvasai.github.io/work2/bistable-magnetic-gripper.html">
-  <meta property="og:image" content="https://avvasai.github.io/documents/Bistable%20Gripper/CONCEPTUAL_DESIGN_OF_A_TETHERLESS_BISTABLE_GRIPPING_DEVICE__FOR_MINIMALLY_INVASIVE_PROCEDURES/conclusion_chapter/figure/iteration7_placeholder.png">
+  <meta property="og:image" content="https://avvasai.github.io/assets/projects/bistable-gripper-iteration7.jpg">
   <meta property="og:image:alt" content="Bistable Magnetic Gripper">
   <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -30,7 +30,7 @@
     <div class="pill-right">
       <span class="label">Theme:</span>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light theme">
-        <span id="themeKnob">☀</span>
+        <span id="themeKnob">Light</span>
       </button>
       <span class="clock" id="clock"></span>
     </div>
@@ -39,7 +39,7 @@
 
 <section class="section">
   <div class="id-strip">
-    <a href="../index.html" class="id-name" aria-label="Avva Sai Pranav — home page">Avva Sai Pranav</a>
+    <a href="../index.html" class="id-name" aria-label="Avva Sai Pranav, home page">Avva Sai Pranav</a>
     <a href="../index.html#projects" class="pager-all">← All projects</a>
   </div>
 
@@ -59,7 +59,8 @@
       <a href="#actuation" class="sidebar-link sidebar-sublink">Magnetic Actuation</a>
       <a href="#gripper" class="sidebar-link sidebar-sublink">Gripper Prongs</a>
       <a href="#results" class="sidebar-link">Results</a>
-      <a href="#additional-info" class="sidebar-link">Additional Information</a>
+      <a href="#hardest" class="sidebar-link">The Hardest Part</a>
+      <a href="#additional-info" class="sidebar-link">Full Report</a>
       <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">↑ Top</button>
     </aside>
 
@@ -70,18 +71,11 @@
       <div id="summary" class="project-block">
         <div class="project-hero">
           <div class="project-hero-text">
-            <p class="section-eyebrow">Project · Medical Robotics · M.S. Thesis</p>
             <h2>Bistable Magnetic Gripper</h2>
             <p class="project-hero-meta">Johns Hopkins University · IMERSE Lab · Advised by Prof. Axel Krieger · Aug 2025 – Aug 2026</p>
-            <div class="spec-ribbon">
-              <div class="dim-tag"><span class="dim-value">86%</span><span class="dim-label">Less actuation force</span></div>
-              <div class="dim-tag"><span class="dim-value">1.93 N</span><span class="dim-label">Final snap-through</span></div>
-              <div class="dim-tag"><span class="dim-value">8</span><span class="dim-label">Design iterations</span></div>
-              <div class="dim-tag"><span class="dim-value">≤22 mm</span><span class="dim-label">Device envelope</span></div>
-            </div>
           </div>
           <div class="hero-diagram-wrap">
-            <img src="../documents/Bistable Gripper/CONCEPTUAL_DESIGN_OF_A_TETHERLESS_BISTABLE_GRIPPING_DEVICE__FOR_MINIMALLY_INVASIVE_PROCEDURES/conclusion_chapter/figure/iteration7_placeholder.png" alt="Final Iteration 7 bistable gripper printed in F80 resin, shown open and closed from the side and from above" style="width:100%; border-radius: 8px;">
+            <img src="../assets/projects/bistable-gripper-iteration7.jpg" alt="Final Iteration 7 bistable gripper printed in F80 resin, shown open and closed from the side and from above" style="width:100%; border-radius: 8px;">
           </div>
         </div>
 
@@ -103,12 +97,12 @@
           Most minimally invasive surgery tools are tethered to the surgeon by rigid shafts and cables, which limits dexterity in winding anatomy like the colon and transmits unwanted force to delicate tissue. This thesis designs a <strong>tetherless gripping device</strong> that can be steered and triggered by external magnetic fields under fluoroscopic guidance.
         </p>
         <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-          The device is a <strong>bistable compliant shell</strong> with passive gripper prongs. Like a snap-dome, the shell has two stable shapes — open and closed — and a small push flips it between them. Once closed, it holds tissue <strong>with no continuous energy input</strong>, so the magnets only need to supply the brief force to trigger the snap.
+          The device is a <strong>bistable compliant shell</strong> with passive gripper prongs. Like a snap-dome, the shell has two stable shapes, open and closed, and a small push flips it between them. Once closed, it holds tissue <strong>with no continuous energy input</strong>, so the magnets only need to supply the brief force to trigger the snap.
         </p>
 
         <div class="stat-strip">
           <div class="stat-card">
-            <span class="stat-value">14.2 → 1.9</span>
+            <span class="stat-value">14.2 to 1.9</span>
             <span class="stat-unit">newtons</span>
             <span class="stat-label">Snap-through force from Iteration 2 to Iteration 7 (−86%)</span>
           </div>
@@ -134,11 +128,11 @@
       <div id="problem" class="project-block">
         <h3>Problem Statement</h3>
         <ul class="bullet-list">
-          <li><strong>Tethered tools:</strong> polypectomy and traction tools reach the colon through rigid shafts and cables, limiting dexterity, depending on line of sight and pushing force into delicate tissue</li>
-          <li><strong>No room for motors:</strong> a tetherless device this small cannot carry motors, batteries or pneumatics, so gripping must be passive</li>
-          <li><strong>Weak external magnets:</strong> the MagnetoSuture-style coil platform can only apply about 1.34 N to an embedded magnet — far less than a typical gripper needs to close</li>
-          <li><strong>Open question:</strong> can a passive, bistable gripper hold tissue firmly (2–5 N) yet switch states with less force than the magnets can supply?</li>
+          <li>Tethered tools: polypectomy and traction tools reach the colon through rigid shafts and cables, limiting dexterity, depending on line of sight and pushing force into delicate tissue</li>
+          <li>No room for motors: a tetherless device this small cannot carry motors, batteries or pneumatics, so gripping must be passive</li>
+          <li>Weak external magnets: the MagnetoSuture-style coil platform can only apply about 1.34 N to an embedded magnet, far less than a typical gripper needs to close</li>
         </ul>
+        <p style="color:var(--text); font-size: var(--text-sm); margin: var(--space-4) 0;">So the real test was whether a passive gripper could hold tissue firmly (2–5 N) yet switch states with less force than the magnets can supply.</p>
         <p style="color:var(--text-dim); font-size: var(--text-xs); margin: var(--space-4) 0 var(--space-2);">Design targets for a colonic polyp application</p>
             <div style="overflow-x: auto;">
               <table style="width:100%; border-collapse: collapse; font-size: var(--text-sm);">
@@ -164,11 +158,6 @@
           <figcaption>Conceptual design: gripper prongs, central contact pad, bistable shell and rim magnets</figcaption>
         </figure>
 
-        <div class="spec-grid">
-          <div class="spec-item"><span class="spec-value">Shell</span><span class="spec-label">Bistable states</span></div>
-          <div class="spec-item"><span class="spec-value">Prongs</span><span class="spec-label">Passive grip</span></div>
-          <div class="spec-item"><span class="spec-value">Magnets</span><span class="spec-label">Wireless trigger</span></div>
-        </div>
       </div>
 
       <!-- METHODOLOGY -->
@@ -201,13 +190,13 @@
           </figure>
           <figure>
             <img loading="lazy" decoding="async" src="../documents/Bistable Gripper/CONCEPTUAL_DESIGN_OF_A_TETHERLESS_BISTABLE_GRIPPING_DEVICE__FOR_MINIMALLY_INVASIVE_PROCEDURES/chapter4/figure/image13.png" alt="Cast silicone gripper shown open and closed" style="width:100%; border-radius: 8px;">
-            <figcaption>Cast silicone gripper — biocompatible, but slow to iterate</figcaption>
+            <figcaption>Cast silicone gripper: biocompatible, but slow to iterate</figcaption>
           </figure>
         </div>
 
         <figure style="margin: var(--space-4) 0;">
           <img loading="lazy" decoding="async" src="../documents/Bistable Gripper/CONCEPTUAL_DESIGN_OF_A_TETHERLESS_BISTABLE_GRIPPING_DEVICE__FOR_MINIMALLY_INVASIVE_PROCEDURES/chapter3/figure/Picture2.jpg" alt="Resin printer, ultrasonic isopropyl alcohol bath and UV curing station" style="width:100%; border-radius: 8px;">
-          <figcaption>F80 resin workflow: print → IPA wash (20 min) → UV cure (21 min)</figcaption>
+          <figcaption>F80 resin workflow: print, then IPA wash (20 min), then UV cure (21 min)</figcaption>
         </figure>
 
         <details class="detail-toggle">
@@ -247,7 +236,7 @@
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
           <figure>
             <img loading="lazy" decoding="async" src="../documents/Bistable Gripper/CONCEPTUAL_DESIGN_OF_A_TETHERLESS_BISTABLE_GRIPPING_DEVICE__FOR_MINIMALLY_INVASIVE_PROCEDURES/chapter4/figure/profile_curves.png" alt="Snap-through force curves for sphere, straightforward, parabola, deep cap and raised-cos shell profiles" style="width:100%; border-radius: 8px;">
-            <figcaption>Shell profile comparison — the next-best practical profile to a sphere was chosen</figcaption>
+            <figcaption>Shell profile comparison. A sphere is best, so the closest practical profile was used</figcaption>
           </figure>
           <figure>
             <img loading="lazy" decoding="async" src="../documents/Bistable Gripper/CONCEPTUAL_DESIGN_OF_A_TETHERLESS_BISTABLE_GRIPPING_DEVICE__FOR_MINIMALLY_INVASIVE_PROCEDURES/chapter4/figure/snap_region_curves.png" alt="Family of snap-through curves across the parametric design space" style="width:100%; border-radius: 8px;">
@@ -272,7 +261,7 @@
                 <tbody>
                   <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">Material model</td><td style="padding: var(--space-2); text-align: right;">Neo-Hookean hyperelastic (F80 resin)</td></tr>
                   <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">C<sub>10</sub> / D<sub>1</sub></td><td style="padding: var(--space-2); text-align: right;">1.54 MPa / 0.053 MPa<sup>−1</sup></td></tr>
-                  <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">Initial modulus / Poisson</td><td style="padding: var(--space-2); text-align: right;">≈ 9 MPa / ≈ 0.46</td></tr>
+                  <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">Initial modulus / Poisson</td><td style="padding: var(--space-2); text-align: right;">~9 MPa / ~0.46</td></tr>
                   <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">Elements</td><td style="padding: var(--space-2); text-align: right;">C3D10 quadratic tetrahedra, 1.5 mm (checked at 0.8 mm)</td></tr>
                   <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">Nodes</td><td style="padding: var(--space-2); text-align: right;">13,708 – 44,830</td></tr>
                   <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">Solver</td><td style="padding: var(--space-2); text-align: right;">CalculiX 2.21, implicit dynamic, HHT-α = −0.3</td></tr>
@@ -305,11 +294,6 @@
           <figcaption>Actuation test procedure: load in triplicate, record the snap-through force</figcaption>
         </figure>
 
-        <div class="spec-grid">
-          <div class="spec-item"><span class="spec-value">3</span><span class="spec-label">Trials per design</span></div>
-          <div class="spec-item"><span class="spec-value">165 g</span><span class="spec-label">Lighter weight holder</span></div>
-          <div class="spec-item"><span class="spec-value">2</span><span class="spec-label">Custom rigs</span></div>
-        </div>
       </div>
 
       <!-- ITERATIONS -->
@@ -327,12 +311,12 @@
               <table style="width:100%; border-collapse: collapse; font-size: var(--text-sm);">
                 <thead><tr style="border-bottom: 1px solid var(--border);"><th style="padding: var(--space-2); text-align: left; color: var(--headline);">Iteration</th><th style="padding: var(--space-2); text-align: right; color: var(--headline);">Key change</th><th style="padding: var(--space-2); text-align: right; color: var(--headline);">Measured (N)</th><th style="padding: var(--space-2); text-align: right; color: var(--headline);">FEA (N)</th></tr></thead>
                 <tbody>
-                  <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">1</td><td style="padding: var(--space-2); text-align: right;">Concept</td><td style="padding: var(--space-2); text-align: right;">—</td><td style="padding: var(--space-2); text-align: right;">No snap</td></tr>
+                  <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">1</td><td style="padding: var(--space-2); text-align: right;">Concept</td><td style="padding: var(--space-2); text-align: right;">n/a</td><td style="padding: var(--space-2); text-align: right;">No snap</td></tr>
                   <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">2</td><td style="padding: var(--space-2); text-align: right;">Magnet housing, bistable dimensions</td><td style="padding: var(--space-2); text-align: right;">14.23</td><td style="padding: var(--space-2); text-align: right;">12.66</td></tr>
                   <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">3</td><td style="padding: var(--space-2); text-align: right;">Flexure in shell (rim sheared)</td><td style="padding: var(--space-2); text-align: right;">6.77</td><td style="padding: var(--space-2); text-align: right;">6.00</td></tr>
                   <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">4</td><td style="padding: var(--space-2); text-align: right;">Fillets for durability</td><td style="padding: var(--space-2); text-align: right;">8.27</td><td style="padding: var(--space-2); text-align: right;">8.00</td></tr>
-                  <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">5a</td><td style="padding: var(--space-2); text-align: right;">Magnet lip → cavities</td><td style="padding: var(--space-2); text-align: right;">12.57</td><td style="padding: var(--space-2); text-align: right;">11.70</td></tr>
-                  <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">5b</td><td style="padding: var(--space-2); text-align: right;">Magnet lip → 4 arc sections</td><td style="padding: var(--space-2); text-align: right;">7.27</td><td style="padding: var(--space-2); text-align: right;">6.36</td></tr>
+                  <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">5a</td><td style="padding: var(--space-2); text-align: right;">Magnet lip to cavities</td><td style="padding: var(--space-2); text-align: right;">12.57</td><td style="padding: var(--space-2); text-align: right;">11.70</td></tr>
+                  <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">5b</td><td style="padding: var(--space-2); text-align: right;">Magnet lip to 4 arc sections</td><td style="padding: var(--space-2); text-align: right;">7.27</td><td style="padding: var(--space-2); text-align: right;">6.36</td></tr>
                   <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">6</td><td style="padding: var(--space-2); text-align: right;">Depth tuning, PLA prongs bonded</td><td style="padding: var(--space-2); text-align: right;">3.77</td><td style="padding: var(--space-2); text-align: right;">6.00</td></tr>
                   <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">7</td><td style="padding: var(--space-2); text-align: right;">Quadrants removed from shell</td><td style="padding: var(--space-2); text-align: right;"><strong>1.93</strong></td><td style="padding: var(--space-2); text-align: right;">1.67</td></tr>
                 </tbody>
@@ -342,18 +326,18 @@
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
           <figure>
             <img loading="lazy" decoding="async" src="../documents/Bistable Gripper/CONCEPTUAL_DESIGN_OF_A_TETHERLESS_BISTABLE_GRIPPING_DEVICE__FOR_MINIMALLY_INVASIVE_PROCEDURES/chapter4/figure/image22.jpg" alt="Iteration 3 cross-section, CAD and printed part open and closed" style="width:100%; border-radius: 8px;">
-            <figcaption>Iteration 3 — the flexure halved the force…</figcaption>
+            <figcaption>Iteration 3: the flexure halved the force,</figcaption>
           </figure>
           <figure>
             <img loading="lazy" decoding="async" src="../documents/Bistable Gripper/CONCEPTUAL_DESIGN_OF_A_TETHERLESS_BISTABLE_GRIPPING_DEVICE__FOR_MINIMALLY_INVASIVE_PROCEDURES/chapter4/figure/image23.jpg" alt="Iteration 3 shell sheared apart at the flexure" style="width:100%; border-radius: 8px;">
-            <figcaption>…but sheared the rim off under repeated use</figcaption>
+            <figcaption>but the rim sheared off under repeated use</figcaption>
           </figure>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
           <figure>
             <img loading="lazy" decoding="async" src="../assets/web/Bistable Gripper/CONCEPTUAL_DESIGN_OF_A_TETHERLESS_BISTABLE_GRIPPING_DEVICE__FOR_MINIMALLY_INVASIVE_PROCEDURES/chapter4/figure/image7.webp" alt="Iteration 5b with four arc sections holding the magnets" style="width:100%; border-radius: 8px;">
-            <figcaption>Iteration 5b — four arc sections hold the magnets</figcaption>
+            <figcaption>Iteration 5b: four arc sections hold the magnets</figcaption>
           </figure>
           <figure>
             <img loading="lazy" decoding="async" src="../documents/Bistable Gripper/CONCEPTUAL_DESIGN_OF_A_TETHERLESS_BISTABLE_GRIPPING_DEVICE__FOR_MINIMALLY_INVASIVE_PROCEDURES/chapter4/figure/image4.png" alt="Depth-tuned shell checked in its open and closed states" style="width:100%; border-radius: 8px;">
@@ -376,7 +360,7 @@
       <div id="actuation" class="project-subblock">
         <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Magnetic Actuation</h4>
         <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-          The device is driven by a MagnetoSuture-style system: four planar coils steer it and a fifth coil pulls downward to trigger the snap. MATLAB sends coil currents to an Arduino, which drives the coils through PWM motor drivers. A single set of perpendicular magnets gave both planar motion and state flipping in bench-top tests in air — a proof of concept for the actuation strategy.
+          The device is driven by a MagnetoSuture-style system: four planar coils steer it and a fifth coil pulls downward to trigger the snap. MATLAB sends coil currents to an Arduino, which drives the coils through PWM motor drivers. A single set of perpendicular magnets gave both planar motion and state flipping in bench-top tests in air This proves the actuation idea, not a finished locomotion system.
         </p>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
           <figure>
@@ -389,11 +373,6 @@
           </figure>
         </div>
 
-        <div class="spec-grid">
-          <div class="spec-item"><span class="spec-value">≈1.34 N</span><span class="spec-label">Max coil force</span></div>
-          <div class="spec-item"><span class="spec-value">93.4 mT</span><span class="spec-label">Two opposing coils</span></div>
-          <div class="spec-item"><span class="spec-value">5</span><span class="spec-label">Coils</span></div>
-        </div>
       </div>
 
       <!-- GRIPPER -->
@@ -417,11 +396,11 @@
               <table style="width:100%; border-collapse: collapse; font-size: var(--text-sm);">
                 <thead><tr style="border-bottom: 1px solid var(--border);"><th style="padding: var(--space-2); text-align: left; color: var(--headline);">Design</th><th style="padding: var(--space-2); text-align: right; color: var(--headline);">Cylinder</th><th style="padding: var(--space-2); text-align: right; color: var(--headline);">Desc. cone</th><th style="padding: var(--space-2); text-align: right; color: var(--headline);">Asc. cone</th><th style="padding: var(--space-2); text-align: right; color: var(--headline);">Polyp</th><th style="padding: var(--space-2); text-align: right; color: var(--headline);">Grip (N)</th></tr></thead>
                 <tbody>
-                  <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">Gripper 1</td><td style="padding: var(--space-2); text-align: right;">✗</td><td style="padding: var(--space-2); text-align: right;">✗</td><td style="padding: var(--space-2); text-align: right;">✓</td><td style="padding: var(--space-2); text-align: right;">✗</td><td style="padding: var(--space-2); text-align: right;">0.00</td></tr>
-                  <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">Gripper 2</td><td style="padding: var(--space-2); text-align: right;">✓</td><td style="padding: var(--space-2); text-align: right;">✗</td><td style="padding: var(--space-2); text-align: right;">✗</td><td style="padding: var(--space-2); text-align: right;">✓</td><td style="padding: var(--space-2); text-align: right;">0.03</td></tr>
-                  <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">Gripper 3</td><td style="padding: var(--space-2); text-align: right;">✗</td><td style="padding: var(--space-2); text-align: right;">✓</td><td style="padding: var(--space-2); text-align: right;">✓</td><td style="padding: var(--space-2); text-align: right;">✓</td><td style="padding: var(--space-2); text-align: right;">0.07</td></tr>
-                  <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">Gripper 4</td><td style="padding: var(--space-2); text-align: right;">✓</td><td style="padding: var(--space-2); text-align: right;">✓</td><td style="padding: var(--space-2); text-align: right;">✓</td><td style="padding: var(--space-2); text-align: right;">✓</td><td style="padding: var(--space-2); text-align: right;">0.36</td></tr>
-                  <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">Iteration 7</td><td style="padding: var(--space-2); text-align: right;">—</td><td style="padding: var(--space-2); text-align: right;">—</td><td style="padding: var(--space-2); text-align: right;">—</td><td style="padding: var(--space-2); text-align: right;">—</td><td style="padding: var(--space-2); text-align: right;"><strong>0.69</strong></td></tr>
+                  <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">Gripper 1</td><td style="padding: var(--space-2); text-align: right;">No</td><td style="padding: var(--space-2); text-align: right;">No</td><td style="padding: var(--space-2); text-align: right;">Yes</td><td style="padding: var(--space-2); text-align: right;">No</td><td style="padding: var(--space-2); text-align: right;">0.00</td></tr>
+                  <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">Gripper 2</td><td style="padding: var(--space-2); text-align: right;">Yes</td><td style="padding: var(--space-2); text-align: right;">No</td><td style="padding: var(--space-2); text-align: right;">No</td><td style="padding: var(--space-2); text-align: right;">Yes</td><td style="padding: var(--space-2); text-align: right;">0.03</td></tr>
+                  <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">Gripper 3</td><td style="padding: var(--space-2); text-align: right;">No</td><td style="padding: var(--space-2); text-align: right;">Yes</td><td style="padding: var(--space-2); text-align: right;">Yes</td><td style="padding: var(--space-2); text-align: right;">Yes</td><td style="padding: var(--space-2); text-align: right;">0.07</td></tr>
+                  <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">Gripper 4</td><td style="padding: var(--space-2); text-align: right;">Yes</td><td style="padding: var(--space-2); text-align: right;">Yes</td><td style="padding: var(--space-2); text-align: right;">Yes</td><td style="padding: var(--space-2); text-align: right;">Yes</td><td style="padding: var(--space-2); text-align: right;">0.36</td></tr>
+                  <tr style="border-bottom: 1px solid var(--border);"><td style="padding: var(--space-2); text-align: left;">Iteration 7</td><td style="padding: var(--space-2); text-align: right;">n/a</td><td style="padding: var(--space-2); text-align: right;">n/a</td><td style="padding: var(--space-2); text-align: right;">n/a</td><td style="padding: var(--space-2); text-align: right;">n/a</td><td style="padding: var(--space-2); text-align: right;"><strong>0.69</strong></td></tr>
                 </tbody>
               </table>
             </div>
@@ -448,7 +427,7 @@
         </div>
 
         <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-          <strong>Scaling:</strong> testing the shell at 0.5×, 0.75× and 1.0× size showed the snap-through force follows a power law, F* ∝ scale<sup>1.44</sup> — it drops faster than linearly as the device shrinks. Extrapolating suggests further, achievable miniaturisation below 0.5× would bring the force under the coil platform's 1.34 N limit without a new shell design.
+          Testing the shell at 0.5×, 0.75× and 1.0× size showed the snap-through force follows a power law, F* ∝ scale<sup>1.44</sup>, so it drops faster than linearly as the device shrinks. Extrapolating suggests further, achievable miniaturisation below 0.5× would bring the force under the coil platform's 1.34 N limit without a new shell design.
         </p>
         <details class="detail-toggle">
           <summary>
@@ -493,9 +472,16 @@
         </details>
       </div>
 
+      <div id="hardest" class="project-block">
+        <h3>The Hardest Part</h3>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          The hardest part wasn't any single iteration. It was finding the right scale for the device, and working out which way of making it actually behaved the way the design needed. Silicone casting, F80 resin printing and the resin-and-PLA composite each changed the snap-through force, and the composite even pulled the FEA off by more than a third. Choosing between them, and then deciding how small to go, took more trial and error than any of the geometry changes.
+        </p>
+      </div>
+
       <!-- ADDITIONAL INFORMATION -->
       <div id="additional-info" class="project-block">
-        <h3>Additional Information</h3>
+        <h3>Full Report</h3>
         <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-4);">Full thesis: <em>Conceptual Design of a Tetherless Bistable Gripping Device for Minimally Invasive Procedures</em>.</p>
         <div class="resume-actions" style="margin-bottom: var(--space-4);">
           <a href="../documents/Bistable Gripper/Avva_MS_Thesis.pdf" class="btn-outline" target="_blank" rel="noopener">Open thesis PDF</a>
@@ -538,7 +524,7 @@
 
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
-    knob.textContent = theme === 'dark' ? '☀' : '☾';
+    knob.textContent = theme === 'dark' ? 'Light' : 'Dark';
     try { localStorage.setItem('site-theme', theme); } catch (e) {}
   }
 

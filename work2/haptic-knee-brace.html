@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Avva Sai Pranav">
-  <meta property="og:title" content="Haptic Knee Brace — Avva Sai Pranav">
+  <meta property="og:title" content="Haptic Knee Brace | Avva Sai Pranav">
   <meta property="og:description" content="Wearable haptic brace providing directional vibrotactile feedback for ACL rehabilitation at Johns Hopkins University.">
   <meta property="og:url" content="https://avvasai.github.io/work2/haptic-knee-brace.html">
   <meta property="og:image" content="https://avvasai.github.io/assets/og-card.png">
@@ -30,7 +30,7 @@
     <div class="pill-right">
       <span class="label">Theme:</span>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light theme">
-        <span id="themeKnob">☀</span>
+        <span id="themeKnob">Light</span>
       </button>
       <span class="clock" id="clock"></span>
     </div>
@@ -39,7 +39,7 @@
 
 <section class="section">
   <div class="id-strip">
-    <a href="../index.html" class="id-name" aria-label="Avva Sai Pranav — home page">Avva Sai Pranav</a>
+    <a href="../index.html" class="id-name" aria-label="Avva Sai Pranav, home page">Avva Sai Pranav</a>
     <a href="../index.html#projects" class="pager-all">← All projects</a>
   </div>
 
@@ -57,7 +57,8 @@
       <a href="#test-setup" class="sidebar-link">Test Setup</a>
       <a href="#results" class="sidebar-link">Results</a>
       <a href="#demo-video" class="sidebar-link">Demo Video</a>
-      <a href="#additional-info" class="sidebar-link">Additional Information</a>
+      <a href="#wearing" class="sidebar-link">Wearing It</a>
+      <a href="#additional-info" class="sidebar-link">Full Report</a>
       <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">↑ Top</button>
     </aside>
 
@@ -70,22 +71,8 @@
           <p class="project-hero-meta">Johns Hopkins University · 535.691 Haptic Interface Design · Prof. Jeremy Brown</p>
           <h2>Haptic Knee Brace</h2>
           <p style="color:var(--text); max-width:62ch;">
-            Wearable haptic brace providing directional vibrotactile feedback for ACL rehabilitation — guiding users toward stable knee positions without constraining movement.
+            Wearable haptic brace providing directional vibrotactile feedback for ACL rehabilitation, guiding users toward stable knee positions without constraining movement.
           </p>
-          <div class="spec-ribbon">
-            <div class="dim-tag">
-              <span class="dim-value">Aug–Dec 2024</span>
-              <span class="dim-label">Duration</span>
-            </div>
-            <div class="dim-tag">
-              <span class="dim-value">Hardware Lead</span>
-              <span class="dim-label">Role</span>
-            </div>
-            <div class="dim-tag">
-              <span class="dim-value">100%</span>
-              <span class="dim-label">Front-bend accuracy</span>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -114,13 +101,13 @@
       <div id="problem" class="project-block">
         <h3>Problem Statement</h3>
         <p style="color:var(--text); max-width:62ch; margin-bottom: var(--space-4);">
-          Knee instability from ACL injuries affects 80,000–120,000 people annually in the US. Current rehabilitation methods face a critical tradeoff.
+          Knee instability from ACL injuries affects 80,000–120,000 people annually in the US. Current rehabilitation methods face a tradeoff.
         </p>
         <ul class="bullet-list">
-          <li><strong>Over-bracing risk:</strong> Passive braces constrain movement → muscle atrophy</li>
-          <li><strong>Under-bracing risk:</strong> Free movement during recovery → re-injury</li>
-          <li><strong>Dynamic valgus:</strong> Lateral knee collapse during movement is primary injury mechanism</li>
-          <li><strong>Gap:</strong> No device provides active guidance without physical constraint</li>
+          <li>Over-bracing risk: Passive braces limit movement, which leads to muscle atrophy</li>
+          <li>Under-bracing risk: Free movement during recovery risks re-injury</li>
+          <li>Dynamic valgus: Lateral knee collapse during movement is primary injury mechanism</li>
+          <li>Gap: No device provides active guidance without physical constraint</li>
         </ul>
       </div>
 
@@ -128,19 +115,8 @@
       <div id="methodology" class="project-block">
         <h3>Methodology</h3>
         <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-2);">
-          Complete wearable system with sensing, actuation, and closed-loop control. Click a stage to jump there.
+          Complete wearable system with sensing, actuation, and closed-loop control.
         </p>
-        <nav class="process-stepper">
-          <a href="#design-fab" class="process-step"><span class="step-num">1</span>Design</a>
-          <span class="process-connector"></span>
-          <a href="#electronics" class="process-step"><span class="step-num">2</span>Electronics</a>
-          <span class="process-connector"></span>
-          <a href="#control-logic" class="process-step"><span class="step-num">3</span>Control</a>
-          <span class="process-connector"></span>
-          <a href="#test-setup" class="process-step"><span class="step-num">4</span>Test</a>
-          <span class="process-connector"></span>
-          <a href="#results" class="process-step"><span class="step-num">5</span>Results</a>
-        </nav>
       </div>
 
       <!-- DESIGN & FABRICATION -->
@@ -150,12 +126,6 @@
           The device consists of two adjustable bands: a lower band with flex sensors around the knee and an upper band with the ERM motor array on the thigh.
         </p>
 
-        <div class="spec-grid">
-          <div class="spec-item"><span class="spec-value">2</span><span class="spec-label">Bands</span></div>
-          <div class="spec-item"><span class="spec-value">3</span><span class="spec-label">Flex sensors</span></div>
-          <div class="spec-item"><span class="spec-value">6</span><span class="spec-label">ERM motors</span></div>
-          <div class="spec-item"><span class="spec-value">40 mm</span><span class="spec-label">Motor spacing</span></div>
-        </div>
 
         <ul class="bullet-list" style="margin-top: var(--space-4);">
           <li><strong>Flex sensors:</strong> 3D-printed TPU enclosures for durability and compliance</li>
@@ -196,11 +166,6 @@
           Threshold-based detection with staggered "follow me" vibration patterns that intuitively guide users toward stability.
         </p>
 
-        <div class="spec-grid">
-          <div class="spec-item"><span class="spec-value">5°</span><span class="spec-label">Warning threshold</span></div>
-          <div class="spec-item"><span class="spec-value">8°</span><span class="spec-label">Active threshold</span></div>
-          <div class="spec-item"><span class="spec-value">Auto</span><span class="spec-label">Calibration</span></div>
-        </div>
 
         <ul class="bullet-list" style="margin-top: var(--space-4);">
           <li><strong>Detection:</strong> Flex sensors detect knee angle across sagittal, abduction, and adduction planes</li>
@@ -231,7 +196,7 @@
         <h3>Test Setup</h3>
 
         <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-          <strong>Perception Studies:</strong> Preliminary vibrotactile perception studies determined optimal design parameters.
+          Preliminary vibrotactile perception studies determined optimal design parameters.
         </p>
 
         <div class="stat-strip">
@@ -375,9 +340,16 @@
         </div>
       </div>
 
+      <div id="wearing" class="project-block">
+        <h3>Wearing It</h3>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Wearing it was interesting, and you could clearly feel the vibration cues. What we couldn't do was feel it working as intended, because none of us have knees that bend in the direction the device is meant to correct.
+        </p>
+      </div>
+
       <!-- ADDITIONAL INFORMATION -->
       <div id="additional-info" class="project-block">
-        <h3>Additional Information</h3>
+        <h3>Full Report</h3>
         <p style="color:var(--text-dim); max-width:62ch; margin-bottom: var(--space-6); font-size: var(--text-sm);">
           Complete technical report with methodology, results, and analysis from the 535.691 Haptic Interface Design course final project.
         </p>
@@ -434,7 +406,7 @@
 
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
-    knob.textContent = theme === 'dark' ? '☀' : '☾';
+    knob.textContent = theme === 'dark' ? 'Light' : 'Dark';
     try { localStorage.setItem('site-theme', theme); } catch (e) {}
   }
 

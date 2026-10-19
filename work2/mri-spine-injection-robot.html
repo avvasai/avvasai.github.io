@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Avva Sai Pranav">
-  <meta property="og:title" content="MRI Spine Injection Robot — Avva Sai Pranav">
+  <meta property="og:title" content="MRI Spine Injection Robot | Avva Sai Pranav">
   <meta property="og:description" content="FEA-optimized I-beam linkage profiles for MR-compatible spinal injection robot, achieving carbon fiber-equivalent stiffness at Johns Hopkins CIS II.">
   <meta property="og:url" content="https://avvasai.github.io/work2/mri-spine-injection-robot.html">
   <meta property="og:image" content="https://avvasai.github.io/assets/og-card.png">
@@ -30,7 +30,7 @@
     <div class="pill-right">
       <span class="label">Theme:</span>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light theme">
-        <span id="themeKnob">☀</span>
+        <span id="themeKnob">Light</span>
       </button>
       <span class="clock" id="clock"></span>
     </div>
@@ -39,7 +39,7 @@
 
 <section class="section">
   <div class="id-strip">
-    <a href="../index.html" class="id-name" aria-label="Avva Sai Pranav — home page">Avva Sai Pranav</a>
+    <a href="../index.html" class="id-name" aria-label="Avva Sai Pranav, home page">Avva Sai Pranav</a>
     <a href="../index.html#projects" class="pager-all">← All projects</a>
   </div>
 
@@ -55,7 +55,8 @@
       <a href="#fabrication" class="sidebar-link sidebar-sublink">Fabrication</a>
       <a href="#test-setup" class="sidebar-link">Test Setup</a>
       <a href="#results" class="sidebar-link">Results</a>
-      <a href="#additional-info" class="sidebar-link">Additional Information</a>
+      <a href="#surprise" class="sidebar-link">What Surprised Me</a>
+      <a href="#additional-info" class="sidebar-link">Full Report</a>
       <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">↑ Top</button>
     </aside>
 
@@ -66,15 +67,8 @@
       <div id="summary" class="project-block">
         <div class="project-hero">
           <div class="project-hero-text">
-            <p class="section-eyebrow">Project · Medical Robotics</p>
             <h2>MRI Spine Injection Robot</h2>
             <p class="project-hero-meta">Johns Hopkins University · Computer Integrated Surgery II · Guided by Dr. Iordachita · Jan 2025 – May 2025</p>
-            <div class="spec-ribbon">
-              <div class="dim-tag"><span class="dim-value">1.6</span><span class="dim-label">µm deflection</span></div>
-              <div class="dim-tag"><span class="dim-value">5-DOF</span><span class="dim-label">robot architecture</span></div>
-              <div class="dim-tag"><span class="dim-value">6</span><span class="dim-label">profiles analyzed</span></div>
-              <div class="dim-tag"><span class="dim-value">MR</span><span class="dim-label">compatible</span></div>
-            </div>
           </div>
         </div>
 
@@ -103,7 +97,7 @@
           Low back pain affects over 600 million people globally, and MRI-guided spinal injections offer a radiation-free diagnostic and therapeutic approach. This project continued development of a 5-DOF MR-compatible robot for lumbar spine needle insertion, focusing on improving mechanical rigidity to meet clinical accuracy requirements (&lt;1 mm positioning, &lt;1° angular error).
         </p>
         <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-          My primary contribution was leading the FEA-based redesign of the robot's linkage profiles. The original PLA linkages lacked sufficient stiffness for needle insertion forces, while carbon fiber—though rigid—is only MR-conditional due to potential heating effects. I systematically analyzed six beam cross-sections, optimizing for the highest second moment of inertia to weight ratio. Through iterative FEA simulation, I developed an I-beam profile in ABS that matched the 6 mm carbon fiber's stiffness (15 µm deflection under 5 N loading) while maintaining full MR compatibility.
+          My primary contribution was leading the FEA-based redesign of the robot's linkage profiles. The original PLA linkages lacked sufficient stiffness for needle insertion forces, while carbon fiber, though rigid, is only MR-conditional due to potential heating effects. I systematically analyzed six beam cross-sections, optimizing for the highest second moment of inertia to weight ratio. Through iterative FEA simulation, I developed an I-beam profile in ABS that matched the 6 mm carbon fiber's stiffness (15 µm deflection under 5 N loading) while maintaining full MR compatibility.
         </p>
         <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
           I also contributed to CAD modeling, 3D printing the optimized profiles, validating performance through bending tests, assisting with robot debugging, and documenting the design process. The redesigned profiles are ready for integration into the robot to improve endpoint accuracy for future phantom and clinical testing.
@@ -137,10 +131,10 @@
       <div id="problem" class="project-block">
         <h3>Problem Statement</h3>
         <ul class="bullet-list">
-          <li><strong>Need:</strong> MRI-guided spinal injections require a robot with high endpoint accuracy (&lt;1 mm positioning, &lt;1° angular error) that is fully MR-compatible</li>
-          <li><strong>Prior art:</strong> The robot's original PLA linkages lacked sufficient rigidity for needle insertion forces, causing deflection that compromised endpoint accuracy. Carbon fiber linkages improved stiffness but are only MR-conditional due to potential heating in MRI fields</li>
-          <li><strong>Open question:</strong> Could an optimized 3D-printable profile using MR-compatible materials (ABS/PLA) match carbon fiber stiffness without changing the robot's kinematics or workspace?</li>
+          <li>Need: MRI-guided spinal injections require a robot with high endpoint accuracy (&lt;1 mm positioning, &lt;1° angular error) that is fully MR-compatible</li>
+          <li>Prior art: The robot's original PLA linkages lacked sufficient rigidity for needle insertion forces, causing deflection that compromised endpoint accuracy. Carbon fiber linkages improved stiffness but are only MR-conditional due to potential heating in MRI fields</li>
         </ul>
+        <p style="color:var(--text); font-size: var(--text-sm); margin: var(--space-4) 0;">I wanted to know whether a 3D-printable profile in an MR-safe plastic (ABS or PLA) could match carbon fibre's stiffness without changing the robot's kinematics or workspace.</p>
 
         <!-- System Overview Image -->
         <figure style="margin: var(--space-6) 0;">
@@ -153,36 +147,25 @@
       <div id="methodology" class="project-block">
         <h3>Methodology</h3>
         <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-2);">
-          The project followed a systematic design-simulate-fabricate-test workflow for linkage profile optimization. Click a stage to jump there.
+          The project followed a systematic design-simulate-fabricate-test workflow for linkage profile optimization.
         </p>
-        <nav class="process-stepper">
-          <a href="#design-sim" class="process-step"><span class="step-num">1</span>Design</a>
-          <span class="process-connector"></span>
-          <a href="#fabrication" class="process-step"><span class="step-num">2</span>Fabricate</a>
-          <span class="process-connector"></span>
-          <a href="#test-setup" class="process-step"><span class="step-num">3</span>Test</a>
-          <span class="process-connector"></span>
-          <a href="#results" class="process-step"><span class="step-num">4</span>Results</a>
-        </nav>
       </div>
 
       <!-- DESIGN & SIMULATION -->
       <div id="design-sim" class="project-subblock">
         <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Design &amp; Simulation</h4>
 
-        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-          <strong>Problem Definition & Constraints:</strong> Design constraints included: fixed bolt hole dimensions, linkage length (111 mm), width (12 mm), and material limited to ABS for MR-compatibility.
-        </p>
+        <h5 class="para-head">Problem Definition & Constraints</h5>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">Design constraints included: fixed bolt hole dimensions, linkage length (111 mm), width (12 mm), and material limited to ABS for MR-compatibility.</p>
 
         <!-- Carbon Fiber Linkages Image -->
         <figure style="margin: var(--space-4) 0;">
           <img loading="lazy" decoding="async" src="../documents/Robotic Assistant For MRI Guided Low Back Pain Injections/Figure5.jpg" alt="Carbon fiber robot linkages showing the baseline design" style="width:100%; border-radius: 8px;">
-          <figcaption>Carbon fiber robot linkages — the baseline design that the ABS I-beam profiles were designed to match in stiffness</figcaption>
+          <figcaption>Carbon fiber robot linkages: the baseline design that the ABS I-beam profiles were designed to match in stiffness</figcaption>
         </figure>
 
-        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-          <strong>Profile Selection via FEA:</strong> Six beam cross-sections were analyzed using FEA simulation under identical loading conditions (5 N cantilever load, ABS material). Profiles compared included I-beam, C-channel, hollow rectangular, solid rectangular, T-beam, and custom sections. The selection criterion was the ratio of second moment of inertia to weight—maximizing stiffness while minimizing mass. The I-beam profile emerged as optimal with the highest ratio (10.01×10⁻⁴) among all candidates.
-        </p>
+        <h5 class="para-head">Profile Selection via FEA</h5>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">Six beam cross-sections were analyzed using FEA simulation under identical loading conditions (5 N cantilever load, ABS material). Profiles compared included I-beam, C-channel, hollow rectangular, solid rectangular, T-beam, and custom sections. The selection criterion was the ratio of second moment of inertia to weight, maximizing stiffness while minimizing mass. The I-beam profile emerged as optimal with the highest ratio (10.01×10⁻⁴) among all candidates.</p>
 
         <!-- Profile Comparison Table Image -->
         <figure style="margin: var(--space-4) 0;">
@@ -190,9 +173,8 @@
           <figcaption>Comparison table of 6 beam profiles showing second moment of inertia, weight, ratio, and deflection under 5 N loading</figcaption>
         </figure>
 
-        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-          <strong>Iterative I-Beam Optimization:</strong> With I-beam selected, iterative FEA optimization varied geometric parameters to match carbon fiber performance. Attempt 2 varied web width, confirming increased width improves rigidity. Attempt 3 fixed width at 7 mm and varied height to match 5 mm and 6 mm carbon fiber deflection targets. Attempt 4 optimized beam proportions (70% web height, 15% flange height). A second-order curvature optimization on the flanges further reduced deflection while achieving only 2% weight reduction—confirming the design was near-optimal.
-        </p>
+        <h5 class="para-head">Iterative I-Beam Optimization</h5>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">With I-beam selected, iterative FEA optimization varied geometric parameters to match carbon fiber performance. Attempt 2 varied web width, confirming increased width improves rigidity. Attempt 3 fixed width at 7 mm and varied height to match 5 mm and 6 mm carbon fiber deflection targets. Attempt 4 optimized beam proportions (70% web height, 15% flange height). A second-order curvature optimization on the flanges further reduced deflection while achieving only 2% weight reduction, confirming the design was near-optimal.</p>
 
         <!-- I-Beam Profile Views Image -->
         <figure style="margin: var(--space-4) 0;">
@@ -330,9 +312,16 @@
         </details>
       </div>
 
+      <div id="surprise" class="project-block">
+        <h3>What Surprised Me</h3>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          The I-beam result surprised me: it came out clearly the most efficient of the six profiles. It was a good reminder of why it's the standard engineering choice.
+        </p>
+      </div>
+
       <!-- ADDITIONAL INFORMATION -->
       <div id="additional-info" class="project-block">
-        <h3>Additional Information</h3>
+        <h3>Full Report</h3>
         <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-4);">Final project report with detailed methodology, results, and deliverables status.</p>
         <div class="resume-card">
           <div class="pdf-wrapper">
@@ -372,7 +361,7 @@
 
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
-    knob.textContent = theme === 'dark' ? '☀' : '☾';
+    knob.textContent = theme === 'dark' ? 'Light' : 'Dark';
     try { localStorage.setItem('site-theme', theme); } catch (e) {}
   }
 

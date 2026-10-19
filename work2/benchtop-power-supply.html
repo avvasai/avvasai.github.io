@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Avva Sai Pranav">
-  <meta property="og:title" content="Benchtop Power Supply — Avva Sai Pranav">
+  <meta property="og:title" content="Benchtop Power Supply | Avva Sai Pranav">
   <meta property="og:description" content="Custom benchtop power supply built from ATX PSU with CC/CV control, fine/coarse tuning, 24V boost, and multi-rail outputs for under $10.">
   <meta property="og:url" content="https://avvasai.github.io/work2/benchtop-power-supply.html">
   <meta property="og:image" content="https://avvasai.github.io/assets/og-card.png">
@@ -134,7 +134,7 @@
     <div class="pill-right">
       <span class="label">Theme:</span>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light theme">
-        <span id="themeKnob">☀</span>
+        <span id="themeKnob">Light</span>
       </button>
       <span class="clock" id="clock"></span>
     </div>
@@ -143,7 +143,7 @@
 
 <section class="section">
   <div class="id-strip">
-    <a href="../index.html" class="id-name" aria-label="Avva Sai Pranav — home page">Avva Sai Pranav</a>
+    <a href="../index.html" class="id-name" aria-label="Avva Sai Pranav, home page">Avva Sai Pranav</a>
     <a href="../index.html#projects" class="pager-all">← All projects</a>
   </div>
 
@@ -159,6 +159,7 @@
       <a href="#fabrication" class="sidebar-link sidebar-sublink">Fabrication</a>
       <a href="#test-setup" class="sidebar-link">Test Setup</a>
       <a href="#results" class="sidebar-link">Results</a>
+      <a href="#why-build" class="sidebar-link">Why Build One</a>
       <a href="#additional-info" class="sidebar-link">Additional Information</a>
       <a href="#gallery" class="sidebar-link">Gallery</a>
       <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">↑ Top</button>
@@ -173,22 +174,8 @@
           <p class="project-hero-meta">Personal Project · 2023</p>
           <h2>Benchtop Power Supply</h2>
           <p style="color:var(--text); max-width:62ch;">
-            ATX PSU conversion with CC/CV control, fine/coarse tuning &amp; multi-rail outputs — under $10.
+            ATX PSU conversion with CC/CV control, fine/coarse tuning &amp; multi-rail outputs, under $10.
           </p>
-          <div class="spec-ribbon">
-            <div class="dim-tag">
-              <span class="dim-value">400W</span>
-              <span class="dim-label">Power capacity</span>
-            </div>
-            <div class="dim-tag">
-              <span class="dim-value">~$10</span>
-              <span class="dim-label">Additional cost</span>
-            </div>
-            <div class="dim-tag">
-              <span class="dim-value">5</span>
-              <span class="dim-label">Output rails</span>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -219,7 +206,7 @@
           Commercial benchtop power supplies with variable voltage and current limiting typically cost $50–$150 or more. This project repurposes a salvaged 400W ATX computer power supply into a fully featured lab bench supply for under $10 in additional components.
         </p>
         <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-          While the basic ATX conversion concept was inspired by the <a href="https://dronebotworkshop.com/atx-bench-supply/" target="_blank" rel="noopener noreferrer">DroneBot Workshop tutorial</a>, this build significantly extends the functionality by adding an XL4015-based constant current/constant voltage (CC/CV) module for a true variable output with current limiting — essential for safely powering sensitive circuits and charging batteries.
+          While the basic ATX conversion concept was inspired by the <a href="https://dronebotworkshop.com/atx-bench-supply/" target="_blank" rel="noopener noreferrer">DroneBot Workshop tutorial</a>, this build extends the functionality by adding an XL4015-based constant current/constant voltage (CC/CV) module for a true variable output with current limiting, essential for safely powering sensitive circuits and charging batteries.
         </p>
         <p style="color:var(--text); font-size: var(--text-sm);">
           A dual fine/coarse knob system enables precision voltage and current adjustment, while a boost converter provides a 24V rail not available from standard ATX supplies. The front panel was hand-fabricated using an angle grinder and Dremel.
@@ -233,11 +220,11 @@
           Needed a reliable, low-cost benchtop power supply for Arduino projects, circuit prototyping, and embedded systems development without spending $100+ on commercial equipment.
         </p>
         <ul class="bullet-list">
-          <li><strong>Reuse:</strong> Salvaged ATX PSU instead of buying new bench supply</li>
-          <li><strong>Variable output:</strong> Adjustable voltage with current limiting for safe testing</li>
-          <li><strong>Multiple rails:</strong> Fixed 3.3V, 5V, 12V plus 24V for motors</li>
-          <li><strong>Convenience:</strong> USB charging ports and real-time V/A monitoring</li>
-          <li><strong>Accessibility:</strong> Functional, labeled front panel with easy output access</li>
+          <li>Reuse: Salvaged ATX PSU instead of buying new bench supply</li>
+          <li>Variable output: Adjustable voltage with current limiting for safe testing</li>
+          <li>Multiple rails: Fixed 3.3V, 5V, 12V plus 24V for motors</li>
+          <li>Convenience: USB charging ports and real-time V/A monitoring</li>
+          <li>Accessibility: Functional, labeled front panel with easy output access</li>
         </ul>
       </div>
 
@@ -245,17 +232,8 @@
       <div id="methodology" class="project-block">
         <h3>Methodology</h3>
         <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-2);">
-          Step-by-step conversion from ATX PSU to fully featured bench supply. Click a stage to jump there.
+          Step-by-step conversion from ATX PSU to fully featured bench supply.
         </p>
-        <nav class="process-stepper">
-          <a href="#components" class="process-step"><span class="step-num">1</span>Components</a>
-          <span class="process-connector"></span>
-          <a href="#fabrication" class="process-step"><span class="step-num">2</span>Fabricate</a>
-          <span class="process-connector"></span>
-          <a href="#test-setup" class="process-step"><span class="step-num">3</span>Test</a>
-          <span class="process-connector"></span>
-          <a href="#results" class="process-step"><span class="step-num">4</span>Results</a>
-        </nav>
       </div>
 
       <!-- COMPONENTS -->
@@ -305,7 +283,7 @@
       <div id="test-setup" class="project-block">
         <h3>Test Setup</h3>
         <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-          All output rails verified with a digital multimeter. Variable output tested across full voltage range with resistive loads. Current limiting verified by setting limit and shorting output — supply correctly enters constant current mode. USB ports tested with phone charging. Supply has been in regular use for embedded systems development since 2023.
+          All output rails verified with a digital multimeter. Variable output tested across full voltage range with resistive loads. Current limiting verified by setting limit and shorting output, supply correctly enters constant current mode. USB ports tested with phone charging. Supply has been in regular use for embedded systems development since 2023.
         </p>
 
         <div class="stat-strip">
@@ -381,8 +359,15 @@
         </details>
 
         <div class="credit-box">
-          <strong>Original Idea Credit:</strong> Base ATX conversion concept inspired by <a href="https://dronebotworkshop.com/atx-bench-supply/" target="_blank" rel="noopener noreferrer">DroneBot Workshop's ATX Bench Supply Tutorial</a>. All enhancements — including CC/CV control, fine/coarse adjustment, 24V boost rail, and front panel fabrication — are original work.
+          The base ATX conversion idea came from <a href="https://dronebotworkshop.com/atx-bench-supply/" target="_blank" rel="noopener noreferrer">DroneBot Workshop's ATX Bench Supply Tutorial</a>. All enhancements (including CC/CV control, fine/coarse adjustment, 24V boost rail, and front panel fabrication) are original work.
         </div>
+      </div>
+
+      <div id="why-build" class="project-block">
+        <h3>Why Build One</h3>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          Building one was cheaper than buying a bench supply, and a lot more fun as a project. It still sits on my bench, and I use it to power smaller boards.
+        </p>
       </div>
 
       <!-- ADDITIONAL INFORMATION -->
@@ -416,7 +401,6 @@
 
       <!-- GALLERY -->
       <div id="gallery" class="project-block gallery-section">
-        <p class="section-eyebrow">Build Process</p>
         <h3>Gallery</h3>
         <p style="color:var(--text-dim); max-width:70ch; margin-bottom:var(--space-4); font-size:var(--text-sm);">
           Photos from the build process. Use the arrows or dots to browse.
@@ -427,19 +411,19 @@
             <div class="carousel-track" id="fabTrack">
               <figure class="carousel-slide">
                 <img src="../documents/DIY Benchtop Power Supply/fig1.jpg" alt="Components laid out for the build" loading="lazy">
-                <figcaption>Bill of materials — ATX PSU, XL4015 module, pots, jacks, display</figcaption>
+                <figcaption>Bill of materials: ATX PSU, XL4015 module, pots, jacks, display</figcaption>
               </figure>
               <figure class="carousel-slide">
                 <img src="../documents/DIY Benchtop Power Supply/fig4.jpg" alt="ATX wiring sorted by rail color" loading="lazy">
-                <figcaption>ATX rail wiring — color-coded and bundled for front panel</figcaption>
+                <figcaption>ATX rail wiring: color-coded and bundled for front panel</figcaption>
               </figure>
               <figure class="carousel-slide">
                 <img src="../documents/DIY Benchtop Power Supply/fig2.jpg" alt="Internal wiring with CC/CV module" loading="lazy">
-                <figcaption>Internal assembly — XL4015 CC/CV module with heatsink installed</figcaption>
+                <figcaption>Internal assembly: XL4015 CC/CV module with heatsink installed</figcaption>
               </figure>
               <figure class="carousel-slide">
                 <img src="../documents/DIY Benchtop Power Supply/fig3.jpg" alt="Front panel fabrication in progress" loading="lazy">
-                <figcaption>Front panel progress — hand-cut openings for display and jacks</figcaption>
+                <figcaption>Front panel progress: hand-cut openings for display and jacks</figcaption>
               </figure>
             </div>
           </div>
@@ -476,7 +460,7 @@
 
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
-    knob.textContent = theme === 'dark' ? '☀' : '☾';
+    knob.textContent = theme === 'dark' ? 'Light' : 'Dark';
     try { localStorage.setItem('site-theme', theme); } catch (e) {}
   }
 

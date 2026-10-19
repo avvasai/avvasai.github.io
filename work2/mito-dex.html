@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Avva Sai Pranav">
-  <meta property="og:title" content="Mito Dex (Startup) — Avva Sai Pranav">
+  <meta property="og:title" content="Mito Dex (Startup) | Avva Sai Pranav">
   <meta property="og:description" content="Co-founded Mito Dex, building multi-modal datasets to train robotic foundation models. Designed hardware capture systems using RealSense, ESP32, and DSLRs.">
   <meta property="og:url" content="https://avvasai.github.io/work2/mito-dex.html">
   <meta property="og:image" content="https://avvasai.github.io/assets/og-card.png">
@@ -30,7 +30,7 @@
     <div class="pill-right">
       <span class="label">Theme:</span>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light theme">
-        <span id="themeKnob">☀</span>
+        <span id="themeKnob">Light</span>
       </button>
       <span class="clock" id="clock"></span>
     </div>
@@ -39,7 +39,7 @@
 
 <section class="section">
   <div class="id-strip">
-    <a href="../index.html" class="id-name" aria-label="Avva Sai Pranav — home page">Avva Sai Pranav</a>
+    <a href="../index.html" class="id-name" aria-label="Avva Sai Pranav, home page">Avva Sai Pranav</a>
     <a href="../index.html#projects" class="pager-all">← All projects</a>
   </div>
 
@@ -66,15 +66,8 @@
       <div id="summary" class="project-block">
         <div class="project-hero">
           <div class="project-hero-text">
-            <p class="section-eyebrow">Project · Robotics Startup</p>
             <h2>Mito Dex (Startup)</h2>
             <p class="project-hero-meta">Startup (Pre-incorporation) · Co-founded with Vrishank Bhardwaj &amp; Sanchit Jhunjhunwala · 2025 – Present</p>
-            <div class="spec-ribbon">
-              <div class="dim-tag"><span class="dim-value">7</span><span class="dim-label">Unique modalities</span></div>
-              <div class="dim-tag"><span class="dim-value">3</span><span class="dim-label">Partner gait labs</span></div>
-              <div class="dim-tag"><span class="dim-value">1.5</span><span class="dim-label">Months full-time</span></div>
-              <div class="dim-tag"><span class="dim-value">ESP32</span><span class="dim-label">Sensor integration</span></div>
-            </div>
           </div>
           <div class="hero-diagram-wrap">
             <video autoplay loop muted playsinline style="width:100%; max-width:300px; border-radius: 8px;">
@@ -100,11 +93,11 @@
 
 
         <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-          <strong>Coursera for Robots</strong> — Capturing multi-modal skill datasets for robotic foundation models
+          <strong>Coursera for Robots</strong>: Capturing multi-modal skill datasets for robotic foundation models
         </p>
 
         <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-          Building a dynamic catalogue of skills that robots can pull and do test-time training on during deployment. We capture student-teacher interaction datasets to teach robots how to learn skills and interact with humans — unlike existing data companies that focus on in-the-wild egocentric footage.
+          Building a dynamic catalogue of skills that robots can pull and do test-time training on during deployment. We capture student-teacher interaction datasets to teach robots how to learn skills and interact with humans, unlike existing data companies that focus on in-the-wild egocentric footage.
         </p>
 
         <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
@@ -139,27 +132,18 @@
       <div id="problem" class="project-block">
         <h3>Problem Statement</h3>
         <ul class="bullet-list">
-          <li><strong>Need:</strong> Robotic foundation models require high-quality, multi-modal training data to learn dexterous manipulation skills — but physical AI lacks internet-scale datasets</li>
-          <li><strong>Prior art:</strong> Existing robotics data companies (Micro1, Scale, Surge, MicroAGI, BuildAI) focus primarily on in-the-wild egocentric footage, missing critical modalities like gripping force, temperature sensing, and structured student-teacher interactions</li>
-          <li><strong>Open question:</strong> Could custom economical hardware matching target robot sensory inputs, combined with structured skill demonstrations, provide significantly higher-value post-training data for physical AI?</li>
+          <li>Need: Robotic foundation models require high-quality, multi-modal training data to learn dexterous manipulation skills, but physical AI lacks internet-scale datasets</li>
+          <li>Prior art: Existing robotics data companies (Micro1, Scale, Surge, MicroAGI, BuildAI) focus primarily on in-the-wild egocentric footage, missing critical modalities like gripping force, temperature sensing, and structured student-teacher interactions</li>
         </ul>
+        <p style="color:var(--text); font-size: var(--text-sm); margin: var(--space-4) 0;">Our bet: cheap custom hardware that matches what a robot actually senses, paired with structured skill demonstrations, gives better post-training data for physical AI.</p>
       </div>
 
       <!-- METHODOLOGY -->
       <div id="methodology" class="project-block">
         <h3>Methodology</h3>
         <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-2);">
-          The project follows a comprehensive hardware-capture-process workflow for building scalable robotics training datasets. Click a stage to jump there.
+          The project follows a hardware-capture-process workflow for building scalable robotics training datasets.
         </p>
-        <nav class="process-stepper">
-          <a href="#hardware" class="process-step"><span class="step-num">1</span>Hardware</a>
-          <span class="process-connector"></span>
-          <a href="#capture" class="process-step"><span class="step-num">2</span>Capture</a>
-          <span class="process-connector"></span>
-          <a href="#pipeline" class="process-step"><span class="step-num">3</span>Process</a>
-          <span class="process-connector"></span>
-          <a href="#results" class="process-step"><span class="step-num">4</span>Results</a>
-        </nav>
       </div>
 
       <!-- HARDWARE DESIGN -->
@@ -170,12 +154,6 @@
           Designed a reproducible multi-camera capture system integrating professional motion capture with consumer-grade sensors. The setup is engineered to be portable and deployable across our partner gait labs in India.
         </p>
 
-        <div class="spec-grid">
-          <div class="spec-item"><span class="spec-value">Optitrack</span><span class="spec-label">Motion capture</span></div>
-          <div class="spec-item"><span class="spec-value">RealSense</span><span class="spec-label">Depth capture</span></div>
-          <div class="spec-item"><span class="spec-value">DSLRs</span><span class="spec-label">High-res video</span></div>
-          <div class="spec-item"><span class="spec-value">Webcams</span><span class="spec-label">Auxiliary angles</span></div>
-        </div>
 
         <details class="detail-toggle" style="margin-top: var(--space-4);">
           <summary>
@@ -236,9 +214,8 @@
           </div>
         </details>
 
-        <p style="color:var(--text); font-size: var(--text-sm); margin-top: var(--space-4); margin-bottom: var(--space-4);">
-          <strong>Egocentric Capture:</strong> Head-mounted dashcams capture first-person perspective essential for training robots on human visual perception during task execution. Uniform lighting systems ensure consistent image quality across all recording sessions.
-        </p>
+        <h5 class="para-head">Egocentric Capture</h5>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-top: var(--space-4); margin-bottom: var(--space-4);">Head-mounted dashcams capture first-person perspective essential for training robots on human visual perception during task execution. Uniform lighting systems ensure consistent image quality across all recording sessions.</p>
       </div>
 
       <!-- PROCESSING PIPELINE -->
@@ -278,7 +255,7 @@
             <ul class="bullet-list">
               <li>Captured <strong>sample dataset covering soldering and dexterous skills</strong></li>
               <li>Operating with <strong>3 gait labs in India</strong> for scalable data collection</li>
-              <li><strong>Product ready</strong> — in conversation with potential customers</li>
+              <li><strong>Product ready</strong>: in conversation with potential customers</li>
               <li>Reaching out to <strong>robotics companies for licensing contracts</strong></li>
             </ul>
           </div>
@@ -303,48 +280,48 @@
                 <tbody>
                   <tr style="border-bottom: 1px solid var(--border);">
                     <td style="padding: var(--space-2); color: var(--text);">Gripping Force</td>
-                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">✓</td>
-                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">✗</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">Yes</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">No</td>
                   </tr>
                   <tr style="border-bottom: 1px solid var(--border);">
                     <td style="padding: var(--space-2); color: var(--text);">Temperature Sensing</td>
-                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">✓</td>
-                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">✗</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">Yes</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">No</td>
                   </tr>
                   <tr style="border-bottom: 1px solid var(--border);">
                     <td style="padding: var(--space-2); color: var(--text);">Chain-of-thought Audio</td>
-                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">✓</td>
-                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">✗</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">Yes</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">No</td>
                   </tr>
                   <tr style="border-bottom: 1px solid var(--border);">
                     <td style="padding: var(--space-2); color: var(--text);">Full Body Pose</td>
-                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">✓</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">Yes</td>
                     <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">Partial</td>
                   </tr>
                   <tr style="border-bottom: 1px solid var(--border);">
                     <td style="padding: var(--space-2); color: var(--text);">Student-Teacher Interactions</td>
-                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">✓</td>
-                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">✗</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">Yes</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">No</td>
                   </tr>
                   <tr style="border-bottom: 1px solid var(--border);">
                     <td style="padding: var(--space-2); color: var(--text);">Exception Cases (Failures)</td>
-                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">✓</td>
-                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">✗</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">Yes</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">No</td>
                   </tr>
                   <tr style="border-bottom: 1px solid var(--border);">
                     <td style="padding: var(--space-2); color: var(--text);">Multi-modal Instructions</td>
-                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">✓</td>
-                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">✗</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">Yes</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--text-dim);">No</td>
                   </tr>
                   <tr style="border-bottom: 1px solid var(--border);">
                     <td style="padding: var(--space-2); color: var(--text);">Egocentric Video</td>
-                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">✓</td>
-                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">✓</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">Yes</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">Yes</td>
                   </tr>
                   <tr>
                     <td style="padding: var(--space-2); color: var(--text);">Depth Data</td>
-                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">✓</td>
-                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">✓</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">Yes</td>
+                    <td style="padding: var(--space-2); text-align: center; color: var(--accent-bright);">Yes</td>
                   </tr>
                 </tbody>
               </table>
@@ -358,9 +335,9 @@
             <span class="detail-title">Competitive landscape</span>
           </summary>
           <div class="detail-body">
-            <p style="margin-bottom: var(--space-3);"><strong>Larger competitors:</strong> Micro1, Scale, Surge</p>
-            <p style="margin-bottom: var(--space-3);"><strong>Smaller competitors:</strong> MicroAGI, BuildAI</p>
-            <p><strong>YC companies in space:</strong> HumanArchive, Sensei, Cortex, Spatial</p>
+            <p style="margin-bottom: var(--space-3);">Larger competitors: Micro1, Scale, Surge</p>
+            <p style="margin-bottom: var(--space-3);">Smaller competitors: MicroAGI, BuildAI</p>
+            <p>YC companies in space: HumanArchive, Sensei, Cortex, Spatial</p>
           </div>
         </details>
 
@@ -403,11 +380,12 @@
           </summary>
           <div class="detail-body">
             <p style="margin-bottom: var(--space-3);">I designed and built the hardware and video processing pipeline for multi-modal data capture. Created a reproducible recording setup using DSLRs, Intel RealSense, webcams, ESP32, head mounts, and uniform lighting systems. Contributed to AI pipeline setup for faster processing.</p>
-            <p style="margin-bottom: var(--space-3);"><strong>Co-founders:</strong> Vrishank Bhardwaj and Sanchit Jhunjhunwala handle business development, customer outreach, gait lab partnerships, and partial hardware/software pipeline work.</p>
-            <p style="margin-bottom: var(--space-3);"><strong>Founder relationships:</strong></p>
+            <h5 class="para-head">Co-founders</h5>
+            <p style="margin-bottom: var(--space-3);">Vrishank Bhardwaj and Sanchit Jhunjhunwala handle business development, customer outreach, gait lab partnerships, and partial hardware/software pipeline work.</p>
+            <h5 class="para-head">Founder relationships</h5>
             <ul class="bullet-list">
-              <li>Sanchit &amp; Avva: 4 years — Worked together at Sanchit's startup</li>
-              <li>Avva &amp; Vrishank: 3 years — Both consulted for Sanchit's startup</li>
+              <li>Sanchit &amp; Avva: 4 years, worked together at Sanchit's startup</li>
+              <li>Avva &amp; Vrishank: 3 years, both consulted for Sanchit's startup</li>
             </ul>
           </div>
         </details>
@@ -433,7 +411,7 @@
             <span class="detail-title">Motivation</span>
           </summary>
           <div class="detail-body">
-            <p>Inspired by Westworld — want to make robots in homes and industry common. Experience building Data Acquisition systems to create custom hardware for worthwhile datasets. Robotics researchers at leading labs are enthusiastic about such data.</p>
+            <p>Inspired by Westworld; we want to make robots in homes and industry common. Experience building Data Acquisition systems to create custom hardware for worthwhile datasets. Robotics researchers at leading labs are enthusiastic about such data.</p>
           </div>
         </details>
 
@@ -481,7 +459,7 @@
 
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
-    knob.textContent = theme === 'dark' ? '☀' : '☾';
+    knob.textContent = theme === 'dark' ? 'Light' : 'Dark';
     try { localStorage.setItem('site-theme', theme); } catch (e) {}
   }
 

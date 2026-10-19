@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Avva Sai Pranav">
-  <meta property="og:title" content="Test-Tube Handling Robot — Avva Sai Pranav">
+  <meta property="og:title" content="Test-Tube Handling Robot | Avva Sai Pranav">
   <meta property="og:description" content="Designed a 4-DOF robotic arm for automated test tube handling at a diagnostic lab. Led mechanical design, CAD, FEA, 3D printing, and cross-functional coordination.">
   <meta property="og:url" content="https://avvasai.github.io/work2/test-tube-handling-robot.html">
   <meta property="og:image" content="https://avvasai.github.io/assets/og-card.png">
@@ -30,7 +30,7 @@
     <div class="pill-right">
       <span class="label">Theme:</span>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light theme">
-        <span id="themeKnob">☀</span>
+        <span id="themeKnob">Light</span>
       </button>
       <span class="clock" id="clock"></span>
     </div>
@@ -39,7 +39,7 @@
 
 <section class="section">
   <div class="id-strip">
-    <a href="../index.html" class="id-name" aria-label="Avva Sai Pranav — home page">Avva Sai Pranav</a>
+    <a href="../index.html" class="id-name" aria-label="Avva Sai Pranav, home page">Avva Sai Pranav</a>
     <a href="../index.html#projects" class="pager-all">← All projects</a>
   </div>
 
@@ -55,7 +55,8 @@
       <a href="#fabrication" class="sidebar-link sidebar-sublink">Fabrication</a>
       <a href="#test-setup" class="sidebar-link">Test Setup</a>
       <a href="#results" class="sidebar-link">Results</a>
-      <a href="#additional-info" class="sidebar-link">Additional Information</a>
+      <a href="#lab-priorities" class="sidebar-link">What the Lab Cared About</a>
+      <a href="#additional-info" class="sidebar-link">Full Report</a>
       <button class="sidebar-top-btn" id="sidebarTopBtn" aria-label="Back to top">↑ Top</button>
     </aside>
 
@@ -66,15 +67,8 @@
       <div id="summary" class="project-block">
         <div class="project-hero">
           <div class="project-hero-text">
-            <p class="section-eyebrow">Project · Robotics</p>
             <h2>Test-Tube Handling Robot</h2>
             <p class="project-hero-meta">PES University × Anand Diagnostic Center · Guided by Dr. D. Sethuram · Sep – Nov 2021</p>
-            <div class="spec-ribbon">
-              <div class="dim-tag"><span class="dim-value">7.25</span><span class="dim-label">kg robot weight</span></div>
-              <div class="dim-tag"><span class="dim-value">4</span><span class="dim-label">DOF arm</span></div>
-              <div class="dim-tag"><span class="dim-value">1 kg</span><span class="dim-label">payload capacity</span></div>
-              <div class="dim-tag"><span class="dim-value">₹1.25L</span><span class="dim-label">budget</span></div>
-            </div>
           </div>
           <div class="hero-diagram-wrap">
             <figure>
@@ -96,7 +90,7 @@
           <p class="role-heading">What I did</p>
           <ul class="role-list">
             <li>Gathered requirements on site at Anand Diagnostic Center (2,000+ samples a day)</li>
-            <li>Designed the full 4-DOF arm in SolidWorks — worm gearboxes, cycloidal drive, gripper and camera mount — and validated it with ANSYS FEA</li>
+            <li>Designed the full 4-DOF arm in SolidWorks (worm gearboxes, cycloidal drive, gripper and camera mount) and validated it with ANSYS FEA</li>
             <li>Sized motors and gearboxes from joint torques, reaching 7.25 kg total (44% under the 13 kg limit) with a 1 kg payload</li>
           </ul>
         </div>
@@ -111,7 +105,7 @@
           Anand Diagnostic Center processes over 2,000 test tube samples daily, but their existing conveyor-based segregation system required significant manual intervention for barcode verification and racking. Our team designed a 4-DOF robotic arm solution to automate the pick-scan-place workflow, eliminating manual labor and reducing errors.
         </p>
         <p style="color:var(--text); margin-bottom: var(--space-4);">
-          As Design Domain Lead, I owned the complete mechanical design—from the initial site visit to capture floor space constraints (1000×500mm) and payload requirements, through CAD modeling of custom worm and cycloidal gearboxes, to 3D printing the final components in heat-resistant PETG. I also managed component sourcing and kept the project under the ₹1,25,000 budget.
+          As Design Domain Lead, I owned the complete mechanical design, from the initial site visit to capture floor space constraints (1000×500mm) and payload requirements, through CAD modeling of custom worm and cycloidal gearboxes, to 3D printing the final components in heat-resistant PETG. I also managed component sourcing and kept the project under the ₹1,25,000 budget.
         </p>
         <p style="color:var(--text);">
           The resulting robot weighs just 7.25 kg (well under the 13 kg portability target), handles 1 kg payloads, and features a modular two-claw gripper with an integrated Raspberry Pi camera for test tube detection. I proposed an overhead camera safety system using contour detection to halt the robot if operators enter the workspace. This was my first industry internship and a formative experience in cross-functional product development.
@@ -121,7 +115,7 @@
           <div class="stat-card">
             <span class="stat-value">7.25</span>
             <span class="stat-unit">kg</span>
-            <span class="stat-label">Total weight — 44% under 13 kg constraint</span>
+            <span class="stat-label">Total weight: 44% under 13 kg constraint</span>
           </div>
           <div class="stat-card">
             <span class="stat-value">1</span>
@@ -149,41 +143,30 @@
           <figcaption>Existing conveyor-based segregation system requiring manual intervention</figcaption>
         </figure>
         <ul class="bullet-list">
-          <li><strong>Need:</strong> Anand Diagnostic Center processes 2,000+ test tube samples daily requiring automated segregation and racking</li>
-          <li><strong>Prior art:</strong> Existing conveyor-based system required manual barcode verification, no automated racking, and error-prone batch handling</li>
-          <li><strong>Constraints:</strong> 1000×500mm floor space, &lt;13kg total weight for portability, &lt;₹1,25,000 budget, and 250g payload (with 1.67× safety factor)</li>
-          <li><strong>Open question:</strong> Could a compact, affordable robotic arm automate the pick-scan-place workflow while maintaining safety for nearby workers?</li>
+          <li>Need: Anand Diagnostic Center processes 2,000+ test tube samples daily requiring automated segregation and racking</li>
+          <li>Prior art: Existing conveyor-based system required manual barcode verification, no automated racking, and error-prone batch handling</li>
+          <li>Constraints: 1000×500mm floor space, &lt;13kg total weight for portability, &lt;₹1,25,000 budget, and 250g payload (with 1.67× safety factor)</li>
         </ul>
+        <p style="color:var(--text); font-size: var(--text-sm); margin: var(--space-4) 0;">The brief was a compact, affordable arm that could automate pick, scan and place while staying safe around lab staff.</p>
       </div>
 
       <!-- METHODOLOGY -->
       <div id="methodology" class="project-block">
         <h3>Methodology</h3>
         <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-2);">
-          The project followed a comprehensive requirements-design-fabricate-test workflow for a 4-DOF robotic arm system. Click a stage to jump there.
+          The project followed a requirements-design-fabricate-test workflow for a 4-DOF robotic arm system.
         </p>
-        <nav class="process-stepper">
-          <a href="#design-sim" class="process-step"><span class="step-num">1</span>Design</a>
-          <span class="process-connector"></span>
-          <a href="#fabrication" class="process-step"><span class="step-num">2</span>Fabricate</a>
-          <span class="process-connector"></span>
-          <a href="#test-setup" class="process-step"><span class="step-num">3</span>Test</a>
-          <span class="process-connector"></span>
-          <a href="#results" class="process-step"><span class="step-num">4</span>Results</a>
-        </nav>
       </div>
 
       <!-- DESIGN & SIMULATION -->
       <div id="design-sim" class="project-subblock">
         <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Design &amp; Simulation</h4>
 
-        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-          <strong>Requirements & Site Analysis:</strong> Conducted on-site visit to Anand Diagnostic Center to understand the complete sample workflow—from registration through department segregation to archiving. Captured critical constraints: 1000×500mm floor space, &lt;13kg total weight for portability, &lt;₹1,25,000 budget, and 250g payload (with 1.67× safety factor). Identified key pain points in the existing conveyor system: manual barcode verification, no automated racking, and error-prone batch handling.
-        </p>
+        <h5 class="para-head">Requirements & Site Analysis</h5>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">Conducted on-site visit to Anand Diagnostic Center to understand the complete sample workflow, from registration through department segregation to archiving. Captured the key constraints: 1000×500mm floor space, &lt;13kg total weight for portability, &lt;₹1,25,000 budget, and 250g payload (with 1.67× safety factor). Identified key pain points in the existing conveyor system: manual barcode verification, no automated racking, and error-prone batch handling.</p>
 
-        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-          <strong>Actuator Design & Selection:</strong> Selected NEMA 17/23 stepper motors over servos for cost-effectiveness and ease of adding magnetic encoder feedback. Designed custom worm gearboxes (3:1 and 30:1 ratios) for their non-backdrivable characteristic—critical for holding payloads when powered off. Implemented cycloidal drive (8:1) for wrist rotation. All actuator housings were designed for 3D printing in PETG to handle motor temperatures up to 70°C.
-        </p>
+        <h5 class="para-head">Actuator Design & Selection</h5>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">Selected NEMA 17/23 stepper motors over servos for cost-effectiveness and ease of adding magnetic encoder feedback. Designed custom worm gearboxes (3:1 and 30:1 ratios) for their non-backdrivable characteristic, critical for holding payloads when powered off. Implemented cycloidal drive (8:1) for wrist rotation. All actuator housings were designed for 3D printing in PETG to handle motor temperatures up to 70°C.</p>
 
         <!-- Gearbox Images -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
@@ -202,19 +185,12 @@
           <figcaption>Cycloidal drive (8:1 reduction) for compact wrist actuation</figcaption>
         </figure> -->
 
-        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-          <strong>Joint Torque Calculations:</strong> Performed torque calculations for all four joints considering link masses, payload, and fully extended arm configuration. Base joint required highest torque (233.25 kgcm), achieved using NEMA 23 with 30:1 worm reduction. Validated that selected motor-gearbox combinations provided adequate torque margins across the workspace.
-        </p>
+        <h5 class="para-head">Joint Torque Calculations</h5>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">Performed torque calculations for all four joints considering link masses, payload, and fully extended arm configuration. Base joint required highest torque (233.25 kgcm), achieved using NEMA 23 with 30:1 worm reduction. Validated that selected motor-gearbox combinations provided adequate torque margins across the workspace.</p>
 
-        <div class="spec-grid">
-          <div class="spec-item"><span class="spec-value">233.25</span><span class="spec-label">kgcm max torque (base)</span></div>
-          <div class="spec-item"><span class="spec-value">30:1</span><span class="spec-label">worm gear reduction</span></div>
-          <div class="spec-item"><span class="spec-value">8:1</span><span class="spec-label">cycloidal reduction (wrist)</span></div>
-        </div>
 
-        <p style="color:var(--text); font-size: var(--text-sm); margin-top: var(--space-4); margin-bottom: var(--space-4);">
-          <strong>End Effector Design:</strong> Iterated through two gripper designs. Initial encompassing gripper was modular but required separate camera mount. Final two-claw gripper used spur gears and four-bar linkage to achieve >3.5N gripping force (~0.5Nm torque). Integrated slots for force sensing strips as alternative to unavailable force-torque sensors.
-        </p>
+        <h5 class="para-head">End Effector Design</h5>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-top: var(--space-4); margin-bottom: var(--space-4);">Iterated through two gripper designs. Initial encompassing gripper was modular but required separate camera mount. Final two-claw gripper used spur gears and four-bar linkage to achieve >3.5N gripping force (~0.5Nm torque). Integrated slots for force sensing strips as alternative to unavailable force-torque sensors.</p>
 
         <!-- Gripper Images -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
@@ -228,9 +204,8 @@
           </figure>
         </div>
 
-        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-          <strong>Vision System Integration:</strong> Selected Raspberry Pi HQ Camera (Sony IMX477R, 12.3MP) for wrist-mounted test tube detection and cap orientation identification. Designed modular camera adapter with dowel pins for precise, repeatable mounting. Positioned camera above end effector to maximize field of view without gripper obstruction.
-        </p>
+        <h5 class="para-head">Vision System Integration</h5>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">Selected Raspberry Pi HQ Camera (Sony IMX477R, 12.3MP) for wrist-mounted test tube detection and cap orientation identification. Designed modular camera adapter with dowel pins for precise, repeatable mounting. Positioned camera above end effector to maximize field of view without gripper obstruction.</p>
 
         <!-- Camera Images -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
@@ -248,9 +223,8 @@
           </figure>
         </div>
 
-        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
-          <strong>Safety System Architecture:</strong> Proposed overhead camera-based safety system using contour and line detection. When a human hand or body enters the robot's workspace, the system triggers an automatic stop. This architecture allows the robot to operate near human workers while maintaining safety compliance.
-        </p>
+        <h5 class="para-head">Safety System Architecture</h5>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">Proposed overhead camera-based safety system using contour and line detection. When a human hand or body enters the robot's workspace, the system triggers an automatic stop. This architecture allows the robot to operate near human workers while maintaining safety compliance.</p>
 
         <figure style="margin: var(--space-4) 0;">
           <img loading="lazy" decoding="async" src="../documents/Labratory Automation/tasksequencing.png" alt="Task sequencing diagram showing pick-scan-place workflow" style="width:100%; border-radius: 8px;">
@@ -276,13 +250,9 @@
       <div id="fabrication" class="project-subblock">
         <h4 style="color:var(--headline); margin-bottom: var(--space-3);">Fabrication</h4>
 
-        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-3);"><strong>3D Printing & Assembly:</strong> 3D printed all gearbox housings, gripper components, and camera mounts in PETG. Selected PETG over PLA for thermal stability and mechanical strength. Assembled complete robot including motor wiring, sensor integration, and Raspberry Pi mounting. Final weight: 7.25kg (excluding payload).</p>
+        <h5 class="para-head">3D Printing & Assembly</h5>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-3);">3D printed all gearbox housings, gripper components, and camera mounts in PETG. Selected PETG over PLA for thermal stability and mechanical strength. Assembled complete robot including motor wiring, sensor integration, and Raspberry Pi mounting. Final weight: 7.25kg (excluding payload).</p>
         
-        <div class="spec-grid">
-          <div class="spec-item"><span class="spec-value">PETG</span><span class="spec-label">Material for heat resistance</span></div>
-          <div class="spec-item"><span class="spec-value">70°C</span><span class="spec-label">Motor operating temp tolerance</span></div>
-          <div class="spec-item"><span class="spec-value">7.25 kg</span><span class="spec-label">Final robot weight</span></div>
-        </div>
 
         <figure style="margin: var(--space-6) 0;">
           <img loading="lazy" decoding="async" src="../documents/Labratory Automation/Figure2.jpg" alt="3D printed gearbox in PETG for heat resistance" style="width:100%; border-radius: 8px;">
@@ -308,11 +278,6 @@
           Prototype was 3D printed and assembled. Actuators were tested for performance under load. Static and dynamic stability validated through ANSYS FEA. Contour detection algorithms demonstrated successful hand and test tube identification.
         </p>
 
-        <div class="spec-grid">
-          <div class="spec-item"><span class="spec-value">ANSYS</span><span class="spec-label">FEA validation</span></div>
-          <div class="spec-item"><span class="spec-value">SolidWorks</span><span class="spec-label">CAD modeling</span></div>
-          <div class="spec-item"><span class="spec-value">Python</span><span class="spec-label">Vision algorithms</span></div>
-        </div>
 
         <!-- Contour Detection Images -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
@@ -333,11 +298,11 @@
           </summary>
           <div class="detail-body">
             <ul class="bullet-list">
-              <li>SolidWorks — Complete CAD modeling</li>
-              <li>ANSYS — Static and dynamic FEA validation</li>
-              <li>Raspberry Pi — Embedded control and camera interface</li>
-              <li>Python — Vision algorithms and system integration</li>
-              <li>3D Printer — PETG component fabrication</li>
+              <li>SolidWorks: Complete CAD modeling</li>
+              <li>ANSYS: Static and dynamic FEA validation</li>
+              <li>Raspberry Pi: Embedded control and camera interface</li>
+              <li>Python: Vision algorithms and system integration</li>
+              <li>3D Printer: PETG component fabrication</li>
             </ul>
           </div>
         </details>
@@ -368,7 +333,7 @@
               <li>Achieved <strong>7.25 kg total robot weight</strong> – 44% under the 13 kg portability constraint</li>
               <li>Designed for <strong>1 kg payload capacity</strong> with appropriate torque margins at all joints</li>
               <li>Completed design and prototype <strong>within ₹1,25,000 budget</strong></li>
-              <li>Successfully integrated <strong>contour detection</strong> for test tube identification and workspace safety</li>
+              <li>Integrated <strong>contour detection</strong> for test tube identification and workspace safety</li>
               <li><strong>Non-backdrivable worm gear design</strong> ensures payload security during power-off</li>
               <li><strong>Modular design</strong> allows replication for archiving stations in other departments</li>
             </ul>
@@ -420,7 +385,7 @@
                     <td style="padding: var(--space-2); color: var(--text-dim);">NEMA 23 (18.9 kgcm)</td>
                     <td style="padding: var(--space-2); color: var(--text-dim);">Worm</td>
                     <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">30:1</td>
-                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">—</td>
+                    <td style="padding: var(--space-2); text-align: right; color: var(--text-dim);">n/a</td>
                   </tr>
                 </tbody>
               </table>
@@ -445,9 +410,16 @@
         </details>
       </div>
 
+      <div id="lab-priorities" class="project-block">
+        <h3>What the Lab Cared About</h3>
+        <p style="color:var(--text); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+          The lab staff cared most about two things: the safety zones around the robot, and how fast it would move.
+        </p>
+      </div>
+
       <!-- ADDITIONAL INFORMATION -->
       <div id="additional-info" class="project-block">
-        <h3>Additional Information</h3>
+        <h3>Full Report</h3>
         <p style="color:var(--text-dim); font-size: var(--text-sm); margin-bottom: var(--space-4);">Complete internship report with methodology, calculations, CAD figures, and results.</p>
         <div class="resume-card">
           <div class="pdf-wrapper">
@@ -466,9 +438,9 @@
           </summary>
           <div class="detail-body">
             <ul class="bullet-list">
-              <li><strong>CAD:</strong> SolidWorks — complete mechanical design and assembly</li>
-              <li><strong>Simulation:</strong> ANSYS FEA — static and dynamic structural validation</li>
-              <li><strong>Fabrication:</strong> 3D Printing (PETG) — actuator housings and gripper components</li>
+              <li><strong>CAD:</strong> SolidWorks: complete mechanical design and assembly</li>
+              <li><strong>Simulation:</strong> ANSYS FEA: static and dynamic structural validation</li>
+              <li><strong>Fabrication:</strong> 3D Printing (PETG): actuator housings and gripper components</li>
               <li><strong>Design:</strong> Gear design, torque calculations, robotic arm kinematics</li>
               <li><strong>Embedded:</strong> Raspberry Pi, Python, computer vision integration</li>
               <li><strong>Management:</strong> Requirements engineering, budget management, cross-domain coordination</li>
@@ -516,7 +488,7 @@
 
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
-    knob.textContent = theme === 'dark' ? '☀' : '☾';
+    knob.textContent = theme === 'dark' ? 'Light' : 'Dark';
     try { localStorage.setItem('site-theme', theme); } catch (e) {}
   }
 

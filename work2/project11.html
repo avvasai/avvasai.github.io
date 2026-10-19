@@ -9,7 +9,6 @@
 </head>
 <body>
 <header class="masthead">
-  <h1 class="giant-name">Avva Sai Pranav</h1>
   <nav class="pill-nav">
     <div class="pill-links">
       <a href="../index.html" class="pill">Home</a>
@@ -522,7 +521,8 @@
       const targetId = link.getAttribute('href').substring(1);
       const target = document.getElementById(targetId);
       if (target) {
-        window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+        const headerOffset = parseFloat(getComputedStyle(target).scrollMarginTop) || 160;
+        window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - headerOffset, behavior: 'smooth' });
       }
     });
   });

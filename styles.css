@@ -1206,3 +1206,28 @@ html { scroll-padding-top: calc(var(--bar-h) + var(--space-4)); }
   .contact-buttons { flex-direction: column; align-items: stretch; }
   .contact-btn { width: 100%; }
 }
+
+/* ── HOME: GENTLE SECTION SNAPPING (laptops and tablets only) ── */
+/* Proximity: only snaps when a section start is close; never inside tall sections */
+@media (min-width: 701px) {
+  html.home-page { scroll-snap-type: y proximity; }
+  .home-page #home,
+  .home-page #skills,
+  .home-page #projects,
+  .home-page #resume,
+  .home-page #contact { scroll-snap-align: start; }
+}
+
+/* Respect "reduce motion": no smooth scrolling and no snapping */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  html.home-page { scroll-snap-type: none; }
+}
+
+/* Sections carry their own top padding, so on the home page snap/jump
+   right under the bar; every heading then sits the same distance below it */
+html.home-page { scroll-padding-top: var(--bar-h); }
+.home-page .skills-section { padding-top: var(--space-16); }
+@media (max-width: 600px) {
+  .home-page .skills-section { padding-top: var(--space-8); }
+}

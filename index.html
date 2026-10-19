@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="dark" class="home-page">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -377,18 +377,22 @@
   const navSections = document.querySelectorAll('#home, #skills, #projects, #resume, #contact');
 
   function updateActiveNav() {
-    const scrollPos = window.scrollY + 180; // Offset for sticky header
-    
+    // A section is active once its top reaches just below the sticky bar (64px laptop, 96px phone)
+    const barH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--bar-h')) || 64;
+    const scrollPos = window.scrollY + barH + 40;
+
     let currentSection = 'home';
-    
+
     navSections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      
-      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+      if (scrollPos >= section.offsetTop) {
         currentSection = section.getAttribute('id');
       }
     });
+
+    // Contact is short, so it can never reach the bar: highlight it at the bottom of the page
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+      currentSection = 'contact';
+    }
     
     // Map section IDs to nav hrefs
     const sectionToNav = {

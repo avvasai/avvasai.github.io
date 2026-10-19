@@ -6,6 +6,17 @@
   <title>MRI Needle Insertion Robot | Sai Pranav Avva</title>
   <meta name="description" content="MRI-compatible pneumatic robot for lumbar spine needle insertion achieving <2mm accuracy using 3D Slicer image processing and MATLAB path planning.">
   <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="../assets/favicon.ico" sizes="any">
+  <link rel="icon" href="../assets/favicon-32.png" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Avva Sai Pranav">
+  <meta property="og:title" content="MRI Needle Insertion Robot — Avva Sai Pranav">
+  <meta property="og:description" content="MRI-compatible pneumatic robot for lumbar spine needle insertion achieving &lt;2mm accuracy using 3D Slicer image processing and MATLAB path planning.">
+  <meta property="og:url" content="https://avvasai.github.io/work2/mri-needle-insertion-robot.html">
+  <meta property="og:image" content="https://avvasai.github.io/assets/og-card.png">
+  <meta property="og:image:alt" content="MRI Needle Insertion Robot">
+  <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 <header class="masthead">
@@ -27,7 +38,10 @@
 </header>
 
 <section class="section">
-  <a href="../index.html#projects" class="back-link">← Back to projects</a>
+  <div class="id-strip">
+    <a href="../index.html" class="id-name" aria-label="Avva Sai Pranav — home page">Avva Sai Pranav</a>
+    <a href="../index.html#projects" class="pager-all">← All projects</a>
+  </div>
 
   <div class="project-layout">
 
@@ -151,15 +165,15 @@
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
           <figure>
-            <img src="../documents/MRI Guided Lumbar SPine Needle Insertion Robot/3d_slicer_fiducials.jpg" alt="3D Slicer screenshot showing robot fiducial markers used for coordinate registration" style="width:100%; border-radius: 8px;">
+            <img loading="lazy" decoding="async" src="../documents/MRI Guided Lumbar SPine Needle Insertion Robot/3d_slicer_fiducials.jpg" alt="3D Slicer screenshot showing robot fiducial markers used for coordinate registration" style="width:100%; border-radius: 8px;">
             <figcaption>3D Slicer slice showing robot fiducial markers for coordinate registration</figcaption>
           </figure>
           <figure>
-            <img src="../documents/MRI Guided Lumbar SPine Needle Insertion Robot/vertebrae_before_windowing.jpg" alt="MRI slice showing vertebrae before window-leveling adjustment" style="width:100%; border-radius: 8px;">
+            <img loading="lazy" decoding="async" src="../documents/MRI Guided Lumbar SPine Needle Insertion Robot/vertebrae_before_windowing.jpg" alt="MRI slice showing vertebrae before window-leveling adjustment" style="width:100%; border-radius: 8px;">
             <figcaption>Vertebrae before window-leveling adjustment</figcaption>
           </figure>
           <figure>
-            <img src="../documents/MRI Guided Lumbar SPine Needle Insertion Robot/vertebrae_after_windowing.jpg" alt="MRI slice after window-leveling to reduce gray noise" style="width:100%; border-radius: 8px;">
+            <img loading="lazy" decoding="async" src="../documents/MRI Guided Lumbar SPine Needle Insertion Robot/vertebrae_after_windowing.jpg" alt="MRI slice after window-leveling to reduce gray noise" style="width:100%; border-radius: 8px;">
             <figcaption>Window-leveled MRI slice optimized for vertebrae boundary detection</figcaption>
           </figure>
         </div>
@@ -190,11 +204,11 @@
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
           <figure>
-            <img src="../documents/MRI Guided Lumbar SPine Needle Insertion Robot/l1_boundary_detection.png" alt="Custom boundary detection for L1 vertebrae showing extracted lower boundary contour" style="width:100%; border-radius: 8px;">
+            <img loading="lazy" decoding="async" src="../documents/MRI Guided Lumbar SPine Needle Insertion Robot/l1_boundary_detection.png" alt="Custom boundary detection for L1 vertebrae showing extracted lower boundary contour" style="width:100%; border-radius: 8px;">
             <figcaption>Custom boundary detection for partially visible L1 vertebra</figcaption>
           </figure>
           <figure>
-            <img src="../documents/MRI Guided Lumbar SPine Needle Insertion Robot/ideal_paths_overlay.jpg" alt="MATLAB-generated visualization showing computed optimal needle paths overlaid on vertebrae image" style="width:100%; border-radius: 8px;">
+            <img loading="lazy" decoding="async" src="../documents/MRI Guided Lumbar SPine Needle Insertion Robot/ideal_paths_overlay.jpg" alt="MATLAB-generated visualization showing computed optimal needle paths overlaid on vertebrae image" style="width:100%; border-radius: 8px;">
             <figcaption>Computed optimal needle paths (green) overlaid on vertebrae for all 4 intervertebral slots</figcaption>
           </figure>
         </div>
@@ -250,7 +264,7 @@
         </p>
 
         <figure style="margin: var(--space-6) 0;">
-          <img src="../documents/MRI Guided Lumbar SPine Needle Insertion Robot/inverse_kinematics_diagram.png" alt="Diagram showing inverse kinematics variables including needletiplength, drivetohome, and stage_center measurements" style="width:100%; max-width:600px; border-radius: 8px;">
+          <img loading="lazy" decoding="async" src="../assets/web/MRI Guided Lumbar SPine Needle Insertion Robot/inverse_kinematics_diagram.webp" alt="Diagram showing inverse kinematics variables including needletiplength, drivetohome, and stage_center measurements" style="width:100%; max-width:600px; border-radius: 8px;">
           <figcaption>Inverse kinematics variables for the 3-stage pneumatic actuation system</figcaption>
         </figure>
 
@@ -342,7 +356,7 @@
         <h3>Results</h3>
 
         <figure style="margin-bottom: var(--space-6);">
-          <img src="../documents/MRI Guided Lumbar SPine Needle Insertion Robot/silicone_block_test.jpg" alt="Needle insertion validation test on silicone block showing less than 2mm depth accuracy" style="width:100%; border-radius: 8px;">
+          <img loading="lazy" decoding="async" src="../documents/MRI Guided Lumbar SPine Needle Insertion Robot/silicone_block_test.jpg" alt="Needle insertion validation test on silicone block showing less than 2mm depth accuracy" style="width:100%; border-radius: 8px;">
           <figcaption>Needle insertion validation test on silicone block showing &lt;2mm depth accuracy</figcaption>
         </figure>
 

@@ -6,6 +6,17 @@
   <title>Robotic Ultrasound Scanning | Sai Pranav Avva</title>
   <meta name="description" content="Semi-autonomous robotic ultrasound using UR5e with RealSense depth camera, achieving 0.5° angular accuracy and force-controlled contour following.">
   <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="../assets/favicon.ico" sizes="any">
+  <link rel="icon" href="../assets/favicon-32.png" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Avva Sai Pranav">
+  <meta property="og:title" content="Robotic Ultrasound Scanning — Avva Sai Pranav">
+  <meta property="og:description" content="Semi-autonomous robotic ultrasound using UR5e with RealSense depth camera, achieving 0.5° angular accuracy and force-controlled contour following.">
+  <meta property="og:url" content="https://avvasai.github.io/work2/robotic-ultrasound-scanning.html">
+  <meta property="og:image" content="https://avvasai.github.io/documents/Ultrasound%20Robot/image10.jpg">
+  <meta property="og:image:alt" content="Robotic Ultrasound Scanning">
+  <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 <header class="masthead">
@@ -27,7 +38,10 @@
 </header>
 
 <section class="section">
-  <a href="../index.html#projects" class="back-link">← Back to projects</a>
+  <div class="id-strip">
+    <a href="../index.html" class="id-name" aria-label="Avva Sai Pranav — home page">Avva Sai Pranav</a>
+    <a href="../index.html#projects" class="pager-all">← All projects</a>
+  </div>
 
   <div class="project-layout">
 
@@ -125,7 +139,7 @@
           <li><strong>Open question:</strong> Can a semi-autonomous system execute fundamental ultrasound motions while automatically maintaining correct probe orientation and safe contact force?</li>
         </ul>
         <figure style="margin: var(--space-4) 0;">
-          <img src="../documents/Ultrasound Robot/image14.jpg" alt="Six fundamental ultrasound transducer motions: Sliding, Sweeping, Rocking, Fanning, Rotating, and Compression" style="width:100%; border-radius: 8px;">
+          <img loading="lazy" decoding="async" src="../documents/Ultrasound Robot/image14.jpg" alt="Six fundamental ultrasound transducer motions: Sliding, Sweeping, Rocking, Fanning, Rotating, and Compression" style="width:100%; border-radius: 8px;">
           <figcaption>Six fundamental ultrasound transducer motions that the system must execute</figcaption>
         </figure>
       </div>
@@ -156,7 +170,7 @@
         </p>
 
         <figure style="margin: var(--space-4) 0;">
-          <img src="../documents/Ultrasound Robot/image24.png" alt="System architecture showing four ROS2 packages: ultrasound_description, pc_filter, control_gui, and ultrasound_state_machine" style="width:100%; border-radius: 8px;">
+          <img loading="lazy" decoding="async" src="../documents/Ultrasound Robot/image24.png" alt="System architecture showing four ROS2 packages: ultrasound_description, pc_filter, control_gui, and ultrasound_state_machine" style="width:100%; border-radius: 8px;">
           <figcaption>System architecture showing four ROS2 packages with data flow connections</figcaption>
         </figure>
 
@@ -177,22 +191,22 @@
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
           <figure>
-            <img src="../documents/Ultrasound Robot/image19.jpg" alt="Raw point cloud output from RealSense depth camera" style="width:100%; border-radius: 8px;">
+            <img loading="lazy" decoding="async" src="../documents/Ultrasound Robot/image19.jpg" alt="Raw point cloud output from RealSense depth camera" style="width:100%; border-radius: 8px;">
             <figcaption>Raw point cloud from RealSense depth camera</figcaption>
           </figure>
           <figure>
-            <img src="../documents/Ultrasound Robot/image25.jpg" alt="Computed surface normals visualization with blue arrows" style="width:100%; border-radius: 8px;">
+            <img loading="lazy" decoding="async" src="../documents/Ultrasound Robot/image25.jpg" alt="Computed surface normals visualization with blue arrows" style="width:100%; border-radius: 8px;">
             <figcaption>Computed surface normals (blue arrows) for probe alignment</figcaption>
           </figure>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
           <figure>
-            <img src="../documents/Ultrasound Robot/image1.jpg" alt="Position control without offset correction" style="width:100%; border-radius: 8px;">
+            <img loading="lazy" decoding="async" src="../documents/Ultrasound Robot/image1.jpg" alt="Position control without offset correction" style="width:100%; border-radius: 8px;">
             <figcaption>Position control only — orientation does not match contour</figcaption>
           </figure>
           <figure>
-            <img src="../documents/Ultrasound Robot/image26.jpg" alt="With offset correction enabled" style="width:100%; border-radius: 8px;">
+            <img loading="lazy" decoding="async" src="../documents/Ultrasound Robot/image26.jpg" alt="With offset correction enabled" style="width:100%; border-radius: 8px;">
             <figcaption>With offset correction — probe aligns to surface normal</figcaption>
           </figure>
         </div>
@@ -210,6 +224,21 @@
           <div class="spec-item"><span class="spec-value">8</span><span class="spec-label">Control buttons</span></div>
           <div class="spec-item"><span class="spec-value">Twist</span><span class="spec-label">ROS2 messages</span></div>
           <div class="spec-item"><span class="spec-value">TKinter</span><span class="spec-label">GUI framework</span></div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+          <figure>
+            <video class="muted-demo" muted loop playsinline preload="metadata" disablepictureinpicture aria-label="Automated fan motion demo" style="width:100%; border-radius: 8px;">
+              <source src="../documents/Ultrasound Robot/videos/fan.mp4#t=0.1" type="video/mp4">
+            </video>
+            <figcaption>Automated Fan — the probe pivots side to side while keeping its contact point</figcaption>
+          </figure>
+          <figure>
+            <video class="muted-demo" muted loop playsinline preload="metadata" disablepictureinpicture aria-label="Automated rock motion demo" style="width:100%; border-radius: 8px;">
+              <source src="../documents/Ultrasound Robot/videos/rock.mp4#t=0.1" type="video/mp4">
+            </video>
+            <figcaption>Automated Rock — the probe tilts along its long axis while staying in contact</figcaption>
+          </figure>
         </div>
 
         <details class="detail-toggle">
@@ -245,22 +274,22 @@
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
           <figure>
-            <img src="../documents/Ultrasound Robot/image27.jpg" alt="3D printed wedges with known angular profiles" style="width:100%; border-radius: 8px;">
+            <img loading="lazy" decoding="async" src="../documents/Ultrasound Robot/image27.jpg" alt="3D printed wedges with known angular profiles" style="width:100%; border-radius: 8px;">
             <figcaption>3D printed wedges (0°, 30°, 45°) for angular error analysis</figcaption>
           </figure>
           <figure>
-            <img src="../documents/Ultrasound Robot/image4.jpg" alt="3D printed torso contour" style="width:100%; border-radius: 8px;">
+            <img loading="lazy" decoding="async" src="../documents/Ultrasound Robot/image4.jpg" alt="3D printed torso contour" style="width:100%; border-radius: 8px;">
             <figcaption>0.75-scale 3D printed torso for contour following</figcaption>
           </figure>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
           <figure>
-            <img src="../documents/Ultrasound Robot/image15.jpg" alt="3D printed ultrasound probe and camera mount" style="width:100%; border-radius: 8px;">
+            <img loading="lazy" decoding="async" src="../documents/Ultrasound Robot/image15.jpg" alt="3D printed ultrasound probe and camera mount" style="width:100%; border-radius: 8px;">
             <figcaption>3D printed probe and camera mount for UR5e</figcaption>
           </figure>
           <figure>
-            <img src="../documents/Ultrasound Robot/image23.jpg" alt="Clarius C3 HD3 mounted on UR5e" style="width:100%; border-radius: 8px;">
+            <img loading="lazy" decoding="async" src="../documents/Ultrasound Robot/image23.jpg" alt="Clarius C3 HD3 mounted on UR5e" style="width:100%; border-radius: 8px;">
             <figcaption>Clarius C3 HD3 probe mounted for clinical testing</figcaption>
           </figure>
         </div>
@@ -280,6 +309,22 @@
         <p style="color:var(--text); font-size: var(--text-sm); margin: var(--space-4) 0;">
           <strong>Force Control:</strong> Experiments 1, 2, and 4 achieved mean forces of 1.14 N, 1.78 N, and 1.32 N respectively—all within the 0.5–2 N acceptable range for typical anthropomorphic contours. The system adapts to both hard (3D printed) and soft (hydrogel) surfaces through adjustable force limits.
         </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+          <figure>
+            <video class="muted-demo" muted loop playsinline preload="metadata" disablepictureinpicture aria-label="Full system demo on the 3D printed torso" style="width:100%; border-radius: 8px;">
+              <source src="../documents/Ultrasound Robot/videos/small_model_all_enabled.mp4#t=0.1" type="video/mp4">
+            </video>
+            <figcaption>Full system on the 3D-printed torso — contour following, force feedback and orientation correction together</figcaption>
+          </figure>
+          <figure>
+            <video class="muted-demo" muted loop playsinline preload="metadata" disablepictureinpicture aria-label="Clarius probe test on a hydrogel phantom" style="width:100%; border-radius: 8px;">
+              <source src="../documents/Ultrasound Robot/videos/hydrogel_all_enabled.mp4#t=0.1" type="video/mp4">
+            </video>
+            <figcaption>Clarius C3 HD3 probe on a hydrogel tissue phantom — force-controlled contact and contour following</figcaption>
+          </figure>
+        </div>
+
 
         <details class="detail-toggle">
           <summary>
@@ -487,6 +532,21 @@
     }
   });
   updateActiveLink();
+
+  // ── Demo videos: always muted, no controls; play only while visible ──
+  const demoVideos = document.querySelectorAll('video.muted-demo');
+  const demoObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const v = entry.target;
+      v.muted = true;
+      if (entry.isIntersecting) v.play().catch(() => {});
+      else v.pause();
+    });
+  }, { threshold: 0.25 });
+  demoVideos.forEach(v => {
+    v.addEventListener('volumechange', () => { v.muted = true; });
+    demoObserver.observe(v);
+  });
 
   // ── Back to Top Button ──
   const topBtn = document.getElementById('sidebarTopBtn');

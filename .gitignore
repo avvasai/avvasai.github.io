@@ -5,3 +5,9 @@ graphify-out/
 
 # Old resumes stay local only
 documents/Old Resumes/
+
+# Thesis LaTeX source stays local (figures and PDF are published)
+documents/Bistable Gripper/**/*.tex
+documents/Bistable Gripper/**/*.bib
+documents/Bistable Gripper/**/*.sty
+documents/Bistable Gripper/**/*.icc
